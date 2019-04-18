@@ -1,0 +1,14 @@
+.page-with-sidebar {
+    display               : grid;
+    grid-template-columns : 260px 1fr;
+    grid-template-rows    : auto;
+    grid-template-areas   : "sidebar-wrapper content-wrapper";
+    z-index               : 4000;
+    height                : 100vh;
+}
+
+@media (max-width : 900px) {
+    .page-with-sidebar {
+        grid-template-columns : 0 1fr;
+    }
+}

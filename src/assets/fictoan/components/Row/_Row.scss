@@ -1,0 +1,72 @@
+.row {
+    display       : flex;
+    flex-wrap     : wrap;
+    align-items   : flex-start;
+    margin-bottom : 0;
+}
+
+.ff-content-container > .row,
+.padded-content > .row {
+    margin-left  : -$measureFixed*3;
+    margin-right : -$measureFixed*3;
+}
+
+@media all and (max-width : 1200px) {
+    .ff-content-container .row,
+    .padded-content .row {
+        margin-left  : 0;
+        margin-right : 0
+    }
+}
+
+@media all and (max-width : 600px) {
+    .row { padding : 0 2vmin; } 
+
+    .portion { padding : 0 !important; }
+
+    .ff-card[class*="padding"] { padding : 4vmin; }
+}
+
+//  Responsiveness
+.retain-layout-always .portion { flex : none !important; }
+
+@media all and (max-width: 600px) {
+    .row.retain-layout-on-mobile > .portion { flex : none !important; }
+}
+
+@media all and (min-width : 601px) and (max-width : 900px) {
+    .row.retain-layout-on-tab-pt > .portion { flex : none !important; }
+}
+
+@media all and (min-width : 901px) and (max-width : 1200px) {
+    .row.retain-layout-on-tab-ls > .portion { flex : none !important; }
+}
+
+@media all and (max-width : 900px) {
+    .row:not([class*='retain-layout']) > .portion { margin-bottom : 2vmax; }
+}
+
+//  Side margins for all your content - increase or decrease at will
+@media all and (max-width : 600px) {
+    .padded-content { padding : 0 2vw; }
+}
+
+@media all and (min-width : 600px) {
+    .padded-content { padding : 0 4vw; }
+}
+
+@media all and (min-width : 900px) {
+    .padded-content { padding : 0 8vw; }
+}
+
+@media all and (min-width : 1200px) {
+    .padded-content { padding : 0 10vw; }
+}
+
+@media all and (min-width : 1800px) {
+    .padded-content { padding : 0 12vw; }
+}
+
+@media all and (min-width : 2400px) {
+    .padded-content { padding : 0 16vw; }
+}

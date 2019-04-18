@@ -1,0 +1,27 @@
+.content-wrapper {
+    display        : flex;
+    flex-direction : column;
+    width          : 100%;
+    grid-area      : content-wrapper;
+}
+
+.double-padding {
+    padding-left  : 18vw;
+    padding-right : 18vw;
+}
+
+@media (min-width: 901px) and (max-width: 1400px) {
+    .double-padding {
+        padding-left  : 6vw;
+        padding-right : 6vw;
+    }
+}
+
+@media (max-width: 900px) {
+    .content-wrapper { margin-top: 56px; }
+
+    .double-padding {
+        padding-left  : 6vw;
+        padding-right : 6vw;
+    }
+}

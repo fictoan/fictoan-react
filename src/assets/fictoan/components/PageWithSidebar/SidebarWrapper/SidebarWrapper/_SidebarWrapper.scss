@@ -1,0 +1,35 @@
+.sidebar-wrapper {
+    display        : flex;
+    position       : fixed;
+    top            : 50px;
+    left           : 0;
+    bottom         : 0;
+    flex-direction : column;
+    width          : 260px;
+    grid-area      : sidebar-wrapper;
+    min-height     : calc(100vh - 56px);
+    overflow-y     : auto;
+    transition     : all 0.4s ease-in-out;
+}
+
+.sidebar-wrapper.open { left : 0; }
+
+.sidebar-section {
+    padding        : 12px 24px;
+    display        : flex;
+    flex-direction : column;
+}
+
+.sidebar-sublink {
+    color       : rgba($colorShade, 1);
+    font-weight : 400;
+    margin      : 4px 0 0 24px;
+    // font-size   : 92%;
+}
+
+@media (max-width: 900px) {
+    .sidebar-wrapper {
+        left    : -300px;
+        z-index : 4000;
+    }
+}
