@@ -8,6 +8,7 @@
 //  Variables next ////////////////////////////////////////////////////////////
 //  Default variables
 @import "./styles/theme/ff-variables";
+@import "../react-fictoan/variables-react-fictoan";
 
 
 //  Variables of current project - rename accordingly
@@ -41,12 +42,12 @@
 @import "./components/Header/Header";
 
 // @import "./styles/components/ff-sidebar";
-@import "./components/PageWithSidebar/PageWithSidebar";
-@import "./components/PageWithSidebar/SidebarWrapper/SidebarWrapper/SidebarWrapper";
-@import "./components/PageWithSidebar/SidebarWrapper/SidebarItem/SidebarItem";
-@import "./components/PageWithSidebar/SidebarWrapper/SidebarItemIcon/SidebarItemIcon";
-@import "./components/PageWithSidebar/SidebarWrapper/SidebarItemText/SidebarItemText";
-@import "./components/PageWithSidebar/ContentWrapper/ContentWrapper";
+@import "components/PageWithSidebar/PageWithSidebar";
+@import "components/PageWithSidebar/Components/SidebarWrapper/SidebarWrapper";
+@import "components/PageWithSidebar/Components/SidebarWrapper/Components/SidebarItem/SidebarItem";
+@import "components/PageWithSidebar/Components/SidebarWrapper/Components/SidebarItemIcon/SidebarItemIcon";
+@import "components/PageWithSidebar/Components/SidebarWrapper/Components/SidebarItemText/SidebarItemText";
+@import "components/PageWithSidebar/Components/ContentWrapper/ContentWrapper";
 
 @import "./components/Card/Card";
 
@@ -64,3 +65,4 @@
 
 //  Project-specific styling //////////////////////////////////////////////////
 //  PUT YOUR STYLE FILE HERE
+@import "../react-fictoan/styles-react-fictoan";

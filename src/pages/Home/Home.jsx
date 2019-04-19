@@ -1,8 +1,7 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
 
-import { Row, Portion, PageWithSidebar, SidebarWrapper, ContentWrapper, SidebarItem, SidebarItemText, SidebarItemIcon } from '../../assets/fictoan/fictoan'
-import Header from '../../assets/fictoan/components/Header/Header'
+import { Row, Portion, Header, PageWithSidebar, ContentWrapper, SidebarWrapper, SidebarItem, SidebarItemText, SidebarItemIcon } from '../../assets/fictoan/fictoan'
+
 import { HashLink as Link } from "react-router-hash-link";
 
 class Home extends React.PureComponent {
@@ -61,7 +60,7 @@ class Home extends React.PureComponent {
                     <ContentWrapper>
                         <Row className="double-padding margin-top-small">
                             <Portion className="whole">
-                                <h3 className="margin-bottom-fixed">Reactised FICTOAN</h3>
+                                <h2 className="margin-bottom-fixed">React+FICTOAN</h2>
                             </Portion>
                         </Row>
                     </ContentWrapper>

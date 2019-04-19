@@ -10,8 +10,8 @@ class Header extends React.PureComponent {
             <Row className="docs-header bg-white shadow-mild vertically-centre-items">
                 <Portion className="whole horizontal vertically-centre-items">
                     <div className="menu-toggle" onClick={this.props.onMenuBtnClick}>
-                        <h6 className="">&mdash;</h6>
-                        <h6 className="">&ndash;</h6>
+                        <h6 className="weight-400">&mdash;</h6>
+                        <h6 className="weight-400">&ndash;</h6>
                     </div>
 
                     <Link to="/" className="header-logo vertically-centre-items">
