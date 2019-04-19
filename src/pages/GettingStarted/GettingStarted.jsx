@@ -3,7 +3,7 @@ import React from 'react'
 import { Row, Portion } from '../../assets/fictoan/fictoan'
 
 
-class Home extends React.PureComponent {
+class GettingStarted extends React.PureComponent {
     componentDidMount() {
         window.scroll(0, 0)
     }
@@ -13,7 +13,7 @@ class Home extends React.PureComponent {
             <div>
                 <Row className="double-padding margin-top-small">
                     <Portion className="whole">
-                        <h2 className="margin-bottom-fixed">React+FICTOAN</h2>
+                        <h2 className="margin-bottom-fixed">Getting started</h2>
                     </Portion>
                 </Row>
             </div>
@@ -21,4 +21,4 @@ class Home extends React.PureComponent {
     }
 }
 
-export default Home
+export default GettingStarted
