@@ -6,6 +6,8 @@ import { Row, Portion } from '../../assets/fictoan/fictoan'
 class GettingStarted extends React.PureComponent {
     componentDidMount() {
         window.scroll(0, 0)
+
+        document.title = "Getting started with FICTOAN"
     }
 
     render() {

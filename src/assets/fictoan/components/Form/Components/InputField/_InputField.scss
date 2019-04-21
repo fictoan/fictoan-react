@@ -1,0 +1,27 @@
+.ff-input {
+    position         : relative;
+    width            : 100%;
+    flex             : 1 1 auto;
+    font-family      : $fontSans;
+    background-color : $inputBG-DefaultColor;
+    border           : 1px solid $inputBorder-DefaultColor;
+    border-radius    : 4px;
+    padding          : 12px;
+}
+
+.ff-input:active,
+.ff-input:focus {
+    background-color : $inputBG-FocusColor;
+    border           : 2px solid $inputBorder-FocusColor;
+    padding          : 11px;
+}
+
+.ff-input:invalid:not(:focus):not(:placeholder-shown) {
+    border           : 1px solid $inputBorder-InvalidColor;
+    background-color : rgba($colorRed, 0.24);
+}
+
+.ff-input:invalid:focus:not(:placeholder-shown) {
+    border           : 2px solid $inputBorder-InvalidColor;
+    background-color : rgba($colorRed, 0.16);
+}

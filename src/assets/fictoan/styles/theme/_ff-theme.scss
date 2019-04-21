@@ -48,9 +48,11 @@ $buttonGradientStartColour : $colorHue !default;
 $buttonGradientEndColour   : $colorAnalogue !default;
 
 //  Inputs  ===================================================================
-$inputBGColor          : rgba($colorSlate-10, 0.4) !default;
-$inputBorderColor      : $colorSlate-10 !default;
-$inputBorderFocusColor : $colorSlate-40 !default;
+$inputBG-DefaultColor : $colorWhite !default;
+$inputBG-FocusColor : $colorWhite !default;
+$inputBorder-DefaultColor : $colorSlate-40 !default;
+$inputBorder-FocusColor : $colorHue !default;
+$inputBorder-InvalidColor : $colorRed !default;
 
 $inputHelpColor : $colorShade !default;
 $inputHelpErrorColor : $colorRed !default;

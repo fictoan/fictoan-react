@@ -1,67 +1,6 @@
 //  BASICS  ===============================================
-.ff-form {
-    display        : flex;
-    position       : relative;
-    width          : 100%;
-    flex-direction : column;
-}
 
-.ff-form-unit {
-    display        : flex;
-    position       : relative;
-    width          : 100%;
-    flex-direction : column;
-    align-items    : center;
-    flex-wrap      : wrap;
-    flex           : 1 1 auto;
-}
 
-.ff-input {
-    position         : relative;
-    width            : 100%;
-    flex             : 1 1 auto;
-    font-family      : $fontSans;
-    background-color : $inputBGColor;
-    border-radius    : 4px;
-    padding          : 8px;
-    box-shadow       : inset 0 1px 2px hsla( 0, 100%, 0, .08);
-}
-
-// :-webkit-autofill,
-// :-webkit-autofill:hover,
-// :-webkit-autofill:focus { box-shadow : 0 0 0 5000px transparent inset; }
-
-input:-webkit-autofill,
-select:-webkit-autofill,
-textarea:-webkit-autofill {
-    background-color : rgba(250, 255, 189, 0) !important;
-    background-image : none !important;
-    color            : rgb(0, 0, 0) !important;
-}
-
-.ff-form-unit > label,
-.ff-form-unit-group > label {
-    flex          : 1 0 100%;
-    position      : relative;
-    align-self    : flex-start;
-    margin-bottom : 4px;
-    color         : $colorShade;
-    order         : -1;
-}
-
-.ff-input:required ~ label::before {
-    position         : absolute;
-    top              : 0;
-    bottom           : 0;
-    margin           : auto;
-    left             : -8px;
-    content          : " ";
-    width            : 3px;
-    height           : 70%;
-    background-color : $colorRed;
-    font-weight      : bold;
-    color            : $colorRed;
-}
 
 .ff-form-unit label span,
 .ff-form-unit-group label span {
@@ -74,9 +13,7 @@ textarea:-webkit-autofill {
     transition  : opacity 0.2s;
 }
 
-.ff-form-unit > .ff-input:focus ~ label,
-.ff-form-inline-group .ff-input:focus ~ label,
-.ff-form-unit-group > .ff-input:focus ~ label { font-weight: bold; }
+
 
 .ff-form-unit label > span::before,
 .ff-form-unit-group label > span::before { content: "\0000a0\2022\0000a0"; }
@@ -187,7 +124,7 @@ textarea.ff-input {
 }
 
 .ff-form-unit-group .unit-prefix,
-.ff-form-unit-group .unit-prefix select, {
+.ff-form-unit-group .unit-prefix select {
     border-top-right-radius    : 0;
     border-bottom-right-radius : 0;
 }
@@ -373,7 +310,7 @@ input[type="radio"] { display : none; }
     display          : flex;
     height           : 100%;
     padding          : 8px 48px 8px 8px;
-    background-color : $inputBGColor;
+    background-color : $inputBG-DefaultColor;
     border           : none;
     border-radius    : 4px;
     font-family      : $fontSans;

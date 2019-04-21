@@ -92,8 +92,8 @@ class App extends React.PureComponent {
 
                         <ContentWrapper>
                             <Switch>
-                                <Route exact path='/' component={Home}/>
-                                <Route exact path='/getting-started' component={GettingStarted}/>
+                                <Route exact path='/' component={ Home }/>
+                                <Route exact path='/getting-started' component={ GettingStarted }/>
                             </Switch>
                         </ContentWrapper>
                     </PageWithSidebar>
