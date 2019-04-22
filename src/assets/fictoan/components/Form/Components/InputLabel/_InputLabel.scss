@@ -18,9 +18,46 @@
     position  : absolute;
     top       : -4px;
     bottom    : 0;
-    right      : -12px;
+    right     : -12px;
     margin    : auto;
-    content   : " *";
+    //content   : " *";
     font-size : 120%;
     color     : $colorRed;
+}
+
+
+.ff-form-unit label span,
+.ff-form-unit-group label span {
+    display     : inline-flex;
+    font-size   : 80%;
+    font-weight : normal;
+    color       : $inputHelpColor;
+    line-height : 1.4;
+    opacity     : 0;
+    transition  : opacity 0.2s;
+}
+
+.ff-form-unit label > span::before,
+.ff-form-unit-group label > span::before {
+    content : "\0000a0\2022\0000a0";
+}
+
+.ff-form-unit .ff-input:focus ~ label > span,
+.ff-form-unit .ff-input:active ~ label > span,
+.ff-form-unit-group .ff-input:focus ~ label > span,
+.ff-form-unit-group .ff-input:active ~ label > span {
+    opacity : 1;
+}
+
+.ff-form-unit .ff-input:not(:focus):not(:placeholder-shown) ~ label > span,
+.ff-form-unit-group .ff-input:not(:focus):not(:placeholder-shown) ~ label > span {
+    color : $inputHelpColor;
+}
+
+.ff-form-unit .ff-input:invalid:focus:not(:placeholder-shown) ~ label > span,
+.ff-form-unit-group .ff-input:invalid:focus:not(:placeholder-shown) ~ label > span,
+.ff-form-unit .ff-input:invalid:not(:focus):not(:placeholder-shown) ~ label > span,
+.ff-form-unit-group .ff-input:invalid:not(:focus):not(:placeholder-shown) ~ label > span {
+    opacity : 1;
+    color   : $inputHelpErrorColor;
 }

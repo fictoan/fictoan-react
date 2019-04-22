@@ -28,8 +28,8 @@ class Home extends React.PureComponent {
             <div>
                 <Row className="padded-content margin-top-small">
                     <Portion className="whole">
-                        <h2 className="margin-bottom-small">React+FICTOAN</h2>
-                        <h5 className="weight-400 margin-bottom-tiny">Simple, modular components for building responsive interfaces in React. Style easily with functional CSS.</h5>
+                        {/*<h2 className="margin-bottom-small">React+FICTOAN</h2>*/}
+                        {/*<h5 className="weight-400 margin-bottom-tiny">Simple, modular components for building responsive interfaces in React. Style easily with functional CSS.</h5>*/}
 
                         <Highlight {...defaultProps} code={exampleCode} language="jsx" theme={undefined}>
                             {({className, style, tokens, getLineProps, getTokenProps}) => (
@@ -53,19 +53,19 @@ class Home extends React.PureComponent {
 
                 <Row className="padded-content">
                     <Portion className="half">
-                        <h6 className="weight-600">Intuitive class names</h6>
-                        <p>Simple, straightforward naming convention that just makes intuitive sense.</p>
+                        {/*<h6 className="weight-600">Intuitive class names</h6>*/}
+                        {/*<p>Simple, straightforward naming convention that just makes intuitive sense.</p>*/}
                         <div className="margin-bottom-small">s</div>
 
                         <Form>
                             <FormUnit>
                                 <InputField type="email" required />
-                                <InputLabel value="Enter something, bro" />
+                                <InputLabel value="Enter something, bro" help="Enter your work email" />
                             </FormUnit>
 
                             <FormUnit>
                                 <InputField required />
-                                <InputLabel value="Enter" />
+                                <InputLabel value="Enter" help="Enter your personal email" />
                             </FormUnit>
                         </Form>
 
