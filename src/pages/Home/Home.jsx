@@ -57,7 +57,7 @@ class Home extends React.PureComponent {
                         {/*<p>Simple, straightforward naming convention that just makes intuitive sense.</p>*/}
                         <div className="margin-bottom-small">s</div>
 
-                        <Form>
+                        <Form className="margin-bottom-huge">
                             <FormUnit>
                                 <InputField type="email" required />
                                 <InputLabel value="Enter something, bro" help="Enter your work email" />
