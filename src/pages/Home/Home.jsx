@@ -3,11 +3,15 @@ import Highlight, {defaultProps} from "prism-react-renderer";
 
 
 
-import {Row, Portion} from '../../assets/fictoan/fictoan'
-import Form from "../../assets/fictoan/components/Form/Form";
-import FormUnit from "../../assets/fictoan/components/Form/Components/FormUnit/FormUnit";
-import InputField from "../../assets/fictoan/components/Form/Components/InputField/InputField";
-import InputLabel from "../../assets/fictoan/components/Form/Components/InputLabel/InputLabel";
+import {
+    Row,
+    Portion,
+    Form,
+    FormUnit,
+    FormGroup,
+    InputField,
+    InputLabel,
+} from '../../assets/fictoan/fictoan'
 
 const exampleCode =
     `    
@@ -52,7 +56,7 @@ class Home extends React.PureComponent {
                 </Row>
 
                 <Row className="padded-content">
-                    <Portion className="half">
+                    <Portion className="two-thirds">
                         {/*<h6 className="weight-600">Intuitive class names</h6>*/}
                         {/*<p>Simple, straightforward naming convention that just makes intuitive sense.</p>*/}
                         <div className="margin-bottom-small">s</div>
@@ -60,13 +64,25 @@ class Home extends React.PureComponent {
                         <Form className="margin-bottom-huge">
                             <FormUnit>
                                 <InputField type="email" required />
-                                <InputLabel value="Enter something, bro" help="Enter your work email" />
+                                <InputLabel value="Email 1" helpText="Enter your work email" />
                             </FormUnit>
 
                             <FormUnit>
                                 <InputField required />
-                                <InputLabel value="Enter" help="Enter your personal email" />
+                                <InputLabel value="Email 2" helpText="Enter your personal email" />
                             </FormUnit>
+
+                            <FormGroup>
+                                <FormUnit>
+                                    <InputField type="email" required />
+                                    <InputLabel value="First name" helpText="Huh" />
+                                </FormUnit>
+
+                                <FormUnit>
+                                    <InputField required />
+                                    <InputLabel value="Last name" />
+                                </FormUnit>
+                            </FormGroup>
                         </Form>
 
                     </Portion>
