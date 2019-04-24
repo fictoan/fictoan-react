@@ -39,21 +39,21 @@
 @import "./styles/form/ff-form";
 
 @import "components/Form/Form";
-@import "components/Form/Components/FormUnit/FormUnit";
-@import "components/Form/Components/InputField/InputField";
-@import "components/Form/Components/InputLabel/InputLabel";
-@import "components/Form/Components/FormGroup/FormGroup";
+@import "components/Form/FormUnit/FormUnit";
+@import "components/Form/InputField/InputField";
+@import "components/Form/InputLabel/InputLabel";
+@import "components/Form/FormGroup/FormGroup";
 
 //  Components
 @import "./components/Header/Header";
 
 // @import "./styles/components/ff-sidebar";
 @import "components/PageWithSidebar/PageWithSidebar";
-@import "components/PageWithSidebar/Components/SidebarWrapper/SidebarWrapper";
-@import "components/PageWithSidebar/Components/SidebarWrapper/Components/SidebarItem/SidebarItem";
-@import "components/PageWithSidebar/Components/SidebarWrapper/Components/SidebarItemIcon/SidebarItemIcon";
-@import "components/PageWithSidebar/Components/SidebarWrapper/Components/SidebarItemText/SidebarItemText";
-@import "components/PageWithSidebar/Components/ContentWrapper/ContentWrapper";
+@import "components/PageWithSidebar/SidebarWrapper/SidebarWrapper";
+@import "components/PageWithSidebar/SidebarWrapper/SidebarItem/SidebarItem";
+@import "components/PageWithSidebar/SidebarWrapper/SidebarItemIcon/SidebarItemIcon";
+@import "components/PageWithSidebar/SidebarWrapper/SidebarItemText/SidebarItemText";
+@import "components/PageWithSidebar/ContentWrapper/ContentWrapper";
 
 @import "./components/Card/Card";
 
