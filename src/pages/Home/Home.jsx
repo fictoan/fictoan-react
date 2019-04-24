@@ -63,7 +63,7 @@ class Home extends React.PureComponent {
 
                         <Form className="margin-bottom-huge">
                             <FormUnit>
-                                <InputField type="email" required />
+                                <InputField type="email" className="validate-this" required />
                                 <InputLabel value="Email 1" helpText="Enter your work email" />
                             </FormUnit>
 

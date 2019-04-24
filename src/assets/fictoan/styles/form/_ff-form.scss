@@ -1,15 +1,5 @@
 //  BASICS  ===============================================
 
-
-
-
-
-
-
-
-
-
-
 .ff-form-answers * { margin-bottom: 8px; }
 
 .ff-input.with-icon-left { padding-left : 40px; }
@@ -36,24 +26,12 @@ span.icon-right svg {
 
 .ff-input.with-icon-left:focus ~ span.icon-left svg { fill : $inputFocusIconFillColor; }
 
-.ff-input.validate-this { padding-right : 24px; }
-
 //.ff-input:invalid:not(:focus):not(:placeholder-shown) { background-color : rgba($colorRed, 0.24); }
 
-
-
-.ff-input.validate-this:focus ~ span.icon-right { opacity : 0.4; }
-.ff-input.validate-this:valid ~ span.icon-right { opacity : 1; }
-
-.ff-input.validate-this:valid ~ span.icon-right svg { fill : $colorGreen !important; }
-
-.ff-input[type=password] { letter-spacing: 4px; }
-
-textarea.ff-input {
-    max-width : 100%;
-    min-width : 100%;
-    resize    : vertical;
-}
+//.ff-input.validate-this:focus ~ span.icon-right { opacity : 0.4; }
+//.ff-input.validate-this:valid ~ span.icon-right { opacity : 1; }
+//
+//.ff-input.validate-this:valid ~ span.icon-right svg { fill : $colorGreen !important; }
 
 .ff-form-unit-group .unit-prefix,
 .ff-form-unit-group .unit-prefix select {
@@ -523,14 +501,14 @@ button.button-plain,
     content     : "\00d7";
     font-size   : 20px;
     line-height : 0;
-    align-self: center;
+    align-self  : center;
 }
 
 button.with-delete,
 .ff-button.with-delete,
 button.size-tiny.with-delete,
 .ff-button.size-tiny.with-delete,
-button.size-small.with-delete
+button.size-small.with-delete,
 .ff-button.size-small.with-delete { padding-right : 32px !important; }
 
 .ff-button.size-large.with-delete { padding-right : 40px !important; }
