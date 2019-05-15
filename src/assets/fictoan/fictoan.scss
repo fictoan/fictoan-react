@@ -26,8 +26,6 @@
 //  Basics
 @import "./styles/base/ff-layout";
 
-@import "./components/Row/Row";
-@import "./components/Portion/Portion";
 
 @import "./styles/base/ff-utilities";
 @import "./styles/base/ff-responsive";
@@ -35,9 +33,12 @@
 @import "./styles/design/ff-colours";
 @import "./styles/design/ff-typography";
 
+//  Layout
+@import "./components/Row/Row";
+@import "./components/Portion/Portion";
+
 //  Forms
 @import "./styles/form/ff-form";
-
 @import "components/Form/Form";
 @import "components/Form/FormUnit/FormUnit";
 @import "components/Form/InputField/InputField";
@@ -49,7 +50,7 @@
 //  Components
 @import "./components/Header/Header";
 
-// @import "./styles/components/ff-sidebar";
+//  Sidebar
 @import "components/SidebarWrapper/SidebarWrapper";
 @import "components/SidebarWrapper/SidebarItem/SidebarItem";
 @import "components/SidebarWrapper/SidebarItemIcon/SidebarItemIcon";
