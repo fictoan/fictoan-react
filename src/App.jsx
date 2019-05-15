@@ -25,7 +25,6 @@ class App extends React.PureComponent {
         return (
             <div>
                 <Router>
-                    <Header onMenuBtnClick={this.onMenuBtnClick}/>
 
                     <PageWithSidebar>
                         <SidebarWrapper>
@@ -91,6 +90,7 @@ class App extends React.PureComponent {
                         </SidebarWrapper>
 
                         <ContentWrapper>
+                            <Header onMenuBtnClick={this.onMenuBtnClick}/>
                             <Switch>
                                 <Route exact path='/' component={ Home }/>
                                 <Route exact path='/getting-started' component={ GettingStarted }/>

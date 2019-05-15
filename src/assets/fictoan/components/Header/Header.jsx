@@ -16,7 +16,7 @@ class Header extends React.PureComponent {
 
                     <Link to="/" className="header-logo vertically-centre-items">
                         {/*<img className="App-logo margin-right-fixed" alt="FICTOAN" />*/}
-                        <h6>FICTOAN</h6>
+                        <h6>F+R</h6>
                     </Link>
                 </Portion>
             </Row >

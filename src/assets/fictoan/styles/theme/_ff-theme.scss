@@ -25,9 +25,10 @@ $scaleFactor  : 1.24 !default;
 //  Variables for text
 $bodyFontSize  : 1em !default;
 $bodyFontColor : $colorShade !default;
+$bodyLineHeight : 1.6 !default;
+$bodyFontWeight : 400 !default;
 
-$bodyLineHeight    : 1.6 !default;
-$headingLineHeight : 1.2 !default;
+$headingLineHeight : 1.6 !default;
 $headingFontWeight : 600 !default;
 
 $linkColor      : $colorHue !default;
