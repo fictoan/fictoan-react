@@ -16,7 +16,7 @@ import {
 
 const exampleCode =
     `    
-    <button className="shape-rounded bg-red text-white shadow-soft">
+    <button className="shape-rounded bg-blue text-white shadow-hard">
         Click me!
     </button>
     `;
@@ -31,10 +31,10 @@ class Home extends React.PureComponent {
     render() {
         return (
             <div>
-                <Row className="padded-content margin-top-small">
+                <Row className="padded-content double-padding margin-top-small">
                     <Portion className="whole">
-                        {/*<h2 className="margin-bottom-small">React+FICTOAN</h2>*/}
-                        {/*<h5 className="weight-400 margin-bottom-tiny">Simple, modular components for building responsive interfaces in React. Style easily with functional CSS.</h5>*/}
+                        <h2 className="margin-bottom-small">FICTOAN, Reactised.</h2>
+                        <h5 className="weight-400 margin-bottom-fixed">Simple, modular components for building responsive interfaces in React. Style easily with classNames, like so—</h5>
 
                         <Highlight {...defaultProps} code={exampleCode} language="jsx" theme={undefined}>
                             {({className, style, tokens, getLineProps, getTokenProps}) => (
@@ -50,7 +50,7 @@ class Home extends React.PureComponent {
                             )}
                         </Highlight>
 
-                        <button className="shape-rounded bg-blue text-white shadow-soft">
+                        <button className="shape-rounded bg-blue text-white shadow-hard">
                             Click me!
                         </button>
                     </Portion>
@@ -58,36 +58,31 @@ class Home extends React.PureComponent {
 
                 <Row className="padded-content">
                     <Portion className="two-thirds">
-                        {/*<h6 className="weight-600">Intuitive class names</h6>*/}
-                        {/*<p>Simple, straightforward naming convention that just makes intuitive sense.</p>*/}
-                        <div className="margin-bottom-small">s</div>
+                        {/*<Form className="margin-bottom-tiny">*/}
+                        {/*    <FormUnit>*/}
+                        {/*        <InputField type="email" className="validate-this" required />*/}
+                        {/*        <InputLabel value="Email 1" helpText="Enter your work email" />*/}
+                        {/*    </FormUnit>*/}
 
-                        <Form className="margin-bottom-tiny">
-                            <FormUnit>
-                                <InputField type="email" className="validate-this" required />
-                                <InputLabel value="Email 1" helpText="Enter your work email" />
-                            </FormUnit>
+                        {/*    <FormUnit>*/}
+                        {/*        <InputField required />*/}
+                        {/*        <InputLabel value="Email 2" helpText="Enter your personal email" />*/}
+                        {/*    </FormUnit>*/}
 
-                            <FormUnit>
-                                <InputField required />
-                                <InputLabel value="Email 2" helpText="Enter your personal email" />
-                            </FormUnit>
+                        {/*    <FormGroup>*/}
+                        {/*        <FormUnit>*/}
+                        {/*            <InputField type="email" required />*/}
+                        {/*            <InputLabel value="First name" helpText="Huh" />*/}
+                        {/*        </FormUnit>*/}
 
-                            <FormGroup>
-                                <FormUnit>
-                                    <InputField type="email" required />
-                                    <InputLabel value="First name" helpText="Huh" />
-                                </FormUnit>
+                        {/*        <FormUnit>*/}
+                        {/*            <InputField required />*/}
+                        {/*            <InputLabel value="Last name" />*/}
+                        {/*        </FormUnit>*/}
+                        {/*    </FormGroup>*/}
 
-                                <FormUnit>
-                                    <InputField required />
-                                    <InputLabel value="Last name" />
-                                </FormUnit>
-                            </FormGroup>
-
-                            <Button className="shape-rounded bg-red text-white shadow-hard" value="Cancel"/>
-                        </Form>
-
+                        {/*    <Button className="shape-rounded bg-red text-white shadow-hard" value="Cancel"/>*/}
+                        {/*</Form>*/}
                     </Portion>
                 </Row>
             </div>
