@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 import { Row, Portion } from '../../fictoan';
@@ -13,11 +13,6 @@ class Header extends React.PureComponent {
                         <h6 className="weight-400">&mdash;</h6>
                         <h6 className="weight-400">&ndash;</h6>
                     </div>
-
-                    <Link to="/" className="header-logo vertically-centre-items">
-                        {/*<img className="App-logo margin-right-fixed" alt="FICTOAN" />*/}
-                        <h6>F+R</h6>
-                    </Link>
                 </Portion>
             </Row >
         )

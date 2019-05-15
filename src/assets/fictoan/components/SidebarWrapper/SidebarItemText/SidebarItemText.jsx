@@ -2,7 +2,7 @@ import React from 'react'
 
 function SidebarItemText(props) {
     return (
-        <p id={props.id} className={`sidebar-text ${props.className}`}>
+        <p id={props.id} className={`sidebar-text ${props.className || ""}`}>
             {props.children}
         </p>
     )
