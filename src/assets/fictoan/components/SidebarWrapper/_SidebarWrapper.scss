@@ -1,22 +1,20 @@
 .sidebar-wrapper {
     display          : flex;
     position         : fixed;
-    top              : 48px;
+    top              : 0;
     left             : 0;
     bottom           : 0;
     flex-direction   : column;
     width            : 240px;
-    grid-area        : sidebar-wrapper;
-    min-height       : calc(100vh - 56px);
+    min-height       : 100vh;
     overflow-y       : auto;
     transition       : all 0.4s ease-in-out;
     background-color : $sideBarBG;
     box-shadow       : 2px 0 2px -2px rgba(0, 0, 0, 0.24);
+    z-index          : 10000;
 }
 
-.sidebar-wrapper.open {
-    left : 0;
-}
+.sidebar-wrapper.open { left : 0; }
 
 .sidebar-section {
     padding        : 12px 24px;

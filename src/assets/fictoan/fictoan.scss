@@ -50,12 +50,11 @@
 @import "./components/Header/Header";
 
 // @import "./styles/components/ff-sidebar";
-@import "components/PageWithSidebar/PageWithSidebar";
-@import "components/PageWithSidebar/SidebarWrapper/SidebarWrapper";
-@import "components/PageWithSidebar/SidebarWrapper/SidebarItem/SidebarItem";
-@import "components/PageWithSidebar/SidebarWrapper/SidebarItemIcon/SidebarItemIcon";
-@import "components/PageWithSidebar/SidebarWrapper/SidebarItemText/SidebarItemText";
-@import "components/PageWithSidebar/ContentWrapper/ContentWrapper";
+@import "components/SidebarWrapper/SidebarWrapper";
+@import "components/SidebarWrapper/SidebarItem/SidebarItem";
+@import "components/SidebarWrapper/SidebarItemIcon/SidebarItemIcon";
+@import "components/SidebarWrapper/SidebarItemText/SidebarItemText";
+@import "components/ContentWrapper/ContentWrapper";
 
 @import "./components/Card/Card";
 

@@ -2,7 +2,12 @@
     display        : flex;
     flex-direction : column;
     width          : 100%;
-    grid-area      : content-wrapper;
+    //grid-area      : content-wrapper;
+}
+
+.sidebar-wrapper + .content-wrapper {
+    width       : calc(100% - 240px);
+    margin-left : 240px;
 }
 
 .double-padding {
@@ -10,15 +15,18 @@
     padding-right : 18vw;
 }
 
-@media (min-width: 901px) and (max-width: 1400px) {
+@media (min-width : 901px) and (max-width : 1400px) {
     .double-padding {
         padding-left  : 10vw;
         padding-right : 10vw;
     }
 }
 
-@media (max-width: 900px) {
-    .content-wrapper { margin-top: 56px; }
+@media (max-width : 900px) {
+    .sidebar-wrapper + .content-wrapper {
+        width       : 100%;
+        margin-left : 0;
+    }
 
     .double-padding {
         padding-left  : 6vw;

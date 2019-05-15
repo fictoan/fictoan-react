@@ -5,12 +5,11 @@ import Card from './components/Card/Card'
 
 import Header from './components/Header/Header'
 
-import PageWithSidebar from './components/PageWithSidebar/PageWithSidebar'
-import SidebarItemIcon from './components/PageWithSidebar/SidebarWrapper/SidebarItemIcon/SidebarItemIcon'
-import SidebarItemText from './components/PageWithSidebar/SidebarWrapper/SidebarItemText/SidebarItemText'
-import SidebarItem from './components/PageWithSidebar/SidebarWrapper/SidebarItem/SidebarItem'
-import SidebarWrapper from './components/PageWithSidebar/SidebarWrapper/SidebarWrapper'
-import ContentWrapper from './components/PageWithSidebar/ContentWrapper/ContentWrapper'
+import SidebarItemIcon from './components/SidebarWrapper/SidebarItemIcon/SidebarItemIcon'
+import SidebarItemText from './components/SidebarWrapper/SidebarItemText/SidebarItemText'
+import SidebarItem from './components/SidebarWrapper/SidebarItem/SidebarItem'
+import SidebarWrapper from './components/SidebarWrapper/SidebarWrapper'
+import ContentWrapper from './components/ContentWrapper/ContentWrapper'
 
 import Form from "./components/Form/Form";
 import FormUnit from "./components/Form/FormUnit/FormUnit";
@@ -19,8 +18,6 @@ import InputField from "./components/Form/InputField/InputField";
 import InputLabel from "./components/Form/InputLabel/InputLabel";
 
 import Button from "./components/Button/Button"
-
-
 
 export {
     Row,
@@ -31,7 +28,6 @@ export {
     SidebarItemText,
     SidebarItem,
     SidebarWrapper,
-    PageWithSidebar,
     ContentWrapper,
     Form,
     FormUnit,
