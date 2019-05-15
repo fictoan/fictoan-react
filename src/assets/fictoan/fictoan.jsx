@@ -18,6 +18,10 @@ import FormGroup from "./components/Form/FormGroup/FormGroup";
 import InputField from "./components/Form/InputField/InputField";
 import InputLabel from "./components/Form/InputLabel/InputLabel";
 
+import Button from "./components/Button/Button"
+
+
+
 export {
     Row,
     Portion,
@@ -34,4 +38,5 @@ export {
     FormGroup,
     InputField,
     InputLabel,
+    Button
 }

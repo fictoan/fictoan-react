@@ -11,6 +11,7 @@ import {
     FormGroup,
     InputField,
     InputLabel,
+    Button,
 } from '../../assets/fictoan/fictoan'
 
 const exampleCode =
@@ -61,7 +62,7 @@ class Home extends React.PureComponent {
                         {/*<p>Simple, straightforward naming convention that just makes intuitive sense.</p>*/}
                         <div className="margin-bottom-small">s</div>
 
-                        <Form className="margin-bottom-huge">
+                        <Form className="margin-bottom-tiny">
                             <FormUnit>
                                 <InputField type="email" className="validate-this" required />
                                 <InputLabel value="Email 1" helpText="Enter your work email" />
@@ -83,6 +84,8 @@ class Home extends React.PureComponent {
                                     <InputLabel value="Last name" />
                                 </FormUnit>
                             </FormGroup>
+
+                            <Button className="shape-rounded bg-red text-white shadow-hard" value="Cancel"/>
                         </Form>
 
                     </Portion>

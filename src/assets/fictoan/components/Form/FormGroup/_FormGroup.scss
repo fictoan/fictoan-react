@@ -10,6 +10,7 @@
 .ff-form-unit-group > input {
     flex           : 1 1 0;
     flex-direction : row;
+    margin-bottom  : 16px;
 }
 
 .ff-input-group > label {
@@ -39,8 +40,8 @@
 
 .ff-input-group > .ff-form-answers { flex : 3 1 0; }
 
-.ff-form .ff-form-unit,
-.ff-form .ff-input-group { margin-bottom : 40px; }
+//.ff-form .ff-form-unit,
+//.ff-form .ff-input-group { margin-bottom : 40px; }
 
-.ff-input-group > .ff-form-unit,
-.ff-form > .ff-input-group:last-of-type:not(:only-of-type) { margin-bottom : 0; }
+//.ff-input-group > .ff-form-unit,
+//.ff-form > .ff-input-group:last-of-type:not(:only-of-type) { margin-bottom : 0; }
