@@ -2,21 +2,6 @@
     display       : flex;
     flex-wrap     : wrap;
     align-items   : flex-start;
-    margin-bottom : 0;
-}
-
-.ff-content-container > .row,
-.padded-content > .row {
-    margin-left  : -$measureFixed*3;
-    margin-right : -$measureFixed*3;
-}
-
-@media all and (max-width : 1200px) {
-    .ff-content-container .row,
-    .padded-content .row {
-        margin-left  : 0;
-        margin-right : 0
-    }
 }
 
 @media all and (max-width : 600px) {
