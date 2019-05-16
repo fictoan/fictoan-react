@@ -1,11 +1,11 @@
 .row {
-    display       : flex;
-    flex-wrap     : wrap;
-    align-items   : flex-start;
+    display     : flex;
+    flex-wrap   : wrap;
+    align-items : flex-start;
 }
 
 @media all and (max-width : 600px) {
-    .row { padding : 0 2vmin; } 
+    .row { padding : 0 2vmin; }
 
     .portion { padding : 0 !important; }
 
@@ -15,7 +15,7 @@
 //  Responsiveness
 .retain-layout-always .portion { flex : none !important; }
 
-@media all and (max-width: 600px) {
+@media all and (max-width : 600px) {
     .row.retain-layout-on-mobile > .portion { flex : none !important; }
 }
 
@@ -31,27 +31,36 @@
     .row:not([class*='retain-layout']) > .portion { margin-bottom : 2vmax; }
 }
 
+
+.content-padding-tiny {
+    padding-left  : 4vmax;
+    padding-right : 4vmax;
+}
+
+.content-padding-small {
+    padding-left  : 8vmax;
+    padding-right : 8vmax;
+}
+
+.content-padding-medium {
+    padding-left  : 12vmax;
+    padding-right : 12vmax;
+}
+
+.content-padding-large {
+    padding-left  : 18vmax;
+    padding-right : 18vmax;
+}
+
+.content-padding-huge {
+    padding-left  : 24vmax;
+    padding-right : 24vmax;
+}
+
 //  Side margins for all your content - increase or decrease at will
 @media all and (max-width : 600px) {
-    .padded-content { padding : 0 2vw; }
-}
-
-@media all and (min-width : 600px) {
-    .padded-content { padding : 0 4vw; }
-}
-
-@media all and (min-width : 900px) {
-    .padded-content { padding : 0 8vw; }
-}
-
-@media all and (min-width : 1200px) {
-    .padded-content { padding : 0 10vw; }
-}
-
-@media all and (min-width : 1800px) {
-    .padded-content { padding : 0 12vw; }
-}
-
-@media all and (min-width : 2400px) {
-    .padded-content { padding : 0 16vw; }
+    *[class*="content-padding-"] {
+        padding-left  : 6vw;
+        padding-right : 6vw;
+    }
 }

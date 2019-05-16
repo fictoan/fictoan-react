@@ -91,13 +91,13 @@ class Layout extends React.PureComponent {
     render() {
         return (
             <div id="page-layout">
-                <Row className="padded-content double-padding margin-top-small">
+                <Row className="content-padding-large margin-top-small">
                     <Portion className="whole">
                         <h2 className="text-green">Layout</h2>
                     </Portion>
                 </Row>
 
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole no-padding-bottom">
                         <h3>Grid setup</h3>
                     </Portion>
@@ -107,14 +107,14 @@ class Layout extends React.PureComponent {
                     </Portion>
                 </Row>
 
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole">
                         <hr className="bg-slate-20 no-margin" />
                     </Portion>
                 </Row>
 
                 {/*  Equal-width columns  =========================================================================  */}
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole no-padding-bottom">
                         <h5>Equal-width columns</h5>
                         <p>Add as many <code>Portion</code> divs you need, they’ll occupy equal space on the row. Two will occupy 50% each, three will take up 33.33% each, four– 25% each, and so on.</p>
@@ -147,15 +147,15 @@ class Layout extends React.PureComponent {
                 </Row>
 
 
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-tiny no-margin-bottom" />
+                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
                     </Portion>
                 </Row>
 
 
                 {/*  Unequal-width columns  =======================================================================  */}
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole no-padding-bottom">
                         <h5>Unequal-width columns</h5>
                         <p>Add a class to the <code>Portion</code>, in fractions, starting with <code>whole</code>, and all the way to <code>fifteen-sixteenths</code>.</p>
@@ -189,15 +189,15 @@ class Layout extends React.PureComponent {
                     <Portion className="two-twelfths bg-green-40">2/12</Portion>
                 </Row>
 
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-tiny no-margin-bottom" />
+                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
                     </Portion>
                 </Row>
 
 
                 {/*  Mixed-width columns  =========================================================================  */}
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole no-padding-bottom">
                         <h5>Mixed-width columns</h5>
                         <p>You cdd classes to just some of the <code>Portion</code>s, and the others will distribute the remaining space amongst themselves.</p>
@@ -231,15 +231,15 @@ class Layout extends React.PureComponent {
 
 
 
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-tiny no-margin-bottom" />
+                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
                     </Portion>
                 </Row>
 
 
                 {/*  Responsive helpers  //////////////////////////////////////////////////////////////////////////  */}
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole no-padding-bottom">
                         <h3>Responsiveness</h3>
                     </Portion>
@@ -302,15 +302,15 @@ class Layout extends React.PureComponent {
                     </Portion>
                 </Row>
 
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-tiny no-margin-bottom" />
+                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
                     </Portion>
                 </Row>
 
 
                 {/*  Turn off Responsiveness  =====================================================================  */}
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole">
                         <h5>Turn off responsiveness</h5>
                         <p>By default, all <code>Portions</code> become 100% width on mobile. But you can turn off this behaviour, again with classes for the <code>Row</code>.</p>
@@ -335,28 +335,28 @@ class Layout extends React.PureComponent {
                     </Portion>
                 </Row>
 
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-fixed no-margin-bottom" />
+                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
                     </Portion>
                 </Row>
 
 
                 {/*  Visibility  ==================================================================================  */}
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole">
                         <h5>Visibility across breakpoints</h5>
                         <p>Add any combination of these below classes to any element to show or hide across the breakpoints defined above.</p>
                     </Portion>
 
-                    <Portion className="half">
+                    <Portion className="half half-on-tab-ls half-on-tab-pt half-on-mobile">
                         <code className="margin-bottom-fixed">hide-on-desktop</code>
                         <code className="margin-bottom-fixed">hide-on-tab-ls</code>
                         <code className="margin-bottom-fixed">hide-on-tab-ls</code>
                         <code className="margin-bottom-fixed">hide-on-mobile</code>
                     </Portion>
 
-                    <Portion className="half">
+                    <Portion className="half half-on-tab-ls half-on-tab-pt half-on-mobile">
                         <code className="margin-bottom-fixed">show-only-on-desktop</code>
                         <code className="margin-bottom-fixed">show-only-on-tab-ls</code>
                         <code className="margin-bottom-fixed">show-only-on-tab-ls</code>
@@ -365,15 +365,15 @@ class Layout extends React.PureComponent {
                 </Row>
 
 
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-tiny no-margin-bottom" />
+                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
                     </Portion>
                 </Row>
 
 
                 {/*  Gutters - Default  //////////////////////////////////////////////////////////////////////////  */}
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole no-padding-bottom">
                         <h3>Gutters</h3>
                     </Portion>
@@ -400,15 +400,15 @@ class Layout extends React.PureComponent {
                     </Portion>
                 </Row>
 
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-tiny no-margin-bottom" />
+                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
                     </Portion>
                 </Row>
 
 
                 {/*  Gutters - Large  //////////////////////////////////////////////////////////////////////////  */}
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole no-padding-bottom">
                         <h5>Large gutters</h5>
                         <p>Add <code>large-gutters</code> class to the <code>Row</code> parent to increase gutter width.</p>
@@ -449,16 +449,16 @@ class Layout extends React.PureComponent {
                     </Portion>
                 </Row>
 
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-tiny no-margin-bottom" />
+                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
                     </Portion>
                 </Row>
 
 
 
                 {/*  Gutters - Small  //////////////////////////////////////////////////////////////////////////  */}
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole no-padding-bottom">
                         <h5>Small gutters</h5>
                         <p>Add <code>small-gutters</code> class to the <code>Row</code> parent to decrease gutter width.</p>
@@ -500,16 +500,16 @@ class Layout extends React.PureComponent {
                     </Portion>
                 </Row>
 
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-tiny no-margin-bottom" />
+                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
                     </Portion>
                 </Row>
 
 
 
                 {/*  Gutters - None  //////////////////////////////////////////////////////////////////////////  */}
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole no-padding-bottom">
                         <h5>No gutters</h5>
                         <p>Add <code>no-gutters</code> class to the <code>Row</code> parent to remove gutter width.</p>
@@ -551,9 +551,9 @@ class Layout extends React.PureComponent {
                     </Portion>
                 </Row>
 
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-tiny no-margin-bottom" />
+                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
                     </Portion>
                 </Row>
 
@@ -561,7 +561,7 @@ class Layout extends React.PureComponent {
 
 
                 {/*  Padding - Default  //////////////////////////////////////////////////////////////////////////  */}
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole no-padding-bottom">
                         <h3>Content padding</h3>
                     </Portion>
@@ -590,7 +590,7 @@ class Layout extends React.PureComponent {
                     </Portion>
                 </Row>
 
-                <Row className="padded-content margin-all-tiny shape-rounded shadow-soft bg-green border-green">
+                <Row className="content-padding-tiny margin-all-tiny shape-rounded shadow-soft bg-green border-green">
                     <Portion className="whole bg-green-80">Row</Portion>
                     <Portion className="bg-green-40">
                         <p>Portion</p>
@@ -598,9 +598,9 @@ class Layout extends React.PureComponent {
                     </Portion>
                 </Row>
 
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-tiny no-margin-bottom" />
+                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
                     </Portion>
                 </Row>
 
@@ -608,7 +608,7 @@ class Layout extends React.PureComponent {
 
 
                 {/*  Padding - Double  ///////////////////////////////////////////////////////////////////////////  */}
-                <Row className="padded-content double-padding">
+                <Row className="content-padding-large">
                     <Portion className="whole no-padding-bottom">
                         <h5>Double padding</h5>
                         <p>The <code>Portion</code> by default takes up the full width of the parent <code>Row</code>. You can add padding to the left and right sides to centre the content.</p>
@@ -633,9 +633,9 @@ class Layout extends React.PureComponent {
                     </Portion>
                 </Row>
 
-                <Row className="padded-content double-padding margin-all-tiny shape-rounded shadow-soft bg-green border-green margin-bottom-large">
+                <Row className="content-padding-large margin-all-tiny shape-rounded shadow-soft bg-green border-green margin-bottom-large">
                     <Portion className="whole bg-green-80">Row</Portion>
-                    <Portion className="bg-green-40">
+                    <Portion className="whole bg-green-40">
                         <p>Portion</p>
                         <div className="full-width padding-all-tiny bg-yellow-40 border-yellow">Content</div>
                     </Portion>

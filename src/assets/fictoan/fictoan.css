@@ -517,14 +517,14 @@ footer {
 }
 
 .ff-content-container > .row,
-.padded-content > .row {
+.content-padding-tiny > .row {
   margin-left: -24px;
   margin-right: -24px;
 }
 
 @media all and (max-width: 1200px) {
   .ff-content-container .row,
-  .padded-content .row {
+  .content-padding-tiny .row {
     margin-left: 0;
     margin-right: 0;
   }
@@ -579,37 +579,37 @@ footer {
 }
 
 @media all and (max-width: 600px) {
-  .padded-content {
+  .content-padding-tiny {
     padding: 0 2vw;
   }
 }
 
 @media all and (min-width: 600px) {
-  .padded-content {
+  .content-padding-tiny {
     padding: 0 4vw;
   }
 }
 
 @media all and (min-width: 900px) {
-  .padded-content {
+  .content-padding-tiny {
     padding: 0 8vw;
   }
 }
 
 @media all and (min-width: 1200px) {
-  .padded-content {
+  .content-padding-tiny {
     padding: 0 10vw;
   }
 }
 
 @media all and (min-width: 1800px) {
-  .padded-content {
+  .content-padding-tiny {
     padding: 0 12vw;
   }
 }
 
 @media all and (min-width: 2400px) {
-  .padded-content {
+  .content-padding-tiny {
     padding: 0 16vw;
   }
 }
@@ -8240,13 +8240,13 @@ code,
   grid-area: content;
 }
 
-.double-padding {
+.content-padding-large {
   padding-left: 18vw;
   padding-right: 18vw;
 }
 
 @media (min-width: 901px) and (max-width: 1400px) {
-  .double-padding {
+  .content-padding-large {
     padding-left: 6vw;
     padding-right: 6vw;
   }
@@ -8256,7 +8256,7 @@ code,
   .content {
     margin-top: 56px;
   }
-  .double-padding {
+  .content-padding-large {
     padding-left: 6vw;
     padding-right: 6vw;
   }

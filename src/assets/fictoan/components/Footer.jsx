@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import icon from '../assets/images/logo/icon-ft-on-dp.svg';
 
 const Footer = () => (
-    <footer className="row padded-content bg-pearly-coke padding-top-tiny padding-bottom-tiny">
+    <footer className="row content-padding-tiny bg-pearly-coke padding-top-tiny padding-bottom-tiny">
         <div className="portion one-fourth half-on-mobile">
             <Link to="/" className="margin-bottom-fixed">
                 <img className="icon-large" src={icon} alt="Setu logo" />

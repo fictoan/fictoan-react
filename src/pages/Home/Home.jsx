@@ -27,7 +27,7 @@ class Home extends React.PureComponent {
     render() {
         return (
             <div>
-                <Row className="padded-content double-padding margin-top-small">
+                <Row className="content-padding-tiny content-padding-large margin-top-small">
                     <Portion className="whole">
                         <h2 className="margin-bottom-small">FICTOAN, Reactised.</h2>
                         <h5 className="weight-400 margin-bottom-fixed">Simple, modular components for quickly building responsive interfaces in React. Style easily with <code>className</code>, like so—</h5>
@@ -51,36 +51,6 @@ class Home extends React.PureComponent {
                         <button className="shape-rounded bg-blue text-white shadow-hard">
                             Click me!
                         </button>
-                    </Portion>
-                </Row>
-
-                <Row className="padded-content">
-                    <Portion className="two-thirds">
-                        {/*<Form className="margin-bottom-tiny">*/}
-                        {/*    <FormUnit>*/}
-                        {/*        <InputField type="email" className="validate-this" required />*/}
-                        {/*        <InputLabel value="Email 1" helpText="Enter your work email" />*/}
-                        {/*    </FormUnit>*/}
-
-                        {/*    <FormUnit>*/}
-                        {/*        <InputField required />*/}
-                        {/*        <InputLabel value="Email 2" helpText="Enter your personal email" />*/}
-                        {/*    </FormUnit>*/}
-
-                        {/*    <FormGroup>*/}
-                        {/*        <FormUnit>*/}
-                        {/*            <InputField type="email" required />*/}
-                        {/*            <InputLabel value="First name" helpText="Huh" />*/}
-                        {/*        </FormUnit>*/}
-
-                        {/*        <FormUnit>*/}
-                        {/*            <InputField required />*/}
-                        {/*            <InputLabel value="Last name" />*/}
-                        {/*        </FormUnit>*/}
-                        {/*    </FormGroup>*/}
-
-                        {/*    <Button className="shape-rounded bg-red text-white shadow-hard" value="Cancel"/>*/}
-                        {/*</Form>*/}
                     </Portion>
                 </Row>
             </div>

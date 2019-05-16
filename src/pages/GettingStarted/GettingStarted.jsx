@@ -13,7 +13,7 @@ class GettingStarted extends React.PureComponent {
     render() {
         return (
             <div>
-                <Row className="double-padding margin-top-small">
+                <Row className="content-padding-large margin-top-small">
                     <Portion className="whole">
                         <h2 className="margin-bottom-fixed">Getting started</h2>
                     </Portion>
