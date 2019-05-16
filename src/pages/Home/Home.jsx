@@ -29,7 +29,7 @@ class Home extends React.PureComponent {
             <div>
                 <Row className="padded-content double-padding margin-top-small">
                     <Portion className="whole">
-                        {/*<h2 className="margin-bottom-small">FICTOAN, Reactised.</h2>*/}
+                        <h2 className="margin-bottom-small">FICTOAN, Reactised.</h2>
                         <h5 className="weight-400 margin-bottom-fixed">Simple, modular components for quickly building responsive interfaces in React. Style easily with <code>className</code>, like so—</h5>
 
                         <pre className="full-width">

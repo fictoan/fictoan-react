@@ -1,15 +1,15 @@
 @font-face {
-    font-family : "Archia";
+    font-family : "Object Sans";
     font-weight : 400;
     font-style  : normal;
-    src         : url('../fonts/archia-regular.woff') format('woff');
+    src         : url('../fonts/ObjectSans-Regular.otf') format('opentype');
 }
 
 @font-face {
-    font-family : "Archia";
+    font-family : "Object Sans";
     font-weight : 600;
     font-style  : normal;
-    src         : url('../fonts/archia-bold.woff') format('woff');
+    src         : url('../fonts/ObjectSans-Heavy.otf') format('opentype');
 }
 
 .sample-code { white-space : initial; }
