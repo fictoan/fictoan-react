@@ -1,15 +1,15 @@
 @font-face {
-    font-family : "Object Sans";
+    font-family : "Space Grotesk";
     font-weight : 400;
     font-style  : normal;
-    src         : url('../fonts/ObjectSans-Regular.otf') format('opentype');
+    src         : url('../fonts/SpaceGrotesk-Regular.woff') format('woff');
 }
 
 @font-face {
-    font-family : "Object Sans";
+    font-family : "Space Grotesk";
     font-weight : 600;
     font-style  : normal;
-    src         : url('../fonts/ObjectSans-Heavy.otf') format('opentype');
+    src         : url('../fonts/SpaceGrotesk-Bold.woff') format('woff');
 }
 
 .sample-code { white-space : initial; }

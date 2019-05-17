@@ -13,7 +13,7 @@
 }
 
 //  Responsiveness
-.retain-layout-always .portion { flex : none !important; }
+.row.retain-layout-always .portion { flex : none !important; }
 
 @media all and (max-width : 600px) {
     .row.retain-layout-on-mobile > .portion { flex : none !important; }
@@ -28,7 +28,7 @@
 }
 
 @media all and (max-width : 900px) {
-    .row:not([class*='retain-layout']) > .portion { margin-bottom : 2vmax; }
+    .row:not([class^='retain-layout']) > .portion { margin-bottom : 2vmax; }
 }
 
 
