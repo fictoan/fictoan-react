@@ -28,7 +28,7 @@ class App extends React.PureComponent {
             <Router>
                 <SidebarWrapper>
                     <SidebarHeader>
-                        <h4 className="text-green-80">F&R</h4>
+                        <h4 className="text-hue">F&R</h4>
                     </SidebarHeader>
 
                     <Link to="/">

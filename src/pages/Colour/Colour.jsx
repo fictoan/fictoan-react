@@ -3,7 +3,8 @@ import Highlight, {defaultProps} from "prism-react-renderer";
 
 import {
     Row,
-    Portion, Card,
+    Portion,
+    Card,
 } from '../../assets/fictoan/fictoan'
 
 
@@ -41,7 +42,7 @@ class Colour extends React.PureComponent {
             <div id="page-layout">
                 <Row className="content-padding-large margin-top-small">
                     <Portion className="whole">
-                        <h2 className="text-green">Colour</h2>
+                        <h2 className="text-hue">Colour</h2>
                     </Portion>
                 </Row>
 
@@ -51,7 +52,31 @@ class Colour extends React.PureComponent {
                     </Portion>
 
                     <Portion className="whole">
-                        <p>FICTOAN uses a 16–column grid system. Setting up your columns is simple— add a <code>Row</code> parent with as many <code>Portion</code> children as you need.</p>
+                        <p>FICTOAN uses a HSL-based colour system, and you should, too. You can read why <a href="https://sujansundareswaran.com/blog/why-hsl-is-better-than-hex-and-rgb">here ↗</a>.</p>
+
+                        <p></p>
+                    </Portion>
+                </Row>
+
+                <Row className="content-padding-large no-gutters">
+                    <Portion className="one-fifth no-padding-bottom">
+                        <Card className="bg-hue padding-all-tiny"/>
+                    </Portion>
+
+                    <Portion className="one-fifth no-padding-bottom">
+                        <Card className="bg-shade padding-all-tiny"/>
+                    </Portion>
+
+                    <Portion className="one-fifth no-padding-bottom">
+                        <Card className="bg-tint padding-all-tiny"/>
+                    </Portion>
+
+                    <Portion className="one-fifth no-padding-bottom">
+                        <Card className="bg-analogue padding-all-tiny"/>
+                    </Portion>
+
+                    <Portion className="one-fifth no-padding-bottom">
+                        <Card className="bg-accent padding-all-tiny"/>
                     </Portion>
                 </Row>
 

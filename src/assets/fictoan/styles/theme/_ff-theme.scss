@@ -3,18 +3,18 @@ $measureFixed   : 8px !default;
 $measureDynamic : 2vmax !default;
 
 //  Colours  ==================================================================
-$colorHue      :            $colorBlue-80 !default;
-$colorTint     :    lighten($colorBlue-80, 44%) !default;
-$colorShade    :     darken($colorBlue-80, 40%) !default;
-$colorAnalogue : complement($colorBlue-80) !default;
-$colorAccent   : adjust-hue($colorBlue-80, -32deg) !default;
+$colorHue      :            $colorAmber !default;
+$colorTint     :    lighten($colorHue, 36%) !default;
+$colorShade    :     darken($colorHue, 56%) !default;
+$colorAnalogue : complement($colorHue) !default;
+$colorAccent   : adjust-hue($colorHue, -216deg) !default;
 
 
 //  Body basics  ==============================================================
 $bodyBgColor : $colorWhite !default;
 
 //  Fonts
-$fontSans  : "Work Sans", sans-serif !default;
+$fontSans  : "Space Grotesk", sans-serif !default;
 $fontSerif : "Eczar", serif !default;
 $fontMono  : "Space Mono", monospace !default;
 

@@ -90,7 +90,7 @@ class Layout extends React.PureComponent {
             <div id="page-layout">
                 <Row className="content-padding-large margin-top-small">
                     <Portion className="whole">
-                        <h2 className="text-green">Layout</h2>
+                        <h2 className="text-hue">Layout</h2>
                     </Portion>
                 </Row>
 
@@ -386,15 +386,15 @@ class Layout extends React.PureComponent {
                     <Portion className="whole bg-slate-60">Row</Portion>
                     <Portion className="bg-slate-20">
                         <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-yellow-40 border-yellow">Content</div>
+                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
                     </Portion>
                     <Portion className="bg-slate-40">
                         <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-yellow-40 border-yellow">Content</div>
+                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
                     </Portion>
                     <Portion className="bg-slate-20">
                         <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-yellow-40 border-yellow">Content</div>
+                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
                     </Portion>
                 </Row>
 
@@ -435,15 +435,15 @@ class Layout extends React.PureComponent {
                     <Portion className="whole bg-slate-60">Row</Portion>
                     <Portion className="bg-slate-20">
                         <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-yellow-40 border-yellow">Content</div>
+                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
                     </Portion>
                     <Portion className="bg-slate-40">
                         <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-yellow-40 border-yellow">Content</div>
+                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
                     </Portion>
                     <Portion className="bg-slate-20">
                         <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-yellow-40 border-yellow">Content</div>
+                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
                     </Portion>
                 </Row>
 
@@ -486,15 +486,15 @@ class Layout extends React.PureComponent {
                     <Portion className="whole bg-slate-60">Row</Portion>
                     <Portion className="bg-slate-20">
                         <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-yellow-40 border-yellow">Content</div>
+                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
                     </Portion>
                     <Portion className="bg-slate-40">
                         <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-yellow-40 border-yellow">Content</div>
+                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
                     </Portion>
                     <Portion className="bg-slate-20">
                         <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-yellow-40 border-yellow">Content</div>
+                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
                     </Portion>
                 </Row>
 
@@ -537,15 +537,15 @@ class Layout extends React.PureComponent {
                     <Portion className="whole bg-slate-60">Row.large-gutters</Portion>
                     <Portion className="bg-slate-20">
                         <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-yellow-40 border-yellow">Content</div>
+                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
                     </Portion>
                     <Portion className="bg-slate-40">
                         <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-yellow-40 border-yellow">Content</div>
+                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
                     </Portion>
                     <Portion className="bg-slate-20">
                         <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-yellow-40 border-yellow">Content</div>
+                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
                     </Portion>
                 </Row>
 
@@ -588,7 +588,7 @@ class Layout extends React.PureComponent {
                     <Portion className="whole bg-slate-60">Row</Portion>
                     <Portion className="bg-slate-20">
                         <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-yellow-40 border-yellow">Content</div>
+                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
                     </Portion>
                 </Row>
 
@@ -596,7 +596,7 @@ class Layout extends React.PureComponent {
                     <Portion className="whole bg-slate-60">Row</Portion>
                     <Portion className="bg-slate-20">
                         <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-yellow-40 border-yellow">Content</div>
+                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
                     </Portion>
                 </Row>
 
@@ -604,7 +604,7 @@ class Layout extends React.PureComponent {
                     <Portion className="whole bg-slate-60">Row</Portion>
                     <Portion className="bg-slate-20">
                         <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-yellow-40 border-yellow">Content</div>
+                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
                     </Portion>
                 </Row>
 
@@ -612,7 +612,7 @@ class Layout extends React.PureComponent {
                     <Portion className="whole bg-slate-60">Row</Portion>
                     <Portion className="bg-slate-20">
                         <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-yellow-40 border-yellow">Content</div>
+                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
                     </Portion>
                 </Row>
 
@@ -620,7 +620,7 @@ class Layout extends React.PureComponent {
                     <Portion className="whole bg-slate-60">Row</Portion>
                     <Portion className="bg-slate-20">
                         <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-yellow-40 border-yellow">Content</div>
+                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
                     </Portion>
                 </Row>
 
