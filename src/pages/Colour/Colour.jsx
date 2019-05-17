@@ -159,6 +159,52 @@ class Colour extends React.PureComponent {
 
 
 
+                {/*  SALMON  =====================================================================================  */}
+                <Row className="margin-all-tiny no-gutters">
+                    <Portion className="one-eighth-on-tab-ls one-fifth-on-tab-pt one-fifth-on-mobile">
+                        <Card className="bg-salmon margin-bottom-fixed padding-all-fixed padding-top-tiny no-border" />
+                        <p>salmon</p>
+                    </Portion>
+                    <Portion className="one-eighth-on-tab-ls one-fifth-on-tab-pt one-fifth-on-mobile">
+                        <Card className="bg-salmon-90 margin-bottom-fixed padding-all-fixed padding-top-tiny no-border" />
+                        <p>salmon-90</p>
+                    </Portion>
+                    <Portion className="one-eighth-on-tab-ls one-fifth-on-tab-pt one-fifth-on-mobile">
+                        <Card className="bg-salmon-80 margin-bottom-fixed padding-all-fixed padding-top-tiny no-border" />
+                        <p>salmon-80</p>
+                    </Portion>
+                    <Portion className="one-eighth-on-tab-ls one-fifth-on-tab-pt one-fifth-on-mobile">
+                        <Card className="bg-salmon-70 margin-bottom-fixed padding-all-fixed padding-top-tiny no-border" />
+                        <p>salmon-70</p>
+                    </Portion>
+                    <Portion className="one-eighth-on-tab-ls one-fifth-on-tab-pt one-fifth-on-mobile">
+                        <Card className="bg-salmon-60 margin-bottom-fixed padding-all-fixed padding-top-tiny no-border" />
+                        <p>salmon-60</p>
+                    </Portion>
+                    <Portion className="one-eighth-on-tab-ls one-fifth-on-tab-pt one-fifth-on-mobile">
+                        <Card className="bg-salmon-50 margin-bottom-fixed padding-all-fixed padding-top-tiny no-border" />
+                        <p>salmon-50</p>
+                    </Portion>
+                    <Portion className="one-eighth-on-tab-ls one-fifth-on-tab-pt one-fifth-on-mobile">
+                        <Card className="bg-salmon-40 margin-bottom-fixed padding-all-fixed padding-top-tiny no-border" />
+                        <p>salmon-40</p>
+                    </Portion>
+                    <Portion className="one-eighth-on-tab-ls one-fifth-on-tab-pt one-fifth-on-mobile">
+                        <Card className="bg-salmon-30 margin-bottom-fixed padding-all-fixed padding-top-tiny no-border" />
+                        <p>salmon-30</p>
+                    </Portion>
+                    <Portion className="one-eighth-on-tab-ls one-fifth-on-tab-pt one-fifth-on-mobile">
+                        <Card className="bg-salmon-20 margin-bottom-fixed padding-all-fixed padding-top-tiny no-border" />
+                        <p>salmon-20</p>
+                    </Portion>
+                    <Portion className="one-eighth-on-tab-ls one-fifth-on-tab-pt one-fifth-on-mobile">
+                        <Card className="bg-salmon-10 margin-bottom-fixed padding-all-fixed padding-top-tiny no-border" />
+                        <p>salmon-10</p>
+                    </Portion>
+                </Row>
+
+
+
                 {/*  ORANGE  =====================================================================================  */}
                 <Row className="margin-all-tiny no-gutters">
                     <Portion className="one-eighth-on-tab-ls one-fifth-on-tab-pt one-fifth-on-mobile">
@@ -748,6 +794,9 @@ class Colour extends React.PureComponent {
                         <p>red-10</p>
                     </Portion>
                 </Row>
+
+
+
 
 
                 {/*  CRIMSON  ====================================================================================  */}
