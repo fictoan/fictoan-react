@@ -16,6 +16,7 @@ import {
 import Home from './pages/Home/Home'
 import GettingStarted from './pages/GettingStarted/GettingStarted'
 import Layout from "./pages/Layout/Layout";
+import Colour from "./pages/Colour/Colour";
 
 class App extends React.PureComponent {
     componentDidMount() {
@@ -99,6 +100,7 @@ class App extends React.PureComponent {
                         <Route exact path='/' component={ Home }/>
                         <Route exact path='/getting-started' component={ GettingStarted }/>
                         <Route exact path='/layout' component={ Layout }/>
+                        <Route exact path='/colour' component={ Colour }/>
                     </Switch>
                 </ContentWrapper>
             </Router>
