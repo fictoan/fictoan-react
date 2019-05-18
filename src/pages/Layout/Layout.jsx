@@ -3,7 +3,7 @@ import Highlight, {defaultProps} from "prism-react-renderer";
 
 import {
     Row,
-    Portion,
+    Portion
 } from '../../assets/fictoan/fictoan'
 
 

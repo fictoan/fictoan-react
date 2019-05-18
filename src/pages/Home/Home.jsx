@@ -44,7 +44,7 @@ class Home extends React.PureComponent {
                                             </div>
                                         ))}
                                     </code>
-                                )}\
+                                )}
                             </Highlight>
                         </pre>
 

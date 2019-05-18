@@ -23,16 +23,16 @@ $baseFontSize : 1em !default;
 $scaleFactor  : 1.24 !default;
 
 //  Variables for text
-$bodyFontSize  : 1em !default;
-$bodyFontColor : $colorShade !default;
+$bodyFontSize   : 1em !default;
+$bodyFontColor  : $colorShade !default;
 $bodyLineHeight : 1.6 !default;
 $bodyFontWeight : 400 !default;
 
 $headingLineHeight : 1.6 !default;
 $headingFontWeight : 600 !default;
 
-$linkColor      : $colorHue !default;
-$linkHoverColor : rgba($colorHue, 0.64) !default;
+$linkColor      : $colorAnalogue !default;
+$linkHoverColor : rgba($colorAnalogue, 0.64) !default;
 
 //  Inline code
 $fontCode            : $fontMono !default;

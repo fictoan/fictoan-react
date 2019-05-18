@@ -2,7 +2,7 @@
     display     : flex;
     flex        : 1 1 0;
     align-items : flex-start;
-    padding     : 24px;
+    padding     : $measureFixed*3;
 }
 
 .portion { flex-direction : column; }
@@ -26,20 +26,57 @@
 
 .row > .portion:only-of-type { margin-bottom : 0; }
 
+//  Large gutters
 .row.large-gutters > .portion {
     padding-left  : $measureFixed*4;
     padding-right : $measureFixed*4;
 }
 
+.row.large-gutters > .portion:first-child {
+    padding-right : $measureFixed*4;
+    padding-left  : $measureFixed*3;
+}
+
+.row.large-gutters > .portion:last-child {
+    padding-left  : $measureFixed*4;
+    padding-right : $measureFixed*3;
+}
+
+.row.large-gutters > .portion:not(:first-child):not(:last-child) {
+    padding-left  : $measureFixed*4;
+    padding-right : $measureFixed*4;
+}
+
+//  Small gutters
 .row.small-gutters > .portion {
     padding-left  : $measureFixed;
     padding-right : $measureFixed;
 }
 
-.row.no-gutters > .portion {
+.row.small-gutters > .portion:first-child {
+    padding-right : $measureFixed;
+    padding-left  : $measureFixed*3;
+}
+
+.row.small-gutters > .portion:last-child {
+    padding-left  : $measureFixed;
+    padding-right : $measureFixed*3;
+}
+
+.row.small-gutters > .portion:not(:first-child):not(:last-child) {
+    padding-left  : $measureFixed;
+    padding-right : $measureFixed;
+}
+
+//  No gutters
+.row.no-gutters > .portion:first-child { padding-right : 0; }
+.row.no-gutters > .portion:last-child  { padding-left  : 0; }
+
+.row.no-gutters > .portion:not(:first-child):not(:last-child) {
     padding-left  : 0;
     padding-right : 0;
 }
+
 
 //  Remove portion-padding as card itself has padding
 .ff-card .row[class*="retain-layout"] > .portion:first-of-type { padding-left  : 0; }

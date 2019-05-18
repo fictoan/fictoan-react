@@ -28,7 +28,7 @@ const egColourUsage=
 const egColourScheme=
     `// Primary colour
 $colorHue : $colorAmber; //#fcb83b
- 
+
 // Derived colours
 $colorTint     : lighten($colorHue, 36%);
 $colorShade    : darken($colorHue, 56%);
@@ -62,26 +62,36 @@ class Colour extends React.PureComponent {
                         <h3>Colour scheme</h3>
                     </Portion>
 
-                    <Portion className="one-fifth no-padding-bottom no-padding-right">
+                    <Portion className="whole no-padding-bottom">
+                        <p>FICTOAN uses a HSL-based colour system, and you should, too. You can read why <a href="https://sujansundareswaran.com/blog/why-hsl-is-better-than-hex-and-rgb">here ↗</a>.</p>
+
+                        <p>An yellow-ish orange serves as the primary hue. Rich black for text, and a mild tint of the primary hue for backgrounds. Comes with one complementary colour and one accent. All colours are manipulations of the primary hue, as you can see below.</p>
+                    </Portion>
+                </Row>
+
+                <Row className="content-padding-large small-gutters">
+                    <Portion className="one-fifth no-padding-bottom">
                         <Card className="bg-hue padding-all-fixed padding-top-tiny"/>
                     </Portion>
 
-                    <Portion className="one-fifth no-padding-bottom no-padding-left no-padding-right">
+                    <Portion className="one-fifth no-padding-bottom">
                         <Card className="bg-shade padding-all-fixed padding-top-tiny"/>
                     </Portion>
 
-                    <Portion className="one-fifth no-padding-bottom no-padding-left no-padding-right">
+                    <Portion className="one-fifth no-padding-bottom">
                         <Card className="bg-tint padding-all-fixed padding-top-tiny"/>
                     </Portion>
 
-                    <Portion className="one-fifth no-padding-bottom no-padding-left no-padding-right">
+                    <Portion className="one-fifth no-padding-bottom">
                         <Card className="bg-analogue padding-all-fixed padding-top-tiny"/>
                     </Portion>
 
-                    <Portion className="one-fifth no-padding-bottom no-padding-left">
+                    <Portion className="one-fifth no-padding-bottom">
                         <Card className="bg-accent padding-all-fixed padding-top-tiny"/>
                     </Portion>
+                </Row>
 
+                <Row className="content-padding-large">
                     <Portion className="whole">
                         <pre className="full-width">
                             <Highlight {...defaultProps} code={egColourScheme} language="scss" theme={undefined}>
@@ -103,12 +113,6 @@ class Colour extends React.PureComponent {
 
 
                 <Row className="content-padding-large">
-                    <Portion className="whole">
-                        <p>FICTOAN uses a HSL-based colour system, and you should, too. You can read why <a href="https://sujansundareswaran.com/blog/why-hsl-is-better-than-hex-and-rgb">here ↗</a>.</p>
-
-                        <p>An yellow-ish orange serves as the primary hue. Rich black for text, and a mild tint of the primary hue for backgrounds. Comes with one complementary colour and one accent. All colours are manipulations of the primary hue, as you can see below.</p>
-                    </Portion>
-
 
                 </Row>
 
