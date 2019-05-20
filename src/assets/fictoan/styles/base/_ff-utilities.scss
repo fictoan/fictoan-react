@@ -61,17 +61,6 @@
 
 .push-to-ends { justify-content: space-between; }
 
-//  A thin separator line
-hr {
-    border : 0;
-    height : 1px;
-    margin : 4vmax 0;
-    width  : 100%;
-}
-
-hr.primary   { background : rgba($colorHue, 0.8); }
-hr.secondary { background : rgba($colorHue, 0.2); }
-
 
 //  BOX MODEL HELPERS  ========================================================
 

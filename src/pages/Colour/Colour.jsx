@@ -5,6 +5,7 @@ import {
     Row,
     Portion,
     Card,
+    HRule
 } from '../../assets/fictoan/fictoan'
 
 
@@ -28,7 +29,7 @@ const egColourUsage=
 const egColourScheme=
     `// Primary colour
 $colorHue : $colorAmber; //#fcb83b
-
+ 
 // Derived colours
 $colorTint     : lighten($colorHue, 36%);
 $colorShade    : darken($colorHue, 56%);
@@ -56,6 +57,7 @@ class Colour extends React.PureComponent {
                         <h2 className="text-hue">Colour</h2>
                     </Portion>
                 </Row>
+
 
                 <Row className="content-padding-large">
                     <Portion className="whole no-padding-bottom">
@@ -113,12 +115,8 @@ class Colour extends React.PureComponent {
 
 
                 <Row className="content-padding-large">
-
-                </Row>
-
-                <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 no-margin" />
+                        <hr className="primary" />
                     </Portion>
                 </Row>
 

@@ -104,11 +104,6 @@ class Layout extends React.PureComponent {
                     </Portion>
                 </Row>
 
-                <Row className="content-padding-large">
-                    <Portion className="whole">
-                        <hr className="bg-slate-20 no-margin" />
-                    </Portion>
-                </Row>
 
                 {/*  Equal-width columns  =========================================================================  */}
                 <Row className="content-padding-large">
@@ -146,7 +141,7 @@ class Layout extends React.PureComponent {
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
+                        <hr className="tertiary margin-top-fixed no-margin-bottom" />
                     </Portion>
                 </Row>
 
@@ -188,7 +183,7 @@ class Layout extends React.PureComponent {
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
+                        <hr className="tertiary margin-top-fixed no-margin-bottom" />
                     </Portion>
                 </Row>
 
@@ -231,7 +226,7 @@ class Layout extends React.PureComponent {
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
+                        <hr className="primary" />
                     </Portion>
                 </Row>
 
@@ -302,7 +297,7 @@ class Layout extends React.PureComponent {
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
+                        <hr className="secondary" />
                     </Portion>
                 </Row>
 
@@ -335,7 +330,7 @@ class Layout extends React.PureComponent {
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
+                        <hr className="secondary" />
                     </Portion>
                 </Row>
 
@@ -365,7 +360,7 @@ class Layout extends React.PureComponent {
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
+                        <hr className="primary" />
                     </Portion>
                 </Row>
 
@@ -400,7 +395,7 @@ class Layout extends React.PureComponent {
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
+                        <hr className="tertiary margin-top-fixed no-margin-bottom" />
                     </Portion>
                 </Row>
 
@@ -449,7 +444,7 @@ class Layout extends React.PureComponent {
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
+                        <hr className="tertiary margin-top-fixed no-margin-bottom" />
                     </Portion>
                 </Row>
 
@@ -500,7 +495,7 @@ class Layout extends React.PureComponent {
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
+                        <hr className="tertiary margin-top-fixed no-margin-bottom" />
                     </Portion>
                 </Row>
 
@@ -551,7 +546,7 @@ class Layout extends React.PureComponent {
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
+                        <hr className="primary" />
                     </Portion>
                 </Row>
 
@@ -621,12 +616,6 @@ class Layout extends React.PureComponent {
                     <Portion className="bg-slate-20">
                         <p>Portion</p>
                         <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
-                    </Portion>
-                </Row>
-
-                <Row className="content-padding-large">
-                    <Portion className="whole">
-                        <hr className="bg-slate-40 margin-top-tiny margin-bottom-tiny" />
                     </Portion>
                 </Row>
             </div>

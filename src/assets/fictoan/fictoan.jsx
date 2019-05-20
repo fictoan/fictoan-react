@@ -13,6 +13,8 @@ import SidebarWrapper from './components/SidebarWrapper/SidebarWrapper'
 
 import ContentWrapper from './components/ContentWrapper/ContentWrapper'
 
+import HRule from "./components/HRule/HRule"
+
 import Button from "./components/Button/Button"
 
 import Form from "./components/Form/Form";
@@ -37,5 +39,6 @@ export {
     FormGroup,
     InputField,
     InputLabel,
-    Button
+    Button,
+    HRule
 }
