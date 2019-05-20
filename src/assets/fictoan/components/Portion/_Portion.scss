@@ -1,4 +1,4 @@
-.row > .portion {
+.portion {
     display     : flex;
     flex        : 1 1 0;
     align-items : flex-start;
@@ -13,18 +13,18 @@
 }
 
 @media all and (max-width : 1200px) {
-    .row > .portion { padding : $measureDynamic*2; }
+    .portion { padding : $measureDynamic*2; }
 }
 
 @media all and (max-width : 900px) {
-    .row > .portion { padding : $measureFixed; }
+    .portion { padding : $measureFixed; }
 }
 
 @media all and (max-width : 600px) {
     .portion { padding : 0 !important; }
 }
 
-.row > .portion:only-of-type { margin-bottom : 0; }
+.portion:only-of-type { margin-bottom : 0; }
 
 //  Large gutters
 .row.large-gutters > .portion {
