@@ -3,7 +3,8 @@ import Highlight, {defaultProps} from "prism-react-renderer";
 
 import {
     Row,
-    Portion
+    Portion,
+    HRule
 } from '../../assets/fictoan/fictoan'
 
 
@@ -109,7 +110,7 @@ class Layout extends React.PureComponent {
                 <Row className="content-padding-large">
                     <Portion className="whole no-padding-bottom">
                         <h5>Equal-width columns</h5>
-                        <p>Add as many <code>Portion</code> divs you need, they’ll occupy equal space on the row. Two will occupy 50% each, three will take up 33.33% each, four– 25% each, and so on.</p>
+                        <p>Add as many <code>Portion</code> divs you need, they’ll occupy equal space on the row. Two will occupy 50% each, tHRuleee will take up 33.33% each, four– 25% each, and so on.</p>
                     </Portion>
 
                     <Portion className="whole">
@@ -141,7 +142,7 @@ class Layout extends React.PureComponent {
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="tertiary margin-top-fixed no-margin-bottom" />
+                        <HRule className="tertiary margin-top-fixed no-margin-bottom" />
                     </Portion>
                 </Row>
 
@@ -183,7 +184,7 @@ class Layout extends React.PureComponent {
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="tertiary margin-top-fixed no-margin-bottom" />
+                        <HRule className="tertiary margin-top-fixed no-margin-bottom" />
                     </Portion>
                 </Row>
 
@@ -226,7 +227,7 @@ class Layout extends React.PureComponent {
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="primary" />
+                        <HRule className="primary" />
                     </Portion>
                 </Row>
 
@@ -297,7 +298,7 @@ class Layout extends React.PureComponent {
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="secondary" />
+                        <HRule className="secondary" />
                     </Portion>
                 </Row>
 
@@ -330,7 +331,7 @@ class Layout extends React.PureComponent {
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="secondary" />
+                        <HRule className="secondary" />
                     </Portion>
                 </Row>
 
@@ -360,7 +361,7 @@ class Layout extends React.PureComponent {
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="primary" />
+                        <HRule className="primary" />
                     </Portion>
                 </Row>
 
@@ -395,7 +396,7 @@ class Layout extends React.PureComponent {
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="tertiary margin-top-fixed no-margin-bottom" />
+                        <HRule className="tertiary margin-top-fixed no-margin-bottom" />
                     </Portion>
                 </Row>
 
@@ -444,7 +445,7 @@ class Layout extends React.PureComponent {
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="tertiary margin-top-fixed no-margin-bottom" />
+                        <HRule className="tertiary margin-top-fixed no-margin-bottom" />
                     </Portion>
                 </Row>
 
@@ -495,7 +496,7 @@ class Layout extends React.PureComponent {
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="tertiary margin-top-fixed no-margin-bottom" />
+                        <HRule className="tertiary margin-top-fixed no-margin-bottom" />
                     </Portion>
                 </Row>
 
@@ -546,7 +547,7 @@ class Layout extends React.PureComponent {
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="primary" />
+                        <HRule className="primary" />
                     </Portion>
                 </Row>
 

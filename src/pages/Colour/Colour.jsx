@@ -65,7 +65,7 @@ class Colour extends React.PureComponent {
                     </Portion>
 
                     <Portion className="whole no-padding-bottom">
-                        <p>FICTOAN uses a HSL-based colour system, and you should, too. You can read why <a href="https://sujansundareswaran.com/blog/why-hsl-is-better-than-hex-and-rgb">here ↗</a>.</p>
+                        <p>FICTOAN uses a HSL-based colour system, and you should, too. You can read why <a HRuleef="https://sujansundareswaran.com/blog/why-hsl-is-better-than-hex-and-rgb">here ↗</a>.</p>
 
                         <p>An yellow-ish orange serves as the primary hue. Rich black for text, and a mild tint of the primary hue for backgrounds. Comes with one complementary colour and one accent. All colours are manipulations of the primary hue, as you can see below.</p>
                     </Portion>
@@ -116,7 +116,7 @@ class Colour extends React.PureComponent {
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
-                        <hr className="primary" />
+                        <HRule className="primary" />
                     </Portion>
                 </Row>
 
