@@ -20,10 +20,6 @@
     .portion { padding : $measureFixed; }
 }
 
-@media all and (max-width : 600px) {
-    .portion { padding : 0 !important; }
-}
-
 .portion:only-of-type { margin-bottom : 0; }
 
 //  Large gutters

@@ -110,7 +110,7 @@ class Layout extends React.PureComponent {
                 <Row className="content-padding-large">
                     <Portion className="whole no-padding-bottom">
                         <h5>Equal-width columns</h5>
-                        <p>Add as many <code>Portion</code> divs you need, they’ll occupy equal space on the row. Two will occupy 50% each, tHRuleee will take up 33.33% each, four– 25% each, and so on.</p>
+                        <p>Add as many <code>Portion</code> divs you need, they’ll occupy equal space on the row. Two will occupy 50% each, three will take up 33.33% each, four– 25% each, and so on.</p>
                     </Portion>
 
                     <Portion className="whole">
@@ -132,12 +132,14 @@ class Layout extends React.PureComponent {
                     </Portion>
                 </Row>
 
-                <Row className="margin-all-tiny shape-rounded shadow-soft bg-slate-20 border-slate-60">
-                    <Portion className="whole bg-slate-60">Row</Portion>
-                    <Portion className="bg-slate-20">Portion</Portion>
-                    <Portion className="bg-slate-40">Portion</Portion>
-                    <Portion className="bg-slate-20">Portion</Portion>
-                </Row>
+                <div className="content-padding-tiny">
+                    <Row className="shape-rounded shadow-soft bg-slate-20 border-slate-60">
+                        <Portion className="no-margin-bottom whole bg-slate-60">Row</Portion>
+                        <Portion className="no-margin-bottom bg-slate-20">Portion</Portion>
+                        <Portion className="no-margin-bottom bg-slate-40">Portion</Portion>
+                        <Portion className="no-margin-bottom bg-slate-20">Portion</Portion>
+                    </Row>
+                </div>
 
 
                 <Row className="content-padding-large">
@@ -173,14 +175,16 @@ class Layout extends React.PureComponent {
                     </Portion>
                 </Row>
 
-                <Row className="margin-all-tiny shape-rounded shadow-soft bg-slate-20 border-slate-60 retain-layout-on-tab-ls retain-layout-on-tab-pt retain-layout-on-mobile">
-                    <Portion className="whole bg-slate-60">Row</Portion>
-                    <Portion className="one-ninth bg-slate-20">1/9</Portion>
-                    <Portion className="three-fourteenths bg-slate-40">3/14</Portion>
-                    <Portion className="two-tenths bg-slate-20">2/10</Portion>
-                    <Portion className="four-thirteenths bg-slate-40">4/13</Portion>
-                    <Portion className="two-twelfths bg-slate-20">2/12</Portion>
-                </Row>
+                <div className="content-padding-tiny">
+                    <Row className="shape-rounded shadow-soft bg-slate-20 border-slate-60 retain-layout-on-tab-ls retain-layout-on-tab-pt retain-layout-on-mobile">
+                        <Portion className="no-margin-bottom whole bg-slate-60">Row</Portion>
+                        <Portion className="no-margin-bottom one-ninth bg-slate-20">1/9</Portion>
+                        <Portion className="no-margin-bottom three-fourteenths bg-slate-40">3/14</Portion>
+                        <Portion className="no-margin-bottom two-tenths bg-slate-20">2/10</Portion>
+                        <Portion className="no-margin-bottom four-thirteenths bg-slate-40">4/13</Portion>
+                        <Portion className="no-margin-bottom two-twelfths bg-slate-20">2/12</Portion>
+                    </Row>
+                </div>
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
@@ -215,13 +219,14 @@ class Layout extends React.PureComponent {
                     </Portion>
                 </Row>
 
-                <Row className="margin-all-tiny shape-rounded shadow-soft bg-slate-20 border-slate-60 retain-layout-on-tab-ls retain-layout-on-tab-pt retain-layout-on-mobile">
-                {/*<Row className="margin-all-tiny shape-rounded shadow-soft bg-slate-20 border-slate-60retain-layout-always">*/}
-                    <Portion className="whole bg-slate-60">Row</Portion>
-                    <Portion className="one-sixth bg-slate-20">1/6</Portion>
-                    <Portion className="bg-slate-40">Portion</Portion>
-                    <Portion className="bg-slate-20">Portion</Portion>
-                </Row>
+                <div className="content-padding-tiny">
+                    <Row className="shape-rounded shadow-soft bg-slate-20 border-slate-60 retain-layout-on-tab-ls retain-layout-on-tab-pt retain-layout-on-mobile">
+                        <Portion className="no-margin-bottom whole bg-slate-60">Row</Portion>
+                        <Portion className="no-margin-bottom one-sixth bg-slate-20">1/6</Portion>
+                        <Portion className="no-margin-bottom bg-slate-40">Portion</Portion>
+                        <Portion className="no-margin-bottom bg-slate-20">Portion</Portion>
+                    </Row>
+                </div>
 
 
 
@@ -286,15 +291,17 @@ class Layout extends React.PureComponent {
                     </Portion>
                 </Row>
 
-                <Row className="margin-all-tiny shape-rounded shadow-soft bg-slate-20 border-slate-60">
-                    <Portion className="whole bg-slate-60">Row</Portion>
-                    <Portion className="one-sixth one-fourth-on-tab-ls one-third-on-tab-pt half-on-mobile bg-slate-40">
-                        <p className="hide-on-tab-ls hide-on-tab-pt hide-on-mobile">I’m 1/6 on desktop.</p>
-                        <p className="show-only-on-tab-ls">I’m 1/4 on tab-ls.</p>
-                        <p className="show-only-on-tab-pt">I’m 1/3 on tab-pt.</p>
-                        <p className="show-only-on-mobile">I’m 1/2 on mobile.</p>
-                    </Portion>
-                </Row>
+                <div className="content-padding-tiny">
+                    <Row className="shape-rounded shadow-soft bg-slate-20 border-slate-60">
+                        <Portion className="no-margin-bottom whole bg-slate-60">Row</Portion>
+                        <Portion className="no-margin-bottom one-sixth one-fourth-on-tab-ls one-third-on-tab-pt half-on-mobile bg-slate-40">
+                            <p className="hide-on-tab-ls hide-on-tab-pt hide-on-mobile">I’m 1/6 on desktop.</p>
+                            <p className="show-only-on-tab-ls">I’m 1/4 on tab-ls.</p>
+                            <p className="show-only-on-tab-pt">I’m 1/3 on tab-pt.</p>
+                            <p className="show-only-on-mobile">I’m 1/2 on mobile.</p>
+                        </Portion>
+                    </Row>
+                </div>
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
@@ -372,27 +379,29 @@ class Layout extends React.PureComponent {
                         <h3>Gutters</h3>
                     </Portion>
 
-                    <Portion className="whole no-padding-bottom">
+                    <Portion className="whole">
                         <h5>Default gutter sizing</h5>
                         <p>The <code>Portion</code> component comes with padding, which doubles up as the gutter for the grid layout. By default, this is 3x the <code>$measureFixed</code> variable, which comes to 24px.</p>
                     </Portion>
                 </Row>
 
-                <Row className="margin-all-tiny shape-rounded shadow-soft bg-slate-20 border-slate-60">
-                    <Portion className="whole bg-slate-60">Row</Portion>
-                    <Portion className="bg-slate-20">
-                        <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
-                    </Portion>
-                    <Portion className="bg-slate-40">
-                        <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
-                    </Portion>
-                    <Portion className="bg-slate-20">
-                        <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
-                    </Portion>
-                </Row>
+                <div className="content-padding-tiny">
+                    <Row className="shape-rounded shadow-soft bg-slate-20 border-slate-60">
+                        <Portion className="no-margin-bottom whole bg-slate-60">Row</Portion>
+                        <Portion className="no-margin-bottom bg-slate-20">
+                            <p>Portion</p>
+                            <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
+                        </Portion>
+                        <Portion className="no-margin-bottom bg-slate-40">
+                            <p>Portion</p>
+                            <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
+                        </Portion>
+                        <Portion className="no-margin-bottom bg-slate-20">
+                            <p>Portion</p>
+                            <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
+                        </Portion>
+                    </Row>
+                </div>
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
@@ -408,7 +417,7 @@ class Layout extends React.PureComponent {
                         <p>Add <code>large-gutters</code> class to the <code>Row</code> parent to increase gutter width.</p>
                     </Portion>
 
-                    <Portion className="whole no-padding-bottom">
+                    <Portion className="whole">
                         <pre className="full-width">
                             <Highlight {...defaultProps} code={egLargeGutters} language="markup" theme={undefined}>
                                 {({className, style, tokens, getLineProps, getTokenProps}) => (
@@ -427,21 +436,23 @@ class Layout extends React.PureComponent {
                     </Portion>
                 </Row>
 
-                <Row className="margin-all-tiny large-gutters shape-rounded shadow-soft bg-slate-20 border-slate-60">
-                    <Portion className="whole bg-slate-60">Row</Portion>
-                    <Portion className="bg-slate-20">
-                        <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
-                    </Portion>
-                    <Portion className="bg-slate-40">
-                        <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
-                    </Portion>
-                    <Portion className="bg-slate-20">
-                        <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
-                    </Portion>
-                </Row>
+                <div className="content-padding-tiny">
+                    <Row className="large-gutters shape-rounded shadow-soft bg-slate-20 border-slate-60">
+                        <Portion className="no-margin-bottom whole bg-slate-60">Row</Portion>
+                        <Portion className="no-margin-bottom bg-slate-20">
+                            <p>Portion</p>
+                            <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
+                        </Portion>
+                        <Portion className="no-margin-bottom bg-slate-40">
+                            <p>Portion</p>
+                            <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
+                        </Portion>
+                        <Portion className="no-margin-bottom bg-slate-20">
+                            <p>Portion</p>
+                            <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
+                        </Portion>
+                    </Row>
+                </div>
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
@@ -458,7 +469,7 @@ class Layout extends React.PureComponent {
                         <p>Add <code>small-gutters</code> class to the <code>Row</code> parent to decrease gutter width.</p>
                     </Portion>
 
-                    <Portion className="whole no-padding-bottom">
+                    <Portion className="whole">
                         <pre className="full-width">
                             <Highlight {...defaultProps} code={egSmallGutters} language="markup" theme={undefined}>
                                 {({className, style, tokens, getLineProps, getTokenProps}) => (
@@ -478,21 +489,23 @@ class Layout extends React.PureComponent {
                 </Row>
 
 
-                <Row className="margin-all-tiny small-gutters shape-rounded shadow-soft bg-slate-20 border-slate-60">
-                    <Portion className="whole bg-slate-60">Row</Portion>
-                    <Portion className="bg-slate-20">
-                        <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
-                    </Portion>
-                    <Portion className="bg-slate-40">
-                        <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
-                    </Portion>
-                    <Portion className="bg-slate-20">
-                        <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
-                    </Portion>
-                </Row>
+                <div className="content-padding-tiny">
+                    <Row className="small-gutters shape-rounded shadow-soft bg-slate-20 border-slate-60">
+                        <Portion className="no-margin-bottom whole bg-slate-60">Row</Portion>
+                        <Portion className="no-margin-bottom bg-slate-20">
+                            <p>Portion</p>
+                            <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
+                        </Portion>
+                        <Portion className="no-margin-bottom bg-slate-40">
+                            <p>Portion</p>
+                            <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
+                        </Portion>
+                        <Portion className="no-margin-bottom bg-slate-20">
+                            <p>Portion</p>
+                            <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
+                        </Portion>
+                    </Row>
+                </div>
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
@@ -509,7 +522,7 @@ class Layout extends React.PureComponent {
                         <p>Add <code>no-gutters</code> class to the <code>Row</code> parent to remove gutter width.</p>
                     </Portion>
 
-                    <Portion className="whole no-padding-bottom">
+                    <Portion className="whole">
                         <pre className="full-width">
                             <Highlight {...defaultProps} code={egNoGutters} language="markup" theme={undefined}>
                                 {({className, style, tokens, getLineProps, getTokenProps}) => (
@@ -529,21 +542,23 @@ class Layout extends React.PureComponent {
                 </Row>
 
 
-                <Row className="margin-all-tiny no-gutters shape-rounded shadow-soft bg-slate-20 border-slate-60">
-                    <Portion className="whole bg-slate-60">Row.large-gutters</Portion>
-                    <Portion className="bg-slate-20">
-                        <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
-                    </Portion>
-                    <Portion className="bg-slate-40">
-                        <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
-                    </Portion>
-                    <Portion className="bg-slate-20">
-                        <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
-                    </Portion>
-                </Row>
+                <div className="content-padding-tiny">
+                    <Row className="no-gutters shape-rounded shadow-soft bg-slate-20 border-slate-60">
+                        <Portion className="no-margin-bottom whole bg-slate-60">Row.large-gutters</Portion>
+                        <Portion className="no-margin-bottom bg-slate-20">
+                            <p>Portion</p>
+                            <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
+                        </Portion>
+                        <Portion className="no-margin-bottom bg-slate-40">
+                            <p>Portion</p>
+                            <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
+                        </Portion>
+                        <Portion className="no-margin-bottom bg-slate-20">
+                            <p>Portion</p>
+                            <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
+                        </Portion>
+                    </Row>
+                </div>
 
                 <Row className="content-padding-large">
                     <Portion className="whole">
@@ -555,13 +570,13 @@ class Layout extends React.PureComponent {
 
 
                 {/*  Padding - Default  //////////////////////////////////////////////////////////////////////////  */}
-                <Row className="content-padding-large">
+                <Row className="content-padding-large margin-bottom-tiny">
                     <Portion className="whole no-padding-bottom">
                         <h3>Content padding</h3>
                         <p>The <code>Portion</code> by default takes up the full width of the parent <code>Row</code>. You can add padding to the left and right sides to centre the content.</p>
                     </Portion>
 
-                    <Portion className="whole no-padding-bottom">
+                    <Portion className="whole">
                         <pre className="full-width">
                             <Highlight {...defaultProps} code={egPaddedContent} language="markup" theme={undefined}>
                                 {({className, style, tokens, getLineProps, getTokenProps}) => (
@@ -580,45 +595,36 @@ class Layout extends React.PureComponent {
                     </Portion>
                 </Row>
 
-                <Row className="content-padding-tiny margin-all-tiny shape-rounded shadow-soft bg-slate-20 border-slate-60">
-                    <Portion className="whole bg-slate-60">Row</Portion>
-                    <Portion className="bg-slate-20">
-                        <p>Portion</p>
-                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
-                    </Portion>
-                </Row>
 
-                <Row className="content-padding-small margin-all-tiny shape-rounded shadow-soft bg-slate-20 border-slate-60">
-                    <Portion className="whole bg-slate-60">Row</Portion>
-                    <Portion className="bg-slate-20">
-                        <p>Portion</p>
+                <div className="content-padding-tiny">
+                    <Row className="content-padding-tiny margin-bottom-tiny shape-rounded shadow-soft bg-slate-20 border-slate-60">
                         <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
-                    </Portion>
-                </Row>
+                    </Row>
+                </div>
 
-                <Row className="content-padding-medium margin-all-tiny shape-rounded shadow-soft bg-slate-20 border-slate-60">
-                    <Portion className="whole bg-slate-60">Row</Portion>
-                    <Portion className="bg-slate-20">
-                        <p>Portion</p>
+                <div className="content-padding-tiny">
+                    <Row className="content-padding-small margin-bottom-tiny shape-rounded shadow-soft bg-slate-20 border-slate-60">
                         <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
-                    </Portion>
-                </Row>
+                    </Row>
+                </div>
 
-                <Row className="content-padding-large margin-all-tiny shape-rounded shadow-soft bg-slate-20 border-slate-60">
-                    <Portion className="whole bg-slate-60">Row</Portion>
-                    <Portion className="bg-slate-20">
-                        <p>Portion</p>
+                <div className="content-padding-tiny">
+                    <Row className="content-padding-medium margin-bottom-tiny shape-rounded shadow-soft bg-slate-20 border-slate-60">
                         <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
-                    </Portion>
-                </Row>
+                    </Row>
+                </div>
 
-                <Row className="content-padding-huge margin-all-tiny shape-rounded shadow-soft bg-slate-20 border-slate-60">
-                    <Portion className="whole bg-slate-60">Row</Portion>
-                    <Portion className="bg-slate-20">
-                        <p>Portion</p>
+                <div className="content-padding-tiny">
+                    <Row className="content-padding-large margin-bottom-tiny shape-rounded shadow-soft bg-slate-20 border-slate-60">
                         <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
-                    </Portion>
-                </Row>
+                    </Row>
+                </div>
+
+                <div className="content-padding-tiny">
+                    <Row className="content-padding-huge margin-bottom-tiny shape-rounded shadow-soft bg-slate-20 border-slate-60">
+                        <div className="full-width padding-all-tiny bg-amber-40 border-amber-60">Content</div>
+                    </Row>
+                </div>
             </div>
         );
     }

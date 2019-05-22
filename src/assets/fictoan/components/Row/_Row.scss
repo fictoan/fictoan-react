@@ -1,14 +1,11 @@
 .row {
     display     : flex;
     flex-wrap   : wrap;
+    width       : 100%;
     align-items : flex-start;
 }
 
 @media all and (max-width : 600px) {
-    .row { padding : 0 2vmin; }
-
-    .portion { padding : 0 !important; }
-
     .ff-card[class*="padding"] { padding : 4vmin; }
 }
 
@@ -32,6 +29,7 @@
 }
 
 
+//  Side margins for all your content
 .content-padding-tiny {
     padding-left  : 4vmax;
     padding-right : 4vmax;
@@ -57,7 +55,6 @@
     padding-right : 24vmax;
 }
 
-//  Side margins for all your content - increase or decrease at will
 @media all and (max-width : 600px) {
     *[class*="content-padding-"] {
         padding-left  : 6vw;
