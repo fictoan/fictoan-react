@@ -44,7 +44,7 @@ class App extends React.PureComponent {
                                         points="21.23 11.29 12 5.75 2.77 11.29 1.23 8.71 12 2.25 22.77 8.71 21.23 11.29" />
                                 </svg>
                             </SidebarItemIcon>
-                            <SidebarItemText>Home</SidebarItemText>
+                            <SidebarItemText linkText="Home" />
                         </SidebarItem>
                     </Link>
 
@@ -60,7 +60,7 @@ class App extends React.PureComponent {
                                         points="21.23 11.29 12 5.75 2.77 11.29 1.23 8.71 12 2.25 22.77 8.71 21.23 11.29" />
                                 </svg>
                             </SidebarItemIcon>
-                            <SidebarItemText>Getting started</SidebarItemText>
+                            <SidebarItemText linkText="Getting started" />
                         </SidebarItem>
                     </Link>
 
@@ -76,7 +76,7 @@ class App extends React.PureComponent {
                                         points="21.23 11.29 12 5.75 2.77 11.29 1.23 8.71 12 2.25 22.77 8.71 21.23 11.29" />
                                 </svg>
                             </SidebarItemIcon>
-                            <SidebarItemText>Layout</SidebarItemText>
+                            <SidebarItemText linkText="Layout" />
                         </SidebarItem>
                     </Link>
 
@@ -92,7 +92,7 @@ class App extends React.PureComponent {
                                         points="21.23 11.29 12 5.75 2.77 11.29 1.23 8.71 12 2.25 22.77 8.71 21.23 11.29" />
                                 </svg>
                             </SidebarItemIcon>
-                            <SidebarItemText>Colour</SidebarItemText>
+                            <SidebarItemText linkText="Colour" />
                         </SidebarItem>
                     </Link>
 
@@ -108,7 +108,7 @@ class App extends React.PureComponent {
                                         points="21.23 11.29 12 5.75 2.77 11.29 1.23 8.71 12 2.25 22.77 8.71 21.23 11.29" />
                                 </svg>
                             </SidebarItemIcon>
-                            <SidebarItemText>Input</SidebarItemText>
+                            <SidebarItemText linkText="Input" />
                         </SidebarItem>
                     </Link>
                 </SidebarWrapper>
