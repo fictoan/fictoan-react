@@ -13,11 +13,11 @@ import {
 
 // import { HashLink as Link } from "react-router-hash-link";
 
-import Home from './pages/Home/Home'
-import GettingStarted from './pages/GettingStarted/GettingStarted'
-import Layout from "./pages/Layout/Layout";
-import Colour from "./pages/Colour/Colour";
-import Input from "./pages/Input/Input";
+import PageHome from './pages/Home/PageHome'
+import PageGettingStarted from './pages/GettingStarted/PageGettingStarted'
+import PageLayout from "./pages/Layout/PageLayout";
+import PageColour from "./pages/Colour/PageColour";
+import PageInput from "./pages/Input/PageInput";
 
 class App extends React.PureComponent {
     componentDidMount() {
@@ -116,11 +116,11 @@ class App extends React.PureComponent {
                 <ContentWrapper>
                     <Header onMenuBtnClick={this.onMenuBtnClick}/>
                     <Switch>
-                        <Route exact path='/' component={ Home }/>
-                        <Route exact path='/getting-started' component={ GettingStarted }/>
-                        <Route exact path='/layout' component={ Layout }/>
-                        <Route exact path='/colour' component={ Colour }/>
-                        <Route exact path='/input' component={ Input }/>
+                        <Route exact path='/' component={ PageHome }/>
+                        <Route exact path='/getting-started' component={ PageGettingStarted }/>
+                        <Route exact path='/layout' component={ PageLayout }/>
+                        <Route exact path='/colour' component={ PageColour }/>
+                        <Route exact path='/input' component={ PageInput }/>
                     </Switch>
                 </ContentWrapper>
             </Router>

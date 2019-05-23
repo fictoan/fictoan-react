@@ -3,7 +3,7 @@ import React from 'react'
 import { Row, Portion } from '../../assets/fictoan/fictoan'
 
 
-class GettingStarted extends React.PureComponent {
+class PageGettingStarted extends React.PureComponent {
     componentDidMount() {
         window.scroll(0, 0)
 
@@ -23,4 +23,4 @@ class GettingStarted extends React.PureComponent {
     }
 }
 
-export default GettingStarted
+export default PageGettingStarted

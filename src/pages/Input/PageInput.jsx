@@ -42,7 +42,7 @@ $colorAccent   : adjust-hue($colorHue, -216deg);
 
 
 //  LAYOUT  ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-class Input extends React.PureComponent {
+class PageInput extends React.PureComponent {
     componentDidMount() {
         window.scroll(0, 0)
 
@@ -55,6 +55,14 @@ class Input extends React.PureComponent {
                 <Row className="content-padding-large margin-top-small">
                     <Portion className="whole">
                         <h2 className="text-hue">Input</h2>
+                    </Portion>
+                </Row>
+
+                <Row className="content-padding-large margin-top-small">
+                    <Portion className="whole">
+                        <Card>
+
+                        </Card>
                     </Portion>
                 </Row>
 
@@ -83,4 +91,4 @@ class Input extends React.PureComponent {
     }
 }
 
-export default Input
+export default PageInput

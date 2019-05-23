@@ -79,7 +79,7 @@ const egPaddedContent =
 
 
 //  LAYOUT  ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-class Layout extends React.PureComponent {
+class PageLayout extends React.PureComponent {
     componentDidMount() {
         window.scroll(0, 0)
 
@@ -630,4 +630,4 @@ class Layout extends React.PureComponent {
     }
 }
 
-export default Layout
+export default PageLayout

@@ -17,7 +17,7 @@ const exampleCode =
     Click me!
 </button>`;
 
-class Home extends React.PureComponent {
+class PageHome extends React.PureComponent {
     componentDidMount() {
         window.scroll(0, 0)
 
@@ -58,4 +58,4 @@ class Home extends React.PureComponent {
     }
 }
 
-export default Home
+export default PageHome

@@ -42,7 +42,7 @@ $colorAccent   : adjust-hue($colorHue, -216deg);
 
 
 //  LAYOUT  ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-class Colour extends React.PureComponent {
+class PageColour extends React.PureComponent {
     componentDidMount() {
         window.scroll(0, 0)
 
@@ -1073,4 +1073,4 @@ class Colour extends React.PureComponent {
     }
 }
 
-export default Colour
+export default PageColour
