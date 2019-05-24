@@ -5,27 +5,16 @@ import {
     Row,
     Portion,
     Card,
-    HRule
+    InputField,
+    HRule,
+    Form,
+    FormGroup,
+    FormUnit,
+    InputLabel,
 } from '../../assets/fictoan/fictoan'
 
 
 //  SAMPLE CODES  /////////////////////////////////////////////////////////////////////////////////////////////////////
-const egColourUsage=
-    `// Background
-<div className="bg-yellow-60"></div>
- 
-// Text
-<h3 className="text-green-80">Hello</h3>
- 
-// Border
-<button className="border-indigo">Click me</button>
- 
-// Fill and stroke
-<svg className="fill-green stroke-amber-60">
-    <circle cx="12" cy="12" r="4"/>
-</svg>
-`;
-
 const egColourScheme=
     `// Primary colour
 $colorHue : $colorAmber; //#fcb83b
@@ -60,8 +49,72 @@ class PageInput extends React.PureComponent {
 
                 <Row className="content-padding-large margin-top-small">
                     <Portion className="whole">
-                        <Card>
+                        <Card className="padding-all-tiny shape-rounded shadow-soft">
+                            <h6 className="margin-bottom-tiny">A sample form</h6>
 
+                            <Form>
+                                <FormGroup>
+                                    <FormUnit>
+                                        <InputField/>
+                                        <InputLabel
+                                            value="First name"
+                                            helpText="As on your passport"/>
+                                    </FormUnit>
+
+                                    <FormUnit>
+                                        <InputField/>
+                                        <InputLabel
+                                            value="Last name"
+                                            helpText="As on your passport"/>
+                                    </FormUnit>
+                                </FormGroup>
+
+                                <FormUnit>
+                                    <InputField
+                                        className="validate-this"
+                                        type="email" />
+                                    <InputLabel
+                                        value="Email ID"
+                                        helpText="Your work email"
+                                        errorText="That’s not an email, bro."
+                                    />
+                                </FormUnit>
+
+                                <FormGroup>
+                                    <FormUnit>
+                                        <InputField/>
+                                        <InputLabel value="Door no."/>
+                                    </FormUnit>
+
+                                    <FormUnit>
+                                        <InputField/>
+                                        <InputLabel value="Street"/>
+                                    </FormUnit>
+
+                                    <FormUnit>
+                                        <InputField/>
+                                        <InputLabel value="Locality"/>
+                                    </FormUnit>
+                                </FormGroup>
+
+                                <FormGroup>
+                                    <FormUnit>
+                                        <InputField/>
+                                        <InputLabel value="State"/>
+                                    </FormUnit>
+
+                                    <FormUnit>
+                                        <InputField/>
+                                        <InputLabel value="Country"/>
+                                    </FormUnit>
+
+                                    <FormUnit>
+                                        <InputField/>
+                                        <InputLabel value="ZIP"/>
+                                    </FormUnit>
+                                </FormGroup>
+
+                            </Form>
                         </Card>
                     </Portion>
                 </Row>

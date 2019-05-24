@@ -24,10 +24,12 @@
     background-size     : 24px;
 }
 
-.ff-input.validate-this.valid {
-    background-image    : url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHRpdGxlPkFydGJvYXJkIDE8L3RpdGxlPgogIDxwb2x5bGluZSBwb2ludHM9IjMuNSAxMi41IDguNSAxNy41IDIwLjUgNS41IiBmaWxsPSJub25lIiBzdHJva2U9IiM2NmJiNmEiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjwvc3ZnPgo=);
+.ff-input.validate-this.valid,
+.ff-input.validate-this:valid {
+    background-image : url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+CiAgPHRpdGxlPkFydGJvYXJkIDE8L3RpdGxlPgogIDxwb2x5bGluZSBwb2ludHM9IjMuNSAxMi41IDguNSAxNy41IDIwLjUgNS41IiBmaWxsPSJub25lIiBzdHJva2U9IiM2NmJiNmEiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjwvc3ZnPgo=);
 }
 
+.ff-input:invalid,
 .ff-input:invalid:not(:focus):not(:placeholder-shown) {
     border           : 1px solid $inputBorder-InvalidColor;
     background-color : rgba($colorRed, 0.24);
@@ -38,9 +40,7 @@
     background-color : rgba($colorRed, 0.16);
 }
 
-.ff-input[type=password] {
-    letter-spacing : 4px;
-}
+.ff-input[type=password] { letter-spacing : 4px; }
 
 textarea.ff-input {
     max-width : 100%;
