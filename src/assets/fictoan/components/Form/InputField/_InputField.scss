@@ -16,6 +16,10 @@
     padding          : 11px;
 }
 
+.ff-input:read-only { background-color : $inputBG-ReadOnlyColor; }
+
+.ff-input:read-only:focus { border : 2px solid $inputBG-ReadOnlyColor; }
+
 //  Grey check mark
 .ff-input.validate-this {
     padding-right       : 40px;

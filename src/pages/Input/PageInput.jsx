@@ -74,9 +74,17 @@ class PageInput extends React.PureComponent {
                                         className="validate-this"
                                         type="email" />
                                     <InputLabel
-                                        value="Email ID"
+                                        value="New email ID"
                                         helpText="Your work email"
                                         errorText="That’s not an email, bro."
+                                    />
+                                </FormUnit>
+
+                                <FormUnit>
+                                    <InputField
+                                        type="email" value="name@company.com" readonly />
+                                    <InputLabel
+                                        value="Current email ID"
                                     />
                                 </FormUnit>
 
