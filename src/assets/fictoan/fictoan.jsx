@@ -21,6 +21,7 @@ import Form from "./components/Form/Form";
 import FormUnit from "./components/Form/FormUnit/FormUnit";
 import FormGroup from "./components/Form/FormGroup/FormGroup";
 import InputField from "./components/Form/InputField/InputField";
+import TextArea from "./components/Form/TextArea/TextArea";
 import InputLabel from "./components/Form/InputLabel/InputLabel";
 
 export {
@@ -38,6 +39,7 @@ export {
     FormUnit,
     FormGroup,
     InputField,
+    TextArea,
     InputLabel,
     Button,
     HRule

@@ -5,11 +5,12 @@ import {
     Row,
     Portion,
     Card,
-    InputField,
     HRule,
     Form,
     FormGroup,
     FormUnit,
+    InputField,
+    TextArea,
     InputLabel,
 } from '../../assets/fictoan/fictoan'
 
@@ -91,23 +92,6 @@ class PageInput extends React.PureComponent {
                                 <FormGroup>
                                     <FormUnit>
                                         <InputField/>
-                                        <InputLabel value="Door no."/>
-                                    </FormUnit>
-
-                                    <FormUnit>
-                                        <InputField/>
-                                        <InputLabel value="Street"/>
-                                    </FormUnit>
-
-                                    <FormUnit>
-                                        <InputField/>
-                                        <InputLabel value="Locality"/>
-                                    </FormUnit>
-                                </FormGroup>
-
-                                <FormGroup>
-                                    <FormUnit>
-                                        <InputField/>
                                         <InputLabel value="State"/>
                                     </FormUnit>
 
@@ -121,6 +105,14 @@ class PageInput extends React.PureComponent {
                                         <InputLabel value="ZIP"/>
                                     </FormUnit>
                                 </FormGroup>
+
+                                <FormUnit>
+                                    <TextArea rows="4" />
+                                    <InputLabel
+                                        value="Bio"
+                                        helpText="Tell us about yourself"
+                                    />
+                                </FormUnit>
 
                             </Form>
                         </Card>
