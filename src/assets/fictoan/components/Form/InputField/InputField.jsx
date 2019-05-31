@@ -6,6 +6,7 @@ function InputField(props) {
             id={props.id}
             className={`ff-input ${props.className || ""}`}
             placeholder=" "
+            value={props.value}
             type={props.type}
             required={props.required}
             pattern={props.pattern}
