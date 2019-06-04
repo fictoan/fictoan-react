@@ -23,6 +23,7 @@ import FormGroup from "./components/Form/FormGroup/FormGroup";
 import InputField from "./components/Form/InputField/InputField";
 import TextArea from "./components/Form/TextArea/TextArea";
 import InputLabel from "./components/Form/InputLabel/InputLabel";
+import FileUpload from "./components/Form/FileUpload/FileUpload";
 
 export {
     Row,
@@ -42,5 +43,6 @@ export {
     TextArea,
     InputLabel,
     Button,
+    FileUpload,
     HRule
 }

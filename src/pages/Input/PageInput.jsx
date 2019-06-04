@@ -12,6 +12,7 @@ import {
     InputField,
     TextArea,
     InputLabel,
+    FileUpload,
 } from '../../assets/fictoan/fictoan'
 
 
@@ -111,6 +112,14 @@ class PageInput extends React.PureComponent {
                                     <InputLabel
                                         value="Bio"
                                         helpText="Tell us about yourself"
+                                    />
+                                </FormUnit>
+
+                                <FormUnit>
+                                    <FileUpload/>
+                                    <InputLabel
+                                        value="Upload photo"
+                                        helpText="Max size 2mb"
                                     />
                                 </FormUnit>
 
