@@ -83,7 +83,7 @@ class PageLayout extends React.PureComponent {
     componentDidMount() {
         window.scroll(0, 0)
 
-        document.title = "FICTOAN Framework"
+        document.title = "Layouts — FICTOAN"
     }
 
     render() {

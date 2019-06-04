@@ -15,7 +15,7 @@ class PageGettingStarted extends React.PureComponent {
             <div>
                 <Row className="content-padding-large margin-top-small">
                     <Portion className="whole">
-                        <h2 className="text-hue">Getting started</h2>
+                        <h2 className="text-hue">Getting started with FICTOAN</h2>
                     </Portion>
                 </Row>
             </div>

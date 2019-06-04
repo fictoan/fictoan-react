@@ -37,7 +37,7 @@ class PageInput extends React.PureComponent {
     componentDidMount() {
         window.scroll(0, 0)
 
-        document.title = "FICTOAN — Colours"
+        document.title = "Input elements — FICTOAN"
     }
 
     render() {

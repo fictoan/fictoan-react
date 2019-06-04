@@ -46,7 +46,7 @@ class PageColour extends React.PureComponent {
     componentDidMount() {
         window.scroll(0, 0)
 
-        document.title = "FICTOAN — Colours"
+        document.title = "Colours — FICTOAN"
     }
 
     render() {
