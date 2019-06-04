@@ -14,6 +14,7 @@ import {
     InputLabel,
     FileUpload
 } from '../../assets/fictoan/fictoan'
+import RadioButton from "../../assets/fictoan/components/Form/RadioGroup/RadioButton";
 
 
 //  SAMPLE CODES  /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -123,6 +124,11 @@ class PageInput extends React.PureComponent {
                                         value="Upload photo"
                                         helpText="Max size 2mb"
                                     />
+                                </FormUnit>
+
+                                <FormUnit>
+                                    <RadioButton name="set1" value="cats"/>
+                                    <RadioButton name="set1" value="dogs"/>
                                 </FormUnit>
                             </Form>
                         </Card>

@@ -125,23 +125,19 @@ span.icon-right svg {
 
 
 //  CHECKBOX, SWITCH and RADIO BUTTONS  =======================================
-input[type="checkbox"],
-input[type="radio"] { display : none; }
+input[type="checkbox"] { display : none; }
 
 .ff-checkbox,
-.ff-switch,
-.ff-radio {
+.ff-switch {
     display      : inline-block;
     margin-right : 24px;
 }
 
 .ff-checkbox:only-of-type,
-.ff-switch:only-of-type,
-.ff-radio:only-of-type { margin-right : 0; }
+.ff-switch:only-of-type { margin-right : 0; }
 
 .ff-checkbox label,
-.ff-switch   label,
-.ff-radio    label {
+.ff-switch   label {
     display        : inline-block;
     position       : relative;
     font-family    : $fontSans;
@@ -151,17 +147,14 @@ input[type="radio"] { display : none; }
     line-height    : 1.1;
 }
 
-.ff-checkbox label,
-.ff-radio    label { padding-left : 24px; }
+.ff-checkbox label { padding-left : 24px; }
 
 .ff-switch   label { padding-left : 40px; }
 
 .ff-checkbox label::before,
 .ff-checkbox label::after,
 .ff-switch   label::before,
-.ff-switch   label::after,
-.ff-radio    label::before,
-.ff-radio    label::after {
+.ff-switch   label::after {
     display    : inline-block;
     position   : absolute;
     content    : "";
@@ -171,10 +164,8 @@ input[type="radio"] { display : none; }
 //  The grey square
 .ff-checkbox input[type="checkbox"]:disabled + label::before,
 .ff-switch   input[type="checkbox"]:disabled + label::before,
-.ff-radio    input[type="radio"]:disabled    + label::before,
 .ff-checkbox label::before,
-.ff-switch   label::before,
-.ff-radio    label::before {
+.ff-switch   label::before {
     user-select    : none;
     pointer-events : none;
     background     : $colorGrey-20;
@@ -182,26 +173,20 @@ input[type="radio"] { display : none; }
 }
 
 .ff-checkbox:hover label::before,
-.ff-switch:hover   label::before,
-.ff-radio:hover    label::before { background : $colorGrey-30; }
+.ff-switch:hover   label::before { background : $colorGrey-30; }
 
 //  The grey square
-.ff-checkbox label::after,
-.ff-radio    label::after { opacity : 0; }
+.ff-checkbox label::after { opacity : 0; }
 
 .ff-checkbox input[type="checkbox"]:checked + label::before,
-.ff-switch   input[type="checkbox"]:checked + label::before,
-.ff-radio    input[type="radio"]:checked    + label::before { background : $colorHue; }
+.ff-switch   input[type="checkbox"]:checked + label::before { background : $colorHue; }
 
-.ff-checkbox input[type="checkbox"]:checked + label::after,
-.ff-radio    input[type="radio"]:checked    + label::after { opacity : 1; }
+.ff-checkbox input[type="checkbox"]:checked + label::after { opacity : 1; }
 
 .ff-checkbox input[type="checkbox"]:disabled         + label,
 .ff-switch   input[type="checkbox"]:disabled         + label,
-.ff-radio    input[type="radio"]:disabled            + label,
 .ff-checkbox input[type="checkbox"]:disabled:checked + label,
-.ff-switch   input[type="checkbox"]:disabled:checked + label,
-.ff-radio    input[type="radio"]:disabled:checked    + label  {
+.ff-switch   input[type="checkbox"]:disabled:checked + label  {
     pointer-events : none;
     cursor         : default;
     opacity        : 0.24;
