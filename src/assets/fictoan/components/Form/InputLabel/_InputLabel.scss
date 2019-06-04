@@ -1,26 +1,25 @@
-.ff-form-unit > .ff-input:focus ~ label,
-.ff-form-inline-group .ff-input:focus ~ label,
-.ff-form-unit-group > .ff-input:focus ~ label {
-    font-weight : bold;
-}
-
 .ff-form-unit > label,
 .ff-form-unit-group > label {
-    flex          : 1 0 100%;
     position      : relative;
+    display       : flex;
+    flex          : 1 0 100%;
     align-self    : flex-start;
     margin-bottom : 4px;
     color         : $colorShade;
     order         : -1;
 }
 
+.ff-form-unit > .ff-input:focus ~ label,
+.ff-form-inline-group .ff-input:focus ~ label,
+.ff-form-unit-group > .ff-input:focus ~ label { font-weight : bold; }
+
 .ff-input:required ~ label::before {
     position  : absolute;
     top       : -4px;
     bottom    : 0;
-    right     : -12px;
+    left      : -14px;
     margin    : auto;
-    //content   : " *";
+    content   : " *";
     font-size : 120%;
     color     : $colorRed;
 }
@@ -30,8 +29,9 @@
     font-size   : 80%;
     font-weight : normal;
     color       : $inputHelpTextDefaultColor;
-    line-height : 1.4;
+    //line-height : 1.4;
     display     : none;
+    align-self  : center;
     transition  : opacity 0.2s;
 }
 

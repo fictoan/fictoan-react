@@ -12,7 +12,7 @@ import {
     InputField,
     TextArea,
     InputLabel,
-    FileUpload,
+    FileUpload
 } from '../../assets/fictoan/fictoan'
 
 
@@ -57,17 +57,19 @@ class PageInput extends React.PureComponent {
                             <Form>
                                 <FormGroup>
                                     <FormUnit>
-                                        <InputField/>
+                                        <InputField required />
                                         <InputLabel
                                             value="First name"
-                                            helpText="As on your passport"/>
+                                            helpText="As on your passport"
+                                        />
                                     </FormUnit>
 
                                     <FormUnit>
-                                        <InputField/>
+                                        <InputField required />
                                         <InputLabel
                                             value="Last name"
-                                            helpText="As on your passport"/>
+                                            helpText="As on your passport"
+                                        />
                                     </FormUnit>
                                 </FormGroup>
 
@@ -122,7 +124,6 @@ class PageInput extends React.PureComponent {
                                         helpText="Max size 2mb"
                                     />
                                 </FormUnit>
-
                             </Form>
                         </Card>
                     </Portion>
