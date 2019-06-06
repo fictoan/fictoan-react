@@ -15,6 +15,7 @@ import {
     FileUpload
 } from '../../assets/fictoan/fictoan'
 import RadioButton from "../../assets/fictoan/components/Form/RadioGroup/RadioButton";
+import RadioGroup from '../../assets/fictoan/components/Form/RadioGroup/RadioGroup';
 
 
 //  SAMPLE CODES  /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -127,8 +128,7 @@ class PageInput extends React.PureComponent {
                                 </FormUnit>
 
                                 <FormUnit>
-                                    <RadioButton name="set1" value="cats"/>
-                                    <RadioButton name="set1" value="dogs"/>
+                                    <RadioGroup defaultSelected="cat" options={[{id:'cat',value:'cat'},{id:'dog',value:'dogs'}]} onChange={(selected)=>console.log("I changed!",selected)} />
                                 </FormUnit>
                             </Form>
                         </Card>
