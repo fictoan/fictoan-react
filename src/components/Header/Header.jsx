@@ -2,7 +2,8 @@ import React from 'react'
 // import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-import { Row, Portion } from '../../fictoan';
+import Row from '../Row/Row';
+import Portion from '../Portion/Portion';
 
 class Header extends React.PureComponent {
     render() {

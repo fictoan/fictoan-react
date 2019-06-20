@@ -2,21 +2,17 @@
     "name": "reactised-fictoan",
     "version": "0.1.0",
     "private": true,
-    "dependencies": {
-        "node-sass": "^4.11.0",
-        "prism-react-renderer": "^0.1.6",
-        "prop-types": "^15.7.2",
-        "react": "^16.8.6",
-        "react-dom": "^16.8.6",
-        "react-router-dom": "^5.0.0",
-        "react-router-hash-link": "^1.2.1",
-        "react-scripts": "2.1.8"
+    "main": "dist/index.js",
+    "module": "dist/index.es.js",
+    "jsnext:main": "dist/index.es.js",
+    "buildFolder": "dist",
+    "engines": {
+        "node": ">=8",
+        "npm": ">=5"
     },
     "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "start": "rollup -c -w",
+        "build": "rollup -c"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -26,5 +22,28 @@
         "not dead",
         "not ie <= 11",
         "not op_mini all"
-    ]
+    ],
+    "devDependencies": {
+        "@babel/core": "^7.4.5",
+        "@babel/preset-env": "^7.4.5",
+        "@babel/preset-react": "^7.0.0",
+        "node-sass": "^4.11.0",
+        "rollup": "^1.15.6",
+        "rollup-plugin-babel": "^4.3.2",
+        "rollup-plugin-commonjs": "^10.0.0",
+        "rollup-plugin-copy-glob": "^0.3.0",
+        "rollup-plugin-node-resolve": "^5.0.3",
+        "rollup-plugin-peer-deps-external": "^2.2.0",
+        "rollup-plugin-postcss": "^2.0.3",
+        "rollup-plugin-url": "^2.2.2"
+    },
+    "files": [
+        "dist"
+    ],
+    "peerDependencies": {
+        "prop-types": "^15.7.2",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "react-router-dom": "^5.0.1"
+    }
 }
