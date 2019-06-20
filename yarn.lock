@@ -7981,11 +7981,6 @@ pretty-format@^23.6.0:
     ansi-regex "^3.0.0"
     ansi-styles "^3.2.0"
 
-prism-react-renderer@^0.1.6:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/prism-react-renderer/-/prism-react-renderer-0.1.6.tgz#c9216baa234fab1c234209fcdaf0cd23a01c50a9"
-  integrity sha512-uZJn5wrygCH0ZMue+2JRd0qJharrmpxa6/uK7deKgvCtJFFE+VsyvJ49LS8/ATt0mlAJS6vFQTDvhXBEXsda+A==
-
 private@^0.1.6, private@^0.1.8:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/private/-/private-0.1.8.tgz#2381edb3689f7a53d653190060fcf822d2f368ff"
@@ -8033,7 +8028,7 @@ prompts@^0.1.9:
     kleur "^2.0.1"
     sisteransi "^0.1.1"
 
-prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -8284,13 +8279,6 @@ react-router-dom@^5.0.0:
     react-router "5.0.0"
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
-
-react-router-hash-link@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/react-router-hash-link/-/react-router-hash-link-1.2.1.tgz#da3b6384e5bff90e9b2172d2e689a994646f2f45"
-  integrity sha512-ddkCtmk/JwMmuU087TGShQHYyNjsJ+/9CTyuVdvvKf6ACgqk2Ma9ndX2xogo7WWmyq9AjuziBm5bmJ12zBxtsQ==
-  dependencies:
-    prop-types "^15.6.0"
 
 react-router@5.0.0:
   version "5.0.0"
