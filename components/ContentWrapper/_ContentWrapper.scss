@@ -1,0 +1,17 @@
+.content-wrapper {
+    display        : flex;
+    flex-direction : column;
+    width          : 100%;
+}
+
+.sidebar-wrapper + .content-wrapper {
+    width       : calc(100% - 240px);
+    margin-left : 240px;
+}
+
+@media (max-width : 900px) {
+    .sidebar-wrapper + .content-wrapper {
+        width       : 100%;
+        margin-left : 0;
+    }
+}

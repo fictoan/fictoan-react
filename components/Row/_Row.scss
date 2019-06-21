@@ -1,0 +1,63 @@
+.row {
+    display     : flex;
+    flex-wrap   : wrap;
+    width       : 100%;
+    align-items : flex-start;
+}
+
+@media all and (max-width : 600px) {
+    .ff-card[class*="padding"] { padding : 4vmin; }
+}
+
+//  Responsiveness
+.row.retain-layout-always .portion { flex : none !important; }
+
+@media all and (max-width : 600px) {
+    .row.retain-layout-on-mobile > .portion { flex : none !important; }
+}
+
+@media all and (min-width : 601px) and (max-width : 900px) {
+    .row.retain-layout-on-tab-pt > .portion { flex : none !important; }
+}
+
+@media all and (min-width : 901px) and (max-width : 1200px) {
+    .row.retain-layout-on-tab-ls > .portion { flex : none !important; }
+}
+
+@media all and (max-width : 900px) {
+    .row:not([class^='retain-layout']) > .portion { margin-bottom : 2vmax; }
+}
+
+
+//  Side margins for all your content
+.content-padding-tiny {
+    padding-left  : 4vmax;
+    padding-right : 4vmax;
+}
+
+.content-padding-small {
+    padding-left  : 8vmax;
+    padding-right : 8vmax;
+}
+
+.content-padding-medium {
+    padding-left  : 12vmax;
+    padding-right : 12vmax;
+}
+
+.content-padding-large {
+    padding-left  : 18vmax;
+    padding-right : 18vmax;
+}
+
+.content-padding-huge {
+    padding-left  : 24vmax;
+    padding-right : 24vmax;
+}
+
+@media all and (max-width : 600px) {
+    *[class*="content-padding-"] {
+        padding-left  : 6vw;
+        padding-right : 6vw;
+    }
+}

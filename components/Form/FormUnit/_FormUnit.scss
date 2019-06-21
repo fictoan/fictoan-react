@@ -1,0 +1,11 @@
+.ff-form-unit {
+    display        : flex;
+    position       : relative;
+    width          : 100%;
+    flex-direction : column;
+    align-items    : center;
+    flex-wrap      : wrap;
+    //flex           : 1 1 auto;
+}
+
+.ff-form > .ff-form-unit { margin-bottom : 24px; }
