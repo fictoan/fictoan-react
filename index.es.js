@@ -210,12 +210,13 @@ function InputField(props) {
   return React.createElement("input", {
     id: props.id,
     className: "ff-input ".concat(props.className || ""),
-    placeholder: " ",
+    placeholder: props.placeholder,
     value: props.value,
     type: props.type,
     required: props.required,
     pattern: props.pattern,
-    readOnly: props.readonly
+    readOnly: props.readonly,
+    onChange: props.onChange
   });
 }
 
