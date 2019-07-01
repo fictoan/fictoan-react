@@ -1,3 +1,3 @@
 # FICTOAN, Reactised.
 
-### v0.3.17
+### v0.3.18

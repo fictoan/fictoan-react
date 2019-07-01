@@ -5,12 +5,13 @@ function InputField(props) {
         <input
             id={props.id}
             className={`ff-input ${props.className || ""}`}
-            placeholder=" "
+            placeholder={props.placeholder}
             value={props.value}
             type={props.type}
             required={props.required}
             pattern={props.pattern}
             readOnly={props.readonly}
+            onChange={props.onChange}
         />
     )
 }
