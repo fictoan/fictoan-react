@@ -1,11 +1,14 @@
 import React from 'react'
 
-function Button(props) {
-    return (
-        <button id={props.id} className={`ff-button ${props.className || ""}`} disabled={props.disabled}>
-            {props.value}
-        </button>
-    )
-}
+import { BaseComponent } from '../BaseComponent';
+
+const Button = ({ value, ...props }) =>
+    <BaseComponent
+        Element="button"
+        baseClassName="ff-button"
+        {...props}
+    >
+        {value}
+    </BaseComponent>
 
 export default Button

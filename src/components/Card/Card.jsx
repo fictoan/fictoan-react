@@ -1,11 +1,12 @@
 import React from 'react'
 
-function Card(props) {
-    return (
-        <div id={props.id} className={`ff-card ${props.className || ""}`}>
-            {props.children}
-        </div>
-    )
-}
+import { BaseComponent } from '../BaseComponent';
+
+const Card = (props) =>
+    <BaseComponent
+        Element="div"
+        baseClassName="ff-card"
+        {...props}
+    />
 
 export default Card

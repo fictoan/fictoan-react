@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-function Row(props) {
-    return (
-        <div id={props.id} className={`row ${props.className || ""}`}>
-            {props.children}
-        </div>
-    )
-}
+import { BaseComponent } from '../BaseComponent';
+
+const Row = (props) =>
+    <BaseComponent
+        Element="div"
+        baseClassName="row"
+        {...props}
+    />
 
 export default Row

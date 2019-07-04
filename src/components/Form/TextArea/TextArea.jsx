@@ -1,16 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-function TextArea(props) {
+import { BaseComponent } from '../../BaseComponent';
+
+const InputField = (props) => {
     return (
-        <textarea
-            id={props.id}
-            className={`ff-input ${props.className || ""}`}
-            placeholder=" "
-            rows={props.rows}
-            required={props.required}
-            readOnly={props.readonly}
+        <BaseComponent
+            Element="textarea"
+            baseClassName="ff-input"
+            {...props}
         />
     )
 }
 
-export default TextArea
+export default InputField

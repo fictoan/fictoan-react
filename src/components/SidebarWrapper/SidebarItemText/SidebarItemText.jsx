@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-function SidebarItemText(props) {
-    return (
-        <p id={props.id} className={`sidebar-text ${props.className || ""}`}>
-            {props.linkText}
-        </p>
-    )
-}
+import { BaseComponent } from '../../BaseComponent';
+
+const SidebarItemText = (props) =>
+    <BaseComponent
+        Element="div"
+        baseClassName="sidebar-text"
+        {...props}
+    />
 
 export default SidebarItemText

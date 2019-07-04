@@ -1,11 +1,11 @@
 import React from 'react'
+import { BaseComponent } from '../BaseComponent';
 
-function Portion(props) {
-    return (
-        <div id={props.id} className={`portion ${props.className || ""}`}>
-            {props.children}
-        </div>
-    )
-}
+const Portion = (props) =>
+    <BaseComponent
+        Element="div"
+        baseClassName="portion"
+        {...props}
+    />
 
 export default Portion
