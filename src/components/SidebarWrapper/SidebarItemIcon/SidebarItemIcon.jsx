@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-function SidebarItemIcon(props) {
-    return (
-        <picture id={props.id} className={`sidebar-icon ${props.className || ""}`}>
-            {props.children}
-        </picture>
-    )
-}
+import { BaseComponent } from '../../BaseComponent';
+
+const SidebarItemIcon = (props) =>
+    <BaseComponent
+        Element="div"
+        baseClassName="sidebar-icon"
+        {...props}
+    />
 
 export default SidebarItemIcon

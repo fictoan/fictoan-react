@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-function HRule(props) {
-    return (
-        <hr id={props.id} className={props.className} />
-    )
-}
+import { BaseComponent } from '../BaseComponent';
+
+const HRule = (props) =>
+    <BaseComponent Element="hr" {...props} />
 
 export default HRule

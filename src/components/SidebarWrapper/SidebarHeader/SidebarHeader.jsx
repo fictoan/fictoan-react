@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-function SidebarHeader(props) {
-    return (
-        <div id={props.id} className={`sidebar-header ${props.className || ""}`}>
-            {props.children}
-        </div>
-    )
-}
+import { BaseComponent } from '../../BaseComponent';
+
+const SidebarHeader = (props) =>
+    <BaseComponent
+        Element="div"
+        baseClassName="sidebar-header"
+        {...props}
+    />
 
 export default SidebarHeader

@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-function FormUnit(props) {
-    return (
-        <div id={props.id} className={`ff-form-unit ${props.className || ""}`} >
-            {props.children}
-        </div>
-    )
-}
+import { BaseComponent } from '../../BaseComponent';
+
+const FormUnit = (props) =>
+    <BaseComponent
+        Element="div"
+        baseClassName="ff-form-unit"
+        {...props}
+    />
 
 export default FormUnit

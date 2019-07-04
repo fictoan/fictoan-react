@@ -1,24 +1,35 @@
-import React from 'react'
+import React from 'react';
 
-function InputLabel(props) {
+import { BaseComponent } from '../../BaseComponent';
+
+function InputLabel({
+    value,
+    helpText,
+    errorText,
+    ...props
+}) {
     return (
-        <label id={props.id} className={`ff-input-label ${props.className || ""}`}>
-            { props.value }
+        <BaseComponent
+            Element="label"
+            baseClassName="ff-input-label"
+            {...props}
+        >
+            {value}
 
             {
-                props.helpText && props.helpText.length > 0 &&
+                helpText && helpText.length > 0 &&
                 <span className="ff-input-help">
-                    {props.helpText}
+                    {helpText}
                 </span>
             }
 
             {
-                props.errorText && props.errorText.length > 0 &&
+                errorText && errorText.length > 0 &&
                 <span className="ff-input-error">
-                    {props.errorText}
+                    {errorText}
                 </span>
             }
-        </label>
+        </BaseComponent>
     )
 }
 

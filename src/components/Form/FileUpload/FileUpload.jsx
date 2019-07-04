@@ -1,16 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-function FileUpload(props) {
-    return (
-        <input
-            id={props.id}
-            className={`ff-input ${props.className || ""}`}
-            placeholder=" "
-            value={props.value}
-            type="file"
-            required={props.required}
-        />
-    )
-}
+import { BaseComponent } from '../../BaseComponent';
+
+const FileUpload = (props) =>
+    <BaseComponent
+        Element="input"
+        baseClassName="ff-input"
+        type="file"
+        {...props}
+    />
 
 export default FileUpload

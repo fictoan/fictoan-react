@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-function SidebarWrapper(props) {
-    return (
-        <div id={props.id} className={`sidebar-wrapper ${props.className || ""}`}>
-            {props.children}
-        </div>
-    )
-}
+import { BaseComponent } from '../BaseComponent';
+
+const SidebarWrapper = (props) =>
+    <BaseComponent
+        Element="div"
+        baseClassName="sidebar-wrapper"
+        {...props}
+    />
 
 export default SidebarWrapper

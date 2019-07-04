@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-function FormGroup(props) {
-    return (
-        <div id={props.id} className={`ff-input-group ${props.className || ""}`} >
-            {props.children}
-        </div>
-    )
-}
+import { BaseComponent } from '../../BaseComponent';
+
+const FormGroup = (props) =>
+    <BaseComponent
+        Element="div"
+        baseClassName="ff-input-group"
+        {...props}
+    />
 
 export default FormGroup

@@ -1,17 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-function InputField(props) {
+import { BaseComponent } from '../../BaseComponent';
+
+const InputField = (props) => {
     return (
-        <input
-            id={props.id}
-            className={`ff-input ${props.className || ""}`}
-            placeholder={props.placeholder}
-            value={props.value}
-            type={props.type}
-            required={props.required}
-            pattern={props.pattern}
-            readOnly={props.readonly}
-            onChange={props.onChange}
+        <BaseComponent
+            Element="input"
+            baseClassName="ff-input"
+            {...props}
         />
     )
 }
