@@ -1,27 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Row(props) {
-  return React.createElement("div", {
-    id: props.id,
-    className: "row ".concat(props.className || "")
-  }, props.children);
-}
-
-function Portion(props) {
-  return React.createElement("div", {
-    id: props.id,
-    className: "portion ".concat(props.className || "")
-  }, props.children);
-}
-
-function Card(props) {
-  return React.createElement("div", {
-    id: props.id,
-    className: "ff-card ".concat(props.className || "")
-  }, props.children);
-}
-
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -42,6 +21,24 @@ function _createClass(Constructor, protoProps, staticProps) {
   if (protoProps) _defineProperties(Constructor.prototype, protoProps);
   if (staticProps) _defineProperties(Constructor, staticProps);
   return Constructor;
+}
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
 }
 
 function _inherits(subClass, superClass) {
@@ -75,6 +72,42 @@ function _setPrototypeOf(o, p) {
   return _setPrototypeOf(o, p);
 }
 
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
 function _assertThisInitialized(self) {
   if (self === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
@@ -90,6 +123,49 @@ function _possibleConstructorReturn(self, call) {
 
   return _assertThisInitialized(self);
 }
+
+var BaseComponent = function BaseComponent(_ref) {
+  var _ref$Element = _ref.Element,
+      Element = _ref$Element === void 0 ? "div" : _ref$Element,
+      baseClassName = _ref.baseClassName,
+      className = _ref.className,
+      props = _objectWithoutProperties(_ref, ["Element", "baseClassName", "className"]);
+
+  var classNames = [];
+
+  if (baseClassName) {
+    classNames.push(baseClassName);
+  }
+
+  if (className) {
+    classNames.push(className);
+  }
+
+  return React.createElement(Element, _extends({
+    className: classNames.join(' ')
+  }, props));
+};
+
+var Row = function Row(props) {
+  return React.createElement(BaseComponent, _extends({
+    Element: "div",
+    baseClassName: "row"
+  }, props));
+};
+
+var Portion = function Portion(props) {
+  return React.createElement(BaseComponent, _extends({
+    Element: "div",
+    baseClassName: "portion"
+  }, props));
+};
+
+var Card = function Card(props) {
+  return React.createElement(BaseComponent, _extends({
+    Element: "div",
+    baseClassName: "ff-card"
+  }, props));
+};
 
 var Header =
 /*#__PURE__*/
@@ -128,130 +204,122 @@ Header.propTypes = {
   onMenuBtnClick: PropTypes.function
 };
 
-function SidebarItemIcon(props) {
-  return React.createElement("picture", {
-    id: props.id,
-    className: "sidebar-icon ".concat(props.className || "")
-  }, props.children);
-}
+var SidebarItemIcon = function SidebarItemIcon(props) {
+  return React.createElement(BaseComponent, _extends({
+    Element: "div",
+    baseClassName: "sidebar-icon"
+  }, props));
+};
 
-function SidebarItemText(props) {
-  return React.createElement("p", {
-    id: props.id,
-    className: "sidebar-text ".concat(props.className || "")
-  }, props.linkText);
-}
+var SidebarItemText = function SidebarItemText(props) {
+  return React.createElement(BaseComponent, _extends({
+    Element: "div",
+    baseClassName: "sidebar-text"
+  }, props));
+};
 
-function SidebarItem(props) {
-  return React.createElement("div", {
-    id: props.id,
-    className: "sidebar-item ".concat(props.className || "")
-  }, props.children);
-}
+var SidebarItem = function SidebarItem(props) {
+  return React.createElement(BaseComponent, _extends({
+    Element: "div",
+    baseClassName: "sidebar-item"
+  }, props));
+};
 
-function SidebarHeader(props) {
-  return React.createElement("div", {
-    id: props.id,
-    className: "sidebar-header ".concat(props.className || "")
-  }, props.children);
-}
+var SidebarHeader = function SidebarHeader(props) {
+  return React.createElement(BaseComponent, _extends({
+    Element: "div",
+    baseClassName: "sidebar-header"
+  }, props));
+};
 
-function SidebarWrapper(props) {
-  return React.createElement("div", {
-    id: props.id,
-    className: "sidebar-wrapper ".concat(props.className || "")
-  }, props.children);
-}
+var SidebarWrapper = function SidebarWrapper(props) {
+  return React.createElement(BaseComponent, _extends({
+    Element: "div",
+    baseClassName: "sidebar-wrapper"
+  }, props));
+};
 
-function ContentWrapper(props) {
-  return React.createElement("div", {
-    id: props.id,
-    className: "content-wrapper ".concat(props.className || "")
-  }, props.children);
-}
+var ContentWrapper = function ContentWrapper(props) {
+  return React.createElement(BaseComponent, _extends({
+    Element: "div",
+    baseClassName: "content-wrapper"
+  }, props));
+};
 
-function HRule(props) {
-  return React.createElement("hr", {
-    id: props.id,
-    className: props.className
-  });
-}
+var HRule = function HRule(props) {
+  return React.createElement(BaseComponent, _extends({
+    Element: "hr"
+  }, props));
+};
 
-function Button(props) {
-  return React.createElement("button", {
-    id: props.id,
-    className: "ff-button ".concat(props.className || ""),
-    disabled: props.disabled
-  }, props.value);
-}
+var Button = function Button(_ref) {
+  var value = _ref.value,
+      props = _objectWithoutProperties(_ref, ["value"]);
 
-function Form(props) {
-  return React.createElement("form", {
-    id: props.id,
-    className: "ff-form ".concat(props.className || "")
-  }, props.children);
-}
+  return React.createElement(BaseComponent, _extends({
+    Element: "button",
+    baseClassName: "ff-button"
+  }, props), value);
+};
 
-function FormUnit(props) {
-  return React.createElement("div", {
-    id: props.id,
-    className: "ff-form-unit ".concat(props.className || "")
-  }, props.children);
-}
+var Form = function Form(props) {
+  return React.createElement(BaseComponent, _extends({
+    Element: "form",
+    baseClassName: "ff-form"
+  }, props));
+};
 
-function FormGroup(props) {
-  return React.createElement("div", {
-    id: props.id,
-    className: "ff-input-group ".concat(props.className || "")
-  }, props.children);
-}
+var FormUnit = function FormUnit(props) {
+  return React.createElement(BaseComponent, _extends({
+    Element: "div",
+    baseClassName: "ff-form-unit"
+  }, props));
+};
 
-function InputField(props) {
-  return React.createElement("input", {
-    id: props.id,
-    className: "ff-input ".concat(props.className || ""),
-    placeholder: props.placeholder,
-    value: props.value,
-    type: props.type,
-    required: props.required,
-    pattern: props.pattern,
-    readOnly: props.readonly,
-    onChange: props.onChange
-  });
-}
+var FormGroup = function FormGroup(props) {
+  return React.createElement(BaseComponent, _extends({
+    Element: "div",
+    baseClassName: "ff-input-group"
+  }, props));
+};
 
-function TextArea(props) {
-  return React.createElement("textarea", {
-    id: props.id,
-    className: "ff-input ".concat(props.className || ""),
-    placeholder: " ",
-    rows: props.rows,
-    required: props.required,
-    readOnly: props.readonly
-  });
-}
+var InputField = function InputField(props) {
+  return React.createElement(BaseComponent, _extends({
+    Element: "input",
+    baseClassName: "ff-input"
+  }, props));
+};
 
-function InputLabel(props) {
-  return React.createElement("label", {
-    id: props.id,
-    className: "ff-input-label ".concat(props.className || "")
-  }, props.value, props.helpText && props.helpText.length > 0 && React.createElement("span", {
+var InputField$1 = function InputField(props) {
+  return React.createElement(BaseComponent, _extends({
+    Element: "textarea",
+    baseClassName: "ff-input"
+  }, props));
+};
+
+function InputLabel(_ref) {
+  var value = _ref.value,
+      helpText = _ref.helpText,
+      errorText = _ref.errorText,
+      props = _objectWithoutProperties(_ref, ["value", "helpText", "errorText"]);
+
+  return React.createElement(BaseComponent, _extends({
+    Element: "label",
+    baseClassName: "ff-input-label"
+  }, props), value, helpText && helpText.length > 0 && React.createElement("span", {
     className: "ff-input-help"
-  }, props.helpText), props.errorText && props.errorText.length > 0 && React.createElement("span", {
+  }, helpText), errorText && errorText.length > 0 && React.createElement("span", {
     className: "ff-input-error"
-  }, props.errorText));
+  }, errorText));
 }
 
-function FileUpload(props) {
-  return React.createElement("input", {
-    id: props.id,
-    className: "ff-input ".concat(props.className || ""),
-    placeholder: " ",
-    value: props.value,
-    type: "file",
-    required: props.required
-  });
-}
+var FileUpload = function FileUpload(props) {
+  return React.createElement(BaseComponent, _extends({
+    Element: "input",
+    baseClassName: "ff-input",
+    type: "file"
+  }, props));
+};
 
-export { Button, Card, ContentWrapper, FileUpload, Form, FormGroup, FormUnit, HRule, Header, InputField, InputLabel, Portion, Row, SidebarHeader, SidebarItem, SidebarItemIcon, SidebarItemText, SidebarWrapper, TextArea };
+export { Button, Card, ContentWrapper, FileUpload, Form, FormGroup, FormUnit, HRule, Header, InputField, InputLabel, Portion, Row, SidebarHeader, SidebarItem, SidebarItemIcon, SidebarItemText, SidebarWrapper, InputField$1 as TextArea };
 //# sourceMappingURL=index.es.js.map
