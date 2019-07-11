@@ -257,11 +257,24 @@ var HRule = function HRule(props) {
 
 var Button = function Button(_ref) {
   var value = _ref.value,
-      props = _objectWithoutProperties(_ref, ["value"]);
+      className = _ref.className,
+      loading = _ref.loading,
+      props = _objectWithoutProperties(_ref, ["value", "className", "loading"]);
+
+  var classNames = [];
+
+  if (className) {
+    classNames.push(className);
+  }
+
+  if (loading) {
+    classNames.push("with-loader");
+  }
 
   return React.createElement(BaseComponent, _extends({
     Element: "button",
-    baseClassName: "ff-button"
+    baseClassName: "ff-button",
+    className: classNames.join(' ')
   }, props), value);
 };
 
