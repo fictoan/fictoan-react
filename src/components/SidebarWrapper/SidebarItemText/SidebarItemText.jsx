@@ -2,11 +2,14 @@ import React from 'react';
 
 import { BaseComponent } from '../../BaseComponent';
 
-const SidebarItemText = (props) =>
+const SidebarItemText = ({ linkText, ...props }) => (
     <BaseComponent
-        Element="div"
+        Element="p"
         baseClassName="sidebar-text"
         {...props}
-    />
+    >
+        {linkText}
+    </BaseComponent>
+);
 
 export default SidebarItemText
