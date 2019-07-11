@@ -15,7 +15,7 @@ const Button = ({ value, className, loading, ...props }) => {
         <BaseComponent
             Element="button"
             baseClassName="ff-button"
-            className={className}
+            className={classNames.join(' ')}
             {...props}
         >
             {value}
