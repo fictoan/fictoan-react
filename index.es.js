@@ -211,11 +211,14 @@ var SidebarItemIcon = function SidebarItemIcon(props) {
   }, props));
 };
 
-var SidebarItemText = function SidebarItemText(props) {
+var SidebarItemText = function SidebarItemText(_ref) {
+  var linkText = _ref.linkText,
+      props = _objectWithoutProperties(_ref, ["linkText"]);
+
   return React.createElement(BaseComponent, _extends({
-    Element: "div",
+    Element: "p",
     baseClassName: "sidebar-text"
-  }, props));
+  }, props), linkText);
 };
 
 var SidebarItem = function SidebarItem(props) {
@@ -321,5 +324,12 @@ var FileUpload = function FileUpload(props) {
   }, props));
 };
 
-export { Button, Card, ContentWrapper, FileUpload, Form, FormGroup, FormUnit, HRule, Header, InputField, InputLabel, Portion, Row, SidebarHeader, SidebarItem, SidebarItemIcon, SidebarItemText, SidebarWrapper, InputField$1 as TextArea };
+var Table = function Table(props) {
+  return React.createElement(BaseComponent, _extends({
+    Element: "table",
+    baseClassName: "ff-table"
+  }, props));
+};
+
+export { Button, Card, ContentWrapper, FileUpload, Form, FormGroup, FormUnit, HRule, Header, InputField, InputLabel, Portion, Row, SidebarHeader, SidebarItem, SidebarItemIcon, SidebarItemText, SidebarWrapper, Table, InputField$1 as TextArea };
 //# sourceMappingURL=index.es.js.map

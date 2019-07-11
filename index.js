@@ -217,11 +217,14 @@ var SidebarItemIcon = function SidebarItemIcon(props) {
   }, props));
 };
 
-var SidebarItemText = function SidebarItemText(props) {
+var SidebarItemText = function SidebarItemText(_ref) {
+  var linkText = _ref.linkText,
+      props = _objectWithoutProperties(_ref, ["linkText"]);
+
   return React.createElement(BaseComponent, _extends({
-    Element: "div",
+    Element: "p",
     baseClassName: "sidebar-text"
-  }, props));
+  }, props), linkText);
 };
 
 var SidebarItem = function SidebarItem(props) {
@@ -327,6 +330,13 @@ var FileUpload = function FileUpload(props) {
   }, props));
 };
 
+var Table = function Table(props) {
+  return React.createElement(BaseComponent, _extends({
+    Element: "table",
+    baseClassName: "ff-table"
+  }, props));
+};
+
 exports.Button = Button;
 exports.Card = Card;
 exports.ContentWrapper = ContentWrapper;
@@ -345,5 +355,6 @@ exports.SidebarItem = SidebarItem;
 exports.SidebarItemIcon = SidebarItemIcon;
 exports.SidebarItemText = SidebarItemText;
 exports.SidebarWrapper = SidebarWrapper;
+exports.Table = Table;
 exports.TextArea = InputField$1;
 //# sourceMappingURL=index.js.map
