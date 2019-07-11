@@ -1,14 +1,26 @@
-import React from 'react'
+import React from "react";
 
-import { BaseComponent } from '../BaseComponent';
+import { BaseComponent } from "../BaseComponent";
 
-const Button = ({ value, ...props }) =>
-    <BaseComponent
-        Element="button"
-        baseClassName="ff-button"
-        {...props}
-    >
-        {value}
-    </BaseComponent>
+const Button = ({ value, className, loading, ...props }) => {
+    const classNames = [];
+    if (className) {
+        classNames.push(className);
+    }
+    if (loading) {
+        classNames.push("with-loader");
+    }
 
-export default Button
+    return (
+        <BaseComponent
+            Element="button"
+            baseClassName="ff-button"
+            className={classNames.join(' ')}
+            {...props}
+        >
+            {value}
+        </BaseComponent>
+    );
+};
+
+export default Button;
