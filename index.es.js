@@ -344,5 +344,72 @@ var Table = function Table(props) {
   }, props));
 };
 
-export { Button, Card, ContentWrapper, FileUpload, Form, FormGroup, FormUnit, HRule, Header, InputField, InputLabel, Portion, Row, SidebarHeader, SidebarItem, SidebarItemIcon, SidebarItemText, SidebarWrapper, Table, InputField$1 as TextArea };
+function RadioButton(prop) {
+  return React.createElement("div", {
+    className: "ff-radio",
+    onClick: function onClick() {
+      return typeof prop.onClick === "function" && prop.onClick(prop.id, !prop.isChecked);
+    }
+  }, React.createElement("input", {
+    type: "radio",
+    id: prop.id,
+    name: prop.name,
+    checked: prop.isChecked,
+    onChange: prop.onClick.bind(this, prop.id)
+  }), React.createElement("label", {
+    htmlFor: prop.id
+  }, " ", prop.value));
+}
+
+var RadioGroup =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(RadioGroup, _React$Component);
+
+  function RadioGroup(props) {
+    var _this;
+
+    _classCallCheck(this, RadioGroup);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(RadioGroup).call(this, props));
+    _this.state = {
+      options: props.options || {},
+      selected: props.defaultSelected || ""
+    };
+    _this.onSelect = _this.onSelect.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(RadioGroup, [{
+    key: "onSelect",
+    value: function onSelect(id) {
+      this.setState({
+        selected: id
+      });
+      this.state.selected !== id && this.props.onChange && this.props.onChange(id);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var _this$state = this.state,
+          options = _this$state.options,
+          selected = _this$state.selected;
+      return options.map(function (option) {
+        return React.createElement(RadioButton, {
+          key: option.id,
+          id: option.id,
+          value: option.value,
+          isChecked: selected === option.id,
+          onClick: _this2.onSelect
+        });
+      });
+    }
+  }]);
+
+  return RadioGroup;
+}(React.Component);
+
+export { Button, Card, ContentWrapper, FileUpload, Form, FormGroup, FormUnit, HRule, Header, InputField, InputLabel, Portion, RadioButton, RadioGroup, Row, SidebarHeader, SidebarItem, SidebarItemIcon, SidebarItemText, SidebarWrapper, Table, InputField$1 as TextArea };
 //# sourceMappingURL=index.es.js.map
