@@ -1,6 +1,7 @@
 import React from "react";
-import RadioButton from "./RadioButton";
 import PropTypes from "prop-types";
+
+import RadioButton from "./RadioButton";
 
 {
 	/***
@@ -9,8 +10,8 @@ import PropTypes from "prop-types";
         2. value - Text to be displayed
     2. onChange - Callback, called when radio button state changes
     3. defaultSelected - String, value to be selected by default.
-Example: 
-<RadioGroup options={[{id:'cat',value:'cat'},{id:'dog',value:'dogs'}]} onChange={(selected)=>console.log("I changed!",selected)} /> 
+Example:
+<RadioGroup options={[{id:'cat',value:'cat'},{id:'dog',value:'dogs'}]} onChange={(selected)=>console.log("I changed!",selected)} />
 ***/
 }
 class RadioGroup extends React.Component {
@@ -22,10 +23,7 @@ class RadioGroup extends React.Component {
 		};
 		this.onSelect = this.onSelect.bind(this);
 	}
-	static propTypes = {
-		onChange: PropTypes.func.isRequired,
-		options: PropTypes.array.isRequired
-	};
+
 	onSelect(id) {
 		this.setState({
 			selected: id
@@ -34,6 +32,7 @@ class RadioGroup extends React.Component {
 			this.props.onChange &&
 			this.props.onChange(id);
 	}
+
 	render() {
 		let { options, selected } = this.state;
 		return options.map(option => (

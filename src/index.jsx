@@ -27,6 +27,9 @@ import FileUpload from "./components/Form/FileUpload/FileUpload";
 
 import Table from "./components/Table/Table";
 
+import RadioButton from "./components/Form/RadioGroup/RadioButton";
+import RadioGroup from "./components/Form/RadioGroup/RadioGroup";
+
 export {
     Row,
     Portion,
@@ -47,5 +50,7 @@ export {
     Button,
     FileUpload,
     HRule,
-    Table
+    Table,
+    RadioButton,
+    RadioGroup
 };
