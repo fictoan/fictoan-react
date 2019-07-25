@@ -1,7 +1,9 @@
 import React from 'react'
 import { BaseComponent } from '../BaseComponent';
+import { PropType } from "../typings";
 
-const ContentWrapper = (props) =>
+
+const ContentWrapper = (props:PropType) =>
     <BaseComponent
         Element="div"
         baseClassName="content-wrapper"

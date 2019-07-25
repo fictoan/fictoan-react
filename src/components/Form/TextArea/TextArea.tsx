@@ -1,11 +1,12 @@
 import React from 'react';
 
 import { BaseComponent } from '../../BaseComponent';
+import { PropType } from "../../typings";
 
-const InputField = (props) => {
+const InputField = (props:PropType) => {
     return (
         <BaseComponent
-            Element="input"
+            Element="textarea"
             baseClassName="ff-input"
             {...props}
         />

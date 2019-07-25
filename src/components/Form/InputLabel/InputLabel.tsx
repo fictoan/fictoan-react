@@ -1,14 +1,16 @@
 import React from 'react';
 
 import { BaseComponent } from '../../BaseComponent';
+import { PropType } from "../../typings";
 
 function InputLabel({
     value,
     helpText,
     errorText,
     ...props
-}) {
+}: PropType & {value:string; helpText: string; errorText: string}) {
     return (
+        // @ts-ignore
         <BaseComponent
             Element="label"
             baseClassName="ff-input-label"

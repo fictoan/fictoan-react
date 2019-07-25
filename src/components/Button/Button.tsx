@@ -1,8 +1,10 @@
 import React from "react";
 
 import { BaseComponent } from "../BaseComponent";
+import { PropType } from "../typings";
 
-const Button = ({ value, className, loading, ...props }) => {
+type ButtonProps = PropType & {value: string; loading:boolean}
+const Button = ({ value, className, loading, ...props }:ButtonProps) => {
     const classNames = [];
     if (className) {
         classNames.push(className);
@@ -12,6 +14,7 @@ const Button = ({ value, className, loading, ...props }) => {
     }
 
     return (
+        // @ts-ignore
         <BaseComponent
             Element="button"
             baseClassName="ff-button"

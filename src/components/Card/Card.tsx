@@ -1,11 +1,14 @@
 import React from 'react'
-import { BaseComponent } from '../BaseComponent';
 
-const Portion = (props) =>
+import { BaseComponent } from '../BaseComponent';
+import { PropType } from "../typings";
+
+
+const Card = (props: PropType) =>
     <BaseComponent
         Element="div"
-        baseClassName="portion"
+        baseClassName="ff-card"
         {...props}
     />
 
-export default Portion
+export default Card

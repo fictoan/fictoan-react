@@ -1,12 +1,13 @@
 import React from 'react';
 
 import { BaseComponent } from '../BaseComponent';
+import { PropType } from "../typings";
 
-const SidebarWrapper = (props) =>
+const Row = (props:PropType) =>
     <BaseComponent
         Element="div"
-        baseClassName="sidebar-wrapper"
+        baseClassName="row"
         {...props}
     />
 
-export default SidebarWrapper
+export default Row

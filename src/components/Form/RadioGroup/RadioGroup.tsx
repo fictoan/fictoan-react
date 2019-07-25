@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { ReactEventHandler } from "react";
 
 import RadioButton from "./RadioButton";
+import { PropType } from "../../typings";
 
 {
 	/***
@@ -14,17 +14,20 @@ Example:
 <RadioGroup options={[{id:'cat',value:'cat'},{id:'dog',value:'dogs'}]} onChange={(selected)=>console.log("I changed!",selected)} />
 ***/
 }
-class RadioGroup extends React.Component {
-	constructor(props) {
+type RadioGroupProps = PropType & { options: object[]; onChange: Function; defaultSelected: string;}
+
+class RadioGroup extends React.Component<RadioGroupProps,{selected: string, options: {id:string,value:string}[]}> {
+	constructor(props: RadioGroupProps) {
 		super(props);
 		this.state = {
+			// @ts-ignore
 			options: props.options || {},
 			selected: props.defaultSelected || ""
 		};
 		this.onSelect = this.onSelect.bind(this);
 	}
 
-	onSelect(id) {
+	onSelect(id: string) {
 		this.setState({
 			selected: id
 		});
@@ -36,6 +39,7 @@ class RadioGroup extends React.Component {
 	render() {
 		let { options, selected } = this.state;
 		return options.map(option => (
+			// @ts-ignore
 			<RadioButton
 				key={option.id}
 				id={option.id}

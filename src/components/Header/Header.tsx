@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { ReactEventHandler } from "react";
 // import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
 
 import Row from '../Row/Row';
 import Portion from '../Portion/Portion';
+import { PropType } from "../typings";
 
-class Header extends React.PureComponent {
+type HeaderProps = PropType & { onMenuBtnClick: ReactEventHandler }
+
+class Header extends React.PureComponent<HeaderProps,{}> {
     render() {
         return (
             <Row className="docs-header bg-white shadow-mild vertically-centre-items">
@@ -20,9 +22,5 @@ class Header extends React.PureComponent {
     }
 }
 
-Header.propTypes = {
-    // eslint-disable-next-line react/no-typos
-    onMenuBtnClick: PropTypes.function,
-}
 
 export default Header
