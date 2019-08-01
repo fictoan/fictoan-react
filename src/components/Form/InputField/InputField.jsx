@@ -8,7 +8,7 @@ class InputField extends PureComponent {
             <BaseComponent
                 Element="input"
                 baseClassName="ff-input"
-                {...props}
+                {...this.props}
             />
         );
     }
