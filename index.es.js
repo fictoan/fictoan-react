@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 function _classCallCheck(instance, Constructor) {
@@ -278,12 +278,29 @@ var Button = function Button(_ref) {
   }, props), value);
 };
 
-var Form = function Form(props) {
-  return React.createElement(BaseComponent, _extends({
-    Element: "form",
-    baseClassName: "ff-form"
-  }, props));
-};
+var Form =
+/*#__PURE__*/
+function (_PureComponent) {
+  _inherits(Form, _PureComponent);
+
+  function Form() {
+    _classCallCheck(this, Form);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Form).apply(this, arguments));
+  }
+
+  _createClass(Form, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(BaseComponent, _extends({
+        Element: "form",
+        baseClassName: "ff-form"
+      }, this.props));
+    }
+  }]);
+
+  return Form;
+}(PureComponent);
 
 var FormUnit = function FormUnit(props) {
   return React.createElement(BaseComponent, _extends({
@@ -299,12 +316,29 @@ var FormGroup = function FormGroup(props) {
   }, props));
 };
 
-var InputField = function InputField(props) {
-  return React.createElement(BaseComponent, _extends({
-    Element: "input",
-    baseClassName: "ff-input"
-  }, props));
-};
+var InputField =
+/*#__PURE__*/
+function (_PureComponent) {
+  _inherits(InputField, _PureComponent);
+
+  function InputField() {
+    _classCallCheck(this, InputField);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(InputField).apply(this, arguments));
+  }
+
+  _createClass(InputField, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(BaseComponent, _extends({
+        Element: "input",
+        baseClassName: "ff-input"
+      }, props));
+    }
+  }]);
+
+  return InputField;
+}(PureComponent);
 
 var InputField$1 = function InputField(props) {
   return React.createElement(BaseComponent, _extends({

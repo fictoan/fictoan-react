@@ -4,7 +4,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var React = _interopDefault(require('react'));
+var React = require('react');
+var React__default = _interopDefault(React);
 var PropTypes = _interopDefault(require('prop-types'));
 
 function _classCallCheck(instance, Constructor) {
@@ -147,27 +148,27 @@ var BaseComponent = function BaseComponent(_ref) {
     classNames.push(className);
   }
 
-  return React.createElement(Element, _extends({
+  return React__default.createElement(Element, _extends({
     className: classNames.join(' ')
   }, props));
 };
 
 var Row = function Row(props) {
-  return React.createElement(BaseComponent, _extends({
+  return React__default.createElement(BaseComponent, _extends({
     Element: "div",
     baseClassName: "row"
   }, props));
 };
 
 var Portion = function Portion(props) {
-  return React.createElement(BaseComponent, _extends({
+  return React__default.createElement(BaseComponent, _extends({
     Element: "div",
     baseClassName: "portion"
   }, props));
 };
 
 var Card = function Card(props) {
-  return React.createElement(BaseComponent, _extends({
+  return React__default.createElement(BaseComponent, _extends({
     Element: "div",
     baseClassName: "ff-card"
   }, props));
@@ -187,23 +188,23 @@ function (_React$PureComponent) {
   _createClass(Header, [{
     key: "render",
     value: function render() {
-      return React.createElement(Row, {
+      return React__default.createElement(Row, {
         className: "docs-header bg-white shadow-mild vertically-centre-items"
-      }, React.createElement(Portion, {
+      }, React__default.createElement(Portion, {
         className: "whole horizontal vertically-centre-items"
-      }, React.createElement("div", {
+      }, React__default.createElement("div", {
         className: "menu-toggle",
         onClick: this.props.onMenuBtnClick
-      }, React.createElement("h6", {
+      }, React__default.createElement("h6", {
         className: "weight-400"
-      }, "\u2014"), React.createElement("h6", {
+      }, "\u2014"), React__default.createElement("h6", {
         className: "weight-400"
       }, "\u2013"))));
     }
   }]);
 
   return Header;
-}(React.PureComponent);
+}(React__default.PureComponent);
 
 Header.propTypes = {
   // eslint-disable-next-line react/no-typos
@@ -211,7 +212,7 @@ Header.propTypes = {
 };
 
 var SidebarItemIcon = function SidebarItemIcon(props) {
-  return React.createElement(BaseComponent, _extends({
+  return React__default.createElement(BaseComponent, _extends({
     Element: "div",
     baseClassName: "sidebar-icon"
   }, props));
@@ -221,42 +222,42 @@ var SidebarItemText = function SidebarItemText(_ref) {
   var linkText = _ref.linkText,
       props = _objectWithoutProperties(_ref, ["linkText"]);
 
-  return React.createElement(BaseComponent, _extends({
+  return React__default.createElement(BaseComponent, _extends({
     Element: "p",
     baseClassName: "sidebar-text"
   }, props), linkText);
 };
 
 var SidebarItem = function SidebarItem(props) {
-  return React.createElement(BaseComponent, _extends({
+  return React__default.createElement(BaseComponent, _extends({
     Element: "div",
     baseClassName: "sidebar-item"
   }, props));
 };
 
 var SidebarHeader = function SidebarHeader(props) {
-  return React.createElement(BaseComponent, _extends({
+  return React__default.createElement(BaseComponent, _extends({
     Element: "div",
     baseClassName: "sidebar-header"
   }, props));
 };
 
 var SidebarWrapper = function SidebarWrapper(props) {
-  return React.createElement(BaseComponent, _extends({
+  return React__default.createElement(BaseComponent, _extends({
     Element: "div",
     baseClassName: "sidebar-wrapper"
   }, props));
 };
 
 var ContentWrapper = function ContentWrapper(props) {
-  return React.createElement(BaseComponent, _extends({
+  return React__default.createElement(BaseComponent, _extends({
     Element: "div",
     baseClassName: "content-wrapper"
   }, props));
 };
 
 var HRule = function HRule(props) {
-  return React.createElement(BaseComponent, _extends({
+  return React__default.createElement(BaseComponent, _extends({
     Element: "hr"
   }, props));
 };
@@ -277,43 +278,77 @@ var Button = function Button(_ref) {
     classNames.push("with-loader");
   }
 
-  return React.createElement(BaseComponent, _extends({
+  return React__default.createElement(BaseComponent, _extends({
     Element: "button",
     baseClassName: "ff-button",
     className: classNames.join(' ')
   }, props), value);
 };
 
-var Form = function Form(props) {
-  return React.createElement(BaseComponent, _extends({
-    Element: "form",
-    baseClassName: "ff-form"
-  }, props));
-};
+var Form =
+/*#__PURE__*/
+function (_PureComponent) {
+  _inherits(Form, _PureComponent);
+
+  function Form() {
+    _classCallCheck(this, Form);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Form).apply(this, arguments));
+  }
+
+  _createClass(Form, [{
+    key: "render",
+    value: function render() {
+      return React__default.createElement(BaseComponent, _extends({
+        Element: "form",
+        baseClassName: "ff-form"
+      }, this.props));
+    }
+  }]);
+
+  return Form;
+}(React.PureComponent);
 
 var FormUnit = function FormUnit(props) {
-  return React.createElement(BaseComponent, _extends({
+  return React__default.createElement(BaseComponent, _extends({
     Element: "div",
     baseClassName: "ff-form-unit"
   }, props));
 };
 
 var FormGroup = function FormGroup(props) {
-  return React.createElement(BaseComponent, _extends({
+  return React__default.createElement(BaseComponent, _extends({
     Element: "div",
     baseClassName: "ff-input-group"
   }, props));
 };
 
-var InputField = function InputField(props) {
-  return React.createElement(BaseComponent, _extends({
-    Element: "input",
-    baseClassName: "ff-input"
-  }, props));
-};
+var InputField =
+/*#__PURE__*/
+function (_PureComponent) {
+  _inherits(InputField, _PureComponent);
+
+  function InputField() {
+    _classCallCheck(this, InputField);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(InputField).apply(this, arguments));
+  }
+
+  _createClass(InputField, [{
+    key: "render",
+    value: function render() {
+      return React__default.createElement(BaseComponent, _extends({
+        Element: "input",
+        baseClassName: "ff-input"
+      }, props));
+    }
+  }]);
+
+  return InputField;
+}(React.PureComponent);
 
 var InputField$1 = function InputField(props) {
-  return React.createElement(BaseComponent, _extends({
+  return React__default.createElement(BaseComponent, _extends({
     Element: "textarea",
     baseClassName: "ff-input"
   }, props));
@@ -325,18 +360,18 @@ function InputLabel(_ref) {
       errorText = _ref.errorText,
       props = _objectWithoutProperties(_ref, ["value", "helpText", "errorText"]);
 
-  return React.createElement(BaseComponent, _extends({
+  return React__default.createElement(BaseComponent, _extends({
     Element: "label",
     baseClassName: "ff-input-label"
-  }, props), value, helpText && helpText.length > 0 && React.createElement("span", {
+  }, props), value, helpText && helpText.length > 0 && React__default.createElement("span", {
     className: "ff-input-help"
-  }, helpText), errorText && errorText.length > 0 && React.createElement("span", {
+  }, helpText), errorText && errorText.length > 0 && React__default.createElement("span", {
     className: "ff-input-error"
   }, errorText));
 }
 
 var FileUpload = function FileUpload(props) {
-  return React.createElement(BaseComponent, _extends({
+  return React__default.createElement(BaseComponent, _extends({
     Element: "input",
     baseClassName: "ff-input",
     type: "file"
@@ -344,25 +379,25 @@ var FileUpload = function FileUpload(props) {
 };
 
 var Table = function Table(props) {
-  return React.createElement(BaseComponent, _extends({
+  return React__default.createElement(BaseComponent, _extends({
     Element: "table",
     baseClassName: "ff-table"
   }, props));
 };
 
 function RadioButton(prop) {
-  return React.createElement("div", {
+  return React__default.createElement("div", {
     className: "ff-radio",
     onClick: function onClick() {
       return typeof prop.onClick === "function" && prop.onClick(prop.id, !prop.isChecked);
     }
-  }, React.createElement("input", {
+  }, React__default.createElement("input", {
     type: "radio",
     id: prop.id,
     name: prop.name,
     checked: prop.isChecked,
     onChange: prop.onClick.bind(this, prop.id)
-  }), React.createElement("label", {
+  }), React__default.createElement("label", {
     htmlFor: prop.id
   }, " ", prop.value));
 }
@@ -403,7 +438,7 @@ function (_React$Component) {
           options = _this$state.options,
           selected = _this$state.selected;
       return options.map(function (option) {
-        return React.createElement(RadioButton, {
+        return React__default.createElement(RadioButton, {
           key: option.id,
           id: option.id,
           value: option.value,
@@ -415,7 +450,7 @@ function (_React$Component) {
   }]);
 
   return RadioGroup;
-}(React.Component);
+}(React__default.Component);
 
 exports.Button = Button;
 exports.Card = Card;
