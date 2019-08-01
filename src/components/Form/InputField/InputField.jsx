@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { PureComponent } from "react";
 
-import { BaseComponent } from '../../BaseComponent';
+import { BaseComponent } from "../../BaseComponent";
 
-const InputField = (props) => {
-    return (
-        <BaseComponent
-            Element="input"
-            baseClassName="ff-input"
-            {...props}
-        />
-    )
+class InputField extends PureComponent {
+    render() {
+        return (
+            <BaseComponent
+                Element="input"
+                baseClassName="ff-input"
+                {...props}
+            />
+        );
+    }
 }
 
-export default InputField
+export default InputField;
