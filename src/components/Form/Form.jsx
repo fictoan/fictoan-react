@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { PureComponent } from "react";
 
-import { BaseComponent } from '../BaseComponent';
+import { BaseComponent } from "../BaseComponent";
 
-const Form = (props) =>
-    <BaseComponent
-        Element="form"
-        baseClassName="ff-form"
-        {...props}
-    />
+class Form extends PureComponent {
+    render() {
+        return (
+            <BaseComponent
+                Element="form"
+                baseClassName="ff-form"
+                {...this.props}
+            />
+        );
+    }
+}
 
-export default Form
+export default Form;
