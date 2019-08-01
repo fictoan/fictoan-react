@@ -333,7 +333,7 @@ function (_PureComponent) {
       return React.createElement(BaseComponent, _extends({
         Element: "input",
         baseClassName: "ff-input"
-      }, props));
+      }, this.props));
     }
   }]);
 
