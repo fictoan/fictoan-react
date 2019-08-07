@@ -1,12 +1,12 @@
-import React from 'react'
-import { BaseComponent } from '../BaseComponent';
-import { PropType } from "../typings";
+import React, { HTMLProps } from "react";
+import { BaseComponent } from "../BaseComponent";
 
-const Portion = (props:PropType) =>
-    <BaseComponent
+const Portion = (props: HTMLProps<HTMLDivElement>) => (
+    <BaseComponent<HTMLProps<HTMLDivElement>, HTMLDivElement>
         Element="div"
         baseClassName="portion"
         {...props}
     />
+);
 
-export default Portion
+export default Portion;

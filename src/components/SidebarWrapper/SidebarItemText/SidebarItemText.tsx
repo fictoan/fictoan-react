@@ -1,18 +1,13 @@
-import React from 'react';
+import React, { HTMLProps } from "react";
 
-import { BaseComponent } from '../../BaseComponent';
-import { PropType } from "../../typings";
+import { BaseComponent } from "../../BaseComponent";
 
-type SidebarItemTextProps = PropType & {linkText:string};
-const SidebarItemText = ({ linkText, ...props }:SidebarItemTextProps) => (
-    // @ts-ignore
-    <BaseComponent
-        Element="p"
-        baseClassName="sidebar-text"
-        {...props}
-    >
+type SidebarItemTextProps = HTMLProps<HTMLParagraphElement> & { linkText: string };
+
+const SidebarItemText = ({ linkText, ...props }: SidebarItemTextProps) => (
+    <BaseComponent<HTMLProps<HTMLParagraphElement>,HTMLParagraphElement> Element="p" baseClassName="sidebar-text" {...props}>
         {linkText}
     </BaseComponent>
 );
 
-export default SidebarItemText
+export default SidebarItemText;

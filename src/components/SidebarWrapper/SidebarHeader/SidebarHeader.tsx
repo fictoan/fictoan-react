@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { HTMLProps } from "react";
 
-import { BaseComponent } from '../../BaseComponent';
-import { PropType } from "../../typings";
+import { BaseComponent } from "../../BaseComponent";
 
-const SidebarHeader = (props:PropType) =>
-    <BaseComponent
+const SidebarHeader = (props: HTMLProps<HTMLDivElement>) => (
+    <BaseComponent<HTMLProps<HTMLDivElement>, HTMLDivElement>
         Element="div"
         baseClassName="sidebar-header"
         {...props}
     />
+);
 
-export default SidebarHeader
+export default SidebarHeader;

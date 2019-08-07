@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { HTMLProps } from "react";
 
-import { BaseComponent } from '../../BaseComponent';
-import { PropType } from "../../typings";
+import { BaseComponent } from "../../BaseComponent";
 
-const FormGroup = (props:PropType) =>
-    <BaseComponent
+const FormGroup = (props: HTMLProps<HTMLDivElement>) => (
+    <BaseComponent<HTMLProps<HTMLDivElement>, HTMLDivElement>
         Element="div"
         baseClassName="ff-input-group"
         {...props}
     />
+);
 
-export default FormGroup
+export default FormGroup;

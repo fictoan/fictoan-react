@@ -1,13 +1,23 @@
-import React from "react";
-import { PropType } from "../../typings";
+import React, { ChangeEvent, HTMLProps } from "react";
 
-function RadioButton(prop: PropType & { id: string; name: string; value: string; onClick: Function, isChecked: boolean; }) {
+function RadioButton(
+    prop: HTMLProps<HTMLInputElement> & {
+        id: string;
+        value: string;
+        onSelected: (
+            event: React.ChangeEvent<HTMLDivElement>,
+            id: string
+        ) => void;
+        isChecked: boolean;
+    }
+) {
+    // @ts-ignore
     return (
         <div
             className="ff-radio"
-            onClick={() =>
-                typeof prop.onClick === "function" &&
-                prop.onClick(prop.id, !prop.isChecked)
+            onClick={(event: ChangeEvent<HTMLDivElement>) =>
+                typeof prop.onSelected === "function" &&
+                prop.onSelected(event, prop.id)
             }
         >
             <input
@@ -15,7 +25,6 @@ function RadioButton(prop: PropType & { id: string; name: string; value: string;
                 id={prop.id}
                 name={prop.name}
                 checked={prop.isChecked}
-                onChange={prop.onClick.bind(this, prop.id)}
             />
             <label htmlFor={prop.id}> {prop.value}</label>
         </div>

@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { HTMLProps } from "react";
 
-import { BaseComponent } from '../BaseComponent';
-import { PropType } from "../typings";
+import { BaseComponent } from "../BaseComponent";
 
-const Row = (props:PropType) =>
-    <BaseComponent
+const Row = (props: HTMLProps<HTMLDivElement>) => (
+    <BaseComponent<HTMLProps<HTMLDivElement>, HTMLDivElement>
         Element="div"
         baseClassName="row"
         {...props}
     />
+);
 
-export default Row
+export default Row;

@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { HTMLProps, ReactElement } from "react";
 
-import { BaseComponent } from '../../BaseComponent';
-import { PropType } from "../../typings";
+import { BaseComponent } from "../../BaseComponent";
 
-const InputField = (props: PropType) => {
+const InputField = (props: HTMLProps<HTMLInputElement>): ReactElement => {
     return (
-        <BaseComponent
+        <BaseComponent<HTMLProps<HTMLInputElement>, HTMLInputElement>
             Element="input"
             baseClassName="ff-input"
             {...props}
         />
-    )
-}
+    );
+};
 
-export default InputField
+export default InputField;

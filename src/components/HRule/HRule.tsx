@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { HTMLProps } from "react";
 
-import { BaseComponent } from '../BaseComponent';
-import { PropType } from "../typings";
+import { BaseComponent } from "../BaseComponent";
 
-const HRule = (props: PropType) =>
-    <BaseComponent Element="hr" {...props} />
+const HRule = (props: HTMLProps<HTMLHRElement>) => (
+    <BaseComponent<HTMLProps<HTMLHRElement>, HTMLHRElement>
+        Element="hr"
+        {...props}
+    />
+);
 
-export default HRule
+export default HRule;

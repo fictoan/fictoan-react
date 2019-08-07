@@ -1,18 +1,17 @@
-import React, { ReactElement, ReactPropTypes } from "react";
+import React, { HTMLProps, ReactElement, ElementType } from "react";
 
-interface PropType {
+export type BaseProps = {
+    Element: ElementType<any>;
     className?: string;
     baseClassName?: string;
-    Element: string;
-}
+};
 
-type Props = PropType & {};
-export const BaseComponent = ({
+export const BaseComponent = <T, K extends HTMLProps<K>>({
     Element = "div",
     baseClassName,
     className,
     ...props
-}: Props) => {
+}: T & BaseProps) => {
     const classNames = [];
 
     if (baseClassName) {
@@ -22,12 +21,5 @@ export const BaseComponent = ({
         classNames.push(className);
     }
 
-
-    return (
-        // @ts-ignore
-        <Element
-            className={classNames.join(' ')}
-            {...props}
-        />
-    )
-}
+    return <Element {...props} className={classNames.join(" ")} />;
+};
