@@ -7,10 +7,14 @@ function InputLabel({
     helpText,
     errorText,
     ...props
-}: HTMLProps<HTMLLabelElement> & { value?: string; helpText?: string; errorText?: string }) {
+}: HTMLProps<HTMLLabelElement> & {
+    value?: string;
+    helpText?: string;
+    errorText?: string;
+}) {
     return (
         // @ts-ignore
-        <BaseComponent<HTMLProps<HTMLLabelElement>,HTMLLabelElement>
+        <BaseComponent<HTMLProps<HTMLLabelElement>, HTMLLabelElement>
             Element="label"
             baseClassName="ff-input-label"
             {...props}

@@ -4,7 +4,9 @@ import React, { ReactEventHandler, HTMLProps } from "react";
 import Row from "../Row/Row";
 import Portion from "../Portion/Portion";
 
-type HeaderProps = HTMLProps<HTMLDivElement> & { onMenuBtnClick: ReactEventHandler };
+type HeaderProps = HTMLProps<HTMLDivElement> & {
+    onMenuBtnClick: ReactEventHandler;
+};
 
 class Header extends React.PureComponent<HeaderProps, {}> {
     render() {
