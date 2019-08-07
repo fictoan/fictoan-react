@@ -1,13 +1,17 @@
-import React, { HTMLProps } from "react";
+import React, { HTMLProps, PureComponent } from "react";
 
 import { BaseComponent } from "../BaseComponent";
 
-const Form = (props: HTMLProps<HTMLFormElement>) => (
-    <BaseComponent<HTMLProps<HTMLFormElement>, HTMLFormElement>
-        Element="form"
-        baseClassName="ff-form"
-        {...props}
-    />
-);
+class Form extends PureComponent<HTMLProps<HTMLFormElement>> {
+    render() {
+        return (
+            <BaseComponent<HTMLProps<HTMLFormElement>, HTMLFormElement>
+                Element="form"
+                baseClassName="ff-form"
+                {...this.props}
+            />
+        );
+    }
+}
 
 export default Form;

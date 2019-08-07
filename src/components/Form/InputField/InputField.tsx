@@ -1,15 +1,17 @@
-import React, { HTMLProps, ReactElement } from "react";
+import React, { PureComponent, HTMLProps } from "react";
 
 import { BaseComponent } from "../../BaseComponent";
 
-const InputField = (props: HTMLProps<HTMLInputElement>): ReactElement => {
-    return (
-        <BaseComponent<HTMLProps<HTMLInputElement>, HTMLInputElement>
-            Element="input"
-            baseClassName="ff-input"
-            {...props}
-        />
-    );
-};
+class InputField extends PureComponent<HTMLProps<HTMLInputElement>> {
+    render() {
+        return (
+            <BaseComponent<HTMLProps<HTMLInputElement>, HTMLInputElement>
+                Element="input"
+                baseClassName="ff-input"
+                {...this.props}
+            />
+        );
+    }
+}
 
 export default InputField;
