@@ -14,7 +14,7 @@ function InputLabel({
 }) {
     return (
         // @ts-ignore
-        <BaseComponent<HTMLProps<HTMLLabelElement>, HTMLLabelElement>
+        <BaseComponent<HTMLLabelElement>
             Element="label"
             baseClassName="ff-input-label"
             {...props}

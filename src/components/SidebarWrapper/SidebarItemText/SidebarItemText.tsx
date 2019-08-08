@@ -7,7 +7,7 @@ type SidebarItemTextProps = HTMLProps<HTMLParagraphElement> & {
 };
 
 const SidebarItemText = ({ linkText, ...props }: SidebarItemTextProps) => (
-    <BaseComponent<HTMLProps<HTMLParagraphElement>, HTMLParagraphElement>
+    <BaseComponent<HTMLParagraphElement>
         Element="p"
         baseClassName="sidebar-text"
         {...props}
