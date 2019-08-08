@@ -5,7 +5,7 @@ import { BaseComponent } from "../BaseComponent";
 class Form extends PureComponent<HTMLProps<HTMLFormElement>> {
     render() {
         return (
-            <BaseComponent<HTMLProps<HTMLFormElement>, HTMLFormElement>
+            <BaseComponent<HTMLFormElement>
                 Element="form"
                 baseClassName="ff-form"
                 {...this.props}

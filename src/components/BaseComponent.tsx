@@ -6,12 +6,12 @@ export type BaseProps = {
     baseClassName?: string;
 };
 
-export const BaseComponent = <T, K extends HTMLProps<K>>({
+export const BaseComponent = <K extends HTMLProps<K>>({
     Element = "div",
     baseClassName,
     className,
     ...props
-}: T & BaseProps) => {
+}: HTMLProps<K> & BaseProps) => {
     const classNames = [];
 
     if (baseClassName) {

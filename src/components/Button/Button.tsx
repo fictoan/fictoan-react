@@ -17,7 +17,7 @@ const Button = ({ value, className, loading, ...props }: ButtonProps) => {
     }
 
     return (
-        <BaseComponent<HTMLProps<HTMLButtonElement>, HTMLButtonElement>
+        <BaseComponent<HTMLButtonElement>
             Element="button"
             baseClassName="ff-button"
             className={classNames.join(" ")}

@@ -4,7 +4,7 @@ import { BaseComponent } from "../../BaseComponent";
 
 const InputField = (props: HTMLProps<HTMLDivElement>) => {
     return (
-        <BaseComponent<HTMLProps<HTMLDivElement>, HTMLDivElement>
+        <BaseComponent<HTMLDivElement>
             Element="textarea"
             baseClassName="ff-input"
             {...props}
