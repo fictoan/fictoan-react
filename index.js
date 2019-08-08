@@ -6,451 +6,135 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 
 var React = require('react');
 var React__default = _interopDefault(React);
-var PropTypes = _interopDefault(require('prop-types'));
+var tslib_1 = require('tslib');
 
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
-
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
+const BaseComponent = (_a) => {
+    var { Element = "div", baseClassName, className } = _a, props = tslib_1.__rest(_a, ["Element", "baseClassName", "className"]);
+    const classNames = [];
+    if (baseClassName) {
+        classNames.push(baseClassName);
     }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function");
-  }
-
-  subClass.prototype = Object.create(superClass && superClass.prototype, {
-    constructor: {
-      value: subClass,
-      writable: true,
-      configurable: true
+    if (className) {
+        classNames.push(className);
     }
-  });
-  if (superClass) _setPrototypeOf(subClass, superClass);
-}
+    return React__default.createElement(Element, Object.assign({}, props, { className: classNames.join(" ") }));
+};
 
-function _getPrototypeOf(o) {
-  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
-    return o.__proto__ || Object.getPrototypeOf(o);
-  };
-  return _getPrototypeOf(o);
-}
+const Row = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "row" }, props)));
 
-function _setPrototypeOf(o, p) {
-  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-    o.__proto__ = p;
-    return o;
-  };
+const Portion = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "portion" }, props)));
 
-  return _setPrototypeOf(o, p);
-}
+const Card = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "ff-card" }, props)));
 
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
-
-function _objectWithoutProperties(source, excluded) {
-  if (source == null) return {};
-
-  var target = _objectWithoutPropertiesLoose(source, excluded);
-
-  var key, i;
-
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
+class Header extends React__default.PureComponent {
+    render() {
+        return (React__default.createElement(Row, { className: "docs-header bg-white shadow-mild vertically-centre-items" },
+            React__default.createElement(Portion, { className: "whole horizontal vertically-centre-items" },
+                React__default.createElement("div", { className: "menu-toggle", onClick: this.props.onMenuBtnClick },
+                    React__default.createElement("h6", { className: "weight-400" }, "\u2014"),
+                    React__default.createElement("h6", { className: "weight-400" }, "\u2013")))));
     }
-  }
-
-  return target;
 }
 
-function _assertThisInitialized(self) {
-  if (self === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
+const SidebarItemIcon = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "sidebar-icon" }, props)));
 
-  return self;
-}
-
-function _possibleConstructorReturn(self, call) {
-  if (call && (typeof call === "object" || typeof call === "function")) {
-    return call;
-  }
-
-  return _assertThisInitialized(self);
-}
-
-var BaseComponent = function BaseComponent(_ref) {
-  var _ref$Element = _ref.Element,
-      Element = _ref$Element === void 0 ? "div" : _ref$Element,
-      baseClassName = _ref.baseClassName,
-      className = _ref.className,
-      props = _objectWithoutProperties(_ref, ["Element", "baseClassName", "className"]);
-
-  var classNames = [];
-
-  if (baseClassName) {
-    classNames.push(baseClassName);
-  }
-
-  if (className) {
-    classNames.push(className);
-  }
-
-  return React__default.createElement(Element, _extends({
-    className: classNames.join(' ')
-  }, props));
+const SidebarItemText = (_a) => {
+    var { linkText } = _a, props = tslib_1.__rest(_a, ["linkText"]);
+    return (React__default.createElement(BaseComponent, Object.assign({ Element: "p", baseClassName: "sidebar-text" }, props), linkText));
 };
 
-var Row = function Row(props) {
-  return React__default.createElement(BaseComponent, _extends({
-    Element: "div",
-    baseClassName: "row"
-  }, props));
-};
+const SidebarItem = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "sidebar-item" }, props)));
 
-var Portion = function Portion(props) {
-  return React__default.createElement(BaseComponent, _extends({
-    Element: "div",
-    baseClassName: "portion"
-  }, props));
-};
+const SidebarHeader = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "sidebar-header" }, props)));
 
-var Card = function Card(props) {
-  return React__default.createElement(BaseComponent, _extends({
-    Element: "div",
-    baseClassName: "ff-card"
-  }, props));
-};
+const SidebarWrapper = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "sidebar-wrapper" }, props)));
 
-var Header =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inherits(Header, _React$PureComponent);
+const ContentWrapper = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "content-wrapper" }, props)));
 
-  function Header() {
-    _classCallCheck(this, Header);
+const HRule = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "hr" }, props)));
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Header).apply(this, arguments));
-  }
-
-  _createClass(Header, [{
-    key: "render",
-    value: function render() {
-      return React__default.createElement(Row, {
-        className: "docs-header bg-white shadow-mild vertically-centre-items"
-      }, React__default.createElement(Portion, {
-        className: "whole horizontal vertically-centre-items"
-      }, React__default.createElement("div", {
-        className: "menu-toggle",
-        onClick: this.props.onMenuBtnClick
-      }, React__default.createElement("h6", {
-        className: "weight-400"
-      }, "\u2014"), React__default.createElement("h6", {
-        className: "weight-400"
-      }, "\u2013"))));
+const Button = (_a) => {
+    var { value, className, loading } = _a, props = tslib_1.__rest(_a, ["value", "className", "loading"]);
+    const classNames = [];
+    if (className) {
+        classNames.push(className);
     }
-  }]);
-
-  return Header;
-}(React__default.PureComponent);
-
-Header.propTypes = {
-  // eslint-disable-next-line react/no-typos
-  onMenuBtnClick: PropTypes.function
-};
-
-var SidebarItemIcon = function SidebarItemIcon(props) {
-  return React__default.createElement(BaseComponent, _extends({
-    Element: "div",
-    baseClassName: "sidebar-icon"
-  }, props));
-};
-
-var SidebarItemText = function SidebarItemText(_ref) {
-  var linkText = _ref.linkText,
-      props = _objectWithoutProperties(_ref, ["linkText"]);
-
-  return React__default.createElement(BaseComponent, _extends({
-    Element: "p",
-    baseClassName: "sidebar-text"
-  }, props), linkText);
-};
-
-var SidebarItem = function SidebarItem(props) {
-  return React__default.createElement(BaseComponent, _extends({
-    Element: "div",
-    baseClassName: "sidebar-item"
-  }, props));
-};
-
-var SidebarHeader = function SidebarHeader(props) {
-  return React__default.createElement(BaseComponent, _extends({
-    Element: "div",
-    baseClassName: "sidebar-header"
-  }, props));
-};
-
-var SidebarWrapper = function SidebarWrapper(props) {
-  return React__default.createElement(BaseComponent, _extends({
-    Element: "div",
-    baseClassName: "sidebar-wrapper"
-  }, props));
-};
-
-var ContentWrapper = function ContentWrapper(props) {
-  return React__default.createElement(BaseComponent, _extends({
-    Element: "div",
-    baseClassName: "content-wrapper"
-  }, props));
-};
-
-var HRule = function HRule(props) {
-  return React__default.createElement(BaseComponent, _extends({
-    Element: "hr"
-  }, props));
-};
-
-var Button = function Button(_ref) {
-  var value = _ref.value,
-      className = _ref.className,
-      loading = _ref.loading,
-      props = _objectWithoutProperties(_ref, ["value", "className", "loading"]);
-
-  var classNames = [];
-
-  if (className) {
-    classNames.push(className);
-  }
-
-  if (loading) {
-    classNames.push("with-loader");
-  }
-
-  return React__default.createElement(BaseComponent, _extends({
-    Element: "button",
-    baseClassName: "ff-button",
-    className: classNames.join(' ')
-  }, props), value);
-};
-
-var Form =
-/*#__PURE__*/
-function (_PureComponent) {
-  _inherits(Form, _PureComponent);
-
-  function Form() {
-    _classCallCheck(this, Form);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Form).apply(this, arguments));
-  }
-
-  _createClass(Form, [{
-    key: "render",
-    value: function render() {
-      return React__default.createElement(BaseComponent, _extends({
-        Element: "form",
-        baseClassName: "ff-form"
-      }, this.props));
+    if (loading) {
+        classNames.push("with-loader");
     }
-  }]);
-
-  return Form;
-}(React.PureComponent);
-
-var FormUnit = function FormUnit(props) {
-  return React__default.createElement(BaseComponent, _extends({
-    Element: "div",
-    baseClassName: "ff-form-unit"
-  }, props));
+    return (React__default.createElement(BaseComponent, Object.assign({ Element: "button", baseClassName: "ff-button", className: classNames.join(" ") }, props), value));
 };
 
-var FormGroup = function FormGroup(props) {
-  return React__default.createElement(BaseComponent, _extends({
-    Element: "div",
-    baseClassName: "ff-input-group"
-  }, props));
-};
-
-var InputField =
-/*#__PURE__*/
-function (_PureComponent) {
-  _inherits(InputField, _PureComponent);
-
-  function InputField() {
-    _classCallCheck(this, InputField);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(InputField).apply(this, arguments));
-  }
-
-  _createClass(InputField, [{
-    key: "render",
-    value: function render() {
-      return React__default.createElement(BaseComponent, _extends({
-        Element: "input",
-        baseClassName: "ff-input"
-      }, this.props));
+class Form extends React.PureComponent {
+    render() {
+        return (React__default.createElement(BaseComponent, Object.assign({ Element: "form", baseClassName: "ff-form" }, this.props)));
     }
-  }]);
-
-  return InputField;
-}(React.PureComponent);
-
-var InputField$1 = function InputField(props) {
-  return React__default.createElement(BaseComponent, _extends({
-    Element: "textarea",
-    baseClassName: "ff-input"
-  }, props));
-};
-
-function InputLabel(_ref) {
-  var value = _ref.value,
-      helpText = _ref.helpText,
-      errorText = _ref.errorText,
-      props = _objectWithoutProperties(_ref, ["value", "helpText", "errorText"]);
-
-  return React__default.createElement(BaseComponent, _extends({
-    Element: "label",
-    baseClassName: "ff-input-label"
-  }, props), value, helpText && helpText.length > 0 && React__default.createElement("span", {
-    className: "ff-input-help"
-  }, helpText), errorText && errorText.length > 0 && React__default.createElement("span", {
-    className: "ff-input-error"
-  }, errorText));
 }
 
-var FileUpload = function FileUpload(props) {
-  return React__default.createElement(BaseComponent, _extends({
-    Element: "input",
-    baseClassName: "ff-input",
-    type: "file"
-  }, props));
+const FormUnit = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "ff-form-unit" }, props)));
+
+const FormGroup = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "ff-input-group" }, props)));
+
+class InputField extends React.PureComponent {
+    render() {
+        return (React__default.createElement(BaseComponent, Object.assign({ Element: "input", baseClassName: "ff-input" }, this.props)));
+    }
+}
+
+const InputField$1 = (props) => {
+    return (React__default.createElement(BaseComponent, Object.assign({ Element: "textarea", baseClassName: "ff-input" }, props)));
 };
 
-var Table = function Table(props) {
-  return React__default.createElement(BaseComponent, _extends({
-    Element: "table",
-    baseClassName: "ff-table"
-  }, props));
-};
+function InputLabel(_a) {
+    var { value, helpText, errorText } = _a, props = tslib_1.__rest(_a, ["value", "helpText", "errorText"]);
+    return (
+    // @ts-ignore
+    React__default.createElement(BaseComponent, Object.assign({ Element: "label", baseClassName: "ff-input-label" }, props),
+        value,
+        helpText && helpText.length > 0 && (React__default.createElement("span", { className: "ff-input-help" }, helpText)),
+        errorText && errorText.length > 0 && (React__default.createElement("span", { className: "ff-input-error" }, errorText))));
+}
+
+const FileUpload = (props) => (
+// @ts-ignore
+React__default.createElement(BaseComponent, Object.assign({ Element: "input", baseClassName: "ff-input", type: "file" }, props)));
+
+const Table = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "table", baseClassName: "ff-table" }, props)));
 
 function RadioButton(prop) {
-  return React__default.createElement("div", {
-    className: "ff-radio",
-    onClick: function onClick() {
-      return typeof prop.onClick === "function" && prop.onClick(prop.id, !prop.isChecked);
-    }
-  }, React__default.createElement("input", {
-    type: "radio",
-    id: prop.id,
-    name: prop.name,
-    checked: prop.isChecked,
-    onChange: prop.onClick.bind(this, prop.id)
-  }), React__default.createElement("label", {
-    htmlFor: prop.id
-  }, " ", prop.value));
+    // @ts-ignore
+    return (React__default.createElement("div", { className: "ff-radio", onClick: (event) => typeof prop.onSelected === "function" &&
+            prop.onSelected(event, prop.id) },
+        React__default.createElement("input", { type: "radio", id: prop.id, name: prop.name, checked: prop.isChecked }),
+        React__default.createElement("label", { htmlFor: prop.id },
+            " ",
+            prop.value)));
 }
 
-var RadioGroup =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(RadioGroup, _React$Component);
-
-  function RadioGroup(props) {
-    var _this;
-
-    _classCallCheck(this, RadioGroup);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(RadioGroup).call(this, props));
-    _this.state = {
-      options: props.options || {},
-      selected: props.defaultSelected || ""
-    };
-    _this.onSelect = _this.onSelect.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(RadioGroup, [{
-    key: "onSelect",
-    value: function onSelect(id) {
-      this.setState({
-        selected: id
-      });
-      this.state.selected !== id && this.props.onChange && this.props.onChange(id);
+class RadioGroup extends React__default.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            // @ts-ignore
+            options: props.options || {},
+            selected: props.defaultSelected || ""
+        };
+        this.onSelect = this.onSelect.bind(this);
     }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this2 = this;
-
-      var _this$state = this.state,
-          options = _this$state.options,
-          selected = _this$state.selected;
-      return options.map(function (option) {
-        return React__default.createElement(RadioButton, {
-          key: option.id,
-          id: option.id,
-          value: option.value,
-          isChecked: selected === option.id,
-          onClick: _this2.onSelect
+    onSelect(event, id) {
+        this.setState({
+            selected: id
         });
-      });
+        this.state.selected !== id &&
+            this.props.onChange &&
+            // @ts-ignore
+            this.props.onChange(id);
     }
-  }]);
-
-  return RadioGroup;
-}(React__default.Component);
+    render() {
+        let { options, selected } = this.state;
+        return options.map(option => (React__default.createElement(RadioButton, { key: option.id, id: option.id, value: option.value, isChecked: selected === option.id, onSelected: this.onSelect })));
+    }
+}
 
 exports.Button = Button;
 exports.Card = Card;
