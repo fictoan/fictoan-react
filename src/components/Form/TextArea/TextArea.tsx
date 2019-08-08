@@ -2,9 +2,9 @@ import React, { HTMLProps } from "react";
 
 import { BaseComponent } from "../../BaseComponent";
 
-const InputField = (props: HTMLProps<HTMLDivElement>) => {
+const TextArea = (props: HTMLProps<HTMLTextAreaElement>) => {
     return (
-        <BaseComponent<HTMLDivElement>
+        <BaseComponent<HTMLTextAreaElement>
             Element="textarea"
             baseClassName="ff-input"
             {...props}
@@ -12,4 +12,4 @@ const InputField = (props: HTMLProps<HTMLDivElement>) => {
     );
 };
 
-export default InputField;
+export default TextArea;
