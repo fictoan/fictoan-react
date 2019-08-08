@@ -6,10 +6,36 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 
 var React = require('react');
 var React__default = _interopDefault(React);
-var tslib_1 = require('tslib');
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+}
 
 const BaseComponent = (_a) => {
-    var { Element = "div", baseClassName, className } = _a, props = tslib_1.__rest(_a, ["Element", "baseClassName", "className"]);
+    var { Element = "div", baseClassName, className } = _a, props = __rest(_a, ["Element", "baseClassName", "className"]);
     const classNames = [];
     if (baseClassName) {
         classNames.push(baseClassName);
@@ -39,7 +65,7 @@ class Header extends React__default.PureComponent {
 const SidebarItemIcon = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "sidebar-icon" }, props)));
 
 const SidebarItemText = (_a) => {
-    var { linkText } = _a, props = tslib_1.__rest(_a, ["linkText"]);
+    var { linkText } = _a, props = __rest(_a, ["linkText"]);
     return (React__default.createElement(BaseComponent, Object.assign({ Element: "p", baseClassName: "sidebar-text" }, props), linkText));
 };
 
@@ -54,7 +80,7 @@ const ContentWrapper = (props) => (React__default.createElement(BaseComponent, O
 const HRule = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "hr" }, props)));
 
 const Button = (_a) => {
-    var { value, className, loading } = _a, props = tslib_1.__rest(_a, ["value", "className", "loading"]);
+    var { value, className, loading } = _a, props = __rest(_a, ["value", "className", "loading"]);
     const classNames = [];
     if (className) {
         classNames.push(className);
@@ -81,12 +107,12 @@ class InputField extends React.PureComponent {
     }
 }
 
-const InputField$1 = (props) => {
+const TextArea = (props) => {
     return (React__default.createElement(BaseComponent, Object.assign({ Element: "textarea", baseClassName: "ff-input" }, props)));
 };
 
 function InputLabel(_a) {
-    var { value, helpText, errorText } = _a, props = tslib_1.__rest(_a, ["value", "helpText", "errorText"]);
+    var { value, helpText, errorText } = _a, props = __rest(_a, ["value", "helpText", "errorText"]);
     return (
     // @ts-ignore
     React__default.createElement(BaseComponent, Object.assign({ Element: "label", baseClassName: "ff-input-label" }, props),
@@ -157,5 +183,5 @@ exports.SidebarItemIcon = SidebarItemIcon;
 exports.SidebarItemText = SidebarItemText;
 exports.SidebarWrapper = SidebarWrapper;
 exports.Table = Table;
-exports.TextArea = InputField$1;
+exports.TextArea = TextArea;
 //# sourceMappingURL=index.js.map
