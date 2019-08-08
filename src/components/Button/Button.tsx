@@ -1,8 +1,13 @@
-import React from "react";
+import React, { HTMLProps } from "react";
 
 import { BaseComponent } from "../BaseComponent";
 
-const Button = ({ value, className, loading, ...props }) => {
+type ButtonProps = HTMLProps<HTMLButtonElement> & {
+    value: string;
+    loading?: boolean;
+};
+
+const Button = ({ value, className, loading, ...props }: ButtonProps) => {
     const classNames = [];
     if (className) {
         classNames.push(className);
@@ -12,10 +17,10 @@ const Button = ({ value, className, loading, ...props }) => {
     }
 
     return (
-        <BaseComponent
+        <BaseComponent<HTMLProps<HTMLButtonElement>, HTMLButtonElement>
             Element="button"
             baseClassName="ff-button"
-            className={classNames.join(' ')}
+            className={classNames.join(" ")}
             {...props}
         >
             {value}
