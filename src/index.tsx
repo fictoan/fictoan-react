@@ -9,6 +9,7 @@ import SidebarItemIcon from "./components/SidebarWrapper/SidebarItemIcon/Sidebar
 import SidebarItemText from "./components/SidebarWrapper/SidebarItemText/SidebarItemText";
 import SidebarItem from "./components/SidebarWrapper/SidebarItem/SidebarItem";
 import SidebarHeader from "./components/SidebarWrapper/SidebarHeader/SidebarHeader";
+import SublinkGroup from "./components/SidebarWrapper/SublinkGroup/SublinkGroup";
 import SidebarWrapper from "./components/SidebarWrapper/SidebarWrapper";
 
 import ContentWrapper from "./components/ContentWrapper/ContentWrapper";
@@ -39,6 +40,7 @@ export {
     SidebarItemText,
     SidebarItem,
     SidebarHeader,
+    SublinkGroup,
     SidebarWrapper,
     ContentWrapper,
     Form,
