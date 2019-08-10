@@ -73,6 +73,8 @@ const SidebarItem = (props) => (React__default.createElement(BaseComponent, Obje
 
 const SidebarHeader = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "sidebar-header" }, props)));
 
+const SublinkGroup = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "sublink-group" }, props)));
+
 const SidebarWrapper = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "sidebar-wrapper" }, props)));
 
 const ContentWrapper = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "content-wrapper" }, props)));
@@ -182,6 +184,7 @@ exports.SidebarItem = SidebarItem;
 exports.SidebarItemIcon = SidebarItemIcon;
 exports.SidebarItemText = SidebarItemText;
 exports.SidebarWrapper = SidebarWrapper;
+exports.SublinkGroup = SublinkGroup;
 exports.Table = Table;
 exports.TextArea = TextArea;
 //# sourceMappingURL=index.js.map

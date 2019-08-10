@@ -66,6 +66,8 @@ const SidebarItem = (props) => (React.createElement(BaseComponent, Object.assign
 
 const SidebarHeader = (props) => (React.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "sidebar-header" }, props)));
 
+const SublinkGroup = (props) => (React.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "sublink-group" }, props)));
+
 const SidebarWrapper = (props) => (React.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "sidebar-wrapper" }, props)));
 
 const ContentWrapper = (props) => (React.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "content-wrapper" }, props)));
@@ -155,5 +157,5 @@ class RadioGroup extends React.Component {
     }
 }
 
-export { Button, Card, ContentWrapper, FileUpload, Form, FormGroup, FormUnit, HRule, Header, InputField, InputLabel, Portion, RadioButton, RadioGroup, Row, SidebarHeader, SidebarItem, SidebarItemIcon, SidebarItemText, SidebarWrapper, Table, TextArea };
+export { Button, Card, ContentWrapper, FileUpload, Form, FormGroup, FormUnit, HRule, Header, InputField, InputLabel, Portion, RadioButton, RadioGroup, Row, SidebarHeader, SidebarItem, SidebarItemIcon, SidebarItemText, SidebarWrapper, SublinkGroup, Table, TextArea };
 //# sourceMappingURL=index.es.js.map

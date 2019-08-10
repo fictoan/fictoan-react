@@ -6,6 +6,7 @@ import SidebarItemIcon from "./components/SidebarWrapper/SidebarItemIcon/Sidebar
 import SidebarItemText from "./components/SidebarWrapper/SidebarItemText/SidebarItemText";
 import SidebarItem from "./components/SidebarWrapper/SidebarItem/SidebarItem";
 import SidebarHeader from "./components/SidebarWrapper/SidebarHeader/SidebarHeader";
+import SublinkGroup from "./components/SidebarWrapper/SublinkGroup/SublinkGroup";
 import SidebarWrapper from "./components/SidebarWrapper/SidebarWrapper";
 import ContentWrapper from "./components/ContentWrapper/ContentWrapper";
 import HRule from "./components/HRule/HRule";
@@ -20,4 +21,4 @@ import FileUpload from "./components/Form/FileUpload/FileUpload";
 import Table from "./components/Table/Table";
 import RadioButton from "./components/Form/RadioGroup/RadioButton";
 import RadioGroup from "./components/Form/RadioGroup/RadioGroup";
-export { Row, Portion, Card, Header, SidebarItemIcon, SidebarItemText, SidebarItem, SidebarHeader, SidebarWrapper, ContentWrapper, Form, FormUnit, FormGroup, InputField, TextArea, InputLabel, Button, FileUpload, HRule, Table, RadioButton, RadioGroup };
+export { Row, Portion, Card, Header, SidebarItemIcon, SidebarItemText, SidebarItem, SidebarHeader, SublinkGroup, SidebarWrapper, ContentWrapper, Form, FormUnit, FormGroup, InputField, TextArea, InputLabel, Button, FileUpload, HRule, Table, RadioButton, RadioGroup };
