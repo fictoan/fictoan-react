@@ -5,5 +5,17 @@
     align-content   : center;
     align-items     : center;
     justify-content : center;
-    //margin         : 4px 0;
+}
+
+.header-logo { display : block; }
+.header-icon { display : none; }
+
+.sidebar-wrapper.collapsed {
+    .header-logo { display : none; }
+
+    .header-icon {
+        display : block;
+        width   : 32px;
+        height  : 32px;
+    }
 }

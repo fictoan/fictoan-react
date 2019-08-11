@@ -1,4 +1,12 @@
 .sidebar-text {
     font-weight : 600;
     margin      : 0;
+    line-height : 1;
+}
+
+.sidebar-wrapper.collapsed {
+    .sidebar-text {
+        display  : none;
+        position : absolute;
+    }
 }

@@ -5,3 +5,103 @@
     align-items           : center;
     margin                : 4px;
 }
+
+.sidebar-item {
+    grid-template-columns : 48px 1fr;
+    grid-template-rows    : 40px;
+    margin                : 4px 0;
+}
+
+.sidebar-wrapper a.active {
+    background-color: rgba($colorHue, 0.16);
+    border-left: 4px solid $colorHue;
+}
+
+.sidebar-sublink { font-weight : 400 !important; }
+
+.has-alert {
+    position : relative;
+    width    : fit-content;
+}
+
+.has-alert::after {
+    display          : block;
+    content          : "";
+    position         : absolute;
+    top              : calc(50% - 3px);
+    right            : -12px;
+    height           : 8px;
+    width            : 8px;
+    border-radius    : 50%;
+    background-color : $colorRed-70;
+}
+
+.bottom-section {
+    display          : grid;
+    align-self       : end;
+    position         : fixed;
+    bottom           : 0;
+    width            : 240px;
+    border-top       : 1px solid rgba($colorSlate-10, 1);
+    background-color : white;
+    margin           : 0;
+    padding          : 4px;
+}
+
+details { position : relative; }
+details:hover { cursor : pointer; }
+
+details > summary::after {
+    display      : inline-block;
+    position     : absolute;
+    width        : 8px;
+    height       : 8px;
+    top          : 20px;
+    right        : 18px;
+    content      : "";
+    border-style : solid;
+    border-width : 0 2px 2px 0;
+    transform    : rotate(45deg);
+    color        : $colorSlate-40;
+    transition   : all 0.2s;
+    cursor       : pointer;
+}
+
+details[open] > summary::after {
+    transform : rotate(225deg);
+    top       : 22px;
+}
+
+details[open] > summary:hover::after { color : $colorSlate-40; }
+
+details a .sidebar-item {
+    //grid-template-rows: 24px;
+}
+
+.sidebar-wrapper.collapsed {
+    .sidebar-item:not(.bottom-section) {
+        margin-left : 0;
+        position    : relative;
+    }
+
+    .sidebar-item:hover .sidebar-icon + .sidebar-text {
+        display          : flex;
+        position         : fixed;
+        background-color : $colorHue;
+        left             : 40px;
+        align-self       : center;
+        border-radius    : 4px;
+        margin-top       : 8px;
+        padding          : 4px 8px;
+        color            : $colorWhite;
+        font-size        : 88%;
+        box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.24);
+    }
+
+    details > summary::after { display : none; }
+
+    .bottom-section {
+        width        : 48px;
+        padding-left : 0;
+    }
+}

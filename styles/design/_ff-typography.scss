@@ -41,8 +41,6 @@ p {
     margin-top  : 0;
 }
 
-p:not(:last-child):not(:only-child):not(:only-of-type) { margin-bottom: 32px; }
-
 .font-sans  { font-family : $fontSans; }
 .font-serif { font-family : $fontSerif; }
 .font-mono  { font-family : $fontMono; }
