@@ -14,7 +14,7 @@
         "start": "rollup -c -w",
         "build": "rollup -c",
         "predeploy": "yarn build",
-        "deploy": "gh-pages -d dist"
+        "deploy": "cleanup -d dist"
     },
     "eslintConfig": {
         "extends": "react-app"
