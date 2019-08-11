@@ -1,58 +1,52 @@
 .row {
-    display     : flex;
-    flex-wrap   : wrap;
-    width       : 100%;
-    align-items : flex-start;
+    display               : grid;
+    width                 : 100%;
+    grid-gap              : 16px;
+    grid-template-columns : repeat(24, 1fr);
 }
 
 @media all and (max-width : 600px) {
     .ff-card[class*="padding"] { padding : 4vmin; }
 }
 
-//  Responsiveness
-.row.retain-layout-always .portion { flex : none !important; }
-
+//  Retain layout on breakpoints
 @media all and (max-width : 600px) {
-    .row.retain-layout-on-mobile > .portion { flex : none !important; }
+    .row.retain-layout-on-mobile > .portion { grid-column : span !important; }
 }
 
 @media all and (min-width : 601px) and (max-width : 900px) {
-    .row.retain-layout-on-tab-pt > .portion { flex : none !important; }
+    .row.retain-layout-on-tab-pt > .portion { grid-column : span !important; }
 }
 
 @media all and (min-width : 901px) and (max-width : 1200px) {
-    .row.retain-layout-on-tab-ls > .portion { flex : none !important; }
-}
-
-@media all and (max-width : 900px) {
-    .row:not([class^='retain-layout']) > .portion { margin-bottom : 2vmax; }
+    .row.retain-layout-on-tab-ls > .portion { grid-column : span !important; }
 }
 
 
 //  Side margins for all your content
 .content-padding-tiny {
-    padding-left  : 4vmax;
-    padding-right : 4vmax;
+    padding-left  : 4vw;
+    padding-right : 4vw;
 }
 
 .content-padding-small {
-    padding-left  : 8vmax;
-    padding-right : 8vmax;
+    padding-left  : 8vw;
+    padding-right : 8vw;
 }
 
 .content-padding-medium {
-    padding-left  : 12vmax;
-    padding-right : 12vmax;
+    padding-left  : 12vw;
+    padding-right : 12vw;
 }
 
 .content-padding-large {
-    padding-left  : 18vmax;
-    padding-right : 18vmax;
+    padding-left  : 18vw;
+    padding-right : 18vw;
 }
 
 .content-padding-huge {
-    padding-left  : 24vmax;
-    padding-right : 24vmax;
+    padding-left  : 24vw;
+    padding-right : 24vw;
 }
 
 @media all and (max-width : 600px) {
