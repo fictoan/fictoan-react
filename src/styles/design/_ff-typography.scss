@@ -36,12 +36,12 @@ h6 { font-size : $baseFontSize*pow($scaleFactor, 1); }
 }
 
 p {
-    color         : $bodyFontColor;
-    font-size     : $bodyFontSize;
-    line-height   : $bodyLineHeight;
-    margin-top    : 0;
-    margin-bottom : 32px;
+    color       : $bodyFontColor;
+    font-size   : $bodyFontSize;
+    line-height : $bodyLineHeight;
 }
+
+p:not(:last-child)  { margin-bottom: 32px; }
 
 .font-sans  { font-family : $fontSans; }
 .font-serif { font-family : $fontSerif; }
