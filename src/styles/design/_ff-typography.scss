@@ -10,7 +10,6 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight : $headingFontWeight;
-    line-height : $headingLineHeight;
     margin      : 0;
 }
 
@@ -25,23 +24,24 @@ h5 { font-size : $baseFontSize*pow($scaleFactor, 2); }
 h6 { font-size : $baseFontSize*pow($scaleFactor, 1); }
 
 @media all and (max-width : 720px) {
-    h1 { font-size : $baseFontSize*pow($scaleFactor, 5.0); }
-    h2 { font-size : $baseFontSize*pow($scaleFactor, 4.0); }
-    h3 { font-size : $baseFontSize*pow($scaleFactor, 3.0); }
-    h4 { font-size : $baseFontSize*pow($scaleFactor, 2.0); }
-    h5 { font-size : $baseFontSize*pow($scaleFactor, 1.0); }
-    h6 { font-size : $baseFontSize*pow($scaleFactor, 0.8); }
+    h1 { font-size : $baseFontSize*pow($scaleFactor, 4.0); }
+    h2 { font-size : $baseFontSize*pow($scaleFactor, 3.0); }
+    h3 { font-size : $baseFontSize*pow($scaleFactor, 2.0); }
+    h4 { font-size : $baseFontSize*pow($scaleFactor, 1.0); }
+    h5 { font-size : $baseFontSize*pow($scaleFactor, 0.8); }
+    h6 { font-size : $baseFontSize*pow($scaleFactor, 0.6); }
 
-    h1, h2, h3, h4, h5, h6 { word-wrap  : break-word; }
+    h1, h2, h3, h4, h5, h6 { word-wrap : break-word; }
 }
 
 p {
     color       : $bodyFontColor;
     font-size   : $bodyFontSize;
     line-height : $bodyLineHeight;
+    margin-top  : 0;
 }
 
-p:not(:last-child)  { margin-bottom: 32px; }
+p:not(:last-child):not(:only-child):not(:only-of-type) { margin-bottom: 32px; }
 
 .font-sans  { font-family : $fontSans; }
 .font-serif { font-family : $fontSerif; }
