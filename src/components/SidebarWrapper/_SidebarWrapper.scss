@@ -22,16 +22,24 @@
     flex-direction : column;
 }
 
-.sidebar-sublink {
-    color       : rgba($colorShade, 1);
-    font-weight : 400;
-    margin      : 4px 0 0 24px;
-    // font-size   : 92%;
-}
-
 @media (max-width : 900px) {
     .sidebar-wrapper {
         left    : -300px;
         z-index : 4000;
     }
+}
+
+//  SIDEBAR ///////////////////////////////////////////////////////////////////
+.sidebar-wrapper {
+    width      : 240px;
+    box-shadow : 2px 0 8px -4px rgba(0, 0, 0, 0.16)
+}
+
+.sidebar-wrapper * { user-select : none; }
+
+//  COLLAPSED  ////////////////////////////////////////////////////////////////
+.sidebar-wrapper.collapsed {
+    width      : 48px;
+    overflow-x : hidden;
+    overflow-y : scroll;
 }
