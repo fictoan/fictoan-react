@@ -23,6 +23,13 @@ h4 { font-size : $baseFontSize*pow($scaleFactor, 3); }
 h5 { font-size : $baseFontSize*pow($scaleFactor, 2); }
 h6 { font-size : $baseFontSize*pow($scaleFactor, 1); }
 
+p {
+    color       : $bodyFontColor;
+    font-size   : $bodyFontSize;
+    line-height : $bodyLineHeight;
+    margin-top  : 0;
+}
+
 @media all and (max-width : 720px) {
     h1 { font-size : 40px; }
     h2 { font-size : 46px; }
@@ -33,13 +40,6 @@ h6 { font-size : $baseFontSize*pow($scaleFactor, 1); }
     p  { font-size : 14px; }
 
     h1, h2, h3, h4, h5, h6 { word-wrap : break-word; }
-}
-
-p {
-    color       : $bodyFontColor;
-    font-size   : $bodyFontSize;
-    line-height : $bodyLineHeight;
-    margin-top  : 0;
 }
 
 a {
