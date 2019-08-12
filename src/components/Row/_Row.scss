@@ -3,6 +3,7 @@
     width                 : 100%;
     grid-gap              : 16px;
     grid-template-columns : repeat(24, 1fr);
+    margin-bottom         : 4vh;
 }
 
 @media all and (max-width : 600px) {
