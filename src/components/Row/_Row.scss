@@ -6,23 +6,12 @@
     margin-bottom         : 4vh;
 }
 
-@media all and (max-width : 600px) {
-    .ff-card[class*="padding"] { padding : 4vmin; }
-}
-
-//  Retain layout on breakpoints
-@media all and (max-width : 600px) {
-    .row.retain-layout-on-mobile > .portion { grid-column : span !important; }
-}
-
-@media all and (min-width : 601px) and (max-width : 900px) {
-    .row.retain-layout-on-tab-pt > .portion { grid-column : span !important; }
-}
-
-@media all and (min-width : 901px) and (max-width : 1200px) {
-    .row.retain-layout-on-tab-ls > .portion { grid-column : span !important; }
-}
-
+.row.gutters-huge   { grid-gap: 64px; }
+.row.gutters-large  { grid-gap: 32px; }
+.row.gutters-medium { grid-gap: 16px; }
+.row.gutters-small  { grid-gap: 8px; }
+.row.gutters-tiny   { grid-gap: 4px; }
+.row.no-gutters     { grid-gap: 0; }
 
 //  Side margins for all your content
 .content-padding-tiny {
