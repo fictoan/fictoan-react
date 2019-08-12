@@ -24,12 +24,13 @@ h5 { font-size : $baseFontSize*pow($scaleFactor, 2); }
 h6 { font-size : $baseFontSize*pow($scaleFactor, 1); }
 
 @media all and (max-width : 720px) {
-    h1 { font-size : $baseFontSize*pow($scaleFactor, 4.0); }
-    h2 { font-size : $baseFontSize*pow($scaleFactor, 3.0); }
-    h3 { font-size : $baseFontSize*pow($scaleFactor, 2.0); }
-    h4 { font-size : $baseFontSize*pow($scaleFactor, 1.0); }
-    h5 { font-size : $baseFontSize*pow($scaleFactor, 0.8); }
-    h6 { font-size : $baseFontSize*pow($scaleFactor, 0.6); }
+    h1 { font-size : 40px; }
+    h2 { font-size : 46px; }
+    h3 { font-size : 32px; }
+    h4 { font-size : 28px; }
+    h5 { font-size : 24px; }
+    h6 { font-size : 20px; }
+    p  { font-size : 14px; }
 
     h1, h2, h3, h4, h5, h6 { word-wrap : break-word; }
 }
@@ -40,10 +41,6 @@ p {
     line-height : $bodyLineHeight;
     margin-top  : 0;
 }
-
-.font-sans  { font-family : $fontSans; }
-.font-serif { font-family : $fontSerif; }
-.font-mono  { font-family : $fontMono; }
 
 a {
     cursor      : pointer;
@@ -61,6 +58,10 @@ b, strong { font-weight : bold; }
 
 .text-italic,
 i, em     { font-style : italic; }
+
+.font-sans  { font-family : $fontSans; }
+.font-serif { font-family : $fontSerif; }
+.font-mono  { font-family : $fontMono; }
 
 .text-tiny   { font-size : $baseFontSize*pow($scaleFactor,-2); }
 .text-small  { font-size : $baseFontSize*pow($scaleFactor,-1); }
