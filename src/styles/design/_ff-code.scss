@@ -7,7 +7,7 @@ code,
     padding          : 2px 8px;
     border           : none;
     background-color : $inlineCodeBGColor;
-    color            : $inlineCodeTextColor;
+    color            : $CodeTextColor;
     font-size        : 80%;
     font-weight      : normal;
     white-space      : pre-wrap;
@@ -35,7 +35,7 @@ pre code {
     line-height            : 1.6;
     font-weight            : 400;
     padding                : 16px 24px;
-    background-color       : rgba($inlineCodeBGColor, 0.48);
+    background-color       : $blockCodeBGColor;
     text-align             : left;
     overflow               : auto;
     direction              : ltr;

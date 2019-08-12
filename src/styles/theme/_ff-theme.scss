@@ -35,9 +35,11 @@ $linkColor      : $colorAnalogue !default;
 $linkHoverColor : rgba($colorAnalogue, 0.64) !default;
 
 //  Inline code
-$fontCode            : $fontMono !default;
-$inlineCodeBGColor   : $colorRed-10 !default;
-$inlineCodeTextColor : $colorRed !default;
+$fontCode      : $fontMono !default;
+$codeTextColor : $colorRed !default;
+
+$inlineCodeBGColor : $colorRed-10 !default;
+$blockCodeBGColor  : rgba($colorSlate-10, 0.64);
 
 //  Selection highlight
 $textHighlightBG    : $colorHue !default;
@@ -49,7 +51,7 @@ $buttonGradientStartColour : $colorHue !default;
 $buttonGradientEndColour   : $colorAnalogue !default;
 
 //  Inputs  ===================================================================
-$inputBG-DefaultColor : $colorWhite !default;
+$inputBG-DefaultColor      : $colorWhite !default;
 $inputBG-FocusColor : $colorWhite !default;
 $inputBorder-DefaultColor : $colorSlate-40 !default;
 $inputBorder-FocusColor : $colorHue !default;
