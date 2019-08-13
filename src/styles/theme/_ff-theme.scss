@@ -39,7 +39,7 @@ $fontCode      : $fontMono !default;
 $codeTextColor : $colorRed !default;
 
 $inlineCodeBGColor : $colorRed-10 !default;
-$blockCodeBGColor  : rgba($colorSlate-10, 0.64);
+$blockCodeBGColor  : rgba($colorSlate-10, 0.64) !default;
 
 //  Selection highlight
 $textHighlightBG    : $colorHue !default;
