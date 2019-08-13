@@ -10,11 +10,9 @@
     overflow-y       : auto;
     transition       : all 0.4s ease-in-out;
     background-color : $sideBarBG;
-    box-shadow       : 2px 0 2px -2px rgba(0, 0, 0, 0.24);
+    box-shadow       : 2px 0 8px -4px rgba(0, 0, 0, 0.16);
     z-index          : 10000;
 }
-
-.sidebar-wrapper.open { left : 0; }
 
 .sidebar-section {
     padding        : 12px 24px;
@@ -29,17 +27,11 @@
     }
 }
 
-//  SIDEBAR ///////////////////////////////////////////////////////////////////
-.sidebar-wrapper {
-    width      : 240px;
-    box-shadow : 2px 0 8px -4px rgba(0, 0, 0, 0.16)
-}
-
-.sidebar-wrapper * { user-select : none; }
-
 //  COLLAPSED  ////////////////////////////////////////////////////////////////
 .sidebar-wrapper.collapsed {
     width      : 48px;
     overflow-x : hidden;
     overflow-y : scroll;
 }
+
+.sidebar-wrapper * { user-select : none; }
