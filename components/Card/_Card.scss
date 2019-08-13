@@ -5,11 +5,11 @@
     border   : 1px solid hsla(0, 0%, 0%, 0.04);
 }
 
-.ff-card.padding-tiny   { padding : 8px; }
-.ff-card.padding-small  { padding : 16px; }
-.ff-card.padding-medium { padding : 24px; }
-.ff-card.padding-large  { padding : 32px; }
-.ff-card.padding-huge   { padding : 48px; }
+.ff-card.padding-all-tiny   { padding : 8px; }
+.ff-card.padding-all-small  { padding : 16px; }
+.ff-card.padding-all-medium { padding : 24px; }
+.ff-card.padding-all-large  { padding : 32px; }
+.ff-card.padding-all-huge   { padding : 48px; }
 
 @media all and (max-width : 600px) {
     .ff-card[class*="padding"] { padding : 4vmin; }
