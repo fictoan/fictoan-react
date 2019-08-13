@@ -9,6 +9,11 @@
     margin-left : 240px;
 }
 
+.sidebar-wrapper.collapsed + .content-wrapper {
+    width       : calc(100% - 48px);
+    margin-left : 48px;
+}
+
 @media (max-width : 900px) {
     .sidebar-wrapper + .content-wrapper {
         width       : 100%;
