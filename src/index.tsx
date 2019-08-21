@@ -30,6 +30,8 @@ import Table from "./components/Table/Table";
 
 import RadioButton from "./components/Form/RadioGroup/RadioButton";
 import RadioGroup from "./components/Form/RadioGroup/RadioGroup";
+import BaseBreadcrumb from "./components/Breadcrumbs/Breadcrumb";
+import BaseBreadcrumbItem from "./components/Breadcrumbs/BreadcrumbItem";
 
 export {
     Row,
@@ -54,5 +56,7 @@ export {
     HRule,
     Table,
     RadioButton,
-    RadioGroup
+    RadioGroup,
+    BaseBreadcrumb,
+    BaseBreadcrumbItem
 };

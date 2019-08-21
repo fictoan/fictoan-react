@@ -11,11 +11,11 @@ function RadioButton(
         isChecked: boolean;
     }
 ) {
-    // @ts-ignore
     return (
         <div
             className="ff-radio"
-            onClick={(event: ChangeEvent<HTMLDivElement>) =>
+            // @ts-ignore
+            onClick={(event: ChangeEvent<HTMLDivElement>):void =>
                 typeof prop.onSelected === "function" &&
                 prop.onSelected(event, prop.id)
             }
