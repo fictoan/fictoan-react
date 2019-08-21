@@ -1,13 +1,6 @@
 import React, { HTMLProps, PureComponent, ReactNode } from "react";
 import { BaseComponent } from "../BaseComponent";
 
-
-interface Breadcrumb {
-    children: ReactNode;
-}
-
-
-
 class BaseBreadcrumb extends PureComponent<HTMLProps<HTMLDivElement>> {
 
 
