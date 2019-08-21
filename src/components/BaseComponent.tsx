@@ -6,7 +6,7 @@ export type BaseProps = {
     baseClassName?: string;
 };
 
-export const BaseComponent = <K extends HTMLProps<K>>({
+export const BaseComponent = <K extends {}>({
     Element = "div",
     baseClassName,
     className,
