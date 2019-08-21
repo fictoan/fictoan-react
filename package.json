@@ -1,6 +1,6 @@
 {
     "name": "reactised-fictoan",
-    "version": "0.4.24",
+    "version": "0.4.25",
     "private": true,
     "main": "dist/index.js",
     "module": "dist/index.es.js",
