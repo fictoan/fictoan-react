@@ -6,7 +6,15 @@
     margin-bottom         : 4vh;
 }
 
-.row.no-gutters     { grid-gap: 0; }
+@media all and (max-width : 720px) {
+    .row { grid-gap : 8px; }
+}
+
+.row.huge-gutters   { grid-gap : 32px; }
+.row.large-gutters  { grid-gap : 24px; }
+.row.small-gutters  { grid-gap : 8px; }
+.row.tiny-gutters   { grid-gap : 4px; }
+.row.no-gutters     { grid-gap : 0; }
 
 //  Side margins for all your content
 .content-padding-tiny {
