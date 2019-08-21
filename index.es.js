@@ -123,8 +123,9 @@ React.createElement(BaseComponent, Object.assign({ Element: "input", baseClassNa
 const Table = (props) => (React.createElement(BaseComponent, Object.assign({ Element: "table", baseClassName: "ff-table" }, props)));
 
 function RadioButton(prop) {
-    // @ts-ignore
-    return (React.createElement("div", { className: "ff-radio", onClick: (event) => typeof prop.onSelected === "function" &&
+    return (React.createElement("div", { className: "ff-radio", 
+        // @ts-ignore
+        onClick: (event) => typeof prop.onSelected === "function" &&
             prop.onSelected(event, prop.id) },
         React.createElement("input", { type: "radio", id: prop.id, name: prop.name, checked: prop.isChecked }),
         React.createElement("label", { htmlFor: prop.id },
@@ -157,5 +158,17 @@ class RadioGroup extends React.Component {
     }
 }
 
-export { Button, Card, ContentWrapper, FileUpload, Form, FormGroup, FormUnit, HRule, Header, InputField, InputLabel, Portion, RadioButton, RadioGroup, Row, SidebarHeader, SidebarItem, SidebarItemIcon, SidebarItemText, SidebarWrapper, SublinkGroup, Table, TextArea };
+class BaseBreadcrumb extends PureComponent {
+    render() {
+        return (React.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: `ff-breadcrumb-bar` }, this.props)));
+    }
+}
+
+class BaseBreadcrumbItem extends React.PureComponent {
+    render() {
+        return (React.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: `ff-breadcrumb-item` }, this.props)));
+    }
+}
+
+export { BaseBreadcrumb, BaseBreadcrumbItem, Button, Card, ContentWrapper, FileUpload, Form, FormGroup, FormUnit, HRule, Header, InputField, InputLabel, Portion, RadioButton, RadioGroup, Row, SidebarHeader, SidebarItem, SidebarItemIcon, SidebarItemText, SidebarWrapper, SublinkGroup, Table, TextArea };
 //# sourceMappingURL=index.es.js.map

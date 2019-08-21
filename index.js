@@ -130,8 +130,9 @@ React__default.createElement(BaseComponent, Object.assign({ Element: "input", ba
 const Table = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "table", baseClassName: "ff-table" }, props)));
 
 function RadioButton(prop) {
-    // @ts-ignore
-    return (React__default.createElement("div", { className: "ff-radio", onClick: (event) => typeof prop.onSelected === "function" &&
+    return (React__default.createElement("div", { className: "ff-radio", 
+        // @ts-ignore
+        onClick: (event) => typeof prop.onSelected === "function" &&
             prop.onSelected(event, prop.id) },
         React__default.createElement("input", { type: "radio", id: prop.id, name: prop.name, checked: prop.isChecked }),
         React__default.createElement("label", { htmlFor: prop.id },
@@ -164,6 +165,20 @@ class RadioGroup extends React__default.Component {
     }
 }
 
+class BaseBreadcrumb extends React.PureComponent {
+    render() {
+        return (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: `ff-breadcrumb-bar` }, this.props)));
+    }
+}
+
+class BaseBreadcrumbItem extends React__default.PureComponent {
+    render() {
+        return (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: `ff-breadcrumb-item` }, this.props)));
+    }
+}
+
+exports.BaseBreadcrumb = BaseBreadcrumb;
+exports.BaseBreadcrumbItem = BaseBreadcrumbItem;
 exports.Button = Button;
 exports.Card = Card;
 exports.ContentWrapper = ContentWrapper;

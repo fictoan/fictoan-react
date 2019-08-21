@@ -4,4 +4,4 @@ export declare type BaseProps = {
     className?: string;
     baseClassName?: string;
 };
-export declare const BaseComponent: <K extends React.HTMLProps<K>>({ Element, baseClassName, className, ...props }: React.HTMLProps<K> & BaseProps) => JSX.Element;
+export declare const BaseComponent: <K extends {}>({ Element, baseClassName, className, ...props }: React.HTMLProps<K> & BaseProps) => JSX.Element;
