@@ -1,4 +1,5 @@
 import React, { HTMLProps, ReactElement, ElementType } from "react";
+import { createClassName } from "src/utils/classNames";
 
 export type BaseProps = {
     Element: ElementType<any>;
@@ -11,15 +12,6 @@ export const BaseComponent = <K extends {}>({
     baseClassName,
     className,
     ...props
-}: HTMLProps<K> & BaseProps) => {
-    const classNames = [];
-
-    if (baseClassName) {
-        classNames.push(baseClassName);
-    }
-    if (className) {
-        classNames.push(className);
-    }
-
-    return <Element {...props} className={classNames.join(" ")} />;
-};
+}: HTMLProps<K> & BaseProps) => (
+    <Element {...props} className={createClassName([baseClassName, className])} />
+);
