@@ -27,21 +27,39 @@ function __rest(s, e) {
     return t;
 }
 
+const createClassName = (classNames) => {
+    return classNames.filter((item) => !!item).join(" ");
+};
+
 const BaseComponent = (_a) => {
     var { Element = "div", baseClassName, className } = _a, props = __rest(_a, ["Element", "baseClassName", "className"]);
-    const classNames = [];
-    if (baseClassName) {
-        classNames.push(baseClassName);
-    }
-    if (className) {
-        classNames.push(className);
-    }
-    return React.createElement(Element, Object.assign({}, props, { className: classNames.join(" ") }));
+    return (React.createElement(Element, Object.assign({}, props, { className: createClassName([baseClassName, className]) })));
 };
 
 const Row = (props) => (React.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "row" }, props)));
 
-const Portion = (props) => (React.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "portion" }, props)));
+const Portion = (_a) => {
+    var { width, className } = _a, props = __rest(_a, ["width", "className"]);
+    const classNames = [className];
+    if (width) {
+        if (width.mobile) {
+            classNames.push(`${width.mobile}-on-mobile`);
+        }
+        if (width.tabletLandscape) {
+            classNames.push(`${width.tabletLandscape}-on-tab-ls`);
+        }
+        if (width.tabletPortrait) {
+            classNames.push(`${width.tabletPortrait}-on-tab-pt`);
+        }
+        if (width.desktop) {
+            classNames.push(width.desktop);
+        }
+    }
+    else {
+        classNames.push("whole");
+    }
+    return React.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "portion", className: createClassName(classNames) }, props));
+};
 
 const Card = (props) => (React.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "ff-card" }, props)));
 
