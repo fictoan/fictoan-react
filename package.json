@@ -14,7 +14,7 @@
         "start": "rollup -c -w",
         "build": "rollup -c",
         "predeploy": "yarn build",
-        "deploy": "gh-pages -d dist -e dist && gh-pages -a -d . -s ./package.json -s ./.gitignore"
+        "deploy": "gh-pages -d dist -e dist && gh-pages -a -d . -s ./package.json"
     },
     "eslintConfig": {
         "extends": "react-app"
