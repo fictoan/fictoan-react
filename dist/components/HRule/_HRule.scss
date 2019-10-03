@@ -1,0 +1,11 @@
+hr {
+    border           : 0;
+    height           : 1px;
+    margin           : 4vmax 0;
+    width            : 100%;
+    background-color : $colorSlate-20;
+}
+
+hr.primary   { height : 4px; }
+hr.secondary { height : 2px; }
+hr.tertiary  { height : 1px; }
