@@ -1,0 +1,260 @@
+.portion.width-1\/24 { grid-column : span 1; }
+
+.portion.one-twelfth,
+.portion.width-2\/24 { grid-column : span 2; }
+
+.portion.one-eighth,
+.portion.width-3\/24 { grid-column : span 3; }
+
+.portion.one-sixth,
+.portion.width-4\/24 { grid-column : span 4; }
+
+.portion.width-5\/24 { grid-column : span 5; }
+
+.portion.one-fourth,
+.portion.width-6\/24 { grid-column : span 6; }
+
+.portion.width-7\/24 { grid-column : span 7; }
+
+.portion.one-third,
+.portion.width-8\/24 { grid-column : span 8; }
+
+.portion.width-9\/24 { grid-column : span 9; }
+
+.portion.five-twelfth,
+.portion.width-10\/24 { grid-column : span 10; }
+
+.portion.width-11\/24 { grid-column : span 11; }
+
+.portion.half,
+.portion.width-12\/24 { grid-column : span 12; }
+
+.portion.width-13\/24 { grid-column : span 13; }
+
+.portion.seven-twelfth,
+.portion.width-14\/24 { grid-column : span 14; }
+
+.portion.width-15\/24 { grid-column : span 15; }
+
+.portion.two-third,
+.portion.width-16\/24 { grid-column : span 16; }
+
+.portion.width-17\/24 { grid-column : span 17; }
+
+.portion.three-fourth,
+.portion.width-18\/24 { grid-column : span 18; }
+
+.portion.width-19\/24 { grid-column : span 19; }
+
+.portion.five-sixth,
+.portion.width-20\/24 { grid-column : span 20; }
+
+.portion.seven-eighth,
+.portion.width-21\/24 { grid-column : span 21; }
+
+.portion.eleven-twelfth,
+.portion.width-22\/24 { grid-column : span 22; }
+
+.portion.width-23\/24 { grid-column : span 23; }
+
+.portion.whole,
+.portion.width-24\/24 { grid-column : span 24; }
+
+@media all and (max-width : 600px) {
+
+    .row:not(.retain-layout-on-mobile) > .portion:not([class*='on-mobile']) { grid-column : span 24; }
+
+    .portion.width-1\/24-on-mobile { grid-column : span 1; }
+
+    .portion.one-twelfth-on-mobile,
+    .portion.width-2\/24-on-mobile { grid-column : span 2; }
+
+    .portion.one-eighth-on-mobile,
+    .portion.width-3\/24-on-mobile { grid-column : span 3; }
+
+    .portion.one-sixth-on-mobile,
+    .portion.width-4\/24-on-mobile { grid-column : span 4; }
+
+    .portion.width-5\/24-on-mobile { grid-column : span 5; }
+
+    .portion.one-fourth-on-mobile,
+    .portion.width-6\/24-on-mobile { grid-column : span 6; }
+
+    .portion.width-7\/24-on-mobile { grid-column : span 7; }
+
+    .portion.one-third-on-mobile,
+    .portion.width-8\/24-on-mobile { grid-column : span 8; }
+
+    .portion.width-9\/24-on-mobile { grid-column : span 9; }
+
+    .portion.five-twelfth-on-mobile,
+    .portion.width-10\/24-on-mobile { grid-column : span 10; }
+
+    .portion.width-11\/24-on-mobile { grid-column : span 11; }
+
+    .portion.half-on-mobile,
+    .portion.width-12\/24-on-mobile { grid-column : span 12; }
+
+    .portion.width-13\/24-on-mobile { grid-column : span 13; }
+
+    .portion.seven-twelfth-on-mobile,
+    .portion.width-14\/24-on-mobile { grid-column : span 14; }
+
+    .portion.width-15\/24-on-mobile { grid-column : span 15; }
+
+    .portion.two-third-on-mobile,
+    .portion.width-16\/24-on-mobile { grid-column : span 16; }
+
+    .portion.width-17\/24-on-mobile { grid-column : span 17; }
+
+    .portion.three-fourth-on-mobile,
+    .portion.width-18\/24-on-mobile { grid-column : span 18; }
+
+    .portion.width-19\/24-on-mobile { grid-column : span 19; }
+
+    .portion.five-sixth-on-mobile,
+    .portion.width-20\/24-on-mobile { grid-column : span 20; }
+
+    .portion.seven-eighth-on-mobile,
+    .portion.width-21\/24-on-mobile { grid-column : span 21; }
+
+    .portion.eleven-twelfth-on-mobile,
+    .portion.width-22\/24-on-mobile { grid-column : span 22; }
+
+    .portion.width-23\/24-on-mobile { grid-column : span 23; }
+
+    .portion.whole-on-mobile,
+    .portion.width-24\/24-on-mobile { grid-column : span 24; }
+}
+
+@media all and (min-width : 601px) and (max-width : 900px) {
+    .row:not(.retain-layout-on-tab-pt) > .portion:not([class*='on-tab-pt']) { grid-column : span 24; }
+
+    .portion.width-1\/24-on-tab-pt { grid-column : span 1; }
+
+    .portion.one-twelfth-on-tab-pt,
+    .portion.width-2\/24-on-tab-pt { grid-column : span 2; }
+
+    .portion.one-eighth-on-tab-pt,
+    .portion.width-3\/24-on-tab-pt { grid-column : span 3; }
+
+    .portion.one-sixth-on-tab-pt,
+    .portion.width-4\/24-on-tab-pt { grid-column : span 4; }
+
+    .portion.width-5\/24-on-tab-pt { grid-column : span 5; }
+
+    .portion.one-fourth-on-tab-pt,
+    .portion.width-6\/24-on-tab-pt { grid-column : span 6; }
+
+    .portion.width-7\/24-on-tab-pt { grid-column : span 7; }
+
+    .portion.one-third-on-tab-pt,
+    .portion.width-8\/24-on-tab-pt { grid-column : span 8; }
+
+    .portion.width-9\/24-on-tab-pt { grid-column : span 9; }
+
+    .portion.five-twelfth-on-tab-pt,
+    .portion.width-10\/24-on-tab-pt { grid-column : span 10; }
+
+    .portion.width-11\/24-on-tab-pt { grid-column : span 11; }
+
+    .portion.half-on-tab-pt,
+    .portion.width-12\/24-on-tab-pt { grid-column : span 12; }
+
+    .portion.width-13\/24-on-tab-pt { grid-column : span 13; }
+
+    .portion.seven-twelfth-on-tab-pt,
+    .portion.width-14\/24-on-tab-pt { grid-column : span 14; }
+
+    .portion.width-15\/24-on-tab-pt { grid-column : span 15; }
+
+    .portion.two-third-on-tab-pt,
+    .portion.width-16\/24-on-tab-pt { grid-column : span 16; }
+
+    .portion.width-17\/24-on-tab-pt { grid-column : span 17; }
+
+    .portion.three-fourth-on-tab-pt,
+    .portion.width-18\/24-on-tab-pt { grid-column : span 18; }
+
+    .portion.width-19\/24-on-tab-pt { grid-column : span 19; }
+
+    .portion.five-sixth-on-tab-pt,
+    .portion.width-20\/24-on-tab-pt { grid-column : span 20; }
+
+    .portion.seven-eighth-on-tab-pt,
+    .portion.width-21\/24-on-tab-pt { grid-column : span 21; }
+
+    .portion.eleven-twelfth-on-tab-pt,
+    .portion.width-22\/24-on-tab-pt { grid-column : span 22; }
+
+    .portion.width-23\/24-on-tab-pt { grid-column : span 23; }
+
+    .portion.whole-on-tab-pt,
+    .portion.width-24\/24-on-tab-pt { grid-column : span 24; }
+}
+
+@media all and (min-width : 901px) and (max-width : 1200px) {
+    //.row:not(.retain-layout-on-tab-ls) > .portion:not([class*='on-tab-ls']) { grid-column : span 24; }
+
+    .portion.width-1\/24-on-tab-ls { grid-column : span 1; }
+
+    .portion.one-twelfth-on-tab-ls,
+    .portion.width-2\/24-on-tab-ls { grid-column : span 2; }
+
+    .portion.one-eighth-on-tab-ls,
+    .portion.width-3\/24-on-tab-ls { grid-column : span 3; }
+
+    .portion.one-sixth-on-tab-ls,
+    .portion.width-4\/24-on-tab-ls { grid-column : span 4; }
+
+    .portion.width-5\/24-on-tab-ls { grid-column : span 5; }
+
+    .portion.one-fourth-on-tab-ls,
+    .portion.width-6\/24-on-tab-ls { grid-column : span 6; }
+
+    .portion.width-7\/24-on-tab-ls { grid-column : span 7; }
+
+    .portion.one-third-on-tab-ls,
+    .portion.width-8\/24-on-tab-ls { grid-column : span 8; }
+
+    .portion.width-9\/24-on-tab-ls { grid-column : span 9; }
+
+    .portion.five-twelfth-on-tab-ls,
+    .portion.width-10\/24-on-tab-ls { grid-column : span 10; }
+
+    .portion.width-11\/24-on-tab-ls { grid-column : span 11; }
+
+    .portion.half-on-tab-ls,
+    .portion.width-12\/24-on-tab-ls { grid-column : span 12; }
+
+    .portion.width-13\/24-on-tab-ls { grid-column : span 13; }
+
+    .portion.seven-twelfth-on-tab-ls,
+    .portion.width-14\/24-on-tab-ls { grid-column : span 14; }
+
+    .portion.width-15\/24-on-tab-ls { grid-column : span 15; }
+
+    .portion.two-third-on-tab-ls,
+    .portion.width-16\/24-on-tab-ls { grid-column : span 16; }
+
+    .portion.width-17\/24-on-tab-ls { grid-column : span 17; }
+
+    .portion.three-fourth-on-tab-ls,
+    .portion.width-18\/24-on-tab-ls { grid-column : span 18; }
+
+    .portion.width-19\/24-on-tab-ls { grid-column : span 19; }
+
+    .portion.five-sixth-on-tab-ls,
+    .portion.width-20\/24-on-tab-ls { grid-column : span 20; }
+
+    .portion.seven-eighth-on-tab-ls,
+    .portion.width-21\/24-on-tab-ls { grid-column : span 21; }
+
+    .portion.eleven-twelfth-on-tab-ls,
+    .portion.width-22\/24-on-tab-ls { grid-column : span 22; }
+
+    .portion.width-23\/24-on-tab-ls { grid-column : span 23; }
+
+    .portion.whole-on-tab-ls,
+    .portion.width-24\/24-on-tab-ls { grid-column : span 24; }
+}
