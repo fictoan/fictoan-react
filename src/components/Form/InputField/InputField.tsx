@@ -1,6 +1,6 @@
 import React, { PureComponent, HTMLProps } from "react";
 
-import { BaseComponent } from "../../BaseComponent";
+import { BaseComponent } from "../../BaseComponent/BaseComponent";
 
 class InputField extends PureComponent<HTMLProps<HTMLInputElement>> {
     render() {

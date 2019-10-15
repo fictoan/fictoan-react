@@ -1,5 +1,5 @@
 import React, { HTMLProps } from "react";
-import { BaseComponent } from "../BaseComponent";
+import { BaseComponent } from "../BaseComponent/BaseComponent";
 import { createClassName } from "src/utils/classNames";
 
 interface PortionProps extends Omit<HTMLProps<HTMLDivElement>, 'width'> {

@@ -1,5 +1,5 @@
 import React, { HTMLProps, PureComponent, ReactNode } from "react";
-import { BaseComponent } from "../BaseComponent";
+import { BaseComponent } from "../BaseComponent/BaseComponent";
 
 class BaseBreadcrumb extends PureComponent<HTMLProps<HTMLDivElement>> {
 
