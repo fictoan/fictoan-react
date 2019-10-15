@@ -1,8 +1,11 @@
-import React, { HTMLProps } from "react";
-import { BaseComponent } from "../BaseComponent";
-import { createClassName } from "../../utils/classNames"
+import React from "react";
 
-interface CardProps extends HTMLProps<HTMLDivElement> {
+import { createClassName } from "src/utils/classNames"
+
+import { BaseComponent } from "../BaseComponent/BaseComponent";
+import { BaseAndHTMLProps } from "../BaseComponent/typings";
+
+interface CardProps extends BaseAndHTMLProps<HTMLDivElement> {
     shape?: "rounded" | "curved";
     shadow?: "mild" | "soft" | "hard";
 }

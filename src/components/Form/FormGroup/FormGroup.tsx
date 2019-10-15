@@ -1,6 +1,6 @@
 import React, { HTMLProps } from "react";
 
-import { BaseComponent } from "../../BaseComponent";
+import { BaseComponent } from "../../BaseComponent/BaseComponent";
 
 const FormGroup = (props: HTMLProps<HTMLDivElement>) => (
     <BaseComponent<HTMLDivElement>

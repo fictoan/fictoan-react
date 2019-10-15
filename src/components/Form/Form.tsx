@@ -1,6 +1,6 @@
 import React, { HTMLProps, PureComponent } from "react";
 
-import { BaseComponent } from "../BaseComponent";
+import { BaseComponent } from "../BaseComponent/BaseComponent";
 
 class Form extends PureComponent<HTMLProps<HTMLFormElement>> {
     render() {
