@@ -1,13 +1,31 @@
 import React, { HTMLProps } from "react";
 
-import { BaseComponent } from "../BaseComponent/BaseComponent";
+import { createClassName } from "../../utils/classNames";
 
-const SidebarWrapper = (props: HTMLProps<HTMLDivElement>) => (
-    <BaseComponent<HTMLDivElement>
-        Element="div"
-        baseClassName="sidebar-wrapper"
-        {...props}
-    />
-);
+import { BaseComponent } from "../BaseComponent/BaseComponent";
+import { BaseAndHTMLProps } from "../BaseComponent/typings";
+
+interface SidebarWrapperProps extends BaseAndHTMLProps<HTMLDivElement> {
+    collapsed?: boolean;
+}
+
+const SidebarWrapper = ({collapsed, className, ...props}: SidebarWrapperProps) => {
+    const classNames = [
+        className
+    ]
+
+    if (collapsed) {
+        classNames.push("collapsed")
+    }
+
+    return (
+        <BaseComponent<HTMLDivElement>
+            Element="div"
+            className={createClassName(classNames)}
+            baseClassName="sidebar-wrapper"
+            {...props}
+        />
+    )
+};
 
 export default SidebarWrapper;
