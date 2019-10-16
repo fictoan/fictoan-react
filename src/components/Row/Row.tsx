@@ -7,7 +7,7 @@ import { BaseAndHTMLProps } from "../BaseComponent/typings";
 
 interface RowProps extends BaseAndHTMLProps<HTMLDivElement> {
     contentPadding?: "tiny" | "small" | "medium" | "large" | "huge";
-    gutters?: "tiny" | "small" | "medium" | "large" | "huge";
+    gutters?: "no" | "tiny" | "small" | "medium" | "large" | "huge";
 }
 
 const Row = ({contentPadding, className, gutters, ...props}: RowProps) => {
@@ -20,9 +20,9 @@ const Row = ({contentPadding, className, gutters, ...props}: RowProps) => {
     }
 
     if (gutters) {
-        classNames.push(`${contentPadding}-gutters`)
+        classNames.push(`${gutters}-gutters`)
     } else {
-        classNames.push("no-gutters")
+        classNames.push("medium-gutters")
     }
 
     return (
