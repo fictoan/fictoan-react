@@ -26,8 +26,8 @@ const Card = ({shadow, shape, className, ...props}: CardProps) => {
     return (
         <BaseComponent<HTMLDivElement>
             Element="div"
-            className={createClassName(classNames)}
             baseClassName="ff-card"
+            className={createClassName(classNames)}
             {...props}
         />
     )
