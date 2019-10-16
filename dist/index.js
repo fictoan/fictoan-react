@@ -39,11 +39,26 @@ const createClassName = (classNames) => {
 };
 
 const BaseComponent = (_a) => {
-    var { Element = "div", baseClassName, className } = _a, props = __rest(_a, ["Element", "baseClassName", "className"]);
-    return (React__default.createElement(Element, Object.assign({}, props, { className: createClassName([baseClassName, className]) })));
+    var { Element = "div", baseClassName, className, bgColor, textColor } = _a, props = __rest(_a, ["Element", "baseClassName", "className", "bgColor", "textColor"]);
+    return (React__default.createElement(Element, Object.assign({}, props, { className: createClassName([baseClassName, className, bgColor && `bg-${bgColor}`, textColor && `text-${textColor}`]) })));
 };
 
-const Row = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "row" }, props)));
+const Row = (_a) => {
+    var { contentPadding, className, gutters } = _a, props = __rest(_a, ["contentPadding", "className", "gutters"]);
+    const classNames = [
+        className
+    ];
+    if (contentPadding) {
+        classNames.push(`content-padding-${contentPadding}`);
+    }
+    if (gutters) {
+        classNames.push(`${contentPadding}-gutters`);
+    }
+    else {
+        classNames.push("no-gutters");
+    }
+    return (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "row", className: createClassName(classNames) }, props)));
+};
 
 const Portion = (_a) => {
     var { width, className } = _a, props = __rest(_a, ["width", "className"]);
@@ -68,7 +83,19 @@ const Portion = (_a) => {
     return React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "portion", className: createClassName(classNames) }, props));
 };
 
-const Card = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "ff-card" }, props)));
+const Card = (_a) => {
+    var { shadow, shape, className } = _a, props = __rest(_a, ["shadow", "shape", "className"]);
+    const classNames = [
+        className
+    ];
+    if (shape) {
+        classNames.push(`shape-${shape}`);
+    }
+    if (shadow) {
+        classNames.push(`shadow-${shadow}`);
+    }
+    return (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "ff-card", className: createClassName(classNames) }, props)));
+};
 
 class Header extends React__default.PureComponent {
     render() {
@@ -93,7 +120,16 @@ const SidebarHeader = (props) => (React__default.createElement(BaseComponent, Ob
 
 const SublinkGroup = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "sublink-group" }, props)));
 
-const SidebarWrapper = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "sidebar-wrapper" }, props)));
+const SidebarWrapper = (_a) => {
+    var { collapsed, className } = _a, props = __rest(_a, ["collapsed", "className"]);
+    const classNames = [
+        className
+    ];
+    if (collapsed) {
+        classNames.push("collapsed");
+    }
+    return (React__default.createElement(BaseComponent, Object.assign({ Element: "div", className: createClassName(classNames), baseClassName: "sidebar-wrapper" }, props)));
+};
 
 const ContentWrapper = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "content-wrapper" }, props)));
 
