@@ -1,13 +1,31 @@
 import React, { HTMLProps } from "react";
 
-import { BaseComponent } from "../BaseComponent/BaseComponent";
+import { createClassName } from "../../utils/classNames";
 
-const Row = (props: HTMLProps<HTMLDivElement>) => (
-    <BaseComponent<HTMLDivElement>
-        Element="div"
-        baseClassName="row"
-        {...props}
-    />
-);
+import { BaseComponent } from "../BaseComponent/BaseComponent";
+import { BaseAndHTMLProps } from "../BaseComponent/typings";
+
+interface RowProps extends BaseAndHTMLProps<HTMLDivElement> {
+    contentPadding?: "tiny" | "small" | "medium" | "large" | "huge";
+}
+
+const Row = ({contentPadding, className, ...props}: RowProps) => {
+    const classNames = [
+        className
+    ]
+
+    if (contentPadding) {
+        classNames.push(`content-padding-${contentPadding}`)
+    }
+
+    return (
+        <BaseComponent<HTMLDivElement>
+            Element="div"
+            baseClassName="row"
+            className={createClassName(classNames)}
+            {...props}
+        />
+    )
+};
 
 export default Row;
