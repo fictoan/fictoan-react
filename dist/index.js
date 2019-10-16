@@ -52,10 +52,10 @@ const Row = (_a) => {
         classNames.push(`content-padding-${contentPadding}`);
     }
     if (gutters) {
-        classNames.push(`${contentPadding}-gutters`);
+        classNames.push(`${gutters}-gutters`);
     }
     else {
-        classNames.push("no-gutters");
+        classNames.push("medium-gutters");
     }
     return (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "row", className: createClassName(classNames) }, props)));
 };
