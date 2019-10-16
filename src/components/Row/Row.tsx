@@ -6,17 +6,17 @@ import { BaseComponent } from "../BaseComponent/BaseComponent";
 import { BaseAndHTMLProps } from "../BaseComponent/typings";
 
 interface RowProps extends BaseAndHTMLProps<HTMLDivElement> {
-    contentPadding?: "tiny" | "small" | "medium" | "large" | "huge";
+    sidePadding?: "tiny" | "small" | "medium" | "large" | "huge";
     gutters?: "no" | "tiny" | "small" | "medium" | "large" | "huge";
 }
 
-const Row = ({contentPadding, className, gutters, ...props}: RowProps) => {
+const Row = ({sidePadding, className, gutters, ...props}: RowProps) => {
     const classNames = [
         className
     ]
 
-    if (contentPadding) {
-        classNames.push(`content-padding-${contentPadding}`)
+    if (sidePadding) {
+        classNames.push(`side-padding-${sidePadding}`)
     }
 
     if (gutters) {

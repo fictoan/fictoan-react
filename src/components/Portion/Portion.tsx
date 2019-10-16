@@ -13,17 +13,19 @@ interface PortionProps extends BaseAndHTMLProps<HTMLDivElement> {
 const Portion = ({ desktopWidth, mobileWidth, tabletLSWidth, tabletPTWidth, className, ...props }: PortionProps) => {
     const classNames = [className];
 
-    if (desktopWidth) {
-        classNames.push(`${desktopWidth}`);
-    }
-    if (tabletLSWidth) {
-        classNames.push(`${tabletLSWidth}-on-tab-ls`);
-    }
-    if (tabletPTWidth) {
-        classNames.push(`${tabletPTWidth}-on-tab-pt`);
-    }
-    if (mobileWidth) {
-        classNames.push(`${mobileWidth}-on-mobile`);
+    if (desktopWidth || tabletLSWidth || tabletPTWidth || mobileWidth) {
+        if (desktopWidth) {
+            classNames.push(`${desktopWidth}`);
+        }
+        if (tabletLSWidth) {
+            classNames.push(`${tabletLSWidth}-on-tab-ls`);
+        }
+        if (tabletPTWidth) {
+            classNames.push(`${tabletPTWidth}-on-tab-pt`);
+        }
+        if (mobileWidth) {
+            classNames.push(`${mobileWidth}-on-mobile`);
+        }
     } else {
         classNames.push("whole");
     }
