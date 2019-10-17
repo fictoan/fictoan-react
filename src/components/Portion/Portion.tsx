@@ -1,30 +1,30 @@
 import React, { HTMLProps } from "react";
 import { BaseComponent } from "../BaseComponent/BaseComponent";
 import { createClassName } from "src/utils/classNames";
+import { BaseAndHTMLProps } from "../BaseComponent/typings";
 
-interface PortionProps extends Omit<HTMLProps<HTMLDivElement>, 'width'> {
-    width?: {
-        mobile?: string;
-        tabletLandscape?: string;
-        tabletPortrait?: string;
-        desktop?: string;
-    }
+interface PortionProps extends BaseAndHTMLProps<HTMLDivElement> {
+    desktopWidth : string;
+    tabletPTWidth : string;
+    tabletLSWidth : string;
+    mobileWidth : string;
 }
 
-const Portion = ({ width, className, ...props }: PortionProps) => {
+const Portion = ({ desktopWidth, mobileWidth, tabletLSWidth, tabletPTWidth, className, ...props }: PortionProps) => {
     const classNames = [className];
-    if (width) {
-        if (width.mobile) {
-            classNames.push(`${width.mobile}-on-mobile`);
+
+    if (desktopWidth || tabletLSWidth || tabletPTWidth || mobileWidth) {
+        if (desktopWidth) {
+            classNames.push(`${desktopWidth}`);
         }
-        if (width.tabletLandscape) {
-            classNames.push(`${width.tabletLandscape}-on-tab-ls`);
+        if (tabletLSWidth) {
+            classNames.push(`${tabletLSWidth}-on-tab-ls`);
         }
-        if (width.tabletPortrait) {
-            classNames.push(`${width.tabletPortrait}-on-tab-pt`);
+        if (tabletPTWidth) {
+            classNames.push(`${tabletPTWidth}-on-tab-pt`);
         }
-        if (width.desktop) {
-            classNames.push(width.desktop);
+        if (mobileWidth) {
+            classNames.push(`${mobileWidth}-on-mobile`);
         }
     } else {
         classNames.push("whole");
