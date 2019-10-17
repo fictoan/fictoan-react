@@ -7,7 +7,7 @@ import { BaseAndHTMLProps } from "../BaseComponent/typings";
 
 interface RowProps extends BaseAndHTMLProps<HTMLDivElement> {
     sidePadding?: "tiny" | "small" | "medium" | "large" | "huge";
-    gutters?: "no" | "tiny" | "small" | "medium" | "large" | "huge";
+    gutters?: "none" | "tiny" | "small" | "medium" | "large" | "huge";
 }
 
 const Row = ({sidePadding, className, gutters, ...props}: RowProps) => {
@@ -19,8 +19,11 @@ const Row = ({sidePadding, className, gutters, ...props}: RowProps) => {
         classNames.push(`side-padding-${sidePadding}`)
     }
 
-    if (gutters) {
+    if (["tiny", "small", "large", "huge"].includes(gutters)) {
         classNames.push(`${gutters}-gutters`)
+    }
+    else if (gutters == "none") {
+        classNames.push("no-gutters")
     } else {
         classNames.push("medium-gutters")
     }

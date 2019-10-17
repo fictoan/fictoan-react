@@ -6,15 +6,25 @@ import { createClassName } from "../../utils/classNames";
 
 interface HRuleProps extends BaseAndHTMLProps<HTMLDivElement> {
     sideMargin?: "tiny" | "small" | "medium" | "large" | "huge";
+    thick?: boolean;
+    slim?: boolean;
 }
 
-const HRule = ({sideMargin, className, ...props}: HRuleProps) => {
+const HRule = ({sideMargin, className, thick, slim, ...props}: HRuleProps) => {
     const classNames = [
         className
     ]
 
     if (sideMargin) {
         classNames.push(`side-margin-${sideMargin}`)
+    }
+
+    if (thick) {
+        classNames.push("thick")
+    }
+
+    if (slim) {
+        classNames.push("slim")
     }
 
     return (
