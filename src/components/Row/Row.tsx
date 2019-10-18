@@ -8,9 +8,14 @@ import { BaseAndHTMLProps } from "../BaseComponent/typings";
 interface RowProps extends BaseAndHTMLProps<HTMLDivElement> {
     sidePadding?: "tiny" | "small" | "medium" | "large" | "huge";
     gutters?: "none" | "tiny" | "small" | "medium" | "large" | "huge";
+    retainLayoutOnTabLS?: boolean;
+    retainLayoutOnTabPT?: boolean;
+    retainLayoutOnMobile?: boolean;
+    retainLayoutAlways?: boolean;
 }
 
-const Row = ({sidePadding, className, gutters, ...props}: RowProps) => {
+const Row = ({ sidePadding, className, gutters, retainLayoutOnTabLS, retainLayoutOnTabPT, retainLayoutOnMobile, retainLayoutAlways, ...props }: RowProps) => {
+
     const classNames = [
         className
     ]
@@ -26,6 +31,22 @@ const Row = ({sidePadding, className, gutters, ...props}: RowProps) => {
         classNames.push("no-gutters")
     } else {
         classNames.push("medium-gutters")
+    }
+
+    if (retainLayoutOnTabLS) {
+        classNames.push("retain-layout-on-tab-ls")
+    }
+
+    if (retainLayoutOnTabPT) {
+        classNames.push("retain-layout-on-tab-pt")
+    }
+
+    if (retainLayoutOnMobile) {
+        classNames.push("retain-layout-on-mobile")
+    }
+
+    if (retainLayoutAlways) {
+        classNames.push("retain-layout-on-mobile retain-layout-on-tab-ls retain-layout-on-tab-pt")
     }
 
     return (
