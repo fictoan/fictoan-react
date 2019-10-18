@@ -7,23 +7,23 @@ import { BaseAndHTMLProps } from "../BaseComponent/typings";
 
 interface PortionProps extends BaseAndHTMLProps<HTMLDivElement> {
     desktopWidth : string;
-    tabletPTWidth : string;
-    tabletLSWidth : string;
+    tabPTWidth : string;
+    tabLSWidth : string;
     mobileWidth : string;
 }
 
-const Portion = ({ desktopWidth, mobileWidth, tabletLSWidth, tabletPTWidth, className, ...props }: PortionProps) => {
+const Portion = ({ desktopWidth, mobileWidth, tabLSWidth, tabPTWidth, className, ...props }: PortionProps) => {
     const classNames = [className];
 
-    if (desktopWidth || tabletLSWidth || tabletPTWidth || mobileWidth) {
+    if (desktopWidth || tabLSWidth || tabPTWidth || mobileWidth) {
         if (desktopWidth) {
             classNames.push(`${desktopWidth}`);
         }
-        if (tabletLSWidth) {
-            classNames.push(`${tabletLSWidth}-on-tab-ls`);
+        if (tabLSWidth) {
+            classNames.push(`${tabLSWidth}-on-tab-ls`);
         }
-        if (tabletPTWidth) {
-            classNames.push(`${tabletPTWidth}-on-tab-pt`);
+        if (tabPTWidth) {
+            classNames.push(`${tabPTWidth}-on-tab-pt`);
         }
         if (mobileWidth) {
             classNames.push(`${mobileWidth}-on-mobile`);

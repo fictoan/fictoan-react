@@ -19,5 +19,13 @@ export const BaseComponent = <K extends {}>({
     textColor,
     ...props
 }: HTMLProps<K> & BaseComponentProps) => (
-    <Element {...props} className={createClassName([baseClassName, className, bgColor && `bg-${bgColor}`, textColor && `text-${textColor}`])} />
+    <Element {...props} className={
+        createClassName([
+            baseClassName,
+            className,
+            bgColor && `bg-${bgColor}`,
+            textColor && `text-${textColor}`
+            ]
+        )}
+    />
 );
