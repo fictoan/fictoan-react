@@ -46,7 +46,7 @@ const Row = ({ sidePadding, className, gutters, retainLayoutOnTabLS, retainLayou
     }
 
     if (retainLayoutAlways) {
-        classNames.push("retain-layout-on-mobile retain-layout-on-tab-ls retain-layout-on-tab-pt")
+        classNames.push("retain-layout-on-tab-ls retain-layout-on-tab-pt retain-layout-on-mobile")
     }
 
     return (
