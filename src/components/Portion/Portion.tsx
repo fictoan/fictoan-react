@@ -1,6 +1,8 @@
-import React, { HTMLProps } from "react";
-import { BaseComponent } from "../BaseComponent/BaseComponent";
+import React from "react";
+
 import { createClassName } from "src/utils/classNames";
+
+import { BaseComponent } from "../BaseComponent/BaseComponent";
 import { BaseAndHTMLProps } from "../BaseComponent/typings";
 
 interface PortionProps extends BaseAndHTMLProps<HTMLDivElement> {
