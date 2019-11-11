@@ -24,6 +24,7 @@ import FormGroup from "./components/Form/FormGroup/FormGroup";
 import InputField from "./components/Form/InputField/InputField";
 import TextArea from "./components/Form/TextArea/TextArea";
 import InputLabel from "./components/Form/InputLabel/InputLabel";
+import InputWrapper from "./components/Form/InputWrapper/InputWrapper";
 import FileUpload from "./components/Form/FileUpload/FileUpload";
 
 import Table from "./components/Table/Table";
@@ -51,6 +52,7 @@ export {
     InputField,
     TextArea,
     InputLabel,
+    InputWrapper,
     Button,
     FileUpload,
     HRule,
