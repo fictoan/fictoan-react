@@ -4,7 +4,6 @@ import { createClassName } from "src/utils/classNames";
 
 import { BaseProps } from "./typings";
 
-
 export interface BaseComponentProps extends BaseProps {
     Element: ElementType<any>;
     className?: string;

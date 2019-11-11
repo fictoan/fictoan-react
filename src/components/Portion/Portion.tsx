@@ -6,10 +6,10 @@ import { BaseComponent } from "../BaseComponent/BaseComponent";
 import { BaseAndHTMLProps } from "../BaseComponent/typings";
 
 interface PortionProps extends BaseAndHTMLProps<HTMLDivElement> {
-    desktopWidth : string;
-    tabPTWidth : string;
-    tabLSWidth : string;
-    mobileWidth : string;
+    desktopWidth? : string;
+    tabPTWidth? : string;
+    tabLSWidth? : string;
+    mobileWidth? : string;
 }
 
 const Portion = ({ desktopWidth, mobileWidth, tabLSWidth, tabPTWidth, className, ...props }: PortionProps) => {
