@@ -44,14 +44,42 @@
 
 .ff-input.invalid,
 .ff-input:invalid:not(:focus):not(:placeholder-shown) {
-    border           : 1px solid $inputBorder-InvalidColor;
-    background-color : rgba($colorRed, 0.24);
-    background-image : url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+ICA8bGluZSB4MT0iNi41IiB5MT0iMTcuNSIgeDI9IjE4LjUiIHkyPSI1LjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2VmNDM0MyIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjIiLz4gIDxsaW5lIHgxPSI2LjUiIHkxPSI1LjUiIHgyPSIxOC41IiB5Mj0iMTcuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZWY0MzQzIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==);
-}
-
-.ff-input:invalid:focus:not(:placeholder-shown) {
-    border           : 2px solid $inputBorder-InvalidColor;
-    background-color : rgba($colorRed, 0.16);
+    border              : 1px solid $inputBorder-InvalidColor;
+    background-color    : rgba($colorRed, 0.24);
+    background-image    : url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+ICA8bGluZSB4MT0iNi41IiB5MT0iMTcuNSIgeDI9IjE4LjUiIHkyPSI1LjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2VmNDM0MyIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjIiLz4gIDxsaW5lIHgxPSI2LjUiIHkxPSI1LjUiIHgyPSIxOC41IiB5Mj0iMTcuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZWY0MzQzIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==);
+    background-repeat   : no-repeat;
+    background-position : 98%;
+    background-size     : 24px;
 }
 
 .ff-input[type=password] { letter-spacing : 4px; }
+
+//  LEFT AND  RIGHT ICONS  ====================================================
+.ff-input.with-icon-left  { padding-left : 40px; }
+.ff-input.with-icon-right { padding-right : 40px; }
+
+span.icon-left,
+span.icon-right {
+    position : absolute;
+    bottom   : 12px;
+    width    : 24px;
+    height   : 24px;
+}
+
+span.icon-left svg,
+span.icon-right svg {
+    fill       : $inputIconFillColor;
+    transition : all 0.2s;
+    width      : 24px;
+    height     : 24px;
+}
+
+span.icon-left { left : 8px; }
+
+span.icon-right {
+    right   : 8px;
+    opacity : 0.24;
+}
+
+.ff-input.with-icon-left:focus ~ span.icon-left svg { fill : $inputFocusIconFillColor; }
+
