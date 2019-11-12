@@ -18,16 +18,14 @@ export const BaseInputComponent = <K extends {}>({
     errorText,
     ...inputProps
 }: HTMLProps<K> & BaseInputComponentProps) => {
-    const classNames = [
-        className
-    ]
+    const classNames = [className];
 
     if (iconLeft) {
-        classNames.push("with-icon-left")
+        classNames.push("with-icon-left");
     }
 
     if (iconRight) {
-        classNames.push("with-icon-right")
+        classNames.push("with-icon-right");
     }
 
     return (
@@ -42,7 +40,6 @@ export const BaseInputComponent = <K extends {}>({
             {iconLeft && <span className="icon-left">{iconLeft}</span>}
             {iconRight && <span className="icon-right">{iconRight}</span>}
 
-
             {label && (
                 <InputLabel
                     label={label}
@@ -52,4 +49,4 @@ export const BaseInputComponent = <K extends {}>({
             )}
         </>
     );
-}
+};
