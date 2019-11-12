@@ -1,10 +1,12 @@
-import React, { HTMLProps } from "react";
+import React from "react";
 
-import { BaseComponent } from "../../BaseComponent/BaseComponent";
+import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 
-const TextArea = (props: HTMLProps<HTMLTextAreaElement>) => {
+import { TextAreaProps } from "./typings";
+
+const TextArea = (props: TextAreaProps) => {
     return (
-        <BaseComponent<HTMLTextAreaElement>
+        <BaseInputComponent<HTMLTextAreaElement>
             Element="textarea"
             baseClassName="ff-input"
             {...props}

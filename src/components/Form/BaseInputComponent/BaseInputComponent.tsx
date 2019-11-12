@@ -7,7 +7,7 @@ import { createClassName } from "../../../utils/classNames";
 
 import { BaseInputComponentProps } from "./typings";
 
-const BaseInputComponent = <K extends {}>({
+export const BaseInputComponent = <K extends {}>({
     Element,
     baseClassName,
     className,
@@ -53,5 +53,3 @@ const BaseInputComponent = <K extends {}>({
         </>
     );
 }
-
-export default BaseInputComponent;

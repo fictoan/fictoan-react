@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 
-import BaseInputComponent from "../BaseInputComponent/BaseInputComponent";
+import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 
 import { InputFieldProps } from "./typings";
 
