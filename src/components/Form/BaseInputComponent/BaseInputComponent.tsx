@@ -45,7 +45,7 @@ export const BaseInputComponent = <K extends {}>({
 
             {label && (
                 <InputLabel
-                    value={label}
+                    label={label}
                     helpText={helpText}
                     errorText={errorText}
                 />
