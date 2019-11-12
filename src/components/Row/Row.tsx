@@ -6,23 +6,47 @@ import { BaseComponent } from "../BaseComponent/BaseComponent";
 import { BaseAndHTMLProps } from "../BaseComponent/typings";
 
 interface RowProps extends BaseAndHTMLProps<HTMLDivElement> {
-    contentPadding?: "tiny" | "small" | "medium" | "large" | "huge";
-    gutters?: "no" | "tiny" | "small" | "medium" | "large" | "huge";
+    sidePadding?: "tiny" | "small" | "medium" | "large" | "huge";
+    gutters?: "none" | "tiny" | "small" | "medium" | "large" | "huge";
+    retainLayoutOnTabLS?: boolean;
+    retainLayoutOnTabPT?: boolean;
+    retainLayoutOnMobile?: boolean;
+    retainLayoutAlways?: boolean;
 }
 
-const Row = ({contentPadding, className, gutters, ...props}: RowProps) => {
+const Row = ({ sidePadding, className, gutters, retainLayoutOnTabLS, retainLayoutOnTabPT, retainLayoutOnMobile, retainLayoutAlways, ...props }: RowProps) => {
+
     const classNames = [
         className
     ]
 
-    if (contentPadding) {
-        classNames.push(`content-padding-${contentPadding}`)
+    if (sidePadding) {
+        classNames.push(`side-padding-${sidePadding}`)
     }
 
-    if (gutters) {
+    if (["tiny", "small", "large", "huge"].includes(gutters)) {
         classNames.push(`${gutters}-gutters`)
+    }
+    else if (gutters == "none") {
+        classNames.push("no-gutters")
     } else {
         classNames.push("medium-gutters")
+    }
+
+    if (retainLayoutOnTabLS) {
+        classNames.push("retain-layout-on-tab-ls")
+    }
+
+    if (retainLayoutOnTabPT) {
+        classNames.push("retain-layout-on-tab-pt")
+    }
+
+    if (retainLayoutOnMobile) {
+        classNames.push("retain-layout-on-mobile")
+    }
+
+    if (retainLayoutAlways) {
+        classNames.push("retain-layout-on-tab-ls retain-layout-on-tab-pt retain-layout-on-mobile")
     }
 
     return (

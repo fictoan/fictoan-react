@@ -18,33 +18,33 @@
 .row.no-gutters     { grid-gap : 0; }
 
 //  Side margins for all your content
-.content-padding-tiny {
+.side-padding-tiny {
     padding-left  : 4vw;
     padding-right : 4vw;
 }
 
-.content-padding-small {
+.side-padding-small {
     padding-left  : 8vw;
     padding-right : 8vw;
 }
 
-.content-padding-medium {
+.side-padding-medium {
     padding-left  : 12vw;
     padding-right : 12vw;
 }
 
-.content-padding-large {
+.side-padding-large {
     padding-left  : 18vw;
     padding-right : 18vw;
 }
 
-.content-padding-huge {
+.side-padding-huge {
     padding-left  : 24vw;
     padding-right : 24vw;
 }
 
 @media all and (max-width : 600px) {
-    *[class*="content-padding-"] {
+    *[class*="side-padding-"] {
         padding-left  : 6vw;
         padding-right : 6vw;
     }

@@ -2,24 +2,21 @@ import React, { HTMLProps } from "react";
 
 import { BaseComponent } from "../../BaseComponent/BaseComponent";
 
+import { InputLabelProps } from "./typings";
+
 function InputLabel({
-    value,
+    label,
     helpText,
     errorText,
     ...props
-}: HTMLProps<HTMLLabelElement> & {
-    value?: string;
-    helpText?: string;
-    errorText?: string;
-}) {
+}: InputLabelProps) {
     return (
-        // @ts-ignore
         <BaseComponent<HTMLLabelElement>
             Element="label"
             baseClassName="ff-input-label"
             {...props}
         >
-            {value}
+            {label}
 
             {helpText && helpText.length > 0 && (
                 <span className="ff-input-help">{helpText}</span>
