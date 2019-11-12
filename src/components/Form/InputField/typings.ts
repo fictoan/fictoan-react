@@ -1,6 +1,8 @@
-import { HTMLProps, ReactElement } from "react";
+import { HTMLProps } from "react";
 
-export interface InputFieldProps extends HTMLProps<HTMLInputElement> {
-    iconLeft?: ReactElement;
-    iconRight?: ReactElement;
-}
+import { InputLabelProps } from "../InputLabel/typings";
+import { InputIconProps } from "../BaseInputComponent/typings";
+
+export type InputFieldProps = HTMLProps<HTMLInputElement> &
+    InputLabelProps &
+    InputIconProps;
