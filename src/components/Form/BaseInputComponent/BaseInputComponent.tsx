@@ -45,6 +45,7 @@ export const BaseInputComponent = <K extends {}>({
                     label={label}
                     helpText={helpText}
                     errorText={errorText}
+                    htmlFor={inputProps.id}
                 />
             )}
         </>

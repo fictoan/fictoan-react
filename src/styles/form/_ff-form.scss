@@ -24,59 +24,6 @@
 .ff-form-unit-group *:not(.unit-prefix):not(.unit-suffix) { border-radius: 0 !important; }
 
 
-
-//  CHECKBOX  =================================================================
-//  The grey square
-.ff-checkbox label::before {
-    height        : 16px;
-    width         : 16px;
-    top           : 4px;
-    left          : 0;
-    border-radius : 4px;
-}
-
-//  The white tick inside
-.ff-checkbox label::after {
-    height        : 6px;
-    width         : 12px;
-    left          : 2px;
-    top           : 8px;
-    border-left   : 2px solid $colorWhite;
-    border-bottom : 2px solid $colorWhite;
-    transform     : rotate(-45deg);
-}
-
-
-//  TOGGLE SWITCH  ============================================================
-//  The grey oblong
-.ff-switch label::before {
-    position      : absolute;
-    top           : 4px;
-    left          : 0;
-    width         : 32px;
-    height        : 16px;
-    border-radius : 8px;
-    margin-right  : 4px;
-}
-
-//  The white inner circle
-.ff-switch label::after {
-    position      : absolute;
-    display       : inline-block;
-    width         : 12px;
-    height        : 12px;
-    left          : 2px;
-    top           : 6px;
-    background    : $colorWhite;
-    border-radius : 50%;
-    content       : '';
-    transition    : all 0.1s ease-out;
-    box-shadow    : 0 4px 8px -4px hsla(0, 0, 0, 0.6);
-}
-
-.ff-switch input[type="checkbox"]:checked + label::after { left : 18px; }
-
-
 //  RADIO-BUTTONS  ============================================================
 //  The grey outer circle
 .ff-radio label::before {
@@ -100,73 +47,7 @@
 
 
 
-//  CHECKBOX, SWITCH and RADIO BUTTONS  =======================================
-input[type="checkbox"] { display : none; }
 
-.ff-checkbox,
-.ff-switch {
-    display      : inline-block;
-    margin-right : 24px;
-}
-
-.ff-checkbox:only-of-type,
-.ff-switch:only-of-type { margin-right : 0; }
-
-.ff-checkbox label,
-.ff-switch   label {
-    display        : inline-block;
-    position       : relative;
-    font-family    : $fontSans;
-    color          : $colorShade;
-    cursor         : pointer;
-    vertical-align : middle;
-    line-height    : 1.1;
-}
-
-.ff-checkbox label { padding-left : 24px; }
-
-.ff-switch   label { padding-left : 40px; }
-
-.ff-checkbox label::before,
-.ff-checkbox label::after,
-.ff-switch   label::before,
-.ff-switch   label::after {
-    display    : inline-block;
-    position   : absolute;
-    content    : "";
-    transition : all 0.1s ease-out;
-}
-
-//  The grey square
-.ff-checkbox input[type="checkbox"]:disabled + label::before,
-.ff-switch   input[type="checkbox"]:disabled + label::before,
-.ff-checkbox label::before,
-.ff-switch   label::before {
-    user-select    : none;
-    pointer-events : none;
-    background     : $colorGrey-20;
-    box-shadow     : 0 2px 8px -2px hsla(0, 0, 0, 0.24) inset;
-}
-
-.ff-checkbox:hover label::before,
-.ff-switch:hover   label::before { background : $colorGrey-30; }
-
-//  The grey square
-.ff-checkbox label::after { opacity : 0; }
-
-.ff-checkbox input[type="checkbox"]:checked + label::before,
-.ff-switch   input[type="checkbox"]:checked + label::before { background : $colorHue; }
-
-.ff-checkbox input[type="checkbox"]:checked + label::after { opacity : 1; }
-
-.ff-checkbox input[type="checkbox"]:disabled         + label,
-.ff-switch   input[type="checkbox"]:disabled         + label,
-.ff-checkbox input[type="checkbox"]:disabled:checked + label,
-.ff-switch   input[type="checkbox"]:disabled:checked + label  {
-    pointer-events : none;
-    cursor         : default;
-    opacity        : 0.24;
-}
 
 
 
@@ -308,8 +189,3 @@ progress.ff-progress-bar[value]::-moz-progress-bar {
 
 input::-moz-focus-inner,
 input::-moz-focus-outer { border : 0; }
-
-
-
-//  BUTTON  ===================================================================
-

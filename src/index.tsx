@@ -25,13 +25,15 @@ import InputField from "./components/Form/InputField/InputField";
 import TextArea from "./components/Form/TextArea/TextArea";
 import InputLabel from "./components/Form/InputLabel/InputLabel";
 import FileUpload from "./components/Form/FileUpload/FileUpload";
-
-import Table from "./components/Table/Table";
-
 import RadioButton from "./components/Form/RadioGroup/RadioButton";
 import RadioGroup from "./components/Form/RadioGroup/RadioGroup";
+import CheckBox from "./components/Form/CheckBox/CheckBox";
+import Switch from "./components/Form/CheckBox/Switch";
+
 import BaseBreadcrumb from "./components/Breadcrumbs/Breadcrumb";
 import BaseBreadcrumbItem from "./components/Breadcrumbs/BreadcrumbItem";
+
+import Table from "./components/Table/Table";
 
 export {
     Row,
@@ -55,8 +57,10 @@ export {
     FileUpload,
     HRule,
     Table,
-    RadioButton,
     RadioGroup,
+    RadioButton,
+    CheckBox,
+    Switch,
     BaseBreadcrumb,
     BaseBreadcrumbItem
 };
