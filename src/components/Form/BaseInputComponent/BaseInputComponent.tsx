@@ -11,6 +11,7 @@ export const BaseInputComponent = <K extends {}>({
     Element,
     baseClassName,
     className,
+    placeHolder,
     iconLeft,
     iconRight,
     label,

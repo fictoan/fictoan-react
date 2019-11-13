@@ -8,6 +8,7 @@ export interface BaseComponentProps extends BaseProps {
     Element: ElementType<any>;
     className?: string;
     baseClassName?: string;
+    placeHolder?: string;
 };
 
 export const BaseComponent = <K extends {}>({
@@ -24,6 +25,7 @@ export const BaseComponent = <K extends {}>({
     showOnlyOnTabLS,
     hideOnDesktop,
     showOnlyOnDesktop,
+    placeHolder,
     ...props
 }: HTMLProps<K> & BaseComponentProps) => (
     <Element {...props} className={
