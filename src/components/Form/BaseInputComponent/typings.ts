@@ -6,6 +6,7 @@ import { InputLabelProps } from "../InputLabel/typings";
 export interface InputIconProps {
     iconLeft?: ReactElement;
     iconRight?: ReactElement;
+    validateThis?: boolean;
 }
 
 export type BaseInputComponentProps = BaseComponentProps &

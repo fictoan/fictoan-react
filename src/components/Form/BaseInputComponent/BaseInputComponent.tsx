@@ -1,22 +1,21 @@
 import React, { HTMLProps } from "react";
 
-import { BaseComponent } from "../../BaseComponent/BaseComponent";
-import InputLabel from "../InputLabel/InputLabel";
-
 import { createClassName } from "../../../utils/classNames";
-
+import { BaseComponent } from "../../BaseComponent/BaseComponent";
 import { BaseInputComponentProps } from "./typings";
+
+import InputLabel from "../InputLabel/InputLabel";
 
 export const BaseInputComponent = <K extends {}>({
     Element,
     baseClassName,
     className,
-    placeHolder,
     iconLeft,
     iconRight,
     label,
     helpText,
     errorText,
+    validateThis,
     ...inputProps
 }: HTMLProps<K> & BaseInputComponentProps) => {
     const classNames = [className];
@@ -27,6 +26,10 @@ export const BaseInputComponent = <K extends {}>({
 
     if (iconRight) {
         classNames.push("with-icon-right");
+    }
+
+    if (validateThis) {
+        classNames.push("validate-this");
     }
 
     return (

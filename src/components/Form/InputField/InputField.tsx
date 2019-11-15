@@ -1,7 +1,5 @@
-import React, { PureComponent } from "react";
-
+import React, { HTMLProps, PureComponent, ReactEventHandler } from "react";
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
-
 import { InputFieldProps } from "./typings";
 
 class InputField extends PureComponent<InputFieldProps> {
@@ -10,6 +8,7 @@ class InputField extends PureComponent<InputFieldProps> {
             <BaseInputComponent<HTMLInputElement>
                 Element="input"
                 baseClassName="ff-input"
+                placeholder=" "
                 {...this.props}
             />
         );

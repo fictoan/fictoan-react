@@ -1,27 +1,4 @@
-//  BASICS  ===============================================
 
-.ff-form-answers * { margin-bottom: 8px; }
-
-//.ff-input:invalid:not(:focus):not(:placeholder-shown) { background-color : rgba($colorRed, 0.24); }
-
-//.ff-input.validate-this:focus ~ span.icon-right { opacity : 0.4; }
-//.ff-input.validate-this:valid ~ span.icon-right { opacity : 1; }
-//
-//.ff-input.validate-this:valid ~ span.icon-right svg { fill : $colorGreen !important; }
-
-.ff-form-unit-group .unit-prefix,
-.ff-form-unit-group .unit-prefix select {
-    border-top-right-radius    : 0;
-    border-bottom-right-radius : 0;
-}
-
-.ff-form-unit-group .unit-suffix,
-.ff-form-unit-group .unit-suffix select {
-    border-top-left-radius    : 0;
-    border-bottom-left-radius : 0;
-}
-
-.ff-form-unit-group *:not(.unit-prefix):not(.unit-suffix) { border-radius: 0 !important; }
 
 
 //  RADIO-BUTTONS  ============================================================

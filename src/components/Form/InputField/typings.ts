@@ -5,4 +5,4 @@ import { InputIconProps } from "../BaseInputComponent/typings";
 
 export type InputFieldProps = HTMLProps<HTMLInputElement> &
     InputLabelProps &
-    InputIconProps;
+    InputIconProps
