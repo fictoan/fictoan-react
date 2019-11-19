@@ -3,12 +3,7 @@ import React from "react";
 import { createClassName } from "src/utils/classNames"
 
 import { BaseComponent } from "../BaseComponent/BaseComponent";
-import { BaseAndHTMLProps } from "../BaseComponent/typings";
-
-interface CardProps extends BaseAndHTMLProps<HTMLDivElement> {
-    shape?: "rounded" | "curved";
-    shadow?: "mild" | "soft" | "hard";
-}
+import { CardProps } from "./typings";
 
 const Card = ({shadow, shape, className, ...props}: CardProps) => {
     const classNames = [

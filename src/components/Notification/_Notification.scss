@@ -1,0 +1,50 @@
+.ff-notification {
+    position         : fixed;
+    display          : flex;
+    width            : 400px;
+    height           : auto;
+    min-height       : 48px;
+    max-height       : 120px;
+    overflow         : scroll;
+    padding          : 16px;
+    z-index          : 50000;
+    background-color : $colorGrey-10;
+    box-shadow       : 0 8px 16px -8px rgba(0, 0, 0, 0.32);
+    border-radius    : 4px;
+    border           : 1px solid hsla(0, 0%, 0%, 0.04);
+}
+
+.ff-notification::before {
+    position      : absolute;
+    left          : 0;
+    top           : 0;
+    width         : 8px;
+    height        : 100%;
+    content       : "";
+    border-radius : 4px 0 0 4px;
+}
+
+.ff-notification.info::before    { background-color : $colorBlue-60; }
+.ff-notification.warning::before { background-color : $colorAmber; }
+.ff-notification.error::before   { background-color : $colorRed-90; }
+.ff-notification.success::before { background-color : $colorGreen-90; }
+
+.ff-notification.top-left {
+    top  : 4vh;
+    left : 2vw;
+}
+
+.ff-notification.top-right {
+    top   : 4vh;
+    right : 2vw;
+}
+
+.ff-notification.bottom-left {
+    bottom : 4vh;
+    left   : 2vw;
+}
+
+.ff-notification.bottom-right {
+    right  : 2vw;
+    bottom : 4vh;
+}
