@@ -7,6 +7,8 @@ export interface InputIconProps {
     iconLeft?: ReactElement;
     iconRight?: ReactElement;
     validateThis?: boolean;
+    valid?:boolean;
+    invalid?:boolean;
 }
 
 export type BaseInputComponentProps = BaseComponentProps &

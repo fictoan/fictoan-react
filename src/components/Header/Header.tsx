@@ -1,5 +1,4 @@
 import React, { ReactEventHandler, HTMLProps } from "react";
-// import { Link } from 'react-router-dom'
 
 import Row from "../Row/Row";
 import Portion from "../Portion/Portion";

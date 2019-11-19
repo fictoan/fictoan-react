@@ -10,11 +10,11 @@ export const BaseInputComponent = <K extends {}>({
     Element,
     baseClassName,
     className,
-    iconLeft,
-    iconRight,
     label,
     helpText,
     errorText,
+    iconLeft,
+    iconRight,
     validateThis,
     ...inputProps
 }: HTMLProps<K> & BaseInputComponentProps) => {
