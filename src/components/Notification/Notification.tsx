@@ -12,7 +12,7 @@ interface NotificationProps extends Omit<BaseAndHTMLProps<HTMLDivElement>, "shap
     content?:"string";
 }
 
-const Notification = ({type, position, isDismissible, className, ...props}: NotificationProps) => {
+const Notification = ({type, position, content, isDismissible, className, ...props}: NotificationProps) => {
     const classNames = [
         className, "ff-notification"
     ]
@@ -35,7 +35,13 @@ const Notification = ({type, position, isDismissible, className, ...props}: Noti
             baseClassName="ff-notification"
             className={createClassName(classNames)}
             {...props}
-        />
+        >
+            <p className="notification-content">{content}</p>
+
+            {isDismissible && (
+                <div className="dismiss-button" />
+            )}
+        </BaseComponent>
     )
 };
 
