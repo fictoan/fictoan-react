@@ -1,8 +1,6 @@
 import Row     from "./components/Row/Row";
 import Portion from "./components/Portion/Portion";
 
-import Card from "./components/Card/Card";
-
 import Header from "./components/Header/Header";
 
 import SidebarItemIcon from "./components/SidebarWrapper/SidebarItemIcon/SidebarItemIcon";
@@ -29,6 +27,10 @@ import RadioButton from "./components/Form/RadioGroup/RadioButton";
 import RadioGroup  from "./components/Form/RadioGroup/RadioGroup";
 import CheckBox    from "./components/Form/CheckBox/CheckBox";
 import Switch      from "./components/Form/CheckBox/Switch";
+
+import Card from "./components/Card/Card";
+
+import Notification from "./components/Notification/Notification";
 
 import BaseBreadcrumb     from "./components/Breadcrumbs/Breadcrumb";
 import BaseBreadcrumbItem from "./components/Breadcrumbs/BreadcrumbItem";
@@ -62,5 +64,6 @@ export {
     CheckBox,
     Switch,
     BaseBreadcrumb,
-    BaseBreadcrumbItem
+    BaseBreadcrumbItem,
+    Notification
 };

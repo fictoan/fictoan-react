@@ -14,3 +14,4 @@ export interface InputIconProps {
 export type BaseInputComponentProps = BaseComponentProps &
     InputLabelProps &
     InputIconProps;
+
