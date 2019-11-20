@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
 import { createClassName } from "src/utils/classNames"
 
@@ -9,10 +9,9 @@ interface NotificationProps extends Omit<BaseAndHTMLProps<HTMLDivElement>, "shap
     type?: "info" | "warning" | "error" | "success";
     position?: "top-left" | "top-right" | "bottom-right" | "bottom-left";
     isDismissible?:boolean;
-    content?:"string";
 }
 
-const Notification = ({type, position, content, isDismissible, className, ...props}: NotificationProps) => {
+const Notification = ({type, position, children, isDismissible, className, ...props}: NotificationProps) => {
     const classNames = [
         className, "ff-notification"
     ]
@@ -36,7 +35,9 @@ const Notification = ({type, position, content, isDismissible, className, ...pro
             className={createClassName(classNames)}
             {...props}
         >
-            <p className="notification-content">{content}</p>
+            <div className="notification-content">
+                {children}
+            </div>
 
             {isDismissible && (
                 <div className="dismiss-button" />
