@@ -30,7 +30,8 @@ import Switch      from "./components/Form/CheckBox/Switch";
 
 import Card from "./components/Card/Card";
 
-import Notification from "./components/Notification/Notification";
+import NotificationWrapper from "./components/Notifications/NotificationWrapper/NotificationWrapper";
+import NotificationItem    from "./components/Notifications/NotificationItem/NotificationItem";
 
 import BaseBreadcrumb     from "./components/Breadcrumbs/Breadcrumb";
 import BaseBreadcrumbItem from "./components/Breadcrumbs/BreadcrumbItem";
@@ -65,5 +66,6 @@ export {
     Switch,
     BaseBreadcrumb,
     BaseBreadcrumbItem,
-    Notification
+    NotificationWrapper,
+    NotificationItem
 };

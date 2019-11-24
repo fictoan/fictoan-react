@@ -2,8 +2,8 @@ import React, { ReactElement } from "react";
 
 import { createClassName } from "src/utils/classNames"
 
-import { BaseComponent } from "../BaseComponent/BaseComponent";
-import { BaseAndHTMLProps } from "../BaseComponent/typings";
+import { BaseComponent } from "../../BaseComponent/BaseComponent";
+import { BaseAndHTMLProps } from "../../BaseComponent/typings";
 
 interface NotificationProps extends Omit<BaseAndHTMLProps<HTMLDivElement>, "shape"> {
     type?: "info" | "warning" | "error" | "success";
@@ -11,7 +11,7 @@ interface NotificationProps extends Omit<BaseAndHTMLProps<HTMLDivElement>, "shap
     isDismissible?: boolean;
 }
 
-const Notification = ({type, position, children, isDismissible, className, ...props}: NotificationProps) => {
+const NotificationItem = ({type, position, children, isDismissible, className, ...props}: NotificationProps) => {
     const classNames = [
         className, "ff-notification"
     ]
@@ -31,7 +31,7 @@ const Notification = ({type, position, children, isDismissible, className, ...pr
     return (
         <BaseComponent<HTMLDivElement>
             Element="div"
-            baseClassName="ff-notification"
+            baseClassName="ff-notification-item"
             className={createClassName(classNames)}
             {...props}
         >
@@ -46,4 +46,4 @@ const Notification = ({type, position, children, isDismissible, className, ...pr
     )
 };
 
-export default Notification;
+export default NotificationItem;
