@@ -14,6 +14,7 @@ export const BaseComponent = <K extends {}>({
     Element = "div",
     baseClassName,
     className,
+    size,
     bgColor,
     textColor,
     hideOnMobile,
@@ -30,6 +31,7 @@ export const BaseComponent = <K extends {}>({
         createClassName([
             baseClassName,
             className,
+            size && `size-${size}`,
             hideOnMobile,
             bgColor && `bg-${bgColor}`,
             textColor && `text-${textColor}`,
