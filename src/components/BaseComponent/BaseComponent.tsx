@@ -14,7 +14,7 @@ export const BaseComponent = <K extends {}>({
     Element = "div",
     baseClassName,
     className,
-    size,
+    // size,
     bgColor,
     textColor,
     hideOnMobile,
@@ -27,23 +27,23 @@ export const BaseComponent = <K extends {}>({
     showOnlyOnDesktop,
     ...props
 }: HTMLProps<K> & BaseComponentProps) => (
-    <Element {...props} className={
-        createClassName([
-            baseClassName,
-            className,
-            size && `size-${size}`,
-            hideOnMobile,
-            bgColor && `bg-${bgColor}`,
-            textColor && `text-${textColor}`,
-            hideOnMobile && "hide-on-mobile",
-            showOnlyOnMobile && "show-only-on-mobile",
-            showOnlyOnTabPT && "hide-on-tab-pt",
-            showOnlyOnTabPT && "show-only-on-tab-pt",
-            showOnlyOnTabLS && "hide-on-tab-ls",
-            showOnlyOnTabLS && "show-only-on-tab-ls",
-            hideOnDesktop && "hide-on-desktop",
-            showOnlyOnDesktop && "show-only-on-desktop",
-            ]
-        )}
-    />
-);
+        <Element {...props} className={
+            createClassName([
+                baseClassName,
+                className,
+                // size && `size-${size}`,
+                hideOnMobile,
+                bgColor && `bg-${bgColor}`,
+                textColor && `text-${textColor}`,
+                hideOnMobile && "hide-on-mobile",
+                showOnlyOnMobile && "show-only-on-mobile",
+                showOnlyOnTabPT && "hide-on-tab-pt",
+                showOnlyOnTabPT && "show-only-on-tab-pt",
+                showOnlyOnTabLS && "hide-on-tab-ls",
+                showOnlyOnTabLS && "show-only-on-tab-ls",
+                hideOnDesktop && "hide-on-desktop",
+                showOnlyOnDesktop && "show-only-on-desktop",
+            ])
+        }
+        />
+    );

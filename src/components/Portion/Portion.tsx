@@ -6,27 +6,27 @@ import { BaseComponent } from "../BaseComponent/BaseComponent";
 import { BaseAndHTMLProps } from "../BaseComponent/typings";
 
 interface PortionProps extends BaseAndHTMLProps<HTMLDivElement> {
-    desktopWidth? : string;
-    tabPTWidth? : string;
-    tabLSWidth? : string;
-    mobileWidth? : string;
+    desktopSpan?: string;
+    tabPTSpan?: string;
+    tabLSSpan?: string;
+    mobileSpan?: string;
 }
 
-const Portion = ({ desktopWidth, mobileWidth, tabLSWidth, tabPTWidth, className, ...props }: PortionProps) => {
+const Portion = ({ desktopSpan, mobileSpan, tabLSSpan, tabPTSpan, className, ...props }: PortionProps) => {
     const classNames = [className];
 
-    if (desktopWidth || tabLSWidth || tabPTWidth || mobileWidth) {
-        if (desktopWidth) {
-            classNames.push(`${desktopWidth}`);
+    if (desktopSpan || tabLSSpan || tabPTSpan || mobileSpan) {
+        if (desktopSpan) {
+            classNames.push(`${desktopSpan}`);
         }
-        if (tabLSWidth) {
-            classNames.push(`${tabLSWidth}-on-tab-ls`);
+        if (tabLSSpan) {
+            classNames.push(`${tabLSSpan}-on-tab-ls`);
         }
-        if (tabPTWidth) {
-            classNames.push(`${tabPTWidth}-on-tab-pt`);
+        if (tabPTSpan) {
+            classNames.push(`${tabPTSpan}-on-tab-pt`);
         }
-        if (mobileWidth) {
-            classNames.push(`${mobileWidth}-on-mobile`);
+        if (mobileSpan) {
+            classNames.push(`${mobileSpan}-on-mobile`);
         }
     } else {
         classNames.push("whole");

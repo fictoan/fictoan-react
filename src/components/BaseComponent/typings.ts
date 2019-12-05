@@ -1,7 +1,7 @@
 import { HTMLProps } from "react";
 
 export interface BaseProps {
-    size?: string;
+    // size?: string;
     bgColor?: string;
     textColor?: string;
     hideOnMobile?: boolean;
@@ -14,4 +14,4 @@ export interface BaseProps {
     showOnlyOnDesktop?: boolean;
 }
 
-export interface BaseAndHTMLProps<T extends {}> extends BaseProps, Omit<HTMLProps<T>,"size"> {}
+export interface BaseAndHTMLProps<T extends {}> extends BaseProps, Omit<HTMLProps<T>, "size"> { }
