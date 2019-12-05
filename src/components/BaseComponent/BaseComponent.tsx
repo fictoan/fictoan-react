@@ -11,7 +11,7 @@ export interface BaseComponentProps extends BaseProps {
 };
 
 export const BaseComponent = <K extends {}>({
-    Element = "div",
+    Element,
     baseClassName,
     className,
     // size,
@@ -25,6 +25,16 @@ export const BaseComponent = <K extends {}>({
     showOnlyOnTabLS,
     hideOnDesktop,
     showOnlyOnDesktop,
+    marginTop,
+    marginRight,
+    marginBottom,
+    marginLeft,
+    marginAll,
+    paddingTop,
+    paddingRight,
+    paddingBottom,
+    paddingLeft,
+    paddingAll,
     ...props
 }: HTMLProps<K> & BaseComponentProps) => (
         <Element {...props} className={
@@ -32,7 +42,6 @@ export const BaseComponent = <K extends {}>({
                 baseClassName,
                 className,
                 // size && `size-${size}`,
-                hideOnMobile,
                 bgColor && `bg-${bgColor}`,
                 textColor && `text-${textColor}`,
                 hideOnMobile && "hide-on-mobile",
@@ -43,7 +52,16 @@ export const BaseComponent = <K extends {}>({
                 showOnlyOnTabLS && "show-only-on-tab-ls",
                 hideOnDesktop && "hide-on-desktop",
                 showOnlyOnDesktop && "show-only-on-desktop",
+                marginTop && `margin-top-${marginTop}`,
+                marginRight && `margin-right-${marginRight}`,
+                marginBottom && `margin-bottom-${marginBottom}`,
+                marginLeft && `margin-left-${marginLeft}`,
+                marginAll && `margin-all-${marginAll}`,
+                paddingTop && `padding-top-${paddingTop}`,
+                paddingRight && `padding-right-${paddingRight}`,
+                paddingBottom && `padding-bottom-${paddingBottom}`,
+                paddingLeft && `padding-left-${paddingLeft}`,
+                paddingAll && `padding-all-${paddingAll}`,
             ])
-        }
-        />
+        } />
     );
