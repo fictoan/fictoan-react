@@ -12,6 +12,8 @@ export interface BaseProps {
     showOnlyOnTabLS?: boolean;
     hideOnDesktop?: boolean;
     showOnlyOnDesktop?: boolean;
+    fullWidth?: boolean;
+    fullHeight?: boolean;
     marginTop?: "fixed" | "tiny" | "small" | "medium" | "large" | "huge";
     marginRight?: "fixed" | "tiny" | "small" | "medium" | "large" | "huge";
     marginBottom?: "fixed" | "tiny" | "small" | "medium" | "large" | "huge";

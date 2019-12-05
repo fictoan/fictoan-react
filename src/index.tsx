@@ -32,6 +32,8 @@ import Switch from "./components/Form/CheckBox/Switch";
 
 import Card from "./components/Card/Card";
 
+import InfoPanel from "./components/InfoPanel/InfoPanel"
+
 import NotificationWrapper from "./components/Notifications/NotificationWrapper/NotificationWrapper";
 import NotificationItem from "./components/Notifications/NotificationItem/NotificationItem";
 
@@ -62,13 +64,14 @@ export {
     Button,
     FileUpload,
     HRule,
-    Table,
     RadioGroup,
     RadioButton,
     CheckBox,
     Switch,
+    Table,
     BaseBreadcrumb,
     BaseBreadcrumbItem,
     NotificationWrapper,
-    NotificationItem
+    NotificationItem,
+    InfoPanel
 };
