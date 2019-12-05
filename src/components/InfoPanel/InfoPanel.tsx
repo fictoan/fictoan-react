@@ -1,95 +1,32 @@
 import React, { ReactNode, PureComponent } from "react";
 
-import { HandleEvents } from "src/utils/EventHandler";
 import { createClassName } from "src/utils/classNames";
 
-interface InfoPanelProps {
-    className?: string;
+import { BaseComponent } from "../BaseComponent/BaseComponent";
+import { BaseAndHTMLProps } from "../BaseComponent/typings";
+
+interface InfoPanelProps extends BaseAndHTMLProps<HTMLDivElement> {
     open?: boolean;
-    onClickOutsideCallback?: Function;
-    checkOnClickOutside?: boolean;
-    content?: ReactNode;
-    renderContentOnOpen?: () => ReactNode;
+    width?: "tiny" | "small" | "medium" | "large" | "huge";
 }
 
-interface InfoPanelState {
-    open: boolean;
-}
+const InfoPanel = ({ open, width, className, ...props }: InfoPanelProps) => {
+    const classNames = [className];
 
-class InfoPanel extends PureComponent<InfoPanelProps, InfoPanelState> {
-    static defaultProps = {
-        className: "",
-        checkOnClickOutside: true
-    };
-
-    constructor(props: Readonly<InfoPanelProps>) {
-        super(props);
-        this.state = {
-            open: props.open || false
-        };
+    if (open) {
+        classNames.push("open");
     }
 
-    componentDidUpdate({ open }: Readonly<InfoPanelProps>): void {
-        if (open !== this.props.open) {
-            // eslint-disable-next-line react/no-did-update-set-state
-            this.setState({
-                open: this.props.open
-            });
-        }
+    if (width) {
+        classNames.push(width);
     }
 
-    openInfoPanel = () => {
-        this.setState({
-            open: true
-        });
-    };
-
-    closeInfoPanel = () => {
-        this.setState({
-            open: false
-        });
-    };
-
-    onClickOutside = (): void => {
-        const { checkOnClickOutside, onClickOutsideCallback } = this.props;
-
-        if (checkOnClickOutside) {
-            this.closeInfoPanel();
-            if (onClickOutsideCallback) {
-                onClickOutsideCallback();
-            }
-        }
-    };
-
-    renderContent = () => {
-        const { content, renderContentOnOpen } = this.props;
-        return renderContentOnOpen ? renderContentOnOpen() : content;
-    };
-
-    render() {
-        const { children, className } = this.props;
-        const { open } = this.state;
-
-        const infoPanelProps = {
-            className: createClassName([
-                "info-panel",
-                open && "open",
-                className
-            ]),
-            onClickOutsideCallback: this.onClickOutside
-        };
-
-        const content = !!open && this.renderContent();
-
-        return (
-            <>
-                <div onClick={this.openInfoPanel}>{children}</div>
-                {content && (
-                    <HandleEvents {...infoPanelProps}>{content}</HandleEvents>
-                )}
-            </>
-        );
-    }
-}
+    return <BaseComponent<HTMLDivElement>
+        Element="div"
+        baseClassName="info-panel"
+        className={createClassName(classNames)}
+        {...props}
+    />
+};
 
 export default InfoPanel;

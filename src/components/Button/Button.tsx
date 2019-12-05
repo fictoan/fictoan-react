@@ -6,18 +6,33 @@ import { BaseComponent } from "../BaseComponent/BaseComponent";
 
 type ButtonProps = HTMLProps<HTMLButtonElement> & {
     value: string;
-    loading?: boolean;
+    shape?: "rounded" | "curved";
+    shadow?: "mild" | "soft" | "hard";
+    isLoading?: boolean;
+    hasDelete?: boolean;
 };
 
-const Button = ({ value, className, loading, ...props }: ButtonProps) => {
+const Button = ({ value, shape, shadow, className, isLoading, hasDelete, ...props }: ButtonProps) => {
     const classNames = [];
 
     if (className) {
         classNames.push(className);
     }
 
-    if (loading) {
+    if (shape) {
+        classNames.push(`shape-${shape}`)
+    }
+
+    if (shadow) {
+        classNames.push(`shadow-${shadow}`)
+    }
+
+    if (isLoading) {
         classNames.push("with-loader");
+    }
+
+    if (hasDelete) {
+        classNames.push("with-delete");
     }
 
     return (
