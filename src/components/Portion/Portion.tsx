@@ -19,12 +19,15 @@ const Portion = ({ desktopSpan, mobileSpan, tabLSSpan, tabPTSpan, className, ...
         if (desktopSpan) {
             classNames.push(`${desktopSpan}`);
         }
+
         if (tabLSSpan) {
             classNames.push(`${tabLSSpan}-on-tab-ls`);
         }
+
         if (tabPTSpan) {
             classNames.push(`${tabPTSpan}-on-tab-pt`);
         }
+
         if (mobileSpan) {
             classNames.push(`${mobileSpan}-on-mobile`);
         }

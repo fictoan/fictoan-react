@@ -3,6 +3,9 @@ import { BaseComponent } from "./components/BaseComponent/BaseComponent";
 import Row from "./components/Row/Row";
 import Portion from "./components/Portion/Portion";
 
+import Heading from "./components/Type/Heading";
+import Text from "./components/Type/Text";
+
 import Header from "./components/Header/Header";
 
 import SidebarItemIcon from "./components/SidebarWrapper/SidebarItemIcon/SidebarItemIcon";
@@ -24,6 +27,7 @@ import FormGroup from "./components/Form/FormGroup/FormGroup";
 import InputField from "./components/Form/InputField/InputField";
 import TextArea from "./components/Form/TextArea/TextArea";
 import InputLabel from "./components/Form/InputLabel/InputLabel";
+import Select from "./components/Form/Select/Select";
 import FileUpload from "./components/Form/FileUpload/FileUpload";
 import RadioButton from "./components/Form/RadioGroup/RadioButton";
 import RadioGroup from "./components/Form/RadioGroup/RadioGroup";
@@ -37,8 +41,8 @@ import InfoPanel from "./components/InfoPanel/InfoPanel"
 import NotificationWrapper from "./components/Notifications/NotificationWrapper/NotificationWrapper";
 import NotificationItem from "./components/Notifications/NotificationItem/NotificationItem";
 
-import BaseBreadcrumb from "./components/Breadcrumbs/Breadcrumb";
-import BaseBreadcrumbItem from "./components/Breadcrumbs/BreadcrumbItem";
+import BreadcrumbWrapper from "./components/Breadcrumbs/BreadcrumbWrapper";
+import Breadcrumb from "./components/Breadcrumbs/Breadcrumb";
 
 import Table from "./components/Table/Table";
 
@@ -46,6 +50,8 @@ export {
     BaseComponent,
     Row,
     Portion,
+    Heading,
+    Text,
     Card,
     Header,
     SidebarItemIcon,
@@ -60,6 +66,7 @@ export {
     FormGroup,
     InputField,
     TextArea,
+    Select,
     InputLabel,
     Button,
     FileUpload,
@@ -69,8 +76,8 @@ export {
     CheckBox,
     Switch,
     Table,
-    BaseBreadcrumb,
-    BaseBreadcrumbItem,
+    BreadcrumbWrapper,
+    Breadcrumb,
     NotificationWrapper,
     NotificationItem,
     InfoPanel

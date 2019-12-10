@@ -14,7 +14,7 @@ export const BaseComponent = <K extends {}>({
     Element,
     baseClassName,
     className,
-    // size,
+    size,
     fullWidth,
     fullHeight,
     bgColor,
@@ -43,7 +43,7 @@ export const BaseComponent = <K extends {}>({
             createClassName([
                 baseClassName,
                 className,
-                // size && `size-${size}`,
+                size && `size-${size}`,
                 fullWidth && "full-width",
                 fullHeight && "full-height",
                 bgColor && `bg-${bgColor}`,
