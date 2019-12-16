@@ -31,12 +31,12 @@ export const BaseComponent = <K extends {}>({
     marginRight,
     marginBottom,
     marginLeft,
-    marginAll,
+    margin,
     paddingTop,
     paddingRight,
     paddingBottom,
     paddingLeft,
-    paddingAll,
+    padding,
     ...props
 }: HTMLProps<K> & BaseComponentProps) => (
         <Element {...props} className={
@@ -60,12 +60,12 @@ export const BaseComponent = <K extends {}>({
                 marginRight && `margin-right-${marginRight}`,
                 marginBottom && `margin-bottom-${marginBottom}`,
                 marginLeft && `margin-left-${marginLeft}`,
-                marginAll && `margin-all-${marginAll}`,
+                margin && `margin-all-${margin}`,
                 paddingTop && `padding-top-${paddingTop}`,
                 paddingRight && `padding-right-${paddingRight}`,
                 paddingBottom && `padding-bottom-${paddingBottom}`,
                 paddingLeft && `padding-left-${paddingLeft}`,
-                paddingAll && `padding-all-${paddingAll}`,
+                padding && `padding-all-${padding}`,
             ])
         } />
     );
