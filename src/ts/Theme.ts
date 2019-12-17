@@ -9,6 +9,8 @@ const mainColors = {
 }
 
 export const RFTheme = {
+    mainColors,
+
     body : {
         bg : baseColors.white
     },

@@ -46,6 +46,8 @@ import Breadcrumb from "./components/Breadcrumbs/Breadcrumb";
 
 import Table from "./components/Table/Table";
 
+import { Para } from "./components/Type/Para";
+
 export {
     BaseComponent,
     Row,
@@ -80,5 +82,6 @@ export {
     Breadcrumb,
     NotificationWrapper,
     NotificationItem,
-    InfoPanel
+    InfoPanel,
+    Para
 };

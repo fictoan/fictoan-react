@@ -1,11 +1,10 @@
 import React from "react";
 
 import { createClassName } from "src/utils/classNames"
-
-import { BaseComponent } from "../BaseComponent/BaseComponent";
+import { CardStyled } from "./Card.styled"
 import { CardProps } from "./typings";
 
-const Card = ({shadow, shape, className, ...props}: CardProps) => {
+const Card = ({ shadow, shape, className, theme, ...props }: CardProps) => {
     const classNames = [
         className
     ]
@@ -19,11 +18,11 @@ const Card = ({shadow, shape, className, ...props}: CardProps) => {
     }
 
     return (
-        <BaseComponent<HTMLDivElement>
+        <CardStyled
             Element="div"
-            baseClassName="ff-card"
             className={createClassName(classNames)}
-            {...props}
+            // {...props}
+            theme={theme}
         />
     )
 };
