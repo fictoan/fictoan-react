@@ -193,7 +193,7 @@
 }
 
 //  For images and tiles
-.shape-rounded  { border-radius : $measureFixed/2; }
+.shape-rounded  { border-radius : $measureFixed; }
 .shape-curved   { border-radius : $measureFixed*5000; }
 .shape-circular { border-radius : 50%; }
 
