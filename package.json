@@ -1,6 +1,6 @@
 {
     "name": "reactised-fictoan",
-    "version": "0.4.35",
+    "version": "0.4.72",
     "private": true,
     "main": "dist/index.js",
     "module": "dist/index.es.js",
@@ -28,6 +28,7 @@
     "devDependencies": {
         "@types/react": "^16.8.23",
         "@types/react-dom": "^16.8.4",
+        "@types/styled-components": "^4.4.1",
         "gh-pages": "^2.0.1",
         "node-sass": "^4.11.0",
         "rollup": "^1.15.6",
@@ -49,5 +50,8 @@
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
         "react-router-dom": "^5.0.1"
+    },
+    "dependencies": {
+        "styled-components": "^4.4.1"
     }
 }
