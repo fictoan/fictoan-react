@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { CardElement, CardProps } from "./constants";
+import { CardElement } from "./constants";
 
 export const CardStyled = styled[CardElement]`
     position : relative;
@@ -13,4 +13,8 @@ export const CardStyled = styled[CardElement]`
     &.padding-all-medium { padding : 24px; }
     &.padding-all-large  { padding : 32px; }
     &.padding-all-huge   { padding : 48px; }
+
+    @media all and (max-width : 600px) {
+        &[class*="padding"] { padding : 4vmin; }
+    }
 `
