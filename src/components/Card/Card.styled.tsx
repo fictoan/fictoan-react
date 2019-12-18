@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { BaseComponent } from "../BaseComponent/BaseComponent";
-// import { CardProps } from "./typings";
 
-export const CardStyled = styled(BaseComponent)`
+import { CardElement, CardProps } from "./constants";
+
+export const CardStyled = styled[CardElement]`
     position : relative;
     width    : 100%;
     height   : auto;

@@ -1,10 +1,12 @@
 import React from "react";
 
 import { createClassName } from "src/utils/classNames"
-import { CardStyled } from "./Card.styled"
-import { CardProps } from "./typings";
+import { BaseComponent } from "../BaseComponent/BaseComponent";
 
-const Card = ({ shadow, shape, className, theme, ...props }: CardProps) => {
+import { CardStyled } from "./Card.styled"
+import { CardProps, CardElementType } from "./constants";
+
+export const Card = ({ shadow, shape, className, ...props }: CardProps) => {
     const classNames = [
         className
     ]
@@ -18,13 +20,10 @@ const Card = ({ shadow, shape, className, theme, ...props }: CardProps) => {
     }
 
     return (
-        <CardStyled
-            Element="div"
+        <BaseComponent<CardElementType>
+            Element={CardStyled}
             className={createClassName(classNames)}
-            // {...props}
-            theme={theme}
+            {...props}
         />
     )
 };
-
-export default Card;

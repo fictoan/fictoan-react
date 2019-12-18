@@ -12,7 +12,7 @@
     },
     "scripts": {
         "start": "rollup -c -w",
-        "build": "rm -rf dist && rollup -c",
+        "build": "rollup -c",
         "predeploy": "yarn build",
         "deploy": "gh-pages -d dist -e dist && gh-pages -a -d . -s ./package.json"
     },
@@ -49,8 +49,9 @@
     "peerDependencies": {
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
-        "react-router-dom": "^5.0.1",
-        "styled-components": "^4.4.1"
+        "react-router-dom": "^5.0.1"
     },
-    "dependencies": {}
+    "dependencies": {
+        "styled-components": "^4.4.1"
+    }
 }

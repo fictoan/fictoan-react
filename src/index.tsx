@@ -34,7 +34,7 @@ import RadioGroup from "./components/Form/RadioGroup/RadioGroup";
 import CheckBox from "./components/Form/CheckBox/CheckBox";
 import Switch from "./components/Form/CheckBox/Switch";
 
-import Card from "./components/Card/Card";
+import { Card } from "./components/Card/Card";
 
 import InfoPanel from "./components/InfoPanel/InfoPanel"
 
@@ -45,8 +45,6 @@ import BreadcrumbWrapper from "./components/Breadcrumbs/BreadcrumbWrapper";
 import Breadcrumb from "./components/Breadcrumbs/Breadcrumb";
 
 import Table from "./components/Table/Table";
-
-import { Para } from "./components/Type/Para";
 
 export {
     BaseComponent,
@@ -82,6 +80,5 @@ export {
     Breadcrumb,
     NotificationWrapper,
     NotificationItem,
-    InfoPanel,
-    Para
+    InfoPanel
 };
