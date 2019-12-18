@@ -46,6 +46,8 @@ import Breadcrumb from "./components/Breadcrumbs/Breadcrumb";
 
 import Table from "./components/Table/Table";
 
+import { baseColors } from "./constants/BaseColors";
+
 export {
     BaseComponent,
     Row,
@@ -80,5 +82,6 @@ export {
     Breadcrumb,
     NotificationWrapper,
     NotificationItem,
-    InfoPanel
+    InfoPanel,
+    baseColors
 };

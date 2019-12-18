@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-import { HRElement } from "./constants";
-
-export const HRStyled = styled[HRElement]`
+export const HRStyled = styled.hr`
     border           : 0;
     height           : 1px;
     margin           : 4vmax auto;

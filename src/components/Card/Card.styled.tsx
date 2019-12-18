@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-import { CardElement } from "./constants";
+import { CardProps } from "./constants";
 
-export const CardStyled = styled[CardElement]`
+export const CardStyled = styled.div`
     position : relative;
     width    : 100%;
     height   : auto;
     border   : 1px solid hsla(0, 0%, 0%, 0.04);
+    background-color : ${(props : CardProps) => props.theme.card.bg};
 
     &.padding-all-tiny   { padding : 8px; }
     &.padding-all-small  { padding : 16px; }

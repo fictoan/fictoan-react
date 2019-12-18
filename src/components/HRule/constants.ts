@@ -1,6 +1,5 @@
 import { BaseAndHTMLProps } from "../BaseComponent/typings";
 
-export const HRElement     = "hr";
 export type  HRElementType = "HTMLHRElement";
 
 export interface HRCustomProps {
