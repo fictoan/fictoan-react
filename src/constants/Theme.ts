@@ -45,6 +45,11 @@ export const RFTheme = {
         }
     },
 
+    card : {
+        bg     : baseColors.white,
+        border : baseColors.slate10
+    },
+
     //  CODE  /////////////////////////////////////////////////////////////////
     code : {
         inline : {

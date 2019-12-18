@@ -1,16 +1,12 @@
 import React, { HTMLProps } from "react";
 
-import { BaseComponent } from "../BaseComponent/BaseComponent";
-import { BaseAndHTMLProps } from "../BaseComponent/typings";
 import { createClassName } from "../../utils/classNames";
+import { BaseComponent } from "../BaseComponent/BaseComponent";
 
-interface HRuleProps extends BaseAndHTMLProps<HTMLHRElement> {
-    sideMargin?: "tiny" | "small" | "medium" | "large" | "huge";
-    thick?: boolean;
-    slim?: boolean;
-}
+import { HRStyled } from "./HRule.styled"
+import { HRProps, HRElementType } from "./constants"
 
-const HRule = ({ sideMargin, className, thick, slim, ...props }: HRuleProps) => {
+const HRule = ({ sideMargin, className, thick, slim, ...props }: HRProps) => {
     const classNames = [
         className
     ]
@@ -28,8 +24,8 @@ const HRule = ({ sideMargin, className, thick, slim, ...props }: HRuleProps) => 
     }
 
     return (
-        <BaseComponent<HTMLHRElement>
-            Element="hr"
+        <BaseComponent<HRElementType>
+            Element={HRStyled}
             className={createClassName(classNames)}
             {...props}
         />

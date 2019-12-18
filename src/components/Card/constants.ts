@@ -1,7 +1,6 @@
 import { BaseAndHTMLProps } from "../BaseComponent/typings";
 
-export const CardElement = "div";
-export type CardElementType = HTMLDivElement;
+export type  CardElementType = HTMLDivElement;
 
 export interface CardCustomProps {
     shape?  : "rounded" | "curved";
