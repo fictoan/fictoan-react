@@ -34,7 +34,7 @@ import RadioGroup from "./components/Form/RadioGroup/RadioGroup";
 import CheckBox from "./components/Form/CheckBox/CheckBox";
 import Switch from "./components/Form/CheckBox/Switch";
 
-import Card from "./components/Card/Card";
+import { Card } from "./components/Card/Card";
 
 import InfoPanel from "./components/InfoPanel/InfoPanel"
 

@@ -12,7 +12,7 @@
     },
     "scripts": {
         "start": "rollup -c -w",
-        "build": "rm -rf dist && rollup -c",
+        "build": "rollup -c",
         "predeploy": "yarn build",
         "deploy": "gh-pages -d dist -e dist && gh-pages -a -d . -s ./package.json"
     },
@@ -28,6 +28,7 @@
     "devDependencies": {
         "@types/react": "^16.8.23",
         "@types/react-dom": "^16.8.4",
+        "@types/styled-components": "^4.4.1",
         "gh-pages": "^2.0.1",
         "node-sass": "^4.11.0",
         "rollup": "^1.15.6",
@@ -49,5 +50,8 @@
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
         "react-router-dom": "^5.0.1"
+    },
+    "dependencies": {
+        "styled-components": "^4.4.1"
     }
 }
