@@ -12,6 +12,8 @@
     background-color : $sideBarBG;
     box-shadow       : 2px 0 8px -4px rgba(0, 0, 0, 0.16);
     z-index          : 10000;
+
+    a.active { display : block; }
 }
 
 .sidebar-section {

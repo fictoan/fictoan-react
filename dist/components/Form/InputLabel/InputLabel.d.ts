@@ -1,7 +1,3 @@
-import { HTMLProps } from "react";
-declare function InputLabel({ value, helpText, errorText, ...props }: HTMLProps<HTMLLabelElement> & {
-    value?: string;
-    helpText?: string;
-    errorText?: string;
-}): JSX.Element;
+import { InputLabelProps } from "./typings";
+declare function InputLabel({ label, helpText, errorText, ...props }: InputLabelProps): JSX.Element;
 export default InputLabel;

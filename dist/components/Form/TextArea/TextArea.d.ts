@@ -1,3 +1,3 @@
-import React from "react";
-declare const TextArea: (props: React.HTMLProps<HTMLTextAreaElement>) => JSX.Element;
+import { TextAreaProps } from "./typings";
+declare const TextArea: (props: TextAreaProps) => JSX.Element;
 export default TextArea;

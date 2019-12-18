@@ -49,6 +49,9 @@ button.shape-circular img,
     right    : 0;
 }
 
+button,
+.ff-button[class*="border"] { border-width : 1px; }
+
 .with-loader {
     color          : transparent !important;
     box-shadow     : none;

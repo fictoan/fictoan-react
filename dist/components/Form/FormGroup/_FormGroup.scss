@@ -45,3 +45,17 @@
 
 //.ff-input-group > .ff-form-unit,
 //.ff-form > .ff-input-group:last-of-type:not(:only-of-type) { margin-bottom : 0; }
+
+.ff-form-unit-group .unit-prefix,
+.ff-form-unit-group .unit-prefix select {
+    border-top-right-radius    : 0;
+    border-bottom-right-radius : 0;
+}
+
+.ff-form-unit-group .unit-suffix,
+.ff-form-unit-group .unit-suffix select {
+    border-top-left-radius    : 0;
+    border-bottom-left-radius : 0;
+}
+
+.ff-form-unit-group *:not(.unit-prefix):not(.unit-suffix) { border-radius: 0 !important; }

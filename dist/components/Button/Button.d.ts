@@ -1,7 +1,12 @@
 import { HTMLProps } from "react";
 declare type ButtonProps = HTMLProps<HTMLButtonElement> & {
     value: string;
-    loading?: boolean;
+    size?: "tiny" | "small" | "medium" | "large" | "huge";
+    shape?: "rounded" | "curved";
+    shadow?: "mild" | "soft" | "hard";
+    border?: string;
+    isLoading?: boolean;
+    hasDelete?: boolean;
 };
-declare const Button: ({ value, className, loading, ...props }: ButtonProps) => JSX.Element;
+declare const Button: ({ value, size, shape, shadow, border, className, isLoading, hasDelete, ...props }: ButtonProps) => JSX.Element;
 export default Button;

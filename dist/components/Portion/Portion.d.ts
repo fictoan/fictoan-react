@@ -1,11 +1,9 @@
-import { HTMLProps } from "react";
-interface PortionProps extends Omit<HTMLProps<HTMLDivElement>, 'width'> {
-    width?: {
-        mobile?: string;
-        tabletLandscape?: string;
-        tabletPortrait?: string;
-        desktop?: string;
-    };
+import { BaseAndHTMLProps } from "../BaseComponent/typings";
+interface PortionProps extends BaseAndHTMLProps<HTMLDivElement> {
+    desktopSpan?: string;
+    tabPTSpan?: string;
+    tabLSSpan?: string;
+    mobileSpan?: string;
 }
-declare const Portion: ({ width, className, ...props }: PortionProps) => JSX.Element;
+declare const Portion: ({ desktopSpan, mobileSpan, tabLSSpan, tabPTSpan, className, ...props }: PortionProps) => JSX.Element;
 export default Portion;

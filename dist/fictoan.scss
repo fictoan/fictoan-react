@@ -31,7 +31,7 @@
 @import "./styles/base/ff-responsive";
 
 @import "./styles/design/ff-colours";
-@import "./styles/design/ff-typography";
+@import "./components/Type/Typography";
 
 //  Layout
 @import "./components/Row/Row";
@@ -44,12 +44,12 @@
 @import "./components/Form/InputField/InputField";
 @import "./components/Form/TextArea/TextArea";
 @import "./components/Form/InputLabel/InputLabel";
+@import "./components/Form/Select/Select";
 @import "./components/Form/FormGroup/FormGroup";
 @import "./components/Form/RadioGroup/RadioButton";
+@import "./components/Form/CheckBox/CheckBox";
 
 @import "./components/Button/Button";
-
-@import "./components/HRule/HRule";
 
 //  Components
 @import "./components/Header/Header";
@@ -63,7 +63,12 @@
 @import "./components/SidebarWrapper/SidebarItemText/SidebarItemText";
 @import "./components/ContentWrapper/ContentWrapper";
 
-@import "./components/Card/Card";
+@import "./components/InfoPanel/InfoPanel";
+
+@import "./components/Breadcrumbs/Breadcrumbs";
+
+@import "./components/Notifications/NotificationWrapper/NotificationWrapper";
+@import "./components/Notifications/NotificationItem/NotificationItem";
 
 @import "./components/Table/Table";
 

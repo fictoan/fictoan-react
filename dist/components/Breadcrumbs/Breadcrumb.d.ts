@@ -1,5 +1,7 @@
-import { HTMLProps, PureComponent, ReactNode } from "react";
-declare class BaseBreadcrumb extends PureComponent<HTMLProps<HTMLDivElement>> {
-    render(): ReactNode;
+import { HTMLProps } from "react";
+interface BreadcrumbProps extends HTMLProps<HTMLLIElement> {
+    className?: string;
+    text?: string;
 }
-export default BaseBreadcrumb;
+declare const Breadcrumb: ({ text, className, ...props }: BreadcrumbProps) => JSX.Element;
+export default Breadcrumb;

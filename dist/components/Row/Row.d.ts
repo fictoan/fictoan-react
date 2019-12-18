@@ -1,7 +1,11 @@
 import { BaseAndHTMLProps } from "../BaseComponent/typings";
 interface RowProps extends BaseAndHTMLProps<HTMLDivElement> {
-    contentPadding?: "tiny" | "small" | "medium" | "large" | "huge";
-    gutters?: "no" | "tiny" | "small" | "medium" | "large" | "huge";
+    sidePadding?: "tiny" | "small" | "medium" | "large" | "huge";
+    gutters?: "none" | "tiny" | "small" | "medium" | "large" | "huge";
+    retainLayoutOnTabLS?: boolean;
+    retainLayoutOnTabPT?: boolean;
+    retainLayoutOnMobile?: boolean;
+    retainLayoutAlways?: boolean;
 }
-declare const Row: ({ contentPadding, className, gutters, ...props }: RowProps) => JSX.Element;
+declare const Row: ({ sidePadding, className, gutters, retainLayoutOnTabLS, retainLayoutOnTabPT, retainLayoutOnMobile, retainLayoutAlways, ...props }: RowProps) => JSX.Element;
 export default Row;
