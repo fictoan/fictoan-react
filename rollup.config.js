@@ -13,7 +13,8 @@ const production = !process.env.ROLLUP_WATCH;
 export default {
     input: "src/index.tsx",
     external : [
-        "styled-components"
+        "styled-components",
+        "prism-react-renderer"
     ],
     output: [
         {

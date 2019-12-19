@@ -46,6 +46,8 @@ import Breadcrumb from "./components/Breadcrumbs/Breadcrumb";
 
 import Table from "./components/Table/Table";
 
+import { CodeBlock } from "./components/CodeBlock/CodeBlock";
+
 import { baseColors } from "./constants/BaseColors";
 
 export {
@@ -83,5 +85,6 @@ export {
     NotificationWrapper,
     NotificationItem,
     InfoPanel,
+    CodeBlock,
     baseColors
 };

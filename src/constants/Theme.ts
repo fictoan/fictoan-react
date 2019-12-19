@@ -59,7 +59,8 @@ export const RFTheme = {
         block : {
             bg   : baseColors.slate10,
             text : baseColors.blue70
-        }
+        },
+        prism: undefined
     },
 
     //  INPUT  ////////////////////////////////////////////////////////////////
