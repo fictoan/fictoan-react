@@ -28,6 +28,7 @@
     "devDependencies": {
         "@types/react": "^16.8.23",
         "@types/react-dom": "^16.8.4",
+        "@types/react-test-renderer": "^16.9.1",
         "@types/styled-components": "^4.4.1",
         "gh-pages": "^2.0.1",
         "node-sass": "^4.11.0",
@@ -52,6 +53,7 @@
         "react-router-dom": "^5.0.1"
     },
     "dependencies": {
+        "prism-react-renderer": "^1.0.2",
         "styled-components": "^4.4.1"
     }
 }
