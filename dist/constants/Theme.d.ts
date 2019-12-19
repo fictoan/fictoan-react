@@ -46,6 +46,7 @@ export declare const RFTheme: {
             bg: string;
             text: string;
         };
+        prism: any;
     };
     input: {
         default: {

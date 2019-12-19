@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
+import PrismReactRenderer, { defaultProps } from 'prism-react-renderer';
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
@@ -463,6 +464,21 @@ const Table = (_a) => {
     return React.createElement(BaseComponent, Object.assign({ Element: "table", baseClassName: "ff-table", className: createClassName(classNames) }, props));
 };
 
+const CodeBlock = (_a) => {
+    var { ref, source, theme } = _a, props = __rest(_a, ["ref", "source", "theme"]);
+    let prismTheme = undefined;
+    if (theme && theme.code && theme.code.prism) {
+        prismTheme = theme.code.prism;
+    }
+    return (React.createElement(PrismReactRenderer, Object.assign({}, defaultProps, { code: typeof source === "object" ? JSON.stringify(source, null, 2) : source, language: "json", theme: prismTheme }, props), ({ className, style, tokens, getLineProps, getTokenProps }) => (React.createElement("pre", { className: className, style: style }, tokens.map((line, i) => (React.createElement("div", Object.assign({}, getLineProps({
+        line,
+        key: i
+    })), line.map((token, key) => (React.createElement("span", Object.assign({}, getTokenProps({
+        token,
+        key
+    }))))))))))));
+};
+
 // Power function - for setting heading sizes  ================================
 // @function pow($number, $exponent) {
 //     $value: 1;
@@ -674,5 +690,5 @@ const baseColors = {
     "grey10": "hsl(   0,   0%,  97%)",
 };
 
-export { BaseComponent, Breadcrumb, BreadcrumbWrapper, Button, Card, CheckBox, ContentWrapper, FileUpload, Form, FormGroup, FormUnit, HRule, Header, Heading, InfoPanel, InputField, InputLabel, NotificationItem, NotificationWrapper, Portion, RadioButton, RadioGroup, Row, Select, SidebarHeader, SidebarItem, SidebarItemIcon, SidebarItemText, SidebarWrapper, SublinkGroup, Switch, Table, Text, TextArea, baseColors };
+export { BaseComponent, Breadcrumb, BreadcrumbWrapper, Button, Card, CheckBox, CodeBlock, ContentWrapper, FileUpload, Form, FormGroup, FormUnit, HRule, Header, Heading, InfoPanel, InputField, InputLabel, NotificationItem, NotificationWrapper, Portion, RadioButton, RadioGroup, Row, Select, SidebarHeader, SidebarItem, SidebarItemIcon, SidebarItemText, SidebarWrapper, SublinkGroup, Switch, Table, Text, TextArea, baseColors };
 //# sourceMappingURL=index.es.js.map

@@ -7,6 +7,8 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var React = require('react');
 var React__default = _interopDefault(React);
 var styled = _interopDefault(require('styled-components'));
+var PrismReactRenderer = require('prism-react-renderer');
+var PrismReactRenderer__default = _interopDefault(PrismReactRenderer);
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
@@ -470,6 +472,21 @@ const Table = (_a) => {
     return React__default.createElement(BaseComponent, Object.assign({ Element: "table", baseClassName: "ff-table", className: createClassName(classNames) }, props));
 };
 
+const CodeBlock = (_a) => {
+    var { ref, source, theme } = _a, props = __rest(_a, ["ref", "source", "theme"]);
+    let prismTheme = undefined;
+    if (theme && theme.code && theme.code.prism) {
+        prismTheme = theme.code.prism;
+    }
+    return (React__default.createElement(PrismReactRenderer__default, Object.assign({}, PrismReactRenderer.defaultProps, { code: typeof source === "object" ? JSON.stringify(source, null, 2) : source, language: "json", theme: prismTheme }, props), ({ className, style, tokens, getLineProps, getTokenProps }) => (React__default.createElement("pre", { className: className, style: style }, tokens.map((line, i) => (React__default.createElement("div", Object.assign({}, getLineProps({
+        line,
+        key: i
+    })), line.map((token, key) => (React__default.createElement("span", Object.assign({}, getTokenProps({
+        token,
+        key
+    }))))))))))));
+};
+
 // Power function - for setting heading sizes  ================================
 // @function pow($number, $exponent) {
 //     $value: 1;
@@ -687,6 +704,7 @@ exports.BreadcrumbWrapper = BreadcrumbWrapper;
 exports.Button = Button;
 exports.Card = Card;
 exports.CheckBox = CheckBox;
+exports.CodeBlock = CodeBlock;
 exports.ContentWrapper = ContentWrapper;
 exports.FileUpload = FileUpload;
 exports.Form = Form;
