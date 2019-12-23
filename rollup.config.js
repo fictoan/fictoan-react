@@ -14,7 +14,8 @@ export default {
     input: "src/index.tsx",
     external : [
         "styled-components",
-        "prism-react-renderer"
+        "prism-react-renderer",
+        "lodash-es"
     ],
     output: [
         {

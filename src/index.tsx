@@ -47,6 +47,7 @@ import Breadcrumb from "./components/Breadcrumbs/Breadcrumb";
 import Table from "./components/Table/Table";
 
 import { CodeBlock } from "./components/CodeBlock/CodeBlock";
+import { ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
 
 import { baseColors } from "./constants/BaseColors";
 
@@ -86,5 +87,6 @@ export {
     NotificationItem,
     InfoPanel,
     CodeBlock,
+    ThemeProvider,
     baseColors
 };
