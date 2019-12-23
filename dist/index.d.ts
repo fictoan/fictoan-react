@@ -33,5 +33,6 @@ import BreadcrumbWrapper from "./components/Breadcrumbs/BreadcrumbWrapper";
 import Breadcrumb from "./components/Breadcrumbs/Breadcrumb";
 import Table from "./components/Table/Table";
 import { CodeBlock } from "./components/CodeBlock/CodeBlock";
+import { ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
 import { baseColors } from "./constants/BaseColors";
-export { BaseComponent, Row, Portion, Heading, Text, Card, Header, SidebarItemIcon, SidebarItemText, SidebarItem, SidebarHeader, SublinkGroup, SidebarWrapper, ContentWrapper, Form, FormUnit, FormGroup, InputField, TextArea, Select, InputLabel, Button, FileUpload, HRule, RadioGroup, RadioButton, CheckBox, Switch, Table, BreadcrumbWrapper, Breadcrumb, NotificationWrapper, NotificationItem, InfoPanel, CodeBlock, baseColors };
+export { BaseComponent, Row, Portion, Heading, Text, Card, Header, SidebarItemIcon, SidebarItemText, SidebarItem, SidebarHeader, SublinkGroup, SidebarWrapper, ContentWrapper, Form, FormUnit, FormGroup, InputField, TextArea, Select, InputLabel, Button, FileUpload, HRule, RadioGroup, RadioButton, CheckBox, Switch, Table, BreadcrumbWrapper, Breadcrumb, NotificationWrapper, NotificationItem, InfoPanel, CodeBlock, ThemeProvider, baseColors };

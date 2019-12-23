@@ -6,9 +6,11 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 
 var React = require('react');
 var React__default = _interopDefault(React);
-var styled = _interopDefault(require('styled-components'));
+var styled = require('styled-components');
+var styled__default = _interopDefault(styled);
 var PrismReactRenderer = require('prism-react-renderer');
 var PrismReactRenderer__default = _interopDefault(PrismReactRenderer);
+var lodashEs = require('lodash-es');
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
@@ -184,7 +186,7 @@ const SidebarWrapper = (_a) => {
 
 const ContentWrapper = (props) => (React__default.createElement(BaseComponent, Object.assign({ Element: "div", baseClassName: "content-wrapper" }, props)));
 
-const HRStyled = styled.hr `
+const HRStyled = styled__default.hr `
     border           : 0;
     height           : 1px;
     margin           : 4vmax auto;
@@ -364,7 +366,7 @@ class Switch extends React.PureComponent {
     }
 }
 
-const CardStyled = styled.div `
+const CardStyled = styled__default.div `
     position : relative;
     width    : 100%;
     height   : auto;
@@ -475,7 +477,7 @@ const Table = (_a) => {
 const CodeBlock = (_a) => {
     var { ref, source, theme } = _a, props = __rest(_a, ["ref", "source", "theme"]);
     let prismTheme = undefined;
-    if (theme && theme.code && theme.code.prism) {
+    if (theme && theme.code && theme.code.prism && Object.keys(theme.code.prism).length !== 0) {
         prismTheme = theme.code.prism;
     }
     return (React__default.createElement(PrismReactRenderer__default, Object.assign({}, PrismReactRenderer.defaultProps, { code: typeof source === "object" ? JSON.stringify(source, null, 2) : source, language: "json", theme: prismTheme }, props), ({ className, style, tokens, getLineProps, getTokenProps }) => (React__default.createElement("pre", { className: className, style: style }, tokens.map((line, i) => (React__default.createElement("div", Object.assign({}, getLineProps({
@@ -698,6 +700,116 @@ const baseColors = {
     "grey10": "hsl(   0,   0%,  97%)",
 };
 
+const mainColors = {
+    hue: baseColors.amber,
+    tint: baseColors.indigo90,
+    shade: baseColors.grey,
+    analogue: baseColors.indigo50,
+    accent: baseColors.green80,
+};
+const RFTheme = {
+    mainColors,
+    body: {
+        bg: baseColors.white
+    },
+    //  TEXT  /////////////////////////////////////////////////////////////////
+    text: {
+        size: {
+            default: 1,
+            multiplier: 1.24,
+        },
+        paras: {
+            color: baseColors.grey,
+            weight: 400,
+            lineHeight: 1.6,
+        },
+        headings: {
+            color: baseColors.grey,
+            weight: 600,
+            lineHeight: 1.6
+        },
+        links: {
+            default: baseColors.blue90,
+            onHover: baseColors.blue60
+        },
+        selection: {
+            bg: mainColors.hue,
+            text: baseColors.white
+        }
+    },
+    card: {
+        bg: baseColors.white,
+        border: baseColors.slate10
+    },
+    //  CODE  /////////////////////////////////////////////////////////////////
+    code: {
+        inline: {
+            bg: baseColors.slate10,
+            text: baseColors.blue70
+        },
+        block: {
+            bg: baseColors.slate10,
+            text: baseColors.blue70
+        },
+        prism: {}
+    },
+    //  INPUT  ////////////////////////////////////////////////////////////////
+    input: {
+        default: {
+            bg: baseColors.white,
+            border: baseColors.slate40,
+            label: mainColors.shade,
+            text: mainColors.shade
+        },
+        onFocus: {
+            bg: baseColors.white,
+            border: mainColors.hue,
+            text: mainColors.shade,
+            helptext: mainColors.shade,
+        },
+        isValid: {
+            bg: baseColors.white,
+            border: baseColors.green80,
+            label: mainColors.shade
+        },
+        isInvalid: {
+            bg: baseColors.red10,
+            border: baseColors.green80,
+            label: mainColors.shade
+        }
+    },
+    //  SIDEBAR  //////////////////////////////////////////////////////////////
+    sidebar: {
+        header: baseColors.white,
+        body: baseColors.white,
+        separator: baseColors.slate20,
+        links: {
+            bg: baseColors.white,
+            text: baseColors.white,
+            bgOnHover: baseColors.slate20,
+            textOnHover: baseColors.slate20,
+            isSelected: {
+                bg: mainColors.hue,
+                text: baseColors.white,
+            }
+        },
+        icons: {
+            type: "stroke",
+        },
+        isCollapsed: {
+            label: {
+                text: mainColors.shade,
+                bg: mainColors.hue
+            }
+        }
+    }
+};
+
+const ThemeProvider = (_a) => {
+    var { theme } = _a, props = __rest(_a, ["theme"]);
+    return (React__default.createElement(BaseComponent, Object.assign({ Element: styled.ThemeProvider, theme: lodashEs.merge(RFTheme, theme) }, props)));
+};
+
 exports.BaseComponent = BaseComponent;
 exports.Breadcrumb = Breadcrumb;
 exports.BreadcrumbWrapper = BreadcrumbWrapper;
@@ -733,5 +845,6 @@ exports.Switch = Switch;
 exports.Table = Table;
 exports.Text = Text;
 exports.TextArea = TextArea;
+exports.ThemeProvider = ThemeProvider;
 exports.baseColors = baseColors;
 //# sourceMappingURL=index.js.map
