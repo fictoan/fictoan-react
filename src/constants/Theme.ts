@@ -60,7 +60,7 @@ export const RFTheme = {
             bg   : baseColors.slate10,
             text : baseColors.blue70
         },
-        prism: undefined
+        prism: {}
     },
 
     //  INPUT  ////////////////////////////////////////////////////////////////
