@@ -1,3 +1,8 @@
+import styled from "styled-components";
+
+import { ButtonProps } from "./constants";
+
+export const ButtonStyled = styled.button `
 button,
 .ff-button {
     position            : relative;
@@ -199,3 +204,4 @@ button + button:nth-child(2),
 .ff-button + .ff-button:nth-child(2) {
     margin-left : 8px;
 }
+`

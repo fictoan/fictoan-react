@@ -1,21 +1,13 @@
-import React, { HTMLProps } from "react";
+import React from "react";
 
 import { createClassName } from "src/utils/classNames"
-
 import { BaseComponent } from "../BaseComponent/BaseComponent";
 
-type ButtonProps = HTMLProps<HTMLButtonElement> & {
-    value: string;
-    size?: "tiny" | "small" | "medium" | "large" | "huge";
-    shape?: "rounded" | "curved";
-    shadow?: "mild" | "soft" | "hard";
-    border?: string;
-    isLoading?: boolean;
-    hasDelete?: boolean;
-};
+import { ButtonStyled } from "./Button.styled"
+import { ButtonProps, ButtonElementType } from "./constants";
 
 const Button = ({ value, size, shape, shadow, border, className, isLoading, hasDelete, ...props }: ButtonProps) => {
-    const classNames = [];
+    const classNames = [ className ];
 
     if (className) {
         classNames.push(className);
@@ -46,9 +38,8 @@ const Button = ({ value, size, shape, shadow, border, className, isLoading, hasD
     }
 
     return (
-        <BaseComponent<HTMLButtonElement>
-            Element="button"
-            baseClassName="ff-button"
+        <BaseComponent<ButtonElementType>
+            Element={ButtonStyled}
             className={createClassName(classNames)}
             {...props}
         >
