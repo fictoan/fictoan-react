@@ -42,8 +42,8 @@ export const Row = ({ sidePadding, className, gutters, retainLayoutOnTabLS, reta
     }
 
     return (
-        <BaseComponent<HTMLDivElement>
-            Element="div"
+        <BaseComponent<RowElementType>
+            Element={RowStyled}
             baseClassName="row"
             className={createClassName(classNames)}
             {...props}
