@@ -1,19 +1,13 @@
 import React from "react";
 
 import { createClassName } from "src/utils/classNames";
-
 import { BaseComponent } from "../BaseComponent/BaseComponent";
-import { BaseAndHTMLProps } from "../BaseComponent/typings";
 
-interface PortionProps extends BaseAndHTMLProps<HTMLDivElement> {
-    desktopSpan?: string;
-    tabPTSpan?: string;
-    tabLSSpan?: string;
-    mobileSpan?: string;
-}
+import { PortionStyled } from "./Portion.styled";
+import { PortionProps, PortionElementType } from "./constants";
 
 const Portion = ({ desktopSpan, mobileSpan, tabLSSpan, tabPTSpan, className, ...props }: PortionProps) => {
-    const classNames = [className];
+    const classNames = [ className ];
 
     if (desktopSpan || tabLSSpan || tabPTSpan || mobileSpan) {
         if (desktopSpan) {
@@ -35,8 +29,8 @@ const Portion = ({ desktopSpan, mobileSpan, tabLSSpan, tabPTSpan, className, ...
         classNames.push("whole");
     }
 
-    return <BaseComponent<HTMLDivElement>
-        Element="div"
+    return <BaseComponent<PortionElementType>
+        Element={PortionStyled}
         baseClassName="portion"
         className={createClassName(classNames)}
         {...props}
