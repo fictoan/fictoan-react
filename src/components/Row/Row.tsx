@@ -1,20 +1,12 @@
-import React, { HTMLProps } from "react";
+import React from "react";
 
-import { createClassName } from "../../utils/classNames";
-
+import { createClassName } from "src/utils/classNames";
 import { BaseComponent } from "../BaseComponent/BaseComponent";
-import { BaseAndHTMLProps } from "../BaseComponent/typings";
 
-interface RowProps extends BaseAndHTMLProps<HTMLDivElement> {
-    sidePadding?: "tiny" | "small" | "medium" | "large" | "huge";
-    gutters?: "none" | "tiny" | "small" | "medium" | "large" | "huge";
-    retainLayoutOnTabLS?: boolean;
-    retainLayoutOnTabPT?: boolean;
-    retainLayoutOnMobile?: boolean;
-    retainLayoutAlways?: boolean;
-}
+import { RowStyled } from "./Row.styled"
+import { RowProps, RowElementType } from "./constants";
 
-const Row = ({ sidePadding, className, gutters, retainLayoutOnTabLS, retainLayoutOnTabPT, retainLayoutOnMobile, retainLayoutAlways, ...props }: RowProps) => {
+export const Row = ({ sidePadding, className, gutters, retainLayoutOnTabLS, retainLayoutOnTabPT, retainLayoutOnMobile, retainLayoutAlways, ...props }: RowProps) => {
 
     const classNames = [
         className

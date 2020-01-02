@@ -1,3 +1,6 @@
+import styled from "styled-components";
+
+export const RowStyled = styled.div`
 .row {
     display               : grid;
     width                 : 100%;
@@ -17,7 +20,6 @@
 .row.tiny-gutters   { grid-gap : $measureFixed/2; }
 .row.no-gutters     { grid-gap : 0; }
 
-//  Side margins for all your content
 .side-padding-tiny {
     padding-left  : 4vw;
     padding-right : 4vw;
@@ -49,3 +51,4 @@
         padding-right : 6vw;
     }
 }
+`
