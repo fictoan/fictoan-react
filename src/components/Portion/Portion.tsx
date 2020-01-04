@@ -6,7 +6,7 @@ import { BaseComponent } from "../BaseComponent/BaseComponent";
 import { PortionStyled } from "./Portion.styled";
 import { PortionProps, PortionElementType } from "./constants";
 
-const Portion = ({ desktopSpan, mobileSpan, tabLSSpan, tabPTSpan, className, ...props }: PortionProps) => {
+export const Portion = ({ desktopSpan, mobileSpan, tabLSSpan, tabPTSpan, className, ...props }: PortionProps) => {
     const classNames = [ className ];
 
     if (desktopSpan || tabLSSpan || tabPTSpan || mobileSpan) {
@@ -36,5 +36,3 @@ const Portion = ({ desktopSpan, mobileSpan, tabLSSpan, tabPTSpan, className, ...
         {...props}
     />
 };
-
-export default Portion;

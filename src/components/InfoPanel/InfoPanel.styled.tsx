@@ -24,7 +24,7 @@ export const InfoPanelStyled = styled.div`
 
     .info-panel.open { right : 0; }
 
-    .info-panel.tiny   { width : 06vw; }
+    .info-panel.tiny   { width : 6vw; }
     .info-panel.small  { width : 12vw; }
     .info-panel.medium { width : 24vw; }
     .info-panel.large  { width : 32vw; }
