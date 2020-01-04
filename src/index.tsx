@@ -36,7 +36,7 @@ import Switch from "./components/Form/CheckBox/Switch";
 
 import { Card } from "./components/Card/Card";
 
-import InfoPanel from "./components/InfoPanel/InfoPanel"
+import { InfoPanel } from "./components/InfoPanel/InfoPanel"
 
 import NotificationWrapper from "./components/Notifications/NotificationWrapper/NotificationWrapper";
 import NotificationItem from "./components/Notifications/NotificationItem/NotificationItem";

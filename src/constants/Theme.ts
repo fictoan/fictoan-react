@@ -50,6 +50,11 @@ export const RFTheme = {
         border : baseColors.slate10
     },
 
+    infoPanel : {
+        bg     : baseColors.white,
+        border : baseColors.slate20
+    },
+
     //  CODE  /////////////////////////////////////////////////////////////////
     code : {
         inline : {
