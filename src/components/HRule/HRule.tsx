@@ -6,10 +6,8 @@ import { BaseComponent } from "../BaseComponent/BaseComponent";
 import { HRStyled } from "./HRule.styled"
 import { HRProps, HRElementType } from "./constants"
 
-const HRule = ({ sideMargin, className, thick, slim, ...props }: HRProps) => {
-    const classNames = [
-        className
-    ]
+export const HRule = ({ sideMargin, className, thick, slim, ...props }: HRProps) => {
+    const classNames = [ className ]
 
     if (sideMargin) {
         classNames.push(`side-margin-${sideMargin}`)
@@ -31,5 +29,3 @@ const HRule = ({ sideMargin, className, thick, slim, ...props }: HRProps) => {
         />
     )
 };
-
-export default HRule;

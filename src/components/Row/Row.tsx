@@ -50,5 +50,3 @@ export const Row = ({ sidePadding, className, gutters, retainLayoutOnTabLS, reta
         />
     )
 };
-
-export default Row;
