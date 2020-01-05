@@ -15,7 +15,7 @@ import SidebarHeader   from "./components/SidebarWrapper/SidebarHeader/SidebarHe
 import SublinkGroup    from "./components/SidebarWrapper/SublinkGroup/SublinkGroup";
 import SidebarWrapper  from "./components/SidebarWrapper/SidebarWrapper";
 
-import ContentWrapper from "./components/ContentWrapper/ContentWrapper";
+import { ContentWrapper } from "./components/ContentWrapper/ContentWrapper";
 
 import { HRule } from "./components/HRule/HRule";
 
