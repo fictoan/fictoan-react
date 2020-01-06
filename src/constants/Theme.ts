@@ -45,14 +45,27 @@ export const RFTheme = {
         }
     },
 
+    //  CARD  /////////////////////////////////////////////////////////////////
     card : {
         bg     : baseColors.white,
         border : baseColors.slate10
     },
 
+    //  INFO PANEL  ///////////////////////////////////////////////////////////
     infoPanel : {
         bg     : baseColors.white,
         border : baseColors.slate20
+    },
+
+    //  BREADCRUMBS  ///////////////////////////////////////////////////////////
+    breadcrumb : {
+        wrapper : {
+            bg : baseColors.white,
+        },
+        item : {
+            text      : mainColors.shade,
+            separator : baseColors.slate40
+        }
     },
 
     //  CODE  /////////////////////////////////////////////////////////////////

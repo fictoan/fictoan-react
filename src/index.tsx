@@ -41,8 +41,8 @@ import { InfoPanel } from "./components/InfoPanel/InfoPanel"
 import NotificationWrapper from "./components/Notifications/NotificationWrapper/NotificationWrapper";
 import NotificationItem    from "./components/Notifications/NotificationItem/NotificationItem";
 
-import BreadcrumbWrapper from "./components/Breadcrumbs/BreadcrumbWrapper";
-import Breadcrumb        from "./components/Breadcrumbs/Breadcrumb";
+import { BreadcrumbWrapper } from "./components/Breadcrumb/BreadcrumbWrapper";
+import { BreadcrumbItem }    from "./components/Breadcrumb/BreadcrumbItem";
 
 import Table from "./components/Table/Table";
 
@@ -83,7 +83,7 @@ export {
     Switch,
     Table,
     BreadcrumbWrapper,
-    Breadcrumb,
+    BreadcrumbItem,
     NotificationWrapper,
     NotificationItem,
     InfoPanel,
