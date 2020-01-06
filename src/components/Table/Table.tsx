@@ -1,39 +1,32 @@
 import React, { HTMLProps } from "react";
 
 import { createClassName } from "src/utils/classNames";
+import { BaseComponent }   from "../BaseComponent/BaseComponent";
 
-import { BaseComponent } from "../BaseComponent/BaseComponent";
-import { BaseAndHTMLProps } from "../BaseComponent/typings";
+import { TableStyled } from "./Table.styled";
+import { TableProps, TableElementType } from "./constants"
 
-interface TableProps extends BaseAndHTMLProps<HTMLTableElement> {
-    bordered?: "rows" | "columns" | "all";
-    striped?: boolean;
-    hoverable?: boolean;
-    fullWidth?: boolean;
-}
+const Table = ({ bordersFor, isStriped, isHoverable, isFullWidth, className, ...props }: TableProps) => {
+    const classNames = [ className ];
 
-const Table = ({ bordered, striped, hoverable, fullWidth, className, ...props }: TableProps) => {
-    const classNames = [className];
-
-    if (bordered) {
-        classNames.push(`bordered-${bordered}`);
+    if (bordersFor) {
+        classNames.push(`bordered-${bordersFor}`);
     }
 
-    if (striped) {
+    if (isStriped) {
         classNames.push("striped");
     }
 
-    if (hoverable) {
+    if (isHoverable) {
         classNames.push("hoverable");
     }
 
-    if (fullWidth) {
+    if (isFullWidth) {
         classNames.push("full-width");
     }
 
-    return <BaseComponent<HTMLTableElement>
-        Element="table"
-        baseClassName="ff-table"
+    return <BaseComponent<TableElementType>
+        Element={TableStyled}
         className={createClassName(classNames)}
         {...props}
     />
