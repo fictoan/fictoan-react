@@ -1,6 +1,6 @@
 import { BaseAndHTMLProps } from "../BaseComponent/typings";
 
-export type  ButtonElementType = HTMLButtonElement;
+export type ButtonElementType = HTMLButtonElement;
 
 export interface ButtonCustomProps {
     value       : string;

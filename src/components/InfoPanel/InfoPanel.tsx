@@ -1,9 +1,9 @@
 import React from "react";
 
 import { createClassName } from "src/utils/classNames";
-import { BaseComponent } from "../BaseComponent/BaseComponent";
+import { BaseComponent }   from "../BaseComponent/BaseComponent";
 
-import { InfoPanelStyled } from "./InfoPanel.styled"
+import { InfoPanelStyled }                      from "./InfoPanel.styled"
 import { InfoPanelProps, InfoPanelElementType } from "./constants";
 
 export const InfoPanel = ({ open, width, className, ...props }: InfoPanelProps) => {
@@ -19,7 +19,6 @@ export const InfoPanel = ({ open, width, className, ...props }: InfoPanelProps) 
 
     return <BaseComponent<InfoPanelElementType>
         Element={InfoPanelStyled}
-        baseClassName="info-panel"
         className={createClassName(classNames)}
         {...props}
     />

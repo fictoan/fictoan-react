@@ -3,264 +3,264 @@ import styled from "styled-components";
 import { PortionProps } from "./constants";
 
 export const PortionStyled = styled.div`
-    .portion.\31 { grid-column : span 1; }
+    &.\31 { grid-column : span 1; }
 
-    .portion.one-twelfth,
-    .portion.\32 { grid-column : span 2; }
+    &.one-twelfth,
+    &.\32 { grid-column : span 2; }
 
-    .portion.one-eighth,
-    .portion.\33 { grid-column : span 3; }
+    &.one-eighth,
+    &.\33 { grid-column : span 3; }
 
-    .portion.one-sixth,
-    .portion.\34 { grid-column : span 4; }
+    &.one-sixth,
+    &.\34 { grid-column : span 4; }
 
-    .portion.\35 { grid-column : span 5; }
+    &.\35 { grid-column : span 5; }
 
-    .portion.one-fourth,
-    .portion.\36 { grid-column : span 6; }
+    &.one-fourth,
+    &.\36 { grid-column : span 6; }
 
-    .portion.\37 { grid-column : span 7; }
+    &.\37 { grid-column : span 7; }
 
-    .portion.one-third,
-    .portion.\38 { grid-column : span 8; }
+    &.one-third,
+    &.\38 { grid-column : span 8; }
 
-    .portion.\39 { grid-column : span 9; }
+    &.\39 { grid-column : span 9; }
 
-    .portion.five-twelfth,
-    .portion.\31 0 { grid-column : span 10; }
+    &.five-twelfth,
+    &.\31 0 { grid-column : span 10; }
 
-    .portion.\31 1 { grid-column : span 11; }
+    &.\31 1 { grid-column : span 11; }
 
-    .portion.half,
-    .portion.\31 2 { grid-column : span 12; }
+    &.half,
+    &.\31 2 { grid-column : span 12; }
 
-    .portion.\31 3 { grid-column : span 13; }
+    &.\31 3 { grid-column : span 13; }
 
-    .portion.seven-twelfth,
-    .portion.\31 4 { grid-column : span 14; }
+    &.seven-twelfth,
+    &.\31 4 { grid-column : span 14; }
 
-    .portion.\31 5 { grid-column : span 15; }
+    &.\31 5 { grid-column : span 15; }
 
-    .portion.two-third,
-    .portion.\31 6 { grid-column : span 16; }
+    &.two-third,
+    &.\31 6 { grid-column : span 16; }
 
-    .portion.\31 7 { grid-column : span 17; }
+    &.\31 7 { grid-column : span 17; }
 
-    .portion.three-fourth,
-    .portion.\31 8 { grid-column : span 18; }
+    &.three-fourth,
+    &.\31 8 { grid-column : span 18; }
 
-    .portion.\31 9 { grid-column : span 19; }
+    &.\31 9 { grid-column : span 19; }
 
-    .portion.five-sixth,
-    .portion.\32 0 { grid-column : span 20; }
+    &.five-sixth,
+    &.\32 0 { grid-column : span 20; }
 
-    .portion.seven-eighth,
-    .portion.\32 1 { grid-column : span 21; }
+    &.seven-eighth,
+    &.\32 1 { grid-column : span 21; }
 
-    .portion.eleven-twelfth,
-    .portion.\32 2 { grid-column : span 22; }
+    &.eleven-twelfth,
+    &.\32 2 { grid-column : span 22; }
 
-    .portion.\32 3 { grid-column : span 23; }
+    &.\32 3 { grid-column : span 23; }
 
-    .portion.whole,
-    .portion.\32 4 { grid-column : span 24; }
+    &.whole,
+    &.\32 4 { grid-column : span 24; }
 
     @media all and (max-width : 600px) {
 
-        .row:not(.retain-layout-on-mobile) > .portion:not([class*='on-mobile']) { grid-column : span 24; }
+        .row:not(.retain-layout-on-mobile) > &:not([class*='on-mobile']) { grid-column : span 24; }
 
-        .portion.\31 -on-mobile { grid-column : span 1; }
+        &.\31 -on-mobile { grid-column : span 1; }
 
-        .portion.one-twelfth-on-mobile,
-        .portion.\32 -on-mobile { grid-column : span 2; }
+        &.one-twelfth-on-mobile,
+        &.\32 -on-mobile { grid-column : span 2; }
 
-        .portion.one-eighth-on-mobile,
-        .portion.\33 -on-mobile { grid-column : span 3; }
+        &.one-eighth-on-mobile,
+        &.\33 -on-mobile { grid-column : span 3; }
 
-        .portion.one-sixth-on-mobile,
-        .portion.\34 -on-mobile { grid-column : span 4; }
+        &.one-sixth-on-mobile,
+        &.\34 -on-mobile { grid-column : span 4; }
 
-        .portion.\35 -on-mobile { grid-column : span 5; }
+        &.\35 -on-mobile { grid-column : span 5; }
 
-        .portion.one-fourth-on-mobile,
-        .portion.\36 -on-mobile { grid-column : span 6; }
+        &.one-fourth-on-mobile,
+        &.\36 -on-mobile { grid-column : span 6; }
 
-        .portion.\37 -on-mobile { grid-column : span 7; }
+        &.\37 -on-mobile { grid-column : span 7; }
 
-        .portion.one-third-on-mobile,
-        .portion.\38 -on-mobile { grid-column : span 8; }
+        &.one-third-on-mobile,
+        &.\38 -on-mobile { grid-column : span 8; }
 
-        .portion.\39 -on-mobile { grid-column : span 9; }
+        &.\39 -on-mobile { grid-column : span 9; }
 
-        .portion.five-twelfth-on-mobile,
-        .portion.\31 0-on-mobile { grid-column : span 10; }
+        &.five-twelfth-on-mobile,
+        &.\31 0-on-mobile { grid-column : span 10; }
 
-        .portion.\31 1-on-mobile { grid-column : span 11; }
+        &.\31 1-on-mobile { grid-column : span 11; }
 
-        .portion.half-on-mobile,
-        .portion.\31 2-on-mobile { grid-column : span 12; }
+        &.half-on-mobile,
+        &.\31 2-on-mobile { grid-column : span 12; }
 
-        .portion.\31 3-on-mobile { grid-column : span 13; }
+        &.\31 3-on-mobile { grid-column : span 13; }
 
-        .portion.seven-twelfth-on-mobile,
-        .portion.\31 4-on-mobile { grid-column : span 14; }
+        &.seven-twelfth-on-mobile,
+        &.\31 4-on-mobile { grid-column : span 14; }
 
-        .portion.\31 5-on-mobile { grid-column : span 15; }
+        &.\31 5-on-mobile { grid-column : span 15; }
 
-        .portion.two-third-on-mobile,
-        .portion.\31 6-on-mobile { grid-column : span 16; }
+        &.two-third-on-mobile,
+        &.\31 6-on-mobile { grid-column : span 16; }
 
-        .portion.\31 7-on-mobile { grid-column : span 17; }
+        &.\31 7-on-mobile { grid-column : span 17; }
 
-        .portion.three-fourth-on-mobile,
-        .portion.\31 8-on-mobile { grid-column : span 18; }
+        &.three-fourth-on-mobile,
+        &.\31 8-on-mobile { grid-column : span 18; }
 
-        .portion.\31 9-on-mobile { grid-column : span 19; }
+        &.\31 9-on-mobile { grid-column : span 19; }
 
-        .portion.five-sixth-on-mobile,
-        .portion.\32 0-on-mobile { grid-column : span 20; }
+        &.five-sixth-on-mobile,
+        &.\32 0-on-mobile { grid-column : span 20; }
 
-        .portion.seven-eighth-on-mobile,
-        .portion.\32 1-on-mobile { grid-column : span 21; }
+        &.seven-eighth-on-mobile,
+        &.\32 1-on-mobile { grid-column : span 21; }
 
-        .portion.eleven-twelfth-on-mobile,
-        .portion.\32 2-on-mobile { grid-column : span 22; }
+        &.eleven-twelfth-on-mobile,
+        &.\32 2-on-mobile { grid-column : span 22; }
 
-        .portion.\32 3-on-mobile { grid-column : span 23; }
+        &.\32 3-on-mobile { grid-column : span 23; }
 
-        .portion.whole-on-mobile,
-        .portion.\32 4-on-mobile { grid-column : span 24; }
+        &.whole-on-mobile,
+        &.\32 4-on-mobile { grid-column : span 24; }
     }
 
     @media all and (min-width : 601px) and (max-width : 900px) {
-        .row:not(.retain-layout-on-tab-pt) > .portion:not([class*='on-tab-pt']) { grid-column : span 24; }
+        .row:not(.retain-layout-on-tab-pt) > &:not([class*='on-tab-pt']) { grid-column : span 24; }
 
-        .portion.\31 -on-tab-pt { grid-column : span 1; }
+        &.\31 -on-tab-pt { grid-column : span 1; }
 
-        .portion.one-twelfth-on-tab-pt,
-        .portion.\32 -on-tab-pt { grid-column : span 2; }
+        &.one-twelfth-on-tab-pt,
+        &.\32 -on-tab-pt { grid-column : span 2; }
 
-        .portion.one-eighth-on-tab-pt,
-        .portion.\33 -on-tab-pt { grid-column : span 3; }
+        &.one-eighth-on-tab-pt,
+        &.\33 -on-tab-pt { grid-column : span 3; }
 
-        .portion.one-sixth-on-tab-pt,
-        .portion.\34 -on-tab-pt { grid-column : span 4; }
+        &.one-sixth-on-tab-pt,
+        &.\34 -on-tab-pt { grid-column : span 4; }
 
-        .portion.\35 -on-tab-pt { grid-column : span 5; }
+        &.\35 -on-tab-pt { grid-column : span 5; }
 
-        .portion.one-fourth-on-tab-pt,
-        .portion.\36 -on-tab-pt { grid-column : span 6; }
+        &.one-fourth-on-tab-pt,
+        &.\36 -on-tab-pt { grid-column : span 6; }
 
-        .portion.\37 -on-tab-pt { grid-column : span 7; }
+        &.\37 -on-tab-pt { grid-column : span 7; }
 
-        .portion.one-third-on-tab-pt,
-        .portion.\38 -on-tab-pt { grid-column : span 8; }
+        &.one-third-on-tab-pt,
+        &.\38 -on-tab-pt { grid-column : span 8; }
 
-        .portion.\39 -on-tab-pt { grid-column : span 9; }
+        &.\39 -on-tab-pt { grid-column : span 9; }
 
-        .portion.five-twelfth-on-tab-pt,
-        .portion.\31 0-on-tab-pt { grid-column : span 10; }
+        &.five-twelfth-on-tab-pt,
+        &.\31 0-on-tab-pt { grid-column : span 10; }
 
-        .portion.\31 1-on-tab-pt { grid-column : span 11; }
+        &.\31 1-on-tab-pt { grid-column : span 11; }
 
-        .portion.half-on-tab-pt,
-        .portion.\31 2-on-tab-pt { grid-column : span 12; }
+        &.half-on-tab-pt,
+        &.\31 2-on-tab-pt { grid-column : span 12; }
 
-        .portion.\31 3-on-tab-pt { grid-column : span 13; }
+        &.\31 3-on-tab-pt { grid-column : span 13; }
 
-        .portion.seven-twelfth-on-tab-pt,
-        .portion.\31 4-on-tab-pt { grid-column : span 14; }
+        &.seven-twelfth-on-tab-pt,
+        &.\31 4-on-tab-pt { grid-column : span 14; }
 
-        .portion.\31 5-on-tab-pt { grid-column : span 15; }
+        &.\31 5-on-tab-pt { grid-column : span 15; }
 
-        .portion.two-third-on-tab-pt,
-        .portion.\31 6-on-tab-pt { grid-column : span 16; }
+        &.two-third-on-tab-pt,
+        &.\31 6-on-tab-pt { grid-column : span 16; }
 
-        .portion.\31 7-on-tab-pt { grid-column : span 17; }
+        &.\31 7-on-tab-pt { grid-column : span 17; }
 
-        .portion.three-fourth-on-tab-pt,
-        .portion.\31 8-on-tab-pt { grid-column : span 18; }
+        &.three-fourth-on-tab-pt,
+        &.\31 8-on-tab-pt { grid-column : span 18; }
 
-        .portion.\31 9-on-tab-pt { grid-column : span 19; }
+        &.\31 9-on-tab-pt { grid-column : span 19; }
 
-        .portion.five-sixth-on-tab-pt,
-        .portion.\32 0-on-tab-pt { grid-column : span 20; }
+        &.five-sixth-on-tab-pt,
+        &.\32 0-on-tab-pt { grid-column : span 20; }
 
-        .portion.seven-eighth-on-tab-pt,
-        .portion.\32 1-on-tab-pt { grid-column : span 21; }
+        &.seven-eighth-on-tab-pt,
+        &.\32 1-on-tab-pt { grid-column : span 21; }
 
-        .portion.eleven-twelfth-on-tab-pt,
-        .portion.\32 2-on-tab-pt { grid-column : span 22; }
+        &.eleven-twelfth-on-tab-pt,
+        &.\32 2-on-tab-pt { grid-column : span 22; }
 
-        .portion.\32 3-on-tab-pt { grid-column : span 23; }
+        &.\32 3-on-tab-pt { grid-column : span 23; }
 
-        .portion.whole-on-tab-pt,
-        .portion.\32 4-on-tab-pt { grid-column : span 24; }
+        &.whole-on-tab-pt,
+        &.\32 4-on-tab-pt { grid-column : span 24; }
     }
 
     @media all and (min-width : 901px) and (max-width : 1200px) {
-        //.row:not(.retain-layout-on-tab-ls) > .portion:not([class*='on-tab-ls']) { grid-column : span 24; }
+        /* .row:not(.retain-layout-on-tab-ls) > &:not([class*='on-tab-ls']) { grid-column : span 24; } */
 
-        .portion.\31 -on-tab-ls { grid-column : span 1; }
+        &.\31 -on-tab-ls { grid-column : span 1; }
 
-        .portion.one-twelfth-on-tab-ls,
-        .portion.\32 -on-tab-ls { grid-column : span 2; }
+        &.one-twelfth-on-tab-ls,
+        &.\32 -on-tab-ls { grid-column : span 2; }
 
-        .portion.one-eighth-on-tab-ls,
-        .portion.\33 -on-tab-ls { grid-column : span 3; }
+        &.one-eighth-on-tab-ls,
+        &.\33 -on-tab-ls { grid-column : span 3; }
 
-        .portion.one-sixth-on-tab-ls,
-        .portion.\34 -on-tab-ls { grid-column : span 4; }
+        &.one-sixth-on-tab-ls,
+        &.\34 -on-tab-ls { grid-column : span 4; }
 
-        .portion.\35 -on-tab-ls { grid-column : span 5; }
+        &.\35 -on-tab-ls { grid-column : span 5; }
 
-        .portion.one-fourth-on-tab-ls,
-        .portion.\36 -on-tab-ls { grid-column : span 6; }
+        &.one-fourth-on-tab-ls,
+        &.\36 -on-tab-ls { grid-column : span 6; }
 
-        .portion.\37 -on-tab-ls { grid-column : span 7; }
+        &.\37 -on-tab-ls { grid-column : span 7; }
 
-        .portion.one-third-on-tab-ls,
-        .portion.\38 -on-tab-ls { grid-column : span 8; }
+        &.one-third-on-tab-ls,
+        &.\38 -on-tab-ls { grid-column : span 8; }
 
-        .portion.\39 -on-tab-ls { grid-column : span 9; }
+        &.\39 -on-tab-ls { grid-column : span 9; }
 
-        .portion.five-twelfth-on-tab-ls,
-        .portion.\31 0-on-tab-ls { grid-column : span 10; }
+        &.five-twelfth-on-tab-ls,
+        &.\31 0-on-tab-ls { grid-column : span 10; }
 
-        .portion.\31 1-on-tab-ls { grid-column : span 11; }
+        &.\31 1-on-tab-ls { grid-column : span 11; }
 
-        .portion.half-on-tab-ls,
-        .portion.\31 2-on-tab-ls { grid-column : span 12; }
+        &.half-on-tab-ls,
+        &.\31 2-on-tab-ls { grid-column : span 12; }
 
-        .portion.\31 3-on-tab-ls { grid-column : span 13; }
+        &.\31 3-on-tab-ls { grid-column : span 13; }
 
-        .portion.seven-twelfth-on-tab-ls,
-        .portion.\31 4-on-tab-ls { grid-column : span 14; }
+        &.seven-twelfth-on-tab-ls,
+        &.\31 4-on-tab-ls { grid-column : span 14; }
 
-        .portion.\31 5-on-tab-ls { grid-column : span 15; }
+        &.\31 5-on-tab-ls { grid-column : span 15; }
 
-        .portion.two-third-on-tab-ls,
-        .portion.\31 6-on-tab-ls { grid-column : span 16; }
+        &.two-third-on-tab-ls,
+        &.\31 6-on-tab-ls { grid-column : span 16; }
 
-        .portion.\31 7-on-tab-ls { grid-column : span 17; }
+        &.\31 7-on-tab-ls { grid-column : span 17; }
 
-        .portion.three-fourth-on-tab-ls,
-        .portion.\31 8-on-tab-ls { grid-column : span 18; }
+        &.three-fourth-on-tab-ls,
+        &.\31 8-on-tab-ls { grid-column : span 18; }
 
-        .portion.\31 9-on-tab-ls { grid-column : span 19; }
+        &.\31 9-on-tab-ls { grid-column : span 19; }
 
-        .portion.five-sixth-on-tab-ls,
-        .portion.\32 0-on-tab-ls { grid-column : span 20; }
+        &.five-sixth-on-tab-ls,
+        &.\32 0-on-tab-ls { grid-column : span 20; }
 
-        .portion.seven-eighth-on-tab-ls,
-        .portion.\32 1-on-tab-ls { grid-column : span 21; }
+        &.seven-eighth-on-tab-ls,
+        &.\32 1-on-tab-ls { grid-column : span 21; }
 
-        .portion.eleven-twelfth-on-tab-ls,
-        .portion.\32 2-on-tab-ls { grid-column : span 22; }
+        &.eleven-twelfth-on-tab-ls,
+        &.\32 2-on-tab-ls { grid-column : span 22; }
 
-        .portion.\32 3-on-tab-ls { grid-column : span 23; }
+        &.\32 3-on-tab-ls { grid-column : span 23; }
 
-        .portion.whole-on-tab-ls,
-        .portion.\32 4-on-tab-ls { grid-column : span 24; }
+        &.whole-on-tab-ls,
+        &.\32 4-on-tab-ls { grid-column : span 24; }
     }
 `

@@ -1,7 +1,7 @@
 import React from "react";
 
 import { createClassName } from "src/utils/classNames";
-import { BaseComponent } from "../BaseComponent/BaseComponent";
+import { BaseComponent }   from "../BaseComponent/BaseComponent";
 
 import { PortionStyled } from "./Portion.styled";
 import { PortionProps, PortionElementType } from "./constants";
@@ -31,7 +31,6 @@ export const Portion = ({ desktopSpan, mobileSpan, tabLSSpan, tabPTSpan, classNa
 
     return <BaseComponent<PortionElementType>
         Element={PortionStyled}
-        baseClassName="portion"
         className={createClassName(classNames)}
         {...props}
     />

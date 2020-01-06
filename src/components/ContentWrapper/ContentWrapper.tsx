@@ -9,7 +9,6 @@ import { ContentWrapperElementType } from "./constants";
 export const ContentWrapper = (props: BaseAndHTMLProps<HTMLDivElement>) => (
     <BaseComponent<ContentWrapperElementType>
         Element={ContentWrapperStyled}
-        baseClassName="content-wrapper"
         {...props}
     />
 );

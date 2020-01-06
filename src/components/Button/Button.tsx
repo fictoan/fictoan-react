@@ -6,7 +6,7 @@ import { BaseComponent } from "../BaseComponent/BaseComponent";
 import { ButtonStyled } from "./Button.styled"
 import { ButtonProps, ButtonElementType } from "./constants";
 
-const Button = ({ value, size, shape, shadow, border, className, isLoading, hasDelete, ...props }: ButtonProps) => {
+export const Button = ({ value, size, shape, shadow, border, className, isLoading, hasDelete, ...props }: ButtonProps) => {
     const classNames = [ className ];
 
     if (className) {
@@ -47,5 +47,3 @@ const Button = ({ value, size, shape, shadow, border, className, isLoading, hasD
         </BaseComponent>
     );
 };
-
-export default Button;
