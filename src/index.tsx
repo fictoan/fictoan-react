@@ -4,7 +4,7 @@ import { Row }     from "./components/Row/Row";
 import { Portion } from "./components/Portion/Portion";
 
 import Heading from "./components/Type/Heading";
-import Text from "./components/Type/Text";
+import Text    from "./components/Type/Text";
 
 import Header from "./components/Header/Header";
 
