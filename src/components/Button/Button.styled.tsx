@@ -24,7 +24,6 @@ export const ButtonStyled = styled.button `
     }
 
     /*  Button with a multi-colour background  */
-    button.bg-gradient,
     &.bg-gradient {
         background : -webkit-linear-gradient(-45deg, $buttonGradientStartColour 0%, $buttonGradientEndColour 100%);
         background :    -moz-linear-gradient(-45deg, $buttonGradientStartColour 0%, $buttonGradientEndColour 100%);
@@ -39,7 +38,6 @@ export const ButtonStyled = styled.button `
         border-radius : 50%;
     }
 
-    button.shape-circular img,
     &.shape-circular img {
         position : absolute;
         margin   : auto;
@@ -145,9 +143,7 @@ export const ButtonStyled = styled.button `
         font-size : $baseFontSize*pow($scaleFactor, 4);
     }
 
-    &.button-plain {
-        background : transparent;
-    }
+    &.button-plain { background : transparent; }
 
     &.with-delete::after {
         display     : inline-flex;
@@ -160,11 +156,8 @@ export const ButtonStyled = styled.button `
         align-self  : center;
     }
 
-    button.with-delete,
     &.with-delete,
-    button.size-tiny.with-delete,
     &.size-tiny.with-delete,
-    button.size-small.with-delete,
     &.size-small.with-delete { padding-right : 32px !important; }
 
     &.size-large.with-delete { padding-right : 40px !important; }
