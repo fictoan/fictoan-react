@@ -3,8 +3,8 @@ import { BaseComponent } from "./components/BaseComponent/BaseComponent";
 import { Row }     from "./components/Row/Row";
 import { Portion } from "./components/Portion/Portion";
 
-import Heading from "./components/Type/Heading";
-import Text    from "./components/Type/Text";
+import { Heading } from "./components/Typography/Heading";
+import { Text }    from "./components/Typography/Text";
 
 import Header from "./components/Header/Header";
 
