@@ -19,7 +19,7 @@ import { ContentWrapper } from "./components/ContentWrapper/ContentWrapper";
 
 import { HRule } from "./components/HRule/HRule";
 
-import Button from "./components/Button/Button";
+import { Button } from "./components/Button/Button";
 
 import Form        from "./components/Form/Form";
 import FormUnit    from "./components/Form/FormUnit/FormUnit";
@@ -46,7 +46,7 @@ import { BreadcrumbItem }    from "./components/Breadcrumb/BreadcrumbItem";
 
 import Table from "./components/Table/Table";
 
-import { CodeBlock }     from "./components/CodeBlock/CodeBlock";
+import { CodeBlock } from "./components/CodeBlock/CodeBlock";
 
 import { ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
 

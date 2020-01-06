@@ -1,16 +1,14 @@
 import React from "react";
 
 import { createClassName } from "src/utils/classNames";
-import { BaseComponent } from "../BaseComponent/BaseComponent";
+import { BaseComponent }   from "../BaseComponent/BaseComponent";
 
 import { RowStyled } from "./Row.styled"
 import { RowProps, RowElementType } from "./constants";
 
 export const Row = ({ sidePadding, className, gutters, retainLayoutOnTabLS, retainLayoutOnTabPT, retainLayoutOnMobile, retainLayoutAlways, ...props }: RowProps) => {
 
-    const classNames = [
-        className
-    ]
+    const classNames = [ className ]
 
     if (sidePadding) {
         classNames.push(`side-padding-${sidePadding}`)
@@ -44,7 +42,6 @@ export const Row = ({ sidePadding, className, gutters, retainLayoutOnTabLS, reta
     return (
         <BaseComponent<RowElementType>
             Element={RowStyled}
-            baseClassName="row"
             className={createClassName(classNames)}
             {...props}
         />

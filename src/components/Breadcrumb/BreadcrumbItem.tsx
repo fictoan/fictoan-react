@@ -1,7 +1,6 @@
-import React, { HTMLProps } from "react";
+import React from "react";
 
 import { BaseComponent }   from "../BaseComponent/BaseComponent";
-import { createClassName } from "src/utils/classNames";
 
 import { BreadcrumbItemStyled } from "./Breadcrumb.styled";
 import { BreadcrumbProps, BreadcrumbItemElementType } from "./constants";
