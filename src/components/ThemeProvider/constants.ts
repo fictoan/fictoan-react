@@ -1,5 +1,7 @@
-import { BaseAndHTMLProps } from "../BaseComponent/typings";
+import { BaseAndHTMLProps, ThemeProps } from "../BaseComponent/typings";
 
-export type  ThemeProviderElementType = HTMLDivElement;
+export type ThemeProviderElementType = HTMLDivElement;
 
 export type ThemeProviderProps = BaseAndHTMLProps<ThemeProviderElementType>;
+
+export type GlobalStyledProps = ThemeProps;
