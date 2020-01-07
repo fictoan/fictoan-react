@@ -14,7 +14,7 @@ export const Heading = ({ type, weight, className, ...props }: HeadingProps) => 
     }
 
     return <BaseComponent<HeadingElementType>
-        Element={HeadingStyled}
+        Element={as}
         className={createClassName(classNames)}
         {...props}
     />
