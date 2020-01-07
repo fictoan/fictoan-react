@@ -6,7 +6,7 @@ import { BaseComponent }   from "../BaseComponent/BaseComponent";
 import { TableStyled } from "./Table.styled";
 import { TableProps, TableElementType } from "./constants"
 
-const Table = ({ bordersFor, isStriped, isHoverable, isFullWidth, className, ...props }: TableProps) => {
+export const Table = ({ bordersFor, isStriped, isHoverable, isFullWidth, className, ...props }: TableProps) => {
     const classNames = [ className ];
 
     if (bordersFor) {
@@ -31,5 +31,3 @@ const Table = ({ bordersFor, isStriped, isHoverable, isFullWidth, className, ...
         {...props}
     />
 }
-
-export default Table;
