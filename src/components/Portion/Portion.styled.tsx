@@ -24,9 +24,7 @@ export const PortionStyled = styled.div`
     &.one-third,
     &.\\38 { grid-column : span 8; }
 
-    &.\\39 {
-        grid-column : span 9;
-    }
+    &.\\39 { grid-column : span 9; }
 
     &.five-twelfth,
     &.\\31 0 { grid-column : span 10; }
