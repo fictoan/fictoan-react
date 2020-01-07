@@ -3,7 +3,6 @@ import React from "react";
 import { createClassName } from "src/utils/classNames";
 import { BaseComponent }   from "../BaseComponent/BaseComponent";
 
-import { TextStyled } from "./TypographyStyled";
 import { TextProps, TextElementType } from "./constants";
 
 export const Text = ({ weight, size, className, ...props }: TextProps) => {
@@ -19,7 +18,7 @@ export const Text = ({ weight, size, className, ...props }: TextProps) => {
 
     return (
         <BaseComponent<TextElementType>
-            Element={TextStyled}
+            Element="p"
             className={createClassName(classNames)}
             {...props}
         />
