@@ -3,10 +3,9 @@ import React from "react";
 import { createClassName } from "src/utils/classNames";
 import { BaseComponent } from "../BaseComponent/BaseComponent";
 
-import { HeadingStyled } from "./TypographyStyled";
 import { HeadingProps, HeadingElementType } from "./constants";
 
-export const Heading = ({ type, weight, className, ...props }: HeadingProps) => {
+export const Heading = ({ as, weight, className, ...props }: HeadingProps) => {
     const classNames = [ className ];
 
     if (weight) {
@@ -14,7 +13,7 @@ export const Heading = ({ type, weight, className, ...props }: HeadingProps) => 
     }
 
     return <BaseComponent<HeadingElementType>
-        Element={HeadingStyled}
+        Element={as}
         className={createClassName(classNames)}
         {...props}
     />

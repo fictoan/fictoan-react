@@ -44,7 +44,7 @@ import NotificationItem    from "./components/Notifications/NotificationItem/Not
 import { BreadcrumbWrapper } from "./components/Breadcrumb/BreadcrumbWrapper";
 import { BreadcrumbItem }    from "./components/Breadcrumb/BreadcrumbItem";
 
-import Table from "./components/Table/Table";
+import { Table } from "./components/Table/Table";
 
 import { CodeBlock } from "./components/CodeBlock/CodeBlock";
 
