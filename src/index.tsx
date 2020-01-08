@@ -21,7 +21,7 @@ import { HRule } from "./components/HRule/HRule";
 
 import { Button } from "./components/Button/Button";
 
-import Form        from "./components/Form/Form";
+import { FormWrapper }        from "./components/Form/FormWrapper/FormWrapper";
 import FormUnit    from "./components/Form/FormUnit/FormUnit";
 import FormGroup   from "./components/Form/FormGroup/FormGroup";
 import InputField  from "./components/Form/InputField/InputField";
@@ -67,7 +67,7 @@ export {
     SidebarSublinkGroup,
     SidebarWrapper,
     ContentWrapper,
-    Form,
+    FormWrapper,
     FormUnit,
     FormGroup,
     InputField,
