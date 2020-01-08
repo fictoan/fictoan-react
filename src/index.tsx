@@ -8,12 +8,12 @@ import { Text }    from "./components/Typography/Text";
 
 import Header from "./components/Header/Header";
 
-import SidebarItemIcon from "./components/SidebarWrapper/SidebarItemIcon/SidebarItemIcon";
-import SidebarItemText from "./components/SidebarWrapper/SidebarItemText/SidebarItemText";
-import SidebarItem     from "./components/SidebarWrapper/SidebarItem/SidebarItem";
-import SidebarHeader   from "./components/SidebarWrapper/SidebarHeader/SidebarHeader";
-import SublinkGroup    from "./components/SidebarWrapper/SublinkGroup/SublinkGroup";
-import SidebarWrapper  from "./components/SidebarWrapper/SidebarWrapper";
+import { SidebarItemIcon }     from "./components/Sidebar/SidebarItemIcon/SidebarItemIcon";
+import { SidebarItemText }     from "./components/Sidebar/SidebarItemText/SidebarItemText";
+import { SidebarItem }         from "./components/Sidebar/SidebarItem/SidebarItem";
+import { SidebarHeader }       from "./components/Sidebar/SidebarHeader/SidebarHeader";
+import { SidebarSublinkGroup } from "./components/Sidebar/SidebarSublinkGroup/SidebarSublinkGroup";
+import { SidebarWrapper }      from "./components/Sidebar/SidebarWrapper/SidebarWrapper";
 
 import { ContentWrapper } from "./components/ContentWrapper/ContentWrapper";
 
@@ -64,7 +64,7 @@ export {
     SidebarItemText,
     SidebarItem,
     SidebarHeader,
-    SublinkGroup,
+    SidebarSublinkGroup,
     SidebarWrapper,
     ContentWrapper,
     Form,
