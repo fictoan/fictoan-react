@@ -22,7 +22,7 @@ import { HRule } from "./components/HRule/HRule";
 import { Button } from "./components/Button/Button";
 
 import { FormWrapper }        from "./components/Form/FormWrapper/FormWrapper";
-import FormUnit    from "./components/Form/FormUnit/FormUnit";
+import { FormItem }           from "./components/Form/FormItem/FormItem";
 import FormGroup   from "./components/Form/FormGroup/FormGroup";
 import InputField  from "./components/Form/InputField/InputField";
 import TextArea    from "./components/Form/TextArea/TextArea";
@@ -68,7 +68,7 @@ export {
     SidebarWrapper,
     ContentWrapper,
     FormWrapper,
-    FormUnit,
+    FormItem,
     FormGroup,
     InputField,
     TextArea,
