@@ -3,12 +3,11 @@ import React from "react";
 import { BaseComponent } from "../../BaseComponent/BaseComponent";
 
 import { SidebarItemStyled } from  "./SidebarItem.styled";
-import { SidebarItemProps, SidebarItemIconElementType } from "../constants"
+import { SidebarItemProps, SidebarItemElementType } from "../constants"
 
 export const SidebarItem = (props: SidebarItemProps) => (
-    <BaseComponent<SidebarItemIconElementType>
+    <BaseComponent<SidebarItemElementType>
         Element={SidebarItemStyled}
-        baseClassName="sidebar-item"
         {...props}
     />
 );
