@@ -6,8 +6,6 @@ import { Portion } from "./components/Portion/Portion";
 import { Heading } from "./components/Typography/Heading";
 import { Text }    from "./components/Typography/Text";
 
-import Header from "./components/Header/Header";
-
 import { SidebarItemIcon }     from "./components/Sidebar/SidebarItemIcon/SidebarItemIcon";
 import { SidebarItemText }     from "./components/Sidebar/SidebarItemText/SidebarItemText";
 import { SidebarItem }         from "./components/Sidebar/SidebarItem/SidebarItem";
@@ -26,14 +24,13 @@ import { FormItem }           from "./components/Form/FormItem/FormItem";
 import { FormItemGroup }      from "./components/Form/FormItemGroup/FormItemGroup";
 import { FormItemJointGroup } from "./components/Form/FormItemGroup/FormItemJointGroup";
 import { InputField }  from "./components/Form/InputField/InputField";
-import TextArea    from "./components/Form/TextArea/TextArea";
-import InputLabel  from "./components/Form/InputLabel/InputLabel";
+import { Textarea }    from "./components/Form/Textarea/Textarea";
+import { InputLabel }  from "./components/Form/InputLabel/InputLabel";
 import { Select }      from "./components/Form/Select/Select";
-import FileUpload  from "./components/Form/FileUpload/FileUpload";
-import RadioButton from "./components/Form/RadioGroup/RadioButton";
-import RadioGroup  from "./components/Form/RadioGroup/RadioGroup";
-import CheckBox    from "./components/Form/CheckBox/CheckBox";
-import Switch      from "./components/Form/CheckBox/Switch";
+import { FileUpload }  from "./components/Form/InputField/FileUpload";
+import { RadioButton } from "./components/Form/RadioButton/RadioButton";
+import { CheckBox }    from "./components/Form/CheckBox/CheckBox";
+import { Switch }      from "./components/Form/CheckBox/Switch";
 
 import { Card } from "./components/Card/Card";
 
@@ -60,7 +57,6 @@ export {
     Heading,
     Text,
     Card,
-    Header,
     SidebarItemIcon,
     SidebarItemText,
     SidebarItem,
@@ -73,13 +69,12 @@ export {
     FormItemGroup,
     FormItemJointGroup,
     InputField,
-    TextArea,
+    Textarea,
     Select,
     InputLabel,
     Button,
     FileUpload,
     HRule,
-    RadioGroup,
     RadioButton,
     CheckBox,
     Switch,

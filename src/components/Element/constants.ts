@@ -36,5 +36,4 @@ export interface CommonAndHTMLProps<T extends {}> extends CommonProps, Omit<HTML
 export interface ElementProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as"> {
     as: any;
     className?: string;
-    baseClassName?: string;
 };

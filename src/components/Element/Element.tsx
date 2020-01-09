@@ -6,7 +6,6 @@ import { ElementProps } from "./constants";
 
 export const Element = <K extends {}>({
     as: Component,
-    baseClassName,
     className,
     size,
     fullWidth,
@@ -35,7 +34,6 @@ export const Element = <K extends {}>({
 }: ElementProps<K>) => (
         <Component {...props} className={
             createClassName([
-                baseClassName,
                 className,
                 size && `size-${size}`,
                 fullWidth && "full-width",
