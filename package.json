@@ -19,7 +19,7 @@
         "start": "rollup -c -w",
         "build": "rollup -c",
         "predeploy": "$npm_execpath run build && gh-pages -d dist -e dist && gh-pages -a -d . -s ./package.json -st ./.gitignore -s ./README.md",
-        "deploy": "git checkout gh-pages && git pull origin gh-pages && mv node_modules ../rf-nm && mv .rpt2_cache ../rf-ec && $npm_execpath run publish && git checkout master && mv ../rf-nm ./node_modules && mv ../rf-ec ./.rpt2_cache"
+        "deploy": "git checkout gh-pages && git pull origin gh-pages && mv node_modules ../rf-nm && mv .rpt2_cache ../rf-ec && $npm_execpath publish && git checkout master && mv ../rf-nm ./node_modules && mv ../rf-ec ./.rpt2_cache"
     },
     "eslintConfig": {
         "extends": "react-app"
