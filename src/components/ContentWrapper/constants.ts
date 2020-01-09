@@ -1,5 +1,5 @@
-import { BaseAndHTMLProps } from "../BaseComponent/constants";
+import { CommonAndHTMLProps } from "../Element/constants";
 
 export type ContentWrapperElementType = HTMLDivElement;
 
-export type ContentWrapperType = BaseAndHTMLProps<ContentWrapperElementType>;
+export type ContentWrapperType = CommonAndHTMLProps<ContentWrapperElementType>;

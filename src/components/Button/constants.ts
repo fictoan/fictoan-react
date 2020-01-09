@@ -1,4 +1,4 @@
-import { BaseAndHTMLProps } from "../BaseComponent/constants";
+import { CommonAndHTMLProps } from "../Element/constants";
 
 export type ButtonElementType = HTMLButtonElement;
 
@@ -12,4 +12,4 @@ export interface ButtonCustomProps {
     hasDelete ? : boolean;
 };
 
-export type ButtonProps = BaseAndHTMLProps<ButtonElementType> & ButtonCustomProps;
+export type ButtonProps = CommonAndHTMLProps<ButtonElementType> & ButtonCustomProps;

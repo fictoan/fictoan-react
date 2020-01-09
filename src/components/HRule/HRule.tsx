@@ -1,7 +1,7 @@
 import React, { HTMLProps } from "react";
 
 import { createClassName } from "../../utils/classNames";
-import { BaseComponent }   from "../BaseComponent/BaseComponent";
+import { Element }   from "../Element/Element";
 
 import { HRStyled }               from "./HRule.styled"
 import { HRProps, HRElementType } from "./constants"
@@ -22,8 +22,8 @@ export const HRule = ({ sideMargin, className, thick, slim, ...props }: HRProps)
     }
 
     return (
-        <BaseComponent<HRElementType>
-            Element={HRStyled}
+        <Element<HRElementType>
+            as={HRStyled}
             className={createClassName(classNames)}
             {...props}
         />

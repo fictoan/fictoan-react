@@ -1,11 +1,12 @@
-import { HTMLProps } from "react";
+import { HTMLProps, ElementType } from "react";
+
 import { RFTheme }   from "src/constants/Theme";
 
 export interface ThemeProps {
     theme ? : typeof RFTheme;
 }
 
-export interface BaseProps extends ThemeProps {
+export interface CommonProps extends ThemeProps {
     bgColor           ? : string;
     textColor         ? : string;
     hideOnMobile      ? : boolean;
@@ -30,4 +31,10 @@ export interface BaseProps extends ThemeProps {
     padding           ? : "none" | "fixed" | "tiny" | "small" | "medium" | "large" | "huge";
 }
 
-export interface BaseAndHTMLProps<T extends {}> extends BaseProps, Omit<HTMLProps<T>, "size"> { }
+export interface CommonAndHTMLProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "size"> { }
+
+export interface ElementProps extends CommonProps {
+    as: ElementType<any>;
+    className?: string;
+    baseClassName?: string;
+};

@@ -1,4 +1,4 @@
-import { BaseAndHTMLProps } from "../BaseComponent/constants";
+import { CommonAndHTMLProps } from "../Element/constants";
 
 export type TableElementType = HTMLTableElement;
 
@@ -9,4 +9,4 @@ export interface TableCustomProps {
     isFullWidth ? : boolean;
 }
 
-export type TableProps = BaseAndHTMLProps<TableElementType> & TableCustomProps;
+export type TableProps = CommonAndHTMLProps<TableElementType> & TableCustomProps;

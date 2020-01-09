@@ -1,14 +1,14 @@
 import React from "react";
 
-import { BaseComponent }    from "../BaseComponent/BaseComponent";
-import { BaseAndHTMLProps } from "../BaseComponent/constants";
+import { Element }    from "../Element/Element";
+import { CommonAndHTMLProps } from "../Element/constants";
 
 import { ContentWrapperStyled }      from "./ContentWrapper.styled";
 import { ContentWrapperElementType } from "./constants";
 
-export const ContentWrapper = (props: BaseAndHTMLProps<HTMLDivElement>) => (
-    <BaseComponent<ContentWrapperElementType>
-        Element={ContentWrapperStyled}
+export const ContentWrapper = (props: CommonAndHTMLProps<HTMLDivElement>) => (
+    <Element<ContentWrapperElementType>
+        as={ContentWrapperStyled}
         {...props}
     />
 );

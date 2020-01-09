@@ -8,7 +8,7 @@ import { InputFieldProps, InputFieldElementType } from "./constants";
 export const InputField = (props: InputFieldProps) => {
     return (
         <BaseInputComponent<InputFieldElementType>
-            Element={InputFieldStyled}
+            as={InputFieldStyled}
             placeholder=" "
             {...props}
         />

@@ -1,32 +1,30 @@
 import React from "react";
 
-import { BaseComponent } from "../../BaseComponent/BaseComponent";
+import { Element } from "../../Element/Element";
 
 import { SelectWrapperStyled, SelectStyled } from "./Select.styled";
 import { SelectElementType, OptionElementType, SelectProps, OptionProps } from "./constants";
 
 const Option = ({ name, ...props }: OptionProps) => {
-    return <BaseComponent<OptionElementType>
-            Element="option"
+    return <Element<OptionElementType>
+            as="option"
             {...props}
         >
             {name}
-        </BaseComponent>;
+        </Element>;
 };
 
-const Select = ({ fullWidth, className, options, ...props }: SelectProps) => {
+export const Select = ({ fullWidth, className, options, ...props }: SelectProps) => {
     return (
-        <BaseComponent<HTMLDivElement>
-            Element={SelectWrapperStyled}
+        <Element<HTMLDivElement>
+            as={SelectWrapperStyled}
             fullWidth={fullWidth}
             className={className}
         >
-            <BaseComponent<SelectElementType>
-                Element={SelectStyled}
+            <Element<SelectElementType>
+                as={SelectStyled}
                 {...props}
             />
-        </BaseComponent>
+        </Element>
     );
 };
-
-export default Select;

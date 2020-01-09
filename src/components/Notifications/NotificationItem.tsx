@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 
 import { createClassName } from "src/utils/classNames"
-import { BaseComponent } from "../BaseComponent/BaseComponent";
+import { Element } from "../Element/Element";
 
 import { NotificationsItemStyled } from "./Notifications.styled"
 import { NotificationItemProps, NotificationItemElementType } from "./constants";
@@ -18,8 +18,8 @@ export const NotificationItem = ({type, children, isDismissible, className, ...p
     }
 
     return (
-        <BaseComponent<NotificationItemElementType>
-            Element={NotificationsItemStyled}
+        <Element<NotificationItemElementType>
+            as={NotificationsItemStyled}
             className={createClassName(classNames)}
             {...props}
         >
@@ -30,6 +30,6 @@ export const NotificationItem = ({type, children, isDismissible, className, ...p
             {isDismissible && (
                 <div className="dismiss-button" />
             )}
-        </BaseComponent>
+        </Element>
     )
 };

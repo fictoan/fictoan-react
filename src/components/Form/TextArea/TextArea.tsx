@@ -7,7 +7,7 @@ import { TextAreaProps } from "./constants";
 const TextArea = (props: TextAreaProps) => {
     return (
         <BaseInputComponent<HTMLTextAreaElement>
-            Element="textarea"
+            as="textarea"
             baseClassName="ff-input"
             {...props}
         />

@@ -1,4 +1,4 @@
-import { BaseAndHTMLProps } from "../BaseComponent/constants";
+import { CommonAndHTMLProps } from "../Element/constants";
 
 export type SidebarWrapperElementType      = HTMLDivElement;
 export type SidebarHeaderElementType       = HTMLDivElement;
@@ -15,9 +15,9 @@ export interface SidebarItemTextCustomProps {
     linkText : string;
 }
 
-export type SidebarWrapperProps      = BaseAndHTMLProps<SidebarWrapperElementType> & SidebarWrapperCustomProps;
-export type SidebarHeaderProps       = BaseAndHTMLProps<SidebarHeaderElementType>;
-export type SidebarItemProps         = BaseAndHTMLProps<SidebarItemElementType>;
-export type SidebarItemTextProps     = BaseAndHTMLProps<SidebarItemTextElementType> & SidebarItemTextCustomProps;
-export type SidebarItemIconProps     = BaseAndHTMLProps<SidebarItemIconElementType>;
-export type SidebarSublinkGroupProps = BaseAndHTMLProps<SidebarSublinkGroupElementType>;
+export type SidebarWrapperProps      = CommonAndHTMLProps<SidebarWrapperElementType> & SidebarWrapperCustomProps;
+export type SidebarHeaderProps       = CommonAndHTMLProps<SidebarHeaderElementType>;
+export type SidebarItemProps         = CommonAndHTMLProps<SidebarItemElementType>;
+export type SidebarItemTextProps     = CommonAndHTMLProps<SidebarItemTextElementType> & SidebarItemTextCustomProps;
+export type SidebarItemIconProps     = CommonAndHTMLProps<SidebarItemIconElementType>;
+export type SidebarSublinkGroupProps = CommonAndHTMLProps<SidebarSublinkGroupElementType>;

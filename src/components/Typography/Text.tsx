@@ -1,7 +1,7 @@
 import React from "react";
 
 import { createClassName } from "src/utils/classNames";
-import { BaseComponent }   from "../BaseComponent/BaseComponent";
+import { Element }   from "../Element/Element";
 
 import { TextProps, TextElementType } from "./constants";
 
@@ -17,7 +17,7 @@ export const Text = ({ weight, size, className, ...props }: TextProps) => {
     }
 
     return (
-        <BaseComponent<TextElementType>
+        <Element<TextElementType>
             Element="p"
             className={createClassName(classNames)}
             {...props}

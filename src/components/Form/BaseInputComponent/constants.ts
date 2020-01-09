@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 
-import { BaseComponentProps } from "src/components/BaseComponent/BaseComponent";
+import { ElementProps } from "src/components/Element/constants";
 import { InputLabelProps } from "../InputLabel/constants";
 
 export interface InputIconProps {
@@ -11,7 +11,7 @@ export interface InputIconProps {
     invalid?:boolean;
 }
 
-export type BaseInputComponentProps = BaseComponentProps &
+export type BaseInputComponentProps = ElementProps &
     InputLabelProps &
     InputIconProps;
 

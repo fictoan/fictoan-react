@@ -1,4 +1,4 @@
-import { BaseAndHTMLProps } from "../BaseComponent/constants";
+import { CommonAndHTMLProps } from "../Element/constants";
 
 export type CardElementType = HTMLDivElement;
 
@@ -7,4 +7,4 @@ export interface CardCustomProps {
     shadow ? : "mild" | "soft" | "hard";
 }
 
-export type CardProps = BaseAndHTMLProps<CardElementType> & CardCustomProps;
+export type CardProps = CommonAndHTMLProps<CardElementType> & CardCustomProps;

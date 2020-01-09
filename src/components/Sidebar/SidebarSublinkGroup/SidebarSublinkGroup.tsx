@@ -1,13 +1,13 @@
 import React from "react";
 
-import { BaseComponent } from "../../BaseComponent/BaseComponent";
+import { Element } from "../../Element/Element";
 
 import { SidebarSublinkGroupStyled } from "./SidebarSublinkGroup.styled";
 import { SidebarSublinkGroupProps, SidebarSublinkGroupElementType } from "../constants";
 
 export const SidebarSublinkGroup = (props: SidebarSublinkGroupProps) => (
-    <BaseComponent<SidebarSublinkGroupElementType>
-        Element={SidebarSublinkGroupStyled}
+    <Element<SidebarSublinkGroupElementType>
+        as={SidebarSublinkGroupStyled}
         {...props}
     />
 );

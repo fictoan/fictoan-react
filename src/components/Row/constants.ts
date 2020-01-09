@@ -1,4 +1,4 @@
-import { BaseAndHTMLProps } from "../BaseComponent/constants";
+import { CommonAndHTMLProps } from "../Element/constants";
 
 export type RowElementType = HTMLDivElement;
 
@@ -11,4 +11,4 @@ export interface RowCustomProps {
     retainLayoutAlways   ? : boolean;
 }
 
-export type RowProps = BaseAndHTMLProps<RowElementType> & RowCustomProps;
+export type RowProps = CommonAndHTMLProps<RowElementType> & RowCustomProps;

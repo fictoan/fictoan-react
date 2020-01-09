@@ -1,11 +1,11 @@
 import React, { HTMLProps } from "react";
 
-import { BaseComponent } from "../../BaseComponent/BaseComponent";
+import { Element } from "../../Element/Element";
 
 const FileUpload = (props: HTMLProps<HTMLDivElement>) => (
     // @ts-ignore
-    <BaseComponent<HTMLDivElement>
-        Element="input"
+    <Element<HTMLDivElement>
+        as="input"
         baseClassName="ff-input"
         type="file"
         {...props}

@@ -1,13 +1,13 @@
 import React from "react";
 
-import { BaseComponent } from "../../BaseComponent/BaseComponent";
+import { Element } from "../../Element/Element";
 
 import { FormItemJointGroupStyled } from "./FormItemJointGroup.styled"
 import { FormItemJointGroupProps, FormItemJointGroupElementType } from "../constants"
 
 export const FormItemJointGroup = (props: FormItemJointGroupProps) => (
-    <BaseComponent<FormItemJointGroupElementType>
-        Element={FormItemJointGroupStyled}
+    <Element<FormItemJointGroupElementType>
+        as={FormItemJointGroupStyled}
         {...props}
     />
 );

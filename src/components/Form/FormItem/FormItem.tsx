@@ -1,13 +1,13 @@
 import React from "react";
 
-import { BaseComponent } from "../../BaseComponent/BaseComponent";
+import { Element } from "../../Element/Element";
 
 import { FormItemStyled } from "./FormItem.styled";
 import { FormItemProps, FormItemElementType } from "../constants";
 
 export const FormItem = (props: FormItemProps) => (
-    <BaseComponent<FormItemElementType>
-        Element={FormItemStyled}
+    <Element<FormItemElementType>
+        as={FormItemStyled}
         {...props}
     />
 );

@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 
 import { createClassName } from "../../utils/classNames"
-import { BaseComponent }   from "../BaseComponent/BaseComponent";
+import { Element }   from "../Element/Element";
 
 import { NotificationsWrapperStyled } from "./Notifications.styled"
 import { NotificationWrapperProps, NotificationWrapperElementType } from "./constants";
@@ -18,8 +18,8 @@ export const NotificationWrapper = ({ position, anchor, className, ...props }: N
     }
 
     return (
-        <BaseComponent<NotificationWrapperElementType>
-            Element={NotificationsWrapperStyled}
+        <Element<NotificationWrapperElementType>
+            as={NotificationsWrapperStyled}
             className={createClassName(classNames)}
             {...props}
         />

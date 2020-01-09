@@ -1,4 +1,4 @@
-import { BaseComponent } from "./components/BaseComponent/BaseComponent";
+import { Element } from "./components/Element/Element";
 
 import { Row }     from "./components/Row/Row";
 import { Portion } from "./components/Portion/Portion";
@@ -28,7 +28,7 @@ import { FormItemJointGroup } from "./components/Form/FormItemGroup/FormItemJoin
 import { InputField }  from "./components/Form/InputField/InputField";
 import TextArea    from "./components/Form/TextArea/TextArea";
 import InputLabel  from "./components/Form/InputLabel/InputLabel";
-import Select      from "./components/Form/Select/Select";
+import { Select }      from "./components/Form/Select/Select";
 import FileUpload  from "./components/Form/FileUpload/FileUpload";
 import RadioButton from "./components/Form/RadioGroup/RadioButton";
 import RadioGroup  from "./components/Form/RadioGroup/RadioGroup";
@@ -54,7 +54,7 @@ import { ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
 import { baseColors } from "./constants/BaseColors";
 
 export {
-    BaseComponent,
+    Element,
     Row,
     Portion,
     Heading,
