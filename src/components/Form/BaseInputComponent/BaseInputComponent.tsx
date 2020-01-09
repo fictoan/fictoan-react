@@ -17,7 +17,7 @@ export const BaseInputComponent = <K extends {}>({
     iconRight,
     validateThis,
     ...inputProps
-}: HTMLProps<K> & BaseInputComponentProps) => {
+}: BaseInputComponentProps<K>) => {
     const classNames = [className];
 
     if (iconLeft) {

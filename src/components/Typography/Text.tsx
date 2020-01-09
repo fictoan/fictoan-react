@@ -18,7 +18,7 @@ export const Text = ({ weight, size, className, ...props }: TextProps) => {
 
     return (
         <Element<TextElementType>
-            Element="p"
+            as="p"
             className={createClassName(classNames)}
             {...props}
         />

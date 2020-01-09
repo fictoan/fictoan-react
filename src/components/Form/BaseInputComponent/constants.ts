@@ -11,7 +11,5 @@ export interface InputIconProps {
     invalid?:boolean;
 }
 
-export type BaseInputComponentProps = ElementProps &
-    InputLabelProps &
-    InputIconProps;
+export type BaseInputComponentProps<K extends {}> = ElementProps<K> & InputLabelProps & InputIconProps;
 

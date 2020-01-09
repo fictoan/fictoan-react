@@ -32,7 +32,7 @@ export const Element = <K extends {}>({
     paddingLeft,
     padding,
     ...props
-}: HTMLProps<K> & ElementProps) => (
+}: ElementProps<K>) => (
         <Component {...props} className={
             createClassName([
                 baseClassName,

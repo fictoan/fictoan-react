@@ -33,8 +33,8 @@ export interface CommonProps extends ThemeProps {
 
 export interface CommonAndHTMLProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "size"> { }
 
-export interface ElementProps extends CommonProps {
-    as: ElementType<any>;
+export interface ElementProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as"> {
+    as: any;
     className?: string;
     baseClassName?: string;
 };
