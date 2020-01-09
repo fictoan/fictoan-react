@@ -2,27 +2,20 @@ import React, { PureComponent } from "react";
 
 import { Element } from "../../Element/Element";
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
-import { CommonAndHTMLProps } from "../../Element/constants";
 
-interface CheckBoxProps extends CommonAndHTMLProps<HTMLDivElement> {
-    label?: string
+import { CheckBoxStyled } from "./CheckBox.styled";
+import { CheckboxProps, CheckboxElementType } from "./constants";
+
+export const CheckBox = (props: CheckboxProps) => {
+    return (
+        <Element<CheckboxElementType>
+            as={CheckBoxStyled}
+        >
+            <BaseInputComponent
+                as="input"
+                type="checkbox"
+                {...props}
+            />
+        </Element>
+    );
 }
-
-class CheckBox extends PureComponent<CheckBoxProps> {
-    render() {
-         return (
-            <Element<HTMLDivElement>
-                as="div"
-                baseClassName="ff-checkbox"
-            >
-                <BaseInputComponent
-                    as="input"
-                    type="checkbox"
-                    {...this.props}
-                />
-            </Element>
-        )
-    }
-}
-
-export default CheckBox;

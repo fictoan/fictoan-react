@@ -1,28 +1,21 @@
-import React, { PureComponent } from "react";
+import React from "react";
 
 import { Element } from "../../Element/Element";
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
-import { CommonAndHTMLProps } from "../../Element/constants";
 
-interface SwitchProps extends CommonAndHTMLProps<HTMLDivElement> {
-    label?: string
+import { SwitchStyled } from "./CheckBox.styled";
+import { SwitchProps, SwitchElementType } from "./constants";
+
+export const Switch = (props: SwitchProps) => {
+    return (
+        <Element<SwitchElementType>
+            as={SwitchStyled}
+        >
+            <BaseInputComponent
+                as="input"
+                type="checkbox"
+                {...props}
+            />
+        </Element>
+    );
 }
-
-class Switch extends PureComponent<SwitchProps> {
-    render() {
-        return (
-            <Element<HTMLDivElement>
-                as="div"
-                baseClassName="ff-switch"
-            >
-                <BaseInputComponent
-                    as="input"
-                    type="checkbox"
-                    {...this.props}
-                />
-            </Element>
-        )
-    }
-}
-
-export default Switch;

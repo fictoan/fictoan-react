@@ -2,16 +2,14 @@ import React from "react";
 
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 
-import { TextAreaProps } from "./constants";
+import { TextareaStyled } from "./Textarea.styled";
+import { TextareaProps, TextareaElementType } from "./constants";
 
-const TextArea = (props: TextAreaProps) => {
+export const Textarea = (props: TextareaProps) => {
     return (
-        <BaseInputComponent<HTMLTextAreaElement>
-            as="textarea"
-            baseClassName="ff-input"
+        <BaseInputComponent<TextareaElementType>
+            as={TextareaStyled}
             {...props}
         />
     );
 };
-
-export default TextArea;

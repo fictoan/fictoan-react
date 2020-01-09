@@ -1,23 +1,3 @@
-// Power function - for setting heading sizes  ================================
-// @function pow($number, $exponent) {
-//     $value: 1;
-
-//     @if $exponent > 0 {
-//         @for $i from 1 through $exponent {
-//             $value: $value * $number;
-//         }
-//     } @else if $exponent < 0 {
-//         @for $i from 1 through - $exponent {
-//             $value: $value / $number;
-//         }
-//     }
-
-//     @return $value;
-// }
-
-//  Colours  ==================================================================
-
-//  Neutrals
 export const baseColors = {
     "black" : "hsl(   0,   0%,   0%)",
     "white" : "hsl(   0,   0%, 100%)",

@@ -4,16 +4,15 @@ import { Element } from "../../Element/Element";
 
 import { InputLabelProps } from "./constants";
 
-function InputLabel({
+export const InputLabel = ({
     label,
     helpText,
     errorText,
     ...props
-}: InputLabelProps) {
+}: InputLabelProps) => {
     return (
         <Element<HTMLLabelElement>
             as="label"
-            baseClassName="ff-input-label"
             {...props}
         >
             {label}
@@ -28,5 +27,3 @@ function InputLabel({
         </Element>
     );
 }
-
-export default InputLabel;

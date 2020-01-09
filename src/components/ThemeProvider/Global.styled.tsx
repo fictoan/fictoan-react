@@ -7,6 +7,60 @@ import { GlobalStyledProps } from "./constants";
 export const GlobalStyled = createGlobalStyle`
     ${normalize}
 
+    // Layout
+    html,
+    body {
+        display        : flex;
+        min-height     : 100vh;
+        flex-direction : column;
+    }
+
+    main   { flex : 1 0 auto; }
+    footer { flex-shrink : 0; }
+
+    // Responsive Classes
+    //  Desktop  ==================================================================
+    .show-only-on-mobile  { display : none !important; }
+    .show-only-on-tab-pt  { display : none !important; }
+    .show-only-on-tab-ls  { display : none !important; }
+    .show-only-on-desktop { display : block !important; }
+
+    .hide-on-desktop     { display : none !important; }
+
+
+    //  Mobile  ===================================================================
+    @media all and (max-width : 600px) {
+        .show-only-on-desktop { display : none !important; }
+        .hide-on-mobile       { display : none !important; }
+        .show-only-on-mobile  { display : block !important; }
+
+        .center-on-mobile,
+        .centre-on-mobile { text-align : center !important; }
+    }
+
+
+    //  Tablet portrait  ==========================================================
+    @media all and (min-width : 601px) and (max-width : 900px) {
+        .show-only-on-desktop { display : none !important; }
+        .hide-on-tab-pt       { display : none !important; }
+        .show-only-on-tab-pt  { display : block !important; }
+
+        .center-on-tab-pt,
+        .centre-on-tab-pt { text-align : center !important; }
+    }
+
+
+    //  Tablet landscape  =========================================================
+    @media all and (min-width : 901px) and (max-width : 1200px) {
+        .show-only-on-desktop { display : none !important; }
+        .hide-on-tab-ls       { display : none !important; }
+        .show-only-on-tab-ls  { display : block !important; }
+
+        .center-on-tab-ls,
+        .centre-on-tab-ls { text-align : center !important; }
+    }
+
+
     body {
         font-family      : ${(props: GlobalStyledProps) => props.theme};
         font-size        : ${(props: GlobalStyledProps) => props.theme.body}em;
