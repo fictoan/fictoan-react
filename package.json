@@ -1,7 +1,7 @@
 {
     "name": "reactised-fictoan",
     "version": "0.20.0",
-    "private": true,
+    "private": false,
     "main": "dist/index.js",
     "module": "dist/index.es.js",
     "jsnext:main": "dist/index.es.js",
@@ -10,11 +10,16 @@
         "node": ">=8",
         "npm": ">=5"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sujan-s/reactised-fictoan.git"
+    },
     "scripts": {
         "start": "rollup -c -w",
         "build": "rollup -c",
-        "predeploy": "yarn build",
-        "deploy": "gh-pages -d dist -e dist && gh-pages -a -d . -s ./package.json"
+        "predeploy": "$npm_execpath run build",
+        "deploy": "gh-pages -d dist -e dist && gh-pages -a -d . -s ./package.json",
+        "deploy-and-publish": "$npm_execpath run deploy && git checkout gh-pages && $npm_execpath run publish"
     },
     "eslintConfig": {
         "extends": "react-app"
