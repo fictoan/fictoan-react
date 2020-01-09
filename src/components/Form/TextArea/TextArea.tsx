@@ -2,7 +2,7 @@ import React from "react";
 
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 
-import { TextAreaProps } from "./typings";
+import { TextAreaProps } from "./constants";
 
 const TextArea = (props: TextAreaProps) => {
     return (

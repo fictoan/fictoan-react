@@ -2,7 +2,7 @@ import React, { HTMLProps } from "react";
 
 import { createClassName } from "../../../utils/classNames";
 import { BaseComponent } from "../../BaseComponent/BaseComponent";
-import { BaseInputComponentProps } from "./typings";
+import { BaseInputComponentProps } from "./constants";
 
 import InputLabel from "../InputLabel/InputLabel";
 

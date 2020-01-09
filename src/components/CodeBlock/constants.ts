@@ -1,6 +1,6 @@
 import { Language } from "prism-react-renderer";
 
-import { BaseAndHTMLProps } from "../BaseComponent/typings";
+import { BaseAndHTMLProps } from "../BaseComponent/constants";
 
 export type  CodeBlockElementType = HTMLPreElement;
 

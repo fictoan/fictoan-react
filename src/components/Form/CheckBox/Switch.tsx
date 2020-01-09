@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 
 import { BaseComponent } from "../../BaseComponent/BaseComponent";
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
-import { BaseAndHTMLProps } from "../../BaseComponent/typings";
+import { BaseAndHTMLProps } from "../../BaseComponent/constants";
 
 interface SwitchProps extends BaseAndHTMLProps<HTMLDivElement> {
     label?: string

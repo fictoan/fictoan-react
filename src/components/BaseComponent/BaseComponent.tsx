@@ -2,7 +2,7 @@ import React, { HTMLProps, ElementType } from "react";
 
 import { createClassName } from "src/utils/classNames";
 
-import { BaseProps } from "./typings";
+import { BaseProps } from "./constants";
 
 export interface BaseComponentProps extends BaseProps {
     Element: ElementType<any>;

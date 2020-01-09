@@ -1,32 +1,30 @@
-import React, { HTMLProps } from "react";
+import React from "react";
 
 import { BaseComponent } from "../../BaseComponent/BaseComponent";
-import { createClassName } from "../../../utils/classNames";
 
-type SelectProps = HTMLProps<HTMLSelectElement>;
+import { SelectWrapperStyled, SelectStyled } from "./Select.styled";
+import { SelectElementType, OptionElementType, SelectProps, OptionProps } from "./constants";
 
-interface Props extends SelectProps {
-    options: HTMLProps<HTMLOptionElement>[];
-    fullWidth?: boolean;
-}
-
-const Option = ({ name, ...props }: HTMLProps<HTMLOptionElement>) => {
-    return <option {...props}>{name}</option>;
+const Option = ({ name, ...props }: OptionProps) => {
+    return <BaseComponent<OptionElementType>
+            Element="option"
+            {...props}
+        >
+            {name}
+        </BaseComponent>;
 };
 
-const Select = ({ fullWidth, className, options, ...props }: Props) => {
+const Select = ({ fullWidth, className, options, ...props }: SelectProps) => {
     return (
         <BaseComponent<HTMLDivElement>
-            Element="div"
+            Element={SelectWrapperStyled}
             fullWidth={fullWidth}
             className={className}
-            baseClassName="ff-select"
         >
-            <select {...props}>
-                {options.map((option, i) => {
-                    return <Option key={i} {...option} />;
-                })}
-            </select>
+            <BaseComponent<SelectElementType>
+                Element={SelectStyled}
+                {...props}
+            />
         </BaseComponent>
     );
 };

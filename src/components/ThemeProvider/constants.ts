@@ -1,4 +1,4 @@
-import { BaseAndHTMLProps, ThemeProps } from "../BaseComponent/typings";
+import { BaseAndHTMLProps, ThemeProps } from "../BaseComponent/constants";
 
 export type ThemeProviderElementType = HTMLDivElement;
 

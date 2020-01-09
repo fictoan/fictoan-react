@@ -1,4 +1,4 @@
-import { BaseAndHTMLProps } from "../BaseComponent/typings";
+import { BaseAndHTMLProps } from "../BaseComponent/constants";
 
 export type ButtonElementType = HTMLButtonElement;
 

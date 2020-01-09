@@ -1,7 +1,7 @@
 import React from "react";
 
 import { BaseComponent }    from "../BaseComponent/BaseComponent";
-import { BaseAndHTMLProps } from "../BaseComponent/typings";
+import { BaseAndHTMLProps } from "../BaseComponent/constants";
 
 import { ContentWrapperStyled }      from "./ContentWrapper.styled";
 import { ContentWrapperElementType } from "./constants";

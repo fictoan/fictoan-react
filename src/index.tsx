@@ -25,7 +25,7 @@ import { FormWrapper }        from "./components/Form/FormWrapper/FormWrapper";
 import { FormItem }           from "./components/Form/FormItem/FormItem";
 import { FormItemGroup }      from "./components/Form/FormItemGroup/FormItemGroup";
 import { FormItemJointGroup } from "./components/Form/FormItemGroup/FormItemJointGroup";
-import InputField  from "./components/Form/InputField/InputField";
+import { InputField }  from "./components/Form/InputField/InputField";
 import TextArea    from "./components/Form/TextArea/TextArea";
 import InputLabel  from "./components/Form/InputLabel/InputLabel";
 import Select      from "./components/Form/Select/Select";

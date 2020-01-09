@@ -1,8 +1,8 @@
-import React, { HTMLProps } from "react";
+import React from "react";
 
 import { BaseComponent } from "../../BaseComponent/BaseComponent";
 
-import { InputLabelProps } from "./typings";
+import { InputLabelProps } from "./constants";
 
 function InputLabel({
     label,
