@@ -18,8 +18,8 @@
     "scripts": {
         "start": "rollup -c -w",
         "build": "rollup -c",
-        "predeploy": "$npm_execpath run build && gh-pages -d dist -e dist && gh-pages -a -d . -s ./package.json",
-        "deploy": "git checkout gh-pages && $npm_execpath run publish"
+        "predeploy": "$npm_execpath run build && gh-pages -d dist -e dist && gh-pages -a -d . -s ./package.json -s ./.gitignore -s ./README.md",
+        "deploy": "git checkout gh-pages && git pull origin gh-pages && $npm_execpath run publish"
     },
     "eslintConfig": {
         "extends": "react-app"

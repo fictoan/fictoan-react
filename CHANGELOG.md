@@ -1,2 +1,2 @@
-# v0.4.2
-- Added `loading` prop in `Button` component.
+# v0.20.0
+- Initial release
