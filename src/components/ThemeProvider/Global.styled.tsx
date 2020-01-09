@@ -7,6 +7,19 @@ import { GlobalStyledProps } from "./constants";
 export const GlobalStyled = createGlobalStyle`
     ${normalize}
 
+    /*  Colour of highlight and text colour
+    - for Firefox browsers  */
+    ::-moz-selection {
+        background : $textHighlightBG;
+        color      : $textHighlightColor;
+    }
+    //  Same thing - for Webkit browsers
+    ::selection {
+        background : $textHighlightBG;
+        color      : $textHighlightColor;
+    }
+
+
     // Layout
     html,
     body {

@@ -9,6 +9,9 @@ export interface ThemeProps {
 export interface CommonProps extends ThemeProps {
     bgColor           ? : string;
     textColor         ? : string;
+    borderColor       ? : string;
+    fillColor         ? : string;
+    strokeColor       ? : string;
     hideOnMobile      ? : boolean;
     showOnlyOnMobile  ? : boolean;
     hideOnTabPT       ? : boolean;
