@@ -1,7 +1,7 @@
 import React from "react";
 
 import { createClassName } from "src/utils/classNames";
-import { BaseComponent } from "../../BaseComponent/BaseComponent";
+import { Element } from "../../Element/Element";
 
 import { SidebarWrapperStyled } from "./SidebarWrapper.styled"
 import { SidebarWrapperProps, SidebarWrapperElementType } from "../constants"
@@ -14,8 +14,8 @@ export const SidebarWrapper = ({collapsed, className, ...props}: SidebarWrapperP
     }
 
     return (
-        <BaseComponent<SidebarWrapperElementType>
-            Element={SidebarWrapperStyled}
+        <Element<SidebarWrapperElementType>
+            as={SidebarWrapperStyled}
             className={createClassName(classNames)}
             {...props}
         />

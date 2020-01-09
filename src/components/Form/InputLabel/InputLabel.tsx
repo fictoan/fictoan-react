@@ -1,8 +1,8 @@
-import React, { HTMLProps } from "react";
+import React from "react";
 
-import { BaseComponent } from "../../BaseComponent/BaseComponent";
+import { Element } from "../../Element/Element";
 
-import { InputLabelProps } from "./typings";
+import { InputLabelProps } from "./constants";
 
 function InputLabel({
     label,
@@ -11,8 +11,8 @@ function InputLabel({
     ...props
 }: InputLabelProps) {
     return (
-        <BaseComponent<HTMLLabelElement>
-            Element="label"
+        <Element<HTMLLabelElement>
+            as="label"
             baseClassName="ff-input-label"
             {...props}
         >
@@ -25,7 +25,7 @@ function InputLabel({
             {errorText && errorText.length > 0 && (
                 <span className="ff-input-error">{errorText}</span>
             )}
-        </BaseComponent>
+        </Element>
     );
 }
 

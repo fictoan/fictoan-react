@@ -1,7 +1,7 @@
 import React from "react";
 
 import { createClassName } from "src/utils/classNames"
-import { BaseComponent } from "../BaseComponent/BaseComponent";
+import { Element } from "../Element/Element";
 
 import { ButtonStyled } from "./Button.styled"
 import { ButtonProps, ButtonElementType } from "./constants";
@@ -38,12 +38,12 @@ export const Button = ({ value, size, shape, shadow, border, className, isLoadin
     }
 
     return (
-        <BaseComponent<ButtonElementType>
-            Element={ButtonStyled}
+        <Element<ButtonElementType>
+            as={ButtonStyled}
             className={createClassName(classNames)}
             {...props}
         >
             {value}
-        </BaseComponent>
+        </Element>
     );
 };

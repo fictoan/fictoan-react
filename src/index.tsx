@@ -1,4 +1,4 @@
-import { BaseComponent } from "./components/BaseComponent/BaseComponent";
+import { Element } from "./components/Element/Element";
 
 import { Row }     from "./components/Row/Row";
 import { Portion } from "./components/Portion/Portion";
@@ -21,13 +21,14 @@ import { HRule } from "./components/HRule/HRule";
 
 import { Button } from "./components/Button/Button";
 
-import Form        from "./components/Form/Form";
-import FormUnit    from "./components/Form/FormUnit/FormUnit";
-import FormGroup   from "./components/Form/FormGroup/FormGroup";
-import InputField  from "./components/Form/InputField/InputField";
+import { FormWrapper }        from "./components/Form/FormWrapper/FormWrapper";
+import { FormItem }           from "./components/Form/FormItem/FormItem";
+import { FormItemGroup }      from "./components/Form/FormItemGroup/FormItemGroup";
+import { FormItemJointGroup } from "./components/Form/FormItemGroup/FormItemJointGroup";
+import { InputField }  from "./components/Form/InputField/InputField";
 import TextArea    from "./components/Form/TextArea/TextArea";
 import InputLabel  from "./components/Form/InputLabel/InputLabel";
-import Select      from "./components/Form/Select/Select";
+import { Select }      from "./components/Form/Select/Select";
 import FileUpload  from "./components/Form/FileUpload/FileUpload";
 import RadioButton from "./components/Form/RadioGroup/RadioButton";
 import RadioGroup  from "./components/Form/RadioGroup/RadioGroup";
@@ -53,7 +54,7 @@ import { ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
 import { baseColors } from "./constants/BaseColors";
 
 export {
-    BaseComponent,
+    Element,
     Row,
     Portion,
     Heading,
@@ -67,9 +68,10 @@ export {
     SidebarSublinkGroup,
     SidebarWrapper,
     ContentWrapper,
-    Form,
-    FormUnit,
-    FormGroup,
+    FormWrapper,
+    FormItem,
+    FormItemGroup,
+    FormItemJointGroup,
     InputField,
     TextArea,
     Select,

@@ -1,13 +1,13 @@
 import React, { HTMLProps } from "react";
 
 import { createClassName } from "../../../utils/classNames";
-import { BaseComponent } from "../../BaseComponent/BaseComponent";
-import { BaseInputComponentProps } from "./typings";
+import { Element } from "../../Element/Element";
+import { BaseInputComponentProps } from "./constants";
 
 import InputLabel from "../InputLabel/InputLabel";
 
 export const BaseInputComponent = <K extends {}>({
-    Element,
+    as: Element,
     baseClassName,
     className,
     label,
@@ -17,7 +17,7 @@ export const BaseInputComponent = <K extends {}>({
     iconRight,
     validateThis,
     ...inputProps
-}: HTMLProps<K> & BaseInputComponentProps) => {
+}: BaseInputComponentProps<K>) => {
     const classNames = [className];
 
     if (iconLeft) {
@@ -34,8 +34,8 @@ export const BaseInputComponent = <K extends {}>({
 
     return (
         <>
-            <BaseComponent<HTMLInputElement>
-                Element={Element}
+            <Element<HTMLInputElement>
+                as={Element}
                 baseClassName={baseClassName}
                 className={createClassName(classNames)}
                 {...inputProps}

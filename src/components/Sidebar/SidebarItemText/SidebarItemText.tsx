@@ -1,15 +1,15 @@
 import React from "react";
 
-import { BaseComponent } from "../../BaseComponent/BaseComponent";
+import { Element } from "../../Element/Element";
 
 import { SidebarItemTextStyled } from "../SidebarItemText/SidebarItemText.styled";
 import { SidebarItemTextProps, SidebarItemTextElementType } from "../constants";
 
 export const SidebarItemText = ({ linkText, ...props }: SidebarItemTextProps) => (
-    <BaseComponent<SidebarItemTextElementType>
-        Element={SidebarItemTextStyled}
+    <Element<SidebarItemTextElementType>
+        as={SidebarItemTextStyled}
         {...props}
     >
         {linkText}
-    </BaseComponent>
+    </Element>
 );

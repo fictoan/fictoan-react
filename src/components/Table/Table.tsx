@@ -1,7 +1,7 @@
 import React, { HTMLProps } from "react";
 
 import { createClassName } from "src/utils/classNames";
-import { BaseComponent }   from "../BaseComponent/BaseComponent";
+import { Element }   from "../Element/Element";
 
 import { TableStyled } from "./Table.styled";
 import { TableProps, TableElementType } from "./constants"
@@ -25,8 +25,8 @@ export const Table = ({ bordersFor, isStriped, isHoverable, isFullWidth, classNa
         classNames.push("full-width");
     }
 
-    return <BaseComponent<TableElementType>
-        Element={TableStyled}
+    return <Element<TableElementType>
+        as={TableStyled}
         className={createClassName(classNames)}
         {...props}
     />

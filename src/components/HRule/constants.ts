@@ -1,4 +1,4 @@
-import { BaseAndHTMLProps } from "../BaseComponent/typings";
+import { CommonAndHTMLProps } from "../Element/constants";
 
 export type HRElementType = "HTMLHRElement";
 
@@ -8,4 +8,4 @@ export interface HRCustomProps {
     thick      ? : boolean;
 }
 
-export type HRProps = BaseAndHTMLProps<HRElementType> & HRCustomProps;
+export type HRProps = CommonAndHTMLProps<HRElementType> & HRCustomProps;

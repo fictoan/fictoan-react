@@ -1,4 +1,4 @@
-import { BaseAndHTMLProps } from "../BaseComponent/typings";
+import { CommonAndHTMLProps } from "../Element/constants";
 
 export type PortionElementType = HTMLDivElement;
 
@@ -9,4 +9,4 @@ export interface PortionCustomProps {
     mobileSpan  ? : string;
 }
 
-export type PortionProps = BaseAndHTMLProps<PortionElementType> & PortionCustomProps;
+export type PortionProps = CommonAndHTMLProps<PortionElementType> & PortionCustomProps;

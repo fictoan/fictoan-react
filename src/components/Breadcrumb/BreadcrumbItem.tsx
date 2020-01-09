@@ -1,14 +1,14 @@
 import React from "react";
 
-import { BaseComponent }   from "../BaseComponent/BaseComponent";
+import { Element }   from "../Element/Element";
 
 import { BreadcrumbItemStyled } from "./Breadcrumb.styled";
 import { BreadcrumbProps, BreadcrumbItemElementType } from "./constants";
 
 export const BreadcrumbItem = ({ ...props }: BreadcrumbProps) => {
     return (
-        <BaseComponent<BreadcrumbItemElementType>
-            Element={BreadcrumbItemStyled}
+        <Element<BreadcrumbItemElementType>
+            as={BreadcrumbItemStyled}
             {...props}
         />
     );

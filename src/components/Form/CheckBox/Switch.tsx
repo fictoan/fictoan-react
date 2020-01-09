@@ -1,26 +1,26 @@
 import React, { PureComponent } from "react";
 
-import { BaseComponent } from "../../BaseComponent/BaseComponent";
+import { Element } from "../../Element/Element";
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
-import { BaseAndHTMLProps } from "../../BaseComponent/typings";
+import { CommonAndHTMLProps } from "../../Element/constants";
 
-interface SwitchProps extends BaseAndHTMLProps<HTMLDivElement> {
+interface SwitchProps extends CommonAndHTMLProps<HTMLDivElement> {
     label?: string
 }
 
 class Switch extends PureComponent<SwitchProps> {
     render() {
         return (
-            <BaseComponent<HTMLDivElement>
-                Element="div"
+            <Element<HTMLDivElement>
+                as="div"
                 baseClassName="ff-switch"
             >
                 <BaseInputComponent
-                    Element="input"
+                    as="input"
                     type="checkbox"
                     {...this.props}
                 />
-            </BaseComponent>
+            </Element>
         )
     }
 }

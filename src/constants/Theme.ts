@@ -25,13 +25,13 @@ export const RFTheme = {
         paras : {
             color      : baseColors.grey,
             weight     : 400,
-            lineHeight : 1.6,
+            lineHeight : 1.64,
         },
 
         headings : {
             color      : baseColors.grey,
             weight     : 600,
-            lineHeight : 1.6
+            lineHeight : 1.24
         },
 
         links : {

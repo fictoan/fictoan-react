@@ -1,7 +1,7 @@
 import React from "react";
 
 import { createClassName } from "src/utils/classNames"
-import { BaseComponent }   from "../BaseComponent/BaseComponent";
+import { Element }   from "../Element/Element";
 
 import { CardStyled } from "./Card.styled";
 import { CardProps, CardElementType } from "./constants";
@@ -18,8 +18,8 @@ export const Card = ({ shadow, shape, className, ...props }: CardProps) => {
     }
 
     return (
-        <BaseComponent<CardElementType>
-            Element={CardStyled}
+        <Element<CardElementType>
+            as={CardStyled}
             className={createClassName(classNames)}
             {...props}
         />

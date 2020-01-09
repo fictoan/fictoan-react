@@ -1,4 +1,4 @@
-import { BaseAndHTMLProps } from "../BaseComponent/typings";
+import { CommonAndHTMLProps } from "../Element/constants";
 
 export type NotificationWrapperElementType = HTMLDivElement;
 export type NotificationItemElementType    = HTMLDivElement;
@@ -13,5 +13,5 @@ export interface NotificationItemCustomProps {
     isDismissible ? : boolean;
 }
 
-export type NotificationWrapperProps = BaseAndHTMLProps<NotificationWrapperElementType> & NotificationWrapperCustomProps;
-export type NotificationItemProps    = BaseAndHTMLProps<NotificationItemElementType> & NotificationItemCustomProps;
+export type NotificationWrapperProps = CommonAndHTMLProps<NotificationWrapperElementType> & NotificationWrapperCustomProps;
+export type NotificationItemProps    = CommonAndHTMLProps<NotificationItemElementType> & NotificationItemCustomProps;

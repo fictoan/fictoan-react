@@ -1,7 +1,7 @@
 import React from "react";
 
 import { createClassName } from "src/utils/classNames";
-import { BaseComponent }   from "../BaseComponent/BaseComponent";
+import { Element }   from "../Element/Element";
 
 import { InfoPanelStyled }                      from "./InfoPanel.styled"
 import { InfoPanelProps, InfoPanelElementType } from "./constants";
@@ -17,8 +17,8 @@ export const InfoPanel = ({ open, width, className, ...props }: InfoPanelProps) 
         classNames.push(width);
     }
 
-    return <BaseComponent<InfoPanelElementType>
-        Element={InfoPanelStyled}
+    return <Element<InfoPanelElementType>
+        as={InfoPanelStyled}
         className={createClassName(classNames)}
         {...props}
     />

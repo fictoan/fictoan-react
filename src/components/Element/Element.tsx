@@ -1,17 +1,11 @@
-import React, { HTMLProps, ElementType } from "react";
+import React, { HTMLProps } from "react";
 
 import { createClassName } from "src/utils/classNames";
 
-import { BaseProps } from "./typings";
+import { ElementProps } from "./constants";
 
-export interface BaseComponentProps extends BaseProps {
-    Element: ElementType<any>;
-    className?: string;
-    baseClassName?: string;
-};
-
-export const BaseComponent = <K extends {}>({
-    Element,
+export const Element = <K extends {}>({
+    as: Component,
     baseClassName,
     className,
     size,
@@ -38,8 +32,8 @@ export const BaseComponent = <K extends {}>({
     paddingLeft,
     padding,
     ...props
-}: HTMLProps<K> & BaseComponentProps) => (
-        <Element {...props} className={
+}: ElementProps<K>) => (
+        <Component {...props} className={
             createClassName([
                 baseClassName,
                 className,
