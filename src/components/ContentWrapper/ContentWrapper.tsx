@@ -6,7 +6,7 @@ import { ContentWrapperStyled } from "./ContentWrapper.styled";
 import { ContentWrapperProps, ContentWrapperElementType } from "./constants";
 
 export const ContentWrapper = ({...props}: ContentWrapperProps) => {
-    return(
+    return (
         <Element<ContentWrapperElementType>
             as={ContentWrapperStyled}
             {...props}
