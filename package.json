@@ -18,8 +18,8 @@
     "scripts": {
         "start": "rollup -c -w",
         "build": "rollup -c",
-        "predeploy": "$npm_execpath run build && gh-pages -d dist -e dist && gh-pages -a -d . -s ./package.json -st ./.gitignore -s ./README.md",
-        "deploy": "git checkout gh-pages && git pull origin gh-pages && mv node_modules ../rf-nm && mv .rpt2_cache ../rf-ec && $npm_execpath publish && git checkout master && mv ../rf-nm ./node_modules && mv ../rf-ec ./.rpt2_cache"
+        "predeploy": "$npm_execpath run build",
+        "deploy": "$npm_execpath publish"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -35,7 +35,6 @@
         "@types/react": "^16.8.23",
         "@types/react-dom": "^16.8.4",
         "@types/styled-components": "^4.4.1",
-        "gh-pages": "^2.0.1",
         "rollup": "^1.15.6",
         "rollup-plugin-babel": "^4.3.2",
         "rollup-plugin-commonjs": "^10.0.0",
@@ -47,9 +46,7 @@
         "tslib": "^1.10.0",
         "typescript": "^3.5.3"
     },
-    "files": [
-        "dist"
-    ],
+    "files": ["dist"],
     "peerDependencies": {
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
