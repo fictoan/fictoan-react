@@ -26,7 +26,7 @@ export const InputFieldStyled = styled.input`
 
     &[type=password] { letter-spacing : 4px; }
 
-    //  LEFT AND  RIGHT ICONS  ====================================================
+    /*  LEFT AND  RIGHT ICONS  ============================================  */
     &.with-icon-left  { padding-left : 40px; }
     &.with-icon-right { padding-right : 40px; }
 
@@ -55,7 +55,7 @@ export const InputFieldStyled = styled.input`
 
     &.with-icon-left:focus ~ span.icon-left svg { fill : $inputFocusIconFillColor; }
 
-    //  Grey check mark
+    /*  Grey check mark  */
     &.validate-this {
         padding-right       : 40px;
         background-image    : url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+ICA8cG9seWxpbmUgcG9pbnRzPSIzLjUgMTIuNSA4LjUgMTcuNSAyMC41IDUuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZTJlMmUyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==);
@@ -70,12 +70,12 @@ export const InputFieldStyled = styled.input`
 
     &.validate-this ~ span.icon-right { display : none; }
 
-    //  Green check mark
+    /*  Green check mark  */
     &.validate-this:valid:not(:placeholder-shown) {
         background-image : url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+ICA8cG9seWxpbmUgcG9pbnRzPSIzLjUgMTIuNSA4LjUgMTcuNSAyMC41IDUuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMGVjMDVjIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==);
     }
 
-    //  Red check mark
+    /*  Red check mark  */
     &:invalid:not(:focus):not(:placeholder-shown) {
         border              : 1px solid $inputBorder-InvalidColor;
         background-color    : rgba($colorRed, 0.24);

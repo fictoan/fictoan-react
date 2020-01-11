@@ -18,7 +18,7 @@ export const BaseInputComponent = <K extends {}>({
     validateThis,
     ...inputProps
 }: BaseInputComponentWithIconProps<K>) => {
-    const classNames = [className];
+    const classNames = [ className ];
 
     if (iconLeft) {
         classNames.push("with-icon-left");
@@ -53,4 +53,4 @@ export const BaseInputComponent = <K extends {}>({
             )}
         </FormItem>
     );
-};
+}

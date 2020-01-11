@@ -6,13 +6,15 @@ import { SelectWrapperStyled, SelectStyled } from "./Select.styled";
 import { SelectElementType, OptionElementType, SelectProps, OptionProps } from "./constants";
 
 const Option = ({ name, ...props }: OptionProps) => {
-    return <Element<OptionElementType>
+    return (
+        <Element<OptionElementType>
             as="option"
             {...props}
         >
             {name}
-        </Element>;
-};
+        </Element>
+    );
+}
 
 export const Select = ({ fullWidth, className, options, ...props }: SelectProps) => {
     return (
@@ -27,4 +29,4 @@ export const Select = ({ fullWidth, className, options, ...props }: SelectProps)
             />
         </Element>
     );
-};
+}

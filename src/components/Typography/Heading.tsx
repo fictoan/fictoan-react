@@ -12,9 +12,11 @@ export const Heading = ({ as, weight, className, ...props }: HeadingProps) => {
         classNames.push(`weight-${weight}`);
     }
 
-    return <Element<HeadingElementType>
-        as={as}
-        className={createClassName(classNames)}
-        {...props}
-    />
-};
+    return (
+        <Element<HeadingElementType>
+            as={as}
+            className={createClassName(classNames)}
+            {...props}
+        />
+    );
+}

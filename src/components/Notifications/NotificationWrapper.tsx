@@ -1,7 +1,7 @@
-import React, { ReactElement } from "react";
+import React from "react";
 
 import { createClassName } from "../../utils/classNames"
-import { Element }   from "../Element/Element";
+import { Element } from "../Element/Element";
 
 import { NotificationsWrapperStyled } from "./Notifications.styled"
 import { NotificationWrapperProps, NotificationWrapperElementType } from "./constants";
@@ -23,5 +23,5 @@ export const NotificationWrapper = ({ position, anchor, className, ...props }: N
             className={createClassName(classNames)}
             {...props}
         />
-    )
-};
+    );
+}

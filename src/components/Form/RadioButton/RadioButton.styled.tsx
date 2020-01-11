@@ -7,7 +7,7 @@ export const RadioButtonStyled = styled.div`
     margin-right : 24px;
 
 
-    /* The grey outer circle */
+    /*  The grey outer circle  */
     label::before {
         width         : 16px;
         height        : 16px;
@@ -16,7 +16,7 @@ export const RadioButtonStyled = styled.div`
         border-radius : 50%;
     }
 
-    /* The white inner circle */
+    /*  The white inner circle  */
     label::after {
         opacity       : 0;
         left          : 4px;
@@ -48,7 +48,7 @@ export const RadioButtonStyled = styled.div`
         }
     }
 
-    /* The grey square */
+    /*  The grey square  */
     input[type="radio"]:disabled + label::before,
     label::before {
         user-select    : none;
@@ -59,7 +59,7 @@ export const RadioButtonStyled = styled.div`
 
     &:hover label::before { background : $colorGrey-30; }
 
-    /* The grey square */
+    /*  The grey square  */
     label::after { opacity : 0; }
 
     input[type="radio"]:checked    + label::before { background : $colorHue; }

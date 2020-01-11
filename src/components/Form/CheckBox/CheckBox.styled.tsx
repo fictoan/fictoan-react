@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 
+/*  COMMON STYLES  ========================================================  */
 const SharedStyling = css`
     display        : inline-flex;
     flex-direction : row;
@@ -24,7 +25,7 @@ const SharedStyling = css`
         }
     }
 
-    //  The grey square
+    /*  The grey square */
     label::before,
     input[type="checkbox"]:disabled + label::before {
         user-select    : none;
@@ -35,7 +36,6 @@ const SharedStyling = css`
 
     &:hover label::before { background : $colorGrey-30; }
 
-    //  The grey square
     label::after { opacity : 0; }
 
     input[type="checkbox"]:checked + label::before { background : $colorHue; }
@@ -48,12 +48,14 @@ const SharedStyling = css`
     }
 `;
 
+/*  CHECKBOX  =============================================================  */
 export const CheckBoxStyled = styled.div`
-    //  CHECKBOX, SWITCH and RADIO BUTTONS  =======================================
+
+    ${SharedStyling}
+
     input[type="checkbox"] { display : none; }
 
-    //  CHECKBOX  =================================================================
-    //  The grey square
+    /*  The bg square */
     label::before {
         position      : absolute;
         height        : 16px;
@@ -63,7 +65,7 @@ export const CheckBoxStyled = styled.div`
         border-radius : 4px;
     }
 
-    //  The white tick inside
+    /*  The white tick inside */
     label::after {
         position      : absolute;
         height        : 6px;
@@ -75,18 +77,19 @@ export const CheckBoxStyled = styled.div`
         transform     : rotate(-45deg);
     }
 
-    ${SharedStyling}
-
     label { padding-left : 24px; }
+
     input[type="checkbox"]:checked + label::after { opacity : 1; }
 `;
 
+/*  TOGGLE SWITCH  ========================================================  */
 export const SwitchStyled = styled.div`
-    //  CHECKBOX, SWITCH and RADIO BUTTONS  =======================================
+
+    ${SharedStyling}
+
     input[type="checkbox"] { display : none; }
 
-    //  TOGGLE SWITCH  ============================================================
-    //  The grey oblong
+    /*  The grey oblong */
     label::before {
         position      : absolute;
         top           : 2px;
@@ -97,7 +100,7 @@ export const SwitchStyled = styled.div`
         margin-right  : 4px;
     }
 
-    //  The white inner circle
+    /*  The white inner circle */
     label::after {
         position      : absolute;
         display       : inline-block;
@@ -113,8 +116,6 @@ export const SwitchStyled = styled.div`
     }
 
     input[type="checkbox"]:checked + label::after { left : 14px; }
-
-    ${SharedStyling}
 
     label { padding-left : 32px; }
 `;

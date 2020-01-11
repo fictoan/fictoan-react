@@ -1,7 +1,7 @@
 import React from "react";
 
 import { createClassName } from "src/utils/classNames";
-import { Element }   from "../Element/Element";
+import { Element } from "../Element/Element";
 
 import { PortionStyled } from "./Portion.styled";
 import { PortionProps, PortionElementType } from "./constants";
@@ -29,9 +29,11 @@ export const Portion = ({ desktopSpan, mobileSpan, tabLSSpan, tabPTSpan, classNa
         classNames.push("whole");
     }
 
-    return <Element<PortionElementType>
-        as={PortionStyled}
-        className={createClassName(classNames)}
-        {...props}
-    />
-};
+    return (
+        <Element<PortionElementType>
+            as={PortionStyled}
+            className={createClassName(classNames)}
+            {...props}
+        />
+    );
+}

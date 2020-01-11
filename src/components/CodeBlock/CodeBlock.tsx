@@ -33,4 +33,4 @@ export const CodeBlock = ({ ref, source, theme, ...props }: CodeBlockProps) => {
             )}
         </PrismReactRenderer>
     );
-};
+}

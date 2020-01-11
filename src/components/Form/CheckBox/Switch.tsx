@@ -6,7 +6,7 @@ import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 import { SwitchStyled } from "./CheckBox.styled";
 import { SwitchProps, SwitchElementType } from "./constants";
 
-export const Switch = (props: SwitchProps) => {
+export const Switch = ({...props}: SwitchProps) => {
     return (
         <Element<SwitchElementType>
             as={SwitchStyled}

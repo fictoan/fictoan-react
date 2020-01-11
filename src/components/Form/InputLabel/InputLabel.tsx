@@ -2,16 +2,11 @@ import React from "react";
 
 import { Element } from "../../Element/Element";
 
-import { InputLabelProps } from "./constants";
+import { InputLabelProps, InputLabelElementType } from "./constants";
 
-export const InputLabel = ({
-    label,
-    helpText,
-    errorText,
-    ...props
-}: InputLabelProps) => {
+export const InputLabel = ({ label, helpText, errorText, ...props }: InputLabelProps) => {
     return (
-        <Element<HTMLLabelElement>
+        <Element<InputLabelElementType>
             as="label"
             {...props}
         >

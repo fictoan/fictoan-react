@@ -1,4 +1,4 @@
-import React, { HTMLProps } from "react";
+import React from "react";
 
 import { createClassName } from "src/utils/classNames";
 import { Element }   from "../Element/Element";
@@ -25,9 +25,11 @@ export const Table = ({ bordersFor, isStriped, isHoverable, isFullWidth, classNa
         classNames.push("full-width");
     }
 
-    return <Element<TableElementType>
-        as={TableStyled}
-        className={createClassName(classNames)}
-        {...props}
-    />
+    return (
+        <Element<TableElementType>
+            as={TableStyled}
+            className={createClassName(classNames)}
+            {...props}
+        />
+    );
 }

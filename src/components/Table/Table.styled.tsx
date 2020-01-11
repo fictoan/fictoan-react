@@ -1,7 +1,4 @@
-//  Plain table  ==============================================================
 import styled from "styled-components";
-
-import { TableProps } from "./constants";
 
 export const TableStyled = styled.table`
     background-color : $tableBG;

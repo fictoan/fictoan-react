@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React from "react";
 
 import { createClassName } from "src/utils/classNames"
 import { Element } from "../Element/Element";
@@ -31,5 +31,5 @@ export const NotificationItem = ({type, children, isDismissible, className, ...p
                 <div className="dismiss-button" />
             )}
         </Element>
-    )
-};
+    );
+}

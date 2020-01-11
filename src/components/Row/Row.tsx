@@ -45,5 +45,5 @@ export const Row = ({ sidePadding, className, gutters, retainLayoutOnTabLS, reta
             className={createClassName(classNames)}
             {...props}
         />
-    )
-};
+    );
+}

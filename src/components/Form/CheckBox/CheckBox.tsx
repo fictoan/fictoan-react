@@ -6,7 +6,7 @@ import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 import { CheckBoxStyled } from "./CheckBox.styled";
 import { CheckboxProps, CheckboxElementType } from "./constants";
 
-export const CheckBox = (props: CheckboxProps) => {
+export const CheckBox = ({...props}: CheckboxProps) => {
     return (
         <Element<CheckboxElementType>
             as={CheckBoxStyled}

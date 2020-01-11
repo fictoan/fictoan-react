@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Element }   from "../Element/Element";
+import { Element } from "../Element/Element";
 
 import { BreadcrumbItemStyled } from "./Breadcrumb.styled";
 import { BreadcrumbProps, BreadcrumbItemElementType } from "./constants";

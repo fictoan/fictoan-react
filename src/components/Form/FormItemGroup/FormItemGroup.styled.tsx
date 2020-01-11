@@ -15,16 +15,16 @@ export const FormItemGroupStyled = styled.div`
     }
 
     & > label {
-        flex : 1 1 100%;
-        order: -1;
+        flex  : 1 1 100%;
+        order : -1;
     }
 
     & > .ff-form-unit:not(:last-of-type) { margin-right : 24px; }
 
     @media screen and (max-width: 520px) {
         &:not(.retain-layout) > .ff-form-unit {
-            flex          : 1 1 auto;
-            margin-right  : 0 !important;
+            flex         : 1 1 auto;
+            margin-right : 0 !important;
         }
 
         &:not(.retain-layout) > .ff-form-unit:not(:last-child) { margin-bottom : 16px; }

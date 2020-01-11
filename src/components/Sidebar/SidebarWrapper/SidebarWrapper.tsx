@@ -3,8 +3,8 @@ import React from "react";
 import { createClassName } from "src/utils/classNames";
 import { Element } from "../../Element/Element";
 
-import { SidebarWrapperStyled } from "./SidebarWrapper.styled"
-import { SidebarWrapperProps, SidebarWrapperElementType } from "../constants"
+import { SidebarWrapperStyled } from "./SidebarWrapper.styled";
+import { SidebarWrapperProps, SidebarWrapperElementType } from "../constants";
 
 export const SidebarWrapper = ({collapsed, className, ...props}: SidebarWrapperProps) => {
     const classNames = [ className ]
@@ -19,5 +19,5 @@ export const SidebarWrapper = ({collapsed, className, ...props}: SidebarWrapperP
             className={createClassName(classNames)}
             {...props}
         />
-    )
-};
+    );
+}
