@@ -46,4 +46,4 @@ export const Button = ({ value, size, shape, shadow, border, className, isLoadin
             {value}
         </Element>
     );
-};
+}

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import { SidebarItemStyled } from "../SidebarItem/SidebarItem.styled"
 import { SidebarItemTextStyled } from "../SidebarItemText/SidebarItemText.styled"
 import { SidebarItemIconStyled } from "../SidebarItemIcon/SidebarItemIcon.styled"
 
@@ -89,12 +90,12 @@ export const SidebarWrapperStyled = styled.div`
             position : absolute;
         }
 
-        ${SidebarItemTextStyled}:not(.bottom-section) {
+        ${SidebarItemStyled}:not(.bottom-section) {
             margin-left : 0;
             position    : relative;
         }
 
-        ${SidebarItemTextStyled}:hover ${SidebarItemIconStyled} + ${SidebarItemTextStyled} {
+        ${SidebarItemStyled}:hover ${SidebarItemIconStyled} + ${SidebarItemTextStyled} {
             display          : flex;
             position         : fixed;
             background-color : $colorHue;
@@ -105,7 +106,7 @@ export const SidebarWrapperStyled = styled.div`
             padding          : 4px 8px;
             color            : $colorWhite;
             font-size        : 88%;
-            box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.24);
+            box-shadow       : 0 4px 16px -2px rgba(0, 0, 0, 0.24);
         }
 
         details > summary::after { display : none; }

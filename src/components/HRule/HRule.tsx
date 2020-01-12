@@ -1,9 +1,9 @@
-import React, { HTMLProps } from "react";
+import React from "react";
 
 import { createClassName } from "../../utils/classNames";
-import { Element }   from "../Element/Element";
+import { Element } from "../Element/Element";
 
-import { HRStyled }               from "./HRule.styled"
+import { HRStyled } from "./HRule.styled"
 import { HRProps, HRElementType } from "./constants"
 
 export const HRule = ({ sideMargin, className, thick, slim, ...props }: HRProps) => {
@@ -27,5 +27,5 @@ export const HRule = ({ sideMargin, className, thick, slim, ...props }: HRProps)
             className={createClassName(classNames)}
             {...props}
         />
-    )
-};
+    );
+}

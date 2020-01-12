@@ -1,6 +1,6 @@
-import { HTMLProps, ElementType } from "react";
+import { HTMLProps } from "react";
 
-import { RFTheme }   from "src/constants/Theme";
+import { RFTheme } from "src/constants/Theme";
 
 export interface ThemeProps {
     theme ? : typeof RFTheme;
@@ -37,6 +37,6 @@ export interface CommonProps extends ThemeProps {
 export interface CommonAndHTMLProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "size"> { }
 
 export interface ElementProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as"> {
-    as: any;
-    className?: string;
-};
+    as          : any;
+    className ? : string;
+}

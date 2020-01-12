@@ -5,9 +5,11 @@ import { Element } from "../../Element/Element";
 import { FormItemStyled } from "./FormItem.styled";
 import { FormItemProps, FormItemElementType } from "../constants";
 
-export const FormItem = (props: FormItemProps) => (
-    <Element<FormItemElementType>
-        as={FormItemStyled}
-        {...props}
-    />
-);
+export const FormItem = ({...props}: FormItemProps) => {
+    return (
+        <Element<FormItemElementType>
+            as={FormItemStyled}
+            {...props}
+        />
+    );
+}

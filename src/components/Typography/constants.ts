@@ -1,7 +1,7 @@
 import { CommonAndHTMLProps } from "../Element/constants";
 
 export type HeadingElementType = HTMLHeadingElement;
-export type TextElementType    = HTMLParagraphElement;
+export type TextElementType = HTMLParagraphElement;
 
 type Weight = "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
 
@@ -16,4 +16,4 @@ export interface TextCustomProps extends CommonAndHTMLProps<HTMLParagraphElement
 }
 
 export type HeadingProps = CommonAndHTMLProps<HeadingElementType> & HeadingCustomProps;
-export type TextProps    = CommonAndHTMLProps<TextElementType> & TextCustomProps;
+export type TextProps = CommonAndHTMLProps<TextElementType> & TextCustomProps;
