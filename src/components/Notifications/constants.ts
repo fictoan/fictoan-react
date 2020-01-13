@@ -11,6 +11,7 @@ export interface NotificationWrapperCustomProps {
 export interface NotificationItemCustomProps {
     type          ? : "info" | "warning" | "error" | "success";
     isDismissible ? : boolean;
+    onCloseButtonClick?: () => void;
 }
 
 export type NotificationWrapperProps = CommonAndHTMLProps<NotificationWrapperElementType> & NotificationWrapperCustomProps;
