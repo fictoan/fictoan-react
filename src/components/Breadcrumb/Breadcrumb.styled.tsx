@@ -17,7 +17,6 @@ export const BreadcrumbItemStyled = styled.div`
     margin-right : 20px;
     position     : relative;
     font-size    : 14px;
-    color        : rgba($colorShade, 0.6);
 
     &::after {
         position : absolute;
@@ -27,10 +26,10 @@ export const BreadcrumbItemStyled = styled.div`
     }
 
     &:last-child,
-    &:last-child a { color : rgba($colorShade, 1); }
+    &:last-child a { color : ${(props: BreadcrumbProps) => props.theme.breadcrumb.item.active}; }
 
     &:not(:last-child),
-    &:not(:last-child) a { color : rgba($colorShade, 0.64); }
+    &:not(:last-child) a { color : ${(props: BreadcrumbProps) => props.theme.breadcrumb.item.inactive}; }
 
     &:last-child::after { content : ""; }
 `

@@ -11,11 +11,11 @@ export const RowStyled = styled.div`
         & { grid-gap : 8px; }
     }
 
-    &.huge-gutters   { grid-gap : $measureFixed*4; }
-    &.large-gutters  { grid-gap : $measureFixed*3; }
-    &.medium-gutters { grid-gap : $measureFixed*2; }
-    &.small-gutters  { grid-gap : $measureFixed; }
-    &.tiny-gutters   { grid-gap : $measureFixed/2; }
+    &.huge-gutters   { grid-gap : 32px; }
+    &.large-gutters  { grid-gap : 24px; }
+    &.medium-gutters { grid-gap : 16px; }
+    &.small-gutters  { grid-gap : 8px; }
+    &.tiny-gutters   { grid-gap : 4px; }
     &.no-gutters     { grid-gap : 0; }
 
     &.side-padding-tiny {

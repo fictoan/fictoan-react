@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-export const ButtonStyled = styled.button `
+import { GlobalStyledProps } from "../ThemeProvider/constants";
+import { ButtonProps } from "./constants";
+
+export const ButtonStyled = styled.button`
     position            : relative;
     display             : inline-flex;
     cursor              : pointer;
@@ -19,13 +22,6 @@ export const ButtonStyled = styled.button `
     &:active {
         box-shadow : none;
         opacity    : 0.72;
-    }
-
-    /*  Button with a multi-colour background  */
-    &.bg-gradient {
-        background : -webkit-linear-gradient(-45deg, $buttonGradientStartColour 0%, $buttonGradientEndColour 100%);
-        background :    -moz-linear-gradient(-45deg, $buttonGradientStartColour 0%, $buttonGradientEndColour 100%);
-        background :         linear-gradient(135deg, $buttonGradientStartColour 0%, $buttonGradientEndColour 100%);
     }
 
     /*  A round button  */
@@ -64,7 +60,7 @@ export const ButtonStyled = styled.button `
         right              : 0;
         height             : 16px;
         width              : 16px;
-        border             : 3px solid $spinnerBorder;
+        border             : 3px solid #fff;
         border-radius      : 50%;
         border-top-color   : transparent;
         border-right-color : transparent;
@@ -84,7 +80,7 @@ export const ButtonStyled = styled.button `
         right              : 0;
         height             : 8px;
         width              : 8px;
-        border             : 2px solid $colorWhite;
+        border             : 2px solid #fff;
         border-radius      : 50%;
         border-top-color   : transparent;
         border-right-color : transparent;
@@ -123,22 +119,22 @@ export const ButtonStyled = styled.button `
     /*  Different sized buttons  */
     &.size-tiny {
         padding   : 4px 8px;
-        font-size : $baseFontSize*pow($scaleFactor, -2);
+        font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, -2)}em;
     }
 
     &.size-small {
         padding   : 8px 16px;
-        font-size : $baseFontSize*pow($scaleFactor, -1);
+        font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, -1)}em;
     }
 
     &.size-large {
         padding   : 16px 32px;
-        font-size : $baseFontSize*pow($scaleFactor, 2);
+        font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 2)}em;
     }
 
     &.size-huge {
         padding   : 24px 40px;
-        font-size : $baseFontSize*pow($scaleFactor, 4);
+        font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 4)}em;
     }
 
     &.button-plain { background : transparent; }

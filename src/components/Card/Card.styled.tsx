@@ -7,7 +7,7 @@ export const CardStyled = styled.div`
     width            : 100%;
     height           : auto;
     border           : 1px solid hsla(0, 0%, 0%, 0.04);
-    background-color : ${(props : CardProps) => props.theme.card.bg};
+    background-color : ${(props: CardProps) => props.theme.card.bg};
 
     &.padding-all-tiny   { padding : 8px; }
     &.padding-all-small  { padding : 16px; }

@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
+import { HRProps } from "./constants";
+
 export const HRStyled = styled.hr`
     border           : 0;
     height           : 1px;
     margin           : 4vmax auto;
     width            : 100%;
-    background-color : $colorSlate-20;
+    background-color : ${(props: HRProps) => props.theme.hr.bg};
 
     &.thick { height : 4px; }
     &.slim  { height : 2px; }

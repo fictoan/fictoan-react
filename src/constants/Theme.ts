@@ -64,8 +64,16 @@ export const RFTheme = {
         },
         item : {
             text      : mainColors.shade,
-            separator : baseColors.slate40
+            separator : baseColors.slate40,
+            active    : mainColors.shade,
+            inactive  : mainColors.shade
         }
+    },
+
+    //  BUTTON  ///////////////////////////////////////////////////////////////
+    button : {
+        border : mainColors.hue,
+        loader : baseColors.white
     },
 
     //  CODE  /////////////////////////////////////////////////////////////////
@@ -79,6 +87,10 @@ export const RFTheme = {
             text : baseColors.blue70
         },
         prism: {}
+    },
+
+    hr : {
+        bg: baseColors.slate20
     },
 
     //  INPUT  ////////////////////////////////////////////////////////////////

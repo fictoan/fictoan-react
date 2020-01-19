@@ -1,23 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
-import { normalize } from "styled-normalize";
+import { NormalizeStyled } from "./Normalize.styled";
+import { ColorsStyled } from "./Colors.styled";
 
 import { GlobalStyledProps } from "./constants";
 
 export const GlobalStyled = createGlobalStyle`
-    ${normalize}
-
-    /*  Colour of highlight and text colour
-    - for Firefox browsers  */
-    ::-moz-selection {
-        background : $textHighlightBG;
-        color      : $textHighlightColor;
-    }
-     /* Same thing - for Webkit browsers */
-    ::selection {
-        background : $textHighlightBG;
-        color      : $textHighlightColor;
-    }
+    ${NormalizeStyled}
+    ${ColorsStyled}
 
     /* Layout */
     html,
@@ -87,12 +77,12 @@ export const GlobalStyled = createGlobalStyle`
 
     h1, h2, h3, h4, h5, h6 { line-height : ${(props: GlobalStyledProps) => props.theme.text.headings.lineHeight}; }
 
-    h1 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 8) }em; }
-    h2 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 6) }em; }
-    h3 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 4) }em; }
-    h4 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 3) }em; }
-    h5 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 2) }em; }
-    h6 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 1) }em; }
+    h1 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 8)}em; }
+    h2 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 6)}em; }
+    h3 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 4)}em; }
+    h4 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 3)}em; }
+    h5 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 2)}em; }
+    h6 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 1)}em; }
 
     @media all and (max-width : 720px) {
         h1 { font-size : 40px; }
