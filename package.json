@@ -46,7 +46,9 @@
         "tslib": "^1.10.0",
         "typescript": "^3.5.3"
     },
-    "files": ["dist"],
+    "files": [
+        "dist"
+    ],
     "peerDependencies": {
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
@@ -55,7 +57,6 @@
     "dependencies": {
         "lodash-es": "^4.17.15",
         "prism-react-renderer": "^1.0.2",
-        "styled-components": "^4.4.1",
-        "styled-normalize": "^8.0.6"
+        "styled-components": "^4.4.1"
     }
 }
