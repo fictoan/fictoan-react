@@ -11,6 +11,11 @@ const mainColors = {
 export const RFTheme = {
     mainColors,
 
+    measure : {
+        fixed    : "8px",
+        variable : "2vmax"
+    },
+
     body : {
         bg : baseColors.white
     },
