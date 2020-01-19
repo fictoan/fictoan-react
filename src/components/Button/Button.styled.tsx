@@ -60,7 +60,7 @@ export const ButtonStyled = styled.button`
         right              : 0;
         height             : 16px;
         width              : 16px;
-        border             : 3px solid #fff;
+        border             : 3px solid ${(props: ButtonProps) => props.theme.button.border};
         border-radius      : 50%;
         border-top-color   : transparent;
         border-right-color : transparent;
@@ -80,7 +80,7 @@ export const ButtonStyled = styled.button`
         right              : 0;
         height             : 8px;
         width              : 8px;
-        border             : 2px solid #fff;
+        border             : 2px solid ${(props: ButtonProps) => props.theme.button.border};
         border-radius      : 50%;
         border-top-color   : transparent;
         border-right-color : transparent;
