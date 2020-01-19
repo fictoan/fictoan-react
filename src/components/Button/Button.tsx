@@ -6,7 +6,7 @@ import { Element } from "../Element/Element";
 import { ButtonStyled } from "./Button.styled"
 import { ButtonProps, ButtonElementType } from "./constants";
 
-export const Button = ({ value, size, shape, shadow, border, className, isLoading, hasDelete, ...props }: ButtonProps) => {
+export const Button = ({ children, size, shape, shadow, border, className, isLoading, hasDelete, ...props }: ButtonProps) => {
     const classNames = [ className ];
 
     if (className) {
@@ -42,8 +42,6 @@ export const Button = ({ value, size, shape, shadow, border, className, isLoadin
             as={ButtonStyled}
             className={createClassName(classNames)}
             {...props}
-        >
-            {value}
-        </Element>
+        />
     );
 }

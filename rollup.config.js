@@ -14,8 +14,7 @@ export default {
     external : [
         "styled-components",
         "prism-react-renderer",
-        "lodash-es",
-        "styled-normalize"
+        "lodash-es"
     ],
     output: [
         {
