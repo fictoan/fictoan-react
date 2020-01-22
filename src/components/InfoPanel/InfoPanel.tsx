@@ -6,10 +6,10 @@ import { Element } from "../Element/Element";
 import { InfoPanelStyled } from "./InfoPanel.styled"
 import { InfoPanelProps, InfoPanelElementType } from "./constants";
 
-export const InfoPanel = ({ open, width, className, ...props }: InfoPanelProps) => {
-    const classNames = [ className ];
+export const InfoPanel = ({ isOpen, width, className, ...props }: InfoPanelProps) => {
+    const classNames = [className];
 
-    if (open) {
+    if (isOpen) {
         classNames.push("open");
     }
 

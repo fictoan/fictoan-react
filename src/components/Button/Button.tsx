@@ -6,8 +6,8 @@ import { Element } from "../Element/Element";
 import { ButtonStyled } from "./Button.styled"
 import { ButtonProps, ButtonElementType } from "./constants";
 
-export const Button = ({ children, size, shape, shadow, border, className, isLoading, hasDelete, ...props }: ButtonProps) => {
-    const classNames = [ className ];
+export const Button = ({ size, shape, shadow, border, className, isLoading, hasDelete, ...props }: ButtonProps) => {
+    const classNames = [className];
 
     if (className) {
         classNames.push(className);

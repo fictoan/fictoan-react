@@ -3,14 +3,20 @@ import { createGlobalStyle } from "styled-components";
 import { NormalizeStyled } from "./Normalize.styled";
 import { ResetStyled } from "./Reset.styled";
 import { ColorsStyled } from "./Colors.styled";
-
+import { TextStyled } from "../Typography/Typography.styled";
+import { CodeStyled } from "../CodeBlock/Code.styled";
 
 import { GlobalStyledProps } from "./constants";
 
 export const GlobalStyled = createGlobalStyle`
     ${NormalizeStyled}
-    ${ColorsStyled}
     ${ResetStyled}
+
+    ${ColorsStyled}
+
+    ${ TextStyled }
+
+    ${ CodeStyled }
 
     /* Layout */
     html,
@@ -61,54 +67,6 @@ export const GlobalStyled = createGlobalStyle`
         .center-on-tab-ls,
         .centre-on-tab-ls { text-align : center !important; }
     }
-
-    /*  Responsive classes  ===============================================  */
-    body {
-        font-family      : ${(props: GlobalStyledProps) => props.theme};
-        font-size        : ${(props: GlobalStyledProps) => props.theme.body}em;
-        line-height      : ${(props: GlobalStyledProps) => props.theme.text.paras.lineHeight};
-        color            : ${(props: GlobalStyledProps) => props.theme.text.paras.color};
-        word-wrap        : normal;
-        text-rendering   : optimizeLegibility;
-        background-color : ${(props: GlobalStyledProps) => props.theme.body.bg};
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-        font-weight : ${(props: GlobalStyledProps) => props.theme.text.headings.weight};
-        margin      : 0;
-    }
-
-    h1, h2, h3, h4, h5, h6 { line-height : ${(props: GlobalStyledProps) => props.theme.text.headings.lineHeight}; }
-
-    h1 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 8)}em; }
-    h2 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 6)}em; }
-    h3 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 4)}em; }
-    h4 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 3)}em; }
-    h5 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 2)}em; }
-    h6 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 1)}em; }
-
-    @media all and (max-width : 720px) {
-        h1 { font-size : 40px; }
-        h2 { font-size : 46px; }
-        h3 { font-size : 32px; }
-        h4 { font-size : 28px; }
-        h5 { font-size : 24px; }
-        h6 { font-size : 20px; }
-        p  { font-size : 14px; }
-
-        h1, h2, h3, h4, h5, h6 { word-wrap : break-word; }
-    }
-
-    a {
-        cursor      : pointer;
-        color       : ${(props: GlobalStyledProps) => props.theme.text.links.default};
-        font-weight : bold;
-        transition  : all 0.2s;
-    }
-
-    a:not(.ff-button):not(.ff-pill):not(.header-links a):hover { color : ${(props: GlobalStyledProps) => props.theme.text.links.onHover}; }
-
-    a:active { opacity: 0.72; }
 
     /* Reset for custom element */
     .ff-pill,
@@ -182,99 +140,97 @@ export const GlobalStyled = createGlobalStyle`
 
 
       /* BOX MODEL HELPERS  ======================================================== */
-
-      ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 8)}em
       /* Margins for all occasions */
     .margin-all-none         { margin : 0 !important; }
-    .margin-all-fixed        { margin : ${(props: GlobalStyledProps) => props.theme.measure.fixed}; }
-    .margin-all-fixed-3x     { margin : $measureFixed*03; }
-    .margin-all-tiny         { margin : $measureDynamic*01; }
-    .margin-all-small        { margin : $measureDynamic*02; }
-    .margin-all-medium       { margin : $measureDynamic*04; }
-    .margin-all-large        { margin : $measureDynamic*08; }
-    .margin-all-huge         { margin : $measureDynamic*12; }
+    .margin-all-fixed        { margin : 8px; }
+    .margin-all-fixed-3x     { margin : 24px; }
+    .margin-all-tiny         { margin : 2vmax; }
+    .margin-all-small        { margin : 4vmax; }
+    .margin-all-medium       { margin : 8vmax; }
+    .margin-all-large        { margin : 16vmax; }
+    .margin-all-huge         { margin : 24vmax; }
 
     .margin-top-none         { margin-top : 0 !important; }
-    .margin-top-fixed        { margin-top : $measureFixed; }
-    .margin-top-fixed-3x     { margin-top : $measureFixed*03; }
-    .margin-top-tiny         { margin-top : $measureDynamic*01; }
-    .margin-top-small        { margin-top : $measureDynamic*02; }
-    .margin-top-medium       { margin-top : $measureDynamic*04; }
-    .margin-top-large        { margin-top : $measureDynamic*08; }
-    .margin-top-huge         { margin-top : $measureDynamic*12; }
+    .margin-top-fixed        { margin-top : 8px; }
+    .margin-top-fixed-3x     { margin-top : 24px; }
+    .margin-top-tiny         { margin-top : 2vmax; }
+    .margin-top-small        { margin-top : 4vmax; }
+    .margin-top-medium       { margin-top : 8vmax; }
+    .margin-top-large        { margin-top : 16vmax; }
+    .margin-top-huge         { margin-top : 24vmax; }
 
     .margin-right-none       { margin-right : 0 !important; }
-    .margin-right-fixed      { margin-right : $measureFixed; }
-    .margin-right-fixed-3x   { margin-right : $measureFixed*03; }
-    .margin-right-tiny       { margin-right : $measureDynamic*01; }
-    .margin-right-small      { margin-right : $measureDynamic*02; }
-    .margin-right-medium     { margin-right : $measureDynamic*04; }
-    .margin-right-large      { margin-right : $measureDynamic*08; }
-    .margin-right-huge       { margin-right : $measureDynamic*12; }
+    .margin-right-fixed      { margin-right : 8px; }
+    .margin-right-fixed-3x   { margin-right : 24px; }
+    .margin-right-tiny       { margin-right : 2vmax; }
+    .margin-right-small      { margin-right : 4vmax; }
+    .margin-right-medium     { margin-right : 8vmax; }
+    .margin-right-large      { margin-right : 16vmax; }
+    .margin-right-huge       { margin-right : 24vmax; }
 
     .margin-bottom-none      { margin-bottom : 0 !important; }
-    .margin-bottom-fixed     { margin-bottom : $measureFixed; }
-    .margin-bottom-fixed-3x  { margin-bottom : $measureFixed*03; }
-    .margin-bottom-tiny      { margin-bottom : $measureDynamic*01; }
-    .margin-bottom-small     { margin-bottom : $measureDynamic*02; }
-    .margin-bottom-medium    { margin-bottom : $measureDynamic*04; }
-    .margin-bottom-large     { margin-bottom : $measureDynamic*08; }
-    .margin-bottom-huge      { margin-bottom : $measureDynamic*12; }
+    .margin-bottom-fixed     { margin-bottom : 8px; }
+    .margin-bottom-fixed-3x  { margin-bottom : 24px; }
+    .margin-bottom-tiny      { margin-bottom : 2vmax; }
+    .margin-bottom-small     { margin-bottom : 4vmax; }
+    .margin-bottom-medium    { margin-bottom : 8vmax; }
+    .margin-bottom-large     { margin-bottom : 16vmax; }
+    .margin-bottom-huge      { margin-bottom : 24vmax; }
 
     .margin-left-none        { margin-left : 0 !important; }
-    .margin-left-fixed       { margin-left : $measureFixed; }
-    .margin-left-fixed-3x    { margin-left : $measureFixed*03; }
-    .margin-left-tiny        { margin-left : $measureDynamic*01; }
-    .margin-left-small       { margin-left : $measureDynamic*02; }
-    .margin-left-medium      { margin-left : $measureDynamic*04; }
-    .margin-left-large       { margin-left : $measureDynamic*08; }
-    .margin-left-huge        { margin-left : $measureDynamic*12; }
+    .margin-left-fixed       { margin-left : 8px; }
+    .margin-left-fixed-3x    { margin-left : 24px; }
+    .margin-left-tiny        { margin-left : 2vmax; }
+    .margin-left-small       { margin-left : 4vmax; }
+    .margin-left-medium      { margin-left : 8vmax; }
+    .margin-left-large       { margin-left : 16vmax; }
+    .margin-left-huge        { margin-left : 24vmax; }
 
       /* Paddings for all occasions */
     .padding-all-none        { padding : 0 !important; }
-    .padding-all-fixed       { padding : $measureFixed; }
-    .padding-all-fixed-3x    { padding : $measureFixed*03; }
-    .padding-all-tiny        { padding : $measureDynamic*01; }
-    .padding-all-small       { padding : $measureDynamic*02; }
-    .padding-all-medium      { padding : $measureDynamic*04; }
-    .padding-all-large       { padding : $measureDynamic*08; }
-    .padding-all-huge        { padding : $measureDynamic*12; }
+    .padding-all-fixed       { padding : 8px; }
+    .padding-all-fixed-3x    { padding : 24px; }
+    .padding-all-tiny        { padding : 2vmax; }
+    .padding-all-small       { padding : 4vmax; }
+    .padding-all-medium      { padding : 8vmax; }
+    .padding-all-large       { padding : 16vmax; }
+    .padding-all-huge        { padding : 24vmax; }
 
     .padding-top-none        { padding-top : 0 !important; }
-    .padding-top-fixed       { padding-top : $measureFixed; }
-    .padding-top-fixed-3x    { padding-top : $measureFixed*03; }
-    .padding-top-tiny        { padding-top : $measureDynamic*01; }
-    .padding-top-small       { padding-top : $measureDynamic*02; }
-    .padding-top-medium      { padding-top : $measureDynamic*04; }
-    .padding-top-large       { padding-top : $measureDynamic*08; }
-    .padding-top-huge        { padding-top : $measureDynamic*12; }
+    .padding-top-fixed       { padding-top : 8px; }
+    .padding-top-fixed-3x    { padding-top : 24px; }
+    .padding-top-tiny        { padding-top : 2vmax; }
+    .padding-top-small       { padding-top : 4vmax; }
+    .padding-top-medium      { padding-top : 8vmax; }
+    .padding-top-large       { padding-top : 16vmax; }
+    .padding-top-huge        { padding-top : 24vmax; }
 
     .padding-right-none      { padding-right : 0 !important; }
-    .padding-right-fixed     { padding-right : $measureFixed; }
-    .padding-right-fixed-3x  { padding-right : $measureFixed*03; }
-    .padding-right-tiny      { padding-right : $measureDynamic*01; }
-    .padding-right-small     { padding-right : $measureDynamic*02; }
-    .padding-right-medium    { padding-right : $measureDynamic*04; }
-    .padding-right-large     { padding-right : $measureDynamic*08; }
-    .padding-right-huge      { padding-right : $measureDynamic*12; }
+    .padding-right-fixed     { padding-right : 8px; }
+    .padding-right-fixed-3x  { padding-right : 24px; }
+    .padding-right-tiny      { padding-right : 2vmax; }
+    .padding-right-small     { padding-right : 4vmax; }
+    .padding-right-medium    { padding-right : 8vmax; }
+    .padding-right-large     { padding-right : 16vmax; }
+    .padding-right-huge      { padding-right : 24vmax; }
 
     .padding-bottom-none     { padding-bottom : 0 !important; }
-    .padding-bottom-fixed    { padding-bottom : $measureFixed; }
-    .padding-bottom-fixed-3x { padding-bottom : $measureFixed*03; }
-    .padding-bottom-tiny     { padding-bottom : $measureDynamic*01; }
-    .padding-bottom-small    { padding-bottom : $measureDynamic*02; }
-    .padding-bottom-medium   { padding-bottom : $measureDynamic*04; }
-    .padding-bottom-large    { padding-bottom : $measureDynamic*08; }
-    .padding-bottom-huge     { padding-bottom : $measureDynamic*12; }
+    .padding-bottom-fixed    { padding-bottom : 8px; }
+    .padding-bottom-fixed-3x { padding-bottom : 24px; }
+    .padding-bottom-tiny     { padding-bottom : 2vmax; }
+    .padding-bottom-small    { padding-bottom : 4vmax; }
+    .padding-bottom-medium   { padding-bottom : 8vmax; }
+    .padding-bottom-large    { padding-bottom : 16vmax; }
+    .padding-bottom-huge     { padding-bottom : 24vmax; }
 
     .padding-left-none       { padding-left : 0 !important; }
-    .padding-left-fixed      { padding-left : $measureFixed; }
-    .padding-left-fixed-3x   { padding-left : $measureFixed*03; }
-    .padding-left-tiny       { padding-left : $measureDynamic*01; }
-    .padding-left-small      { padding-left : $measureDynamic*02; }
-    .padding-left-medium     { padding-left : $measureDynamic*04; }
-    .padding-left-large      { padding-left : $measureDynamic*08; }
-    .padding-left-huge       { padding-left : $measureDynamic*12; }
+    .padding-left-fixed      { padding-left : 8px; }
+    .padding-left-fixed-3x   { padding-left : 24px; }
+    .padding-left-tiny       { padding-left : 2vmax; }
+    .padding-left-small      { padding-left : 4vmax; }
+    .padding-left-medium     { padding-left : 8vmax; }
+    .padding-left-large      { padding-left : 16vmax; }
+    .padding-left-huge       { padding-left : 24vmax; }
 
       /* For a bit of empty space */
     .spacer-huge {
@@ -313,15 +269,38 @@ export const GlobalStyled = createGlobalStyle`
     }
 
       /* For images and tiles */
-    .shape-rounded  { border-radius : $measureFixed; }
-    .shape-curved   { border-radius : $measureFixed*5000; }
+    .shape-rounded  { border-radius : 4px; }
+    .shape-curved   { border-radius : 50000px; }
     .shape-circular { border-radius : 50%; }
 
       /* Shadows for any element */
-    .shadow-hard { box-shadow : 0 $measureFixed/2 $measureFixed   -2px hsla(0, 0, 0, 0.24); }
-    .shadow-soft { box-shadow : 0 $measureFixed*2 $measureFixed*4 -8px hsla(0, 0, 0, 0.32); }
-    .shadow-mild { box-shadow : 0 $measureFixed/4 $measureFixed/4 -2px hsla(0, 0, 0, 0.24); }
     .no-shadow   { box-shadow : none !important; }
+
+    .shadow-mild {
+        box-shadow :
+            0 0.3px 0.4px rgba(0, 0, 0, 0.12),
+            0   4px   8px rgba(0, 0, 0, 0.24);
+        }
+
+    .shadow-hard { 
+        box-shadow :
+            0 0.2px 0.2px rgba(0, 0, 0, 0.056),
+            0 1.1px 1.1px rgba(0, 0, 0, 0.08),
+            0 4.8px 3.7px rgba(0, 0, 0, 0.104),
+            0  16px  20px rgba(0, 0, 0, 0.16);
+    }
+
+    .shadow-soft { 
+        box-shadow :
+            0  1.6px  0.2px rgba(0, 0, 0, 0.019),
+            0  3.2px  0.8px rgba(0, 0, 0, 0.028),
+            0  6.4px  2.1px rgba(0, 0, 0, 0.034),
+            0   10px  4.3px rgba(0, 0, 0, 0.04),
+            0 15.5px  8.1px rgba(0, 0, 0, 0.046),
+            0 24.1px 14.6px rgba(0, 0, 0, 0.052),
+            0   40px   27px rgba(0, 0, 0, 0.061),
+            0   80px   80px rgba(0, 0, 0, 0.08);
+    }
 
 
     /* == OPACITY ============================================================== */
@@ -339,9 +318,117 @@ export const GlobalStyled = createGlobalStyle`
 
 
     /* == ICONS ================================================================ */
-    .icon-tiny   { width : $measureFixed*2; }
-    .icon-small  { width : $measureFixed*3; }
-    .icon-medium { width : $measureFixed*4; }
-    .icon-large  { width : $measureFixed*6; }
-    .icon-huge   { width : $measureFixed*8; }
+    .icon-tiny   { width : 16px; }
+    .icon-small  { width : 24px; }
+    .icon-medium { width : 32px; }
+    .icon-large  { width : 48px; }
+    .icon-huge   { width : 64px; }
+
+
+    // DOCS
+    .content { min-height : 100vh; }
+
+    @media (max-width : 600px) {
+        .padded-content {
+            padding-left  : 4vw;
+            padding-right : 4vw;
+        }
+    }
+
+    button,
+    .ff-button { font-size : 92%; }
+
+    /* TODO: Move this to the FFS repo */
+    body { font-feature-settings : "ss03"; }
+
+    hr.section-separator { display: table; }
+
+
+    /* // TODO Move this to FFS */
+    code, :not(pre) > code {
+        margin    : 0 3px;
+        padding   : 2px 6px;
+        font-size : 86%;
+    }
+
+    code, :not(pre) > code { background-color : rgba(${(props: GlobalStyledProps) => props.theme.code.inline.bg}, 0.12); }
+
+    pre code,
+    pre[class*=language-],
+    code[class*=language-] {
+        width            : 100%;
+        border-radius    : 4px;
+        font-family      : $fontMono;
+        font-size        : 82%;
+        padding          : 24px;
+        background-color : rgba(${(props: GlobalStyledProps) => props.theme.code.block.bg}, 0.4);
+        color            : rgba(${(props: GlobalStyledProps) => props.theme.code.block.text}, 0.64);
+        white-space      : pre-wrap;
+        word-break       : break-word;
+    }
+
+    /* //.token.property { color : #0065ff; } */
+    /* //.token.string { color : #0065ff; } */
+
+    .list ol li,
+    .list ul li {
+        width         : 100%;
+        list-style    : unset;
+        margin-bottom : 24px;
+    }
+
+    .list li:last-of-type { margin-bottom : 0 }
+
+    @media (max-width : 600px) {
+        .ff-table.padding-small th,
+        .ff-table.padding-small td { padding : 8px; }
+
+        pre code,
+        pre[class*=language-],
+        code[class*=language-] {
+            max-width  : calc(100vw - 8vw - 16px);
+            overflow-x : scroll;
+        }
+    }
+
+    code, :not(pre) > code {
+        margin : 0 0 !important;
+    }
+
+    #response-list .ff-card:nth-child(2n+1) {
+        /* background-color: rgba($colorPearlyCoke, 1); */
+        background-color: rgba(#fff, 1);
+    }
+
+    /*  TRANSITION  */
+    .fade-enter { opacity : 0.01; }
+
+    .fade-enter.fade-enter-active {
+        opacity    : 1;
+        transition : opacity 300ms ease-in;
+    }
+
+    .fade-exit { opacity : 1; }
+
+    .fade-exit.fade-exit-active {
+        opacity    : 0.01;
+        transition : opacity 300ms ease-in;
+    }
+
+
+    .react-tabs__tab-list {
+        display        : flex;
+        flex-direction : row;
+
+        .react-tabs__tab,
+        .content ol li,
+        .content ul li { margin-bottom : 0; }
+    }
+
+
+    #sample-bill .ff-table.bordered-rows td,
+    #sample-bill .ff-table.bordered-rows th {
+        border              : 0 solid $colorAmber-40;
+        border-bottom-width : 1px;
+    }
 `

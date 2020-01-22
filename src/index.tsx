@@ -47,6 +47,7 @@ import { Table } from "./components/Table/Table";
 import { CodeBlock } from "./components/CodeBlock/CodeBlock";
 
 import { ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
+import { ThemeType, ThemeProps } from "./components/Element/constants";
 
 import { baseColors } from "./constants/BaseColors";
 
@@ -86,5 +87,7 @@ export {
     InfoPanel,
     CodeBlock,
     ThemeProvider,
+    ThemeType,
+    ThemeProps,
     baseColors
 };
