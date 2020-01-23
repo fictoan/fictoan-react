@@ -177,10 +177,5 @@ export const RFTheme = {
             bg   : baseColors.amber20,
             text : mainColors.shade
         }
-    },
-
-    docs: {
-        
     }
-
 }

@@ -282,7 +282,7 @@ export const GlobalStyled = createGlobalStyle`
             0   4px   8px rgba(0, 0, 0, 0.24);
         }
 
-    .shadow-hard { 
+    .shadow-hard {
         box-shadow :
             0 0.2px 0.2px rgba(0, 0, 0, 0.056),
             0 1.1px 1.1px rgba(0, 0, 0, 0.08),
@@ -290,7 +290,7 @@ export const GlobalStyled = createGlobalStyle`
             0  16px  20px rgba(0, 0, 0, 0.16);
     }
 
-    .shadow-soft { 
+    .shadow-soft {
         box-shadow :
             0  1.6px  0.2px rgba(0, 0, 0, 0.019),
             0  3.2px  0.8px rgba(0, 0, 0, 0.028),
@@ -351,7 +351,9 @@ export const GlobalStyled = createGlobalStyle`
         font-size : 86%;
     }
 
-    code, :not(pre) > code { background-color : rgba(${(props: GlobalStyledProps) => props.theme.code.inline.bg}, 0.12); }
+    code, :not(pre) > code {
+        background-color : rgba(${(props: GlobalStyledProps) => props.theme.text.code.inline.bg}, 0.12);
+    }
 
     pre code,
     pre[class*=language-],
@@ -361,8 +363,8 @@ export const GlobalStyled = createGlobalStyle`
         font-family      : $fontMono;
         font-size        : 82%;
         padding          : 24px;
-        background-color : rgba(${(props: GlobalStyledProps) => props.theme.code.block.bg}, 0.4);
-        color            : rgba(${(props: GlobalStyledProps) => props.theme.code.block.text}, 0.64);
+        background-color : rgba(${(props: GlobalStyledProps) => props.theme.text.code.block.bg}, 0.4);
+        color            : rgba(${(props: GlobalStyledProps) => props.theme.text.code.block.text}, 0.64);
         white-space      : pre-wrap;
         word-break       : break-word;
     }

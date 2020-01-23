@@ -5,16 +5,19 @@ import postcss from "rollup-plugin-postcss";
 import resolve from "rollup-plugin-node-resolve";
 import url from "rollup-plugin-url";
 import typescript from "rollup-plugin-typescript2";
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import pkg from "./package.json";
 
 // const production = !process.env.ROLLUP_WATCH;
 
 export default {
     input: "src/index.tsx",
-    external : [
+    external: [
+        "react",
+        "react-dom",
+        "react-router-dom",
         "styled-components",
-        "prism-react-renderer",
-        "lodash-es"
+        "prism-react-renderer"
     ],
     output: [
         {
@@ -31,6 +34,7 @@ export default {
         }
     ],
     plugins: [
+        // peerDepsExternal(),
         typescript(),
         external(),
         postcss({

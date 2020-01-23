@@ -5,7 +5,7 @@ import { CommonAndHTMLProps } from "../Element/constants";
 export type CodeBlockElementType = HTMLPreElement;
 
 export interface CodeBlockCustomProps {
-    source     : object | string;
+    source   ? : object | string;
     language ? : Language;
 }
 

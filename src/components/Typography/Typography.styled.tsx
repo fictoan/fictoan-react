@@ -2,9 +2,9 @@ import { css } from "styled-components";
 
 import { GlobalStyledProps } from "../ThemeProvider/constants";
 
+/* font-family      : ${(props: GlobalStyledProps) => props.theme}; */
 export const TextStyled = css`
     body {
-        font-family      : ${(props: GlobalStyledProps) => props.theme};
         font-size        : ${(props: GlobalStyledProps) => props.theme.body}em;
         line-height      : ${(props: GlobalStyledProps) => props.theme.text.paras.lineHeight};
         color            : ${(props: GlobalStyledProps) => props.theme.text.paras.color};

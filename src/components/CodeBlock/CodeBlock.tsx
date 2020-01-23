@@ -6,8 +6,11 @@ import { CodeBlockProps } from "./constants";
 export const CodeBlock = ({ ref, source, theme, ...props }: CodeBlockProps) => {
     let prismTheme: any = undefined;
 
-    if (theme && theme.code && theme.code.prism && Object.keys(theme.code.prism).length !== 0) {
-        prismTheme = theme.code.prism;
+    if (theme && theme.text && theme.text.code
+        && theme.text.code.prism
+        && Object.keys(theme.text.code.prism).length !== 0
+    ) {
+        prismTheme = theme.text.code.prism;
     }
 
     return (
