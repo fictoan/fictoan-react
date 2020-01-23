@@ -50,13 +50,11 @@
         "dist"
     ],
     "peerDependencies": {
+        "lodash-es": "^4.17.15",
+        "prism-react-renderer": "^1.0.2",
         "react": "^16.12.0",
         "react-dom": "^16.8.6",
         "react-router-dom": "^5.0.1",
         "styled-components": "^5.0.0"
-    },
-    "dependencies": {
-        "lodash-es": "^4.17.15",
-        "prism-react-renderer": "^1.0.2"
     }
 }
