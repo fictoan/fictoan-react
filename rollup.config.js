@@ -12,13 +12,6 @@ import pkg from "./package.json";
 
 export default {
     input: "src/index.tsx",
-    external: [
-        "react",
-        "react-dom",
-        "react-router-dom",
-        "styled-components",
-        "prism-react-renderer"
-    ],
     output: [
         {
             file: pkg.main,
@@ -34,7 +27,7 @@ export default {
         }
     ],
     plugins: [
-        // peerDepsExternal(),
+        peerDepsExternal(),
         typescript(),
         external(),
         postcss({

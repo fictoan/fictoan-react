@@ -1,4 +1,4 @@
-# v0.21.0
+# v0.21.2
 - Updated styled components.
 - Removed unused component `EventHandler`.
 - Fixed rollup dependencies.
