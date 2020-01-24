@@ -25,7 +25,7 @@ export const RFTheme = {
 
         size: {
             default    : 1,
-            multiplier : 1.24,
+            multiplier : 1.16,
         },
 
         paras: {

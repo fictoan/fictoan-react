@@ -25,9 +25,7 @@ export const CodeStyled = css`
             white-space : normal;
         }
 
-        pre code {
-            padding : 16px;
-        }
+        pre code { padding : 16px; }
     }
 
     /*  For block code  */
