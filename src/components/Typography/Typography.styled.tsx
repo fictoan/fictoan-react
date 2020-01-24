@@ -5,7 +5,7 @@ import { GlobalStyledProps } from "../ThemeProvider/constants";
 /* font-family      : ${(props: GlobalStyledProps) => props.theme}; */
 export const TextStyled = css`
     body {
-        font-size        : ${(props: GlobalStyledProps) => props.theme.body}em;
+        font-size        : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 1)}em;
         line-height      : ${(props: GlobalStyledProps) => props.theme.text.paras.lineHeight};
         color            : ${(props: GlobalStyledProps) => props.theme.text.paras.color};
         word-wrap        : normal;

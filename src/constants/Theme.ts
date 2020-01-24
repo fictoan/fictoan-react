@@ -59,8 +59,64 @@ export const RFTheme = {
                 bg   : baseColors.slate10,
                 text : baseColors.blue70
             },
-            prism : {}
+            prism : {
+                tokens : {
+                    cdata       : baseColors.grey70,
+                    prolog      : baseColors.grey90,
+                    doctype     : baseColors.grey90,
+                    delimiter   : baseColors.grey90,
+                    comment     : baseColors.grey70,
+                    hexcode     : baseColors.green,
+                    string      : baseColors.crimson60,
+                    operator    : baseColors.pistachio,
+                    variable    : baseColors.orange80,
+                    atrule      : baseColors.teal90,
+                    keyword     : baseColors.orange90,
+                    tag         : baseColors.violet,
+                    attrName    : baseColors.red90,
+                    attrValue   : baseColors.orange80,
+                    function    : baseColors.teal,
+                    className   : baseColors.blue90,
+                    selector    : baseColors.violet,
+                    property    : baseColors.red90,
+                    punctuation : baseColors.grey60,
+                    deleted     : baseColors.orange80,
+                    boolean     : baseColors.green80,
+                    constant    : baseColors.green80,
+                    entity      : baseColors.green80,
+                    inserted    : baseColors.green80,
+                    number      : baseColors.green80,
+                    regex       : baseColors.green80,
+                    symbol      : baseColors.green80,
+                    url         : baseColors.green80,
+                    namespace   : baseColors.green80,
+                    italic      : baseColors.green80,
+                },
+
+                languages : {
+                    css : {
+                        fallback : baseColors.orange90
+                    },
+                    html : {
+                        fallback : baseColors.grey
+                    },
+                    js : {
+                        fallback : baseColors.violet90
+                    },
+                    json : {
+                        fallback : baseColors.teal,
+                        tokens : {
+                            string : baseColors.teal
+                        }
+                    }
+                }
+            }
         },
+
+        kbd : {
+            text : baseColors.grey,
+            bg : baseColors.grey10
+        }
     },
 
     //  CARD  /////////////////////////////////////////////////////////////////

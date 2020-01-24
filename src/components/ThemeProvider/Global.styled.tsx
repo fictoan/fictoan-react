@@ -9,10 +9,10 @@ import { CodeStyled } from "../CodeBlock/Code.styled";
 import { GlobalStyledProps } from "./constants";
 
 export const GlobalStyled = createGlobalStyle`
-    ${NormalizeStyled}
-    ${ResetStyled}
+    ${ NormalizeStyled }
+    ${ ResetStyled }
 
-    ${ColorsStyled}
+    ${ ColorsStyled }
 
     ${ TextStyled }
 
@@ -77,9 +77,9 @@ export const GlobalStyled = createGlobalStyle`
 
     .show-this    { display : block !important; }
     .show-inline  { display : inline-block !important; }
-    /* .show-nothing { display : none !important; }   Element isn't rendered at all */
+    .show-nothing { display : none !important; }  /* Element isn't rendered at all  */
 
-    /* .hide-this { visibility : hidden !important; }   Element is merely invisible */
+    .hide-this { visibility : hidden !important; }  /*  Element is merely invisible  */
 
     .full-width  { width  : 100% !important; }
     .full-height { height : 100% !important; }
@@ -114,21 +114,21 @@ export const GlobalStyled = createGlobalStyle`
         justify-content : center;
     }
 
-      /* For when you want child elements vertically in  */
-      /* the middle. Apply to parent */
+    /* For when you want child elements vertically in  */
+    /* the middle. Apply to parent */
     .vertically-centre-items,
     .vertically-center-items {
         display     : flex !important;
         align-items : center !important;
     }
 
-      /* Parent div needs to be a flex element */
+    /* Parent div needs to be a flex element */
     .vertically-centre-this,
     .vertically-center-this {
         align-self : center;
     }
 
-      /* Parent div needs a set width */
+    /* Parent div needs a set width */
     .horizontally-centre-this,
     .horizontally-center-this {
         position : relative;
@@ -232,7 +232,7 @@ export const GlobalStyled = createGlobalStyle`
     .padding-left-large      { padding-left : 16vmax; }
     .padding-left-huge       { padding-left : 24vmax; }
 
-      /* For a bit of empty space */
+    /* For a bit of empty space */
     .spacer-huge {
         display : block;
         width   : 100%;
@@ -268,12 +268,12 @@ export const GlobalStyled = createGlobalStyle`
         clear   : both;
     }
 
-      /* For images and tiles */
+    /* For images and tiles */
     .shape-rounded  { border-radius : 4px; }
     .shape-curved   { border-radius : 50000px; }
     .shape-circular { border-radius : 50%; }
 
-      /* Shadows for any element */
+    /* Shadows for any element */
     .no-shadow   { box-shadow : none !important; }
 
     .shadow-mild {
@@ -325,7 +325,7 @@ export const GlobalStyled = createGlobalStyle`
     .icon-huge   { width : 64px; }
 
 
-    // DOCS
+    // DOCS  //////////////////////////////////////////////////////////////////
     .content { min-height : 100vh; }
 
     @media (max-width : 600px) {
@@ -339,9 +339,12 @@ export const GlobalStyled = createGlobalStyle`
     .ff-button { font-size : 92%; }
 
     /* TODO: Move this to the FFS repo */
-    body { font-feature-settings : "ss03"; }
+    body {
+        font-family           : "Matter";
+        font-feature-settings : "ss03";
+    }
 
-    hr.section-separator { display: table; }
+    hr.section-separator { display : table; }
 
 
     /* // TODO Move this to FFS */
@@ -351,8 +354,9 @@ export const GlobalStyled = createGlobalStyle`
         font-size : 86%;
     }
 
-    code, :not(pre) > code {
-        background-color : rgba(${(props: GlobalStyledProps) => props.theme.text.code.inline.bg}, 0.12);
+    code,
+    :not(pre) > code {
+        background-color : ${(props: GlobalStyledProps) => props.theme.text.code.inline.bg};
     }
 
     pre code,
@@ -363,8 +367,8 @@ export const GlobalStyled = createGlobalStyle`
         font-family      : $fontMono;
         font-size        : 82%;
         padding          : 24px;
-        background-color : rgba(${(props: GlobalStyledProps) => props.theme.text.code.block.bg}, 0.4);
-        color            : rgba(${(props: GlobalStyledProps) => props.theme.text.code.block.text}, 0.64);
+        background-color : ${(props: GlobalStyledProps) => props.theme.text.code.block.bg};
+        color            : ${(props: GlobalStyledProps) => props.theme.text.code.inline.text};
         white-space      : pre-wrap;
         word-break       : break-word;
     }
@@ -417,7 +421,6 @@ export const GlobalStyled = createGlobalStyle`
         transition : opacity 300ms ease-in;
     }
 
-
     .react-tabs__tab-list {
         display        : flex;
         flex-direction : row;
@@ -426,7 +429,6 @@ export const GlobalStyled = createGlobalStyle`
         .content ol li,
         .content ul li { margin-bottom : 0; }
     }
-
 
     #sample-bill .ff-table.bordered-rows td,
     #sample-bill .ff-table.bordered-rows th {

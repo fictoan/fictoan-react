@@ -11,8 +11,8 @@ export const CodeStyled = css`
         border-radius    : 4px;
         padding          : 2px 8px;
         border           : none;
-        background-color : $inlineCodeBGColor;
-        color            : $codeTextColor;
+        background-color : ${(props: CodeBlockProps) => props.theme.text.code.inline.bg};
+        color            : ${(props: CodeBlockProps) => props.theme.text.code.inline.text};
         font-size        : 80%;
         font-weight      : normal;
         white-space      : pre-wrap;
@@ -35,12 +35,12 @@ export const CodeStyled = css`
         display                : block;
         width                  : 100%;
         max-width              : 100%;
-        font-family            : $fontCode;
-        color                  : $colorGrey-60;
+        font-family            : ${(props: CodeBlockProps) => props.theme.text.font.mono};
+        color                  : ${(props: CodeBlockProps) => props.theme.text.code.block.text};
         line-height            : 1.6;
         font-weight            : 400;
         padding                : 16px 24px;
-        background-color       : $blockCodeBGColor;
+        background-color       : ${(props: CodeBlockProps) => props.theme.text.code.block.bg};
         text-align             : left;
         overflow               : auto;
         direction              : ltr;
@@ -53,7 +53,7 @@ export const CodeStyled = css`
         -webkit-hyphens        : none;
         -ms-hyphens            : none;
         hyphens                : none;
-        border-radius          : $measureFixed/2px;
+        border-radius          : 4px;
         -moz-tab-size          : 4;
         tab-size               : 4;
     }
@@ -61,86 +61,53 @@ export const CodeStyled = css`
     code[class*=language-css],
     code[class*=language-less],
     code[class*=language-sass] {
-        color : $colorOrange-90;
+        ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.css.fallback};
     }
 
-    code[class*=language-scss] { color : $colorGreen-90; }
+    code[class*=language-scss] { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.css.fallback}; }
 
-    code[class*=language-html] { color : $colorGrey; }
+    code[class*=language-html] { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.html.fallback}; }
 
     code[class*=language-js] {
-        color : $colorViolet-80;
+        ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.js.fallback};
     }
 
     code[class*=language-json] .token.string {
-        color : $colorTeal;
+        ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.json.tokens.string};
     }
 
-    .token.doctype,
-    .token.delimiter {
-        color : $colorGrey-90;
-    }
-
-    .token.cdata,
-    .token.prolog,
-    .token.comment { color : $colorGrey-70; }
-
-    .token.hexcode { color : $colorGreen; }
-
-    .token.string { color : $colorCrimson-60; }
-
-    .token.operator { color : $colorPistachio; }
-
-    .token.variable { color : $colorOrange-80; }
-
-    .token.atrule { color : $colorTeal-90; }
-
-    .token.keyword { color : $colorOrange-90; }
-
-    .token.tag { color : $colorViolet; }
-
-    .token.attr-name { color : $colorRed-90; }
-
-    .token.attr-value { color : $colorOrange-80; }
-
-    .token.function { color : $colorTeal; }
-
-    .token.class-name { color : $colorBlue-90; }
-
-    .token.selector { color : $colorViolet; }
-
-    .token.property { color : $colorRed-90; }
-
-    .token.punctuation { color : $colorGrey-60; }
-
-    .token.deleted { color : $colorOrange-80; }
-
-    .token.boolean,
-    .token.constant,
-    .token.entity,
-    .token.inserted,
-    .token.number,
-    .token.regex,
-    .token.symbol,
-    .token.url { color : $colorGreen-80; }
+    .token.doctype { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.doctype}; }
+    .token.delimiter { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.delimiter}; }
+    .token.cdata { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.cdata}; }
+    .token.prolog { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.prolog}; }
+    .token.comment { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.comment}; }
+    .token.hexcode { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.hexcode}; }
+    .token.string { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.string}; }
+    .token.operator { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.operator}; }
+    .token.variable { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.variable}; }
+    .token.atrule { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.atrule}; }
+    .token.keyword { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.keyword}; }
+    .token.tag { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.tag}; }
+    .token.attr-name { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.attrName}; }
+    .token.attr-value { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.attrValue}; }
+    .token.function { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.function}; }
+    .token.class-name { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.className}; }
+    .token.selector { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.selector}; }
+    .token.property { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.property}; }
+    .token.punctuation { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.punctuation}; }
+    .token.deleted { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.deleted}; }
+    .token.boolean { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.boolean}; }
+    .token.constant { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.constant} }
+    .token.entity { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.entity} }
+    .token.inserted { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.inserted} }
+    .token.number { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.number} }
+    .token.regex { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.regex} }
+    .token.symbol { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.symbol} }
+    .token.url { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.url} }
 
     .token.namespace { opacity : 0.72; }
 
     .token.italic { font-style : italic; }
-
-    pre.bg-dark code,
-    pre.bg-dark[class*=language-] { background-color : hsl(256, 12%, 24%); }
-
-    pre.bg-dark code[class*=language-html] { color : $colorGrey-20; }
-
-    pre.bg-dark code[class*=language-js] { color : $colorViolet-80; }
-
-    pre.bg-dark .token.tag { color : $colorViolet-80; }
-
-    pre.bg-dark .token.selector { color : $colorViolet-80; }
-
-    pre.bg-dark .token.class-name { color : $colorBlue-60; }
-
 
     pre::selection,
     code::selection,
@@ -151,8 +118,8 @@ export const CodeStyled = css`
     pre[class*=language-]::-moz-selection,
     code[class*=language-] ::-moz-selection {
         text-shadow : none;
-        color       : $colorWhite;
-        background  : rgba($colorViolet, 0.72) !important;
+        color       : ${(props: CodeBlockProps) => props.theme.text.selection.text};
+        background  : ${(props: CodeBlockProps) => props.theme.text.selection.bg} !important;
     }
 
 
@@ -162,13 +129,13 @@ export const CodeStyled = css`
         font-family      : $fontMono;
         margin           : 0 4px;
         padding          : 4px 8px;
-        color            : $colorGrey;
-        background-color : $colorGrey-10;
+        color            : ${(props: CodeBlockProps) => props.theme.text.kbd.text};
+        background-color : ${(props: CodeBlockProps) => props.theme.text.kbd.bg};
         cursor           : pointer;
         font-size        : 14px;
         line-height      : 1.4;
         border-radius    : 4px;
-        text-shadow      : 0 1px 0 $colorWhite;
+        text-shadow      : 0 1px 0 #fff;
         box-shadow       : 0 3px 0 0 rgba(0, 0, 0, 0.16);
         user-select      : none;
     }
@@ -177,4 +144,23 @@ export const CodeStyled = css`
         transform  : translateY(3px);
         box-shadow : none;
     }
+
+
+    // DOCS
+    code, :not(pre) > code { background-color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.deleted}; }
+
+    pre code,
+    pre[class*=language-],
+    code[class*=language-] {
+        width            : 100%;
+        border-radius    : 4px;
+        font-family      : ${(props: CodeBlockProps) => props.theme.text.font.mono};
+        font-size        : 82%;
+        padding          : 24px;
+        background-color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.deleted};
+        color            : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.deleted};
+        white-space      : pre-wrap;
+        word-break       : break-word;
+    }
+
 `
