@@ -68,42 +68,40 @@ export const CodeStyled = css`
 
     code[class*=language-html] { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.html.fallback}; }
 
-    code[class*=language-js] {
-        ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.js.fallback};
-    }
+    code[class*=language-js]   { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.js.fallback}; }
 
     code[class*=language-json] .token.string {
         ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.json.tokens.string};
     }
 
-    .token.doctype { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.doctype}; }
-    .token.delimiter { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.delimiter}; }
-    .token.cdata { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.cdata}; }
-    .token.prolog { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.prolog}; }
-    .token.comment { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.comment}; }
-    .token.hexcode { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.hexcode}; }
-    .token.string { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.string}; }
-    .token.operator { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.operator}; }
-    .token.variable { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.variable}; }
-    .token.atrule { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.atrule}; }
-    .token.keyword { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.keyword}; }
-    .token.tag { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.tag}; }
-    .token.attr-name { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.attrName}; }
-    .token.attr-value { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.attrValue}; }
-    .token.function { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.function}; }
-    .token.class-name { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.className}; }
-    .token.selector { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.selector}; }
-    .token.property { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.property}; }
+    .token.doctype     { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.doctype}; }
+    .token.delimiter   { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.delimiter}; }
+    .token.cdata       { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.cdata}; }
+    .token.prolog      { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.prolog}; }
+    .token.comment     { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.comment}; }
+    .token.hexcode     { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.hexcode}; }
+    .token.string      { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.string}; }
+    .token.operator    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.operator}; }
+    .token.variable    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.variable}; }
+    .token.atrule      { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.atrule}; }
+    .token.keyword     { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.keyword}; }
+    .token.tag         { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.tag}; }
+    .token.attr-name   { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.attrName}; }
+    .token.attr-value  { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.attrValue}; }
+    .token.function    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.function}; }
+    .token.class-name  { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.className}; }
+    .token.selector    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.selector}; }
+    .token.property    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.property}; }
     .token.punctuation { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.punctuation}; }
-    .token.deleted { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.deleted}; }
-    .token.boolean { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.boolean}; }
-    .token.constant { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.constant} }
-    .token.entity { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.entity} }
-    .token.inserted { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.inserted} }
-    .token.number { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.number} }
-    .token.regex { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.regex} }
-    .token.symbol { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.symbol} }
-    .token.url { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.url} }
+    .token.deleted     { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.deleted}; }
+    .token.boolean     { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.boolean}; }
+    .token.constant    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.constant} }
+    .token.entity      { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.entity} }
+    .token.inserted    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.inserted} }
+    .token.number      { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.number} }
+    .token.regex       { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.regex} }
+    .token.symbol      { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.symbol} }
+    .token.url         { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.url} }
 
     .token.namespace { opacity : 0.72; }
 
@@ -126,7 +124,7 @@ export const CodeStyled = css`
     //  Keyboard key element  =================================
     kbd {
         display          : inline-block;
-        font-family      : $fontMono;
+        font-family      : ${(props: CodeBlockProps) => props.theme.text.font.mono};
         margin           : 0 4px;
         padding          : 4px 8px;
         color            : ${(props: CodeBlockProps) => props.theme.text.kbd.text};

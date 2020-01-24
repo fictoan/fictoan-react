@@ -325,6 +325,13 @@ export const GlobalStyled = createGlobalStyle`
     .icon-huge   { width : 64px; }
 
 
+
+
+
+
+
+
+
     // DOCS  //////////////////////////////////////////////////////////////////
     .content { min-height : 100vh; }
 
@@ -364,7 +371,7 @@ export const GlobalStyled = createGlobalStyle`
     code[class*=language-] {
         width            : 100%;
         border-radius    : 4px;
-        font-family      : $fontMono;
+        font-family      : ${(props: GlobalStyledProps) => props.theme.text.font.mono};
         font-size        : 82%;
         padding          : 24px;
         background-color : ${(props: GlobalStyledProps) => props.theme.text.code.block.bg};
