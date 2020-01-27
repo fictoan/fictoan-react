@@ -26,7 +26,11 @@ export const Select = ({ fullWidth, className, options, ...props }: SelectProps)
             <Element<SelectElementType>
                 as={SelectStyled}
                 {...props}
-            />
+            >
+                {options.map((option, index) => {
+                    return <Option key={index} {...option}/>
+                })}
+            </Element>
         </Element>
     );
 }

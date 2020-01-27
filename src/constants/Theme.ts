@@ -166,7 +166,7 @@ export const RFTheme = {
             bg       : baseColors.white,
             border   : mainColors.hue,
             text     : mainColors.shade,
-            helptext : mainColors.shade,
+            helpText : mainColors.shade,
         },
         isValid: {
             bg     : baseColors.white,
@@ -174,9 +174,33 @@ export const RFTheme = {
             label  : mainColors.shade
         },
         isInvalid: {
-            bg     : baseColors.red10,
-            border : baseColors.green80,
+            bg       : baseColors.red10,
+            border   : baseColors.red80,
+            label    : baseColors.red,
+            helpText : baseColors.red,
+        },
+        isReadOnly: {
+            bg     : baseColors.grey50,
+            border : baseColors.grey50,
             label  : mainColors.shade
+        },
+        required : {
+            text : baseColors.red
+        },
+        icons : {
+            default : {
+                fill : baseColors.slate30,
+            },
+            onFocus : {
+                fill : mainColors.hue,
+            },
+            isValid : {
+                bg     : baseColors.grey50,
+                border : baseColors.red30,
+            }
+        },
+        select : {
+            chevron : mainColors.hue
         }
     },
 
@@ -223,7 +247,6 @@ export const RFTheme = {
         striped : {
             header: {
                 bg : baseColors.blue40,
-
             },
             cell: {
                 bg : baseColors.slate20,

@@ -119,7 +119,7 @@ export const CodeStyled = css`
     }
 
 
-    //  Keyboard key element  =================================
+    /*  Keyboard key element  =================================  */
     kbd {
         display          : inline-block;
         font-family      : ${(props: CodeBlockProps) => props.theme.text.font.mono};
@@ -140,23 +140,4 @@ export const CodeStyled = css`
         transform  : translateY(3px);
         box-shadow : none;
     }
-
-
-    // DOCS
-    code, :not(pre) > code { background-color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.deleted}; }
-
-    pre code,
-    pre[class*=language-],
-    code[class*=language-] {
-        width            : 100%;
-        border-radius    : 4px;
-        font-family      : ${(props: CodeBlockProps) => props.theme.text.font.mono};
-        font-size        : 82%;
-        padding          : 24px;
-        background-color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.deleted};
-        color            : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.deleted};
-        white-space      : pre-wrap;
-        word-break       : break-word;
-    }
-
 `

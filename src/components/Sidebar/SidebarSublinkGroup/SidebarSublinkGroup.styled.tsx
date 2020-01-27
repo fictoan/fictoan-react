@@ -7,8 +7,6 @@ export const SidebarSublinkGroupStyled = styled.div`
     background-color : ${(props: SidebarSublinkGroupProps) => props.theme.sidebar.links.group.bg};
     box-shadow       : inset 0 2px 2px -2px rgba(0, 0, 0, 0.16);
 
-    &:hover { background-color : ${(props: SidebarSublinkGroupProps) => props.theme.sidebar.links.group.bgOnHover}; }
-
     a.active { display : block; }
 
     .sidebar-sublink {
@@ -16,6 +14,9 @@ export const SidebarSublinkGroupStyled = styled.div`
         font-weight : 400;
         margin      : 0 24px;
 
-        &:hover { color : ${(props: SidebarSublinkGroupProps) => props.theme.sidebar.links.group.textOnHover}; }
+        &:hover {
+            color            : ${(props: SidebarSublinkGroupProps) => props.theme.sidebar.links.group.textOnHover};
+            background-color : ${(props: SidebarSublinkGroupProps) => props.theme.sidebar.links.group.bgOnHover};
+        }
     }
 `

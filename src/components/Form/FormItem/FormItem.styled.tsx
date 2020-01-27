@@ -16,7 +16,7 @@ export const FormItemStyled = styled.div`
         * { margin-bottom: 8px; }
     `}
 
-    > label {
+    & > label {
         position      : relative;
         display       : flex;
         flex          : 1 0 100%;
@@ -38,7 +38,7 @@ export const FormItemStyled = styled.div`
             margin    : auto;
             content   : " *";
             font-size : 120%;
-            color     : $colorRed;
+            color     : ${(props: FormItemProps) => props.theme.input.required.text};
         }
 
         &:focus ~ label > span.ff-input-help,
@@ -47,24 +47,24 @@ export const FormItemStyled = styled.div`
         }
 
         &:not(:focus):not(:placeholder-shown) ~ label > span.ff-input-help {
-            color : $inputHelpTextDefaultColor;
+            color : ${(props: FormItemProps) => props.theme.input.onFocus.helpText};
         }
 
         &:invalid:focus:not(:placeholder-shown) ~ label > span.ff-input-error,
         &:invalid:not(:focus):not(:placeholder-shown) ~ label > span.ff-input-error {
             display : inline-flex;
-            color   : $inputHelpTextErrorColor;
+            color   : ${(props: FormItemProps) => props.theme.input.isInvalid.helpText};
         }
     }
 
     label span {
         font-size   : 80%;
         font-weight : normal;
-        color       : $inputHelpTextDefaultColor;
+        color       : ${(props: FormItemProps) => props.theme.input.onFocus.helpText};
         display     : none;
         align-self  : center;
         transition  : opacity 0.2s;
     }
 
-    label > span::before { content : "\0000a0\2022\0000a0"; }
+    label > span::before { content : "\\0000a0\\2022\\0000a0"; }
 `
