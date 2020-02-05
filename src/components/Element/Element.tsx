@@ -3,15 +3,6 @@ import React from "react";
 import { createClassName } from "src/utils/classNames";
 
 import { ElementProps } from "./constants";
-import styled, { css } from "styled-components";
-
-const ElementStyledForComponent = <K extends {}>(component: any) => styled(component)`
-    ${(props: ElementProps<K>) => props.bgColor && css`{ background-color : ${props.bgColor}; }`}
-    ${(props: ElementProps<K>) => props.textColor && css`{ color : ${props.textColor}; }`}
-    ${(props: ElementProps<K>) => props.borderColor && css`{ border : 2px solid ${props.borderColor}; }`}
-    ${(props: ElementProps<K>) => props.fillColor && css`{ fill : ${props.fillColor}; }`}
-    ${(props: ElementProps<K>) => props.strokeColor && css`{ stroke : ${props.strokeColor}; }`}
-`;
 
 export const Element = <K extends {}>({
     as: Component,
@@ -44,14 +35,18 @@ export const Element = <K extends {}>({
     padding,
     ...props
 }: ElementProps<K>) => {
-    const ComponentStyled = ElementStyledForComponent(Component);
     return (
-        <ComponentStyled {...props} className={
+        <Component {...props} className={
             createClassName([
                 className,
                 size && `size-${size}`,
                 fullWidth && "full-width",
                 fullHeight && "full-height",
+                bgColor && `bg-${bgColor}`,
+                textColor && `text-${textColor}`,
+                borderColor && `border-${borderColor}`,
+                fillColor && `fill-${fillColor}`,
+                strokeColor && `stroke-${strokeColor}`,
                 hideOnMobile && "hide-on-mobile",
                 showOnlyOnMobile && "show-only-on-mobile",
                 showOnlyOnTabPT && "hide-on-tab-pt",

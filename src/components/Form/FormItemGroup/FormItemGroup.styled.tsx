@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { FormItemStyled } from "../FormItem/FormItem.styled";
+
 export const FormItemGroupStyled = styled.div`
     display        : flex;
     flex-direction : row;
@@ -8,7 +10,7 @@ export const FormItemGroupStyled = styled.div`
 
     input { align-self : flex-end; }
 
-    & > .ff-form-unit {
+    & > ${FormItemStyled} {
         flex           : 1 1 0;
         flex-direction : row;
         margin-bottom  : 24px;
@@ -19,15 +21,15 @@ export const FormItemGroupStyled = styled.div`
         order : -1;
     }
 
-    & > .ff-form-unit:not(:last-of-type) { margin-right : 24px; }
+    & > ${FormItemStyled}:not(:last-of-type) { margin-right : 24px; }
 
     @media screen and (max-width: 520px) {
-        &:not(.retain-layout) > .ff-form-unit {
+        &:not(.retain-layout) > ${FormItemStyled} {
             flex         : 1 1 auto;
             margin-right : 0 !important;
         }
 
-        &:not(.retain-layout) > .ff-form-unit:not(:last-child) { margin-bottom : 16px; }
+        &:not(.retain-layout) > ${FormItemStyled}:not(:last-child) { margin-bottom : 16px; }
     }
 
     & > .ff-form-question {

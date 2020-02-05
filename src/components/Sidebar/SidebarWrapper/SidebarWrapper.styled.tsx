@@ -1,8 +1,11 @@
 import styled from "styled-components";
+import { lighten } from "polished";
 
 import { SidebarItemStyled } from "../SidebarItem/SidebarItem.styled"
 import { SidebarItemTextStyled } from "../SidebarItemText/SidebarItemText.styled"
 import { SidebarItemIconStyled } from "../SidebarItemIcon/SidebarItemIcon.styled"
+
+import { SidebarWrapperProps } from "../constants";
 
 export const SidebarWrapperStyled = styled.div`
     display          : flex;
@@ -15,9 +18,10 @@ export const SidebarWrapperStyled = styled.div`
     min-height       : 100vh;
     overflow-y       : auto;
     transition       : all 0.4s ease-in-out;
-    background-color : $sideBarBG;
+    background-color : ${(props: SidebarWrapperProps) => props.theme.sidebar.body};
     box-shadow       : 2px 0 8px -4px rgba(0, 0, 0, 0.16);
     z-index          : 10000;
+    font-size        : ${(props: SidebarWrapperProps) => props.theme.sidebar.links.default.scale}%;
 
     .sidebar-section {
         padding        : 12px 24px;
@@ -25,10 +29,15 @@ export const SidebarWrapperStyled = styled.div`
         flex-direction : column;
     }
 
+    a {
+        width : unset;
+        color : ${(props: SidebarWrapperProps) => props.theme.sidebar.links.default.text};
+    }
+
     a.active {
         display          : block;
-        background-color : rgba($colorHue, 0.16);
-        border-left      : 4px solid $colorHue;
+        background-color : ${(props: SidebarWrapperProps) => props.theme.sidebar.links.isSelected.bg && lighten(.32, props.theme.sidebar.links.isSelected.bg)};
+        border-left      : 4px solid ${(props: SidebarWrapperProps) => props.theme.sidebar.links.isSelected.bg};
     }
 
     @media (max-width : 900px) {
@@ -68,7 +77,7 @@ export const SidebarWrapperStyled = styled.div`
         border-style : solid;
         border-width : 0 2px 2px 0;
         transform    : rotate(45deg);
-        color        : $colorSlate-40;
+        color        : ${(props: SidebarWrapperProps) => props.theme.sidebar.links.group.chevron.border};
         transition   : all 0.2s;
         cursor       : pointer;
     }
@@ -77,8 +86,6 @@ export const SidebarWrapperStyled = styled.div`
         transform : rotate(225deg);
         top       : 22px;
     }
-
-    details[open] > summary:hover::after { color : $colorSlate-40; }
 
     /* details a & {
         grid-template-rows: 24px;
@@ -98,13 +105,13 @@ export const SidebarWrapperStyled = styled.div`
         ${SidebarItemStyled}:hover ${SidebarItemIconStyled} + ${SidebarItemTextStyled} {
             display          : flex;
             position         : fixed;
-            background-color : $colorHue;
             left             : 40px;
             align-self       : center;
             border-radius    : 4px;
             margin-top       : 8px;
             padding          : 4px 8px;
-            color            : $colorWhite;
+            background-color : ${(props: SidebarWrapperProps) => props.theme.sidebar.isCollapsed.label.bg};
+            color            : ${(props: SidebarWrapperProps) => props.theme.sidebar.isCollapsed.label.text};
             font-size        : 88%;
             box-shadow       : 0 4px 16px -2px rgba(0, 0, 0, 0.24);
         }

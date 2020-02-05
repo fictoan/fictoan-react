@@ -7,15 +7,19 @@ export const RowStyled = styled.div`
     grid-template-columns : repeat(24, 1fr);
     margin-bottom         : 4vh;
 
-    @media all and (max-width : 720px) {
+    @media all and (max-width : 900px) {
         & { grid-gap : 8px; }
     }
 
-    &.huge-gutters   { grid-gap : $measureFixed*4; }
-    &.large-gutters  { grid-gap : $measureFixed*3; }
-    &.medium-gutters { grid-gap : $measureFixed*2; }
-    &.small-gutters  { grid-gap : $measureFixed; }
-    &.tiny-gutters   { grid-gap : $measureFixed/2; }
+    @media all and (max-width : 600px) {
+        & { grid-gap : 4px; }
+    }
+
+    &.huge-gutters   { grid-gap : 64px; }
+    &.large-gutters  { grid-gap : 32px; }
+    &.medium-gutters { grid-gap : 16px; }
+    &.small-gutters  { grid-gap : 8px; }
+    &.tiny-gutters   { grid-gap : 4px; }
     &.no-gutters     { grid-gap : 0; }
 
     &.side-padding-tiny {
@@ -41,6 +45,33 @@ export const RowStyled = styled.div`
     &.side-padding-huge {
         padding-left  : 24vw;
         padding-right : 24vw;
+    }
+
+    @media all and (max-width : 1200px) {
+        &.side-padding-tiny {
+            padding-left  : 2vw;
+            padding-right : 2vw;
+        }
+
+        &.side-padding-small {
+            padding-left  : 4vw;
+            padding-right : 4vw;
+        }
+
+        &.side-padding-medium {
+            padding-left  : 8vw;
+            padding-right : 8vw;
+        }
+
+        &.side-padding-large {
+            padding-left  : 12vw;
+            padding-right : 12vw;
+        }
+
+        &.side-padding-huge {
+            padding-left  : 16vw;
+            padding-right : 16vw;
+        }
     }
 
     @media all and (max-width : 600px) {

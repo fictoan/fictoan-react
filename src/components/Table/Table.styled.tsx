@@ -1,23 +1,24 @@
 import styled from "styled-components";
+import { TableProps } from "./constants";
 
 export const TableStyled = styled.table`
-    background-color : $tableBG;
-    color            : $tableTextColor;
+    background-color : ${(props: TableProps) => props.theme.table.bg};
+    color            : ${(props: TableProps) => props.theme.table.text};
 
     &.bordered-rows td,
     &.bordered-rows th {
-        border              : 0 solid $tableBorderColor;
+        border              : 0 solid ${(props: TableProps) => props.theme.table.border};
         border-bottom-width : 1px;
     }
 
     &.bordered-columns td,
     &.bordered-columns th {
-        border             : 0 solid $tableBorderColor;
+        border              : 0 solid ${(props: TableProps) => props.theme.table.border};
         border-right-width : 1px;
     }
 
-    &.bordered-all td,
-    &.bordered-all th { border : 1px solid $tableBorderColor; }
+    &.bordered-both td,
+    &.bordered-both th { border : 1px solid ${(props: TableProps) => props.theme.table.border}; }
 
 
     &.padding-all-tiny  th,
@@ -36,13 +37,13 @@ export const TableStyled = styled.table`
     &.padding-all-huge  td  { padding : 32px 40px; }
 
 
-    &.striped thead tr { background-color : $tableStripedHeaderBG; }
+    &.striped thead tr { background-color : ${(props: TableProps) => props.theme.table.striped.header.bg}; }
 
-    &.striped tbody tr:not(.is-selected):nth-child(even) { background-color : $tableStripedCellBG; }
+    &.striped tbody tr:not(.is-selected):nth-child(even) { background-color : ${(props: TableProps) => props.theme.table.striped.cell.bg}; }
 
     &.hoverable tbody tr:hover {
-        background-color : $tableHoverableBG !important;
-        color            : $tableHoverableTextColor;
+        background-color : ${(props: TableProps) => props.theme.table.onHover.bg} !important;
+        color            : ${(props: TableProps) => props.theme.table.onHover.text};
         transition       : all 0.2s;
         cursor           : pointer;
     }

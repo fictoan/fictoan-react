@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
-export const ButtonStyled = styled.button `
+import { ButtonProps } from "./constants";
+
+export const ButtonStyled = styled.button`
     position            : relative;
     display             : inline-flex;
     cursor              : pointer;
     padding             : 12px 24px;
-    font-family         : $fontSans;
+    font-family         : ${(props: ButtonProps) => props.theme.text.font.sans};
+    background-color    : ${(props: ButtonProps) => props.theme.button.default.bg};
+    color               : ${(props: ButtonProps) => props.theme.button.default.text};
     font-weight         : bold;
     font-size           : 92%;
     text-align          : center;
@@ -15,17 +19,18 @@ export const ButtonStyled = styled.button `
     line-height         : 1;
     transition          : all 0.2s;
     background-position : center;
+    user-select         : none;
+
+    &:hover {
+        background-color : ${(props: ButtonProps) => props.theme.button.onHover.bg};
+        color            : ${(props: ButtonProps) => props.theme.button.onHover.text};
+    }
 
     &:active {
         box-shadow : none;
         opacity    : 0.72;
-    }
-
-    /*  Button with a multi-colour background  */
-    &.bg-gradient {
-        background : -webkit-linear-gradient(-45deg, $buttonGradientStartColour 0%, $buttonGradientEndColour 100%);
-        background :    -moz-linear-gradient(-45deg, $buttonGradientStartColour 0%, $buttonGradientEndColour 100%);
-        background :         linear-gradient(135deg, $buttonGradientStartColour 0%, $buttonGradientEndColour 100%);
+        background-color : ${(props: ButtonProps) => props.theme.button.isActive.bg};
+        color            : ${(props: ButtonProps) => props.theme.button.isActive.text};
     }
 
     /*  A round button  */
@@ -64,7 +69,7 @@ export const ButtonStyled = styled.button `
         right              : 0;
         height             : 16px;
         width              : 16px;
-        border             : 3px solid $spinnerBorder;
+        border             : 3px solid ${(props: ButtonProps) => props.theme.button.isLoading.border};
         border-radius      : 50%;
         border-top-color   : transparent;
         border-right-color : transparent;
@@ -84,7 +89,7 @@ export const ButtonStyled = styled.button `
         right              : 0;
         height             : 8px;
         width              : 8px;
-        border             : 2px solid $colorWhite;
+        border             : 2px solid ${(props: ButtonProps) => props.theme.button.isLoading.border};
         border-radius      : 50%;
         border-top-color   : transparent;
         border-right-color : transparent;
@@ -123,22 +128,22 @@ export const ButtonStyled = styled.button `
     /*  Different sized buttons  */
     &.size-tiny {
         padding   : 4px 8px;
-        font-size : $baseFontSize*pow($scaleFactor, -2);
+        font-size : ${(props: ButtonProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, -2)}em;
     }
 
     &.size-small {
         padding   : 8px 16px;
-        font-size : $baseFontSize*pow($scaleFactor, -1);
+        font-size : ${(props: ButtonProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, -1)}em;
     }
 
     &.size-large {
         padding   : 16px 32px;
-        font-size : $baseFontSize*pow($scaleFactor, 2);
+        font-size : ${(props: ButtonProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 2)}em;
     }
 
     &.size-huge {
         padding   : 24px 40px;
-        font-size : $baseFontSize*pow($scaleFactor, 4);
+        font-size : ${(props: ButtonProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 4)}em;
     }
 
     &.button-plain { background : transparent; }
@@ -148,7 +153,7 @@ export const ButtonStyled = styled.button `
         position    : absolute;
         cursor      : pointer;
         right       : 8px;
-        content     : "\00d7";
+        content     : "\\00d7";
         font-size   : 20px;
         line-height : 0;
         align-self  : center;

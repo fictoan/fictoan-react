@@ -2,8 +2,10 @@ import { HTMLProps } from "react";
 
 import { RFTheme } from "src/constants/Theme";
 
+export type ThemeType = typeof RFTheme;
+
 export interface ThemeProps {
-    theme ? : typeof RFTheme;
+    theme ? : ThemeType;
 }
 
 export interface CommonProps extends ThemeProps {

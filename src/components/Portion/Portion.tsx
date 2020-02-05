@@ -6,7 +6,7 @@ import { Element } from "../Element/Element";
 import { PortionStyled } from "./Portion.styled";
 import { PortionProps, PortionElementType } from "./constants";
 
-export const Portion = ({ desktopSpan, mobileSpan, tabLSSpan, tabPTSpan, className, ...props }: PortionProps) => {
+export const Portion = ({ desktopSpan, mobileSpan, tabLSSpan, tabPTSpan, isHorizontal, className, ...props }: PortionProps) => {
     const classNames = [ className ];
 
     if (desktopSpan || tabLSSpan || tabPTSpan || mobileSpan) {
@@ -27,6 +27,10 @@ export const Portion = ({ desktopSpan, mobileSpan, tabLSSpan, tabPTSpan, classNa
         }
     } else {
         classNames.push("whole");
+    }
+
+    if (isHorizontal) {
+        classNames.push("horizontal");
     }
 
     return (

@@ -1,14 +1,11 @@
 import styled from "styled-components";
 
 export const RadioButtonStyled = styled.div`
-    input[type="radio"] { display : none; }
-
     display      : inline-block;
     margin-right : 24px;
 
-
     /*  The grey outer circle  */
-    label::before {
+    & label::before {
         width         : 16px;
         height        : 16px;
         top           : 4px;
@@ -17,7 +14,7 @@ export const RadioButtonStyled = styled.div`
     }
 
     /*  The white inner circle  */
-    label::after {
+    & label::after {
         opacity       : 0;
         left          : 4px;
         top           : 8px;
@@ -29,7 +26,7 @@ export const RadioButtonStyled = styled.div`
 
     &:only-of-type { margin-right : 0; }
 
-    label {
+    & label {
         display        : inline-block;
         position       : relative;
         font-family    : $fontSans;
@@ -49,7 +46,7 @@ export const RadioButtonStyled = styled.div`
     }
 
     /*  The grey square  */
-    input[type="radio"]:disabled + label::before,
+    &:disabled + label::before,
     label::before {
         user-select    : none;
         pointer-events : none;
@@ -62,12 +59,11 @@ export const RadioButtonStyled = styled.div`
     /*  The grey square  */
     label::after { opacity : 0; }
 
-    input[type="radio"]:checked    + label::before { background : $colorHue; }
+    &:checked    + label::before { background : $colorHue; }
+    &:checked    + label::after { opacity : 1; }
 
-    input[type="radio"]:checked    + label::after { opacity : 1; }
-
-    input[type="radio"]:disabled            + label,
-    input[type="radio"]:disabled:checked    + label  {
+    &:disabled         + label,
+    &:disabled:checked + label  {
         pointer-events : none;
         cursor         : default;
         opacity        : 0.24;

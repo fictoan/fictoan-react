@@ -11,6 +11,10 @@ export interface SidebarWrapperCustomProps {
     collapsed ? : boolean;
 }
 
+export interface SidebarItemIconCustomProps {
+    iconType : "stroked" | "filled";
+}
+
 export interface SidebarItemTextCustomProps {
     linkText : string;
 }
@@ -19,5 +23,5 @@ export type SidebarWrapperProps      = CommonAndHTMLProps<SidebarWrapperElementT
 export type SidebarHeaderProps       = CommonAndHTMLProps<SidebarHeaderElementType>;
 export type SidebarItemProps         = CommonAndHTMLProps<SidebarItemElementType>;
 export type SidebarItemTextProps     = CommonAndHTMLProps<SidebarItemTextElementType> & SidebarItemTextCustomProps;
-export type SidebarItemIconProps     = CommonAndHTMLProps<SidebarItemIconElementType>;
+export type SidebarItemIconProps     = CommonAndHTMLProps<SidebarItemIconElementType> & SidebarItemIconCustomProps;
 export type SidebarSublinkGroupProps = CommonAndHTMLProps<SidebarSublinkGroupElementType>;

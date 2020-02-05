@@ -1,3 +1,3 @@
 export const createClassName = (classNames: any[]): string => {
-    return classNames.filter((item: any): boolean => !!item).join(" ");
+    return classNames.filter(item => !!item).join(" ");
 };
