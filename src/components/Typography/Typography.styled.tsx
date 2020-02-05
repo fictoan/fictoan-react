@@ -39,14 +39,17 @@ export const TextStyled = css`
         h1, h2, h3, h4, h5, h6 { word-wrap : break-word; }
     }
 
+    p { margin-top : 0; }
+
     a {
         cursor      : pointer;
-        color       : ${(props: GlobalStyledProps) => props.theme.text.links.default};
+        color       : ${(props: GlobalStyledProps) => props.theme.text.links.default.text};
         font-weight : bold;
         transition  : all 0.2s;
+        width       : fit-content;
     }
 
-    a:not(.ff-button):not(.ff-pill):not(.header-links a):hover { color : ${(props: GlobalStyledProps) => props.theme.text.links.onHover}; }
+    a:not(.ff-button):not(.ff-pill):not(.header-links a):hover { color : ${(props: GlobalStyledProps) => props.theme.text.links.onHover.text}; }
 
     a:active { opacity: 0.72; }
 
@@ -59,4 +62,24 @@ export const TextStyled = css`
     .weight-700 { font-weight : 700; }
     .weight-800 { font-weight : 800; }
     .weight-900 { font-weight : 900; }
+
+    .font-sans  { font-family : ${(props: GlobalStyledProps) => props.theme.text.font.sans}; }
+    .font-serif { font-family : ${(props: GlobalStyledProps) => props.theme.text.font.serif}; }
+    .font-mono  { font-family : ${(props: GlobalStyledProps) => props.theme.text.font.mono}; }
+
+    .text-left   { text-align : left; }
+    .text-centre { text-align : center; }
+    .text-right  { text-align : right; }
+
+    /*  Colour of highlight and text colour
+    - for Firefox browsers  */
+    ::-moz-selection {
+        background : ${(props: GlobalStyledProps) => props.theme.text.selection.bg};
+        color      : ${(props: GlobalStyledProps) => props.theme.text.selection.text};
+    }
+    //  Same thing - for Webkit browsers
+    ::selection {
+        background : ${(props: GlobalStyledProps) => props.theme.text.selection.bg};
+        color      : ${(props: GlobalStyledProps) => props.theme.text.selection.text};
+    }
 `

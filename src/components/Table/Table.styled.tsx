@@ -17,8 +17,8 @@ export const TableStyled = styled.table`
         border-right-width : 1px;
     }
 
-    &.bordered-all td,
-    &.bordered-all th { border : 1px solid ${(props: TableProps) => props.theme.table.border}; }
+    &.bordered-both td,
+    &.bordered-both th { border : 1px solid ${(props: TableProps) => props.theme.table.border}; }
 
 
     &.padding-all-tiny  th,

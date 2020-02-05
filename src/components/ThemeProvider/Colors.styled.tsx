@@ -1,14 +1,18 @@
 import { css } from "styled-components";
 
+import { GlobalStyledProps } from "./constants";
+
 import { baseColors } from "../../constants/BaseColors"
 import { mainColors } from "../../constants/Theme"
 
 export const ColorsStyled = css`
-    .bg-hue             { background-color : ${mainColors.hue}; }
-    .bg-tint            { background-color : ${mainColors.tint}; }
-    .bg-analogue        { background-color : ${mainColors.analogue}; }
-    .bg-shade           { background-color : ${mainColors.shade}; }
-    .bg-accent          { background-color : ${mainColors.accent}; }
+
+    /* Colours for BG ========================================================== */
+    .bg-hue             { background-color : ${(props: GlobalStyledProps) => props.theme.mainColors.hue}; }
+    .bg-tint            { background-color : ${(props: GlobalStyledProps) => props.theme.mainColors.tint}; }
+    .bg-analogue        { background-color : ${(props: GlobalStyledProps) => props.theme.mainColors.analogue}; }
+    .bg-shade           { background-color : ${(props: GlobalStyledProps) => props.theme.mainColors.shade}; }
+    .bg-accent          { background-color : ${(props: GlobalStyledProps) => props.theme.mainColors.accent}; }
 
 
     .bg-white           { background-color : ${baseColors.white}; }
@@ -226,13 +230,13 @@ export const ColorsStyled = css`
     .bg-transparent     { background-color: transparent; }
 
 
-    //  Colours for text ==========================================================
+    /* Colours for text ========================================================== */
 
-    .text-hue             { color : ${mainColors.hue}; }
-    .text-tint            { color : ${mainColors.tint}; }
-    .text-analogue        { color : ${mainColors.analogue}; }
-    .text-shade           { color : ${mainColors.shade}; }
-    .text-accent          { color : ${mainColors.accent}; }
+    .text-hue             { color : ${(props: GlobalStyledProps) => props.theme.mainColors.hue}; }
+    .text-tint            { color : ${(props: GlobalStyledProps) => props.theme.mainColors.tint}; }
+    .text-analogue        { color : ${(props: GlobalStyledProps) => props.theme.mainColors.analogue}; }
+    .text-shade           { color : ${(props: GlobalStyledProps) => props.theme.mainColors.shade}; }
+    .text-accent          { color : ${(props: GlobalStyledProps) => props.theme.mainColors.accent}; }
 
 
     .text-white           { color : ${baseColors.white}; }
@@ -452,14 +456,13 @@ export const ColorsStyled = css`
 
 
 
+    /* Colours for borders ======================================================= */
 
-    //  Colours for borders =======================================================
-
-    .border-hue             { border : 2px solid $colorHue; }
-    .border-tint            { border : 2px solid ${mainColors.tint}; }
-    .border-analogue        { border : 2px solid ${mainColors.analogue}; }
-    .border-shade           { border : 2px solid ${mainColors.shade}; }
-    .border-accent          { border : 2px solid ${mainColors.accent}; }
+    .border-hue             { border : 2px solid ${(props: GlobalStyledProps) => props.theme.mainColors.hue}; }
+    .border-tint            { border : 2px solid ${(props: GlobalStyledProps) => props.theme.mainColors.tint}; }
+    .border-analogue        { border : 2px solid ${(props: GlobalStyledProps) => props.theme.mainColors.analogue}; }
+    .border-shade           { border : 2px solid ${(props: GlobalStyledProps) => props.theme.mainColors.shade}; }
+    .border-accent          { border : 2px solid ${(props: GlobalStyledProps) => props.theme.mainColors.accent}; }
 
 
     .border-white           { border : 2px solid ${baseColors.white}; }
@@ -678,13 +681,13 @@ export const ColorsStyled = css`
 
 
 
-    //  Colours for fill ==========================================================
+    /* Colours for fill ========================================================== */
 
-    .fill-hue             { fill : $colorHue; }
-    .fill-tint            { fill : ${mainColors.tint}; }
-    .fill-analogue        { fill : ${mainColors.analogue}; }
-    .fill-shade           { fill : ${mainColors.shade}; }
-    .fill-accent          { fill : ${mainColors.accent}; }
+    .fill-hue             { fill : ${(props: GlobalStyledProps) => props.theme.mainColors.hue}; }
+    .fill-tint            { fill : ${(props: GlobalStyledProps) => props.theme.mainColors.tint}; }
+    .fill-analogue        { fill : ${(props: GlobalStyledProps) => props.theme.mainColors.analogue}; }
+    .fill-shade           { fill : ${(props: GlobalStyledProps) => props.theme.mainColors.shade}; }
+    .fill-accent          { fill : ${(props: GlobalStyledProps) => props.theme.mainColors.accent}; }
 
 
     .fill-white           { fill : ${baseColors.white}; }
@@ -904,13 +907,13 @@ export const ColorsStyled = css`
 
 
 
-    //  Colours for stroke ==========================================================
+    /* Colours for stroke ========================================================== */
 
-    .stroke-hue             { stroke : $colorHue; }
-    .stroke-tint            { stroke : ${mainColors.tint}; }
-    .stroke-analogue        { stroke : ${mainColors.analogue}; }
-    .stroke-shade           { stroke : ${mainColors.shade}; }
-    .stroke-accent          { stroke : ${mainColors.accent}; }
+    .stroke-hue             { stroke : ${(props: GlobalStyledProps) => props.theme.mainColors.hue}; }
+    .stroke-tint            { stroke : ${(props: GlobalStyledProps) => props.theme.mainColors.tint}; }
+    .stroke-analogue        { stroke : ${(props: GlobalStyledProps) => props.theme.mainColors.analogue}; }
+    .stroke-shade           { stroke : ${(props: GlobalStyledProps) => props.theme.mainColors.shade}; }
+    .stroke-accent          { stroke : ${(props: GlobalStyledProps) => props.theme.mainColors.accent}; }
 
 
     .stroke-white           { stroke : ${baseColors.white}; }
@@ -1126,18 +1129,4 @@ export const ColorsStyled = css`
     .stroke-brown-10        { stroke : ${baseColors.brown10}; }
 
     .stroke-transparent     { stroke : transparent; }
-
-
-    /*  Colour of highlight and text colour
-        - for Firefox browsers  */
-    ::-moz-selection {
-        background : $textHighlightBG;
-        color      : $textHighlightColor;
-    }
-    //  Same thing - for Webkit browsers
-    ::selection {
-        background : $textHighlightBG;
-        color      : $textHighlightColor;
-    }
-
 `

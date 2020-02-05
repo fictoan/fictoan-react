@@ -7,7 +7,9 @@ export const ButtonStyled = styled.button`
     display             : inline-flex;
     cursor              : pointer;
     padding             : 12px 24px;
-    font-family         : $fontSans;
+    font-family         : ${(props: ButtonProps) => props.theme.text.font.sans};
+    background-color    : ${(props: ButtonProps) => props.theme.button.default.bg};
+    color               : ${(props: ButtonProps) => props.theme.button.default.text};
     font-weight         : bold;
     font-size           : 92%;
     text-align          : center;
@@ -17,10 +19,18 @@ export const ButtonStyled = styled.button`
     line-height         : 1;
     transition          : all 0.2s;
     background-position : center;
+    user-select         : none;
+
+    &:hover {
+        background-color : ${(props: ButtonProps) => props.theme.button.onHover.bg};
+        color            : ${(props: ButtonProps) => props.theme.button.onHover.text};
+    }
 
     &:active {
         box-shadow : none;
         opacity    : 0.72;
+        background-color : ${(props: ButtonProps) => props.theme.button.isActive.bg};
+        color            : ${(props: ButtonProps) => props.theme.button.isActive.text};
     }
 
     /*  A round button  */
@@ -59,7 +69,7 @@ export const ButtonStyled = styled.button`
         right              : 0;
         height             : 16px;
         width              : 16px;
-        border             : 3px solid ${(props: ButtonProps) => props.theme.button.border};
+        border             : 3px solid ${(props: ButtonProps) => props.theme.button.isLoading.border};
         border-radius      : 50%;
         border-top-color   : transparent;
         border-right-color : transparent;
@@ -79,7 +89,7 @@ export const ButtonStyled = styled.button`
         right              : 0;
         height             : 8px;
         width              : 8px;
-        border             : 2px solid ${(props: ButtonProps) => props.theme.button.border};
+        border             : 2px solid ${(props: ButtonProps) => props.theme.button.isLoading.border};
         border-radius      : 50%;
         border-top-color   : transparent;
         border-right-color : transparent;
@@ -143,7 +153,7 @@ export const ButtonStyled = styled.button`
         position    : absolute;
         cursor      : pointer;
         right       : 8px;
-        content     : "\00d7";
+        content     : "\\00d7";
         font-size   : 20px;
         line-height : 0;
         align-self  : center;

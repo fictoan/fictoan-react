@@ -15,8 +15,8 @@ export const RowStyled = styled.div`
         & { grid-gap : 4px; }
     }
 
-    &.huge-gutters   { grid-gap : 32px; }
-    &.large-gutters  { grid-gap : 24px; }
+    &.huge-gutters   { grid-gap : 64px; }
+    &.large-gutters  { grid-gap : 32px; }
     &.medium-gutters { grid-gap : 16px; }
     &.small-gutters  { grid-gap : 8px; }
     &.tiny-gutters   { grid-gap : 4px; }

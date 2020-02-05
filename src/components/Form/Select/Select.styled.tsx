@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { SelectProps } from "./constants";
 
 export const SelectWrapperStyled = styled.div`
-    position   : relative;
-    width      : max-content;
-    align-self : flex-start;
+    position    : relative;
+    width       : max-content;
+    align-self  : flex-start;
 
     &::after {
         position       : absolute;
@@ -27,6 +27,7 @@ export const SelectStyled = styled.select`
     display          : flex;
     height           : 100%;
     padding          : 12px 48px 12px 8px;
+    font-family      : ${(props: SelectProps) => props.theme.text.font.sans};
     background-color : ${(props: SelectProps) => props.theme.input.default.bg};
     border           : none;
     border-radius    : 4px;

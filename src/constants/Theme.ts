@@ -41,8 +41,12 @@ export const RFTheme = {
         },
 
         links: {
-            default : baseColors.blue90,
-            onHover : baseColors.blue60
+            default : {
+                text : baseColors.blue90,
+            },
+            onHover : {
+                text : baseColors.blue60
+            }
         },
 
         selection: {
@@ -146,8 +150,24 @@ export const RFTheme = {
 
     //  BUTTON  ///////////////////////////////////////////////////////////////
     button: {
-        border : mainColors.hue,
-        loader : baseColors.white
+        default : {
+            bg     : mainColors.hue,
+            border : mainColors.hue,
+            text   : baseColors.white,
+        },
+        onHover : {
+            bg     : mainColors.hue,
+            border : mainColors.hue,
+            text   : baseColors.white
+        },
+        isActive : {
+            bg     : mainColors.hue,
+            border : mainColors.hue,
+            text   : baseColors.white
+        },
+        isLoading : {
+            border : baseColors.white
+        }
     },
 
     hr: {
@@ -201,6 +221,11 @@ export const RFTheme = {
         },
         select : {
             chevron : mainColors.hue
+        },
+        radioButton : {
+            default : {
+                
+            }
         }
     },
 
@@ -211,35 +236,81 @@ export const RFTheme = {
         separator : baseColors.slate20,
 
         links: {
-            bg          : baseColors.white,
-            text        : baseColors.white,
-            bgOnHover   : baseColors.slate20,
-            textOnHover : baseColors.slate20,
+            default : {
+                bg    : baseColors.white,
+                text  : mainColors.shade,
+                scale : 100,
+            },
+            onHover : {
+                bg   : baseColors.slate10,
+                text : mainColors.hue,
+            },
             isSelected  : {
                 bg   : mainColors.hue,
                 text : baseColors.white,
             },
+            hasAlert : {
+                bg : baseColors.red70
+            },
+
             group : {
-                bg          : baseColors.slate20,
-                bgOnHover   : baseColors.slate10,
-                text        : mainColors.shade,
-                textOnHover : mainColors.hue
+                default : {
+                    bg   : baseColors.slate20,
+                    text : mainColors.shade,
+                },
+                onHover : {
+                    bg   : baseColors.slate10,
+                    text : mainColors.hue
+                },
+                chevron : {
+                    border : baseColors.slate40
+                }
             }
         },
 
         icons: {
-            type : "stroke",
+            default : {
+                stroked : {
+                    line      : baseColors.slate40,
+                    thickness : 2
+                },
+                fill : {
+                    bg : baseColors.slate40
+                }
+            },
+            onHover : {
+                stroked : {
+                    line      : baseColors.slate80,
+                    thickness : 2
+                },
+                fill : {
+                    bg : baseColors.slate40
+                }
+            },
+            isActive : {
+                stroked : {
+                    line      : baseColors.slate,
+                    thickness : 2
+                },
+                fill : {
+                    bg : baseColors.slate40
+                }
+            }
         },
 
-        isCollapsed: {
-            label: {
+        isCollapsed : {
+            label : {
                 text : mainColors.shade,
                 bg   : mainColors.hue
             }
+        },
+
+        bottomSection : {
+            border : baseColors.slate10
         }
     },
 
-    //  TABLE  ////////////////////////////////////////////////////////////////////
+    //  TABLE  ////////////////////////////////////////////////////////////////
     table: {
         bg      : baseColors.white,
         text    : mainColors.shade,

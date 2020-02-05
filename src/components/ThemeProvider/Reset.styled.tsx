@@ -110,4 +110,7 @@ export const ResetStyled = css`
         font-weight : unset;
         text-align  : unset;
     }
+
+    /* For custom radio buttons */
+    input[type="radio"] { display : none; }
 `

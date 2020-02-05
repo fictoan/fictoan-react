@@ -10,7 +10,7 @@ export const SidebarWrapper = ({collapsed, className, ...props}: SidebarWrapperP
     const classNames = [ className ]
 
     if (collapsed) {
-        classNames.push("collapsed")
+        classNames.push("collapsed");
     }
 
     return (

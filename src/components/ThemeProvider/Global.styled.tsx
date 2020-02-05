@@ -99,10 +99,6 @@ export const GlobalStyled = createGlobalStyle`
         .full-height-on-tab-ls { height : 100% !important; }
     }
 
-    .pull-left  { margin-right : auto !important; }
-    .pull-right { margin-left : auto !important; }
-    .clear-both { clear : both; }
-
     .no-border { border: none !important; }
 
       /* For when you want things bang in the centre */
