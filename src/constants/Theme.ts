@@ -150,20 +150,39 @@ export const RFTheme = {
 
     //  BUTTON  ///////////////////////////////////////////////////////////////
     button: {
-        default : {
-            bg     : mainColors.hue,
-            border : mainColors.hue,
-            text   : baseColors.white,
+        primary : {
+            default : {
+                bg     : mainColors.hue,
+                border : mainColors.hue,
+                text   : baseColors.white,
+            },
+            onHover : {
+                bg     : mainColors.hue,
+                border : mainColors.hue,
+                text   : baseColors.white
+            },
+            isActive : {
+                bg     : mainColors.hue,
+                border : mainColors.hue,
+                text   : baseColors.white
+            },
         },
-        onHover : {
-            bg     : mainColors.hue,
-            border : mainColors.hue,
-            text   : baseColors.white
-        },
-        isActive : {
-            bg     : mainColors.hue,
-            border : mainColors.hue,
-            text   : baseColors.white
+        secondary : {
+            default : {
+                bg     : mainColors.accent,
+                border : mainColors.accent,
+                text   : baseColors.white,
+            },
+            onHover : {
+                bg     : mainColors.accent,
+                border : mainColors.accent,
+                text   : baseColors.white
+            },
+            isActive : {
+                bg     : mainColors.accent,
+                border : mainColors.accent,
+                text   : baseColors.white
+            },
         },
         isLoading : {
             border : baseColors.white

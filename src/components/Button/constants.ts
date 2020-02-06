@@ -3,6 +3,7 @@ import { CommonAndHTMLProps } from "../Element/constants";
 export type ButtonElementType = HTMLButtonElement;
 
 export interface ButtonCustomProps {
+    type      ? : "primary" | "secondary";
     size      ? : "tiny" | "small" | "medium" | "large" | "huge";
     shape     ? : "rounded" | "curved";
     shadow    ? : "mild" | "soft" | "hard";

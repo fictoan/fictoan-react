@@ -8,8 +8,9 @@ export const ButtonStyled = styled.button`
     cursor              : pointer;
     padding             : 12px 24px;
     font-family         : ${(props: ButtonProps) => props.theme.text.font.sans};
-    background-color    : ${(props: ButtonProps) => props.theme.button.default.bg};
-    color               : ${(props: ButtonProps) => props.theme.button.default.text};
+    background-color    : ${(props: ButtonProps) => props.theme.button.primary.default.bg};
+    color               : ${(props: ButtonProps) => props.theme.button.primary.default.text};
+    border              : 1px solid ${(props: ButtonProps) => props.theme.button.primary.default.border};
     font-weight         : bold;
     font-size           : 92%;
     text-align          : center;
@@ -22,15 +23,35 @@ export const ButtonStyled = styled.button`
     user-select         : none;
 
     &:hover {
-        background-color : ${(props: ButtonProps) => props.theme.button.onHover.bg};
-        color            : ${(props: ButtonProps) => props.theme.button.onHover.text};
+        background-color : ${(props: ButtonProps) => props.theme.button.primary.onHover.bg};
+        color            : ${(props: ButtonProps) => props.theme.button.primary.onHover.text};
+        border           : 1px solid  ${(props: ButtonProps) => props.theme.button.primary.onHover.border};
     }
 
     &:active {
-        box-shadow : none;
-        opacity    : 0.72;
-        background-color : ${(props: ButtonProps) => props.theme.button.isActive.bg};
-        color            : ${(props: ButtonProps) => props.theme.button.isActive.text};
+        box-shadow       : none;
+        opacity          : 0.72;
+        background-color : ${(props: ButtonProps) => props.theme.button.primary.isActive.bg};
+        color            : ${(props: ButtonProps) => props.theme.button.primary.isActive.text};
+        border           : 1px solid ${(props: ButtonProps) => props.theme.button.primary.isActive.border};
+    }
+
+    &.secondary {
+        background-color : ${(props: ButtonProps) => props.theme.button.secondary.default.bg};
+        color            : ${(props: ButtonProps) => props.theme.button.secondary.default.text};
+        border           : 1px solid ${(props: ButtonProps) => props.theme.button.secondary.default.border};
+    }
+
+    &.secondary:hover {
+        background-color : ${(props: ButtonProps) => props.theme.button.secondary.onHover.bg};
+        color            : ${(props: ButtonProps) => props.theme.button.secondary.onHover.text};
+        border           : 1px solid ${(props: ButtonProps) => props.theme.button.secondary.onHover.text}
+    }
+
+    &.secondary:active {
+        background-color : ${(props: ButtonProps) => props.theme.button.secondary.isActive.bg};
+        color            : ${(props: ButtonProps) => props.theme.button.secondary.isActive.text};
+        border           : 1px solid ${(props: ButtonProps) => props.theme.button.secondary.isActive.text}
     }
 
     /*  A round button  */
