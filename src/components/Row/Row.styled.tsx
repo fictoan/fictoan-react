@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { PortionStyled } from "../Portion/Portion.styled"
+
 export const RowStyled = styled.div`
     display               : grid;
     width                 : 100%;
@@ -79,5 +81,12 @@ export const RowStyled = styled.div`
             padding-left  : 6vw;
             padding-right : 6vw;
         }
+
+        &:not(.retain-layout-on-mobile) > ${PortionStyled}:not([class*='on-mobile']) { grid-column : span 24; }
     }
+
+    @media all and (min-width : 601px) and (max-width : 900px) {
+        &:not(.retain-layout-on-tab-pt) > ${PortionStyled}:not([class*='on-tab-pt']) { grid-column : span 24; }
+    }
+
 `

@@ -65,9 +65,9 @@ export const PortionStyled = styled.div`
     &.whole,
     &.\\32 4 { grid-column : span 24; }
 
-    @media all and (max-width : 600px) {
 
-        .row:not(.retain-layout-on-mobile) > &:not([class*='on-mobile']) { grid-column : span 24; }
+
+    @media all and (max-width : 600px) {
 
         &.\\31 -on-mobile { grid-column : span 1; }
 
@@ -132,8 +132,9 @@ export const PortionStyled = styled.div`
         &.\\32 4-on-mobile { grid-column : span 24; }
     }
 
+
+
     @media all and (min-width : 601px) and (max-width : 900px) {
-        .row:not(.retain-layout-on-tab-pt) > &:not([class*='on-tab-pt']) { grid-column : span 24; }
 
         &.\\31 -on-tab-pt { grid-column : span 1; }
 
@@ -197,6 +198,8 @@ export const PortionStyled = styled.div`
         &.whole-on-tab-pt,
         &.\\32 4-on-tab-pt { grid-column : span 24; }
     }
+
+
 
     @media all and (min-width : 901px) and (max-width : 1200px) {
         /* .row:not(.retain-layout-on-tab-ls) > &:not([class*='on-tab-ls']) { grid-column : span 24; } */
