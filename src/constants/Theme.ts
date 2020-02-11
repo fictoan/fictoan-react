@@ -1,350 +1,350 @@
 import { baseColors } from "./BaseColors"
 
 export const mainColors = {
-    hue      : baseColors.amber,
-    tint     : baseColors.indigo90,
-    shade    : baseColors.grey,
-    analogue : baseColors.indigo50,
-    accent   : baseColors.green80,
+    hue: baseColors.amber,
+    tint: baseColors.indigo90,
+    shade: baseColors.grey,
+    analogue: baseColors.indigo50,
+    accent: baseColors.green80,
 }
 
 export const RFTheme = {
     mainColors,
 
     body: {
-        bg : baseColors.white,
+        bg: baseColors.white,
     },
 
     //  TEXT  /////////////////////////////////////////////////////////////////
     text: {
-        font : {
-            sans  : "sans-serif",
-            serif : "serif",
-            mono  : "monospace",
+        font: {
+            sans: "sans-serif",
+            serif: "serif",
+            mono: "monospace",
         },
 
         size: {
-            default    : 1,
-            multiplier : 1.16,
+            default: 1,
+            multiplier: 1.16,
         },
 
         paras: {
-            color      : baseColors.grey,
-            weight     : 400,
-            lineHeight : 1.64,
+            color: baseColors.grey,
+            weight: 400,
+            lineHeight: 1.64,
         },
 
         headings: {
-            color      : baseColors.grey,
-            weight     : 600,
-            lineHeight : 1.24
+            color: baseColors.grey,
+            weight: 600,
+            lineHeight: 1.24
         },
 
         links: {
-            default : {
-                text : baseColors.blue90,
+            default: {
+                text: baseColors.blue90,
             },
-            onHover : {
-                text : baseColors.blue60
+            onHover: {
+                text: baseColors.blue60
             }
         },
 
         selection: {
-            bg   : mainColors.hue,
-            text : baseColors.white
+            bg: mainColors.hue,
+            text: baseColors.white
         },
 
         code: {
             inline: {
-                bg   : baseColors.slate10,
-                text : baseColors.blue70
+                bg: baseColors.slate10,
+                text: baseColors.blue70
             },
             block: {
-                bg   : baseColors.slate10,
-                text : baseColors.blue70
+                bg: baseColors.slate10,
+                text: baseColors.blue70
             },
-            prism : {
-                tokens : {
-                    cdata       : baseColors.grey70,
-                    prolog      : baseColors.grey90,
-                    doctype     : baseColors.grey90,
-                    delimiter   : baseColors.grey90,
-                    comment     : baseColors.grey70,
-                    hexcode     : baseColors.green,
-                    string      : baseColors.crimson60,
-                    operator    : baseColors.pistachio,
-                    variable    : baseColors.orange80,
-                    atrule      : baseColors.teal90,
-                    keyword     : baseColors.orange90,
-                    tag         : baseColors.violet,
-                    attrName    : baseColors.red90,
-                    attrValue   : baseColors.orange80,
-                    function    : baseColors.teal,
-                    className   : baseColors.blue90,
-                    selector    : baseColors.violet,
-                    property    : baseColors.red90,
-                    punctuation : baseColors.grey60,
-                    deleted     : baseColors.orange80,
-                    boolean     : baseColors.green80,
-                    constant    : baseColors.green80,
-                    entity      : baseColors.green80,
-                    inserted    : baseColors.green80,
-                    number      : baseColors.green80,
-                    regex       : baseColors.green80,
-                    symbol      : baseColors.green80,
-                    url         : baseColors.green80,
-                    namespace   : baseColors.green80,
-                    italic      : baseColors.green80,
+            prism: {
+                tokens: {
+                    cdata: baseColors.grey70,
+                    prolog: baseColors.grey90,
+                    doctype: baseColors.grey90,
+                    delimiter: baseColors.grey90,
+                    comment: baseColors.grey70,
+                    hexcode: baseColors.green,
+                    string: baseColors.crimson60,
+                    operator: baseColors.pistachio,
+                    variable: baseColors.orange80,
+                    atrule: baseColors.teal90,
+                    keyword: baseColors.orange90,
+                    tag: baseColors.violet,
+                    attrName: baseColors.red90,
+                    attrValue: baseColors.orange80,
+                    function: baseColors.teal,
+                    className: baseColors.blue90,
+                    selector: baseColors.violet,
+                    property: baseColors.red90,
+                    punctuation: baseColors.grey60,
+                    deleted: baseColors.orange80,
+                    boolean: baseColors.green80,
+                    constant: baseColors.green80,
+                    entity: baseColors.green80,
+                    inserted: baseColors.green80,
+                    number: baseColors.green80,
+                    regex: baseColors.green80,
+                    symbol: baseColors.green80,
+                    url: baseColors.green80,
+                    namespace: baseColors.green80,
+                    italic: baseColors.green80,
                 },
 
-                languages : {
-                    css : {
-                        fallback : baseColors.orange90
+                languages: {
+                    css: {
+                        fallback: baseColors.orange90
                     },
-                    html : {
-                        fallback : baseColors.grey
+                    html: {
+                        fallback: baseColors.grey
                     },
-                    js : {
-                        fallback : baseColors.violet90
+                    js: {
+                        fallback: baseColors.violet90
                     },
-                    json : {
-                        fallback : baseColors.teal,
-                        tokens : {
-                            string : baseColors.teal
+                    json: {
+                        fallback: baseColors.teal,
+                        tokens: {
+                            string: baseColors.teal
                         }
                     }
                 }
             }
         },
 
-        kbd : {
-            text : baseColors.grey,
-            bg : baseColors.grey10
+        kbd: {
+            text: baseColors.grey,
+            bg: baseColors.grey10
         }
     },
 
     //  CARD  /////////////////////////////////////////////////////////////////
     card: {
-        bg     : baseColors.white,
-        border : baseColors.slate10
+        bg: baseColors.white,
+        border: baseColors.slate10
     },
 
     //  INFO PANEL  ///////////////////////////////////////////////////////////
     infoPanel: {
-        bg     : baseColors.white,
-        border : baseColors.slate20
+        bg: baseColors.white,
+        border: baseColors.slate20
     },
 
     //  BREADCRUMBS  ///////////////////////////////////////////////////////////
     breadcrumb: {
         wrapper: {
-            bg : baseColors.white,
+            bg: baseColors.white,
         },
         item: {
-            text      : mainColors.shade,
-            separator : baseColors.slate40,
-            active    : mainColors.shade,
-            inactive  : mainColors.shade
+            text: mainColors.shade,
+            separator: baseColors.slate40,
+            active: mainColors.shade,
+            inactive: mainColors.shade
         }
     },
 
     //  BUTTON  ///////////////////////////////////////////////////////////////
     button: {
-        primary : {
-            default : {
-                bg     : mainColors.hue,
-                border : mainColors.hue,
-                text   : baseColors.white,
+        primary: {
+            default: {
+                bg: mainColors.hue,
+                border: mainColors.hue,
+                text: baseColors.white,
             },
-            onHover : {
-                bg     : mainColors.hue,
-                border : mainColors.hue,
-                text   : baseColors.white
+            onHover: {
+                bg: mainColors.hue,
+                border: mainColors.hue,
+                text: baseColors.white
             },
-            isActive : {
-                bg     : mainColors.hue,
-                border : mainColors.hue,
-                text   : baseColors.white
-            },
-        },
-        secondary : {
-            default : {
-                bg     : mainColors.accent,
-                border : mainColors.accent,
-                text   : baseColors.white,
-            },
-            onHover : {
-                bg     : mainColors.accent,
-                border : mainColors.accent,
-                text   : baseColors.white
-            },
-            isActive : {
-                bg     : mainColors.accent,
-                border : mainColors.accent,
-                text   : baseColors.white
+            isActive: {
+                bg: mainColors.hue,
+                border: mainColors.hue,
+                text: baseColors.white
             },
         },
-        isLoading : {
-            border : baseColors.white
+        secondary: {
+            default: {
+                bg: mainColors.accent,
+                border: mainColors.accent,
+                text: baseColors.white,
+            },
+            onHover: {
+                bg: mainColors.accent,
+                border: mainColors.accent,
+                text: baseColors.white
+            },
+            isActive: {
+                bg: mainColors.accent,
+                border: mainColors.accent,
+                text: baseColors.white
+            },
+        },
+        isLoading: {
+            border: baseColors.white
         }
     },
 
     hr: {
-        bg : baseColors.slate20
+        bg: baseColors.slate20
     },
 
     //  INPUT  ////////////////////////////////////////////////////////////////
     input: {
         default: {
-            bg     : baseColors.white,
-            border : baseColors.slate40,
-            label  : mainColors.shade,
-            text   : mainColors.shade
+            bg: baseColors.white,
+            border: baseColors.slate40,
+            label: mainColors.shade,
+            text: mainColors.shade
         },
         onFocus: {
-            bg       : baseColors.white,
-            border   : mainColors.hue,
-            text     : mainColors.shade,
-            helpText : mainColors.shade,
+            bg: baseColors.white,
+            border: mainColors.hue,
+            text: mainColors.shade,
+            helpText: mainColors.shade,
         },
         isValid: {
-            bg     : baseColors.white,
-            border : baseColors.green80,
-            label  : mainColors.shade
+            bg: baseColors.white,
+            border: baseColors.green80,
+            label: mainColors.shade
         },
         isInvalid: {
-            bg       : baseColors.red10,
-            border   : baseColors.red80,
-            label    : baseColors.red,
-            helpText : baseColors.red,
+            bg: baseColors.red10,
+            border: baseColors.red80,
+            label: baseColors.red,
+            helpText: baseColors.red,
         },
         isReadOnly: {
-            bg     : baseColors.grey50,
-            border : baseColors.grey50,
-            label  : mainColors.shade
+            bg: baseColors.grey50,
+            border: baseColors.grey50,
+            label: mainColors.shade
         },
-        required : {
-            text : baseColors.red
+        required: {
+            text: baseColors.red
         },
-        icons : {
-            default : {
-                fill : baseColors.slate30,
+        icons: {
+            default: {
+                fill: baseColors.slate30,
             },
-            onFocus : {
-                fill : mainColors.hue,
+            onFocus: {
+                fill: mainColors.hue,
             },
-            isValid : {
-                bg     : baseColors.grey50,
-                border : baseColors.red30,
+            isValid: {
+                bg: baseColors.grey50,
+                border: baseColors.red30,
             }
         },
-        select : {
-            chevron : mainColors.hue
+        select: {
+            chevron: mainColors.hue
         },
-        radioButton : {
-            default : {
-                
+        radioButton: {
+            default: {
+
             }
         }
     },
 
     //  SIDEBAR  //////////////////////////////////////////////////////////////
     sidebar: {
-        header    : baseColors.white,
-        body      : baseColors.white,
-        separator : baseColors.slate20,
+        header: baseColors.white,
+        body: baseColors.white,
+        separator: baseColors.slate20,
 
         links: {
-            default : {
-                bg    : baseColors.white,
-                text  : mainColors.shade,
-                scale : 100,
+            default: {
+                bg: baseColors.white,
+                text: mainColors.shade,
+                scale: 100,
             },
-            onHover : {
-                bg   : baseColors.slate10,
-                text : mainColors.hue,
+            onHover: {
+                bg: baseColors.slate10,
+                text: mainColors.hue,
             },
-            isSelected  : {
-                bg   : mainColors.hue,
-                text : baseColors.white,
+            isSelected: {
+                bg: mainColors.hue,
+                text: baseColors.white,
             },
-            hasAlert : {
-                bg : baseColors.red70
+            hasAlert: {
+                bg: baseColors.red70
             },
 
-            group : {
-                default : {
-                    bg   : baseColors.slate20,
-                    text : mainColors.shade,
+            group: {
+                default: {
+                    bg: baseColors.slate20,
+                    text: mainColors.shade,
                 },
-                onHover : {
-                    bg   : baseColors.slate10,
-                    text : mainColors.hue
+                onHover: {
+                    bg: baseColors.slate10,
+                    text: mainColors.hue
                 },
-                chevron : {
-                    border : baseColors.slate40
+                chevron: {
+                    border: baseColors.slate40
                 }
             }
         },
 
         icons: {
-            default : {
-                stroked : {
-                    line      : baseColors.slate40,
-                    thickness : 2
+            default: {
+                stroked: {
+                    line: baseColors.slate40,
+                    thickness: 2
                 },
-                fill : {
-                    bg : baseColors.slate40
+                fill: {
+                    bg: baseColors.slate40
                 }
             },
-            onHover : {
-                stroked : {
-                    line      : baseColors.slate80,
-                    thickness : 2
+            onHover: {
+                stroked: {
+                    line: baseColors.slate80,
+                    thickness: 2
                 },
-                fill : {
-                    bg : baseColors.slate40
+                fill: {
+                    bg: baseColors.slate40
                 }
             },
-            isActive : {
-                stroked : {
-                    line      : baseColors.slate,
-                    thickness : 2
+            isActive: {
+                stroked: {
+                    line: baseColors.slate,
+                    thickness: 2
                 },
-                fill : {
-                    bg : baseColors.slate40
+                fill: {
+                    bg: baseColors.slate40
                 }
             }
         },
 
-        isCollapsed : {
-            label : {
-                text : mainColors.shade,
-                bg   : mainColors.hue
+        isCollapsed: {
+            label: {
+                text: mainColors.shade,
+                bg: mainColors.hue
             }
         },
 
-        bottomSection : {
-            border : baseColors.slate10
+        bottomSection: {
+            border: baseColors.slate10
         }
     },
 
     //  TABLE  ////////////////////////////////////////////////////////////////
     table: {
-        bg      : baseColors.white,
-        text    : mainColors.shade,
-        border  : baseColors.slate40,
-        striped : {
+        bg: baseColors.white,
+        text: mainColors.shade,
+        border: baseColors.slate40,
+        striped: {
             header: {
-                bg : baseColors.blue40,
+                bg: baseColors.blue40,
             },
             cell: {
-                bg : baseColors.slate20,
+                bg: baseColors.slate20,
             }
         },
         onHover: {
-            bg   : baseColors.amber20,
-            text : mainColors.shade
+            bg: baseColors.amber20,
+            text: mainColors.shade
         }
     }
 }

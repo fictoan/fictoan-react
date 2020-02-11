@@ -12,7 +12,7 @@ export interface SidebarWrapperCustomProps {
 }
 
 export interface SidebarItemIconCustomProps {
-    iconType : "stroked" | "filled";
+    iconType ? : "stroked" | "filled";
 }
 
 export interface SidebarItemTextCustomProps {
