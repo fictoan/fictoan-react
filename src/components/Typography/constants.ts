@@ -6,21 +6,21 @@ export type TextElementType = HTMLParagraphElement;
 type Weight = "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
 
 export interface HeadingCustomProps extends CommonAndHTMLProps<HTMLHeadingElement> {
-    as       : "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-    weight ? : Weight;
-    isSans   : boolean;
-    isSerif  : boolean;
-    isMono   : boolean;
-    align    : "left" | "centre" | "right";
+    as        : "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+    weight  ? : Weight;
+    isSans  ? : boolean;
+    isSerif ? : boolean;
+    isMono  ? : boolean;
+    align   ? : "left" | "centre" | "right";
 }
 
 export interface TextCustomProps extends CommonAndHTMLProps<HTMLParagraphElement> {
-    weight ? : Weight;
-    size   ? : "tiny" | "small" | "medium" | "large" | "huge";
-    isSans   : boolean;
-    isSerif  : boolean;
-    isMono   : boolean;
-    align    : "left" | "centre" | "right";
+    weight  ? : Weight;
+    size    ? : "tiny" | "small" | "medium" | "large" | "huge";
+    isSans  ? : boolean;
+    isSerif ? : boolean;
+    isMono  ? : boolean;
+    align   ? : "left" | "centre" | "right";
 }
 
 export type HeadingProps = CommonAndHTMLProps<HeadingElementType> & HeadingCustomProps;
