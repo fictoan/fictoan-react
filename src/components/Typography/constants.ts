@@ -4,6 +4,7 @@ export type HeadingElementType = HTMLHeadingElement;
 export type TextElementType = HTMLParagraphElement;
 
 type Weight = "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
+type Align  = "left" | "centre" | "right";
 
 export interface HeadingCustomProps extends CommonAndHTMLProps<HTMLHeadingElement> {
     as        : "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
@@ -11,7 +12,7 @@ export interface HeadingCustomProps extends CommonAndHTMLProps<HTMLHeadingElemen
     isSans  ? : boolean;
     isSerif ? : boolean;
     isMono  ? : boolean;
-    align   ? : "left" | "centre" | "right";
+    align   ? : Align
 }
 
 export interface TextCustomProps extends CommonAndHTMLProps<HTMLParagraphElement> {
@@ -20,7 +21,7 @@ export interface TextCustomProps extends CommonAndHTMLProps<HTMLParagraphElement
     isSans  ? : boolean;
     isSerif ? : boolean;
     isMono  ? : boolean;
-    align   ? : "left" | "centre" | "right";
+    align   ? : Align
 }
 
 export type HeadingProps = CommonAndHTMLProps<HeadingElementType> & HeadingCustomProps;

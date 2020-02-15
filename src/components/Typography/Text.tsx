@@ -5,7 +5,7 @@ import { Element }   from "../Element/Element";
 
 import { TextProps, TextElementType } from "./constants";
 
-export const Text = ({ weight, size, isSans, isSerif, isMono, isCentered, className, ...props }: TextProps) => {
+export const Text = ({ weight, size, isSans, isSerif, isMono, align, className, ...props }: TextProps) => {
     const classNames = [ className ];
 
     if (weight) {
@@ -28,8 +28,8 @@ export const Text = ({ weight, size, isSans, isSerif, isMono, isCentered, classN
         classNames.push("font-mono");
     }
 
-    if (isCentered) {
-        classNames.push("text-centre");
+    if (align) {
+        classNames.push(`text${align}`);
     }
 
     return (
