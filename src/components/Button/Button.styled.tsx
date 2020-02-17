@@ -22,13 +22,13 @@ export const ButtonStyled = styled.button`
     background-position : center;
     user-select         : none;
 
-    &:hover {
+    &.primary:hover {
         background-color : ${(props: ButtonProps) => props.theme.button.primary.onHover.bg};
         color            : ${(props: ButtonProps) => props.theme.button.primary.onHover.text};
         border           : 1px solid  ${(props: ButtonProps) => props.theme.button.primary.onHover.border};
     }
 
-    &:active {
+    &.primary:active {
         box-shadow       : none;
         opacity          : 0.72;
         background-color : ${(props: ButtonProps) => props.theme.button.primary.isActive.bg};
@@ -52,6 +52,11 @@ export const ButtonStyled = styled.button`
         background-color : ${(props: ButtonProps) => props.theme.button.secondary.isActive.bg};
         color            : ${(props: ButtonProps) => props.theme.button.secondary.isActive.text};
         border           : 1px solid ${(props: ButtonProps) => props.theme.button.secondary.isActive.text}
+    }
+
+    &.custom:active {
+        box-shadow : none;
+        opacity    : 0.72;
     }
 
     /*  A round button  */

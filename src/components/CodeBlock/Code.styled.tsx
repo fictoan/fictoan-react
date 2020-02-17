@@ -13,7 +13,7 @@ export const CodeStyled = css`
         border           : none;
         background-color : ${(props: CodeBlockProps) => props.theme.text.code.inline.bg};
         color            : ${(props: CodeBlockProps) => props.theme.text.code.inline.text};
-        font-size        : 80%;
+        font-size        : ${(props: CodeBlockProps) => props.theme.text.code.inline.scale}%;
         font-weight      : normal;
         white-space      : pre-wrap;
     }
@@ -35,7 +35,8 @@ export const CodeStyled = css`
         max-width              : 100%;
         font-family            : ${(props: CodeBlockProps) => props.theme.text.font.mono};
         color                  : ${(props: CodeBlockProps) => props.theme.text.code.block.text};
-        line-height            : 1.6;
+        font-size              : ${(props: CodeBlockProps) => props.theme.text.code.block.scale}%;
+        line-height            : ${(props: CodeBlockProps) => props.theme.text.code.block.lineHeight};
         font-weight            : 400;
         padding                : 16px 24px;
         background-color       : ${(props: CodeBlockProps) => props.theme.text.code.block.bg};

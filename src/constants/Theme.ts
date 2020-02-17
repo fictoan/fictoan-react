@@ -1,3 +1,5 @@
+import { lighten } from "polished";
+
 import { baseColors } from "./BaseColors"
 
 export const mainColors = {
@@ -56,12 +58,15 @@ export const RFTheme = {
 
         code: {
             inline: {
-                bg   : baseColors.slate10,
-                text : baseColors.blue70
+                bg    : baseColors.slate10,
+                text  : baseColors.blue70,
+                scale : 80
             },
             block: {
-                bg   : baseColors.slate10,
-                text : baseColors.blue70
+                bg         : `${lighten(0.02, baseColors.slate10)}`,
+                text       : baseColors.blue70,
+                scale      : 80,
+                lineHeight : 1.8
             },
             prism: {
                 tokens: {
@@ -79,7 +84,7 @@ export const RFTheme = {
                     tag         : baseColors.violet,
                     attrName    : baseColors.red90,
                     attrValue   : baseColors.orange80,
-                    function    : baseColors.teal,
+                    function    : baseColors.orange,
                     className   : baseColors.blue90,
                     selector    : baseColors.violet,
                     property    : baseColors.red90,
