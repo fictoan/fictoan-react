@@ -274,8 +274,8 @@ export const GlobalStyled = createGlobalStyle`
 
     .shadow-mild {
         box-shadow :
-            0 0.3px 0.4px rgba(0, 0, 0, 0.12),
-            0   4px   8px rgba(0, 0, 0, 0.24);
+            0 0.2px 0.2px rgba(0,0,0,0.08),
+            0   2px   4px rgba(0,0,0,0.16)
         }
 
     .shadow-hard {
