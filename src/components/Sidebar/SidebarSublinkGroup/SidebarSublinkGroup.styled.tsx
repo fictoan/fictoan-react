@@ -11,7 +11,7 @@ export const SidebarSublinkGroupStyled = styled.div`
 
     .sidebar-sublink {
         color       : ${(props: SidebarSublinkGroupProps) => props.theme.sidebar.links.group.default.text};
-        font-weight : 400;
+        font-weight : ${(props: SidebarSublinkGroupProps) => props.theme.sidebar.links.group.default.weight};
         margin      : 0 24px;
     }
 `

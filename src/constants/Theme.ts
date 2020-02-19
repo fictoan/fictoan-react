@@ -261,9 +261,10 @@ export const RFTheme = {
 
         links: {
             default: {
-                bg    : baseColors.white,
-                text  : mainColors.shade,
-                scale : 100,
+                bg     : baseColors.white,
+                text   : mainColors.shade,
+                scale  : 100,
+                weight : 600,
             },
             onHover: {
                 bg   : baseColors.slate10,
@@ -279,8 +280,9 @@ export const RFTheme = {
 
             group: {
                 default: {
-                    bg   : baseColors.slate20,
-                    text : mainColors.shade,
+                    bg     : baseColors.slate20,
+                    text   : mainColors.shade,
+                    weight : 400,
                 },
                 onHover: {
                     bg   : baseColors.slate10,
