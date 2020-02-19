@@ -54,7 +54,7 @@ export const ButtonStyled = styled.button`
         border           : 1px solid ${(props: ButtonProps) => props.theme.button.secondary.isActive.text}
     }
 
-    &.custom:active {
+    &:active {
         box-shadow : none;
         opacity    : 0.72;
     }
