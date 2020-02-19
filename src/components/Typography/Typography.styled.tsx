@@ -63,6 +63,12 @@ export const TextStyled = css`
     .weight-800 { font-weight : 800; }
     .weight-900 { font-weight : 900; }
 
+    .text-tiny   { font-size :  72%; }
+    .text-small  { font-size :  90%; }
+    .text-medium { font-size : 100%; }
+    .text-large  { font-size : 120%; }
+    .text-huge   { font-size : 160%; }
+
     .font-sans  { font-family : ${(props: GlobalStyledProps) => props.theme.text.font.sans}; }
     .font-serif { font-family : ${(props: GlobalStyledProps) => props.theme.text.font.serif}; }
     .font-mono  { font-family : ${(props: GlobalStyledProps) => props.theme.text.font.mono}; }
