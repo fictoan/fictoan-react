@@ -22,8 +22,8 @@ export interface CommonProps extends ThemeProps {
     showOnlyOnTabLS   ? : boolean;
     hideOnDesktop     ? : boolean;
     showOnlyOnDesktop ? : boolean;
-    fullWidth         ? : boolean;
-    fullHeight        ? : boolean;
+    isFullWidth       ? : boolean;
+    isFullHeight      ? : boolean;
     marginTop         ? : "none" | "fixed" | "tiny" | "small" | "medium" | "large" | "huge";
     marginRight       ? : "none" | "fixed" | "tiny" | "small" | "medium" | "large" | "huge";
     marginBottom      ? : "none" | "fixed" | "tiny" | "small" | "medium" | "large" | "huge";
