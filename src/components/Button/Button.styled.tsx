@@ -76,7 +76,7 @@ export const ButtonStyled = styled.button`
         right    : 0;
     }
 
-    &[class*="border"] { border-width : 1px; }
+    &[class*="border"]:not(.border-none) { border-width : 1px; }
 
     &.with-loader {
         color          : transparent !important;
