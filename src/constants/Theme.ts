@@ -171,6 +171,10 @@ export const RFTheme = {
                 border : mainColors.hue,
                 text   : baseColors.white
             },
+            isLoading: {
+                bg            : mainColors.hue,
+                spinnerBorder : baseColors.white
+            }
         },
         secondary: {
             default: {
@@ -188,9 +192,10 @@ export const RFTheme = {
                 border : mainColors.accent,
                 text   : baseColors.white
             },
-        },
-        isLoading: {
-            border : baseColors.white
+            isLoading: {
+                bg            : baseColors.white,
+                spinnerBorder : mainColors.accent
+            }
         }
     },
 

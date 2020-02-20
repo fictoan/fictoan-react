@@ -27,8 +27,8 @@ export const TableStyled = styled.table`
     &.padding-all-small th,
     &.padding-all-small td  { padding : 8px 16px; }
 
-    &.padding-all-small th,
-    &.padding-all-small td  { padding : 16px 24px; }
+    &.padding-all-medium th,
+    &.padding-all-medium td  { padding : 16px 24px; }
 
     &.padding-all-large th,
     &.padding-all-large td  { padding : 24px 32px; }

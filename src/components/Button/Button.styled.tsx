@@ -76,7 +76,8 @@ export const ButtonStyled = styled.button`
         right    : 0;
     }
 
-    &[class*="border"]:not(.border-none) { border-width : 1px; }
+    &[class*="border"] { border-width : 1px; }
+    &.border-none      { border-width : 0 !important; }
 
     &.with-loader {
         color          : transparent !important;
@@ -95,7 +96,6 @@ export const ButtonStyled = styled.button`
         right              : 0;
         height             : 16px;
         width              : 16px;
-        border             : 3px solid ${(props: ButtonProps) => props.theme.button.isLoading.border};
         border-radius      : 50%;
         border-top-color   : transparent;
         border-right-color : transparent;
@@ -104,24 +104,24 @@ export const ButtonStyled = styled.button`
         animation          : spinner 400ms infinite linear;
     }
 
-    &.size-tiny.with-loader::after,
-    &.size-small.with-loader::after {
-        display            : block;
-        position           : absolute;
-        margin             : auto;
-        left               : 0;
-        top                : 0;
-        bottom             : 0;
-        right              : 0;
-        height             : 8px;
-        width              : 8px;
-        border             : 2px solid ${(props: ButtonProps) => props.theme.button.isLoading.border};
-        border-radius      : 50%;
+    &.primary.with-loader::after {
+        background-color   : ${(props: ButtonProps) => props.theme.button.primary.isLoading.bg};
+        border             : 3px solid ${(props: ButtonProps) => props.theme.button.primary.isLoading.spinnerBorder};
         border-top-color   : transparent;
         border-right-color : transparent;
-        content            : "";
-        -webkit-animation  : spinner 400ms infinite linear;
-        animation          : spinner 400ms infinite linear;
+    }
+
+    &.secondary.with-loader::after {
+        background-color   : ${(props: ButtonProps) => props.theme.button.secondary.isLoading.bg};
+        border             : 3px solid ${(props: ButtonProps) => props.theme.button.secondary.isLoading.spinnerBorder};
+        border-top-color   : transparent;
+        border-right-color : transparent;
+    }
+
+    &.size-tiny.with-loader::after,
+    &.size-small.with-loader::after {
+        height             : 8px;
+        width              : 8px;
     }
 
     /*  Animation for loader  */
