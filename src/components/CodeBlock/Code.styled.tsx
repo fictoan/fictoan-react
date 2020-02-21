@@ -101,6 +101,7 @@ export const CodeStyled = css`
     .token.regex       { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.regex} }
     .token.symbol      { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.symbol} }
     .token.url         { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.url} }
+    .token.plain       { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.plain} }
 
     .token.namespace { opacity : 0.72; }
 

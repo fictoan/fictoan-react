@@ -100,6 +100,7 @@ export const RFTheme = {
                     url         : baseColors.green80,
                     namespace   : baseColors.green80,
                     italic      : baseColors.green80,
+                    plain       : baseColors.grey,
                 },
 
                 languages: {
@@ -159,42 +160,42 @@ export const RFTheme = {
             default: {
                 bg     : mainColors.hue,
                 border : mainColors.hue,
-                text   : baseColors.white,
+                text   : baseColors.black,
             },
             onHover: {
                 bg     : mainColors.hue,
                 border : mainColors.hue,
-                text   : baseColors.white
+                text   : baseColors.black,
             },
             isActive: {
                 bg     : mainColors.hue,
                 border : mainColors.hue,
-                text   : baseColors.white
+                text   : baseColors.black,
             },
             isLoading: {
                 bg            : mainColors.hue,
-                spinnerBorder : baseColors.white
+                spinnerBorder : baseColors.black
             }
         },
         secondary: {
             default: {
-                bg     : mainColors.accent,
-                border : mainColors.accent,
-                text   : baseColors.white,
+                bg     : `${lighten(0.32, mainColors.hue)}`,
+                border : mainColors.hue,
+                text   : baseColors.black,
             },
             onHover: {
-                bg     : mainColors.accent,
-                border : mainColors.accent,
-                text   : baseColors.white
+                bg     : `${lighten(0.32, mainColors.hue)}`,
+                border : mainColors.hue,
+                text   : baseColors.black,
             },
             isActive: {
-                bg     : mainColors.accent,
-                border : mainColors.accent,
-                text   : baseColors.white
+                bg     : `${lighten(0.2, mainColors.hue)}`,
+                border : mainColors.hue,
+                text   : baseColors.black,
             },
             isLoading: {
                 bg            : baseColors.white,
-                spinnerBorder : mainColors.accent
+                spinnerBorder : baseColors.black,
             }
         }
     },

@@ -45,13 +45,13 @@ export const ButtonStyled = styled.button`
     &.secondary:hover {
         background-color : ${(props: ButtonProps) => props.theme.button.secondary.onHover.bg};
         color            : ${(props: ButtonProps) => props.theme.button.secondary.onHover.text};
-        border           : 1px solid ${(props: ButtonProps) => props.theme.button.secondary.onHover.text}
+        border           : 1px solid ${(props: ButtonProps) => props.theme.button.secondary.onHover.border}
     }
 
     &.secondary:active {
         background-color : ${(props: ButtonProps) => props.theme.button.secondary.isActive.bg};
         color            : ${(props: ButtonProps) => props.theme.button.secondary.isActive.text};
-        border           : 1px solid ${(props: ButtonProps) => props.theme.button.secondary.isActive.text}
+        border           : 1px solid ${(props: ButtonProps) => props.theme.button.secondary.isActive.border}
     }
 
     &:active {
