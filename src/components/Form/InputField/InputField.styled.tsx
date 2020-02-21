@@ -11,6 +11,7 @@ export const InputFieldStyled = styled.input`
     border           : 1px solid ${(props: InputFieldProps) => props.theme.input.default.border};
     border-radius    : 4px;
     padding          : 12px;
+    line-height      : 1;
 
     &:active,
     &:focus {
