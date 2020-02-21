@@ -9,7 +9,10 @@ export const SidebarHeaderStyled = styled.div`
     align-items     : center;
     justify-content : center;
 
-    * { line-height : 1; }
+    * {
+        line-height : 1;
+        text-align  : center;
+    }
 
     .header-logo { display : block; }
     .header-icon { display : none; }
