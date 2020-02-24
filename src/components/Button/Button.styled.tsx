@@ -199,7 +199,5 @@ export const ButtonStyled = styled.button`
         right     : 16px;
     }
 
-    & + & { margin-right : 8px; }
-
     & + &:nth-child(2) { margin-left : 8px; }
 `

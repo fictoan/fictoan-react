@@ -25,49 +25,7 @@
 
 
 //  PROGRESS BAR  =============================================================
-.ff-progress {
-    display        : flex;
-    flex-wrap      : wrap;
-    flex-direction : row;
-    width: 100%;
-}
 
-.ff-progress-title {
-    margin-bottom : 8px;
-    font-weight   : bold;
-    flex          : 0 1 50%;
-}
-
-.ff-progress-value {
-    text-align    : right;
-    margin-bottom : 8px;
-    flex          : 0 1 50%;
-}
-
-progress.ff-progress-bar[value] {
-    position      : relative;
-    flex          : 1 1 100%;
-    height        : 16px;
-    border-radius : 8000px;
-    background    : $progressBarBG;
-    box-shadow    : 0 2px 8px -2px hsla(0, 0, 0, 0.24) inset;
-}
-
-progress.ff-progress-bar[value]::-webkit-progress-bar {
-    border-radius      : 8000px;
-    background         : $progressBarBG;
-    box-shadow         : 0 2px 8px -2px hsla(0, 0, 0, 0.24) inset;
-}
-
-progress.ff-progress-bar::-webkit-progress-value {
-    border-radius      : 8000px;
-    background         : $progressBarFill;
-}
-
-progress.ff-progress-bar[value]::-moz-progress-bar {
-    border-radius : 8000px;
-    background    : $progressBarFill;
-}
 
 
 

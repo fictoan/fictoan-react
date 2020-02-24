@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { HRProps } from "./constants";
 
 export const HRStyled = styled.hr`
-    display          : inline-table;
+    display          : flex;
     border           : 0;
     height           : 1px;
     margin           : 4vmax auto;

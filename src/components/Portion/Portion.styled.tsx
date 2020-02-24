@@ -3,6 +3,11 @@ import styled from "styled-components";
 import { PortionProps } from "./constants";
 
 export const PortionStyled = styled.div`
+    display        : flex;
+    flex-direction : column;
+
+    &.horizontal { flex-direction : row; }
+
     &.\\31 { grid-column : span 1; }
 
     &.one-twelfth,

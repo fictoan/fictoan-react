@@ -32,6 +32,8 @@ import { RadioButton } from "./components/Form/RadioButton/RadioButton";
 import { CheckBox } from "./components/Form/CheckBox/CheckBox";
 import { Switch } from "./components/Form/CheckBox/Switch";
 
+import { ProgressBar } from "./components/ProgressBar/ProgressBar";
+
 import { Card } from "./components/Card/Card";
 
 import { InfoPanel } from "./components/InfoPanel/InfoPanel"
@@ -80,6 +82,7 @@ export {
     CheckBox,
     Switch,
     Table,
+    ProgressBar,
     BreadcrumbWrapper,
     BreadcrumbItem,
     NotificationWrapper,

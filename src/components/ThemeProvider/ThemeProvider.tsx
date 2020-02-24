@@ -9,7 +9,6 @@ import { ThemeProviderProps, ThemeProviderElementType } from "./constants";
 import { GlobalStyled } from "./Global.styled";
 
 export const ThemeProvider = ({ theme, children, ...props }: ThemeProviderProps) => {
-    console.log(merge(RFTheme, theme));
     return (
         <Element<ThemeProviderElementType>
             as={TP}

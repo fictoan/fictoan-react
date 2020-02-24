@@ -24,7 +24,7 @@ export const Select = ({ fullWidth, label, helpText, errorText, className, optio
         <FormItem>
             <Element<HTMLDivElement>
                 as={SelectWrapperStyled}
-                fullWidth={fullWidth}
+                isFullWidth={fullWidth}
                 className={className}
             >
                 <Element<SelectElementType>
