@@ -15,10 +15,10 @@ export const ProgressBar = ({ className, label, value, ...props }: ProgressBarPr
     return (
         <div>
             <Text className="progress-label">{label}</Text>
-            <Text className="progress-value">{value}%</Text>
             <Element<ProgressBarElementType>
                 as={ProgressBarStyled}
                 className={createClassName(classNames)}
+                value={value}
                 {...props}
             />
         </div>
