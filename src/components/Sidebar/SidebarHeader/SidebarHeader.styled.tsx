@@ -14,6 +14,10 @@ export const SidebarHeaderStyled = styled.div`
         text-align  : center;
     }
 
-    .header-logo { display : block; }
+    .header-logo {
+        display : block;
+        width   : 50%;
+    }
+
     .header-icon { display : none; }
 `
