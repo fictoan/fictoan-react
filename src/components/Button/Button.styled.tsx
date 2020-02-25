@@ -8,9 +8,6 @@ export const ButtonStyled = styled.button`
     cursor              : pointer;
     padding             : 12px 24px;
     font-family         : ${(props: ButtonProps) => props.theme.text.font.sans};
-    background-color    : ${(props: ButtonProps) => props.theme.button.primary.default.bg};
-    color               : ${(props: ButtonProps) => props.theme.button.primary.default.text};
-    border              : 1px solid ${(props: ButtonProps) => props.theme.button.primary.default.border};
     font-weight         : bold;
     font-size           : 92%;
     text-align          : center;
@@ -22,37 +19,59 @@ export const ButtonStyled = styled.button`
     background-position : center;
     user-select         : none;
 
-    &.primary:hover {
-        background-color : ${(props: ButtonProps) => props.theme.button.primary.onHover.bg};
-        color            : ${(props: ButtonProps) => props.theme.button.primary.onHover.text};
-        border           : 1px solid  ${(props: ButtonProps) => props.theme.button.primary.onHover.border};
+    &.primary {
+        background-color : ${(props: ButtonProps) => props.theme.button.primary.default.bg};
+        color            : ${(props: ButtonProps) => props.theme.button.primary.default.text};
+        border           : 1px solid ${(props: ButtonProps) => props.theme.button.primary.default.border};
+        border-radius    : ${(props: ButtonProps) => props.theme.button.primary.default.borderRadius};
+
+        :hover {
+            background-color : ${(props: ButtonProps) => props.theme.button.primary.onHover.bg};
+            color            : ${(props: ButtonProps) => props.theme.button.primary.onHover.text};
+            border           : 1px solid  ${(props: ButtonProps) => props.theme.button.primary.onHover.border};
+        }
+
+        :active {
+            background-color : ${(props: ButtonProps) => props.theme.button.primary.isActive.bg};
+            color            : ${(props: ButtonProps) => props.theme.button.primary.isActive.text};
+            border           : 1px solid ${(props: ButtonProps) => props.theme.button.primary.isActive.border};
+        }
+
+        .with-loader::after {
+            background-color   : ${(props: ButtonProps) => props.theme.button.primary.isLoading.bg};
+            border             : 3px solid ${(props: ButtonProps) => props.theme.button.primary.isLoading.spinnerBorder};
+            border-top-color   : transparent;
+            border-right-color : transparent;
+        }
     }
 
-    &.primary:active {
-        box-shadow       : none;
-        opacity          : 0.72;
-        background-color : ${(props: ButtonProps) => props.theme.button.primary.isActive.bg};
-        color            : ${(props: ButtonProps) => props.theme.button.primary.isActive.text};
-        border           : 1px solid ${(props: ButtonProps) => props.theme.button.primary.isActive.border};
-    }
 
     &.secondary {
         background-color : ${(props: ButtonProps) => props.theme.button.secondary.default.bg};
         color            : ${(props: ButtonProps) => props.theme.button.secondary.default.text};
         border           : 1px solid ${(props: ButtonProps) => props.theme.button.secondary.default.border};
+        border-radius    : ${(props: ButtonProps) => props.theme.button.secondary.default.borderRadius};
+
+        :hover {
+            background-color : ${(props: ButtonProps) => props.theme.button.secondary.onHover.bg};
+            color            : ${(props: ButtonProps) => props.theme.button.secondary.onHover.text};
+            border           : 1px solid ${(props: ButtonProps) => props.theme.button.secondary.onHover.border}
+        }
+
+        :active {
+            background-color : ${(props: ButtonProps) => props.theme.button.secondary.isActive.bg};
+            color            : ${(props: ButtonProps) => props.theme.button.secondary.isActive.text};
+            border           : 1px solid ${(props: ButtonProps) => props.theme.button.secondary.isActive.border}
+        }
+
+        .with-loader::after {
+            background-color   : ${(props: ButtonProps) => props.theme.button.secondary.isLoading.bg};
+            border             : 3px solid ${(props: ButtonProps) => props.theme.button.secondary.isLoading.spinnerBorder};
+            border-top-color   : transparent;
+            border-right-color : transparent;
+        }
     }
 
-    &.secondary:hover {
-        background-color : ${(props: ButtonProps) => props.theme.button.secondary.onHover.bg};
-        color            : ${(props: ButtonProps) => props.theme.button.secondary.onHover.text};
-        border           : 1px solid ${(props: ButtonProps) => props.theme.button.secondary.onHover.border}
-    }
-
-    &.secondary:active {
-        background-color : ${(props: ButtonProps) => props.theme.button.secondary.isActive.bg};
-        color            : ${(props: ButtonProps) => props.theme.button.secondary.isActive.text};
-        border           : 1px solid ${(props: ButtonProps) => props.theme.button.secondary.isActive.border}
-    }
 
     &:active {
         box-shadow : none;
@@ -102,20 +121,6 @@ export const ButtonStyled = styled.button`
         content            : "";
         -webkit-animation  : spinner 400ms infinite linear;
         animation          : spinner 400ms infinite linear;
-    }
-
-    &.primary.with-loader::after {
-        background-color   : ${(props: ButtonProps) => props.theme.button.primary.isLoading.bg};
-        border             : 3px solid ${(props: ButtonProps) => props.theme.button.primary.isLoading.spinnerBorder};
-        border-top-color   : transparent;
-        border-right-color : transparent;
-    }
-
-    &.secondary.with-loader::after {
-        background-color   : ${(props: ButtonProps) => props.theme.button.secondary.isLoading.bg};
-        border             : 3px solid ${(props: ButtonProps) => props.theme.button.secondary.isLoading.spinnerBorder};
-        border-top-color   : transparent;
-        border-right-color : transparent;
     }
 
     &.size-tiny.with-loader::after,

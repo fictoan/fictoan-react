@@ -158,9 +158,10 @@ export const RFTheme = {
     button: {
         primary: {
             default: {
-                bg     : mainColors.hue,
-                border : mainColors.hue,
-                text   : baseColors.black,
+                bg           : mainColors.hue,
+                border       : mainColors.hue,
+                text         : baseColors.black,
+                borderRadius : "4px",
             },
             onHover: {
                 bg     : mainColors.hue,
@@ -179,9 +180,10 @@ export const RFTheme = {
         },
         secondary: {
             default: {
-                bg     : `${lighten(0.32, mainColors.hue)}`,
-                border : mainColors.hue,
-                text   : baseColors.black,
+                bg           : `${lighten(0.32, mainColors.hue)}`,
+                border       : mainColors.hue,
+                text         : baseColors.black,
+                borderRadius : "4px",
             },
             onHover: {
                 bg     : `${lighten(0.32, mainColors.hue)}`,
