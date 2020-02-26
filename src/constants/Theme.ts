@@ -256,7 +256,6 @@ export const RFTheme = {
         },
         radioButton: {
             default: {
-
             }
         }
     },
@@ -339,8 +338,9 @@ export const RFTheme = {
             }
         },
 
-        bottomSection: {
-            border : baseColors.slate10
+        footer: {
+            bg        : baseColors.white,
+            borderTop : baseColors.slate10
         }
     },
 
@@ -364,7 +364,7 @@ export const RFTheme = {
     },
 
     //  PROGRESS BAR  /////////////////////////////////////////////////////////
-    progressBar : {
+    progressBar: {
         height : 8,
         bg     : baseColors.slate20,
         fill   : mainColors.hue

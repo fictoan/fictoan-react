@@ -6,12 +6,13 @@ import { Portion } from "./components/Portion/Portion";
 import { Heading } from "./components/Typography/Heading";
 import { Text } from "./components/Typography/Text";
 
+import { SidebarWrapper } from "./components/Sidebar/SidebarWrapper/SidebarWrapper";
+import { SidebarHeader } from "./components/Sidebar/SidebarHeader/SidebarHeader";
+import { SidebarItem } from "./components/Sidebar/SidebarItem/SidebarItem";
 import { SidebarItemIcon } from "./components/Sidebar/SidebarItemIcon/SidebarItemIcon";
 import { SidebarItemText } from "./components/Sidebar/SidebarItemText/SidebarItemText";
-import { SidebarItem } from "./components/Sidebar/SidebarItem/SidebarItem";
-import { SidebarHeader } from "./components/Sidebar/SidebarHeader/SidebarHeader";
 import { SidebarSublinkGroup } from "./components/Sidebar/SidebarSublinkGroup/SidebarSublinkGroup";
-import { SidebarWrapper } from "./components/Sidebar/SidebarWrapper/SidebarWrapper";
+import { SidebarFooter } from "./components/Sidebar/SidebarFooter/SidebarFooter";
 
 import { ContentWrapper } from "./components/ContentWrapper/ContentWrapper";
 
@@ -60,12 +61,13 @@ export {
     Heading,
     Text,
     Card,
+    SidebarWrapper,
+    SidebarHeader,
+    SidebarItem,
     SidebarItemIcon,
     SidebarItemText,
-    SidebarItem,
-    SidebarHeader,
     SidebarSublinkGroup,
-    SidebarWrapper,
+    SidebarFooter,
     ContentWrapper,
     FormWrapper,
     FormItem,

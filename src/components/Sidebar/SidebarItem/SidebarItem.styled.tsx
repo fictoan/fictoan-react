@@ -7,9 +7,8 @@ export const SidebarItemStyled = styled.div`
     align-items           : center;
     grid-template-columns : 48px 1fr;
     grid-template-rows    : 40px;
-    margin                : 4px 0;
 
-    &> a { width : unset; }
+    & > a { width : unset; }
 
     &:hover {
         color            : ${(props: SidebarItemProps) => props.theme.sidebar.links.onHover.text};
@@ -33,17 +32,5 @@ export const SidebarItemStyled = styled.div`
         width            : 8px;
         border-radius    : 50%;
         background-color : ${(props: SidebarItemProps) => props.theme.sidebar.links.hasAlert.bg};
-    }
-
-    &.bottom-section {
-        display          : grid;
-        align-self       : end;
-        position         : fixed;
-        bottom           : 0;
-        width            : 240px;
-        border-top       : 1px solid ${(props: SidebarItemProps) => props.theme.sidebar.bottomSection.border};
-        background-color : white;
-        margin           : 0;
-        padding          : 4px;
     }
 `
