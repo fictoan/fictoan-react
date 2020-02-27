@@ -71,7 +71,7 @@ export const SidebarWrapperStyled = styled.div`
         position     : absolute;
         width        : 8px;
         height       : 8px;
-        top          : 20px;
+        top          : 16px;
         right        : 18px;
         content      : "";
         border-style : solid;

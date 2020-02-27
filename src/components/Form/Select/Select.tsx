@@ -8,23 +8,23 @@ import { SelectElementType, OptionElementType, SelectProps, OptionProps } from "
 import { InputLabel } from "../InputLabel/InputLabel";
 import { FormItem } from "../FormItem/FormItem";
 
-const Option = ({ value, ...props }: OptionProps) => {
+const Option = ({ name, ...props }: OptionProps) => {
     return (
         <Element<OptionElementType>
             as="option"
             {...props}
         >
-            {value}
+            {name}
         </Element>
     );
 }
 
-export const Select = ({ fullWidth, label, helpText, errorText, className, options, ...props }: SelectProps) => {
+export const Select = ({ label, helpText, errorText, isFullWidth, className, options, ...props }: SelectProps) => {
     return (
         <FormItem>
             <Element<HTMLDivElement>
                 as={SelectWrapperStyled}
-                isFullWidth={fullWidth}
+                isFullWidth={isFullWidth}
                 className={className}
             >
                 <Element<SelectElementType>
