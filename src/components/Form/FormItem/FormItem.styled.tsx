@@ -1,15 +1,16 @@
 import styled, { css } from "styled-components";
 
+import { FormItemProps } from "../constants";
 import { InputFieldStyled } from "../InputField/InputField.styled";
 
-import { FormItemProps } from "../constants";
+import { mainColors } from "src/constants/Theme";
 
 export const FormItemStyled = styled.div`
     display        : flex;
     position       : relative;
     width          : 100%;
     flex-direction : column;
-    align-items    : center;
+    align-items    : flex-start;
     flex-wrap      : wrap;
 
     ${(props: FormItemProps) => props.isAnswers && css`
@@ -22,7 +23,7 @@ export const FormItemStyled = styled.div`
         flex          : 1 0 100%;
         align-self    : flex-start;
         margin-bottom : 4px;
-        color         : $colorShade;
+        color         : ${mainColors.shade};
         order         : -1;
         flex-wrap     : wrap;
     }

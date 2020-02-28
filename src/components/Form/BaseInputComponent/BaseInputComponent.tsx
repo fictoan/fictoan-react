@@ -32,6 +32,8 @@ export const BaseInputComponent = <K extends {}>({
         classNames.push("validate-this");
     }
 
+    console.log(inputProps);
+
     return (
         <FormItem>
             <Element<HTMLInputElement>
