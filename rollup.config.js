@@ -2,6 +2,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import url from "@rollup/plugin-url";
 import typescript from "@rollup/plugin-typescript";
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
 
 import pkg from "./package.json";
 
@@ -23,20 +24,13 @@ export default {
             exports: "named"
         }
     ],
-    external: [
-        "lodash-es",
-        "prism-react-renderer",
-        "react",
-        "react-dom",
-        "react-router-dom",
-        "styled-components"
-    ],
     plugins: [
+        peerDepsExternal(),
         typescript(),
         url(),
         resolve({
-            extensions: [".ts", ".tsx"]
+            extensions: [".ts", ".tsx", ".js", ".jsx"]
         }),
-        commonjs({ extensions: [".ts", ".tsx"] })
+        commonjs({ extensions: [".ts", ".tsx", ".js", ".jsx"] })
     ]
 };
