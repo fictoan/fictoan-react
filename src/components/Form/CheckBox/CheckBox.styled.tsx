@@ -1,4 +1,6 @@
 import styled, { css } from "styled-components";
+import { baseColors } from "src/constants/BaseColors";
+import { mainColors } from "src/constants/Theme";
 
 /*  COMMON STYLES  ========================================================  */
 const SharedStyling = css`
@@ -12,8 +14,8 @@ const SharedStyling = css`
     label {
         display     : inline-flex;
         position    : relative;
-        font-family : $fontSans;
-        color       : $colorShade;
+        font-family : inherit;
+        color       : ${mainColors.shade};
         cursor      : pointer;
         line-height : 1;
         user-select : none;
@@ -30,15 +32,15 @@ const SharedStyling = css`
     input[type="checkbox"]:disabled + label::before {
         user-select    : none;
         pointer-events : none;
-        background     : $colorGrey-20;
+        background     : ${baseColors.slate20};
         box-shadow     : 0 2px 4px -2px hsla(0, 0, 0, 0.24) inset;
     }
 
-    &:hover label::before { background : $colorGrey-30; }
+    &:hover label::before { background : ${baseColors.slate30}; }
 
     label::after { opacity : 0; }
 
-    input[type="checkbox"]:checked + label::before { background : $colorHue; }
+    input[type="checkbox"]:checked + label::before { background : ${mainColors.hue}; }
 
     input[type="checkbox"]:disabled + label,
     input[type="checkbox"]:disabled:checked + label {
@@ -72,8 +74,8 @@ export const CheckBoxStyled = styled.div`
         width         : 12px;
         left          : 2px;
         top           : 4px;
-        border-left   : 2px solid $colorWhite;
-        border-bottom : 2px solid $colorWhite;
+        border-left   : 2px solid ${baseColors.white};
+        border-bottom : 2px solid ${baseColors.white};
         transform     : rotate(-45deg);
     }
 
@@ -88,6 +90,8 @@ export const SwitchStyled = styled.div`
     ${SharedStyling}
 
     input[type="checkbox"] { display : none; }
+
+    label { padding-left : 32px; }
 
     /*  The grey oblong */
     label::before {
@@ -108,14 +112,15 @@ export const SwitchStyled = styled.div`
         height        : 8px;
         left          : 2px;
         top           : 4px;
-        background    : $colorWhite;
+        background    : ${baseColors.white};
         border-radius : 50%;
         content       : '';
         transition    : all 0.1s ease-out;
         box-shadow    : 0 2px 4px -2px hsla(0, 0, 0, 0.6);
+        opacity       : 1;
     }
 
-    input[type="checkbox"]:checked + label::after { left : 14px; }
-
-    label { padding-left : 32px; }
+    input[type="checkbox"]:checked + label::after {
+        left : 14px;
+    }
 `;
