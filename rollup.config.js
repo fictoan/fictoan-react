@@ -1,11 +1,8 @@
-//import babel from 'rollup-plugin-babel'
-import commonjs from "rollup-plugin-commonjs";
-import external from "rollup-plugin-peer-deps-external";
-import postcss from "rollup-plugin-postcss";
-import resolve from "rollup-plugin-node-resolve";
-import url from "rollup-plugin-url";
-import typescript from "rollup-plugin-typescript2";
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import commonjs from "@rollup/plugin-commonjs";
+import resolve from "@rollup/plugin-node-resolve";
+import url from "@rollup/plugin-url";
+import typescript from "@rollup/plugin-typescript";
+
 import pkg from "./package.json";
 
 // const production = !process.env.ROLLUP_WATCH;
@@ -26,13 +23,16 @@ export default {
             exports: "named"
         }
     ],
+    external: [
+        "lodash-es",
+        "prism-react-renderer",
+        "react",
+        "react-dom",
+        "react-router-dom",
+        "styled-components"
+    ],
     plugins: [
-        peerDepsExternal(),
         typescript(),
-        external(),
-        postcss({
-            modules: true
-        }),
         url(),
         resolve({
             extensions: [".ts", ".tsx"]

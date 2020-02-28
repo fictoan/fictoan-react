@@ -1,3 +1,5 @@
+# v0.23.5
+- Upgraded all packages.
 
 # v0.21.2
 - Updated styled components.
