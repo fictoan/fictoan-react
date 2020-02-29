@@ -1,6 +1,6 @@
 {
     "name": "reactised-fictoan",
-    "version": "0.23.5",
+    "version": "0.23.6",
     "private": false,
     "main": "dist/index.js",
     "module": "dist/index.es.js",
@@ -33,12 +33,12 @@
     "devDependencies": {
         "@rollup/plugin-commonjs": "^11.0.2",
         "@rollup/plugin-node-resolve": "^7.1.1",
-        "@rollup/plugin-typescript": "^3.0.0",
         "@rollup/plugin-url": "^4.0.2",
         "@types/lodash": "^4.14.149",
         "@types/react": "^16.9.23",
         "@types/styled-components": "^5.0.1",
         "rollup": "^1.31.1",
+        "rollup-plugin-typescript2": "^0.26.0",
         "tslib": "^1.11.1",
         "typescript": "^3.8.2"
     },

@@ -1,3 +1,6 @@
+# v0.23.6
+- Generate typings.
+
 # v0.23.5
 - Upgraded all packages.
 
