@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider as TP } from "styled-components";
-import { merge } from "lodash-es";
+import merge from "lodash/merge";
 
 import { RFTheme } from "src/constants/Theme";
 import { Element } from "../Element/Element";

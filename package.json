@@ -35,27 +35,21 @@
         "@rollup/plugin-node-resolve": "^7.1.1",
         "@rollup/plugin-typescript": "^3.0.0",
         "@rollup/plugin-url": "^4.0.2",
-        "@types/lodash-es": "^4.17.3",
+        "@types/lodash": "^4.14.149",
         "@types/react": "^16.9.23",
-        "@types/react-dom": "^16.9.5",
         "@types/styled-components": "^5.0.1",
         "rollup": "^1.31.1",
-        "rollup-plugin-peer-deps-external": "^2.2.2",
         "tslib": "^1.11.1",
         "typescript": "^3.8.2"
     },
     "files": [
         "dist"
     ],
-    "peerDependencies": {
-        "lodash-es": "^4.17.15",
-        "react": "^16.13.0",
-        "react-dom": "^16.13.0",
-        "react-router-dom": "^5.1.2",
-        "styled-components": "^5.0.1"
-    },
     "dependencies": {
+        "lodash": "^4.17.15",
         "polished": "^3.4.4",
-        "prism-react-renderer": "^1.0.2"
+        "prism-react-renderer": "^1.0.2",
+        "react": "^16.13.0",
+        "styled-components": "^5.0.1"
     }
 }

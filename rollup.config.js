@@ -2,11 +2,11 @@ import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import url from "@rollup/plugin-url";
 import typescript from "@rollup/plugin-typescript";
-import peerDepsExternal from "rollup-plugin-peer-deps-external";
 
 import pkg from "./package.json";
 
 // const production = !process.env.ROLLUP_WATCH;
+const extensions = [".ts", ".tsx", ".js", ".jsx"];
 
 export default {
     input: "src/index.tsx",
@@ -24,13 +24,17 @@ export default {
             exports: "named"
         }
     ],
+    external: [
+        "lodash/merge",
+        "react",
+        "styled-components"
+    ],
     plugins: [
-        peerDepsExternal(),
         typescript(),
         url(),
         resolve({
-            extensions: [".ts", ".tsx", ".js", ".jsx"]
+            extensions
         }),
-        commonjs({ extensions: [".ts", ".tsx", ".js", ".jsx"] })
+        commonjs({ extensions })
     ]
 };
