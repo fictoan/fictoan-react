@@ -1,6 +1,6 @@
 import { HTMLProps } from "react";
 
-import { RFTheme } from "src/constants/Theme";
+import { RFTheme } from "../../constants/Theme";
 
 export type ThemeType = typeof RFTheme;
 

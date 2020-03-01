@@ -25,6 +25,9 @@ export default {
         }
     ],
     external: [
+        "@types/lodash",
+        "@types/react",
+        "@types/styled-components",
         "lodash/merge",
         "react",
         "styled-components"
