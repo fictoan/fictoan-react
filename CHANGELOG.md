@@ -1,8 +1,21 @@
+# v0.23.8
+- Remove all SCSS files.
+- Remove unused svg icon.
+- Move `theme` to `styles` folder.
+
+# v0.23.7
+- Use relative path everywhere.
+
+# v0.23.6
+- Generate typings.
+
+# v0.23.5
+- Upgrade all packages.
 
 # v0.21.2
-- Updated styled components.
-- Removed unused component `EventHandler`.
-- Fixed rollup dependencies.
+- Update styled components.
+- Remove unused component `EventHandler`.
+- Fix rollup dependencies.
 
 # v0.21.1
 - Add `onCloseButtonClick` prop in `NotificationItem`.

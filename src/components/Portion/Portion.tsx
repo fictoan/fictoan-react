@@ -1,6 +1,6 @@
 import React from "react";
 
-import { createClassName } from "src/utils/classNames";
+import { createClassName } from "../../utils/classNames";
 import { Element } from "../Element/Element";
 
 import { PortionStyled } from "./Portion.styled";
