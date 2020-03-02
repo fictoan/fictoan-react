@@ -2,7 +2,7 @@ import React from "react";
 import { ThemeProvider as TP } from "styled-components";
 import merge from "lodash/merge";
 
-import { RFTheme } from "../../constants/Theme";
+import { RFTheme } from "../../styles/theme";
 import { Element } from "../Element/Element";
 
 import { ThemeProviderProps, ThemeProviderElementType } from "./constants";

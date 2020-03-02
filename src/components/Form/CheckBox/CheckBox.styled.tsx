@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
-import { baseColors } from "../../../constants/BaseColors";
-import { mainColors } from "../../../constants/Theme";
+
+import { baseColors } from "../../../constants/baseColors";
+import { mainColors } from "../../../styles/theme";
 
 /*  COMMON STYLES  ========================================================  */
 const SharedStyling = css`
