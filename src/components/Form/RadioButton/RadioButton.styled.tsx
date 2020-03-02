@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import { baseColors } from "src/constants/BaseColors";
-import { mainColors } from "src/constants/Theme";
+import { baseColors } from "../../../constants/baseColors";
+import { mainColors } from "../../../styles/theme";
 
 export const RadioButtonStyled = styled.div`
     display      : inline-flex;

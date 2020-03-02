@@ -2,8 +2,7 @@ import { css } from "styled-components";
 
 import { GlobalStyledProps } from "./constants";
 
-import { baseColors } from "../../constants/BaseColors"
-import { mainColors } from "../../constants/Theme"
+import { baseColors } from "../../constants/baseColors"
 
 export const ColorsStyled = css`
 

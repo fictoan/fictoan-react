@@ -1,6 +1,6 @@
 import { lighten } from "polished";
 
-import { baseColors } from "./BaseColors"
+import { baseColors } from "../constants/baseColors"
 
 export const mainColors = {
     hue      : baseColors.amber,

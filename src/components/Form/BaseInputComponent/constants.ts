@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 
-import { ElementProps }    from "src/components/Element/constants";
+import { ElementProps }    from "../../Element/constants";
 import { InputLabelProps } from "../InputLabel/constants";
 
 export interface InputIconProps {

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Element } from "src/components/Element/Element";
+import { Element } from "../../Element/Element";
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 
 import { RadioButtonStyled } from "./RadioButton.styled";

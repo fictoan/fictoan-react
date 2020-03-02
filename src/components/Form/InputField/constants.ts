@@ -1,4 +1,4 @@
-import { CommonAndHTMLProps } from "src/components/Element/constants";
+import { CommonAndHTMLProps } from "../../Element/constants";
 
 import { InputLabelProps } from "../InputLabel/constants";
 import { InputCommonProps, InputIconProps } from "../BaseInputComponent/constants";
