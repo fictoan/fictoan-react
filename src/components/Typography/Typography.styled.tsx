@@ -14,6 +14,7 @@ export const TextStyled = css`
     }
 
     h1, h2, h3, h4, h5, h6 {
+        font-family : ${(props: GlobalStyledProps) => props.theme.text.headings.font};
         font-weight : ${(props: GlobalStyledProps) => props.theme.text.headings.weight};
         margin      : 0;
     }

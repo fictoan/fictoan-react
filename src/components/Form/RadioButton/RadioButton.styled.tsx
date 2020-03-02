@@ -28,7 +28,8 @@ export const RadioButtonStyled = styled.div`
         border-radius : 50%;
     }
 
-    input[type="radio"]:checked + label::after { opacity : 1; }
+    input[type="radio"]:checked + label::before { background : ${mainColors.hue}; }
+    input[type="radio"]:checked + label::after  { opacity : 1; }
 
     &:checked + label::before { background : ${mainColors.hue}; }
     &:checked + label::after { opacity : 1; }
