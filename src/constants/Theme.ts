@@ -204,6 +204,7 @@ export const RFTheme = {
         }
     },
 
+    //  RULE  /////////////////////////////////////////////////////////////////
     hr: {
         bg : baseColors.slate20
     },
@@ -343,6 +344,27 @@ export const RFTheme = {
         footer: {
             bg        : baseColors.white,
             borderTop : baseColors.slate10
+        }
+    },
+
+    notification: {
+        default : {
+            bg   : baseColors.grey10,
+            text : mainColors.shade
+        },
+        types: {
+            info : {
+                border : baseColors.blue60,
+            },
+            warning : {
+                border : baseColors.amber,
+            },
+            error : {
+                border : baseColors.red90,
+            },
+            success : {
+                border : baseColors.green90,
+            },
         }
     },
 
