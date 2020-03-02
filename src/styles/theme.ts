@@ -37,6 +37,7 @@ export const RFTheme = {
         },
 
         headings: {
+            font       : "sans-serif",
             color      : baseColors.grey,
             weight     : 600,
             lineHeight : 1.24
@@ -156,6 +157,7 @@ export const RFTheme = {
 
     //  BUTTON  ///////////////////////////////////////////////////////////////
     button: {
+        fontFamily: "MatterSemiBold",
         primary: {
             default: {
                 bg           : mainColors.hue,
