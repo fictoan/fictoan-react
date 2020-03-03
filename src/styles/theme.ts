@@ -352,6 +352,7 @@ export const RFTheme = {
         }
     },
 
+    //  NOTIFICATION  /////////////////////////////////////////////////////////
     notification: {
         default : {
             bg   : baseColors.grey10,
