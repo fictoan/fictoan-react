@@ -1,5 +1,3 @@
-import { css } from "styled-components";
-
 import { CommonAndHTMLProps, ThemeProps } from "../Element/constants";
 
 export type ThemeProviderElementType = HTMLDivElement;
