@@ -5,8 +5,9 @@ import { BaseInputComponentWithIconProps } from "./constants";
 
 import { InputLabel } from "../InputLabel/InputLabel";
 import { FormItem } from "../FormItem/FormItem";
+import { InputFieldElementType } from "../InputField/constants";
 
-export const BaseInputComponent = <K extends Element>({
+export const BaseInputComponent = <K extends InputFieldElementType>({
     as: Component,
     className,
     label,
