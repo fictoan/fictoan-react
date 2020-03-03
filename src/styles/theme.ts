@@ -139,7 +139,12 @@ export const RFTheme = {
     //  INFO PANEL  ///////////////////////////////////////////////////////////
     infoPanel: {
         bg     : baseColors.white,
-        border : baseColors.slate20
+        border : baseColors.slate20,
+        dismissButton: {
+            bg: baseColors.white,
+            color: baseColors.slate90,
+            content: "×"
+        }
     },
 
     //  BREADCRUMBS  ///////////////////////////////////////////////////////////

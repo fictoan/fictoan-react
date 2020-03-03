@@ -8,6 +8,8 @@ export interface ThemeProps {
     theme ? : ThemeType;
 }
 
+type SpacingTypes = "none" | "fixed" | "tiny" | "small" | "medium" | "large" | "huge";
+
 export interface CommonProps extends ThemeProps {
     bgColor           ? : string;
     textColor         ? : string;
@@ -24,16 +26,17 @@ export interface CommonProps extends ThemeProps {
     showOnlyOnDesktop ? : boolean;
     isFullWidth       ? : boolean;
     isFullHeight      ? : boolean;
-    marginTop         ? : "none" | "fixed" | "tiny" | "small" | "medium" | "large" | "huge";
-    marginRight       ? : "none" | "fixed" | "tiny" | "small" | "medium" | "large" | "huge";
-    marginBottom      ? : "none" | "fixed" | "tiny" | "small" | "medium" | "large" | "huge";
-    marginLeft        ? : "none" | "fixed" | "tiny" | "small" | "medium" | "large" | "huge";
-    margin            ? : "none" | "fixed" | "tiny" | "small" | "medium" | "large" | "huge";
-    paddingTop        ? : "none" | "fixed" | "tiny" | "small" | "medium" | "large" | "huge";
-    paddingRight      ? : "none" | "fixed" | "tiny" | "small" | "medium" | "large" | "huge";
-    paddingBottom     ? : "none" | "fixed" | "tiny" | "small" | "medium" | "large" | "huge";
-    paddingLeft       ? : "none" | "fixed" | "tiny" | "small" | "medium" | "large" | "huge";
-    padding           ? : "none" | "fixed" | "tiny" | "small" | "medium" | "large" | "huge";
+    marginTop         ? : SpacingTypes;
+    marginRight       ? : SpacingTypes;
+    marginBottom      ? : SpacingTypes;
+    marginLeft        ? : SpacingTypes;
+    margin            ? : SpacingTypes;
+    paddingTop        ? : SpacingTypes;
+    paddingRight      ? : SpacingTypes;
+    paddingBottom     ? : SpacingTypes;
+    paddingLeft       ? : SpacingTypes;
+    padding           ? : SpacingTypes;
+    classNames        ? : any[];
 }
 
 export interface CommonAndHTMLProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "size"> { }

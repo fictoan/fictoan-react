@@ -1,6 +1,5 @@
 import React from "react";
 
-import { createClassName } from "../../utils/classNames"
 import { Element } from "../Element/Element";
 
 import { ButtonStyled } from "./Button.styled"
@@ -44,7 +43,7 @@ export const Button = ({ size, shape, shadow, border, kind, isLoading, hasDelete
     return (
         <Element<ButtonElementType>
             as={ButtonStyled}
-            className={createClassName(classNames)}
+            classNames={classNames}
             {...props}
         />
     );

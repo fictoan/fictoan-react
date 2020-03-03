@@ -1,6 +1,5 @@
 import React from "react";
 
-import { createClassName } from "../../utils/classNames";
 import { Element }   from "../Element/Element";
 
 import { TextProps, TextElementType } from "./constants";
@@ -35,7 +34,7 @@ export const Text = ({ weight, size, isSans, isSerif, isMono, align, className, 
     return (
         <Element<TextElementType>
             as="p"
-            className={createClassName(classNames)}
+            classNames={classNames}
             {...props}
         />
     );

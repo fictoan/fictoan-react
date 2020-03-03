@@ -1,6 +1,5 @@
 import React from "react";
 
-import { createClassName } from "../../utils/classNames"
 import { Element } from "../Element/Element";
 
 import { CardStyled } from "./Card.styled";
@@ -20,7 +19,7 @@ export const Card = ({ shadow, shape, className, ...props }: CardProps) => {
     return (
         <Element<CardElementType>
             as={CardStyled}
-            className={createClassName(classNames)}
+            classNames={classNames}
             {...props}
         />
     );

@@ -1,6 +1,5 @@
 import React from "react";
 
-import { createClassName } from "../../utils/classNames";
 import { Element } from "../Element/Element";
 
 import { RowStyled } from "./Row.styled"
@@ -40,7 +39,7 @@ export const Row = ({ sidePadding, className, gutters, retainLayoutOnTabLS, reta
     return (
         <Element<RowElementType>
             as={RowStyled}
-            className={createClassName(classNames)}
+            classNames={classNames}
             {...props}
         />
     );

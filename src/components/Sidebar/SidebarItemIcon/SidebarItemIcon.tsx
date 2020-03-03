@@ -1,6 +1,5 @@
 import React from "react";
 
-import { createClassName } from "../../../utils/classNames";
 import { Element } from "../../Element/Element";
 
 import { SidebarItemIconStyled } from "./SidebarItemIcon.styled";
@@ -16,7 +15,7 @@ export const SidebarItemIcon = ({ iconType, className, ...props }: SidebarItemIc
     return (
         <Element<SidebarItemIconElementType>
             as={SidebarItemIconStyled}
-            className={createClassName(classNames)}
+            classNames={classNames}
             {...props}
         />
     );

@@ -1,6 +1,5 @@
 import React from "react";
 
-import { createClassName } from "./../../utils/classNames";
 import { Element } from "../Element/Element";
 
 import { HeadingProps, HeadingElementType } from "./constants";
@@ -31,7 +30,7 @@ export const Heading = ({ as, weight, isSans, isSerif, isMono, align, className,
     return (
         <Element<HeadingElementType>
             as={as}
-            className={createClassName(classNames)}
+            classNames={classNames}
             {...props}
         />
     );

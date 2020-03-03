@@ -1,6 +1,5 @@
 import React from "react";
 
-import { createClassName } from "../../utils/classNames";
 import { Element }   from "../Element/Element";
 
 import { TableStyled } from "./Table.styled";
@@ -28,7 +27,7 @@ export const Table = ({ bordersFor, isStriped, isHoverable, isFullWidth, classNa
     return (
         <Element<TableElementType>
             as={TableStyled}
-            className={createClassName(classNames)}
+            classNames={classNames}
             {...props}
         />
     );

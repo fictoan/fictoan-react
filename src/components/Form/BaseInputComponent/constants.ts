@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 
 import { ElementProps }    from "../../Element/constants";
-import { InputLabelProps } from "../InputLabel/constants";
+import { InputLabelCustomProps } from "../InputLabel/constants";
 
 export interface InputIconProps {
     iconLeft  ? : ReactElement;
@@ -14,6 +14,6 @@ export interface InputCommonProps {
     invalid      ? : boolean;
 }
 
-export type BaseInputComponentProps<K extends {}> = ElementProps<K> & InputLabelProps & InputCommonProps;
+export type BaseInputComponentProps<K extends {}> = ElementProps<K> & InputLabelCustomProps & InputCommonProps;
 export type BaseInputComponentWithIconProps<K extends {}> = BaseInputComponentProps<K> & InputIconProps;
 

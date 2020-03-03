@@ -80,12 +80,12 @@ export const NotificationsItemStyled = styled.div`
 
     & p { margin-bottom : 0; }
 
-    .ff-notification-wrapper.top {
+    ${NotificationsWrapperStyled}.top {
         &:first-child { margin-top : 0; }
         &:last-child  { margin-bottom : 0; }
     }
 
-    .ff-notification-wrapper.bottom {
+    ${NotificationsWrapperStyled}.bottom {
         &:first-child { margin-bottom: 0; }
         &:last-child  { margin-top: 0; }
     }
