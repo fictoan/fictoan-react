@@ -29,6 +29,7 @@ import { Textarea } from "./components/Form/Textarea/Textarea";
 import { InputLabel } from "./components/Form/InputLabel/InputLabel";
 import { Select } from "./components/Form/Select/Select";
 import { FileUpload } from "./components/Form/InputField/FileUpload";
+import { RadioGroup } from "./components/Form/RadioButton/RadioGroup";
 import { RadioButton } from "./components/Form/RadioButton/RadioButton";
 import { CheckBox } from "./components/Form/CheckBox/CheckBox";
 import { Switch } from "./components/Form/CheckBox/Switch";
@@ -80,6 +81,7 @@ export {
     Button,
     FileUpload,
     HRule,
+    RadioGroup,
     RadioButton,
     CheckBox,
     Switch,
