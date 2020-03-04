@@ -46,7 +46,7 @@ export const InfoPanelStyled = styled.div`
 
         &::after {
             display : block;
-            content : ${(props : InfoPanelProps) => props.theme.infoPanel.dismissButton.content};
+            content : "${(props : InfoPanelProps) => props.theme.infoPanel.dismissButton.content}";
         }
     }
 `
