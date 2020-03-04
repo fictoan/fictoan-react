@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { InputFieldProps } from "./constants";
 
-export const InputFieldStyled = styled.input`
+export const InputStyles = css`
     position         : relative;
     width            : 100%;
     flex             : 1 1 auto;
@@ -89,4 +89,9 @@ export const InputFieldStyled = styled.input`
         background-position : 98%;
         background-size     : 24px;
     }
+`;
+
+
+export const InputFieldStyled = styled.input`
+    ${InputStyles}
 `;

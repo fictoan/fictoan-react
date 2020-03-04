@@ -1,13 +1,13 @@
 import React from "react";
 
 import { Element } from "../../Element/Element";
-import { createClassName } from "../../../utils/classNames";
 import { BaseInputComponentWithIconProps } from "./constants";
 
 import { InputLabel } from "../InputLabel/InputLabel";
 import { FormItem } from "../FormItem/FormItem";
+import { InputFieldElementType } from "../InputField/constants";
 
-export const BaseInputComponent = <K extends {}>({
+export const BaseInputComponent = <K extends InputFieldElementType>({
     as: Component,
     className,
     label,
@@ -16,43 +16,31 @@ export const BaseInputComponent = <K extends {}>({
     iconLeft,
     iconRight,
     validateThis,
+    classNames,
     ...inputProps
-}: BaseInputComponentWithIconProps<K>) => {
-    const classNames = [ className ];
+}: BaseInputComponentWithIconProps<K>) => (
+    <FormItem>
+        <Element<K>
+            as={Component}
+            classNames={[
+                className,
+                iconLeft && "with-icon-left",
+                iconRight && "with-icon-right",
+                validateThis && "validate-this"
+            ].concat(classNames)}
+            {...inputProps}
+        />
 
-    if (iconLeft) {
-        classNames.push("with-icon-left");
-    }
+        {iconLeft && <span className="icon-left">{iconLeft}</span>}
+        {iconRight && <span className="icon-right">{iconRight}</span>}
 
-    if (iconRight) {
-        classNames.push("with-icon-right");
-    }
-
-    if (validateThis) {
-        classNames.push("validate-this");
-    }
-
-    console.log(inputProps);
-
-    return (
-        <FormItem>
-            <Element<HTMLInputElement>
-                as={Component}
-                className={createClassName(classNames)}
-                {...inputProps}
+        {label && (
+            <InputLabel
+                label={label}
+                helpText={helpText}
+                errorText={errorText}
+                htmlFor={inputProps.id}
             />
-
-            {iconLeft && <span className="icon-left">{iconLeft}</span>}
-            {iconRight && <span className="icon-right">{iconRight}</span>}
-
-            {label && (
-                <InputLabel
-                    label={label}
-                    helpText={helpText}
-                    errorText={errorText}
-                    htmlFor={inputProps.id}
-                />
-            )}
-        </FormItem>
-    );
-}
+        )}
+    </FormItem>
+);

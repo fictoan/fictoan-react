@@ -1,6 +1,5 @@
 import React, { SyntheticEvent } from "react";
 
-import { createClassName } from "../../utils/classNames"
 import { Element } from "../Element/Element";
 
 import { NotificationsItemStyled } from "./Notifications.styled"
@@ -28,7 +27,7 @@ export const NotificationItem = ({type, children, isDismissible, className, onCl
     return (
         <Element<NotificationItemElementType>
             as={NotificationsItemStyled}
-            className={createClassName(classNames)}
+            classNames={classNames}
             {...props}
         >
             <div className="notification-content">

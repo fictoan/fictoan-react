@@ -1,27 +1,37 @@
 import React from "react";
 
-import { createClassName } from "../../utils/classNames";
 import { Element } from "../Element/Element";
 
 import { InfoPanelStyled } from "./InfoPanel.styled"
 import { InfoPanelProps, InfoPanelElementType } from "./constants";
 
-export const InfoPanel = ({ isOpen, width, className, ...props }: InfoPanelProps) => {
-    const classNames = [className];
+export const InfoPanel = ({ isOpen, isDismissible, width, className, children, onCloseCallback, ...props }: InfoPanelProps) => {
+    const closeInfoPanel = () => {
+        if (onCloseCallback) {
+            onCloseCallback();
+        }
+    };
 
-    if (isOpen) {
-        classNames.push("open");
-    }
-
-    if (width) {
-        classNames.push(width);
-    }
-
-    return (
+    return !!isOpen && (
         <Element<InfoPanelElementType>
             as={InfoPanelStyled}
-            className={createClassName(classNames)}
+            classNames={[
+                className,
+                isOpen && "open",
+                width
+            ]}
             {...props}
-        />
+        >
+            {isDismissible && (
+                <div
+                    className="dismiss-button"
+                    onClick={closeInfoPanel}
+                    onKeyDown={closeInfoPanel}
+                    role="button"
+                    tabIndex={-1}
+                />
+            )}
+            {children}
+        </Element>
     );
 }

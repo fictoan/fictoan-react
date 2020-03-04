@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
-import { InputFieldStyled } from "../InputField/InputField.styled";
+import { InputStyles } from "../InputField/InputField.styled";
 
-export const TextareaStyled = styled(InputFieldStyled)`
+export const TextareaStyled = styled.textarea`
+    ${InputStyles}
     max-width : 100%;
     min-width : 100%;
     resize    : vertical;

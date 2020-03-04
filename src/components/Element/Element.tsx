@@ -7,6 +7,7 @@ import { ElementProps } from "./constants";
 export const Element = <K extends {}>({
     as: Component,
     className,
+    classNames = [],
     size,
     isFullWidth,
     isFullHeight,
@@ -65,7 +66,7 @@ export const Element = <K extends {}>({
                 paddingBottom && `padding-bottom-${paddingBottom}`,
                 paddingLeft && `padding-left-${paddingLeft}`,
                 padding && `padding-all-${padding}`,
-            ])
+            ].concat(classNames))
         } />
     );
 }

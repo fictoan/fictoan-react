@@ -1,6 +1,5 @@
 import React from "react";
 
-import { createClassName } from "../../utils/classNames";
 import { Element } from "../Element/Element";
 
 import { Text } from "../Typography/Text";
@@ -17,7 +16,7 @@ export const ProgressBar = ({ className, label, value, ...props }: ProgressBarPr
             <Text className="progress-label">{label}</Text>
             <Element<ProgressBarElementType>
                 as={ProgressBarStyled}
-                className={createClassName(classNames)}
+                classNames={classNames}
                 value={value}
                 {...props}
             />

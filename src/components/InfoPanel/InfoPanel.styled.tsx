@@ -27,4 +27,26 @@ export const InfoPanelStyled = styled.div`
     &.medium { width : 24vw; }
     &.large  { width : 32vw; }
     &.huge   { width : 40vw; }
+
+
+    & .dismiss-button {
+        position         : fixed;
+        display          : block;
+        width            : 32px;
+        height           : 32px;
+        background-color : ${(props : InfoPanelProps) => props.theme.infoPanel.dismissButton.bg};
+        top              : 24px;
+        right            : 24px;
+        z-index          : 6000;
+        font-size        : 32px;
+        color            : ${(props : InfoPanelProps) => props.theme.infoPanel.dismissButton.color};
+        text-align       : center;
+        line-height      : 1;
+        cursor           : pointer;
+
+        &::after {
+            display : block;
+            content : "${(props : InfoPanelProps) => props.theme.infoPanel.dismissButton.content}";
+        }
+    }
 `
