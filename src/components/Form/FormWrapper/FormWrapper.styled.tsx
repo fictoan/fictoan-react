@@ -8,5 +8,5 @@ export const FormWrapperStyled = styled.form`
     width          : 100%;
     flex-direction : column;
 
-    & > ${FormItemStyled} { margin-bottom : 40px; }
+    & > ${FormItemStyled} { margin-bottom : 24px; }
 `
