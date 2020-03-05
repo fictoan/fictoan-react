@@ -203,6 +203,4 @@ export const ButtonStyled = styled.button`
         font-size : 24px;
         right     : 16px;
     }
-
-    & + &:nth-child(2) { margin-left : 8px; }
 `
