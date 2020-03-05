@@ -17,9 +17,8 @@ export const TextStyled = css`
         font-family : ${(props: GlobalStyledProps) => props.theme.text.headings.font};
         font-weight : ${(props: GlobalStyledProps) => props.theme.text.headings.weight};
         margin      : 0;
+        line-height : ${(props: GlobalStyledProps) => props.theme.text.headings.lineHeight};
     }
-
-    h1, h2, h3, h4, h5, h6 { line-height : ${(props: GlobalStyledProps) => props.theme.text.headings.lineHeight}; }
 
     h1 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 8)}em; }
     h2 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 6)}em; }
