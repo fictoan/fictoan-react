@@ -9,20 +9,28 @@ export const RowStyled = styled.div`
     grid-template-columns : repeat(24, 1fr);
     margin-bottom         : 4vh;
 
-    @media all and (max-width : 900px) {
-        & { grid-gap : 8px; }
-    }
-
-    @media all and (max-width : 600px) {
-        & { grid-gap : 4px; }
-    }
-
     &.huge-gutters   { grid-gap : 64px; }
     &.large-gutters  { grid-gap : 32px; }
     &.medium-gutters { grid-gap : 16px; }
     &.small-gutters  { grid-gap : 8px; }
     &.tiny-gutters   { grid-gap : 4px; }
     &.no-gutters     { grid-gap : 0; }
+
+    @media all and (max-width : 900px) {
+        &.huge-gutters,
+        &.large-gutters,
+        &.medium-gutters,
+        &.small-gutters,
+        &.tiny-gutters  { grid-gap : 8px; }
+    }
+
+    @media all and (max-width : 600px) {
+        &.huge-gutters,
+        &.large-gutters,
+        &.medium-gutters,
+        &.small-gutters,
+        &.tiny-gutters  { grid-gap : 4px; }
+    }
 
     &.side-padding-tiny {
         padding-left  : 4vw;
@@ -88,5 +96,4 @@ export const RowStyled = styled.div`
     @media all and (min-width : 601px) and (max-width : 900px) {
         &:not(.retain-layout-on-tab-pt) > ${PortionStyled}:not([class*='on-tab-pt']) { grid-column : span 24; }
     }
-
-`
+`;
