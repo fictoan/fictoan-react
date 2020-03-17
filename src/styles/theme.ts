@@ -3,8 +3,8 @@ import { lighten } from "polished";
 import { baseColors } from "../constants/baseColors"
 
 export const mainColors = {
-    hue      : baseColors.amber,
-    tint     : baseColors.indigo90,
+    hue      : baseColors.indigo90,
+    tint     : baseColors.amber,
     shade    : baseColors.grey,
     analogue : baseColors.indigo50,
     accent   : baseColors.green80,
@@ -162,7 +162,7 @@ export const RFTheme = {
 
     //  BUTTON  ///////////////////////////////////////////////////////////////
     button: {
-        fontFamily: "MatterSemiBold",
+        fontFamily: "sans-serif",
         primary: {
             default: {
                 bg           : mainColors.hue,

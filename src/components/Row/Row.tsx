@@ -13,7 +13,7 @@ export const Row = ({ sidePadding, className, gutters, retainLayoutOnTabLS, reta
         classNames.push(`side-padding-${sidePadding}`)
     }
 
-    if (["tiny", "small", "large", "huge"].includes(gutters)) {
+    if (["tiny", "small", "medium", "large", "huge"].includes(gutters)) {
         classNames.push(`${gutters}-gutters`)
     }
     else if (gutters == "none") {
