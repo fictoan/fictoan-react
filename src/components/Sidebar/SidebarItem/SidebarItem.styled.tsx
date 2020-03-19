@@ -15,8 +15,6 @@ export const SidebarItemStyled = styled.div`
         background-color : ${(props: SidebarItemProps) => props.theme.sidebar.links.onHover.bg};
     }
 
-    &.sidebar-sublink { font-weight : 400 !important; }
-
     &.has-alert {
         position : relative;
         width    : fit-content;

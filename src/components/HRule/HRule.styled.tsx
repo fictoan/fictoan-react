@@ -28,7 +28,7 @@ export const HRStyled = styled.hr`
     }
 
     @media all and (max-width : 600px) {
-        hr[class*="side-margin-"] {
+        &[class*="side-margin-"] {
             width: calc(100% - 12vw);
         }
     }

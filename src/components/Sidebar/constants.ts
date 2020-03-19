@@ -5,6 +5,7 @@ export type SidebarHeaderElementType       = HTMLDivElement;
 export type SidebarItemElementType         = HTMLDivElement;
 export type SidebarItemIconElementType     = HTMLDivElement;
 export type SidebarItemTextElementType     = HTMLParagraphElement;
+export type SidebarSectionElementType      = HTMLDivElement;
 export type SidebarSublinkGroupElementType = HTMLDivElement;
 export type SidebarFooterElementType       = HTMLDivElement;
 
@@ -17,7 +18,9 @@ export interface SidebarItemIconCustomProps {
 }
 
 export interface SidebarItemTextCustomProps {
-    linkText : string;
+    linkText  : string;
+    weight  ? : "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
+    size    ? : "tiny" | "small" | "medium" | "large" | "huge";
 }
 
 export type SidebarWrapperProps      = CommonAndHTMLProps<SidebarWrapperElementType> & SidebarWrapperCustomProps;
@@ -25,5 +28,6 @@ export type SidebarHeaderProps       = CommonAndHTMLProps<SidebarHeaderElementTy
 export type SidebarItemProps         = CommonAndHTMLProps<SidebarItemElementType>;
 export type SidebarItemTextProps     = CommonAndHTMLProps<SidebarItemTextElementType> & SidebarItemTextCustomProps;
 export type SidebarItemIconProps     = CommonAndHTMLProps<SidebarItemIconElementType> & SidebarItemIconCustomProps;
+export type SidebarSectionProps      = CommonAndHTMLProps<SidebarSectionElementType>;
 export type SidebarSublinkGroupProps = CommonAndHTMLProps<SidebarSublinkGroupElementType>;
 export type SidebarFooterProps       = CommonAndHTMLProps<SidebarFooterElementType>;

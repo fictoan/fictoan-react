@@ -5,7 +5,6 @@ import { PortionStyled } from "../Portion/Portion.styled"
 export const RowStyled = styled.div`
     display               : grid;
     width                 : 100%;
-    grid-gap              : 16px;
     grid-template-columns : repeat(24, 1fr);
     margin-bottom         : 4vh;
 
@@ -14,7 +13,7 @@ export const RowStyled = styled.div`
     &.medium-gutters { grid-gap : 16px; }
     &.small-gutters  { grid-gap : 8px; }
     &.tiny-gutters   { grid-gap : 4px; }
-    &.no-gutters     { grid-gap : 0; }
+    &.gutters-none   { grid-gap : 0; }
 
     @media all and (max-width : 900px) {
         &.huge-gutters,
@@ -85,9 +84,9 @@ export const RowStyled = styled.div`
     }
 
     @media all and (max-width : 600px) {
-        *[class*="side-padding-"] {
-            padding-left  : 6vw;
-            padding-right : 6vw;
+        &[class*="side-padding-"] {
+            padding-left  : 3vw;
+            padding-right : 3vw;
         }
 
         &:not(.retain-layout-on-mobile) > ${PortionStyled}:not([class*='on-mobile']) { grid-column : span 24; }
