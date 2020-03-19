@@ -42,7 +42,7 @@ export const CodeStyled = css`
         text-align             : left;
         overflow               : auto;
         direction              : ltr;
-        white-space            : pre-wrap;
+        white-space            : pre;
         word-spacing           : normal;
         word-break             : normal;
         letter-spacing         : -0.5px;

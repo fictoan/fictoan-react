@@ -13,11 +13,8 @@ export const Row = ({ sidePadding, className, gutters, retainLayoutOnTabLS, reta
         classNames.push(`side-padding-${sidePadding}`)
     }
 
-    if (["tiny", "small", "large", "huge"].includes(gutters)) {
+    if (gutters) {
         classNames.push(`${gutters}-gutters`)
-    }
-    else if (gutters == "none") {
-        classNames.push("no-gutters")
     }
 
     if (retainLayoutOnTabLS) {
@@ -43,4 +40,8 @@ export const Row = ({ sidePadding, className, gutters, retainLayoutOnTabLS, reta
             {...props}
         />
     );
+}
+
+Row.defaultProps = {
+    gutters : "medium"
 }

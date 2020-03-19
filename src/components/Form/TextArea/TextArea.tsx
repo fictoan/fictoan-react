@@ -9,6 +9,7 @@ export const Textarea = (props: TextareaProps) => {
     return (
         <BaseInputComponent<TextareaElementType>
             as={TextareaStyled}
+            placeholder=" "
             {...props}
         />
     );
