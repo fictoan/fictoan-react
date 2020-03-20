@@ -85,8 +85,8 @@ export const RowStyled = styled.div`
 
     @media all and (max-width : 600px) {
         &[class*="side-padding-"] {
-            padding-left  : 3vw;
-            padding-right : 3vw;
+            padding-left  : 4vw;
+            padding-right : 4vw;
         }
 
         &:not(.retain-layout-on-mobile) > ${PortionStyled}:not([class*='on-mobile']) { grid-column : span 24; }
