@@ -24,11 +24,11 @@ export const CodeStyled = css`
             white-space : normal;
         }
 
-        pre code { padding : 16px; }
+        pre { padding : 16px; }
     }
 
     /*  For block code  */
-    pre code {
+    pre {
         display                : block;
         width                  : 100%;
         max-width              : 100%;
@@ -56,19 +56,19 @@ export const CodeStyled = css`
         tab-size               : 4;
     }
 
-    code[class*=language-css],
-    code[class*=language-less],
-    code[class*=language-sass] {
+    pre[class*=language-css],
+    pre[class*=language-less],
+    pre[class*=language-sass] {
         ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.css.fallback};
     }
 
-    code[class*=language-scss] { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.css.fallback}; }
+    pre[class*=language-scss] { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.css.fallback}; }
 
-    code[class*=language-html] { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.html.fallback}; }
+    pre[class*=language-html] { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.html.fallback}; }
 
-    code[class*=language-js]   { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.js.fallback}; }
+    pre[class*=language-js]   { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.js.fallback}; }
 
-    code[class*=language-json] .token.string {
+    pre[class*=language-json] .token.string {
         ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.json.tokens.string};
     }
 

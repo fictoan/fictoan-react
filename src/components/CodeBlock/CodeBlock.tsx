@@ -14,7 +14,7 @@ export const CodeBlock = ({ ref, source, ...props }: CodeBlockProps) => {
         >
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
                 <pre className={className} style={style}>
-                    <code>
+                    {/* <code> */}
                         {tokens.map((line, i) => (
                             <div {...getLineProps({ line, key: i })}>
                                 {line.map((token, key) => (
@@ -22,7 +22,7 @@ export const CodeBlock = ({ ref, source, ...props }: CodeBlockProps) => {
                                 ))}
                             </div>
                         ))}
-                    </code>
+                    {/* </code> */}
                 </pre>
             )}
         </PrismReactRenderer>
