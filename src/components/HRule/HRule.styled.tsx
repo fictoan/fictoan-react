@@ -29,7 +29,7 @@ export const HRStyled = styled.hr`
 
     @media all and (max-width : 600px) {
         &[class*="side-margin-"] {
-            width: calc(100% - 12vw);
+            width: calc(100% - 8vw);
         }
     }
 `
