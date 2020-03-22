@@ -14,15 +14,13 @@ export const CodeBlock = ({ ref, source, ...props }: CodeBlockProps) => {
         >
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
                 <pre className={className} style={style}>
-                    {/* <code> */}
-                        {tokens.map((line, i) => (
-                            <div {...getLineProps({ line, key: i })}>
-                                {line.map((token, key) => (
-                                    <span {...getTokenProps({ token, key })} />
-                                ))}
-                            </div>
-                        ))}
-                    {/* </code> */}
+                    {tokens.map((line, i) => (
+                        <div {...getLineProps({ line, key: i })}>
+                            {line.map((token, key) => (
+                                <span {...getTokenProps({ token, key })} />
+                            ))}
+                        </div>
+                    ))}
                 </pre>
             )}
         </PrismReactRenderer>
