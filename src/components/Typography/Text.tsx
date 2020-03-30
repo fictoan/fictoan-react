@@ -1,11 +1,11 @@
 import React from "react";
 
-import { Element }   from "../Element/Element";
+import { Element } from "../Element/Element";
 
 import { TextProps, TextElementType } from "./constants";
 
 export const Text = ({ weight, size, isSans, isSerif, isMono, align, className, ...props }: TextProps) => {
-    const classNames = [ className ];
+    const classNames = [className];
 
     if (weight) {
         classNames.push(`weight-${weight}`);
@@ -28,7 +28,7 @@ export const Text = ({ weight, size, isSans, isSerif, isMono, align, className, 
     }
 
     if (align) {
-        classNames.push(`text${align}`);
+        classNames.push(`text-${align}`);
     }
 
     return (
