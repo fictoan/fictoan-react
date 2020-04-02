@@ -138,8 +138,8 @@ export const GlobalStyled = createGlobalStyle`
       /* BOX MODEL HELPERS  ======================================================== */
       /* Margins for all occasions */
     .margin-all-none         { margin : 0 !important; }
-    .margin-all-fixed        { margin : 8px; }
-    .margin-all-fixed-3x     { margin : 24px; }
+    .margin-all-nano         { margin : 8px; }
+    .margin-all-micro        { margin : 24px; }
     .margin-all-tiny         { margin : 2vmax; }
     .margin-all-small        { margin : 4vmax; }
     .margin-all-medium       { margin : 8vmax; }
@@ -147,8 +147,8 @@ export const GlobalStyled = createGlobalStyle`
     .margin-all-huge         { margin : 24vmax; }
 
     .margin-top-none         { margin-top : 0 !important; }
-    .margin-top-fixed        { margin-top : 8px; }
-    .margin-top-fixed-3x     { margin-top : 24px; }
+    .margin-top-nano         { margin-top : 8px; }
+    .margin-top-micro        { margin-top : 24px; }
     .margin-top-tiny         { margin-top : 2vmax; }
     .margin-top-small        { margin-top : 4vmax; }
     .margin-top-medium       { margin-top : 8vmax; }
@@ -156,8 +156,8 @@ export const GlobalStyled = createGlobalStyle`
     .margin-top-huge         { margin-top : 24vmax; }
 
     .margin-right-none       { margin-right : 0 !important; }
-    .margin-right-fixed      { margin-right : 8px; }
-    .margin-right-fixed-3x   { margin-right : 24px; }
+    .margin-right-nano       { margin-right : 8px; }
+    .margin-right-micro      { margin-right : 24px; }
     .margin-right-tiny       { margin-right : 2vmax; }
     .margin-right-small      { margin-right : 4vmax; }
     .margin-right-medium     { margin-right : 8vmax; }
@@ -165,8 +165,8 @@ export const GlobalStyled = createGlobalStyle`
     .margin-right-huge       { margin-right : 24vmax; }
 
     .margin-bottom-none      { margin-bottom : 0 !important; }
-    .margin-bottom-fixed     { margin-bottom : 8px; }
-    .margin-bottom-fixed-3x  { margin-bottom : 24px; }
+    .margin-bottom-nano      { margin-bottom : 8px; }
+    .margin-bottom-micro     { margin-bottom : 24px; }
     .margin-bottom-tiny      { margin-bottom : 2vmax; }
     .margin-bottom-small     { margin-bottom : 4vmax; }
     .margin-bottom-medium    { margin-bottom : 8vmax; }
@@ -174,8 +174,8 @@ export const GlobalStyled = createGlobalStyle`
     .margin-bottom-huge      { margin-bottom : 24vmax; }
 
     .margin-left-none        { margin-left : 0 !important; }
-    .margin-left-fixed       { margin-left : 8px; }
-    .margin-left-fixed-3x    { margin-left : 24px; }
+    .margin-left-nano        { margin-left : 8px; }
+    .margin-left-micro       { margin-left : 24px; }
     .margin-left-tiny        { margin-left : 2vmax; }
     .margin-left-small       { margin-left : 4vmax; }
     .margin-left-medium      { margin-left : 8vmax; }
@@ -184,8 +184,8 @@ export const GlobalStyled = createGlobalStyle`
 
       /* Paddings for all occasions */
     .padding-all-none        { padding : 0 !important; }
-    .padding-all-fixed       { padding : 8px; }
-    .padding-all-fixed-3x    { padding : 24px; }
+    .padding-all-nano        { padding : 8px; }
+    .padding-all-micro       { padding : 24px; }
     .padding-all-tiny        { padding : 2vmax; }
     .padding-all-small       { padding : 4vmax; }
     .padding-all-medium      { padding : 8vmax; }
@@ -193,8 +193,8 @@ export const GlobalStyled = createGlobalStyle`
     .padding-all-huge        { padding : 24vmax; }
 
     .padding-top-none        { padding-top : 0 !important; }
-    .padding-top-fixed       { padding-top : 8px; }
-    .padding-top-fixed-3x    { padding-top : 24px; }
+    .padding-top-nano        { padding-top : 8px; }
+    .padding-top-micro       { padding-top : 24px; }
     .padding-top-tiny        { padding-top : 2vmax; }
     .padding-top-small       { padding-top : 4vmax; }
     .padding-top-medium      { padding-top : 8vmax; }
@@ -202,8 +202,8 @@ export const GlobalStyled = createGlobalStyle`
     .padding-top-huge        { padding-top : 24vmax; }
 
     .padding-right-none      { padding-right : 0 !important; }
-    .padding-right-fixed     { padding-right : 8px; }
-    .padding-right-fixed-3x  { padding-right : 24px; }
+    .padding-right-nano      { padding-right : 8px; }
+    .padding-right-micro     { padding-right : 24px; }
     .padding-right-tiny      { padding-right : 2vmax; }
     .padding-right-small     { padding-right : 4vmax; }
     .padding-right-medium    { padding-right : 8vmax; }
@@ -211,8 +211,8 @@ export const GlobalStyled = createGlobalStyle`
     .padding-right-huge      { padding-right : 24vmax; }
 
     .padding-bottom-none     { padding-bottom : 0 !important; }
-    .padding-bottom-fixed    { padding-bottom : 8px; }
-    .padding-bottom-fixed-3x { padding-bottom : 24px; }
+    .padding-bottom-nano     { padding-bottom : 8px; }
+    .padding-bottom-micro    { padding-bottom : 24px; }
     .padding-bottom-tiny     { padding-bottom : 2vmax; }
     .padding-bottom-small    { padding-bottom : 4vmax; }
     .padding-bottom-medium   { padding-bottom : 8vmax; }
@@ -220,8 +220,8 @@ export const GlobalStyled = createGlobalStyle`
     .padding-bottom-huge     { padding-bottom : 24vmax; }
 
     .padding-left-none       { padding-left : 0 !important; }
-    .padding-left-fixed      { padding-left : 8px; }
-    .padding-left-fixed-3x   { padding-left : 24px; }
+    .padding-left-nano       { padding-left : 8px; }
+    .padding-left-micro      { padding-left : 24px; }
     .padding-left-tiny       { padding-left : 2vmax; }
     .padding-left-small      { padding-left : 4vmax; }
     .padding-left-medium     { padding-left : 8vmax; }
