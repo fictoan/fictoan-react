@@ -8,7 +8,7 @@ export interface ThemeProps {
     theme ? : ThemeType;
 }
 
-type SpacingTypes = "none" | "fixed" | "tiny" | "small" | "medium" | "large" | "huge";
+type SpacingTypes = "none" | "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
 
 export interface CommonProps extends ThemeProps {
     bgColor           ? : string;
