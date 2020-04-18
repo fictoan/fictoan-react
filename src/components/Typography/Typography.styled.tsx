@@ -6,7 +6,6 @@ export const TextStyled = css`
     body {
         font-size        : ${(props: GlobalStyledProps) => props.theme.text.size.default}em;
         line-height      : ${(props: GlobalStyledProps) => props.theme.text.paras.lineHeight};
-        color            : ${(props: GlobalStyledProps) => props.theme.text.paras.color};
         font-family      : ${(props: GlobalStyledProps) => props.theme.text.font.sans};
         word-wrap        : normal;
         text-rendering   : optimizeLegibility;
@@ -16,8 +15,9 @@ export const TextStyled = css`
     h1, h2, h3, h4, h5, h6 {
         font-family : ${(props: GlobalStyledProps) => props.theme.text.headings.font};
         font-weight : ${(props: GlobalStyledProps) => props.theme.text.headings.weight};
-        margin      : 0;
+        color       : ${(props: GlobalStyledProps) => props.theme.text.headings.color};
         line-height : ${(props: GlobalStyledProps) => props.theme.text.headings.lineHeight};
+        margin      : 0;
     }
 
     h1 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 8)}em; }
@@ -38,6 +38,8 @@ export const TextStyled = css`
 
         h1, h2, h3, h4, h5, h6 { word-wrap : break-word; }
     }
+
+    p { color : ${(props: GlobalStyledProps) => props.theme.text.paras.color}; }
 
     a {
         cursor      : pointer;
