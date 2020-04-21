@@ -3,9 +3,9 @@ import React from "react";
 import { Element } from "../Element/Element";
 
 import { NotificationsWrapperStyled } from "./Notifications.styled"
-import { NotificationWrapperProps, NotificationWrapperElementType } from "./constants";
+import { NotificationsWrapperProps, NotificationsWrapperElementType } from "./constants";
 
-export const NotificationWrapper = ({ position, anchor, className, ...props }: NotificationWrapperProps) => {
+export const NotificationsWrapper = ({ position, anchor, className, ...props }: NotificationsWrapperProps) => {
     const classNames = [ className ]
 
     if (position) {
@@ -17,7 +17,7 @@ export const NotificationWrapper = ({ position, anchor, className, ...props }: N
     }
 
     return (
-        <Element<NotificationWrapperElementType>
+        <Element<NotificationsWrapperElementType>
             as={NotificationsWrapperStyled}
             classNames={classNames}
             {...props}

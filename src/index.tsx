@@ -41,7 +41,7 @@ import { Card } from "./components/Card/Card";
 
 import { InfoPanel } from "./components/InfoPanel/InfoPanel"
 
-import { NotificationWrapper } from "./components/Notifications/NotificationWrapper";
+import { NotificationsWrapper } from "./components/Notifications/NotificationsWrapper";
 import { NotificationItem } from "./components/Notifications/NotificationItem";
 
 import { BreadcrumbWrapper } from "./components/Breadcrumb/BreadcrumbWrapper";
@@ -91,7 +91,7 @@ export {
     ProgressBar,
     BreadcrumbWrapper,
     BreadcrumbItem,
-    NotificationWrapper,
+    NotificationsWrapper,
     NotificationItem,
     InfoPanel,
     CodeBlock,

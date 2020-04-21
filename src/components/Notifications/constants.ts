@@ -1,18 +1,18 @@
 import { CommonAndHTMLProps } from "../Element/constants";
 
-export type NotificationWrapperElementType = HTMLDivElement;
-export type NotificationItemElementType    = HTMLDivElement;
+export type NotificationsWrapperElementType = HTMLDivElement;
+export type NotificationItemElementType     = HTMLDivElement;
 
-export interface NotificationWrapperCustomProps {
-    position ? :"left" | "right";
-    anchor   ? : "top" | "bottom";
+export interface NotificationsWrapperCustomProps {
+    position : "left" | "right";
+    anchor   : "top" | "bottom";
 }
 
 export interface NotificationItemCustomProps {
-    type          ? : "info" | "warning" | "error" | "success";
-    isDismissible ? : boolean;
-    onCloseButtonClick?: () => void;
+    type               ? : "info" | "warning" | "error" | "success";
+    isDismissible      ? : boolean;
+    onCloseButtonClick ? : () => void;
 }
 
-export type NotificationWrapperProps = CommonAndHTMLProps<NotificationWrapperElementType> & NotificationWrapperCustomProps;
-export type NotificationItemProps    = CommonAndHTMLProps<NotificationItemElementType> & NotificationItemCustomProps;
+export type NotificationsWrapperProps = CommonAndHTMLProps<NotificationsWrapperElementType> & NotificationsWrapperCustomProps;
+export type NotificationItemProps     = CommonAndHTMLProps<NotificationItemElementType> & NotificationItemCustomProps;

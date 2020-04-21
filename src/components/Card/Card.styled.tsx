@@ -12,8 +12,8 @@ export const CardStyled = styled.div`
     &.padding-all-tiny   { padding : 8px; }
     &.padding-all-small  { padding : 16px; }
     &.padding-all-medium { padding : 32px; }
-    &.padding-all-large  { padding : 64px; }
-    &.padding-all-huge   { padding : 80px; }
+    &.padding-all-large  { padding : 48px; }
+    &.padding-all-huge   { padding : 64px; }
 
     @media all and (max-width : 600px) {
         &[class*="padding"] { padding : 4vmin; }
