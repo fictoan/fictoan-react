@@ -8,13 +8,13 @@ import { SelectElementType, OptionElementType, SelectProps, OptionProps } from "
 import { InputLabel } from "../InputLabel/InputLabel";
 import { FormItem } from "../FormItem/FormItem";
 
-const Option = ({ name, ...props }: OptionProps) => {
+const Option = ({ value, ...props }: OptionProps) => {
     return (
         <Element<OptionElementType>
             as="option"
             {...props}
         >
-            {name}
+            {value}
         </Element>
     );
 }
