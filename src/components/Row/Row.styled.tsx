@@ -8,11 +8,13 @@ export const RowStyled = styled.div`
     grid-template-columns : repeat(24, 1fr);
     margin-bottom         : 4vh;
 
-    &.huge-gutters   { grid-gap : 64px; }
-    &.large-gutters  { grid-gap : 32px; }
+    &.huge-gutters   { grid-gap : 32px; }
+    &.large-gutters  { grid-gap : 24px; }
     &.medium-gutters { grid-gap : 16px; }
-    &.small-gutters  { grid-gap : 8px; }
-    &.tiny-gutters   { grid-gap : 4px; }
+    &.small-gutters  { grid-gap : 12px; }
+    &.tiny-gutters   { grid-gap : 8px; }
+    &.micro-gutters  { grid-gap : 4px; }
+    &.nano-gutters   { grid-gap : 2px; }
     &.gutters-none   { grid-gap : 0; }
 
     @media all and (max-width : 900px) {
@@ -20,7 +22,7 @@ export const RowStyled = styled.div`
         &.large-gutters,
         &.medium-gutters,
         &.small-gutters,
-        &.tiny-gutters  { grid-gap : 8px; }
+        &.tiny-gutters { grid-gap : 8px; }
     }
 
     @media all and (max-width : 600px) {
@@ -28,7 +30,17 @@ export const RowStyled = styled.div`
         &.large-gutters,
         &.medium-gutters,
         &.small-gutters,
-        &.tiny-gutters  { grid-gap : 4px; }
+        &.tiny-gutters { grid-gap : 4px; }
+    }
+
+    &.side-padding-nano {
+        padding-left  : 1vw;
+        padding-right : 1vw;
+    }
+    
+    &.side-padding-micro {
+        padding-left  : 2vw;
+        padding-right : 2vw;
     }
 
     &.side-padding-tiny {
