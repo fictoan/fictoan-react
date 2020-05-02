@@ -10,12 +10,15 @@ export const mainColors = {
     accent   : baseColors.green80,
 }
 
+
 export const RFTheme = {
     mainColors,
 
+    //  BASICS  ///////////////////////////////////////////////////////////////
     body: {
         bg : baseColors.white,
     },
+
 
     //  TEXT  /////////////////////////////////////////////////////////////////
     text: {
@@ -130,11 +133,13 @@ export const RFTheme = {
         }
     },
 
+
     //  CARD  /////////////////////////////////////////////////////////////////
     card: {
         bg     : baseColors.white,
         border : baseColors.slate10
     },
+
 
     //  INFO PANEL  ///////////////////////////////////////////////////////////
     infoPanel: {
@@ -146,6 +151,7 @@ export const RFTheme = {
             content: "×"
         }
     },
+
 
     //  BREADCRUMBS  ///////////////////////////////////////////////////////////
     breadcrumb: {
@@ -159,6 +165,7 @@ export const RFTheme = {
             inactive  : mainColors.shade
         }
     },
+
 
     //  BUTTON  ///////////////////////////////////////////////////////////////
     button: {
@@ -209,10 +216,12 @@ export const RFTheme = {
         }
     },
 
+
     //  RULE  /////////////////////////////////////////////////////////////////
     hr: {
         bg : baseColors.slate20
     },
+
 
     //  INPUT  ////////////////////////////////////////////////////////////////
     input: {
@@ -267,6 +276,7 @@ export const RFTheme = {
             }
         }
     },
+
 
     //  SIDEBAR  //////////////////////////////////////////////////////////////
     sidebar: {
@@ -352,6 +362,7 @@ export const RFTheme = {
         }
     },
 
+
     //  NOTIFICATION  /////////////////////////////////////////////////////////
     notification: {
         default : {
@@ -374,6 +385,7 @@ export const RFTheme = {
         }
     },
 
+
     //  TABLE  ////////////////////////////////////////////////////////////////
     table: {
         bg      : baseColors.white,
@@ -392,6 +404,7 @@ export const RFTheme = {
             text : mainColors.shade
         }
     },
+
 
     //  PROGRESS BAR  /////////////////////////////////////////////////////////
     progressBar: {
