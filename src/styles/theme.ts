@@ -3,7 +3,7 @@ import { lighten } from "polished";
 import { baseColors } from "../constants/baseColors";
 
 export const mainColors = {
-    hue      : baseColors.indigo90,
+    hue      : baseColors.blue90,
     tint     : baseColors.amber,
     shade    : baseColors.grey,
     analogue : baseColors.indigo50,
@@ -62,8 +62,8 @@ export const RFTheme = {
 
         code: {
             inline: {
-                bg    : baseColors.slate10,
-                text  : baseColors.blue70,
+                bg    : baseColors.blue10,
+                text  : baseColors.blue90,
                 scale : 80
             },
             block: {
@@ -174,44 +174,44 @@ export const RFTheme = {
             default: {
                 bg           : mainColors.hue,
                 border       : mainColors.hue,
-                text         : baseColors.black,
+                text         : baseColors.white,
                 borderRadius : "4px",
             },
             onHover: {
                 bg     : mainColors.hue,
                 border : mainColors.hue,
-                text   : baseColors.black,
+                text   : baseColors.white,
             },
             isActive: {
                 bg     : mainColors.hue,
                 border : mainColors.hue,
-                text   : baseColors.black,
+                text   : baseColors.white,
             },
             isLoading: {
                 bg            : mainColors.hue,
-                spinnerBorder : baseColors.black
+                spinnerBorder : baseColors.white
             }
         },
         secondary: {
             default: {
-                bg           : `${lighten(0.32, mainColors.hue)}`,
+                bg           : `${lighten(0.4, mainColors.hue)}`,
                 border       : mainColors.hue,
-                text         : baseColors.black,
+                text         : mainColors.hue,
                 borderRadius : "4px",
             },
             onHover: {
                 bg     : `${lighten(0.32, mainColors.hue)}`,
                 border : mainColors.hue,
-                text   : baseColors.black,
+                text   : mainColors.hue,
             },
             isActive: {
                 bg     : `${lighten(0.2, mainColors.hue)}`,
                 border : mainColors.hue,
-                text   : baseColors.black,
+                text   : mainColors.hue,
             },
             isLoading: {
                 bg            : baseColors.white,
-                spinnerBorder : baseColors.black,
+                spinnerBorder : mainColors.hue,
             }
         }
     },

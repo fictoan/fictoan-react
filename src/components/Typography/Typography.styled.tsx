@@ -39,7 +39,10 @@ export const TextStyled = css`
         h1, h2, h3, h4, h5, h6 { word-wrap : break-word; }
     }
 
-    p { color : ${(props: GlobalStyledProps) => props.theme.text.paras.color}; }
+    p {
+      margin : 0;
+      color  : ${(props: GlobalStyledProps) => props.theme.text.paras.color};
+    }
 
     a {
         cursor      : pointer;
