@@ -6,7 +6,7 @@ import { ButtonStyled } from "./Button.styled"
 import { ButtonProps, ButtonElementType } from "./constants";
 
 export const Button = ({ size, shape, shadow, border, kind, isLoading, hasDelete, className, ...props }: ButtonProps) => {
-    const classNames = [className];
+    let classNames = [];
 
     if (className) {
         classNames.push(className);

@@ -18,6 +18,10 @@ export const ButtonStyled = styled.button`
     transition          : all 0.2s;
     background-position : center;
     user-select         : none;
+    
+    > * {
+      all: unset;
+    }
 
     &.primary {
         background-color : ${(props: ButtonProps) => props.theme.button.primary.default.bg};
