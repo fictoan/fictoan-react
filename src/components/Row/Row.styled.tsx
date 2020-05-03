@@ -67,6 +67,33 @@ export const RowStyled = styled.div`
         padding-left  : 24vw;
         padding-right : 24vw;
     }
+    
+    @media all and (max-width : 1600px) {
+        &.side-padding-tiny {
+            padding-left  : 2vw;
+            padding-right : 2vw;
+        }
+
+        &.side-padding-small {
+            padding-left  : 4vw;
+            padding-right : 4vw;
+        }
+
+        &.side-padding-medium {
+            padding-left  : 8vw;
+            padding-right : 8vw;
+        }
+
+        &.side-padding-large {
+            padding-left  : 12vw;
+            padding-right : 12vw;
+        }
+
+        &.side-padding-huge {
+            padding-left  : 16vw;
+            padding-right : 16vw;
+        }
+    }
 
     @media all and (max-width : 1200px) {
         &.side-padding-tiny {
@@ -97,8 +124,8 @@ export const RowStyled = styled.div`
 
     @media all and (max-width : 600px) {
         &[class*="side-padding-"] {
-            padding-left  : 4vw;
-            padding-right : 4vw;
+            padding-left  : 6vw;
+            padding-right : 6vw;
         }
 
         &:not(.retain-layout-on-mobile) > ${PortionStyled}:not([class*='on-mobile']) { grid-column : span 24; }
