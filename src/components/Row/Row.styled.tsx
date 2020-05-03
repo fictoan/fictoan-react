@@ -80,18 +80,18 @@ export const RowStyled = styled.div`
         }
 
         &.side-padding-medium {
+            padding-left  : 6vw;
+            padding-right : 6vw;
+        }
+
+        &.side-padding-large {
             padding-left  : 8vw;
             padding-right : 8vw;
         }
 
-        &.side-padding-large {
-            padding-left  : 12vw;
-            padding-right : 12vw;
-        }
-
         &.side-padding-huge {
-            padding-left  : 16vw;
-            padding-right : 16vw;
+            padding-left  : 10vw;
+            padding-right : 10vw;
         }
     }
 
