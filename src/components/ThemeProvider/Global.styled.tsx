@@ -280,22 +280,21 @@ export const GlobalStyled = createGlobalStyle`
 
     .shadow-hard {
         box-shadow :
-            0 0.2px 0.2px rgba(0, 0, 0, 0.056),
-            0 1.1px 1.1px rgba(0, 0, 0, 0.08),
-            0 4.8px 3.7px rgba(0, 0, 0, 0.104),
-            0  16px  20px rgba(0, 0, 0, 0.16);
+            0 0.2px  0.2px rgba(0, 0, 0, 0.056),
+            0 2.0px  2.0px rgba(0, 0, 0, 0.072),
+            0 4.8px  3.6px rgba(0, 0, 0, 0.096),
+            0 8.0px 16.0px rgba(0, 0, 0, 0.160);
     }
 
     .shadow-soft {
         box-shadow :
-            0  1.6px  0.2px rgba(0, 0, 0, 0.019),
-            0  3.2px  0.8px rgba(0, 0, 0, 0.028),
-            0  6.4px  2.1px rgba(0, 0, 0, 0.034),
-            0   10px  4.3px rgba(0, 0, 0, 0.04),
-            0 15.5px  8.1px rgba(0, 0, 0, 0.046),
-            0 24.1px 14.6px rgba(0, 0, 0, 0.052),
-            0   40px   27px rgba(0, 0, 0, 0.061),
-            0   80px   80px rgba(0, 0, 0, 0.08);
+            0   1.6px  0.2px rgba(0, 0, 0, 0.016),
+            0   3.2px  0.8px rgba(0, 0, 0, 0.024),
+            0   6.4px  2.4px rgba(0, 0, 0, 0.032),
+            0  12.0px  4.0px rgba(0, 0, 0, 0.040),
+            0  16.0px  8.0px rgba(0, 0, 0, 0.048),
+            0  24.0px 16.0px rgba(0, 0, 0, 0.056),
+            0  32.0px 24.0px rgba(0, 0, 0, 0.064);
     }
 
 
