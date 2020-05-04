@@ -111,11 +111,10 @@ export const GlobalStyled = createGlobalStyle`
     }
 
     /* For when you want child elements vertically in  */
-    /* the middle. Apply to parent */
-    .vertically-centre-items,
-    .vertically-center-items {
-        display     : flex !important;
-        align-items : center !important;
+    /* the middle. Apply to parent */    
+    .vertically-centre-items *,
+    .vertically-center-items * {
+      align-self : center;
     }
 
     /* Parent div needs to be a flex element */
