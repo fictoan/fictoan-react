@@ -69,7 +69,7 @@ export const CodeStyled = css`
     pre[class*=language-js]   { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.js.fallback}; }
 
     pre[class*=language-json] .token.string {
-        ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.json.tokens.string};
+        color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.json.tokens.string};
     }
 
     .token.tag         { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.tag}; }
