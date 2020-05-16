@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
-import { PortionProps } from "./constants";
-
 export const PortionStyled = styled.div`
     display        : flex;
     flex-direction : column;
+    width          : 100%;
 
     &.horizontal { flex-direction : row; }
 
