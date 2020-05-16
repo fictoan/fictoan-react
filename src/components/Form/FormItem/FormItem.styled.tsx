@@ -11,7 +11,6 @@ export const FormItemStyled = styled.div`
     width          : 100%;
     flex-direction : column;
     align-items    : flex-start;
-    flex-wrap      : wrap;
 
     ${(props: FormItemProps) => props.isAnswers && css`
         * { margin-bottom: 8px; }
@@ -20,7 +19,7 @@ export const FormItemStyled = styled.div`
     & > label {
         position      : relative;
         display       : flex;
-        flex          : 1 0 100%;
+        flex          : 1 0 auto;
         align-self    : flex-start;
         margin-bottom : 4px;
         color         : ${mainColors.shade};
