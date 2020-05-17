@@ -1,6 +1,6 @@
 {
     "name": "reactised-fictoan",
-    "version": "0.24.22",
+    "version": "0.24.23",
     "private": false,
     "main": "dist/index.js",
     "module": "dist/index.es.js",
@@ -49,6 +49,7 @@
         "lodash": "^4.17.15",
         "polished": "^3.4.4",
         "prism-react-renderer": "^1.1.0",
+        "prismjs": "^1.20.0",
         "react": "^16.13.0",
         "styled-components": "^5.0.1"
     }
