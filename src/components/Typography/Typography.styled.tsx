@@ -28,12 +28,12 @@ export const TextStyled = css`
     h6 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 1)}em; }
 
     @media all and (max-width : 720px) {
-        h1 { font-size : 48px; }
-        h2 { font-size : 40px; }
-        h3 { font-size : 32px; }
-        h4 { font-size : 28px; }
-        h5 { font-size : 24px; }
-        h6 { font-size : 20px; }
+        h1 { font-size : 32px; }
+        h2 { font-size : 28px; }
+        h3 { font-size : 24px; }
+        h4 { font-size : 20px; }
+        h5 { font-size : 18px; }
+        h6 { font-size : 16px; }
         p  { font-size : 14px; }
 
         h1, h2, h3, h4, h5, h6 { word-wrap : break-word; }

@@ -1,7 +1,13 @@
 import React from "react";
-import PrismReactRenderer, { defaultProps } from "prism-react-renderer";
+import PrismReactRenderer, { defaultProps, Prism } from "prism-react-renderer";
 
 import { CodeBlockProps } from "./constants";
+
+require("prismjs/components/prism-java");
+require("prismjs/components/prism-csharp");
+require("prismjs/components/prism-scala");
+require("prismjs/components/prism-ruby");
+require("prismjs/components/prism-graphql");
 
 export const CodeBlock = ({ ref, source, ...props }: CodeBlockProps) => {
     return (
