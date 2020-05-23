@@ -1,4 +1,6 @@
 import React from "react";
+// @ts-ignore
+(typeof global !== "undefined" ? global : (window as any)).Prism = Prism;
 import PrismReactRenderer, { defaultProps, Prism } from "prism-react-renderer";
 
 import { CodeBlockProps } from "./constants";
