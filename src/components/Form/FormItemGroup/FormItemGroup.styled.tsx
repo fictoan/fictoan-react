@@ -12,7 +12,7 @@ export const FormItemGroupStyled = styled.div`
 
     & > ${FormItemStyled} {
         flex           : 1 1 0;
-        flex-direction : row;
+        flex-direction : column;
         margin-bottom  : 24px;
     }
 
