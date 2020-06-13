@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-import { SidebarItemTextProps } from "../constants";
 
 export const SidebarItemTextStyled = styled.p`
     margin             : 0;

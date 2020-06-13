@@ -15,65 +15,65 @@ export const RFTheme = {
     mainColors,
 
     //  BASICS  ///////////////////////////////////////////////////////////////
-    body: {
+    body : {
         bg : baseColors.white,
     },
 
 
     //  TEXT  /////////////////////////////////////////////////////////////////
-    text: {
-        font: {
+    text : {
+        font : {
             sans  : "sans-serif",
             serif : "serif",
             mono  : "monospace",
         },
 
-        size: {
+        size : {
             default    : 1,
             multiplier : 1.16,
         },
 
-        paras: {
+        paras : {
             color      : baseColors.grey,
             weight     : 400,
             lineHeight : 1.64,
         },
 
-        headings: {
+        headings : {
             font       : "sans-serif",
             color      : baseColors.grey,
             weight     : 600,
             lineHeight : 1.24
         },
 
-        links: {
-            default: {
+        links : {
+            default : {
                 text : baseColors.blue90,
             },
-            onHover: {
+            onHover : {
                 text : baseColors.blue60
             }
         },
 
-        selection: {
+        selection : {
             bg   : mainColors.hue,
             text : baseColors.white
         },
 
-        code: {
-            inline: {
+        code : {
+            inline : {
                 bg    : baseColors.blue10,
                 text  : baseColors.blue90,
                 scale : 80
             },
-            block: {
+            block : {
                 bg         : `${lighten(0.02, baseColors.slate10)}`,
                 text       : baseColors.blue70,
                 scale      : 80,
                 lineHeight : 1.8
             },
-            prism: {
-                tokens: {
+            prism : {
+                tokens : {
                     tag         : baseColors.violet,
                     atrule      : baseColors.teal90,
                     attrName    : baseColors.orange,
@@ -107,17 +107,17 @@ export const RFTheme = {
                     variable    : baseColors.orange80,
                 },
 
-                languages: {
-                    css: {
+                languages : {
+                    css : {
                         fallback : baseColors.orange90
                     },
-                    html: {
+                    html : {
                         fallback : baseColors.grey
                     },
-                    js: {
+                    js : {
                         fallback : baseColors.violet90
                     },
-                    json: {
+                    json : {
                         fallback : baseColors.teal,
                         tokens   : {
                             string : baseColors.teal
@@ -127,7 +127,7 @@ export const RFTheme = {
             }
         },
 
-        kbd: {
+        kbd : {
             text : baseColors.grey,
             bg   : baseColors.grey10
         }
@@ -135,14 +135,14 @@ export const RFTheme = {
 
 
     //  CARD  /////////////////////////////////////////////////////////////////
-    card: {
+    card : {
         bg     : baseColors.white,
         border : baseColors.slate10
     },
 
 
     //  INFO PANEL  ///////////////////////////////////////////////////////////
-    infoPanel: {
+    infoPanel : {
         bg     : baseColors.white,
         border : baseColors.slate20,
         dismissButton: {
@@ -154,11 +154,11 @@ export const RFTheme = {
 
 
     //  BREADCRUMBS  ///////////////////////////////////////////////////////////
-    breadcrumb: {
-        wrapper: {
+    breadcrumb : {
+        wrapper : {
             bg : baseColors.white,
         },
-        item: {
+        item : {
             text      : mainColors.shade,
             separator : baseColors.slate40,
             active    : mainColors.shade,
@@ -168,48 +168,48 @@ export const RFTheme = {
 
 
     //  BUTTON  ///////////////////////////////////////////////////////////////
-    button: {
+    button : {
         fontFamily: "sans-serif",
-        primary: {
-            default: {
+        primary : {
+            default : {
                 bg           : mainColors.hue,
                 border       : mainColors.hue,
                 text         : baseColors.white,
                 borderRadius : "4px",
             },
-            onHover: {
+            onHover : {
                 bg     : mainColors.hue,
                 border : mainColors.hue,
                 text   : baseColors.white,
             },
-            isActive: {
+            isActive : {
                 bg     : mainColors.hue,
                 border : mainColors.hue,
                 text   : baseColors.white,
             },
-            isLoading: {
+            isLoading : {
                 bg            : mainColors.hue,
                 spinnerBorder : baseColors.white
             }
         },
-        secondary: {
-            default: {
+        secondary : {
+            default : {
                 bg           : `${lighten(0.4, mainColors.hue)}`,
                 border       : mainColors.hue,
                 text         : mainColors.hue,
                 borderRadius : "4px",
             },
-            onHover: {
+            onHover : {
                 bg     : `${lighten(0.32, mainColors.hue)}`,
                 border : mainColors.hue,
                 text   : mainColors.hue,
             },
-            isActive: {
+            isActive : {
                 bg     : `${lighten(0.2, mainColors.hue)}`,
                 border : mainColors.hue,
                 text   : mainColors.hue,
             },
-            isLoading: {
+            isLoading : {
                 bg            : baseColors.white,
                 spinnerBorder : mainColors.hue,
             }
@@ -218,49 +218,49 @@ export const RFTheme = {
 
 
     //  RULE  /////////////////////////////////////////////////////////////////
-    hr: {
+    hr : {
         bg : baseColors.slate20
     },
 
 
     //  INPUT  ////////////////////////////////////////////////////////////////
-    input: {
-        default: {
+    input : {
+        default : {
             bg     : baseColors.white,
             border : baseColors.slate40,
             label  : mainColors.shade,
             text   : mainColors.shade
         },
-        onFocus: {
+        onFocus : {
             bg       : baseColors.white,
             border   : mainColors.hue,
             text     : mainColors.shade,
             helpText : mainColors.shade,
         },
-        isValid: {
+        isValid : {
             bg     : baseColors.white,
             border : baseColors.green80,
             label  : mainColors.shade
         },
-        isInvalid: {
+        isInvalid : {
             bg       : baseColors.red10,
             border   : baseColors.red80,
             label    : baseColors.red,
             helpText : baseColors.red,
         },
-        isReadOnly: {
+        isReadOnly : {
             bg     : baseColors.grey50,
             border : baseColors.grey50,
             label  : mainColors.shade
         },
-        required: {
+        required : {
             text : baseColors.red
         },
-        icons: {
-            default: {
+        icons : {
+            default : {
                 fill : baseColors.slate30,
             },
-            onFocus: {
+            onFocus : {
                 fill : mainColors.hue,
             },
             isValid: {
@@ -268,77 +268,42 @@ export const RFTheme = {
                 border : baseColors.red30,
             }
         },
-        select: {
+        select : {
             chevron : mainColors.hue
         },
-        radioButton: {
-            default: {
+        radioButton : {
+            default : {
             }
         }
     },
 
 
     //  SIDEBAR  //////////////////////////////////////////////////////////////
-    sidebar: {
+    sidebar : {
         header    : baseColors.white,
         body      : baseColors.white,
         separator : baseColors.slate20,
 
-        links: {
-            default: {
-                bg     : baseColors.white,
-                text   : mainColors.shade,
-                scale  : 100,
-                weight : 600,
-            },
-            onHover: {
-                bg   : baseColors.slate10,
-                text : mainColors.hue,
-            },
-            isSelected: {
-                bg   : mainColors.hue,
-                text : baseColors.white,
-            },
-            hasAlert: {
-                bg : baseColors.red70
-            },
-
-            group: {
-                default: {
-                    bg     : baseColors.slate20,
-                    text   : mainColors.shade,
-                    weight : 400,
-                },
-                onHover: {
-                    bg   : baseColors.slate10,
-                    text : mainColors.hue
-                },
-                chevron: {
-                    border : baseColors.slate40
-                }
-            }
-        },
-
-        icons: {
-            default: {
-                stroked: {
+        icons : {
+            default : {
+                stroked : {
                     line      : baseColors.slate40,
                     thickness : 2
                 },
-                fill: {
+                fill : {
                     bg : baseColors.slate40
                 }
             },
-            onHover: {
+            onHover : {
                 stroked: {
                     line      : baseColors.slate80,
                     thickness : 2
                 },
-                fill: {
+                fill : {
                     bg : baseColors.slate40
                 }
             },
-            isActive: {
+            isActive : {
                 stroked: {
                     line      : baseColors.slate,
                     thickness : 2
@@ -349,14 +314,54 @@ export const RFTheme = {
             }
         },
 
-        isCollapsed: {
-            label: {
+        links : {
+            default : {
+                bg     : baseColors.white,
+                text   : mainColors.shade,
+                scale  : 100,
+                weight : 600,
+            },
+            onHover : {
+                bg   : baseColors.slate10,
+                text : mainColors.hue,
+            },
+            isSelected : {
+                bg     : baseColors.white,
+                border : mainColors.hue,
+                text   : mainColors.hue,
+            },
+            hasAlert : {
+                bg : baseColors.red70
+            },
+        },
+
+        subLinks : {
+            header : {
+                weight : 600,
+            },
+            default: {
+                bg     : baseColors.white,
+                text   : `${lighten(0.24, mainColors.shade)}`,
+                weight : 400,
+                scale  : 92,
+            },
+            onHover : {
+                bg   : baseColors.slate10,
+                text : mainColors.hue
+            },
+            chevron : {
+                border : baseColors.slate40
+            }
+        },
+
+        isCollapsed : {
+            label : {
                 text : mainColors.shade,
                 bg   : mainColors.hue
             }
         },
 
-        footer: {
+        footer : {
             bg        : baseColors.white,
             borderTop : baseColors.slate10
         }
@@ -364,9 +369,9 @@ export const RFTheme = {
 
 
     //  NOTIFICATION  /////////////////////////////////////////////////////////
-    notification: {
+    notification : {
         default : {
-            bg   : baseColors.grey10,
+            bg   : baseColors.slate10,
             text : mainColors.shade
         },
         types: {
@@ -387,19 +392,19 @@ export const RFTheme = {
 
 
     //  TABLE  ////////////////////////////////////////////////////////////////
-    table: {
+    table : {
         bg      : baseColors.white,
         text    : mainColors.shade,
         border  : baseColors.slate40,
         striped : {
-            header: {
+            header : {
                 bg : baseColors.blue40,
             },
-            cell: {
+            cell : {
                 bg : baseColors.slate20,
             }
         },
-        onHover: {
+        onHover : {
             bg   : baseColors.amber20,
             text : mainColors.shade
         }
@@ -407,7 +412,7 @@ export const RFTheme = {
 
 
     //  PROGRESS BAR  /////////////////////////////////////////////////////////
-    progressBar: {
+    progressBar : {
         height : 8,
         bg     : baseColors.slate20,
         fill   : mainColors.hue

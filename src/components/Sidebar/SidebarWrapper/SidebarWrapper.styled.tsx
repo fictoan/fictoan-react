@@ -4,6 +4,8 @@ import { lighten } from "polished";
 import { SidebarItemStyled } from "../SidebarItem/SidebarItem.styled"
 import { SidebarItemTextStyled } from "../SidebarItemText/SidebarItemText.styled"
 import { SidebarItemIconStyled } from "../SidebarItemIcon/SidebarItemIcon.styled"
+import { SidebarLinksGroupStyled } from "../SidebarLinksGroup/SidebarLinksGroup.styled";
+import { SidebarLinksGroupHeaderStyled } from "../SidebarLinksGroupHeader/SidebarLinkGroupHeader.styled";
 
 import { SidebarWrapperProps } from "../constants";
 
@@ -36,8 +38,10 @@ export const SidebarWrapperStyled = styled.div`
 
     a.active {
         display          : block;
-        background-color : ${(props: SidebarWrapperProps) => props.theme.sidebar.links.isSelected.bg && lighten(.32, props.theme.sidebar.links.isSelected.bg)};
-        border-left      : 4px solid ${(props: SidebarWrapperProps) => props.theme.sidebar.links.isSelected.bg};
+        background-color : ${(props: SidebarWrapperProps) => props.theme.sidebar.links.isSelected.bg && lighten(0.32, props.theme.sidebar.links.isSelected.bg)};
+        border-left      : 4px solid ${(props: SidebarWrapperProps) => props.theme.sidebar.links.isSelected.border};
+
+        p { color : ${(props : SidebarWrapperProps) => props.theme.sidebar.links.isSelected.text}; }
     }
 
     @media (max-width : 900px) {
@@ -62,11 +66,11 @@ export const SidebarWrapperStyled = styled.div`
 
     * { user-select : none; }
 
-    /*  For Open and Collapse gorups  */
-    details       { position : relative; }
-    details:hover { cursor : pointer; }
+    /*  For Open and Collapse groups  */
+    ${SidebarLinksGroupStyled}       { position : relative; }
+    ${SidebarLinksGroupStyled}:hover { cursor : pointer; }
 
-    details > summary::after {
+    ${SidebarLinksGroupStyled} > ${SidebarLinksGroupHeaderStyled}::after {
         display      : inline-block;
         position     : absolute;
         width        : 8px;
@@ -77,17 +81,17 @@ export const SidebarWrapperStyled = styled.div`
         border-style : solid;
         border-width : 0 2px 2px 0;
         transform    : rotate(45deg);
-        color        : ${(props: SidebarWrapperProps) => props.theme.sidebar.links.group.chevron.border};
+        color        : ${(props: SidebarWrapperProps) => props.theme.sidebar.subLinks.chevron.border};
         transition   : all 0.2s;
         cursor       : pointer;
     }
 
-    details[open] > summary::after {
+    ${SidebarLinksGroupStyled}[open] > ${SidebarLinksGroupHeaderStyled}::after {
         transform : rotate(225deg);
         top       : 22px;
     }
 
-    /* details a & {
+    /* ${SidebarLinksGroupStyled} a & {
         grid-template-rows: 24px;
     } */
 
@@ -116,7 +120,7 @@ export const SidebarWrapperStyled = styled.div`
             box-shadow       : 0 4px 16px -2px rgba(0, 0, 0, 0.24);
         }
 
-        details > summary::after { display : none; }
+        ${SidebarLinksGroupStyled} > ${SidebarLinksGroupHeaderStyled}::after { display : none; }
 
         .bottom-section {
             width        : 48px;

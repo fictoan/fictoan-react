@@ -11,8 +11,9 @@ import { SidebarHeader } from "./components/Sidebar/SidebarHeader/SidebarHeader"
 import { SidebarItem } from "./components/Sidebar/SidebarItem/SidebarItem";
 import { SidebarItemIcon } from "./components/Sidebar/SidebarItemIcon/SidebarItemIcon";
 import { SidebarItemText } from "./components/Sidebar/SidebarItemText/SidebarItemText";
-import { SidebarSection } from "./components/Sidebar/SidebarSection/SidebarSection";
-import { SidebarSublinkGroup } from "./components/Sidebar/SidebarSublinkGroup/SidebarSublinkGroup";
+import { SidebarLinksGroup } from "./components/Sidebar/SidebarLinksGroup/SidebarLinksGroup";
+import { SidebarLinksGroupHeader } from "./components/Sidebar/SidebarLinksGroupHeader/SidebarLinksGroupHeader";
+import { SidebarSublinksGroup } from "./components/Sidebar/SidebarSublinksGroup/SidebarSublinksGroup";
 import { SidebarFooter } from "./components/Sidebar/SidebarFooter/SidebarFooter";
 
 import { ContentWrapper } from "./components/ContentWrapper/ContentWrapper";
@@ -68,8 +69,9 @@ export {
     SidebarItem,
     SidebarItemIcon,
     SidebarItemText,
-    SidebarSection,
-    SidebarSublinkGroup,
+    SidebarLinksGroup,
+    SidebarLinksGroupHeader,
+    SidebarSublinksGroup,
     SidebarFooter,
     ContentWrapper,
     FormWrapper,
