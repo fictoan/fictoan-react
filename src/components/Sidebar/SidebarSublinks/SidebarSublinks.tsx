@@ -3,16 +3,16 @@ import React from "react";
 import { Element } from "../../Element/Element";
 import { CommonAndHTMLProps } from "../../Element/constants";
 
-import { SidebarSublinksGroupStyled } from "./SidebarSublinksGroup.styled";
+import { SidebarSublinksStyled } from "./SidebarSublinks.styled";
 
 
 export type SidebarSublinksGroupElementType = HTMLDivElement;
 export type SidebarSublinksGroupProps       = CommonAndHTMLProps<SidebarSublinksGroupElementType>;
 
-export const SidebarSublinksGroup = (props: SidebarSublinksGroupProps) => {
+export const SidebarSublinks = (props: SidebarSublinksGroupProps) => {
     return (
         <Element<SidebarSublinksGroupElementType>
-            as={SidebarSublinksGroupStyled}
+            as={SidebarSublinksStyled}
             {...props}
         />
     );

@@ -37,9 +37,22 @@ export const SidebarWrapperStyled = styled.div`
     }
 
     a.active {
+        position         : relative;
         display          : block;
         background-color : ${(props: SidebarWrapperProps) => props.theme.sidebar.links.isSelected.bg && lighten(0.32, props.theme.sidebar.links.isSelected.bg)};
-        border-left      : 4px solid ${(props: SidebarWrapperProps) => props.theme.sidebar.links.isSelected.border};
+
+        &::before {
+            display                    : block;
+            position                   : absolute;
+            width                      : 4px;
+            height                     : 100%;
+            top                        : 0;
+            left                       : 0;
+            content                    : "";
+            border-top-right-radius    : 4px;
+            border-bottom-right-radius : 4px;
+            background-color           : ${(props: SidebarWrapperProps) => props.theme.sidebar.links.isSelected.border};
+        }
 
         p { color : ${(props : SidebarWrapperProps) => props.theme.sidebar.links.isSelected.text}; }
     }
@@ -91,7 +104,7 @@ export const SidebarWrapperStyled = styled.div`
         top       : 22px;
     }
 
-    /* ${SidebarLinksGroupStyled} a & {
+    /* details a & {
         grid-template-rows: 24px;
     } */
 
