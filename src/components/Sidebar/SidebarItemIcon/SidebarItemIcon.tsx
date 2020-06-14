@@ -13,7 +13,7 @@ export type SidebarItemIconElementType = HTMLDivElement;
 export type SidebarItemIconProps       = CommonAndHTMLProps<SidebarItemIconElementType> & SidebarItemIconCustomProps;
 
 export const SidebarItemIcon = ({ iconType, className, ...props }: SidebarItemIconProps) => {
-    const classNames = [ className ]
+    const classNames = [ className ];
 
     if (iconType) {
         classNames.push(`icon-${iconType}`);

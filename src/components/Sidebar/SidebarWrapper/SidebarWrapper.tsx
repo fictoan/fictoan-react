@@ -13,7 +13,7 @@ export type SidebarWrapperElementType = HTMLDivElement;
 export type SidebarWrapperProps       = CommonAndHTMLProps<SidebarWrapperElementType> & SidebarWrapperCustomProps;
 
 export const SidebarWrapper = ({collapsed, className, ...props}: SidebarWrapperProps) => {
-    const classNames = [ className ]
+    const classNames = [ className ];
 
     if (collapsed) {
         classNames.push("collapsed");

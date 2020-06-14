@@ -270,4 +270,4 @@ export const PortionStyled = styled.div`
         &.whole-on-tab-ls,
         &.\\32 4-on-tab-ls { grid-column : span 24; }
     }
-`
+`;

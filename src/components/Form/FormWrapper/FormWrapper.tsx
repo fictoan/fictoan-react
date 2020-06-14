@@ -6,7 +6,7 @@ import { FormWrapperStyled } from "./FormWrapper.styled";
 import { FormWrapperProps, FormWrapperElementType } from "../constants"
 
 export const FormWrapper = ({ className, spacing, ...props }: FormWrapperProps) => {
-    const classNames = [ className ]
+    const classNames = [ className ];
 
     if (spacing) {
         classNames.push(`spacing-${spacing}`);

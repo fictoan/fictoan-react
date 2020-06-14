@@ -6,7 +6,7 @@ import { NotificationsWrapperStyled } from "./Notifications.styled"
 import { NotificationsWrapperProps, NotificationsWrapperElementType } from "./constants";
 
 export const NotificationsWrapper = ({ position, anchor, className, ...props }: NotificationsWrapperProps) => {
-    const classNames = [ className ]
+    const classNames = [ className ];
 
     if (position) {
         classNames.push(position)

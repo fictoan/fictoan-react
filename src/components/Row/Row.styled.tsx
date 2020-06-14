@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { PortionStyled } from "../Portion/Portion.styled"
+import { PortionStyled } from "../Portion/Portion.styled";
 
 export const RowStyled = styled.div`
     display               : grid;

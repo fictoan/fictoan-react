@@ -1,11 +1,31 @@
 import React from "react";
 
 import { Element } from "../Element/Element";
+import { CommonAndHTMLProps } from "../Element/constants";
 
 import { PortionStyled } from "./Portion.styled";
-import { PortionProps, PortionElementType } from "./constants";
 
-export const Portion = ({ desktopSpan, mobileSpan, tabLSSpan, tabPTSpan, isHorizontal, className, ...props }: PortionProps) => {
+
+export interface PortionCustomProps {
+    desktopSpan  ? : string;
+    tabPTSpan    ? : string;
+    tabLSSpan    ? : string;
+    mobileSpan   ? : string;
+    isHorizontal ? : boolean;
+}
+
+export type PortionElementType = HTMLDivElement;
+export type PortionProps = CommonAndHTMLProps<PortionElementType> & PortionCustomProps;
+
+export const Portion = ({
+    desktopSpan,
+    mobileSpan,
+    tabLSSpan,
+    tabPTSpan,
+    isHorizontal,
+    className,
+    ...props
+}: PortionProps) => {
     const classNames = [ className ];
 
     if (desktopSpan || tabLSSpan || tabPTSpan || mobileSpan) {
