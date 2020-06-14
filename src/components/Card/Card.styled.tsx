@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { CardProps } from "./constants";
+import { CardProps } from "./Card";
 
 export const CardStyled = styled.div`
     position         : relative;
