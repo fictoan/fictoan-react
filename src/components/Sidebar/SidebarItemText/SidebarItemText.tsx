@@ -1,9 +1,19 @@
 import React from "react";
 
 import { Element } from "../../Element/Element";
+import { CommonAndHTMLProps } from "../../Element/constants";
 
 import { SidebarItemTextStyled } from "../SidebarItemText/SidebarItemText.styled";
-import { SidebarItemTextProps, SidebarItemTextElementType } from "../constants";
+
+
+export interface SidebarItemTextCustomProps {
+    linkText  : string;
+    weight  ? : "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
+    size    ? : "tiny" | "small" | "medium" | "large" | "huge";
+}
+
+export type SidebarItemTextElementType = HTMLParagraphElement;
+export type SidebarItemTextProps       = CommonAndHTMLProps<SidebarItemTextElementType> & SidebarItemTextCustomProps;
 
 export const SidebarItemText = ({ linkText, weight, size, className, ...props }: SidebarItemTextProps) => {
     const classNames = [ className ];

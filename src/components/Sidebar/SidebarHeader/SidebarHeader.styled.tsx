@@ -20,4 +20,4 @@ export const SidebarHeaderStyled = styled.div`
     }
 
     .header-icon { display : none; }
-`
+`;

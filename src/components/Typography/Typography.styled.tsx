@@ -40,7 +40,7 @@ export const TextStyled = css`
     }
 
     p {
-      margin : 0;
+      //margin : 0;
       color  : ${(props: GlobalStyledProps) => props.theme.text.paras.color};
     }
 

@@ -1,9 +1,16 @@
 import React from "react";
 
 import { Element } from "../../Element/Element";
+import { CommonAndHTMLProps } from "../../Element/constants";
 
 import { SidebarWrapperStyled } from "./SidebarWrapper.styled";
-import { SidebarWrapperProps, SidebarWrapperElementType } from "../constants";
+
+export interface SidebarWrapperCustomProps {
+    collapsed ? : boolean;
+}
+
+export type SidebarWrapperElementType = HTMLDivElement;
+export type SidebarWrapperProps       = CommonAndHTMLProps<SidebarWrapperElementType> & SidebarWrapperCustomProps;
 
 export const SidebarWrapper = ({collapsed, className, ...props}: SidebarWrapperProps) => {
     const classNames = [ className ]

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { SidebarItemProps } from "../constants";
+import { SidebarItemProps } from "./SidebarItem";
 
 export const SidebarItemStyled = styled.div`
     display               : grid;
@@ -31,4 +31,4 @@ export const SidebarItemStyled = styled.div`
         border-radius    : 50%;
         background-color : ${(props: SidebarItemProps) => props.theme.sidebar.links.hasAlert.bg};
     }
-`
+`;

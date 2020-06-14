@@ -5,8 +5,8 @@ import { CommonAndHTMLProps } from "../../Element/constants";
 
 import { SidebarExpandingLinkStyled } from "./SidebarExpandingLink.styled";
 
-type SidebarLinksGroupElementType = HTMLDivElement;
-type SidebarLinksGroupProps       = CommonAndHTMLProps<SidebarLinksGroupElementType>;
+export type SidebarLinksGroupElementType = HTMLDivElement;
+export type SidebarLinksGroupProps       = CommonAndHTMLProps<SidebarLinksGroupElementType>;
 
 
 export const SidebarExpandingLink = (props: SidebarLinksGroupProps) => {

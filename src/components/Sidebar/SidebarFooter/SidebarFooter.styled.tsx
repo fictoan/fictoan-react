@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { SidebarFooterProps } from "../constants"
+import { SidebarFooterProps } from "./SidebarFooter"
 
 export const SidebarFooterStyled = styled.div`
     display          : grid;
@@ -11,5 +11,4 @@ export const SidebarFooterStyled = styled.div`
     border-top       : 1px solid ${(props: SidebarFooterProps) => props.theme.sidebar.footer.borderTop};
     background-color : ${(props: SidebarFooterProps) => props.theme.sidebar.footer.bg};
     margin           : 0;
-    /* padding          : 4px; */
-`
+`;

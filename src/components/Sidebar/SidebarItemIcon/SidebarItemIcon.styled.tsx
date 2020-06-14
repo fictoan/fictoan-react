@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { SidebarItemIconProps } from "../constants";
+import { SidebarItemIconProps } from "./SidebarItemIcon";
 
 export const SidebarItemIconStyled = styled.div`
     align-self   : center;
@@ -41,4 +41,4 @@ export const SidebarItemIconStyled = styled.div`
         stroke : none;
         fill   : ${(props: SidebarItemIconProps) => props.theme.sidebar.icons.isActive.fill.bg};
     }
-`
+`;
