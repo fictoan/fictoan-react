@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { SidebarHeaderProps } from "./SidebarHeader";
 
-export const SidebarHeaderStyled = styled.div`
+export const SidebarHeaderStyled = styled.header`
     display          : flex;
     width            : 100%;
     height           : 80px;

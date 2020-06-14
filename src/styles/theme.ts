@@ -280,12 +280,21 @@ export const RFTheme = {
 
     //  SIDEBAR  //////////////////////////////////////////////////////////////
     sidebar : {
+        isCollapsed : {
+            label : {
+                text : baseColors.white,
+                bg   : mainColors.hue
+            }
+        },
+
         header : {
             bg           : baseColors.white,
             borderBottom : baseColors.slate10
         },
-        body      : baseColors.white,
-        separator : baseColors.slate20,
+
+        body : {
+            bg : baseColors.white,
+        },
 
         icons : {
             default : {
@@ -357,12 +366,7 @@ export const RFTheme = {
             }
         },
 
-        isCollapsed : {
-            label : {
-                text : mainColors.shade,
-                bg   : mainColors.hue
-            }
-        },
+
 
         footer : {
             bg        : baseColors.white,
