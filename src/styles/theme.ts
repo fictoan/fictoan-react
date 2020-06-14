@@ -280,7 +280,10 @@ export const RFTheme = {
 
     //  SIDEBAR  //////////////////////////////////////////////////////////////
     sidebar : {
-        header    : baseColors.white,
+        header : {
+            bg           : baseColors.white,
+            borderBottom : baseColors.slate10
+        },
         body      : baseColors.white,
         separator : baseColors.slate20,
 
