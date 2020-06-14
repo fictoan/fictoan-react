@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { ButtonProps } from "./constants";
+import { ButtonProps } from "./Button";
 
 export const ButtonStyled = styled.button`
     position            : relative;
@@ -20,7 +20,7 @@ export const ButtonStyled = styled.button`
     user-select         : none;
     
     > * {
-      all: unset;
+      all : unset;
     }
 
     &.primary {

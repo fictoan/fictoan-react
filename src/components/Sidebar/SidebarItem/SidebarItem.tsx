@@ -8,7 +8,7 @@ import { SidebarItemStyled } from "./SidebarItem.styled";
 export type SidebarItemElementType = HTMLDivElement;
 export type SidebarItemProps       = CommonAndHTMLProps<SidebarItemElementType>;
 
-export const SidebarItem = ({...props}: SidebarItemProps) => {
+export const SidebarItem = ({ ...props }: SidebarItemProps) => {
     return (
         <Element<SidebarItemElementType>
             as={SidebarItemStyled}

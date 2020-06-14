@@ -1,6 +1,6 @@
 import { css } from "styled-components";
 
-import { CodeBlockProps } from "./constants";
+import { CodeBlockProps } from "./CodeBlock";
 
 export const CodeStyled = css`
     /*  For inline code  */
@@ -141,4 +141,4 @@ export const CodeStyled = css`
         transform  : translateY(3px);
         box-shadow : none;
     }
-`
+`;

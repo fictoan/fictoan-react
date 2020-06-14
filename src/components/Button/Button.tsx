@@ -1,11 +1,35 @@
 import React from "react";
 
 import { Element } from "../Element/Element";
+import { CommonAndHTMLProps } from "../Element/constants";
 
-import { ButtonStyled } from "./Button.styled"
-import { ButtonProps, ButtonElementType } from "./constants";
+import { ButtonStyled } from "./Button.styled";
 
-export const Button = ({ size, shape, shadow, border, kind, isLoading, hasDelete, className, ...props }: ButtonProps) => {
+
+export interface ButtonCustomProps {
+    kind      ? : "primary" | "secondary" | "custom";
+    size      ? : "tiny" | "small" | "medium" | "large" | "huge";
+    shape     ? : "rounded" | "curved";
+    shadow    ? : "mild" | "soft" | "hard";
+    border    ? : string;
+    isLoading ? : boolean;
+    hasDelete ? : boolean;
+}
+
+export type ButtonElementType = HTMLButtonElement;
+export type ButtonProps       = CommonAndHTMLProps<ButtonElementType> & ButtonCustomProps;
+
+export const Button = ({
+   size,
+   shape,
+   shadow,
+   border,
+   kind,
+   isLoading,
+   hasDelete,
+   className,
+   ...props
+}: ButtonProps) => {
     let classNames = [];
 
     if (className) {

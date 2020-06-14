@@ -28,7 +28,11 @@ export const Row = ({
     retainLayoutAlways,
     ...props
 }: RowProps) => {
-    const classNames = [className]
+    let classNames = [];
+
+    if (className) {
+        classNames.push(className);
+    }
 
     if (sidePadding) {
         classNames.push(`side-padding-${sidePadding}`);

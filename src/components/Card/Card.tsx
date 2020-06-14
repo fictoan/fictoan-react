@@ -20,7 +20,11 @@ export const Card = ({
      className,
      ...props
 }: CardProps) => {
-    const classNames = [ className ];
+    let classNames = [];
+
+    if (className) {
+        classNames.push(className);
+    }
 
     if (shape) {
         classNames.push(`shape-${shape}`);

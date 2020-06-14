@@ -9,7 +9,7 @@ import { SidebarSublinksStyled } from "./SidebarSublinks.styled";
 export type SidebarSublinksGroupElementType = HTMLDivElement;
 export type SidebarSublinksGroupProps       = CommonAndHTMLProps<SidebarSublinksGroupElementType>;
 
-export const SidebarSublinks = (props: SidebarSublinksGroupProps) => {
+export const SidebarSublinks = ({ ...props }: SidebarSublinksGroupProps) => {
     return (
         <Element<SidebarSublinksGroupElementType>
             as={SidebarSublinksStyled}

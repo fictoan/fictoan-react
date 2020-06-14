@@ -26,7 +26,11 @@ export const Portion = ({
     className,
     ...props
 }: PortionProps) => {
-    const classNames = [ className ];
+    let classNames = [];
+
+    if (className) {
+        classNames.push(className);
+    }
 
     if (desktopSpan || tabLSSpan || tabPTSpan || mobileSpan) {
         if (desktopSpan) {

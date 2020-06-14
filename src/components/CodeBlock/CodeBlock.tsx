@@ -1,9 +1,7 @@
 import React from "react";
 // @ts-ignore
 (typeof global !== "undefined" ? global : (window as any)).Prism = Prism;
-import PrismReactRenderer, { defaultProps, Prism } from "prism-react-renderer";
-
-import { CodeBlockProps } from "./constants";
+import PrismReactRenderer, { defaultProps, Prism, Language } from "prism-react-renderer";
 
 require("prismjs/components/prism-java");
 require("prismjs/components/prism-csharp");
@@ -11,7 +9,22 @@ require("prismjs/components/prism-scala");
 require("prismjs/components/prism-ruby");
 require("prismjs/components/prism-graphql");
 
-export const CodeBlock = ({ ref, source, ...props }: CodeBlockProps) => {
+import { CommonAndHTMLProps } from "../Element/constants";
+
+
+export interface CodeBlockCustomProps {
+    source   ? : object | string;
+    language ? : Language;
+}
+
+export type CodeBlockElementType = HTMLPreElement;
+export type CodeBlockProps       = CommonAndHTMLProps<CodeBlockElementType> & CodeBlockCustomProps;
+
+export const CodeBlock = ({
+    ref,
+    source,
+    ...props
+}: CodeBlockProps) => {
     return (
         <PrismReactRenderer
             {...defaultProps}

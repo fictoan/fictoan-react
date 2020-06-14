@@ -15,8 +15,18 @@ export interface SidebarItemTextCustomProps {
 export type SidebarItemTextElementType = HTMLParagraphElement;
 export type SidebarItemTextProps       = CommonAndHTMLProps<SidebarItemTextElementType> & SidebarItemTextCustomProps;
 
-export const SidebarItemText = ({ linkText, weight, size, className, ...props }: SidebarItemTextProps) => {
-    const classNames = [ className ];
+export const SidebarItemText = ({
+    linkText,
+    weight,
+    size,
+    className,
+    ...props
+}: SidebarItemTextProps) => {
+    let classNames = [];
+
+    if (className) {
+        classNames.push(className);
+    }
 
     if (weight) {
         classNames.push(`weight-${weight}`);

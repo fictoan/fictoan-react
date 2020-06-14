@@ -9,7 +9,7 @@ export type SidebarLinksGroupElementType = HTMLDivElement;
 export type SidebarLinksGroupProps       = CommonAndHTMLProps<SidebarLinksGroupElementType>;
 
 
-export const SidebarExpandingLink = (props: SidebarLinksGroupProps) => {
+export const SidebarExpandingLink = ({ ...props }: SidebarLinksGroupProps) => {
     return (
         <Element<SidebarLinksGroupElementType>
             as={SidebarExpandingLinkStyled}

@@ -5,11 +5,11 @@ import { CommonAndHTMLProps } from "../../Element/constants";
 
 import { SidebarLinksGroupStyled } from "./SidebarLinksGroup.styled";
 
-type SidebarLinksGroupElementType = HTMLDivElement;
-type SidebarLinksGroupProps       = CommonAndHTMLProps<SidebarLinksGroupElementType>;
 
+export type SidebarLinksGroupElementType = HTMLDivElement;
+export type SidebarLinksGroupProps       = CommonAndHTMLProps<SidebarLinksGroupElementType>;
 
-export const SidebarLinksGroup = (props: SidebarLinksGroupProps) => {
+export const SidebarLinksGroup = ({ ...props }: SidebarLinksGroupProps) => {
     return (
         <Element<SidebarLinksGroupElementType>
             as={SidebarLinksGroupStyled}

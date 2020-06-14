@@ -9,7 +9,7 @@ import { SidebarLinksGroupHeaderStyled } from "./SidebarLinkGroupHeader.styled";
 export type SidebarLinksGroupHeaderElementType = HTMLDivElement;
 export type SidebarLinksGroupHeaderProps       = CommonAndHTMLProps<SidebarLinksGroupHeaderElementType>;
 
-export const SidebarLinksGroupHeader = (props: SidebarLinksGroupHeaderProps) => {
+export const SidebarLinksGroupHeader = ({ ...props }: SidebarLinksGroupHeaderProps) => {
     return (
         <Element<SidebarLinksGroupHeaderElementType>
             as={SidebarLinksGroupHeaderStyled}
