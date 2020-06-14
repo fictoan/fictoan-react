@@ -26,7 +26,7 @@ export const GlobalStyled = createGlobalStyle`
         flex-direction : column;
     }
 
-    main   { flex : 1 0 auto; }
+    //main   { flex : 1 0 auto; }
     footer { flex-shrink : 0; }
 
     /* Responsive classes  ================================================  */

@@ -9,7 +9,7 @@ import { SidebarLinksGroupHeaderStyled } from "../SidebarLinksGroupHeader/Sideba
 
 import { SidebarWrapperProps } from "./SidebarWrapper";
 
-export const SidebarWrapperStyled = styled.div`
+export const SidebarWrapperStyled = styled.aside`
     display          : flex;
     position         : fixed;
     top              : 0;
