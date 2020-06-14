@@ -7,7 +7,7 @@ import { SidebarItemIconStyled } from "../SidebarItemIcon/SidebarItemIcon.styled
 import { SidebarLinksGroupStyled } from "../SidebarLinksGroup/SidebarLinksGroup.styled";
 import { SidebarLinksGroupHeaderStyled } from "../SidebarLinksGroupHeader/SidebarLinkGroupHeader.styled";
 
-import { SidebarWrapperProps } from "../constants";
+import { SidebarWrapperProps } from "./SidebarWrapper";
 
 export const SidebarWrapperStyled = styled.div`
     display          : flex;
@@ -140,4 +140,4 @@ export const SidebarWrapperStyled = styled.div`
             padding-left : 0;
         }
     }
-`
+`;
