@@ -5,6 +5,7 @@ import { CommonAndHTMLProps } from "../../Element/constants";
 
 import { SidebarItemIconStyled } from "./SidebarItemIcon.styled";
 
+
 export interface SidebarItemIconCustomProps {
     iconType ? : "stroked" | "filled";
 }

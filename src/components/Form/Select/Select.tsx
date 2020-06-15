@@ -32,7 +32,9 @@ export const Select = ({ label, helpText, errorText, isFullWidth, className, opt
                     {...props}
                 >
                     {options.map((option, index) => {
-                        return <Option key={index} {...option}/>
+                        return (
+                            <Option key={index} {...option}/>
+                        )
                     })}
                 </Element>
             </Element>

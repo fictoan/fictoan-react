@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 import { SidebarFooterProps } from "./SidebarFooter"
 
-export const SidebarFooterStyled = styled.div`
+export const SidebarFooterStyled = styled.footer`
     display          : grid;
     align-self       : end;
+    width            : 240px;
     position         : fixed;
     bottom           : 0;
-    width            : 240px;
-    border-top       : 1px solid ${(props: SidebarFooterProps) => props.theme.sidebar.footer.borderTop};
-    background-color : ${(props: SidebarFooterProps) => props.theme.sidebar.footer.bg};
     margin           : 0;
+    background-color : ${(props: SidebarFooterProps) => props.theme.sidebar.footer.bg};
+    border-top       : 1px solid ${(props: SidebarFooterProps) => props.theme.sidebar.footer.borderTop};
 `;
