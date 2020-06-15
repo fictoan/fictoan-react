@@ -11,7 +11,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/setu-lobby/reactised-fictoan.git"
+        "url": "https://github.com/fictoan/reactised-fictoan"
     },
     "license": "MIT",
     "scripts": {
