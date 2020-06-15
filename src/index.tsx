@@ -11,10 +11,10 @@ import { SidebarHeader } from "./components/Sidebar/SidebarHeader/SidebarHeader"
 import { SidebarItem } from "./components/Sidebar/SidebarItem/SidebarItem";
 import { SidebarItemIcon } from "./components/Sidebar/SidebarItemIcon/SidebarItemIcon";
 import { SidebarItemText } from "./components/Sidebar/SidebarItemText/SidebarItemText";
-import { SidebarLinksGroup } from "./components/Sidebar/SidebarLinksGroup/SidebarLinksGroup";
-import { SidebarLinksGroupHeader } from "./components/Sidebar/SidebarLinksGroupHeader/SidebarLinksGroupHeader";
-import { SidebarExpandingLink } from "./components/Sidebar/SidebarExpandingLink/SidebarExpandingLink";
-import { SidebarSublinks } from "./components/Sidebar/SidebarSublinks/SidebarSublinks";
+import { SidebarItemsGroup } from "./components/Sidebar/SidebarItemsGroup/SidebarItemsGroup";
+import { SidebarItemsGroupHeader } from "./components/Sidebar/SidebarItemsGroupHeader/SidebarItemsGroupHeader";
+import { SidebarLink } from "./components/Sidebar/SidebarLink/SidebarLink";
+import { SidebarNestedLinks } from "./components/Sidebar/SidebarNestedLinks/SidebarNestedLinks";
 import { SidebarFooter } from "./components/Sidebar/SidebarFooter/SidebarFooter";
 
 import { ContentWrapper } from "./components/ContentWrapper/ContentWrapper";
@@ -70,10 +70,10 @@ export {
     SidebarItem,
     SidebarItemIcon,
     SidebarItemText,
-    SidebarLinksGroup,
-    SidebarLinksGroupHeader,
-    SidebarExpandingLink,
-    SidebarSublinks,
+    SidebarItemsGroup,
+    SidebarItemsGroupHeader,
+    SidebarLink,
+    SidebarNestedLinks,
     SidebarFooter,
     ContentWrapper,
     FormWrapper,

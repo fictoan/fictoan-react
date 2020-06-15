@@ -297,31 +297,27 @@ export const RFTheme = {
         },
 
         icons : {
-            default : {
-                stroked : {
-                    line      : baseColors.slate40,
-                    thickness : 2
+            stroked : {
+                thickness : 2,
+                default : {
+                    line : baseColors.slate40,
                 },
-                fill : {
-                    bg : baseColors.slate40
+                onHover : {
+                    line : baseColors.slate80,
+                },
+                isActive : {
+                    line : baseColors.slate,
                 }
             },
-            onHover : {
-                stroked: {
-                    line      : baseColors.slate80,
-                    thickness : 2
+            filled : {
+                default : {
+                    bg : baseColors.slate40,
                 },
-                fill : {
-                    bg : baseColors.slate40
-                }
-            },
-            isActive : {
-                stroked: {
-                    line      : baseColors.slate,
-                    thickness : 2
+                onHover : {
+                    bg : baseColors.slate80,
                 },
-                fill: {
-                    bg : baseColors.slate40
+                isActive : {
+                    bg : baseColors.slate,
                 }
             }
         },

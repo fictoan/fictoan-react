@@ -7,8 +7,8 @@ import { SidebarHeaderStyled } from "../SidebarHeader/SidebarHeader.styled";
 import { SidebarItemStyled } from "../SidebarItem/SidebarItem.styled"
 import { SidebarItemTextStyled } from "../SidebarItemText/SidebarItemText.styled"
 import { SidebarItemIconStyled } from "../SidebarItemIcon/SidebarItemIcon.styled"
-import { SidebarLinksGroupStyled } from "../SidebarLinksGroup/SidebarLinksGroup.styled";
-import { SidebarLinksGroupHeaderStyled } from "../SidebarLinksGroupHeader/SidebarLinkGroupHeader.styled";
+import { SidebarItemsGroupStyled } from "../SidebarItemsGroup/SidebarItemsGroup.styled";
+import { SidebarItemsGroupHeaderStyled } from "../SidebarItemsGroupHeader/SidebarItemsGroupHeader.styled";
 import { SidebarFooterStyled } from "../SidebarFooter/SidebarFooter.styled";
 
 
@@ -71,7 +71,7 @@ export const SidebarWrapperStyled = styled.aside`
             box-shadow       : 0 4px 16px -2px rgba(0, 0, 0, 0.24);
         }
 
-        ${SidebarLinksGroupStyled} > ${SidebarLinksGroupHeaderStyled}::after { display : none; }
+        ${SidebarItemsGroupStyled} > ${SidebarItemsGroupHeaderStyled}::after { display : none; }
 
         ${SidebarFooterStyled} {
             width        : 48px;
@@ -113,10 +113,10 @@ export const SidebarWrapperStyled = styled.aside`
 
 
     /*  For Open and Collapse groups  */
-    ${SidebarLinksGroupStyled}       { position : relative; }
-    ${SidebarLinksGroupStyled}:hover { cursor : pointer; }
+    ${SidebarItemsGroupStyled}       { position : relative; }
+    ${SidebarItemsGroupStyled}:hover { cursor : pointer; }
 
-    ${SidebarLinksGroupStyled} > ${SidebarLinksGroupHeaderStyled}::after {
+    ${SidebarItemsGroupStyled} > ${SidebarItemsGroupHeaderStyled}::after {
         display      : inline-block;
         position     : absolute;
         width        : 8px;
@@ -132,9 +132,9 @@ export const SidebarWrapperStyled = styled.aside`
         cursor       : pointer;
     }
 
-    ${SidebarLinksGroupStyled}[open] > ${SidebarLinksGroupHeaderStyled}::after {
+    ${SidebarItemsGroupStyled}[open] > ${SidebarItemsGroupHeaderStyled}::after {
         transform : rotate(225deg);
-        top       : 22px;
+        top       : 18px;
     }
 
     /* details a & {
