@@ -2,6 +2,7 @@ import { lighten } from "polished";
 
 import { baseColors } from "../constants/baseColors";
 
+
 export const mainColors = {
     hue      : baseColors.blue90,
     tint     : baseColors.amber,
@@ -9,7 +10,6 @@ export const mainColors = {
     analogue : baseColors.indigo50,
     accent   : baseColors.green80,
 }
-
 
 export const RFTheme = {
     mainColors,
@@ -33,17 +33,17 @@ export const RFTheme = {
             multiplier : 1.16,
         },
 
+        headings : {
+            font       : "sans-serif",
+            color      : mainColors.shade,
+            weight     : 600,
+            lineHeight : 1.24
+        },
+
         paras : {
             color      : baseColors.grey,
             weight     : 400,
             lineHeight : 1.64,
-        },
-
-        headings : {
-            font       : "sans-serif",
-            color      : baseColors.grey,
-            weight     : 600,
-            lineHeight : 1.24
         },
 
         links : {

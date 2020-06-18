@@ -8,6 +8,7 @@ require("prismjs/components/prism-csharp");
 require("prismjs/components/prism-scala");
 require("prismjs/components/prism-ruby");
 require("prismjs/components/prism-graphql");
+require("prismjs/components/prism-http");
 
 import { CommonAndHTMLProps } from "../Element/constants";
 

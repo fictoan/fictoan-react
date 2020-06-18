@@ -5,6 +5,7 @@ import { CommonAndHTMLProps } from "../../Element/constants";
 
 import { SidebarItemStyled } from "./SidebarItem.styled";
 
+
 export type SidebarItemElementType = HTMLDivElement;
 export type SidebarItemProps       = CommonAndHTMLProps<SidebarItemElementType>;
 

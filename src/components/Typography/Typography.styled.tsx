@@ -39,10 +39,7 @@ export const TextStyled = css`
         h1, h2, h3, h4, h5, h6 { word-wrap : break-word; }
     }
 
-    p {
-      //margin : 0;
-      color  : ${(props: GlobalStyledProps) => props.theme.text.paras.color};
-    }
+    p { color  : ${(props: GlobalStyledProps) => props.theme.text.paras.color}; }
 
     a {
         cursor      : pointer;
@@ -52,7 +49,7 @@ export const TextStyled = css`
         width       : fit-content;
     }
 
-    a:not(.ff-button):not(.ff-pill):not(.header-links a):hover { color : ${(props: GlobalStyledProps) => props.theme.text.links.onHover.text}; }
+    a:not(.ff-button) { color : ${(props: GlobalStyledProps) => props.theme.text.links.onHover.text}; }
 
     a:active { opacity: 0.72; }
 
@@ -77,7 +74,8 @@ export const TextStyled = css`
     .font-mono  { font-family : ${(props: GlobalStyledProps) => props.theme.text.font.mono}; }
 
     .text-left   { text-align : left; }
-    .text-centre { text-align : center; }
+    .text-centre,
+    .text-center { text-align : center; }
     .text-right  { text-align : right; }
 
     /*  Colour of highlight and text colour
@@ -91,4 +89,4 @@ export const TextStyled = css`
         background : ${(props: GlobalStyledProps) => props.theme.text.selection.bg};
         color      : ${(props: GlobalStyledProps) => props.theme.text.selection.text};
     }
-`
+`;
