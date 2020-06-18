@@ -1,11 +1,30 @@
 import React from "react";
 
 import { Element } from "../Element/Element";
+import { CommonAndHTMLProps } from "../Element/constants";
 
-import { InfoPanelStyled } from "./InfoPanel.styled"
-import { InfoPanelProps, InfoPanelElementType } from "./constants";
+import { InfoPanelStyled } from "./InfoPanel.styled";
 
-export const InfoPanel = ({ isOpen, isDismissible, width, className, children, onCloseCallback, ...props }: InfoPanelProps) => {
+
+export interface InfoPanelCustomProps {
+    width           ? : "tiny" | "small" | "medium" | "large" | "huge";
+    isOpen          ? : boolean;
+    isDismissible   ? : boolean;
+    onCloseCallback ? : () => void;
+}
+
+export type InfoPanelElementType = HTMLDivElement;
+export type InfoPanelProps       = CommonAndHTMLProps<InfoPanelElementType> & InfoPanelCustomProps;
+
+export const InfoPanel = ({
+    width,
+    className,
+    isOpen,
+    isDismissible,
+    children,
+    onCloseCallback,
+    ...props
+}: InfoPanelProps) => {
     const closeInfoPanel = () => {
         if (onCloseCallback) {
             onCloseCallback();

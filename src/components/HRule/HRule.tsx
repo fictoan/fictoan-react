@@ -1,23 +1,31 @@
 import React from "react";
 
 import { Element } from "../Element/Element";
+import { CommonAndHTMLProps } from "../Element/constants";
 
 import { HRStyled } from "./HRule.styled"
-import { HRProps, HRElementType } from "./constants"
 
-export const HRule = ({ sideMargin, className, thick, slim, ...props }: HRProps) => {
-    const classNames = [ className ];
+
+export interface HRCustomProps {
+    sideMargin ? : "tiny" | "small" | "medium" | "large" | "huge";
+}
+
+export type HRElementType = HTMLHRElement;
+export type HRProps       = CommonAndHTMLProps<HRElementType> & HRCustomProps;
+
+export const HRule = ({
+    sideMargin,
+    className,
+    ...props
+}: HRProps) => {
+    let classNames = [];
+
+    if (className) {
+        classNames.push(className);
+    }
 
     if (sideMargin) {
-        classNames.push(`side-margin-${sideMargin}`)
-    }
-
-    if (thick) {
-        classNames.push("thick")
-    }
-
-    if (slim) {
-        classNames.push("slim")
+        classNames.push(`side-margin-${sideMargin}`);
     }
 
     return (

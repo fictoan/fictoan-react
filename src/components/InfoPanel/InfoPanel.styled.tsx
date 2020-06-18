@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
-import { InfoPanelProps } from "./constants";
+import { InfoPanelProps } from "./InfoPanel";
 
-export const InfoPanelStyled = styled.div`
+
+export const InfoPanelStyled = styled.aside`
     display          : flex;
     position         : fixed;
     top              : 0;
-    right            : -42vw;
+    right            : 0;
     bottom           : 0;
+    transform        : translateX(-42vw);
     padding          : 2vw;
     flex-direction   : column;
     max-width        : 40vw;
@@ -17,12 +19,12 @@ export const InfoPanelStyled = styled.div`
     transition       : all 0.4s ease-in-out;
     background-color : ${(props : InfoPanelProps) => props.theme.infoPanel.bg};
     box-shadow       : 4px 0 24px -16px rgba(0, 0, 0, 0.24);
-    z-index          : 10000;
+    z-index          : 100000;
     border-left      : 1px solid ${(props : InfoPanelProps) => props.theme.infoPanel.border};
 
-    &.open { right : 0; }
+    &.open { transform : translateX(0); }
 
-    &.tiny   { width : 6vw; }
+    &.tiny   { width :  6vw; }
     &.small  { width : 12vw; }
     &.medium { width : 24vw; }
     &.large  { width : 32vw; }
@@ -37,7 +39,7 @@ export const InfoPanelStyled = styled.div`
         background-color : ${(props : InfoPanelProps) => props.theme.infoPanel.dismissButton.bg};
         top              : 24px;
         right            : 24px;
-        z-index          : 6000;
+        z-index          : 100001;
         font-size        : 32px;
         color            : ${(props : InfoPanelProps) => props.theme.infoPanel.dismissButton.color};
         text-align       : center;
@@ -49,4 +51,4 @@ export const InfoPanelStyled = styled.div`
             content : "${(props : InfoPanelProps) => props.theme.infoPanel.dismissButton.content}";
         }
     }
-`
+`;
