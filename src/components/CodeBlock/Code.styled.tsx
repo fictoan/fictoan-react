@@ -2,6 +2,7 @@ import { css } from "styled-components";
 
 import { CodeBlockProps } from "./CodeBlock";
 
+
 export const CodeStyled = css`
     /*  For inline code  */
     :not(pre) > code {

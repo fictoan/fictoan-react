@@ -1,12 +1,34 @@
 import React from "react";
 
 import { Element }   from "../Element/Element";
+import { CommonAndHTMLProps } from "../Element/constants";
 
 import { TableStyled } from "./Table.styled";
-import { TableProps, TableElementType } from "./constants"
 
-export const Table = ({ bordersFor, isStriped, isHoverable, isFullWidth, className, ...props }: TableProps) => {
-    const classNames = [ className ];
+
+export interface TableCustomProps {
+    bordersFor  ? : "rows" | "columns" | "both";
+    isStriped   ? : boolean;
+    isHoverable ? : boolean;
+    isFullWidth ? : boolean;
+}
+
+export type TableElementType = HTMLTableElement;
+export type TableProps       = CommonAndHTMLProps<TableElementType> & TableCustomProps;
+
+export const Table = ({
+    bordersFor,
+    isStriped,
+    isHoverable,
+    isFullWidth,
+    className,
+    ...props
+}: TableProps) => {
+    let classNames = [];
+
+    if (className) {
+        classNames.push(className);
+    }
 
     if (bordersFor) {
         classNames.push(`bordered-${bordersFor}`);

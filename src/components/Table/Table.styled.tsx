@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import { TableProps } from "./constants";
+
+import { TableProps } from "./Table";
+
 
 export const TableStyled = styled.table`
     background-color : ${(props: TableProps) => props.theme.table.bg};
@@ -28,7 +30,7 @@ export const TableStyled = styled.table`
     &.padding-all-small td  { padding : 8px 16px; }
 
     &.padding-all-medium th,
-    &.padding-all-medium td  { padding : 16px 24px; }
+    &.padding-all-medium td { padding : 16px 24px; }
 
     &.padding-all-large th,
     &.padding-all-large td  { padding : 24px 32px; }
@@ -47,4 +49,4 @@ export const TableStyled = styled.table`
         transition       : all 0.2s;
         cursor           : pointer;
     }
-`
+`;

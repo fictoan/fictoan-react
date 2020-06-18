@@ -1,7 +1,7 @@
 import { BaseInputComponentProps } from "../BaseInputComponent/constants";
 
-export type CheckboxElementType = HTMLDivElement;
+export type CheckboxElementType = HTMLInputElement;
 export type CheckboxProps = BaseInputComponentProps<CheckboxElementType>;
 
-export type SwitchElementType = HTMLDivElement;
+export type SwitchElementType = HTMLInputElement;
 export type SwitchProps = BaseInputComponentProps<SwitchElementType>;
