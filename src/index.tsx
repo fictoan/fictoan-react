@@ -46,8 +46,8 @@ import { InfoPanel } from "./components/InfoPanel/InfoPanel"
 import { NotificationsWrapper } from "./components/Notifications/NotificationsWrapper";
 import { NotificationItem } from "./components/Notifications/NotificationItem";
 
-import { BreadcrumbWrapper } from "./components/Breadcrumb/BreadcrumbWrapper";
-import { BreadcrumbItem } from "./components/Breadcrumb/BreadcrumbItem";
+import { BreadcrumbWrapper } from "./components/Breadcrumbs/BreadcrumbWrapper/BreadcrumbWrapper";
+import { BreadcrumbItem } from "./components/Breadcrumbs/BreadcrumbItem/BreadcrumbItem";
 
 import { Table } from "./components/Table/Table";
 
