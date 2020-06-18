@@ -43,8 +43,8 @@ import { Card } from "./components/Card/Card";
 
 import { InfoPanel } from "./components/InfoPanel/InfoPanel"
 
-import { NotificationsWrapper } from "./components/Notifications/NotificationsWrapper";
-import { NotificationItem } from "./components/Notifications/NotificationItem";
+import { NotificationsWrapper } from "./components/Notifications/NotificationsWrapper/NotificationsWrapper";
+import { NotificationItem } from "./components/Notifications/NotificationsItem/NotificationItem";
 
 import { BreadcrumbWrapper } from "./components/Breadcrumbs/BreadcrumbWrapper/BreadcrumbWrapper";
 import { BreadcrumbItem } from "./components/Breadcrumbs/BreadcrumbItem/BreadcrumbItem";

@@ -1,27 +1,9 @@
 import styled from "styled-components";
-
-import { NotificationItemProps } from "./constants";
 import { lighten } from "polished";
 
-//  NOTIFICATIONS WRAPPER  ====================================================
-export const NotificationsWrapperStyled = styled.div`
-    position   : fixed;
-    top        : 0;
-    display    : flex;
-    width      : 400px;
-    height     : 100%;
-    z-index    : 50000;
-    padding    : 4vh 2vw;
-    overflow-y : scroll;
+import { NotificationItemProps } from "./NotificationItem";
 
-    &.left  { left : 0; }
-    &.right { right : 0; }
 
-    &.top    { flex-direction: column; }
-    &.bottom { flex-direction: column-reverse; }
-`
-
-//  NOTIFICATIONS ITEM  =======================================================
 export const NotificationsItemStyled = styled.div`
     position         : relative;
     display          : flex;
@@ -108,14 +90,4 @@ export const NotificationsItemStyled = styled.div`
     }
 
     & p { margin-bottom : 0; }
-
-    ${NotificationsWrapperStyled}.top {
-        &:first-child { margin-top : 0; }
-        &:last-child  { margin-bottom : 0; }
-    }
-
-    ${NotificationsWrapperStyled}.bottom {
-        &:first-child { margin-bottom: 0; }
-        &:last-child  { margin-top: 0; }
-    }
-`
+`;

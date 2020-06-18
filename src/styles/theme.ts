@@ -389,7 +389,7 @@ export const RFTheme = {
             },
             success : {
                 border : baseColors.green90,
-            },
+            }
         }
     },
 
