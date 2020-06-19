@@ -1,8 +1,8 @@
 import { css } from "styled-components";
 
-import { GlobalStyledProps } from "./constants";
+import { GlobalStyledProps } from "./ThemeProvider";
 
-import { baseColors } from "../../constants/baseColors"
+import { baseColors } from "../../styles/BaseColors"
 
 export const ColorsStyled = css`
 

@@ -15,14 +15,9 @@ export type HRProps       = CommonAndHTMLProps<HRElementType> & HRCustomProps;
 
 export const HRule = ({
     sideMargin,
-    className,
     ...props
 }: HRProps) => {
     let classNames = [];
-
-    if (className) {
-        classNames.push(className);
-    }
 
     if (sideMargin) {
         classNames.push(`side-margin-${sideMargin}`);

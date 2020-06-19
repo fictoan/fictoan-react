@@ -17,14 +17,9 @@ export type CardProps       = CommonAndHTMLProps<CardElementType> & CardCustomPr
 export const Card = ({
      shadow,
      shape,
-     className,
      ...props
 }: CardProps) => {
     let classNames = [];
-
-    if (className) {
-        classNames.push(className);
-    }
 
     if (shape) {
         classNames.push(`shape-${shape}`);

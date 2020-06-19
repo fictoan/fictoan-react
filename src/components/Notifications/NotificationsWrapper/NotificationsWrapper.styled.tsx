@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { NotificationsItemStyled } from "../NotificationsItem/Notifications.styled";
+import { NotificationsItemStyled } from "../NotificationsItem/NotificationItem.styled";
 
 
 export const NotificationsWrapperStyled = styled.div`

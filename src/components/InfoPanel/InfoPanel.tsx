@@ -9,7 +9,6 @@ import { InfoPanelStyled } from "./InfoPanel.styled";
 export interface InfoPanelCustomProps {
     width           ? : "tiny" | "small" | "medium" | "large" | "huge";
     isOpen          ? : boolean;
-    isDismissible   ? : boolean;
     onCloseCallback ? : () => void;
 }
 
@@ -18,38 +17,38 @@ export type InfoPanelProps       = CommonAndHTMLProps<InfoPanelElementType> & In
 
 export const InfoPanel = ({
     width,
-    className,
     isOpen,
-    isDismissible,
     children,
     onCloseCallback,
     ...props
 }: InfoPanelProps) => {
+    let classNames = [];
+
+    if (width) {
+        classNames.push(width);
+    }
+
+    if (isOpen) {
+        classNames.push("open");
+    }
+
     const closeInfoPanel = () => {
         if (onCloseCallback) {
             onCloseCallback();
         }
-    };
+    }
 
     return !!isOpen && (
         <Element<InfoPanelElementType>
             as={InfoPanelStyled}
-            classNames={[
-                className,
-                isOpen && "open",
-                width
-            ]}
+            classNames={classNames}
             {...props}
         >
-            {isDismissible && (
-                <div
-                    className="dismiss-button"
-                    onClick={closeInfoPanel}
-                    onKeyDown={closeInfoPanel}
-                    role="button"
-                    tabIndex={-1}
-                />
-            )}
+            <div
+                className="dismiss-button"
+                onClick={closeInfoPanel}
+                role="button"
+            />
             {children}
         </Element>
     );

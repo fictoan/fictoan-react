@@ -20,7 +20,6 @@ export type RowProps       = CommonAndHTMLProps<RowElementType> & RowCustomProps
 
 export const Row = ({
     sidePadding,
-    className,
     gutters,
     retainLayoutOnTabLS,
     retainLayoutOnTabPT,
@@ -29,10 +28,6 @@ export const Row = ({
     ...props
 }: RowProps) => {
     let classNames = [];
-
-    if (className) {
-        classNames.push(className);
-    }
 
     if (sidePadding) {
         classNames.push(`side-padding-${sidePadding}`);

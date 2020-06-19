@@ -1,19 +1,35 @@
 import React from "react";
 
 import { Element } from "../Element/Element";
-
-import { Text } from "../Typography/Text";
+import { CommonAndHTMLProps } from "../Element/constants";
 
 import { ProgressBarStyled } from "./ProgressBar.styled"
-import { ProgressBarProps, ProgressBarElementType } from "./constants";
+import { Text } from "../Typography/Text";
 
-export const ProgressBar = ({ className, label, value, ...props }: ProgressBarProps) => {
 
-    const classNames = [ className ];
+export interface ProgressBarCustomProps {
+    isThin ? : boolean;
+}
+
+export type ProgressBarElementType = HTMLProgressElement;
+export type ProgressBarProps       = CommonAndHTMLProps<ProgressBarElementType> & ProgressBarCustomProps;
+
+export const ProgressBar = ({
+    label,
+    value,
+    isThin,
+    ...props
+}: ProgressBarProps) => {
+    let classNames = [];
+
+    if (isThin) {
+        classNames.push("is-thin");
+    }
 
     return (
         <div>
             <Text className="progress-label">{label}</Text>
+            <Text className="progress-value">{value}</Text>
             <Element<ProgressBarElementType>
                 as={ProgressBarStyled}
                 classNames={classNames}

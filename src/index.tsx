@@ -56,7 +56,7 @@ import { CodeBlock } from "./components/CodeBlock/CodeBlock";
 import { ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
 import { ThemeType, ThemeProps } from "./components/Element/constants";
 
-import { baseColors } from "./constants/baseColors";
+import { baseColors } from "./styles/BaseColors";
 
 export {
     Element,

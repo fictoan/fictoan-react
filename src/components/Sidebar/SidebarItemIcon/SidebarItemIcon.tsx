@@ -15,14 +15,9 @@ export type SidebarItemIconProps       = CommonAndHTMLProps<SidebarItemIconEleme
 
 export const SidebarItemIcon = ({
     iconType,
-    className,
     ...props
 }: SidebarItemIconProps) => {
     let classNames = [];
-
-    if (className) {
-        classNames.push(className);
-    }
 
     if (iconType) {
         classNames.push(`icon-${iconType}`);

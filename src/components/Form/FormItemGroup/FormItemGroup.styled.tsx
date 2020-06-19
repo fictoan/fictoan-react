@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import { FormItemStyled } from "../FormItem/FormItem.styled";
 
+
 export const FormItemGroupStyled = styled.div`
     display        : flex;
     flex-direction : row;
@@ -44,4 +45,4 @@ export const FormItemGroupStyled = styled.div`
 
     /* .ff-input-group > .ff-form-unit, */
     /* .ff-form > .ff-input-group:last-of-type:not(:only-of-type) { margin-bottom : 0; } */
-`
+`;

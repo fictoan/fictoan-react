@@ -19,14 +19,9 @@ export const SidebarItemText = ({
     linkText,
     weight,
     size,
-    className,
     ...props
 }: SidebarItemTextProps) => {
     let classNames = [];
-
-    if (className) {
-        classNames.push(className);
-    }
 
     if (weight) {
         classNames.push(`weight-${weight}`);

@@ -15,14 +15,9 @@ export type SidebarWrapperProps       = CommonAndHTMLProps<SidebarWrapperElement
 
 export const SidebarWrapper = ({
     collapsed,
-    className,
     ...props
 }: SidebarWrapperProps) => {
     let classNames = [];
-
-    if (className) {
-        classNames.push(className);
-    }
 
     if (collapsed) {
         classNames.push("collapsed");

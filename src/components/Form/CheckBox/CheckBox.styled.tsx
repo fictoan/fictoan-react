@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { baseColors } from "../../../constants/baseColors";
+import { baseColors } from "../../../styles/BaseColors";
 import { mainColors } from "../../../styles/theme";
 
 /*  COMMON STYLES  ========================================================  */

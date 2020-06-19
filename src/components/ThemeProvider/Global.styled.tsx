@@ -6,8 +6,6 @@ import { ColorsStyled } from "./Colors.styled";
 import { TextStyled } from "../Typography/Typography.styled";
 import { CodeStyled } from "../CodeBlock/Code.styled";
 
-import { GlobalStyledProps } from "./constants";
-
 export const GlobalStyled = createGlobalStyle`
     ${ NormalizeStyled }
     ${ ResetStyled }
@@ -317,4 +315,4 @@ export const GlobalStyled = createGlobalStyle`
     .icon-medium { width : 32px; }
     .icon-large  { width : 48px; }
     .icon-huge   { width : 64px; }
-`
+`;

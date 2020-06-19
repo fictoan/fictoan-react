@@ -1,10 +1,14 @@
-import React, { PureComponent } from "react";
+import React from "react";
 
 import { Element } from "../../Element/Element";
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
+import { BaseInputComponentProps } from "../BaseInputComponent/constants";
 
 import { CheckBoxStyled } from "./CheckBox.styled";
-import { CheckboxProps, CheckboxElementType } from "./constants";
+
+
+export type CheckboxElementType = HTMLInputElement;
+export type CheckboxProps       = BaseInputComponentProps<CheckboxElementType>;
 
 export const CheckBox = ({...props}: CheckboxProps) => {
     return (

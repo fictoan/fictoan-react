@@ -1,6 +1,6 @@
 import { lighten } from "polished";
 
-import { baseColors } from "../constants/baseColors";
+import { baseColors } from "./BaseColors";
 
 
 export const mainColors = {
@@ -188,7 +188,6 @@ export const RFTheme = {
                 text   : baseColors.white,
             },
             isLoading : {
-                bg            : mainColors.hue,
                 spinnerBorder : baseColors.white
             }
         },
@@ -210,7 +209,6 @@ export const RFTheme = {
                 text   : mainColors.hue,
             },
             isLoading : {
-                bg            : baseColors.white,
                 spinnerBorder : mainColors.hue,
             }
         }
@@ -263,7 +261,7 @@ export const RFTheme = {
             onFocus : {
                 fill : mainColors.hue,
             },
-            isValid: {
+            isValid : {
                 bg     : baseColors.grey50,
                 border : baseColors.red30,
             }
@@ -416,7 +414,6 @@ export const RFTheme = {
 
     //  PROGRESS BAR  /////////////////////////////////////////////////////////
     progressBar : {
-        height : 8,
         bg     : baseColors.slate20,
         fill   : mainColors.hue
     }

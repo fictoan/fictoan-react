@@ -1,7 +1,8 @@
 import React from "react";
 
 import { InputField } from "./InputField";
-import { InputFieldProps } from "./constants";
+import { InputFieldProps } from "./InputField";
+
 
 export const FileUpload = ({...props}: InputFieldProps) => {
     return (

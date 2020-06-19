@@ -8,7 +8,7 @@ export const RadioGroup = ({ options, ...props }: RadioGroupProps) => {
     return (
         <Element as="div">
             {
-                options.map((option, i) => {
+                options.map((option: any, i: any) => {
                     return (
                         <RadioButton key={i} {...props} {...option} />
                     );

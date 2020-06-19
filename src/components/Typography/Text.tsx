@@ -23,14 +23,9 @@ export const Text = ({
     isSerif,
     isMono,
     align,
-    className,
     ...props
 }: TextProps) => {
     let classNames = [];
-
-    if (className) {
-        classNames.push(className);
-    }
 
     if (weight) {
         classNames.push(`weight-${weight}`);

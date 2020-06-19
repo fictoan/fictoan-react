@@ -3,7 +3,7 @@ import React, { SyntheticEvent } from "react";
 import { Element } from "../../Element/Element";
 import { CommonAndHTMLProps } from "../../Element/constants";
 
-import { NotificationsItemStyled } from "./Notifications.styled"
+import { NotificationsItemStyled } from "./NotificationItem.styled";
 
 
 export interface NotificationItemCustomProps {
@@ -19,15 +19,10 @@ export const NotificationItem = ({
     type,
     children,
     isDismissible,
-    className,
     onCloseButtonClick,
     ...props
 }: NotificationItemProps) => {
     let classNames = [];
-
-    if (className) {
-        classNames.push(className);
-    }
 
     if (type) {
         classNames.push(type);

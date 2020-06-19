@@ -17,14 +17,9 @@ export type NotificationsWrapperProps       = CommonAndHTMLProps<NotificationsWr
 export const NotificationsWrapper = ({
     position,
     anchor,
-    className,
     ...props
 }: NotificationsWrapperProps) => {
     let classNames = [];
-
-    if (className) {
-        classNames.push(className);
-    }
 
     if (position) {
         classNames.push(position);

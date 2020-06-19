@@ -1,9 +1,10 @@
 import styled, { css } from "styled-components";
 
-import { FormItemProps } from "../constants";
+import { FormItemProps } from "../FormItem/FormItem";
 import { InputFieldStyled } from "../InputField/InputField.styled";
 
 import { mainColors } from "../../../styles/theme";
+
 
 export const FormItemStyled = styled.div`
     display        : flex;
@@ -67,4 +68,4 @@ export const FormItemStyled = styled.div`
     }
 
     label > span::before { content : "\\0000a0\\2022\\0000a0"; }
-`
+`;

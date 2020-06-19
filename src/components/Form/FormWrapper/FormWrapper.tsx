@@ -1,17 +1,27 @@
-import React, { PureComponent } from "react";
+import React from "react";
 
 import { Element } from "../../Element/Element";
+import { CommonAndHTMLProps } from "../../Element/constants";
 
 import { FormWrapperStyled } from "./FormWrapper.styled";
-import { FormWrapperProps, FormWrapperElementType } from "../constants"
 
-export const FormWrapper = ({ className, spacing, ...props }: FormWrapperProps) => {
-    const classNames = [ className ];
+
+export interface FormWrapperCustomProps {
+    spacing ? : "none" | "fixed" | "tiny" | "small" | "medium" | "large" | "huge";
+}
+
+export type FormWrapperElementType = HTMLFormElement;
+export type FormWrapperProps       = CommonAndHTMLProps<FormWrapperElementType> & FormWrapperCustomProps;
+
+
+export const FormWrapper = ({
+    spacing,
+    ...props
+}: FormWrapperProps) => {
+    let classNames = [];
 
     if (spacing) {
         classNames.push(`spacing-${spacing}`);
-    } else {
-        classNames.push(`spacing-small`);
     }
 
     return (
@@ -21,4 +31,8 @@ export const FormWrapper = ({ className, spacing, ...props }: FormWrapperProps) 
             {...props}
         />
     );
+}
+
+FormWrapper.defaultProps = {
+    spacing : "small"
 }

@@ -23,14 +23,9 @@ export const Portion = ({
     tabLSSpan,
     tabPTSpan,
     isHorizontal,
-    className,
     ...props
 }: PortionProps) => {
     let classNames = [];
-
-    if (className) {
-        classNames.push(className);
-    }
 
     if (desktopSpan || tabLSSpan || tabPTSpan || mobileSpan) {
         if (desktopSpan) {

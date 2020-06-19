@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { baseColors } from "../../../constants/baseColors";
+import { baseColors } from "../../../styles/BaseColors";
 import { mainColors } from "../../../styles/theme";
 
 export const RadioButtonStyled = styled.div`

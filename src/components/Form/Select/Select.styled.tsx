@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import { SelectProps } from "./constants";
 
+
 export const SelectWrapperStyled = styled.div`
     position    : relative;
     width       : max-content;
@@ -29,7 +30,6 @@ export const SelectStyled = styled.select`
     padding          : 12px 48px 12px 8px;
     font-family      : ${(props: SelectProps) => props.theme.text.font.sans};
     background-color : ${(props: SelectProps) => props.theme.input.default.bg};
-    border           : none;
     border-radius    : 4px;
     align-items      : center;
     border           : 1px solid ${(props: SelectProps) => props.theme.input.default.border};

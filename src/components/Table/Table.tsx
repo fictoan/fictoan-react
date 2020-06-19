@@ -21,14 +21,9 @@ export const Table = ({
     isStriped,
     isHoverable,
     isFullWidth,
-    className,
     ...props
 }: TableProps) => {
     let classNames = [];
-
-    if (className) {
-        classNames.push(className);
-    }
 
     if (bordersFor) {
         classNames.push(`bordered-${bordersFor}`);

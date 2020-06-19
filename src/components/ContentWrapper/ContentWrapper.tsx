@@ -9,7 +9,6 @@ import { ContentWrapperStyled } from "./ContentWrapper.styled";
 export type ContentWrapperElementType = HTMLDivElement;
 export type ContentWrapperProps       = CommonAndHTMLProps<ContentWrapperElementType>;
 
-
 export const ContentWrapper = ({...props}: ContentWrapperProps) => {
     return (
         <Element<ContentWrapperElementType>

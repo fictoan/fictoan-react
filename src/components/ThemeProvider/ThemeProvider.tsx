@@ -2,14 +2,22 @@ import React from "react";
 import { ThemeProvider as TP } from "styled-components";
 import merge from "lodash/merge";
 
-import { RFTheme } from "../../styles/theme";
 import { Element } from "../Element/Element";
+import { CommonAndHTMLProps, ThemeProps } from "../Element/constants";
 
-import { ThemeProviderProps, ThemeProviderElementType } from "./constants";
+import { RFTheme } from "../../styles/theme";
 import { GlobalStyled } from "./Global.styled";
 
-export const ThemeProvider = ({ theme, children, ...props }: ThemeProviderProps) => {
-    // console.log(merge(RFTheme, theme));
+
+export type ThemeProviderElementType = HTMLDivElement;
+export interface GlobalStyledProps extends ThemeProps { }
+export interface ThemeProviderProps extends CommonAndHTMLProps<ThemeProviderElementType> { }
+
+export const ThemeProvider = ({
+    theme,
+    children,
+    ...props
+}: ThemeProviderProps) => {
     return (
         <Element<ThemeProviderElementType>
             as={TP}

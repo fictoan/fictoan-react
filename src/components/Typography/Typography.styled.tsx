@@ -1,6 +1,7 @@
 import { css } from "styled-components";
 
-import { GlobalStyledProps } from "../ThemeProvider/constants";
+import { GlobalStyledProps } from "../ThemeProvider/ThemeProvider";
+
 
 export const TextStyled = css`
     body {

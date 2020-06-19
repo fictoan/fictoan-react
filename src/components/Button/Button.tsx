@@ -27,14 +27,9 @@ export const Button = ({
    kind,
    isLoading,
    hasDelete,
-   className,
    ...props
 }: ButtonProps) => {
     let classNames = [];
-
-    if (className) {
-        classNames.push(className);
-    }
 
     if (kind) {
         classNames.push(kind);

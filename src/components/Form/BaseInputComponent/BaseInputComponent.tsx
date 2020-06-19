@@ -1,11 +1,11 @@
 import React from "react";
 
 import { Element } from "../../Element/Element";
-import { BaseInputComponentWithIconProps } from "./constants";
 
 import { InputLabel } from "../InputLabel/InputLabel";
 import { FormItem } from "../FormItem/FormItem";
 import { InputFieldElementType } from "../InputField/constants";
+import { BaseInputComponentWithIconProps } from "./constants";
 
 export const BaseInputComponent = <K extends InputFieldElementType>({
     as: Component,

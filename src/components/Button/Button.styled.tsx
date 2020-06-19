@@ -41,8 +41,7 @@ export const ButtonStyled = styled.button`
             border           : 1px solid ${(props: ButtonProps) => props.theme.button.primary.isActive.border};
         }
 
-        .with-loader::after {
-            background-color   : ${(props: ButtonProps) => props.theme.button.primary.isLoading.bg};
+        &.with-loader::after {
             border             : 3px solid ${(props: ButtonProps) => props.theme.button.primary.isLoading.spinnerBorder};
             border-top-color   : transparent;
             border-right-color : transparent;
@@ -68,8 +67,7 @@ export const ButtonStyled = styled.button`
             border           : 1px solid ${(props: ButtonProps) => props.theme.button.secondary.isActive.border}
         }
 
-        .with-loader::after {
-            background-color   : ${(props: ButtonProps) => props.theme.button.secondary.isLoading.bg};
+        &.with-loader::after {
             border             : 3px solid ${(props: ButtonProps) => props.theme.button.secondary.isLoading.spinnerBorder};
             border-top-color   : transparent;
             border-right-color : transparent;
@@ -102,56 +100,6 @@ export const ButtonStyled = styled.button`
     &[class*="border"] { border-width : 1px; }
     &.border-none      { border-width : 0 !important; }
 
-    &.with-loader {
-        color          : transparent !important;
-        box-shadow     : none;
-        user-select    : none;
-        pointer-events : none;
-    }
-
-    &.with-loader::after {
-        display            : block;
-        position           : absolute;
-        margin             : auto;
-        left               : 0;
-        top                : 0;
-        bottom             : 0;
-        right              : 0;
-        height             : 16px;
-        width              : 16px;
-        border-radius      : 50%;
-        border-top-color   : transparent;
-        border-right-color : transparent;
-        content            : "";
-        -webkit-animation  : spinner 400ms infinite linear;
-        animation          : spinner 400ms infinite linear;
-    }
-
-    &.size-tiny.with-loader::after,
-    &.size-small.with-loader::after {
-        height             : 8px;
-        width              : 8px;
-    }
-
-    /*  Animation for loader  */
-    @-webkit-keyframes spinner {
-        from {
-            -webkit-transform : rotate(0deg);
-        }
-        to {
-            -webkit-transform : rotate(359deg);
-        }
-    }
-
-    @keyframes spinner {
-        from {
-            transform : rotate(0deg);
-        }
-        to {
-            transform : rotate(359deg);
-        }
-    }
-
     &[disabled] {
         box-shadow     : none;
         user-select    : none;
@@ -183,6 +131,56 @@ export const ButtonStyled = styled.button`
 
     &.button-plain { background : transparent; }
 
+    //  BUTTON WITH SPINNER  //////////////////////////////////////////////////
+    &.with-loader {
+        color          : transparent !important;
+        box-shadow     : none;
+        user-select    : none;
+        pointer-events : none;
+    }
+
+    &.with-loader::after {
+        display             : block;
+        position            : absolute;
+        margin              : auto;
+        left                : 0;
+        top                 : 0;
+        bottom              : 0;
+        right               : 0;
+        height              : 16px;
+        width               : 16px;
+        border-radius       : 50%;
+        content             : "";
+        -webkit-animation   : spinner 0.4s infinite linear;
+        animation           : spinner 0.4s infinite linear;
+    }
+
+    &.size-tiny.with-loader::after,
+    &.size-small.with-loader::after {
+        height : 8px;
+        width  : 8px;
+    }
+
+    /*  Animation for loader  */
+    @-webkit-keyframes spinner {
+        from {
+            -webkit-transform : rotate(0deg);
+        }
+        to {
+            -webkit-transform : rotate(359deg);
+        }
+    }
+
+    @keyframes spinner {
+        from {
+            transform : rotate(0deg);
+        }
+        to {
+            transform : rotate(359deg);
+        }
+    }
+
+    //  BUTTON WITH DELETE  ///////////////////////////////////////////////////
     &.with-delete::after {
         display     : inline-flex;
         position    : absolute;
@@ -207,4 +205,4 @@ export const ButtonStyled = styled.button`
         font-size : 24px;
         right     : 16px;
     }
-`
+`;

@@ -3,6 +3,7 @@ import React from "react";
 import { Element } from "../Element/Element";
 import { CommonAndHTMLProps } from "../Element/constants";
 
+
 export interface HeadingCustomProps {
     as        : "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
     isSans  ? : boolean;
@@ -22,14 +23,9 @@ export const Heading = ({
     isSerif,
     isMono,
     align,
-    className,
     ...props
 }: HeadingProps) => {
     let classNames = [];
-
-    if (className) {
-        classNames.push(className);
-    }
 
     if (weight) {
         classNames.push(`weight-${weight}`);

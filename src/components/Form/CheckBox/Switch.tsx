@@ -1,10 +1,15 @@
 import React from "react";
 
 import { Element } from "../../Element/Element";
+
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
+import { BaseInputComponentProps } from "../BaseInputComponent/constants";
 
 import { SwitchStyled } from "./CheckBox.styled";
-import { SwitchProps, SwitchElementType } from "./constants";
+
+
+export type SwitchElementType = HTMLInputElement;
+export type SwitchProps       = BaseInputComponentProps<SwitchElementType>;
 
 export const Switch = ({...props}: SwitchProps) => {
     return (
