@@ -8,7 +8,9 @@ import { Text } from "../Typography/Text";
 
 
 export interface ProgressBarCustomProps {
-    isThin ? : boolean;
+    isThin  ? : boolean;
+    barBg   ? : string;
+    barFill ? : string;
 }
 
 export type ProgressBarElementType = HTMLProgressElement;
