@@ -33,13 +33,16 @@ export const ProgressBar = ({
 
     return (
         <div>
-            <Element<ProgressBarMetaProps>
-              as={ProgressBarMetaStyled}
-              { ...props }
-            >
-                <Text>{label}</Text>
-                <Text>{value}</Text>
-            </Element>
+            {
+                label &&
+                <Element<ProgressBarMetaProps>
+                    as={ProgressBarMetaStyled}
+                    { ...props }
+                >
+                    <Text>{label}</Text>
+                    <Text>{value}</Text>
+                </Element>
+            }
             <Element<ProgressBarElementType>
                 as={ProgressBarStyled}
                 classNames={classNames}
