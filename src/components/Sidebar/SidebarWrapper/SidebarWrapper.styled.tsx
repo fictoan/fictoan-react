@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { lighten } from "polished";
 
 import { SidebarWrapperProps } from "./SidebarWrapper";
+import { SidebarItemIconProps } from "../SidebarItemIcon/SidebarItemIcon";
 
 import { SidebarHeaderStyled } from "../SidebarHeader/SidebarHeader.styled";
 import { SidebarItemStyled } from "../SidebarItem/SidebarItem.styled"
@@ -106,6 +107,16 @@ export const SidebarWrapperStyled = styled.aside`
             border-top-right-radius    : 4px;
             border-bottom-right-radius : 4px;
             background-color           : ${(props: SidebarWrapperProps) => props.theme.sidebar.links.isSelected.border};
+        }
+        
+        & .icon-stroked svg {
+            fill         : none;
+            stroke       : ${(props: SidebarItemIconProps) => props.theme.sidebar.icons.stroked.isActive.line};
+        }
+
+        & .icon-filled svg {
+            stroke : none;
+            fill   : ${(props: SidebarItemIconProps) => props.theme.sidebar.icons.filled.isActive.bg};
         }
 
         p { color : ${(props : SidebarWrapperProps) => props.theme.sidebar.links.isSelected.text}; }

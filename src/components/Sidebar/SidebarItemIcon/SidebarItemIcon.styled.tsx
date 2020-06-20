@@ -22,11 +22,6 @@ export const SidebarItemIconStyled = styled.div`
         stroke       : ${(props: SidebarItemIconProps) => props.theme.sidebar.icons.stroked.onHover.line};
     }
 
-    &:active.icon-stroked svg {
-        fill         : none;
-        stroke       : ${(props: SidebarItemIconProps) => props.theme.sidebar.icons.stroked.isActive.line};
-    }
-
     // FILL ICON  =============================================================
     &.icon-filled svg {
         stroke : none;
@@ -36,10 +31,5 @@ export const SidebarItemIconStyled = styled.div`
     &:hover.icon-filled svg {
         stroke : none;
         fill   : ${(props: SidebarItemIconProps) => props.theme.sidebar.icons.filled.onHover.bg};
-    }
-
-    &:active.icon-filled svg {
-        stroke : none;
-        fill   : ${(props: SidebarItemIconProps) => props.theme.sidebar.icons.filled.isActive.bg};
     }
 `;
