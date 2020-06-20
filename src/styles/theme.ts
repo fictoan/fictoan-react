@@ -415,6 +415,8 @@ export const RFTheme = {
     //  PROGRESS BAR  /////////////////////////////////////////////////////////
     progressBar : {
         bg     : baseColors.slate20,
-        fill   : mainColors.hue
+        fill   : mainColors.hue,
+        label  : mainColors.shade,
+        value  : `${lighten(0.24, mainColors.shade)}`,
     }
 }

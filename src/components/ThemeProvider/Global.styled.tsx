@@ -15,7 +15,7 @@ export const GlobalStyled = createGlobalStyle`
     ${ TextStyled }
 
     ${ CodeStyled }
-
+    
     /* Layout */
     html,
     body {
