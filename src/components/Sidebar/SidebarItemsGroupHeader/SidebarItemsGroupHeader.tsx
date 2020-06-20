@@ -16,4 +16,4 @@ export const SidebarItemsGroupHeader = ({ ...props }: SidebarItemsGroupHeaderPro
             {...props}
         />
     );
-};
+}

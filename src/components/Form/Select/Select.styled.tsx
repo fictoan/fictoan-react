@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { SelectProps } from "./constants";
+import { SelectProps } from "./Select";
 
 
 export const SelectWrapperStyled = styled.div`
@@ -12,7 +12,7 @@ export const SelectWrapperStyled = styled.div`
         position       : absolute;
         display        : block;
         content        : "\\2303";
-        top            : calc(50% - 18px);
+        top            : 6px;
         right          : 12px;
         font-size      : 24px;
         color          : ${(props: SelectProps) => props.theme.input.select.chevron};

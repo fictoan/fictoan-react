@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 
 import { ElementProps }    from "../../Element/constants";
-import { InputLabelCustomProps } from "../InputLabel/constants";
+import { InputLabelCustomProps } from "../InputLabel/InputLabel";
 
 export interface InputIconProps {
     iconLeft  ? : ReactElement;

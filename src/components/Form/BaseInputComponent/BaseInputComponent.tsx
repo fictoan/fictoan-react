@@ -4,7 +4,7 @@ import { Element } from "../../Element/Element";
 
 import { InputLabel } from "../InputLabel/InputLabel";
 import { FormItem } from "../FormItem/FormItem";
-import { InputFieldElementType } from "../InputField/constants";
+import { InputFieldElementType } from "../InputField/InputField";
 import { BaseInputComponentWithIconProps } from "./constants";
 
 export const BaseInputComponent = <K extends InputFieldElementType>({

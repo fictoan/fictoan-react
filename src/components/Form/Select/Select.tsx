@@ -23,7 +23,10 @@ interface SelectCustomProps {
 export type OptionProps = CommonAndHTMLProps<SelectElementType>;
 export type SelectProps = CommonAndHTMLProps<SelectElementType> & SelectCustomProps;
 
-const Option = ({ name, ...props }: OptionProps) => {
+const Option = ({
+    name,
+    ...props
+}: OptionProps) => {
     return (
         <Element<OptionElementType>
             as="option"

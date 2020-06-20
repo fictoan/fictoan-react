@@ -44,14 +44,14 @@ export const SidebarWrapperStyled = styled.aside`
 
         ${SidebarHeaderStyled} {
             .header-logo { display : none; }
-    
+
             .header-icon {
                 display : block;
                 width   : 32px;
                 height  : 32px;
             }
         }
-        
+
         ${SidebarItemTextStyled} {
             display  : none;
             position : absolute;
@@ -71,7 +71,7 @@ export const SidebarWrapperStyled = styled.aside`
             box-shadow       : 0 4px 16px -2px rgba(0, 0, 0, 0.24);
         }
 
-        ${SidebarItemsGroupStyled} > ${SidebarItemsGroupHeaderStyled}::after { display : none; }
+        ${SidebarItemsGroupHeaderStyled}::after { display : none; }
 
         ${SidebarFooterStyled} {
             width        : 48px;
