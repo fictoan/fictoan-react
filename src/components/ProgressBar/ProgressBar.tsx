@@ -11,6 +11,7 @@ export interface ProgressBarCustomProps {
     isThin  ? : boolean;
     barBg   ? : string;
     barFill ? : string;
+    unit    ? : string;
 }
 
 export type ProgressBarElementType = HTMLProgressElement;
@@ -30,8 +31,10 @@ export const ProgressBar = ({
 
     return (
         <div>
-            <Text className="progress-label">{label}</Text>
-            <Text className="progress-value">{value}</Text>
+            <Element as="div" className="progress-meta">
+                <Text>{label}</Text>
+                <Text>{value}</Text>
+            </Element>
             <Element<ProgressBarElementType>
                 as={ProgressBarStyled}
                 classNames={classNames}
