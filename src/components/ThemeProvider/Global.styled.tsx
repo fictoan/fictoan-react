@@ -5,7 +5,6 @@ import { ResetStyled } from "./Reset.styled";
 import { ColorsStyled } from "./Colors.styled";
 import { TextStyled } from "../Typography/Typography.styled";
 import { CodeStyled } from "../CodeBlock/Code.styled";
-import { ProgressBarMeta } from "../ProgressBar/ProgressBar.styled";
 
 export const GlobalStyled = createGlobalStyle`
     ${ NormalizeStyled }
@@ -17,8 +16,6 @@ export const GlobalStyled = createGlobalStyle`
 
     ${ CodeStyled }
     
-    ${ ProgressBarMeta }
-
     /* Layout */
     html,
     body {

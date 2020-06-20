@@ -11,31 +11,28 @@ const convertToFictoanColor = (colorString:string) => {
     return baseColors.hasOwnProperty(c) ? baseColors[c] : null
 }
 
+export const ProgressBarMetaStyled = styled.div`
+    display         : flex;
+    align-items     : baseline;
+    justify-content : space-between;
+    margin-bottom   : 8px;
 
-export const ProgressBarMeta = css`
-    .progress-meta {
-        display         : flex;
-        align-items     : baseline;
-        justify-content : space-between;
-        margin-bottom   : 8px;
+    p:first-of-type {
+        display       : inline-flex;
+        font-weight   : bold;
+        margin        : 0;
+        color         : ${(props: ProgressBarProps) => props.theme.progressBar.label};
+    }
 
-        p:first-of-type {
-            display       : inline-flex;
-            font-weight   : bold;
-            margin        : 0;
-            color         : ${(props: ProgressBarProps) => props.theme.progressBar.label};
-        }
+    p:last-of-type {
+        display    : inline-flex;
+        text-align : right;
+        margin     : 0;
+        color      : ${(props: ProgressBarProps) => props.theme.progressBar.value};
 
-        p:last-of-type {
-            display    : inline-flex;
-            text-align : right;
-            margin     : 0;
-            color      : ${(props: ProgressBarProps) => props.theme.progressBar.value};
-
-            &::after {
-                display : inline-flex;
-                content : "${(props: ProgressBarProps) => props.unit}";
-            }
+        &::after {
+            display : inline-flex;
+            content : "${(props: ProgressBarProps) => props.unit}";
         }
     }
 `;

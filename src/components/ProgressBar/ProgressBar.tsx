@@ -3,7 +3,7 @@ import React from "react";
 import { Element } from "../Element/Element";
 import { CommonAndHTMLProps } from "../Element/constants";
 
-import { ProgressBarStyled } from "./ProgressBar.styled"
+import { ProgressBarStyled, ProgressBarMetaStyled } from "./ProgressBar.styled"
 import { Text } from "../Typography/Text";
 
 
@@ -16,6 +16,8 @@ export interface ProgressBarCustomProps {
 
 export type ProgressBarElementType = HTMLProgressElement;
 export type ProgressBarProps       = CommonAndHTMLProps<ProgressBarElementType> & ProgressBarCustomProps;
+
+export type ProgressBarMetaProps = CommonAndHTMLProps<HTMLDivElement> & ProgressBarCustomProps;
 
 export const ProgressBar = ({
     label,
@@ -31,7 +33,10 @@ export const ProgressBar = ({
 
     return (
         <div>
-            <Element as="div" className="progress-meta">
+            <Element<ProgressBarMetaProps>
+              as={ProgressBarMetaStyled}
+              { ...props }
+            >
                 <Text>{label}</Text>
                 <Text>{value}</Text>
             </Element>
