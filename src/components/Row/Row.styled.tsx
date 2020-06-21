@@ -2,20 +2,21 @@ import styled from "styled-components";
 
 import { PortionStyled } from "../Portion/Portion.styled";
 
+
 export const RowStyled = styled.div`
     display               : grid;
     width                 : 100%;
     grid-template-columns : repeat(24, 1fr);
     margin-bottom         : 4vh;
 
-    &.huge-gutters   { grid-gap : 32px; }
-    &.large-gutters  { grid-gap : 24px; }
-    &.medium-gutters { grid-gap : 16px; }
+    &.no-gutters     { grid-gap :    0; }
+    &.nano-gutters   { grid-gap :  2px; }
+    &.micro-gutters  { grid-gap :  4px; }
+    &.tiny-gutters   { grid-gap :  8px; }
     &.small-gutters  { grid-gap : 12px; }
-    &.tiny-gutters   { grid-gap : 8px; }
-    &.micro-gutters  { grid-gap : 4px; }
-    &.nano-gutters   { grid-gap : 2px; }
-    &.gutters-none   { grid-gap : 0; }
+    &.medium-gutters { grid-gap : 16px; }
+    &.large-gutters  { grid-gap : 24px; }
+    &.huge-gutters   { grid-gap : 32px; }
 
     @media all and (max-width : 900px) {
         &.huge-gutters,

@@ -8,7 +8,7 @@ import { RowStyled } from "./Row.styled";
 
 export interface RowCustomProps {
     sidePadding          ? : "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
-    gutters              ? : "none" | "tiny" | "small" | "medium" | "large" | "huge";
+    gutters              ? : "none" | "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
     retainLayoutOnTabLS  ? : boolean;
     retainLayoutOnTabPT  ? : boolean;
     retainLayoutOnMobile ? : boolean;
@@ -34,7 +34,13 @@ export const Row = ({
     }
 
     if (gutters) {
-        classNames.push(`${gutters}-gutters`);
+        classNames.push (
+            gutters === "none"
+                ?
+                "no-gutters"
+                :
+                (`${gutters}-gutters`)
+        )
     }
 
     if (retainLayoutOnTabLS) {
