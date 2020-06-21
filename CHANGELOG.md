@@ -1,3 +1,6 @@
+# v0.27.0
+- Add props for ProgressBar to display a label and value.
+
 # v0.23.8
 - Remove all SCSS files.
 - Remove unused svg icon.
