@@ -16,8 +16,7 @@ export interface ProgressBarCustomProps {
 
 export type ProgressBarElementType = HTMLProgressElement;
 export type ProgressBarProps       = CommonAndHTMLProps<ProgressBarElementType> & ProgressBarCustomProps;
-
-export type ProgressBarMetaProps = CommonAndHTMLProps<HTMLDivElement> & ProgressBarCustomProps;
+export type ProgressBarMetaProps   = CommonAndHTMLProps<HTMLDivElement> & ProgressBarCustomProps;
 
 export const ProgressBar = ({
     label,

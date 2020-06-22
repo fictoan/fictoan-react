@@ -5,7 +5,7 @@ import { GlobalStyledProps } from "../ThemeProvider/ThemeProvider";
 
 export const TextStyled = css`
     body {
-        font-size        : ${(props: GlobalStyledProps) => props.theme.text.size.default}em;
+        font-size        : ${(props: GlobalStyledProps) => props.theme.text.paras.size}em;
         line-height      : ${(props: GlobalStyledProps) => props.theme.text.paras.lineHeight};
         font-family      : ${(props: GlobalStyledProps) => props.theme.text.font.sans};
         word-wrap        : normal;
@@ -21,12 +21,12 @@ export const TextStyled = css`
         margin      : 0;
     }
 
-    h1 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 8)}em; }
-    h2 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 6)}em; }
-    h3 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 4)}em; }
-    h4 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 3)}em; }
-    h5 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 2)}em; }
-    h6 { font-size : ${(props: GlobalStyledProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 1)}em; }
+    h1 { font-size : ${(props: GlobalStyledProps) => props.theme.text.paras.size * Math.pow(props.theme.text.headings.multiplier, 8)}em; }
+    h2 { font-size : ${(props: GlobalStyledProps) => props.theme.text.paras.size * Math.pow(props.theme.text.headings.multiplier, 6)}em; }
+    h3 { font-size : ${(props: GlobalStyledProps) => props.theme.text.paras.size * Math.pow(props.theme.text.headings.multiplier, 4)}em; }
+    h4 { font-size : ${(props: GlobalStyledProps) => props.theme.text.paras.size * Math.pow(props.theme.text.headings.multiplier, 3)}em; }
+    h5 { font-size : ${(props: GlobalStyledProps) => props.theme.text.paras.size * Math.pow(props.theme.text.headings.multiplier, 2)}em; }
+    h6 { font-size : ${(props: GlobalStyledProps) => props.theme.text.paras.size * Math.pow(props.theme.text.headings.multiplier, 1)}em; }
 
     @media all and (max-width : 720px) {
         h1 { font-size : 32px; }
@@ -40,7 +40,7 @@ export const TextStyled = css`
         h1, h2, h3, h4, h5, h6 { word-wrap : break-word; }
     }
 
-    p { color  : ${(props: GlobalStyledProps) => props.theme.text.paras.color}; }
+    p { color : ${(props: GlobalStyledProps) => props.theme.text.paras.color}; }
 
     a {
         cursor      : pointer;
@@ -64,6 +64,8 @@ export const TextStyled = css`
     .weight-800 { font-weight : 800; }
     .weight-900 { font-weight : 900; }
 
+    .text-nano   { font-size :  48%; }
+    .text-micro  { font-size :  64%; }
     .text-tiny   { font-size :  72%; }
     .text-small  { font-size :  90%; }
     .text-medium { font-size : 100%; }

@@ -28,19 +28,16 @@ export const RFTheme = {
             mono  : "monospace",
         },
 
-        size : {
-            default    : 1,
-            multiplier : 1.16,
-        },
-
         headings : {
             font       : "sans-serif",
             color      : mainColors.shade,
             weight     : 600,
+            multiplier : 1.16,
             lineHeight : 1.24
         },
 
         paras : {
+            size       : 1,
             color      : baseColors.grey,
             weight     : 400,
             lineHeight : 1.64,
