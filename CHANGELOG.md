@@ -1,3 +1,6 @@
+# v0.28.4
+- Add `nano` and `micro` sizing for Text.
+
 # v0.28.3
 - Tweak links theme styling
   -  `links.default.text` is now `links.default.color`.

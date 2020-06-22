@@ -9,7 +9,7 @@ export interface TextCustomProps {
     isSerif ? : boolean;
     isMono  ? : boolean;
     weight  ? : "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
-    size    ? : "tiny" | "small" | "medium" | "large" | "huge";
+    size    ? : "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
     align   ? : "left" | "centre" | "center" | "right";
 }
 
