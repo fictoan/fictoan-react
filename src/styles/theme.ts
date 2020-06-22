@@ -28,14 +28,6 @@ export const RFTheme = {
             mono  : "monospace",
         },
 
-        headings : {
-            font       : "sans-serif",
-            color      : mainColors.shade,
-            weight     : 600,
-            multiplier : 1.16,
-            lineHeight : 1.24
-        },
-
         paras : {
             size       : 1,
             color      : baseColors.grey,
@@ -43,12 +35,20 @@ export const RFTheme = {
             lineHeight : 1.64,
         },
 
+        headings : {
+            font       : "sans-serif",
+            color      : mainColors.shade,
+            weight     : 600,
+            multiplier : 1.24,
+            lineHeight : 1.24
+        },
+
         links : {
             default : {
-                text : baseColors.blue90,
+                color : baseColors.blue90,
             },
             onHover : {
-                text : baseColors.blue60
+                color : baseColors.blue60
             }
         },
 

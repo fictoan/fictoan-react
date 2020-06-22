@@ -1,3 +1,8 @@
+# v0.28.3
+- Tweak links theme styling
+  -  `links.default.text` is now `links.default.color`.
+  -  `links.onHover.text` is now `links.onHover.color`.
+
 # v0.28.2
 - Fix Textarea styling bug
 - Add `nano` and `micro` text sizes.

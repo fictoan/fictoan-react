@@ -44,13 +44,13 @@ export const TextStyled = css`
 
     a {
         cursor      : pointer;
-        color       : ${(props: GlobalStyledProps) => props.theme.text.links.default.text};
+        color       : ${(props: GlobalStyledProps) => props.theme.text.links.default.color};
         font-weight : bold;
         transition  : all 0.2s;
         width       : fit-content;
     }
 
-    a:not(.ff-button) { color : ${(props: GlobalStyledProps) => props.theme.text.links.onHover.text}; }
+    a:not(.ff-button) { color : ${(props: GlobalStyledProps) => props.theme.text.links.onHover.color}; }
 
     a:active { opacity: 0.72; }
 

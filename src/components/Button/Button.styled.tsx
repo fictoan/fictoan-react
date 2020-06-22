@@ -111,22 +111,22 @@ export const ButtonStyled = styled.button`
     /*  Different sized buttons  */
     &.size-tiny {
         padding   : 4px 8px;
-        font-size : ${(props: ButtonProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, -2)}em;
+        font-size : ${(props: ButtonProps) => props.theme.text.paras.size * Math.pow(props.theme.text.headings.multiplier, -2)}em;
     }
 
     &.size-small {
         padding   : 8px 16px;
-        font-size : ${(props: ButtonProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, -1)}em;
+        font-size : ${(props: ButtonProps) => props.theme.text.paras.size * Math.pow(props.theme.text.headings.multiplier, -1)}em;
     }
 
     &.size-large {
         padding   : 16px 32px;
-        font-size : ${(props: ButtonProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 2)}em;
+        font-size : ${(props: ButtonProps) => props.theme.text.paras.size * Math.pow(props.theme.text.headings.multiplier, 2)}em;
     }
 
     &.size-huge {
         padding   : 24px 40px;
-        font-size : ${(props: ButtonProps) => props.theme.text.size.default * Math.pow(props.theme.text.size.multiplier, 4)}em;
+        font-size : ${(props: ButtonProps) => props.theme.text.paras.size * Math.pow(props.theme.text.headings.multiplier, 4)}em;
     }
 
     &.button-plain { background : transparent; }
