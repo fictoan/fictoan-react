@@ -1,3 +1,6 @@
+# v0.28.6
+- Tweak `FormItemGroup` margin values.
+
 # v0.28.5
 - Fix `FormItem` margin bottom bug inside `FormItemGroup`. 
 

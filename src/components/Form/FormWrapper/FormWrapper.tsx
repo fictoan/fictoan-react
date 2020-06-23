@@ -7,12 +7,11 @@ import { FormWrapperStyled } from "./FormWrapper.styled";
 
 
 export interface FormWrapperCustomProps {
-    spacing ? : "none" | "fixed" | "tiny" | "small" | "medium" | "large" | "huge";
+    spacing ? : "none" | "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
 }
 
 export type FormWrapperElementType = HTMLFormElement;
 export type FormWrapperProps       = CommonAndHTMLProps<FormWrapperElementType> & FormWrapperCustomProps;
-
 
 export const FormWrapper = ({
     spacing,
