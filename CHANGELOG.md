@@ -1,3 +1,6 @@
+# v0.28.5
+- Fix `FormItem` margin bottom bug inside `FormItemGroup`. 
+
 # v0.28.4
 - Add `nano` and `micro` sizing for Text.
 
