@@ -83,6 +83,17 @@ export const ColorsStyled = css`
     .bg-yellow-20       { background-color : ${baseColors.yellow20}; }
     .bg-yellow-10       { background-color : ${baseColors.yellow10}; }
 
+    .bg-spring          { background-color : ${baseColors.spring}; }
+    .bg-spring-90       { background-color : ${baseColors.spring90}; }
+    .bg-spring-80       { background-color : ${baseColors.spring80}; }
+    .bg-spring-70       { background-color : ${baseColors.spring70}; }
+    .bg-spring-60       { background-color : ${baseColors.spring60}; }
+    .bg-spring-50       { background-color : ${baseColors.spring50}; }
+    .bg-spring-40       { background-color : ${baseColors.spring40}; }
+    .bg-spring-30       { background-color : ${baseColors.spring30}; }
+    .bg-spring-20       { background-color : ${baseColors.spring20}; }
+    .bg-spring-10       { background-color : ${baseColors.spring10}; }
+
     .bg-pistachio       { background-color : ${baseColors.pistachio}; }
     .bg-pistachio-90    { background-color : ${baseColors.pistachio90}; }
     .bg-pistachio-80    { background-color : ${baseColors.pistachio80}; }
@@ -215,6 +226,28 @@ export const ColorsStyled = css`
     .bg-crimson-20      { background-color : ${baseColors.crimson20}; }
     .bg-crimson-10      { background-color : ${baseColors.crimson10}; }
 
+    .bg-brick           { background-color : ${baseColors.brick}; }
+    .bg-brick-90        { background-color : ${baseColors.brick90}; }
+    .bg-brick-80        { background-color : ${baseColors.brick80}; }
+    .bg-brick-70        { background-color : ${baseColors.brick70}; }
+    .bg-brick-60        { background-color : ${baseColors.brick60}; }
+    .bg-brick-50        { background-color : ${baseColors.brick50}; }
+    .bg-brick-40        { background-color : ${baseColors.brick40}; }
+    .bg-brick-30        { background-color : ${baseColors.brick30}; }
+    .bg-brick-20        { background-color : ${baseColors.brick20}; }
+    .bg-brick-10        { background-color : ${baseColors.brick10}; }
+
+    .bg-sienna           { background-color : ${baseColors.sienna}; }
+    .bg-sienna-90        { background-color : ${baseColors.sienna90}; }
+    .bg-sienna-80        { background-color : ${baseColors.sienna80}; }
+    .bg-sienna-70        { background-color : ${baseColors.sienna70}; }
+    .bg-sienna-60        { background-color : ${baseColors.sienna60}; }
+    .bg-sienna-50        { background-color : ${baseColors.sienna50}; }
+    .bg-sienna-40        { background-color : ${baseColors.sienna40}; }
+    .bg-sienna-30        { background-color : ${baseColors.sienna30}; }
+    .bg-sienna-20        { background-color : ${baseColors.sienna20}; }
+    .bg-sienna-10        { background-color : ${baseColors.sienna10}; }
+
     .bg-brown           { background-color : ${baseColors.brown}; }
     .bg-brown-90        { background-color : ${baseColors.brown90}; }
     .bg-brown-80        { background-color : ${baseColors.brown80}; }
@@ -306,6 +339,17 @@ export const ColorsStyled = css`
     .text-yellow-30       { color : ${baseColors.yellow30}; }
     .text-yellow-20       { color : ${baseColors.yellow20}; }
     .text-yellow-10       { color : ${baseColors.yellow10}; }
+
+    .text-spring          { color : ${baseColors.spring}; }
+    .text-spring-90       { color : ${baseColors.spring90}; }
+    .text-spring-80       { color : ${baseColors.spring80}; }
+    .text-spring-70       { color : ${baseColors.spring70}; }
+    .text-spring-60       { color : ${baseColors.spring60}; }
+    .text-spring-50       { color : ${baseColors.spring50}; }
+    .text-spring-40       { color : ${baseColors.spring40}; }
+    .text-spring-30       { color : ${baseColors.spring30}; }
+    .text-spring-20       { color : ${baseColors.spring20}; }
+    .text-spring-10       { color : ${baseColors.spring10}; }
 
     .text-pistachio       { color : ${baseColors.pistachio}; }
     .text-pistachio-90    { color : ${baseColors.pistachio90}; }
@@ -438,6 +482,28 @@ export const ColorsStyled = css`
     .text-crimson-30      { color : ${baseColors.crimson30}; }
     .text-crimson-20      { color : ${baseColors.crimson20}; }
     .text-crimson-10      { color : ${baseColors.crimson10}; }
+    
+    .text-brick           { color : ${baseColors.brick}; }
+    .text-brick-90        { color : ${baseColors.brick90}; }
+    .text-brick-80        { color : ${baseColors.brick80}; }
+    .text-brick-70        { color : ${baseColors.brick70}; }
+    .text-brick-60        { color : ${baseColors.brick60}; }
+    .text-brick-50        { color : ${baseColors.brick50}; }
+    .text-brick-40        { color : ${baseColors.brick40}; }
+    .text-brick-30        { color : ${baseColors.brick30}; }
+    .text-brick-20        { color : ${baseColors.brick20}; }
+    .text-brick-10        { color : ${baseColors.brick10}; }
+
+    .text-sienna          { color : ${baseColors.sienna}; }
+    .text-sienna-90       { color : ${baseColors.sienna90}; }
+    .text-sienna-80       { color : ${baseColors.sienna80}; }
+    .text-sienna-70       { color : ${baseColors.sienna70}; }
+    .text-sienna-60       { color : ${baseColors.sienna60}; }
+    .text-sienna-50       { color : ${baseColors.sienna50}; }
+    .text-sienna-40       { color : ${baseColors.sienna40}; }
+    .text-sienna-30       { color : ${baseColors.sienna30}; }
+    .text-sienna-20       { color : ${baseColors.sienna20}; }
+    .text-sienna-10       { color : ${baseColors.sienna10}; }
 
     .text-brown           { color : ${baseColors.brown}; }
     .text-brown-90        { color : ${baseColors.brown90}; }
@@ -455,7 +521,7 @@ export const ColorsStyled = css`
 
 
 
-    /* Colours for borders ======================================================= */
+    //Colours for borders =======================================================
 
     .border-hue             { border : 2px solid ${(props: GlobalStyledProps) => props.theme.mainColors.hue}; }
     .border-tint            { border : 2px solid ${(props: GlobalStyledProps) => props.theme.mainColors.tint}; }
@@ -532,6 +598,17 @@ export const ColorsStyled = css`
     .border-yellow-30       { border : 2px solid ${baseColors.yellow30}; }
     .border-yellow-20       { border : 2px solid ${baseColors.yellow20}; }
     .border-yellow-10       { border : 2px solid ${baseColors.yellow10}; }
+
+    .border-spring          { border : 2px solid ${baseColors.spring}; }
+    .border-spring-90       { border : 2px solid ${baseColors.spring90}; }
+    .border-spring-80       { border : 2px solid ${baseColors.spring80}; }
+    .border-spring-70       { border : 2px solid ${baseColors.spring70}; }
+    .border-spring-60       { border : 2px solid ${baseColors.spring60}; }
+    .border-spring-50       { border : 2px solid ${baseColors.spring50}; }
+    .border-spring-40       { border : 2px solid ${baseColors.spring40}; }
+    .border-spring-30       { border : 2px solid ${baseColors.spring30}; }
+    .border-spring-20       { border : 2px solid ${baseColors.spring20}; }
+    .border-spring-10       { border : 2px solid ${baseColors.spring10}; }
 
     .border-pistachio       { border : 2px solid ${baseColors.pistachio}; }
     .border-pistachio-90    { border : 2px solid ${baseColors.pistachio90}; }
@@ -665,6 +742,28 @@ export const ColorsStyled = css`
     .border-crimson-20      { border : 2px solid ${baseColors.crimson20}; }
     .border-crimson-10      { border : 2px solid ${baseColors.crimson10}; }
 
+    .border-brick           { border : 2px solid ${baseColors.brick}; }
+    .border-brick-90        { border : 2px solid ${baseColors.brick90}; }
+    .border-brick-80        { border : 2px solid ${baseColors.brick80}; }
+    .border-brick-70        { border : 2px solid ${baseColors.brick70}; }
+    .border-brick-60        { border : 2px solid ${baseColors.brick60}; }
+    .border-brick-50        { border : 2px solid ${baseColors.brick50}; }
+    .border-brick-40        { border : 2px solid ${baseColors.brick40}; }
+    .border-brick-30        { border : 2px solid ${baseColors.brick30}; }
+    .border-brick-20        { border : 2px solid ${baseColors.brick20}; }
+    .border-brick-10        { border : 2px solid ${baseColors.brick10}; }
+
+    .border-sienna          { border : 2px solid ${baseColors.sienna}; }
+    .border-sienna-90       { border : 2px solid ${baseColors.sienna90}; }
+    .border-sienna-80       { border : 2px solid ${baseColors.sienna80}; }
+    .border-sienna-70       { border : 2px solid ${baseColors.sienna70}; }
+    .border-sienna-60       { border : 2px solid ${baseColors.sienna60}; }
+    .border-sienna-50       { border : 2px solid ${baseColors.sienna50}; }
+    .border-sienna-40       { border : 2px solid ${baseColors.sienna40}; }
+    .border-sienna-30       { border : 2px solid ${baseColors.sienna30}; }
+    .border-sienna-20       { border : 2px solid ${baseColors.sienna20}; }
+    .border-sienna-10       { border : 2px solid ${baseColors.sienna10}; }
+
     .border-brown           { border : 2px solid ${baseColors.brown}; }
     .border-brown-90        { border : 2px solid ${baseColors.brown90}; }
     .border-brown-80        { border : 2px solid ${baseColors.brown80}; }
@@ -757,6 +856,17 @@ export const ColorsStyled = css`
     .fill-yellow-30       { fill : ${baseColors.yellow30}; }
     .fill-yellow-20       { fill : ${baseColors.yellow20}; }
     .fill-yellow-10       { fill : ${baseColors.yellow10}; }
+
+    .fill-spring          { fill : ${baseColors.spring}; }
+    .fill-spring-90       { fill : ${baseColors.spring90}; }
+    .fill-spring-80       { fill : ${baseColors.spring80}; }
+    .fill-spring-70       { fill : ${baseColors.spring70}; }
+    .fill-spring-60       { fill : ${baseColors.spring60}; }
+    .fill-spring-50       { fill : ${baseColors.spring50}; }
+    .fill-spring-40       { fill : ${baseColors.spring40}; }
+    .fill-spring-30       { fill : ${baseColors.spring30}; }
+    .fill-spring-20       { fill : ${baseColors.spring20}; }
+    .fill-spring-10       { fill : ${baseColors.spring10}; }
 
     .fill-pistachio       { fill : ${baseColors.pistachio}; }
     .fill-pistachio-90    { fill : ${baseColors.pistachio90}; }
@@ -890,6 +1000,28 @@ export const ColorsStyled = css`
     .fill-crimson-20      { fill : ${baseColors.crimson20}; }
     .fill-crimson-10      { fill : ${baseColors.crimson10}; }
 
+    .fill-brick           { fill : ${baseColors.brick}; }
+    .fill-brick-90        { fill : ${baseColors.brick90}; }
+    .fill-brick-80        { fill : ${baseColors.brick80}; }
+    .fill-brick-70        { fill : ${baseColors.brick70}; }
+    .fill-brick-60        { fill : ${baseColors.brick60}; }
+    .fill-brick-50        { fill : ${baseColors.brick50}; }
+    .fill-brick-40        { fill : ${baseColors.brick40}; }
+    .fill-brick-30        { fill : ${baseColors.brick30}; }
+    .fill-brick-20        { fill : ${baseColors.brick20}; }
+    .fill-brick-10        { fill : ${baseColors.brick10}; }
+
+    .fill-sienna          { fill : ${baseColors.sienna}; }
+    .fill-sienna-90       { fill : ${baseColors.sienna90}; }
+    .fill-sienna-80       { fill : ${baseColors.sienna80}; }
+    .fill-sienna-70       { fill : ${baseColors.sienna70}; }
+    .fill-sienna-60       { fill : ${baseColors.sienna60}; }
+    .fill-sienna-50       { fill : ${baseColors.sienna50}; }
+    .fill-sienna-40       { fill : ${baseColors.sienna40}; }
+    .fill-sienna-30       { fill : ${baseColors.sienna30}; }
+    .fill-sienna-20       { fill : ${baseColors.sienna20}; }
+    .fill-sienna-10       { fill : ${baseColors.sienna10}; }
+
     .fill-brown           { fill : ${baseColors.brown}; }
     .fill-brown-90        { fill : ${baseColors.brown90}; }
     .fill-brown-80        { fill : ${baseColors.brown80}; }
@@ -983,6 +1115,17 @@ export const ColorsStyled = css`
     .stroke-yellow-30       { stroke : ${baseColors.yellow30}; }
     .stroke-yellow-20       { stroke : ${baseColors.yellow20}; }
     .stroke-yellow-10       { stroke : ${baseColors.yellow10}; }
+
+    .stroke-spring          { stroke : ${baseColors.spring}; }
+    .stroke-spring-90       { stroke : ${baseColors.spring90}; }
+    .stroke-spring-80       { stroke : ${baseColors.spring80}; }
+    .stroke-spring-70       { stroke : ${baseColors.spring70}; }
+    .stroke-spring-60       { stroke : ${baseColors.spring60}; }
+    .stroke-spring-50       { stroke : ${baseColors.spring50}; }
+    .stroke-spring-40       { stroke : ${baseColors.spring40}; }
+    .stroke-spring-30       { stroke : ${baseColors.spring30}; }
+    .stroke-spring-20       { stroke : ${baseColors.spring20}; }
+    .stroke-spring-10       { stroke : ${baseColors.spring10}; }
 
     .stroke-pistachio       { stroke : ${baseColors.pistachio}; }
     .stroke-pistachio-90    { stroke : ${baseColors.pistachio90}; }
@@ -1116,6 +1259,28 @@ export const ColorsStyled = css`
     .stroke-crimson-20      { stroke : ${baseColors.crimson20}; }
     .stroke-crimson-10      { stroke : ${baseColors.crimson10}; }
 
+    .stroke-brick           { stroke : ${baseColors.brick}; }
+    .stroke-brick-90        { stroke : ${baseColors.brick90}; }
+    .stroke-brick-80        { stroke : ${baseColors.brick80}; }
+    .stroke-brick-70        { stroke : ${baseColors.brick70}; }
+    .stroke-brick-60        { stroke : ${baseColors.brick60}; }
+    .stroke-brick-50        { stroke : ${baseColors.brick50}; }
+    .stroke-brick-40        { stroke : ${baseColors.brick40}; }
+    .stroke-brick-30        { stroke : ${baseColors.brick30}; }
+    .stroke-brick-20        { stroke : ${baseColors.brick20}; }
+    .stroke-brick-10        { stroke : ${baseColors.brick10}; }
+
+    .stroke-sienna          { stroke : ${baseColors.sienna}; }
+    .stroke-sienna-90       { stroke : ${baseColors.sienna90}; }
+    .stroke-sienna-80       { stroke : ${baseColors.sienna80}; }
+    .stroke-sienna-70       { stroke : ${baseColors.sienna70}; }
+    .stroke-sienna-60       { stroke : ${baseColors.sienna60}; }
+    .stroke-sienna-50       { stroke : ${baseColors.sienna50}; }
+    .stroke-sienna-40       { stroke : ${baseColors.sienna40}; }
+    .stroke-sienna-30       { stroke : ${baseColors.sienna30}; }
+    .stroke-sienna-20       { stroke : ${baseColors.sienna20}; }
+    .stroke-sienna-10       { stroke : ${baseColors.sienna10}; }
+
     .stroke-brown           { stroke : ${baseColors.brown}; }
     .stroke-brown-90        { stroke : ${baseColors.brown90}; }
     .stroke-brown-80        { stroke : ${baseColors.brown80}; }
@@ -1128,4 +1293,4 @@ export const ColorsStyled = css`
     .stroke-brown-10        { stroke : ${baseColors.brown10}; }
 
     .stroke-transparent     { stroke : transparent; }
-`
+`;

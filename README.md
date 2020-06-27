@@ -1,2 +1,3 @@
-# FICTOAN React.
-### This is the React version of the FICTOAN framework.
+# FICTOAN / React
+### v0.29.0
+#### The React version of the FICTOAN framework

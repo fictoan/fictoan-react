@@ -12,10 +12,15 @@ type SpacingTypes = "none" | "nano" | "micro" | "tiny" | "small" | "medium" | "l
 
 export interface CommonProps extends ThemeProps {
     bgColor           ? : string;
+    bgColour          ? : string;
     textColor         ? : string;
+    textColour        ? : string;
     borderColor       ? : string;
+    borderColour      ? : string;
     fillColor         ? : string;
+    fillColour        ? : string;
     strokeColor       ? : string;
+    strokeColour      ? : string;
     hideOnMobile      ? : boolean;
     showOnlyOnMobile  ? : boolean;
     hideOnTabPT       ? : boolean;

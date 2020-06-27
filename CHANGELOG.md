@@ -1,5 +1,11 @@
+# v0.29.0
+- Add `bgColour`, `textColour`, `borderColour`, `strokeColour` and `fillColour` props with British English.
+
+# v0.28.7
+- Add `spring`, `brick` and `sienna` colour values.
+
 # v0.28.6
-- Tweak `FormItemGroup` margin values.
+- Add `FormItem` margin bottom bug inside `FormItemGroup`.
 
 # v0.28.5
 - Fix `FormItem` margin bottom bug inside `FormItemGroup`. 
