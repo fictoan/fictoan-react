@@ -25,4 +25,4 @@ export const ContentWrapperStyled = styled.main`
             margin-left : 0;
         }
     }
-`
+`;

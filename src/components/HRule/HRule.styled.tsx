@@ -4,12 +4,10 @@ import { HRProps } from "./HRule";
 
 
 export const HRStyled = styled.hr`
-    display          : flex;
-    border           : 0;
-    height           : 1px;
-    margin           : 4vmax auto;
-    width            : 100%;
-    background-color : ${(props: HRProps) => props.theme.hr.bg};
+    display : flex;
+    border  : 0;
+    margin  : 4vmax auto;
+    width   : 100%;
 
     &.side-margin-nano   { width: calc(100% -  2vw); }
     &.side-margin-micro  { width: calc(100% -  4vw); }
@@ -39,5 +37,20 @@ export const HRStyled = styled.hr`
         &[class*="side-margin-"] {
             width: calc(100% - 12vw);
         }
+    }
+
+    &.primary   {
+        background-color : ${(props: HRProps) => props.theme.hr.primary.bg};
+        height           : ${(props: HRProps) => props.theme.hr.primary.height};
+    }
+
+    &.secondary {
+        background-color : ${(props: HRProps) => props.theme.hr.secondary.bg};
+        height           : ${(props: HRProps) => props.theme.hr.secondary.height};
+    }
+
+    &.tertiary  {
+        background-color : ${(props: HRProps) => props.theme.hr.tertiary.bg};
+        height           : ${(props: HRProps) => props.theme.hr.tertiary.height};
     }
 `;

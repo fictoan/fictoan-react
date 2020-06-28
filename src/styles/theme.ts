@@ -142,10 +142,10 @@ export const RFTheme = {
     infoPanel : {
         bg     : baseColors.white,
         border : baseColors.slate20,
-        dismissButton: {
-            bg: baseColors.white,
-            color: baseColors.slate90,
-            content: "×"
+        dismissButton : {
+            bg      : baseColors.white,
+            color   : baseColors.slate90,
+            content : "×"
         }
     },
 
@@ -214,7 +214,18 @@ export const RFTheme = {
 
     //  RULE  /////////////////////////////////////////////////////////////////
     hr : {
-        bg : baseColors.slate20
+        primary : {
+            bg     : baseColors.blue80,
+            height : "1px"
+        },
+        secondary : {
+            bg     : baseColors.slate40,
+            height : "1px"
+        },
+        tertiary : {
+            bg     : baseColors.slate20,
+            height : "1px"
+        }
     },
 
 

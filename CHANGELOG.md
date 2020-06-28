@@ -1,3 +1,6 @@
+# v0.29.1
+- Add `primary`, `secondary`, and `tertiary` props for the `HRule` element.
+
 # v0.29.0
 - Add `bgColour`, `textColour`, `borderColour`, `strokeColour` and `fillColour` props with British English.
 
