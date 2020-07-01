@@ -1,3 +1,6 @@
+# v0.29.2
+- Add media queries for `InfoPanel` below `1200px` to handle `width` prop.
+
 # v0.29.1
 - Add `primary`, `secondary`, and `tertiary` props for the `HRule` element.
 
@@ -6,9 +9,6 @@
 
 # v0.28.7
 - Add `spring`, `brick` and `sienna` colour values.
-
-# v0.28.6
-- Add `FormItem` margin bottom bug inside `FormItemGroup`.
 
 # v0.28.5
 - Fix `FormItem` margin bottom bug inside `FormItemGroup`. 

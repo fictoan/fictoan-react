@@ -30,6 +30,13 @@ export const InfoPanelStyled = styled.aside`
     &.large  { width : 32vw; }
     &.huge   { width : 40vw; }
 
+    @media all and (max-width : 1400px) {
+        &.tiny   { width : 12vw; }
+        &.small  { width : 24vw; }
+        &.medium { width : 32vw; }
+        &.large  { width : 40vw; }
+        &.huge   { width : 48vw; }
+    }
 
     & .dismiss-button {
         position         : fixed;
