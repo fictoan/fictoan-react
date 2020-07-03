@@ -21,7 +21,7 @@ export const ThemeProvider = ({
     return (
         <Element<ThemeProviderElementType>
             as={TP}
-            theme={merge(RFTheme, theme)}
+            theme={merge({}, RFTheme, theme)}
             {...props}
         >
             <GlobalStyled />

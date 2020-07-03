@@ -10,8 +10,6 @@ export const GlobalStyled = createGlobalStyle`
     ${ NormalizeStyled }
     ${ ResetStyled }
 
-    ${ ColorsStyled }
-
     ${ TextStyled }
 
     ${ CodeStyled }
