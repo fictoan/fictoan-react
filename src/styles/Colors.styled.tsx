@@ -2,7 +2,7 @@ import { css } from "styled-components";
 import { baseColors } from "./BaseColors"
 
 export const ColorsStyled = css`
-    /* Colours for BG ========================================================== */
+    // Colours for BG =========================================================
     .bg-white           { background-color : ${baseColors.white}; }
     .bg-black           { background-color : ${baseColors.black}; }
 

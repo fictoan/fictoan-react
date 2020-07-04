@@ -5,7 +5,7 @@ import { TypographyStyled } from "../Typography/Typography.styled";
 import { CodeStyled } from "../CodeBlock/Code.styled";
 
 export const GlobalStyled = createGlobalStyle`
-    ${ CustomColorClassesStyled} 
+    ${ CustomColorClassesStyled }
     ${ TypographyStyled }
     ${ CodeStyled }
 `;

@@ -7,7 +7,7 @@ import { CommonAndHTMLProps, ThemeProps } from "../Element/constants";
 
 import { RFTheme } from "../../styles/theme";
 import { GlobalStyled as DynamicGlobalStyled } from "./Global.styled";
-import { GlobalStyled as StaticGlobalStyled } from "../../styles/Global.styled";
+import { GlobalStaticStyled as StaticGlobalStyled } from "../../styles/GlobalStatic.styled";
 
 
 export type ThemeProviderElementType = HTMLDivElement;
@@ -16,26 +16,26 @@ export type Theme                    = typeof RFTheme;
 export type LabelledThemes           = Record<ThemeLabel, Theme>;
 
 export interface GlobalStyledProps extends ThemeProps { }
-export interface ThemeProviderProps extends CommonAndHTMLProps<ThemeProviderElementType> {
-    themeLabel : ThemeLabel
+export interface ThemeProviderProps extends Omit<CommonAndHTMLProps<ThemeProviderElementType>, "theme"> {
+    theme : ThemeLabel
 }
 
 export const CreateThemeProvider = (themes: LabelledThemes) => {
     themes["light"] = merge({}, RFTheme, themes["light"]);
     themes["dark"] = merge({}, RFTheme, themes["dark"]);
-return ({
-    themeLabel,
-    children,
-    ...props
-}: ThemeProviderProps) => {
+    return ({
+        theme,
+        children,
+        ...props
+    }: ThemeProviderProps) => {
         return (
             <>
                 {/* Styles that don't need to be computed */}
                 <StaticGlobalStyled />
 
-                <Element<any>
+                <Element<ThemeProviderElementType>
                     as={TP}
-                    theme={themes[themeLabel]}
+                    theme={themes[theme]}
                     {...props}
                 >
                     <DynamicGlobalStyled />
