@@ -6,7 +6,8 @@ import { Element } from "../Element/Element";
 import { CommonAndHTMLProps, ThemeProps } from "../Element/constants";
 
 import { RFTheme } from "../../styles/theme";
-import { GlobalStyled } from "./Global.styled";
+import { GlobalStyled as DynamicGlobalStyled} from "./Global.styled";
+import {GlobalStyled as StaticGlobalStyled} from './static/Global.styled';
 
 
 export type ThemeProviderElementType = HTMLDivElement;
@@ -19,13 +20,16 @@ export const ThemeProvider = ({
     ...props
 }: ThemeProviderProps) => {
     return (
+        <>
+        <StaticGlobalStyled/>
         <Element<ThemeProviderElementType>
             as={TP}
             theme={merge({}, RFTheme, theme)}
             {...props}
         >
-            <GlobalStyled />
+            <DynamicGlobalStyled/>
             {children}
         </Element>
+        </>
     );
 }

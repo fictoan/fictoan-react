@@ -14,12 +14,12 @@ import { CommonAndHTMLProps } from "../Element/constants";
 
 
 export interface CodeBlockCustomProps {
-    source   ? : object | string;
-    language ? : Language;
+    source?: object | string;
+    language?: Language;
 }
 
 export type CodeBlockElementType = HTMLPreElement;
-export type CodeBlockProps       = CommonAndHTMLProps<CodeBlockElementType> & CodeBlockCustomProps;
+export type CodeBlockProps = CommonAndHTMLProps<CodeBlockElementType> & CodeBlockCustomProps;
 
 export const CodeBlock = ({
     ref,
@@ -29,7 +29,7 @@ export const CodeBlock = ({
     return (
         <PrismReactRenderer
             {...defaultProps}
-            code={typeof source === "object" ? JSON.stringify(source, null, 2): source}
+            code={typeof source === "object" ? JSON.stringify(source, null, 2) : source}
             language="json"
             {...props}
             theme={undefined}
