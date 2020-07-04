@@ -4,10 +4,11 @@ import { NormalizeStyled } from "./Normalize.styled";
 import { ResetStyled } from "./Reset.styled";
 import { ColorsStyled } from "./Colors.styled";
 
-export const GlobalStyled = createGlobalStyle`
-    ${ NormalizeStyled}
-    ${ ResetStyled}
-    ${ ColorsStyled}    
+export const GlobalStaticStyled = createGlobalStyle`
+    ${ NormalizeStyled }
+    ${ ResetStyled }
+    ${ ColorsStyled }
+
     /* Layout */
     html,
     body {
@@ -124,8 +125,8 @@ export const GlobalStyled = createGlobalStyle`
     .push-to-ends { justify-content : space-between; }
 
 
-      /* BOX MODEL HELPERS  ======================================================== */
-      /* Margins for all occasions */
+    /* BOX MODEL HELPERS  ======================================================== */
+    /* Margins for all occasions */
     .margin-all-none         { margin : 0 !important; }
     .margin-all-nano         { margin : 8px; }
     .margin-all-micro        { margin : 24px; }
@@ -171,7 +172,7 @@ export const GlobalStyled = createGlobalStyle`
     .margin-left-large       { margin-left : 16vmax; }
     .margin-left-huge        { margin-left : 24vmax; }
 
-      /* Paddings for all occasions */
+    /* Paddings for all occasions */
     .padding-all-none        { padding : 0 !important; }
     .padding-all-nano        { padding : 8px; }
     .padding-all-micro       { padding : 24px; }

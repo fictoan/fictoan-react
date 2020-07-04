@@ -7,7 +7,7 @@ import { CommonAndHTMLProps, ThemeProps } from "../Element/constants";
 
 import { RFTheme } from "../../styles/theme";
 import { GlobalStyled as DynamicGlobalStyled } from "./Global.styled";
-import { GlobalStyled as StaticGlobalStyled } from "../../styles/Global.styled";
+import { GlobalStaticStyled as StaticGlobalStyled } from "../../styles/GlobalStatic.styled";
 
 
 export type ThemeProviderElementType = HTMLDivElement;

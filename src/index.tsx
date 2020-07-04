@@ -53,7 +53,7 @@ import { Table } from "./components/Table/Table";
 
 import { CodeBlock } from "./components/CodeBlock/CodeBlock";
 
-import { ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
+import { CreateThemeProvider, ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
 import { ThemeType, ThemeProps } from "./components/Element/constants";
 
 import { baseColors } from "./styles/BaseColors";
@@ -99,6 +99,7 @@ export {
     NotificationItem,
     InfoPanel,
     CodeBlock,
+    CreateThemeProvider,
     ThemeProvider,
     ThemeType,
     ThemeProps,
