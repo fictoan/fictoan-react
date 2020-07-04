@@ -16,7 +16,7 @@ export type Theme                    = typeof RFTheme;
 export type LabelledThemes           = Record<ThemeLabel, Theme>;
 
 export interface GlobalStyledProps extends ThemeProps { }
-export interface ThemeProviderProps extends Omit<CommonAndHTMLProps<ThemeProviderElementType>, 'theme'> {
+export interface ThemeProviderProps extends Omit<CommonAndHTMLProps<ThemeProviderElementType>, "theme"> {
     theme : ThemeLabel
 }
 
