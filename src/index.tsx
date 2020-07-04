@@ -28,7 +28,7 @@ import { FormItem } from "./components/Form/FormItem/FormItem";
 import { FormItemGroup } from "./components/Form/FormItemGroup/FormItemGroup";
 import { FormItemJointGroup } from "./components/Form/FormItemGroup/FormItemJointGroup";
 import { InputField } from "./components/Form/InputField/InputField";
-import { Textarea } from "./components/Form/Textarea/Textarea";
+import { Textarea } from "./components/Form/TextArea/TextArea";
 import { InputLabel } from "./components/Form/InputLabel/InputLabel";
 import { Select } from "./components/Form/Select/Select";
 import { FileUpload } from "./components/Form/InputField/FileUpload";
