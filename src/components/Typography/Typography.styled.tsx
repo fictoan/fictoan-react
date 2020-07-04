@@ -3,7 +3,7 @@ import { css } from "styled-components";
 import { GlobalStyledProps } from "../ThemeProvider/ThemeProvider";
 
 
-export const TextStyled = css`
+export const TypographyStyled = css`
     body {
         font-size        : ${(props: GlobalStyledProps) => props.theme.text.paras.size}em;
         line-height      : ${(props: GlobalStyledProps) => props.theme.text.paras.lineHeight};

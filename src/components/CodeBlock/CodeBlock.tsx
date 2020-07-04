@@ -29,7 +29,7 @@ export const CodeBlock = ({
     return (
         <PrismReactRenderer
             {...defaultProps}
-            code={typeof source === "object" ? JSON.stringify(source, null, 2): source}
+            code={typeof source === "object" ? JSON.stringify(source, null, 2) : source}
             language="json"
             {...props}
             theme={undefined}

@@ -1,3 +1,9 @@
+# v0.30.0
+- Remove static CSS classes from `GlobalStyles`.
+
+# v0.29.3
+- Rename `Textarea` to `TextArea`.
+
 # v0.29.2
 - Add media queries for `InfoPanel` below `1200px` to handle `width` prop.
 
