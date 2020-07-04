@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { InputFieldProps } from "../InputField/InputField";
 
 
-export const TextareaStyled = styled.textarea`
+export const TextAreaStyled = styled.textarea`
     position         : relative;
     width            : 100%;
     flex             : 1 1 auto;

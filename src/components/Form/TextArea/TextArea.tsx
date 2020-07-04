@@ -4,16 +4,16 @@ import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 import { CommonAndHTMLProps } from "../../Element/constants";
 import { InputCommonProps } from "../BaseInputComponent/constants";
 import { InputLabelProps } from "../InputLabel/InputLabel";
-import { TextareaStyled } from "./Textarea.styled";
+import { TextAreaStyled } from "./TextArea.styled";
 
 
 export type TextareaElementType = HTMLTextAreaElement;
 export type TextareaProps       = CommonAndHTMLProps<TextareaElementType> & InputLabelProps & InputCommonProps;
 
-export const Textarea = (props: TextareaProps) => {
+export const TextArea = (props: TextareaProps) => {
     return (
         <BaseInputComponent<TextareaElementType>
-            as={TextareaStyled}
+            as={TextAreaStyled}
             placeholder=" "
             {...props}
         />
