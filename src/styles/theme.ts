@@ -29,6 +29,7 @@ export const RFTheme = {
         },
 
         paras : {
+            font       : "sans-serif",
             size       : 1,
             color      : baseColors.grey,
             weight     : 400,

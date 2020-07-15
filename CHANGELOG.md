@@ -1,3 +1,9 @@
+# v0.30.4
+- Fix type bug that wouldn’t let `paras` inherit `font-family`. 
+
+# v0.30.3
+- Fix lodash `merge` speed issue. 
+
 # v0.30.0
 - Remove static CSS classes from `GlobalStyles`.
 

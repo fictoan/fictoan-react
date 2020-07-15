@@ -103,6 +103,8 @@ export const GlobalStaticStyled = createGlobalStyle`
 
     /* For when you want child elements vertically in  */
     /* the middle. Apply to parent */
+    .vertically-centre-items { display : flex; }
+
     .vertically-centre-items *,
     .vertically-center-items * {
         align-self : center;
@@ -120,6 +122,7 @@ export const GlobalStaticStyled = createGlobalStyle`
         position : relative;
         display  : block;
         margin   : 0 auto;
+        width    : fit-content;
     }
 
     .push-to-ends { justify-content : space-between; }

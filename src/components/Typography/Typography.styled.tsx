@@ -40,7 +40,10 @@ export const TypographyStyled = css`
         h1, h2, h3, h4, h5, h6 { word-wrap : break-word; }
     }
 
-    p { color : ${(props: GlobalStyledProps) => props.theme.text.paras.color}; }
+    p {
+        font-family : ${(props: GlobalStyledProps) => props.theme.text.paras.font};
+        color       : ${(props: GlobalStyledProps) => props.theme.text.paras.color};
+    }
 
     a {
         cursor      : pointer;
