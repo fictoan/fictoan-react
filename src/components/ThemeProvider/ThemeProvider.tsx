@@ -9,12 +9,12 @@ import { GlobalStaticStyled as StaticGlobalStyled } from "../../styles/GlobalSta
 
 
 export type ThemeProviderElementType = HTMLDivElement;
-type RenderProps = () => JSX.Element;
+export type RenderProps              = () => JSX.Element;
 
 export interface GlobalStyledProps extends ThemeProps { };
 export interface ThemeProviderProps extends CommonAndHTMLProps<ThemeProviderElementType> {
-    localStyled?: RenderProps
-};
+    localStyled ? : RenderProps;
+}
 
 export const ThemeProvider = ({
     theme,
@@ -22,7 +22,6 @@ export const ThemeProvider = ({
     children,
     ...props
 }: ThemeProviderProps) => {
-
     return (
         <>
             {/* Styles that don't need to be computed */}
