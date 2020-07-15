@@ -4,7 +4,6 @@ import { ThemeProvider as TP } from "styled-components";
 import { Element } from "../Element/Element";
 import { CommonAndHTMLProps, ThemeProps } from "../Element/constants";
 
-import { RFTheme } from "../../styles/theme";
 import { GlobalStyled as DynamicGlobalStyled } from "./Global.styled";
 import { GlobalStaticStyled as StaticGlobalStyled } from "../../styles/GlobalStatic.styled";
 
@@ -14,7 +13,7 @@ type RenderProps = () => JSX.Element;
 
 export interface GlobalStyledProps extends ThemeProps { };
 export interface ThemeProviderProps extends CommonAndHTMLProps<ThemeProviderElementType> {
-    localStyled: RenderProps
+    localStyled?: RenderProps
 };
 
 export const ThemeProvider = ({
@@ -35,7 +34,7 @@ export const ThemeProvider = ({
                 {...props}
             >
                 <DynamicGlobalStyled />
-                {localStyled()}
+                {localStyled && localStyled()}
                 {children}
             </Element>
         </>
