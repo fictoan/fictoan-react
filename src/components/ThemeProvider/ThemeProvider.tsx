@@ -1,6 +1,5 @@
 import React from "react";
 import { ThemeProvider as TP } from "styled-components";
-import merge from "lodash/merge";
 
 import { Element } from "../Element/Element";
 import { CommonAndHTMLProps, ThemeProps } from "../Element/constants";
@@ -11,43 +10,34 @@ import { GlobalStaticStyled as StaticGlobalStyled } from "../../styles/GlobalSta
 
 
 export type ThemeProviderElementType = HTMLDivElement;
-export type ThemeLabel               = "light" | "dark";
-export type Theme                    = typeof RFTheme;
-export type LabelledThemes           = Record<ThemeLabel, Theme>;
+type RenderProps = () => JSX.Element;
 
-export interface GlobalStyledProps extends ThemeProps { }
-export interface ThemeProviderProps extends Omit<CommonAndHTMLProps<ThemeProviderElementType>, "theme"> {
-    theme : ThemeLabel
+export interface GlobalStyledProps extends ThemeProps { };
+export interface ThemeProviderProps extends CommonAndHTMLProps<ThemeProviderElementType> {
+    localStyled: RenderProps
+};
+
+export const ThemeProvider = ({
+    theme,
+    localStyled,
+    children,
+    ...props
+}: ThemeProviderProps) => {
+
+    return (
+        <>
+            {/* Styles that don't need to be computed */}
+            <StaticGlobalStyled />
+
+            <Element<ThemeProviderElementType>
+                as={TP}
+                theme={theme}
+                {...props}
+            >
+                <DynamicGlobalStyled />
+                {localStyled()}
+                {children}
+            </Element>
+        </>
+    );
 }
-
-export const CreateThemeProvider = (themes: LabelledThemes) => {
-    themes["light"] = merge({}, RFTheme, themes["light"]);
-    themes["dark"] = merge({}, RFTheme, themes["dark"]);
-    return ({
-        theme,
-        children,
-        ...props
-    }: ThemeProviderProps) => {
-        return (
-            <>
-                {/* Styles that don't need to be computed */}
-                <StaticGlobalStyled />
-
-                <Element<ThemeProviderElementType>
-                    as={TP}
-                    theme={themes[theme]}
-                    {...props}
-                >
-                    <DynamicGlobalStyled />
-                    {children}
-                </Element>
-            </>
-        );
-    }
-}
-
-// For backward compatibility
-export const ThemeProvider = CreateThemeProvider({
-    light : RFTheme,
-    dark  : RFTheme
-});
