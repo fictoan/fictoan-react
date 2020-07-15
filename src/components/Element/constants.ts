@@ -2,7 +2,7 @@ import { HTMLProps } from "react";
 
 import { RFTheme } from "../../styles/theme";
 
-export type ThemeType = typeof RFTheme;
+export type ThemeType = Partial<typeof RFTheme>;
 
 export interface ThemeProps {
     theme ? : ThemeType;
