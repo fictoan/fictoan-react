@@ -53,7 +53,7 @@ export const TypographyStyled = css`
         width       : fit-content;
     }
 
-    a:not(.ff-button) { color : ${(props: GlobalStyledProps) => props.theme.text.links.onHover.color}; }
+    a:not(.ff-button):hover { color : ${(props: GlobalStyledProps) => props.theme.text.links.onHover.color}; }
 
     a:active { opacity: 0.72; }
 

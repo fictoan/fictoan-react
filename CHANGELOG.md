@@ -1,3 +1,6 @@
+# v0.30.5
+- Fix `a` tag hover colour bug.
+
 # v0.30.4
 - Fix type bug that wouldn’t let `paras` inherit `font-family`. 
 
