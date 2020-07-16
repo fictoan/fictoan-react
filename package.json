@@ -47,7 +47,7 @@
         "@types/react": "^16.9.23",
         "@types/styled-components": "^5.0.1",
         "fictoan-react": "^0.30.0",
-        "lodash": "^4.17.15",
+        "lodash": "^4.17.19",
         "polished": "^3.4.4",
         "prism-react-renderer": "^1.1.0",
         "prismjs": "^1.20.0",
