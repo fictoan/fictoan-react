@@ -41,7 +41,7 @@ import { ProgressBar } from "./components/ProgressBar/ProgressBar";
 
 import { Card } from "./components/Card/Card";
 
-import { InfoPanel } from "./components/InfoPanel/InfoPanel"
+import { InfoPanel } from "./components/InfoPanel/InfoPanel";
 
 import { NotificationsWrapper } from "./components/Notifications/NotificationsWrapper/NotificationsWrapper";
 import { NotificationItem } from "./components/Notifications/NotificationsItem/NotificationItem";
@@ -57,7 +57,7 @@ import { ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
 import { ThemeType, ThemeProps } from "./components/Element/constants";
 
 import { baseColors } from "./styles/BaseColors";
-import {RFTheme } from "./styles/theme";
+import { RFTheme } from "./styles/theme";
 
 export {
     Element,
@@ -101,8 +101,8 @@ export {
     InfoPanel,
     CodeBlock,
     ThemeProvider,
-    RFTheme,
     ThemeType,
     ThemeProps,
-    baseColors
-};
+    baseColors,
+    RFTheme
+}

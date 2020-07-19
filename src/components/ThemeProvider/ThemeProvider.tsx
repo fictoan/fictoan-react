@@ -10,35 +10,35 @@ import { GlobalStaticStyled as StaticGlobalStyled } from "../../styles/GlobalSta
 
 import { RFTheme } from "../../styles/theme";
 
+
 export type ThemeProviderElementType = HTMLDivElement;
-export type RenderProps = () => JSX.Element;
+export type RenderProps              = () => JSX.Element;
 
 export interface GlobalStyledProps extends ThemeProps {}
-export interface ThemeProviderProps
-  extends CommonAndHTMLProps<ThemeProviderElementType> {
-  localStyled?: RenderProps;
+export interface ThemeProviderProps extends CommonAndHTMLProps<ThemeProviderElementType> {
+    localStyled ? : RenderProps;
 }
 
 export const ThemeProvider = ({
-  theme,
-  localStyled,
-  children,
-  ...props
+    theme,
+    localStyled,
+    children,
+    ...props
 }: ThemeProviderProps) => {
-  return (
-    <>
-      {/* Styles that don't need to be computed */}
-      <StaticGlobalStyled />
+    return (
+        <>
+            {/* Styles that don't need to be computed */}
+            <StaticGlobalStyled/>
 
-      <Element<ThemeProviderElementType>
-        as={TP}
-        theme={merge({}, RFTheme, theme)}
-        {...props}
-      >
-        <DynamicGlobalStyled />
-        {localStyled && localStyled()}
-        {children}
-      </Element>
-    </>
-  );
-};
+            <Element<ThemeProviderElementType>
+                as={TP}
+                theme={merge({}, RFTheme, theme)}
+                {...props}
+            >
+                <DynamicGlobalStyled/>
+                {localStyled && localStyled()}
+                {children}
+            </Element>
+        </>
+    );
+}

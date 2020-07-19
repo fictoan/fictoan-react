@@ -9,40 +9,40 @@ import pkg from "./package.json";
 const extensions = [".ts", ".tsx", ".js", ".jsx"];
 
 export default {
-  input: "src/index.tsx",
-  output: [
-    {
-      file: pkg.main,
-      format: "cjs",
-      sourcemap: true,
-      exports: "named",
-    },
-    {
-      file: pkg.module,
-      format: "es",
-      sourcemap: true,
-      exports: "named",
-    },
-  ],
-  external: [
-    "@types/lodash",
-    "@types/react",
-    "@types/styled-components",
-    "lodash/merge",
-    "react",
-    "styled-components",
-  ],
-  plugins: [
-    typescript(),
-    url(),
-    resolve({
-      extensions,
-    }),
-    commonjs({
-      extensions,
-      namedExports: {
-        "node_modules/lodash/lodash.js": ["merge"],
-      },
-    }),
-  ],
+    input: "src/index.tsx",
+    output: [
+        {
+            file: pkg.main,
+            format: "cjs",
+            sourcemap: true,
+            exports: "named"
+        },
+        {
+            file: pkg.module,
+            format: "es",
+            sourcemap: true,
+            exports: "named"
+        }
+    ],
+    external: [
+        "@types/lodash",
+        "@types/react",
+        "@types/styled-components",
+        "lodash/merge",
+        "react",
+        "styled-components"
+    ],
+    plugins: [
+        typescript(),
+        url(),
+        resolve({
+            extensions
+        }),
+        commonjs({
+            extensions,
+            namedExports: {
+                "node_modules/lodash/lodash.js": ["merge"]
+            }
+        })
+    ]
 };
