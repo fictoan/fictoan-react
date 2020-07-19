@@ -1,3 +1,6 @@
+# v0.30.6
+- Add merge to reduce size of custom overrides.
+
 # v0.30.5
 - Fix `a` tag hover colour bug.
 
