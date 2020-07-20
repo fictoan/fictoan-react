@@ -8,6 +8,7 @@ export const InputFieldStyled = styled.input`
     width            : 100%;
     flex             : 1 1 auto;
     font-family      : ${(props: InputFieldProps) => props.theme.text.font.sans};
+    color            : ${(props: InputFieldProps) => props.theme.input.default.text};
     background-color : ${(props: InputFieldProps) => props.theme.input.default.bg};
     border           : 1px solid ${(props: InputFieldProps) => props.theme.input.default.border};
     border-radius    : 4px;

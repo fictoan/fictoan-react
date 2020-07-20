@@ -1,3 +1,6 @@
+# v0.30.7
+- Add missing props for theming some elements.
+
 # v0.30.6
 - Add merge to reduce size of custom overrides.
 

@@ -135,7 +135,7 @@ export const RFTheme = {
     //  CARD  /////////////////////////////////////////////////////////////////
     card : {
         bg     : baseColors.white,
-        border : baseColors.slate10
+        border : `${lighten(0.96, baseColors.black)}`
     },
 
 

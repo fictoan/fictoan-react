@@ -14,7 +14,12 @@ export interface InputLabelCustomProps {
 export type InputLabelElementType = HTMLLabelElement;
 export type InputLabelProps       = CommonAndHTMLProps<InputLabelElementType> & InputLabelCustomProps;
 
-export const InputLabel = ({ label, helpText, errorText, ...props }: InputLabelProps) => {
+export const InputLabel = ({
+    label,
+    helpText,
+    errorText,
+    ...props
+}: InputLabelProps) => {
     return (
         <Element<InputLabelElementType>
             as="label"

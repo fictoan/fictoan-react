@@ -10,7 +10,10 @@ import { InputLabelCustomProps } from "../InputLabel/InputLabel";
 
 
 export type InputFieldElementType = HTMLInputElement;
-export type InputFieldProps       = CommonAndHTMLProps<InputFieldElementType> & InputLabelCustomProps & InputCommonProps & InputIconProps;
+export type InputFieldProps       = CommonAndHTMLProps<InputFieldElementType>
+                                    & InputLabelCustomProps
+                                    & InputCommonProps
+                                    & InputIconProps;
 
 
 export const InputField = ({...props}: InputFieldProps) => {

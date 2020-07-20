@@ -23,7 +23,7 @@ export const FormItemStyled = styled.div`
         flex          : 1 0 auto;
         align-self    : flex-start;
         margin-bottom : 4px;
-        color         : ${mainColors.shade};
+        color         : ${(props: FormItemProps) => props.theme.input.default.label};
         order         : -1;
         flex-wrap     : wrap;
     }
