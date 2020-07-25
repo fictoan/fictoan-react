@@ -1,3 +1,6 @@
+# 0.30.8
+- Memoize theme prop in ThemeProvider.
+
 # v0.30.7
 - Add missing props for theming some elements.
 

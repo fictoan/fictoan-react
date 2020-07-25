@@ -32,7 +32,7 @@ export const ThemeProvider = ({
 
             <Element<ThemeProviderElementType>
                 as={TP}
-                theme={merge({}, RFTheme, theme)}
+                theme={React.useMemo(() => merge({}, RFTheme, theme), [theme])}
                 {...props}
             >
                 <DynamicGlobalStyled/>
