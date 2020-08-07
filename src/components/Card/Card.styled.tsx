@@ -9,6 +9,8 @@ export const CardStyled = styled.div`
     border           : 1px solid ${(props: CardProps) => props.theme.card.border};
     background-color : ${(props: CardProps) => props.theme.card.bg};
 
+    &.shape-rounded { border-radius : ${(props: CardProps) => props.theme.input.default.borderRadius}; }
+
     &.padding-all-tiny   { padding : 8px; }
     &.padding-all-small  { padding : 16px; }
     &.padding-all-medium { padding : 32px; }

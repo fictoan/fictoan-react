@@ -1,8 +1,8 @@
-interface BaseColors {
+interface DefaultColours {
     [key:string] : string
 }
 
-export const baseColors:BaseColors = {
+export const defaultColours:DefaultColours = {
     "black" : "hsl(   0,   0%,   0%)",
     "white" : "hsl(   0,   0%, 100%)",
 

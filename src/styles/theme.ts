@@ -1,22 +1,22 @@
 import { lighten } from "polished";
 
-import { baseColors } from "./BaseColors";
+import { defaultColours } from "./DefaultColours";
 
 
-export const mainColors = {
-    hue      : baseColors.blue90,
-    tint     : baseColors.amber,
-    shade    : baseColors.grey,
-    analogue : baseColors.indigo50,
-    accent   : baseColors.green80,
+export const customColours = {
+    hue      : defaultColours.blue90,
+    tint     : defaultColours.amber,
+    shade    : defaultColours.grey,
+    analogue : defaultColours.indigo50,
+    accent   : defaultColours.green80,
 }
 
 export const RFTheme = {
-    mainColors,
+    customColors : customColours,
 
     //  BASICS  ///////////////////////////////////////////////////////////////
     body : {
-        bg : baseColors.white,
+        bg : defaultColours.white,
     },
 
 
@@ -31,14 +31,14 @@ export const RFTheme = {
         paras : {
             font       : "sans-serif",
             size       : 1,
-            color      : baseColors.grey,
+            color      : defaultColours.grey,
             weight     : 400,
             lineHeight : 1.64,
         },
 
         headings : {
             font       : "sans-serif",
-            color      : mainColors.shade,
+            color      : customColours.shade,
             weight     : 600,
             multiplier : 1.24,
             lineHeight : 1.24
@@ -46,79 +46,79 @@ export const RFTheme = {
 
         links : {
             default : {
-                color : baseColors.blue90,
+                color : defaultColours.blue90,
             },
             onHover : {
-                color : baseColors.blue60
+                color : defaultColours.blue60
             }
         },
 
         selection : {
-            bg   : mainColors.hue,
-            text : baseColors.white
+            bg   : customColours.hue,
+            text : defaultColours.white
         },
 
         code : {
             inline : {
-                bg    : baseColors.blue10,
-                text  : baseColors.blue90,
+                bg    : defaultColours.blue10,
+                text  : defaultColours.blue90,
                 scale : 80
             },
             block : {
-                bg         : `${lighten(0.02, baseColors.slate10)}`,
-                text       : baseColors.blue70,
+                bg         : `${lighten(0.02, defaultColours.slate10)}`,
+                text       : defaultColours.blue70,
                 scale      : 80,
                 lineHeight : 1.8
             },
             prism : {
                 tokens : {
-                    tag         : baseColors.violet,
-                    atrule      : baseColors.teal90,
-                    attrName    : baseColors.orange,
-                    attrValue   : baseColors.green80,
-                    boolean     : baseColors.green80,
-                    cdata       : baseColors.grey70,
-                    className   : baseColors.red,
-                    comment     : baseColors.grey70,
-                    constant    : baseColors.green80,
-                    deleted     : baseColors.slate80,
-                    delimiter   : baseColors.grey90,
-                    doctype     : baseColors.grey90,
-                    entity      : baseColors.green80,
-                    function    : baseColors.orange,
-                    hexcode     : baseColors.green,
-                    inserted    : baseColors.green80,
-                    italic      : baseColors.green80,
-                    keyword     : baseColors.orange90,
-                    namespace   : baseColors.green80,
-                    number      : baseColors.green80,
-                    operator    : baseColors.pistachio,
-                    plain       : baseColors.grey,
-                    prolog      : baseColors.grey90,
-                    property    : baseColors.red90,
-                    punctuation : baseColors.grey60,
-                    regex       : baseColors.green80,
-                    selector    : baseColors.violet,
-                    string      : baseColors.crimson60,
-                    symbol      : baseColors.green80,
-                    url         : baseColors.green80,
-                    variable    : baseColors.orange80,
+                    tag         : defaultColours.violet,
+                    atrule      : defaultColours.teal90,
+                    attrName    : defaultColours.orange,
+                    attrValue   : defaultColours.green80,
+                    boolean     : defaultColours.green80,
+                    cdata       : defaultColours.grey70,
+                    className   : defaultColours.red,
+                    comment     : defaultColours.grey70,
+                    constant    : defaultColours.green80,
+                    deleted     : defaultColours.slate80,
+                    delimiter   : defaultColours.grey90,
+                    doctype     : defaultColours.grey90,
+                    entity      : defaultColours.green80,
+                    function    : defaultColours.orange,
+                    hexcode     : defaultColours.green,
+                    inserted    : defaultColours.green80,
+                    italic      : defaultColours.green80,
+                    keyword     : defaultColours.orange90,
+                    namespace   : defaultColours.green80,
+                    number      : defaultColours.green80,
+                    operator    : defaultColours.pistachio,
+                    plain       : defaultColours.grey,
+                    prolog      : defaultColours.grey90,
+                    property    : defaultColours.red90,
+                    punctuation : defaultColours.grey60,
+                    regex       : defaultColours.green80,
+                    selector    : defaultColours.violet,
+                    string      : defaultColours.crimson60,
+                    symbol      : defaultColours.green80,
+                    url         : defaultColours.green80,
+                    variable    : defaultColours.orange80,
                 },
 
                 languages : {
                     css : {
-                        fallback : baseColors.orange90
+                        fallback : defaultColours.orange90
                     },
                     html : {
-                        fallback : baseColors.grey
+                        fallback : defaultColours.grey
                     },
                     js : {
-                        fallback : baseColors.violet90
+                        fallback : defaultColours.violet90
                     },
                     json : {
-                        fallback : baseColors.teal,
+                        fallback : defaultColours.teal,
                         tokens   : {
-                            string : baseColors.teal
+                            string : defaultColours.teal
                         }
                     }
                 }
@@ -126,26 +126,26 @@ export const RFTheme = {
         },
 
         kbd : {
-            text : baseColors.grey,
-            bg   : baseColors.grey10
+            text : defaultColours.grey,
+            bg   : defaultColours.grey10
         }
     },
 
 
     //  CARD  /////////////////////////////////////////////////////////////////
     card : {
-        bg     : baseColors.white,
-        border : `${lighten(0.96, baseColors.black)}`
+        bg     : defaultColours.white,
+        border : `${lighten(0.96, defaultColours.black)}`
     },
 
 
     //  INFO PANEL  ///////////////////////////////////////////////////////////
     infoPanel : {
-        bg     : baseColors.white,
-        border : baseColors.slate20,
+        bg     : defaultColours.white,
+        border : defaultColours.slate20,
         dismissButton : {
-            bg      : baseColors.white,
-            color   : baseColors.slate90,
+            bg      : defaultColours.white,
+            color   : defaultColours.slate90,
             content : "×"
         }
     },
@@ -154,13 +154,13 @@ export const RFTheme = {
     //  BREADCRUMBS  ///////////////////////////////////////////////////////////
     breadcrumb : {
         wrapper : {
-            bg : baseColors.white,
+            bg : defaultColours.white,
         },
         item : {
-            text      : mainColors.shade,
-            separator : baseColors.slate40,
-            active    : mainColors.shade,
-            inactive  : mainColors.shade
+            text      : customColours.shade,
+            separator : defaultColours.slate40,
+            active    : customColours.shade,
+            inactive  : customColours.shade
         }
     },
 
@@ -170,44 +170,44 @@ export const RFTheme = {
         fontFamily: "sans-serif",
         primary : {
             default : {
-                bg           : mainColors.hue,
-                border       : mainColors.hue,
-                text         : baseColors.white,
+                bg           : customColours.hue,
+                border       : customColours.hue,
+                text         : defaultColours.white,
                 borderRadius : "4px",
             },
             onHover : {
-                bg     : mainColors.hue,
-                border : mainColors.hue,
-                text   : baseColors.white,
+                bg     : customColours.hue,
+                border : customColours.hue,
+                text   : defaultColours.white,
             },
             isActive : {
-                bg     : mainColors.hue,
-                border : mainColors.hue,
-                text   : baseColors.white,
+                bg     : customColours.hue,
+                border : customColours.hue,
+                text   : defaultColours.white,
             },
             isLoading : {
-                spinnerBorder : baseColors.white
+                spinnerBorder : defaultColours.white
             }
         },
         secondary : {
             default : {
-                bg           : `${lighten(0.4, mainColors.hue)}`,
-                border       : mainColors.hue,
-                text         : mainColors.hue,
+                bg           : `${lighten(0.4, customColours.hue)}`,
+                border       : customColours.hue,
+                text         : customColours.hue,
                 borderRadius : "4px",
             },
             onHover : {
-                bg     : `${lighten(0.32, mainColors.hue)}`,
-                border : mainColors.hue,
-                text   : mainColors.hue,
+                bg     : `${lighten(0.32, customColours.hue)}`,
+                border : customColours.hue,
+                text   : customColours.hue,
             },
             isActive : {
-                bg     : `${lighten(0.2, mainColors.hue)}`,
-                border : mainColors.hue,
-                text   : mainColors.hue,
+                bg     : `${lighten(0.2, customColours.hue)}`,
+                border : customColours.hue,
+                text   : customColours.hue,
             },
             isLoading : {
-                spinnerBorder : mainColors.hue,
+                spinnerBorder : customColours.hue,
             }
         }
     },
@@ -216,15 +216,15 @@ export const RFTheme = {
     //  RULE  /////////////////////////////////////////////////////////////////
     hr : {
         primary : {
-            bg     : baseColors.blue80,
+            bg     : defaultColours.blue80,
             height : "1px"
         },
         secondary : {
-            bg     : baseColors.slate40,
+            bg     : defaultColours.slate40,
             height : "1px"
         },
         tertiary : {
-            bg     : baseColors.slate20,
+            bg     : defaultColours.slate20,
             height : "1px"
         }
     },
@@ -233,50 +233,51 @@ export const RFTheme = {
     //  INPUT  ////////////////////////////////////////////////////////////////
     input : {
         default : {
-            bg     : baseColors.white,
-            border : baseColors.slate40,
-            label  : mainColors.shade,
-            text   : mainColors.shade
+            bg           : defaultColours.white,
+            border       : defaultColours.slate40,
+            label        : customColours.shade,
+            text         : customColours.shade,
+            borderRadius : "4px",
         },
         onFocus : {
-            bg       : baseColors.white,
-            border   : mainColors.hue,
-            text     : mainColors.shade,
-            helpText : mainColors.shade,
+            bg       : defaultColours.white,
+            border   : customColours.hue,
+            text     : customColours.shade,
+            helpText : customColours.shade,
         },
         isValid : {
-            bg     : baseColors.white,
-            border : baseColors.green80,
-            label  : mainColors.shade
+            bg     : defaultColours.white,
+            border : defaultColours.green80,
+            label  : customColours.shade
         },
         isInvalid : {
-            bg       : baseColors.red10,
-            border   : baseColors.red80,
-            label    : baseColors.red,
-            helpText : baseColors.red,
+            bg       : defaultColours.red10,
+            border   : defaultColours.red80,
+            label    : defaultColours.red,
+            helpText : defaultColours.red,
         },
         isReadOnly : {
-            bg     : baseColors.grey50,
-            border : baseColors.grey50,
-            label  : mainColors.shade
+            bg     : defaultColours.grey50,
+            border : defaultColours.grey50,
+            label  : customColours.shade
         },
         required : {
-            text : baseColors.red
+            text : defaultColours.red
         },
         icons : {
             default : {
-                fill : baseColors.slate30,
+                fill : defaultColours.slate30,
             },
             onFocus : {
-                fill : mainColors.hue,
+                fill : customColours.hue,
             },
             isValid : {
-                bg     : baseColors.grey50,
-                border : baseColors.red30,
+                bg     : defaultColours.grey50,
+                border : defaultColours.red30,
             }
         },
         select : {
-            chevron : mainColors.hue
+            chevron : customColours.hue
         },
         radioButton : {
             default : {
@@ -289,64 +290,64 @@ export const RFTheme = {
     sidebar : {
         isCollapsed : {
             label : {
-                text : baseColors.white,
-                bg   : mainColors.hue
+                text : defaultColours.white,
+                bg   : customColours.hue
             }
         },
 
         header : {
-            bg           : baseColors.white,
-            borderBottom : baseColors.slate10
+            bg           : defaultColours.white,
+            borderBottom : defaultColours.slate10
         },
 
         body : {
-            bg : baseColors.white,
+            bg : defaultColours.white,
         },
 
         icons : {
             stroked : {
                 thickness : 2,
                 default : {
-                    line : baseColors.slate40,
+                    line : defaultColours.slate40,
                 },
                 onHover : {
-                    line : baseColors.slate80,
+                    line : defaultColours.slate80,
                 },
                 isActive : {
-                    line : baseColors.slate,
+                    line : defaultColours.slate,
                 }
             },
             filled : {
                 default : {
-                    bg : baseColors.slate40,
+                    bg : defaultColours.slate40,
                 },
                 onHover : {
-                    bg : baseColors.slate80,
+                    bg : defaultColours.slate80,
                 },
                 isActive : {
-                    bg : baseColors.slate,
+                    bg : defaultColours.slate,
                 }
             }
         },
 
         links : {
             default : {
-                bg     : baseColors.white,
-                text   : mainColors.shade,
+                bg     : defaultColours.white,
+                text   : customColours.shade,
                 scale  : 100,
                 weight : 600,
             },
             onHover : {
-                bg   : baseColors.slate10,
-                text : mainColors.hue,
+                bg   : defaultColours.slate10,
+                text : customColours.hue,
             },
             isSelected : {
-                bg     : baseColors.white,
-                border : mainColors.hue,
-                text   : mainColors.hue,
+                bg     : defaultColours.white,
+                border : customColours.hue,
+                text   : customColours.hue,
             },
             hasAlert : {
-                bg : baseColors.red70
+                bg : defaultColours.red70
             },
         },
 
@@ -355,25 +356,25 @@ export const RFTheme = {
                 weight : 600,
             },
             default: {
-                bg     : baseColors.white,
-                text   : `${lighten(0.24, mainColors.shade)}`,
+                bg     : defaultColours.white,
+                text   : `${lighten(0.24, customColours.shade)}`,
                 weight : 400,
                 scale  : 92,
             },
             onHover : {
-                bg   : baseColors.slate10,
-                text : mainColors.hue
+                bg   : defaultColours.slate10,
+                text : customColours.hue
             },
             chevron : {
-                border : baseColors.slate40
+                border : defaultColours.slate40
             }
         },
 
 
 
         footer : {
-            bg        : baseColors.white,
-            borderTop : baseColors.slate10
+            bg        : defaultColours.white,
+            borderTop : defaultColours.slate10
         }
     },
 
@@ -381,21 +382,21 @@ export const RFTheme = {
     //  NOTIFICATION  /////////////////////////////////////////////////////////
     notification : {
         default : {
-            bg   : baseColors.slate10,
-            text : mainColors.shade
+            bg   : defaultColours.slate10,
+            text : customColours.shade
         },
         types: {
             info : {
-                border : baseColors.blue60,
+                border : defaultColours.blue60,
             },
             warning : {
-                border : baseColors.amber,
+                border : defaultColours.amber,
             },
             error : {
-                border : baseColors.red90,
+                border : defaultColours.red90,
             },
             success : {
-                border : baseColors.green90,
+                border : defaultColours.green90,
             }
         }
     },
@@ -403,29 +404,29 @@ export const RFTheme = {
 
     //  TABLE  ////////////////////////////////////////////////////////////////
     table : {
-        bg      : baseColors.white,
-        text    : mainColors.shade,
-        border  : baseColors.slate40,
+        bg      : defaultColours.white,
+        text    : customColours.shade,
+        border  : defaultColours.slate40,
         striped : {
             header : {
-                bg : baseColors.blue40,
+                bg : defaultColours.blue40,
             },
             cell : {
-                bg : baseColors.slate20,
+                bg : defaultColours.slate20,
             }
         },
         onHover : {
-            bg   : baseColors.amber20,
-            text : mainColors.shade
+            bg   : defaultColours.amber20,
+            text : customColours.shade
         }
     },
 
 
     //  PROGRESS BAR  /////////////////////////////////////////////////////////
     progressBar : {
-        bg     : baseColors.slate20,
-        fill   : mainColors.hue,
-        label  : mainColors.shade,
-        value  : `${lighten(0.24, mainColors.shade)}`,
+        bg     : defaultColours.slate20,
+        fill   : customColours.hue,
+        label  : customColours.shade,
+        value  : `${lighten(0.24, customColours.shade)}`,
     }
 }

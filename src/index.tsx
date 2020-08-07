@@ -56,7 +56,7 @@ import { CodeBlock } from "./components/CodeBlock/CodeBlock";
 import { ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
 import { ThemeType, ThemeProps } from "./components/Element/constants";
 
-import { baseColors } from "./styles/BaseColors";
+import { defaultColours } from "./styles/DefaultColours";
 import { RFTheme } from "./styles/theme";
 
 export {
@@ -103,6 +103,6 @@ export {
     ThemeProvider,
     ThemeType,
     ThemeProps,
-    baseColors,
+    defaultColours,
     RFTheme
 }

@@ -11,7 +11,7 @@ export const InputFieldStyled = styled.input`
     color            : ${(props: InputFieldProps) => props.theme.input.default.text};
     background-color : ${(props: InputFieldProps) => props.theme.input.default.bg};
     border           : 1px solid ${(props: InputFieldProps) => props.theme.input.default.border};
-    border-radius    : 4px;
+    border-radius    : ${(props: InputFieldProps) => props.theme.input.default.borderRadius};
     padding          : 12px;
     line-height      : 1;
 

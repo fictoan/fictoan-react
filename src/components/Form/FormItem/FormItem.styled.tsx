@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import { FormItemProps } from "../FormItem/FormItem";
 import { InputFieldStyled } from "../InputField/InputField.styled";
 
-import { mainColors } from "../../../styles/theme";
+import { customColours } from "../../../styles/theme";
 
 
 export const FormItemStyled = styled.div`

@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
-import { baseColors } from "../../../styles/BaseColors";
-import { mainColors } from "../../../styles/theme";
+import { defaultColours } from "../../../styles/DefaultColours";
+import { customColours } from "../../../styles/theme";
 
 /*  COMMON STYLES  ========================================================  */
 const SharedStyling = css`
@@ -16,7 +16,7 @@ const SharedStyling = css`
         display     : inline-flex;
         position    : relative;
         font-family : inherit;
-        color       : ${mainColors.shade};
+        color       : ${customColours.shade};
         cursor      : pointer;
         line-height : 1;
         user-select : none;
@@ -33,15 +33,15 @@ const SharedStyling = css`
     input[type="checkbox"]:disabled + label::before {
         user-select    : none;
         pointer-events : none;
-        background     : ${baseColors.slate20};
+        background     : ${defaultColours.slate20};
         box-shadow     : 0 2px 4px -2px hsla(0, 0, 0, 0.24) inset;
     }
 
-    &:hover label::before { background : ${baseColors.slate30}; }
+    &:hover label::before { background : ${defaultColours.slate30}; }
 
     label::after { opacity : 0; }
 
-    input[type="checkbox"]:checked + label::before { background : ${mainColors.hue}; }
+    input[type="checkbox"]:checked + label::before { background : ${customColours.hue}; }
 
     input[type="checkbox"]:disabled + label,
     input[type="checkbox"]:disabled:checked + label {
@@ -75,8 +75,8 @@ export const CheckBoxStyled = styled.div`
         width         : 12px;
         left          : 2px;
         top           : 4px;
-        border-left   : 2px solid ${baseColors.white};
-        border-bottom : 2px solid ${baseColors.white};
+        border-left   : 2px solid ${defaultColours.white};
+        border-bottom : 2px solid ${defaultColours.white};
         transform     : rotate(-45deg);
     }
 
@@ -113,7 +113,7 @@ export const SwitchStyled = styled.div`
         height        : 8px;
         left          : 2px;
         top           : 4px;
-        background    : ${baseColors.white};
+        background    : ${defaultColours.white};
         border-radius : 50%;
         content       : '';
         transition    : all 0.1s ease-out;

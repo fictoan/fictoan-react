@@ -1,3 +1,6 @@
+# 0.30.9
+- Rename `baseColors` to `defaultColours`, and `mainColors` to `customColours`.
+
 # 0.30.8
 - Memoize theme prop in ThemeProvider.
 

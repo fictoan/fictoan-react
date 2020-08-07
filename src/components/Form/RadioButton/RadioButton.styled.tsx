@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import { baseColors } from "../../../styles/BaseColors";
-import { mainColors } from "../../../styles/theme";
+import { defaultColours } from "../../../styles/DefaultColours";
+import { customColours } from "../../../styles/theme";
 
 export const RadioButtonStyled = styled.div`
     display      : inline-flex;
@@ -14,7 +14,7 @@ export const RadioButtonStyled = styled.div`
         /* top           : 4px; */
         left          : 0;
         border-radius : 50%;
-        background    : ${baseColors.slate30};
+        background    : ${defaultColours.slate30};
     }
 
     /*  The white inner circle  */
@@ -24,14 +24,14 @@ export const RadioButtonStyled = styled.div`
         top           : 4px;
         width         : 8px;
         height        : 8px;
-        background    : ${baseColors.white};
+        background    : ${defaultColours.white};
         border-radius : 50%;
     }
 
-    input[type="radio"]:checked + label::before { background : ${mainColors.hue}; }
+    input[type="radio"]:checked + label::before { background : ${customColours.hue}; }
     input[type="radio"]:checked + label::after  { opacity : 1; }
 
-    &:checked + label::before { background : ${mainColors.hue}; }
+    &:checked + label::before { background : ${customColours.hue}; }
     &:checked + label::after { opacity : 1; }
 
     &:only-of-type { margin-right : 0; }
@@ -40,7 +40,7 @@ export const RadioButtonStyled = styled.div`
         display        : inline-block;
         position       : relative;
         font-family    : inherit;
-        color          : ${mainColors.shade};
+        color          : ${customColours.shade};
         cursor         : pointer;
         vertical-align : middle;
         line-height    : 1.1;
@@ -59,16 +59,16 @@ export const RadioButtonStyled = styled.div`
     &:disabled + label::before {
         user-select    : none;
         pointer-events : none;
-        background     : ${baseColors.slate30};
+        background     : ${defaultColours.slate30};
         box-shadow     : inset 0 2px 8px -2px hsla(0, 0, 0, 0.24);
     }
 
-    &:hover label::before { background : ${baseColors.slate40}; }
+    &:hover label::before { background : ${defaultColours.slate40}; }
 
     /*  The grey square  */
     label::after { opacity : 0; }
 
-    &:checked + label::before { background : ${mainColors.hue}; }
+    &:checked + label::before { background : ${customColours.hue}; }
     &:checked + label::after { opacity : 1; }
 
     &:disabled         + label,

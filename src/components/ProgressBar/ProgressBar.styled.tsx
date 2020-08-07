@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { baseColors } from "../../styles/BaseColors";
+import { defaultColours } from "../../styles/DefaultColours";
 import { ProgressBarProps } from "./ProgressBar";
 
 const convertToFictoanColor = (colorString:string) => {
@@ -8,7 +8,7 @@ const convertToFictoanColor = (colorString:string) => {
 
     const c:string = colorString.replace('-', '');
 
-    return baseColors.hasOwnProperty(c) ? baseColors[c] : null
+    return defaultColours.hasOwnProperty(c) ? defaultColours[c] : null
 }
 
 export const ProgressBarMetaStyled = styled.div`

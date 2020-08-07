@@ -2,12 +2,12 @@ import { createGlobalStyle } from "styled-components";
 
 import { NormalizeStyled } from "./Normalize.styled";
 import { ResetStyled } from "./Reset.styled";
-import { ColorsStyled } from "./Colors.styled";
+import { ColoursStyled } from "./Colours.styled";
 
 export const GlobalStaticStyled = createGlobalStyle`
     ${ NormalizeStyled }
     ${ ResetStyled }
-    ${ ColorsStyled }
+    ${ ColoursStyled }
 
     /* Layout */
     html,
@@ -263,7 +263,7 @@ export const GlobalStaticStyled = createGlobalStyle`
     .shape-circular { border-radius : 50%; }
 
     /* Shadows for any element */
-    .no-shadow   { box-shadow : none !important; }
+    .no-shadow { box-shadow : none !important; }
 
     .shadow-mild {
         box-shadow :
