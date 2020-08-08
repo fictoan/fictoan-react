@@ -105,8 +105,8 @@ export const GlobalStaticStyled = createGlobalStyle`
     /* the middle. Apply to parent */
     .vertically-centre-items { display : flex; }
 
-    .vertically-centre-items *,
-    .vertically-center-items * {
+    .vertically-centre-items > *,
+    .vertically-center-items > * {
         align-self : center;
     }
 

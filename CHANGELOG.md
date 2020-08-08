@@ -1,3 +1,6 @@
+# 0.30.11
+- Fix incorrect centering rule.
+
 # 0.30.10
 - Make `borderRadius` themeable for cards and input fields.
 
