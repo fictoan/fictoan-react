@@ -1,3 +1,6 @@
+# 0.30.10
+- Make `borderRadius` themeable for cards and input fields.
+
 # 0.30.9
 - Rename `baseColors` to `defaultColours`, and `mainColors` to `customColours`.
 

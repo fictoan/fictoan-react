@@ -74,7 +74,6 @@ export const ButtonStyled = styled.button`
         }
     }
 
-
     &:active {
         box-shadow : none;
         opacity    : 0.72;

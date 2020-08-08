@@ -1,6 +1,7 @@
 import { lighten } from "polished";
 
 import { defaultColours } from "./DefaultColours";
+import { CardProps } from "../components/Card/Card";
 
 
 export const customColours = {
@@ -134,8 +135,9 @@ export const RFTheme = {
 
     //  CARD  /////////////////////////////////////////////////////////////////
     card : {
-        bg     : defaultColours.white,
-        border : `${lighten(0.96, defaultColours.black)}`
+        bg           : defaultColours.white,
+        border       : `${lighten(0.96, defaultColours.black)}`,
+        borderRadius : "4px",
     },
 
 
