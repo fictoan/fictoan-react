@@ -1,7 +1,6 @@
 import { lighten } from "polished";
 
 import { defaultColours } from "./DefaultColours";
-import { CardProps } from "../components/Card/Card";
 
 
 export const customColours = {
@@ -13,7 +12,7 @@ export const customColours = {
 }
 
 export const RFTheme = {
-    customColors : customColours,
+    customColours : customColours,
 
     //  BASICS  ///////////////////////////////////////////////////////////////
     body : {
