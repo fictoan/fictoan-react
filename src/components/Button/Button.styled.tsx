@@ -48,7 +48,6 @@ export const ButtonStyled = styled.button`
         }
     }
 
-
     &.secondary {
         background-color : ${(props: ButtonProps) => props.theme.button.secondary.default.bg};
         color            : ${(props: ButtonProps) => props.theme.button.secondary.default.text};
@@ -69,6 +68,31 @@ export const ButtonStyled = styled.button`
 
         &.with-loader::after {
             border             : 3px solid ${(props: ButtonProps) => props.theme.button.secondary.isLoading.spinnerBorder};
+            border-top-color   : transparent;
+            border-right-color : transparent;
+        }
+    }
+    
+    &.tertiary {
+        background-color : ${(props: ButtonProps) => props.theme.button.tertiary.default.bg};
+        color            : ${(props: ButtonProps) => props.theme.button.tertiary.default.text};
+        border           : 1px solid ${(props: ButtonProps) => props.theme.button.tertiary.default.border};
+        border-radius    : ${(props: ButtonProps) => props.theme.button.tertiary.default.borderRadius};
+
+        :hover {
+            background-color : ${(props: ButtonProps) => props.theme.button.tertiary.onHover.bg};
+            color            : ${(props: ButtonProps) => props.theme.button.tertiary.onHover.text};
+            border           : 1px solid ${(props: ButtonProps) => props.theme.button.tertiary.onHover.border}
+        }
+
+        :active {
+            background-color : ${(props: ButtonProps) => props.theme.button.tertiary.isActive.bg};
+            color            : ${(props: ButtonProps) => props.theme.button.tertiary.isActive.text};
+            border           : 1px solid ${(props: ButtonProps) => props.theme.button.tertiary.isActive.border}
+        }
+
+        &.with-loader::after {
+            border             : 3px solid ${(props: ButtonProps) => props.theme.button.tertiary.isLoading.spinnerBorder};
             border-top-color   : transparent;
             border-right-color : transparent;
         }

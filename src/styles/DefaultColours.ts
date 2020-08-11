@@ -3,8 +3,9 @@ interface DefaultColours {
 }
 
 export const defaultColours:DefaultColours = {
-    "black" : "hsl(   0,   0%,   0%)",
-    "white" : "hsl(   0,   0%, 100%)",
+    "black"       : "hsl(   0,   0%,   0%)",
+    "white"       : "hsl(   0,   0%, 100%)",
+    "transparent" : "hsla(   0,   0%, 100%, 0)",
 
     "red"   : "hsl(   0,  84%,  60%)",
     "red90" : "hsl(   0,  84%,  64%)",

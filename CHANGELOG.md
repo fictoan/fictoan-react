@@ -1,3 +1,6 @@
+# 0.30.12
+- Add tertiary button.
+
 # 0.30.11
 - Fix incorrect centering rule.
 

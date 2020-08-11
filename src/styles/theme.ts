@@ -210,6 +210,27 @@ export const RFTheme = {
             isLoading : {
                 spinnerBorder : customColours.hue,
             }
+        },
+        tertiary : {
+            default : {
+                bg           : defaultColours.transparent,
+                border       : defaultColours.transparent,
+                text         : customColours.hue,
+                borderRadius : "4px",
+            },
+            onHover : {
+                bg     : `${lighten(0.40, customColours.hue)}`,
+                border : defaultColours.transparent,
+                text   : customColours.hue,
+            },
+            isActive : {
+                bg     : `${lighten(0.32, customColours.hue)}`,
+                border : defaultColours.transparent,
+                text   : customColours.hue,
+            },
+            isLoading : {
+                spinnerBorder : customColours.hue,
+            }
         }
     },
 
