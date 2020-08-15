@@ -1,5 +1,8 @@
+# 0.30.13
+- Add `tertiary` button.
+
 # 0.30.12
-- Add tertiary button.
+- Add `transparent` as a `defaultColour`.
 
 # 0.30.11
 - Fix incorrect centering rule.

@@ -7,7 +7,7 @@ import { ButtonStyled } from "./Button.styled";
 
 
 export interface ButtonCustomProps {
-    kind      ? : "primary" | "secondary" | "custom";
+    kind      ? : "primary" | "secondary" | "tertiary" | "custom";
     size      ? : "tiny" | "small" | "medium" | "large" | "huge";
     shape     ? : "rounded" | "curved";
     shadow    ? : "mild" | "soft" | "hard";
