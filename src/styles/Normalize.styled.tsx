@@ -1,7 +1,7 @@
 import { css } from "styled-components";
 
 export const NormalizeStyled = css`
-    /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+    /* normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
     html {
     line-height: 1.15; /* 1 */

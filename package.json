@@ -1,6 +1,6 @@
 {
     "name": "fictoan-react",
-    "version": "0.30.13",
+    "version": "0.30.14",
     "private": false,
     "main": "dist/index.js",
     "module": "dist/index.es.js",
@@ -51,6 +51,6 @@
         "prism-react-renderer": "^1.1.0",
         "prismjs": "^1.21.0",
         "react": "^16.13.0",
-        "styled-components": "^5.0.1"
+        "styled-components": "^5.1.1"
     }
 }
