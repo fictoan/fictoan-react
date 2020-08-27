@@ -5,15 +5,11 @@ import { CommonAndHTMLProps } from "../../Element/constants";
 
 import { BreadcrumbWrapperStyled } from "./BreadcrumbWrapper.styled";
 
-
 export type BreadcrumbWrapperElementType = HTMLDivElement;
-export type BreadcrumbWrapperProps       = CommonAndHTMLProps<BreadcrumbWrapperElementType>;
+export type BreadcrumbWrapperProps = CommonAndHTMLProps<BreadcrumbWrapperElementType>;
 
-export const BreadcrumbWrapper = ({ ...props }: BreadcrumbWrapperProps) => {
-    return (
-        <Element<BreadcrumbWrapperElementType>
-            as={BreadcrumbWrapperStyled}
-            {...props}
-        />
-    );
-}
+export const BreadcrumbWrapper = React.forwardRef(
+    ({ ...props }: BreadcrumbWrapperProps, ref: React.Ref<BreadcrumbWrapperElementType>) => {
+        return <Element<BreadcrumbWrapperElementType> as={BreadcrumbWrapperStyled} ref={ref} {...props} />;
+    }
+);

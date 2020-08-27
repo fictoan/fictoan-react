@@ -6,16 +6,9 @@ import { InputCommonProps } from "../BaseInputComponent/constants";
 import { InputLabelProps } from "../InputLabel/InputLabel";
 import { TextAreaStyled } from "./TextArea.styled";
 
-
 export type TextareaElementType = HTMLTextAreaElement;
-export type TextareaProps       = CommonAndHTMLProps<TextareaElementType> & InputLabelProps & InputCommonProps;
+export type TextareaProps = CommonAndHTMLProps<TextareaElementType> & InputLabelProps & InputCommonProps;
 
-export const TextArea = (props: TextareaProps) => {
-    return (
-        <BaseInputComponent<TextareaElementType>
-            as={TextAreaStyled}
-            placeholder=" "
-            {...props}
-        />
-    );
-}
+export const TextArea = React.forwardRef((props: TextareaProps, ref: React.Ref<TextareaElementType>) => {
+    return <BaseInputComponent<TextareaElementType> as={TextAreaStyled} ref={ref} placeholder=" " {...props} />;
+});

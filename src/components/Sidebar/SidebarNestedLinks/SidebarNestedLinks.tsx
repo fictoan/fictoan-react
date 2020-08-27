@@ -5,15 +5,11 @@ import { CommonAndHTMLProps } from "../../Element/constants";
 
 import { SidebarNestedLinksStyled } from "./SidebarNestedLinks.styled";
 
-
 export type SidebarNestedLinksElementType = HTMLDivElement;
-export type SidebarNestedLinksProps       = CommonAndHTMLProps<SidebarNestedLinksElementType>;
+export type SidebarNestedLinksProps = CommonAndHTMLProps<SidebarNestedLinksElementType>;
 
-export const SidebarNestedLinks = ({ ...props }: SidebarNestedLinksProps) => {
-    return (
-        <Element<SidebarNestedLinksElementType>
-            as={SidebarNestedLinksStyled}
-            {...props}
-        />
-    );
-}
+export const SidebarNestedLinks = React.forwardRef(
+    ({ ...props }: SidebarNestedLinksProps, ref: React.Ref<SidebarNestedLinksElementType>) => {
+        return <Element<SidebarNestedLinksElementType> as={SidebarNestedLinksStyled} ref={ref} {...props} />;
+    }
+);

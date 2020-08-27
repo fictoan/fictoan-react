@@ -5,7 +5,7 @@ import { CommonAndHTMLProps } from "../Element/constants";
 
 import { PortionStyled } from "./Portion.styled";
 
-
+// prettier-ignore
 export interface PortionCustomProps {
     desktopSpan  ? : string;
     tabPTSpan    ? : string;
@@ -17,45 +17,37 @@ export interface PortionCustomProps {
 export type PortionElementType = HTMLDivElement;
 export type PortionProps = CommonAndHTMLProps<PortionElementType> & PortionCustomProps;
 
-export const Portion = ({
-    desktopSpan,
-    mobileSpan,
-    tabLSSpan,
-    tabPTSpan,
-    isHorizontal,
-    ...props
-}: PortionProps) => {
-    let classNames = [];
+export const Portion = React.forwardRef(
+    (
+        { desktopSpan, mobileSpan, tabLSSpan, tabPTSpan, isHorizontal, ...props }: PortionProps,
+        ref: React.Ref<PortionElementType>
+    ) => {
+        let classNames = [];
 
-    if (desktopSpan || tabLSSpan || tabPTSpan || mobileSpan) {
-        if (desktopSpan) {
-            classNames.push(`${desktopSpan}`);
+        if (desktopSpan || tabLSSpan || tabPTSpan || mobileSpan) {
+            if (desktopSpan) {
+                classNames.push(`${desktopSpan}`);
+            }
+
+            if (tabLSSpan) {
+                classNames.push(`${tabLSSpan}-on-tab-ls`);
+            }
+
+            if (tabPTSpan) {
+                classNames.push(`${tabPTSpan}-on-tab-pt`);
+            }
+
+            if (mobileSpan) {
+                classNames.push(`${mobileSpan}-on-mobile`);
+            }
+        } else {
+            classNames.push("whole");
         }
 
-        if (tabLSSpan) {
-            classNames.push(`${tabLSSpan}-on-tab-ls`);
+        if (isHorizontal) {
+            classNames.push("horizontal");
         }
 
-        if (tabPTSpan) {
-            classNames.push(`${tabPTSpan}-on-tab-pt`);
-        }
-
-        if (mobileSpan) {
-            classNames.push(`${mobileSpan}-on-mobile`);
-        }
-    } else {
-        classNames.push("whole");
+        return <Element<PortionElementType> as={PortionStyled} ref={ref} classNames={classNames} {...props} />;
     }
-
-    if (isHorizontal) {
-        classNames.push("horizontal");
-    }
-
-    return (
-        <Element<PortionElementType>
-            as={PortionStyled}
-            classNames={classNames}
-            {...props}
-        />
-    );
-}
+);

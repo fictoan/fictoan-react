@@ -8,10 +8,10 @@ import { SelectWrapperStyled, SelectStyled } from "./Select.styled";
 import { InputLabel } from "../InputLabel/InputLabel";
 import { FormItem } from "../FormItem/FormItem";
 
-
 export type SelectElementType = HTMLSelectElement;
 export type OptionElementType = HTMLOptionElement;
 
+// prettier-ignore
 interface SelectCustomProps {
     options       : CommonAndHTMLProps<OptionElementType>[];
     isFullWidth ? : boolean;
@@ -23,55 +23,31 @@ interface SelectCustomProps {
 export type OptionProps = CommonAndHTMLProps<SelectElementType>;
 export type SelectProps = CommonAndHTMLProps<SelectElementType> & SelectCustomProps;
 
-const Option = ({
-    name,
-    ...props
-}: OptionProps) => {
+const Option = ({ name, ...props }: OptionProps) => {
     return (
-        <Element<OptionElementType>
-            as="option"
-            {...props}
-        >
+        <Element<OptionElementType> as="option" {...props}>
             {name}
         </Element>
     );
-}
+};
 
-export const Select = ({
-    label,
-    helpText,
-    errorText,
-    isFullWidth,
-    className,
-    options,
-    ...props
-}: SelectProps) => {
-    return (
-        <FormItem>
-            <Element<HTMLDivElement>
-                as={SelectWrapperStyled}
-                isFullWidth={isFullWidth}
-                className={className}
-            >
-                <Element<SelectElementType>
-                    as={SelectStyled}
-                    {...props}
-                >
-                    {options.map((option, index) => {
-                        return (
-                            <Option key={index} {...option}/>
-                        )
-                    })}
+export const Select = React.forwardRef(
+    (
+        { label, helpText, errorText, isFullWidth, className, options, ...props }: SelectProps,
+        ref: React.Ref<SelectElementType>
+    ) => {
+        return (
+            <FormItem ref={ref}>
+                <Element<HTMLDivElement> as={SelectWrapperStyled} isFullWidth={isFullWidth} className={className}>
+                    <Element<SelectElementType> as={SelectStyled} {...props}>
+                        {options.map((option, index) => {
+                            return <Option key={index} {...option} />;
+                        })}
+                    </Element>
                 </Element>
-            </Element>
 
-            {label && (
-                <InputLabel
-                    label={label}
-                    helpText={helpText}
-                    errorText={errorText}
-                />
-            )}
-        </FormItem>
-    );
-}
+                {label && <InputLabel label={label} helpText={helpText} errorText={errorText} />}
+            </FormItem>
+        );
+    }
+);

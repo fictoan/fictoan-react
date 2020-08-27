@@ -6,20 +6,13 @@ import { BaseInputComponentProps } from "../BaseInputComponent/constants";
 
 import { CheckBoxStyled } from "./CheckBox.styled";
 
-
 export type CheckboxElementType = HTMLInputElement;
-export type CheckboxProps       = BaseInputComponentProps<CheckboxElementType>;
+export type CheckboxProps = BaseInputComponentProps<CheckboxElementType>;
 
-export const CheckBox = ({...props}: CheckboxProps) => {
+export const CheckBox = React.forwardRef(({ ...props }: CheckboxProps, ref: React.Ref<CheckboxElementType>) => {
     return (
-        <Element<CheckboxElementType>
-            as={CheckBoxStyled}
-        >
-            <BaseInputComponent
-                as="input"
-                type="checkbox"
-                {...props}
-            />
+        <Element<CheckboxElementType> as={CheckBoxStyled} ref={ref}>
+            <BaseInputComponent as="input" type="checkbox" {...props} />
         </Element>
     );
-}
+});

@@ -1,0 +1,8 @@
+build/
+styles/
+coverage/
+*.css
+*.styled.[jt]sx
+*.theme.[jt]s
+*.log
+yarn.lock

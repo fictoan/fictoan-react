@@ -5,15 +5,11 @@ import { CommonAndHTMLProps } from "../../Element/constants";
 
 import { FormItemGroupStyled } from "./FormItemGroup.styled";
 
-
 export type FormItemGroupElementType = HTMLDivElement;
-export type FormItemGroupProps       = CommonAndHTMLProps<FormItemGroupElementType>;
+export type FormItemGroupProps = CommonAndHTMLProps<FormItemGroupElementType>;
 
-export const FormItemGroup = ({...props}: FormItemGroupProps) => {
-    return (
-        <Element<FormItemGroupElementType>
-            as={FormItemGroupStyled}
-            {...props}
-        />
-    );
-}
+export const FormItemGroup = React.forwardRef(
+    ({ ...props }: FormItemGroupProps, ref: React.Ref<FormItemGroupElementType>) => {
+        return <Element<FormItemGroupElementType> as={FormItemGroupStyled} ref={ref} {...props} />;
+    }
+);

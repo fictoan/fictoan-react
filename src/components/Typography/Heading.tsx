@@ -3,7 +3,7 @@ import React from "react";
 import { Element } from "../Element/Element";
 import { CommonAndHTMLProps } from "../Element/constants";
 
-
+// prettier-ignore
 export interface HeadingCustomProps {
     as        : "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
     isSans  ? : boolean;
@@ -14,44 +14,32 @@ export interface HeadingCustomProps {
 }
 
 export type HeadingElementType = HTMLHeadingElement;
-export type HeadingProps       = CommonAndHTMLProps<HeadingElementType> & HeadingCustomProps;
+export type HeadingProps = CommonAndHTMLProps<HeadingElementType> & HeadingCustomProps;
 
-export const Heading = ({
-    as,
-    weight,
-    isSans,
-    isSerif,
-    isMono,
-    align,
-    ...props
-}: HeadingProps) => {
-    let classNames = [];
+export const Heading = React.forwardRef(
+    ({ as, weight, isSans, isSerif, isMono, align, ...props }: HeadingProps, ref: React.Ref<HeadingElementType>) => {
+        let classNames = [];
 
-    if (weight) {
-        classNames.push(`weight-${weight}`);
+        if (weight) {
+            classNames.push(`weight-${weight}`);
+        }
+
+        if (isSans) {
+            classNames.push("font-sans");
+        }
+
+        if (isSerif) {
+            classNames.push("font-serif");
+        }
+
+        if (isMono) {
+            classNames.push("font-mono");
+        }
+
+        if (align) {
+            classNames.push(`text-${align}`);
+        }
+
+        return <Element<HeadingElementType> as={as} ref={ref} classNames={classNames} {...props} />;
     }
-
-    if (isSans) {
-        classNames.push("font-sans");
-    }
-
-    if (isSerif) {
-        classNames.push("font-serif");
-    }
-
-    if (isMono) {
-        classNames.push("font-mono");
-    }
-
-    if (align) {
-        classNames.push(`text-${align}`);
-    }
-
-    return (
-        <Element<HeadingElementType>
-            as={as}
-            classNames={classNames}
-            {...props}
-        />
-    );
-}
+);

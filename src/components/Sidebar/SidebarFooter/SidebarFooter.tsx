@@ -6,13 +6,10 @@ import { CommonAndHTMLProps } from "../../Element/constants";
 import { SidebarFooterStyled } from "./SidebarFooter.styled";
 
 export type SidebarFooterElementType = HTMLDivElement;
-export type SidebarFooterProps       = CommonAndHTMLProps<SidebarFooterElementType>;
+export type SidebarFooterProps = CommonAndHTMLProps<SidebarFooterElementType>;
 
-export const SidebarFooter = ({ ...props }: SidebarFooterProps) => {
-    return (
-        <Element<SidebarFooterElementType>
-            as={SidebarFooterStyled}
-            {...props}
-        />
-    );
-}
+export const SidebarFooter = React.forwardRef(
+    ({ ...props }: SidebarFooterProps, ref: React.Ref<SidebarFooterElementType>) => {
+        return <Element<SidebarFooterElementType> as={SidebarFooterStyled} ref={ref} {...props} />;
+    }
+);

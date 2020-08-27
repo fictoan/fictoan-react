@@ -7,20 +7,13 @@ import { BaseInputComponentProps } from "../BaseInputComponent/constants";
 
 import { SwitchStyled } from "./CheckBox.styled";
 
-
 export type SwitchElementType = HTMLInputElement;
-export type SwitchProps       = BaseInputComponentProps<SwitchElementType>;
+export type SwitchProps = BaseInputComponentProps<SwitchElementType>;
 
-export const Switch = ({...props}: SwitchProps) => {
+export const Switch = React.forwardRef(({ ...props }: SwitchProps, ref: React.Ref<SwitchElementType>) => {
     return (
-        <Element<SwitchElementType>
-            as={SwitchStyled}
-        >
-            <BaseInputComponent
-                as="input"
-                type="checkbox"
-                {...props}
-            />
+        <Element<SwitchElementType> as={SwitchStyled} ref={ref}>
+            <BaseInputComponent as="input" type="checkbox" {...props} />
         </Element>
     );
-}
+});

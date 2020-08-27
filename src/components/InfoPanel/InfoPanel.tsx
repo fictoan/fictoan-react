@@ -5,7 +5,7 @@ import { CommonAndHTMLProps } from "../Element/constants";
 
 import { InfoPanelStyled } from "./InfoPanel.styled";
 
-
+// prettier-ignore
 export interface InfoPanelCustomProps {
     width           ? : "tiny" | "small" | "medium" | "large" | "huge";
     isOpen          ? : boolean;
@@ -13,43 +13,33 @@ export interface InfoPanelCustomProps {
 }
 
 export type InfoPanelElementType = HTMLDivElement;
-export type InfoPanelProps       = CommonAndHTMLProps<InfoPanelElementType> & InfoPanelCustomProps;
+export type InfoPanelProps = CommonAndHTMLProps<InfoPanelElementType> & InfoPanelCustomProps;
 
-export const InfoPanel = ({
-    width,
-    isOpen,
-    children,
-    onCloseCallback,
-    ...props
-}: InfoPanelProps) => {
-    let classNames = [];
+export const InfoPanel = React.forwardRef(
+    ({ width, isOpen, children, onCloseCallback, ...props }: InfoPanelProps, ref: React.Ref<InfoPanelElementType>) => {
+        let classNames = [];
 
-    if (width) {
-        classNames.push(width);
-    }
-
-    if (isOpen) {
-        classNames.push("open");
-    }
-
-    const closeInfoPanel = () => {
-        if (onCloseCallback) {
-            onCloseCallback();
+        if (width) {
+            classNames.push(width);
         }
-    }
 
-    return !!isOpen && (
-        <Element<InfoPanelElementType>
-            as={InfoPanelStyled}
-            classNames={classNames}
-            {...props}
-        >
-            <div
-                className="dismiss-button"
-                onClick={closeInfoPanel}
-                role="button"
-            />
-            {children}
-        </Element>
-    );
-}
+        if (isOpen) {
+            classNames.push("open");
+        }
+
+        const closeInfoPanel = () => {
+            if (onCloseCallback) {
+                onCloseCallback();
+            }
+        };
+
+        return (
+            !!isOpen && (
+                <Element<InfoPanelElementType> as={InfoPanelStyled} ref={ref} classNames={classNames} {...props}>
+                    <div className="dismiss-button" onClick={closeInfoPanel} role="button" />
+                    {children}
+                </Element>
+            )
+        );
+    }
+);

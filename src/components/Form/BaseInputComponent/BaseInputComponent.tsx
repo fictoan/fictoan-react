@@ -7,40 +7,41 @@ import { FormItem } from "../FormItem/FormItem";
 import { InputFieldElementType } from "../InputField/InputField";
 import { BaseInputComponentWithIconProps } from "./constants";
 
-export const BaseInputComponent = <K extends InputFieldElementType>({
-    as: Component,
-    className,
-    label,
-    helpText,
-    errorText,
-    iconLeft,
-    iconRight,
-    validateThis,
-    classNames,
-    ...inputProps
-}: BaseInputComponentWithIconProps<K>) => (
-    <FormItem>
-        <Element<K>
-            as={Component}
-            classNames={[
-                className,
-                iconLeft && "with-icon-left",
-                iconRight && "with-icon-right",
-                validateThis && "validate-this"
-            ].concat(classNames)}
-            {...inputProps}
-        />
-
-        {iconLeft && <span className="icon-left">{iconLeft}</span>}
-        {iconRight && <span className="icon-right">{iconRight}</span>}
-
-        {label && (
-            <InputLabel
-                label={label}
-                helpText={helpText}
-                errorText={errorText}
-                htmlFor={inputProps.id}
+export const BaseInputComponent = React.forwardRef(
+    <K extends InputFieldElementType>(
+        {
+            as: Component,
+            className,
+            label,
+            helpText,
+            errorText,
+            iconLeft,
+            iconRight,
+            validateThis,
+            classNames,
+            ...inputProps
+        }: BaseInputComponentWithIconProps<K>,
+        ref: React.LegacyRef<HTMLInputElement>
+    ) => (
+        <FormItem>
+            <Element<K>
+                as={Component}
+                ref={ref}
+                classNames={[
+                    className,
+                    iconLeft && "with-icon-left",
+                    iconRight && "with-icon-right",
+                    validateThis && "validate-this",
+                ].concat(classNames)}
+                {...inputProps}
             />
-        )}
-    </FormItem>
-);
+
+            {iconLeft && <span className="icon-left">{iconLeft}</span>}
+            {iconRight && <span className="icon-right">{iconRight}</span>}
+
+            {label && <InputLabel label={label} helpText={helpText} errorText={errorText} htmlFor={inputProps.id} />}
+        </FormItem>
+    )
+) as <K extends InputFieldElementType>(
+    props: BaseInputComponentWithIconProps<K> & { ref?: React.LegacyRef<HTMLInputElement> }
+) => React.ReactElement;

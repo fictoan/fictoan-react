@@ -3,7 +3,7 @@ import { BaseInputComponentProps } from "../BaseInputComponent/constants";
 export type RadioButtonElementType = HTMLDivElement;
 export type RadioButtonProps = BaseInputComponentProps<RadioButtonElementType>;
 
-interface RadioGroupCustomProps {
+export interface RadioGroupCustomProps {
     options: {
         name: string;
         value: string;
