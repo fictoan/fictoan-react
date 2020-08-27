@@ -1,4 +1,4 @@
-# 0.31.00
+# 0.31.0
 - Add support for passing `refs`.
 
 # 0.30.14
