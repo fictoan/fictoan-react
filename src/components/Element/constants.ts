@@ -4,12 +4,14 @@ import { RFTheme } from "../../styles/theme";
 
 export type ThemeType = Partial<typeof RFTheme>;
 
+// prettier-ignore
 export interface ThemeProps {
     theme ? : ThemeType;
 }
 
 type SpacingTypes = "none" | "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
 
+// prettier-ignore
 export interface CommonProps extends ThemeProps {
     bgColor           ? : string;
     bgColour          ? : string;
@@ -44,9 +46,10 @@ export interface CommonProps extends ThemeProps {
     classNames        ? : any[];
 }
 
-export interface CommonAndHTMLProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "size"> { }
+export interface CommonAndHTMLProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "size" | "ref"> {}
 
-export interface ElementProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as"> {
+// prettier-ignore
+export interface ElementProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as" | "ref"> {
     as          : any;
     className ? : string;
 }

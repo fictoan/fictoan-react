@@ -3,7 +3,7 @@ import React from "react";
 import { Element } from "../../Element/Element";
 import { CommonAndHTMLProps } from "../../Element/constants";
 
-
+// prettier-ignore
 export interface InputLabelCustomProps {
     label     ? : string;
     helpText  ? : string;
@@ -12,28 +12,18 @@ export interface InputLabelCustomProps {
 }
 
 export type InputLabelElementType = HTMLLabelElement;
-export type InputLabelProps       = CommonAndHTMLProps<InputLabelElementType> & InputLabelCustomProps;
+export type InputLabelProps = CommonAndHTMLProps<InputLabelElementType> & InputLabelCustomProps;
 
-export const InputLabel = ({
-    label,
-    helpText,
-    errorText,
-    ...props
-}: InputLabelProps) => {
-    return (
-        <Element<InputLabelElementType>
-            as="label"
-            {...props}
-        >
-            {label}
+export const InputLabel = React.forwardRef(
+    ({ label, helpText, errorText, ...props }: InputLabelProps, ref: React.Ref<InputLabelElementType>) => {
+        return (
+            <Element<InputLabelElementType> as="label" ref={ref} {...props}>
+                {label}
 
-            {helpText && helpText.length > 0 && (
-                <span className="ff-input-help">{helpText}</span>
-            )}
+                {helpText && helpText.length > 0 && <span className="ff-input-help">{helpText}</span>}
 
-            {errorText && errorText.length > 0 && (
-                <span className="ff-input-error">{errorText}</span>
-            )}
-        </Element>
-    );
-}
+                {errorText && errorText.length > 0 && <span className="ff-input-error">{errorText}</span>}
+            </Element>
+        );
+    }
+);

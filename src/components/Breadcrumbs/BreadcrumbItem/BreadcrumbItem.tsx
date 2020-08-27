@@ -5,15 +5,11 @@ import { CommonAndHTMLProps } from "../../Element/constants";
 
 import { BreadcrumbItemStyled } from "./BreadcrumbItem.styled";
 
-
 export type BreadcrumbItemElementType = HTMLLIElement;
-export type BreadcrumbItemProps       = CommonAndHTMLProps<BreadcrumbItemElementType>;
+export type BreadcrumbItemProps = CommonAndHTMLProps<BreadcrumbItemElementType>;
 
-export const BreadcrumbItem = ({ ...props }: BreadcrumbItemProps) => {
-    return (
-        <Element<BreadcrumbItemElementType>
-            as={BreadcrumbItemStyled}
-            {...props}
-        />
-    );
-}
+export const BreadcrumbItem = React.forwardRef(
+    ({ ...props }: BreadcrumbItemProps, ref: React.Ref<BreadcrumbItemElementType>) => {
+        return <Element<BreadcrumbItemElementType> as={BreadcrumbItemStyled} ref={ref} {...props} />;
+    }
+);

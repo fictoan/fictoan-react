@@ -5,7 +5,7 @@ import { CommonAndHTMLProps } from "../../Element/constants";
 
 import { SidebarItemTextStyled } from "../SidebarItemText/SidebarItemText.styled";
 
-
+// prettier-ignore
 export interface SidebarItemTextCustomProps {
     linkText  : string;
     weight  ? : "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
@@ -13,31 +13,29 @@ export interface SidebarItemTextCustomProps {
 }
 
 export type SidebarItemTextElementType = HTMLParagraphElement;
-export type SidebarItemTextProps       = CommonAndHTMLProps<SidebarItemTextElementType> & SidebarItemTextCustomProps;
+export type SidebarItemTextProps = CommonAndHTMLProps<SidebarItemTextElementType> & SidebarItemTextCustomProps;
 
-export const SidebarItemText = ({
-    linkText,
-    weight,
-    size,
-    ...props
-}: SidebarItemTextProps) => {
-    let classNames = [];
+export const SidebarItemText = React.forwardRef(
+    ({ linkText, weight, size, ...props }: SidebarItemTextProps, ref: React.Ref<SidebarItemTextElementType>) => {
+        let classNames = [];
 
-    if (weight) {
-        classNames.push(`weight-${weight}`);
+        if (weight) {
+            classNames.push(`weight-${weight}`);
+        }
+
+        if (size) {
+            classNames.push(`text-${size}`);
+        }
+
+        return (
+            <Element<SidebarItemTextElementType>
+                as={SidebarItemTextStyled}
+                ref={ref}
+                classNames={classNames}
+                {...props}
+            >
+                {linkText}
+            </Element>
+        );
     }
-
-    if (size) {
-        classNames.push(`text-${size}`);
-    }
-
-    return (
-        <Element<SidebarItemTextElementType>
-            as={SidebarItemTextStyled}
-            classNames={classNames}
-            {...props}
-        >
-            {linkText}
-        </Element>
-    );
-}
+);
