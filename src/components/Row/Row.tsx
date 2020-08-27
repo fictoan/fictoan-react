@@ -22,7 +22,7 @@ export const Row = React.forwardRef(
     (
         {
             sidePadding,
-            gutters,
+            gutters = "medium",
             retainLayoutOnTabLS,
             retainLayoutOnTabPT,
             retainLayoutOnMobile,
@@ -60,8 +60,3 @@ export const Row = React.forwardRef(
         return <Element<RowElementType> as={RowStyled} ref={ref} classNames={classNames} {...props} />;
     }
 );
-
-// prettier-ignore
-Row.defaultProps = {
-    gutters : "medium"
-}
