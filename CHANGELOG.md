@@ -1,3 +1,6 @@
+# 0.31.00
+- Add support for passing `refs`.
+
 # 0.30.14
 - Upgrade `styled-components` from `5.0.1` to `5.1.1` for Jest reasons.
 
