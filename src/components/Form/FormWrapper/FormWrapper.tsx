@@ -14,7 +14,7 @@ export type FormWrapperElementType = HTMLFormElement;
 export type FormWrapperProps = CommonAndHTMLProps<FormWrapperElementType> & FormWrapperCustomProps;
 
 export const FormWrapper = React.forwardRef(
-    ({ spacing, ...props }: FormWrapperProps, ref: React.Ref<FormWrapperElementType>) => {
+    ({ spacing = "small", ...props }: FormWrapperProps, ref: React.Ref<FormWrapperElementType>) => {
         let classNames = [];
 
         if (spacing) {
@@ -24,8 +24,3 @@ export const FormWrapper = React.forwardRef(
         return <Element<FormWrapperElementType> as={FormWrapperStyled} ref={ref} classNames={classNames} {...props} />;
     }
 );
-
-// prettier-ignore
-FormWrapper.defaultProps = {
-    spacing : "small"
-}

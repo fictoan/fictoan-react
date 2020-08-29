@@ -14,21 +14,18 @@ export interface HRCustomProps {
 export type HRElementType = HTMLHRElement;
 export type HRProps = CommonAndHTMLProps<HRElementType> & HRCustomProps;
 
-export const HRule = React.forwardRef(({ kind, sideMargin, ...props }: HRProps, ref: React.Ref<HRElementType>) => {
-    let classNames = [];
+export const HRule = React.forwardRef(
+    ({ kind = "primary", sideMargin, ...props }: HRProps, ref: React.Ref<HRElementType>) => {
+        let classNames = [];
 
-    if (kind) {
-        classNames.push(kind);
+        if (kind) {
+            classNames.push(kind);
+        }
+
+        if (sideMargin) {
+            classNames.push(`side-margin-${sideMargin}`);
+        }
+
+        return <Element<HRElementType> as={HRStyled} ref={ref} classNames={classNames} {...props} />;
     }
-
-    if (sideMargin) {
-        classNames.push(`side-margin-${sideMargin}`);
-    }
-
-    return <Element<HRElementType> as={HRStyled} ref={ref} classNames={classNames} {...props} />;
-});
-
-// prettier-ignore
-HRule.defaultProps = {
-    kind : "primary"
-}
+);

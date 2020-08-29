@@ -2,7 +2,15 @@ import { HTMLProps } from "react";
 
 import { RFTheme } from "../../styles/theme";
 
-export type ThemeType = Partial<typeof RFTheme>;
+// TODO: Remove once https://github.com/microsoft/TypeScript/pull/40002 ships with TS 4.1.0
+type DeepPartial<T> = {
+    [P in keyof T]?: T[P] extends Array<infer U>
+        ? Array<DeepPartial<U>>
+        : T[P] extends ReadonlyArray<infer U>
+        ? ReadonlyArray<DeepPartial<U>>
+        : DeepPartial<T[P]>;
+};
+export type ThemeType = DeepPartial<typeof RFTheme>;
 
 // prettier-ignore
 export interface ThemeProps {
