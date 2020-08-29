@@ -56,6 +56,7 @@ import { CodeBlock } from "./components/CodeBlock/CodeBlock";
 import { ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
 import { ThemeType, ThemeProps } from "./components/Element/constants";
 
+import { GlobalStaticStyled } from "./styles/GlobalStatic.styled";
 import { defaultColours } from "./styles/DefaultColours";
 import { RFTheme } from "./styles/theme";
 
@@ -103,6 +104,7 @@ export {
     ThemeProvider,
     ThemeType,
     ThemeProps,
+    GlobalStaticStyled,
     defaultColours,
     RFTheme
 }

@@ -168,6 +168,7 @@ export const RFTheme = {
 
     //  BUTTON  ///////////////////////////////////////////////////////////////
     button : {
+        // TODO: uniform font vs fontFamily
         fontFamily: "sans-serif",
         primary : {
             default : {

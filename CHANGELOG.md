@@ -1,3 +1,6 @@
+# 0.31.1
+- Export `StaticGlobalStyles`.
+
 # 0.31.0
 - Add support for passing `refs`.
 
