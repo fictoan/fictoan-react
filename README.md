@@ -1,3 +1,44 @@
-# FICTOAN / React
-### v0.31.1
-#### The React version of the FICTOAN framework
+<p align="center" style="color: #343a40">
+  <a href="https://fictoan.io"><img src="fictoan-logo.svg" alt="emotion" height="150" width="150"></a>
+  <h1 align="center">Fictoan-React</h1>
+</p>
+<p align="center" style="font-size: 1.2rem;">React version of the Fictoan framework</p>
+<p align="center">
+<a href=""><img src="https://img.shields.io/npm/v/fictoan-react"/></a>
+<a href=""><img src="https://img.shields.io/bundlephobia/min/fictoan-react"/></a>
+<a href="LICENSE"><img src="https://img.shields.io/github/license/fictoan/fictoan-react"/></a>
+</p>
+
+Fictoan is an intuitive framework for designers looking to code interfaces.
+
+## Features
+- Simple, straight-forward React custom props, exactly like settings properties in a design app.
+- All Attributes are intuitive and in plain English.
+- Most attributes are also the same across different components.
+
+## Getting Started
+Install fictoan-react using `yarn`:
+```sh
+yarn add fictoan-react
+```
+Or `npm`:
+```sh
+npm install fictoan-react
+```
+
+And start using!
+```jsx
+import { Card } from "fictoan-react";
+
+const MyComponent = props => {
+    return (
+        <Card shape="rounded" bgColor="white" borderColor="slate-20">
+            My Awesome Card!
+        </Card>
+    );
+}
+```
+
+## License
+Licensed under the [MIT License](LICENSE).
+
