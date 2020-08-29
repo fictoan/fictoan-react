@@ -4,8 +4,8 @@
 </p>
 <p align="center" style="font-size: 1.2rem;">React version of the Fictoan framework</p>
 <p align="center">
-<a href=""><img src="https://img.shields.io/npm/v/fictoan-react"/></a>
-<a href=""><img src="https://img.shields.io/bundlephobia/min/fictoan-react"/></a>
+<a href="https://www.npmjs.com/package/fictoan-react"><img src="https://img.shields.io/npm/v/fictoan-react"/></a>
+<a href="https://www.npmjs.com/package/fictoan-react"><img src="https://img.shields.io/bundlephobia/min/fictoan-react"/></a>
 <a href="LICENSE"><img src="https://img.shields.io/github/license/fictoan/fictoan-react"/></a>
 </p>
 
