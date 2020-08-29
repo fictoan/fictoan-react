@@ -1,3 +1,6 @@
+# 0.31.2
+- Set ThemeType to recursive optional typeof RFTheme.
+
 # 0.31.1
 - Export `StaticGlobalStyles`.
 
