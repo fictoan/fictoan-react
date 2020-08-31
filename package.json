@@ -1,6 +1,6 @@
 {
     "name": "fictoan-react",
-    "version": "0.31.4",
+    "version": "0.31.6",
     "private": false,
     "main": "dist/index.js",
     "module": "dist/index.es.js",
@@ -15,11 +15,11 @@
     },
     "license": "MIT",
     "scripts": {
+        "start": "rollup -c -w",
         "prebuild": "rm -rf dist",
         "build": "rollup -c",
-        "prepublish": "$npm_execpath run build",
-        "publish": "$npm_execpath publish",
-        "start": "rollup -c -w"
+        "predeploy": "$npm_execpath run build",
+        "deploy": "$npm_execpath publish"
     },
     "eslintConfig": {
         "extends": "react-app"
