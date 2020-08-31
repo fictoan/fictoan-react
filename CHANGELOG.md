@@ -1,3 +1,6 @@
+# 0.31.5
+- Fix broken build (0.31.2)
+
 # 0.31.2
 - Set ThemeType to recursive optional typeof RFTheme.
 

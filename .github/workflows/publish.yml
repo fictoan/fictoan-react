@@ -2,6 +2,7 @@ name: Publish to NPM
 on:
   push:
     branches: 
+      - fix-release-action
       - master
 jobs:
   npm-publish:
@@ -14,6 +15,8 @@ jobs:
       uses: actions/setup-node@master
       with:
         node-version: 10.0.0
+    - name: Install dev dependencies
+      run: npm install --dev
     - name: Publish if version has been updated
       uses: pascalgn/npm-publish-action@06e0830ea83eea10ed4a62654eeaedafb8bf50fc
       with: # All of theses inputs are optional
