@@ -18,6 +18,7 @@
         "prebuild": "rm -rf dist",
         "build": "rollup -c",
         "prepublish": "$npm_execpath run build",
+        "publish": "$npm_execpath publish",
         "start": "rollup -c -w"
     },
     "eslintConfig": {
