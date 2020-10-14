@@ -1,3 +1,6 @@
+### 0.31.7
+Fix Card theme issue for setting `borderRadius`.
+
 ### 0.31.6
 Fix broken builds (0.31.2 - 0.31.5)
 
