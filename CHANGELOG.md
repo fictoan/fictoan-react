@@ -1,3 +1,6 @@
+### 0.31.8
+Switch to useState & useEffect for merging theme
+
 ### 0.31.7
 Fix Card theme issue for setting `borderRadius`.
 
