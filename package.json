@@ -1,6 +1,6 @@
 {
     "name": "fictoan-react",
-    "version": "0.31.8",
+    "version": "0.31.10",
     "private": false,
     "main": "dist/index.js",
     "module": "dist/index.es.js",
@@ -34,8 +34,13 @@
         "@rollup/plugin-commonjs": "^11.0.2",
         "@rollup/plugin-node-resolve": "^7.1.1",
         "@rollup/plugin-url": "^4.0.2",
+        "@types/lodash": "^4.14.149",
+        "@types/react": "^16.9.23",
+        "@types/styled-components": "^5.0.1",
+        "react": "^16.13.0",
         "rollup": "^1.31.1",
         "rollup-plugin-typescript2": "^0.26.0",
+        "styled-components": "^5.1.1",
         "tslib": "^1.11.1",
         "typescript": "^3.8.2"
     },
@@ -43,13 +48,12 @@
         "dist"
     ],
     "dependencies": {
-        "@types/lodash": "^4.14.149",
-        "@types/react": "^16.9.23",
-        "@types/styled-components": "^5.0.1",
         "lodash": "^4.17.19",
         "polished": "^3.4.4",
         "prism-react-renderer": "^1.1.0",
-        "prismjs": "^1.21.0",
+        "prismjs": "^1.21.0"
+    },
+    "peerDependencies": {
         "react": "^16.13.0",
         "styled-components": "^5.1.1"
     }

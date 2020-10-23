@@ -1,3 +1,6 @@
+### 0.31.10
+Move React & styled-components to peerDependencies
+
 ### 0.31.8
 Switch to useState & useEffect for merging theme
 
