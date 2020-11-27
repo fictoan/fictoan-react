@@ -1,5 +1,11 @@
-### 0.31.8
+### 0.31.11
 Remove improper colour override for dark sidebar theme.
+
+### 0.31.10
+Move React & styled-components to peerDependencies
+
+### 0.31.8
+Switch to useState & useEffect for merging theme
 
 ### 0.31.7
 Fix Card theme issue for setting `borderRadius`.
