@@ -1,3 +1,6 @@
+### 0.31.8
+Remove improper colour override for dark sidebar theme.
+
 ### 0.31.7
 Fix Card theme issue for setting `borderRadius`.
 

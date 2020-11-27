@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { lighten } from "polished";
 
 import { SidebarWrapperProps } from "./SidebarWrapper";
 import { SidebarItemIconProps } from "../SidebarItemIcon/SidebarItemIcon";
@@ -94,7 +93,7 @@ export const SidebarWrapperStyled = styled.aside`
     a.active {
         position         : relative;
         display          : block;
-        background-color : ${(props: SidebarWrapperProps) => props.theme.sidebar.links.isSelected.bg && lighten(0.32, props.theme.sidebar.links.isSelected.bg)};
+        background-color : ${(props: SidebarWrapperProps) => props.theme.sidebar.links.isSelected.bg};
 
         &::before {
             display                    : block;
