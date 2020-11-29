@@ -6,6 +6,7 @@ import { TableProps } from "./Table";
 export const TableStyled = styled.table`
     background-color : ${(props: TableProps) => props.theme.table.bg};
     color            : ${(props: TableProps) => props.theme.table.text};
+    font-family      : ${(props: TableProps) => props.theme.text.paras.font};
 
     &.bordered-rows td,
     &.bordered-rows th {
@@ -15,7 +16,7 @@ export const TableStyled = styled.table`
 
     &.bordered-columns td,
     &.bordered-columns th {
-        border              : 0 solid ${(props: TableProps) => props.theme.table.border};
+        border             : 0 solid ${(props: TableProps) => props.theme.table.border};
         border-right-width : 1px;
     }
 

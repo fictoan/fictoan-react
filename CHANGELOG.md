@@ -1,3 +1,6 @@
+### 0.31.12
+Add `font-family` to tables, and inherit from body font.
+
 ### 0.31.11
 Remove improper colour override for dark sidebar theme.
 
