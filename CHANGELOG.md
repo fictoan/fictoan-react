@@ -1,3 +1,6 @@
+### 0.31.14
+Rework Notification component.
+
 ### 0.31.13
 Add `size` property for `SidebarItemIcon` to be picked from theme file.
 

@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from "react";
+import React, { useState, useEffect, SyntheticEvent } from "react";
 
 import { Element } from "../../Element/Element";
 import { CommonAndHTMLProps } from "../../Element/constants";
@@ -7,9 +7,10 @@ import { NotificationsItemStyled } from "./NotificationItem.styled";
 
 // prettier-ignore
 export interface NotificationItemCustomProps {
-    type               ? : "info" | "warning" | "error" | "success";
-    isDismissible      ? : boolean;
-    onCloseButtonClick ? : () => void;
+    onHide          : () => void;
+    type          ? : "info" | "warning" | "error" | "success";
+    isDismissible ? : boolean;
+    timeout       ? : number;
 }
 
 export type NotificationItemElementType = HTMLDivElement;
@@ -17,10 +18,22 @@ export type NotificationItemProps = CommonAndHTMLProps<NotificationItemElementTy
 
 export const NotificationItem = React.forwardRef(
     (
-        { type, children, isDismissible, onCloseButtonClick, ...props }: NotificationItemProps,
+        { type, children, isDismissible, onHide, timeout, ...props }: NotificationItemProps,
         ref: React.Ref<NotificationItemElementType>
     ) => {
         let classNames = [];
+        const [isVisible, setIsVisible] = useState<boolean>(true);
+
+        useEffect(() => {
+            const timer = setTimeout(() => {
+                setIsVisible(false);
+                onHide();
+            }, timeout ?? 8000);
+
+            return () => {
+                clearTimeout(timer);
+            };
+        }, []);
 
         if (type) {
             classNames.push(type);
@@ -32,14 +45,16 @@ export const NotificationItem = React.forwardRef(
 
         const onDismissClick = (event: SyntheticEvent<HTMLDivElement>) => {
             event.preventDefault();
-
-            if (onCloseButtonClick) {
-                onCloseButtonClick();
-            }
+            setIsVisible(false);
+            onHide();
         };
 
         return (
-            <Element<NotificationItemElementType> as={NotificationsItemStyled} classNames={classNames} {...props}>
+            <Element<NotificationItemElementType>
+                as={NotificationsItemStyled}
+                classNames={[...classNames, !isVisible ? "dismissed" : ""]}
+                {...props}
+            >
                 <div className="notification-content">{children}</div>
 
                 {isDismissible && (
