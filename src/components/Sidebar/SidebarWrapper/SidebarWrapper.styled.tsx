@@ -23,7 +23,7 @@ export const SidebarWrapperStyled = styled.aside`
     min-height       : 100vh;
     overflow-y       : auto;
     transition       : all 0.4s ease-in-out;
-    background-color : ${(props: SidebarWrapperProps) => props.theme.sidebar.body};
+    background-color : ${(props: SidebarWrapperProps) => props.theme.sidebar.body.bg};
     box-shadow       : 2px 0 8px -4px rgba(0, 0, 0, 0.16);
     z-index          : 10000;
     font-size        : ${(props: SidebarWrapperProps) => props.theme.sidebar.links.default.scale}%;
