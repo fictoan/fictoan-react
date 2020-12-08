@@ -5,8 +5,8 @@ import { SidebarItemIconProps } from "./SidebarItemIcon";
 
 export const SidebarItemIconStyled = styled.div`
     display      : grid;
-    width        : 16px;
-    height       : 16px;
+    width        : ${(props: SidebarItemIconProps) => props.theme.sidebar.icons.size};
+    height       : ${(props: SidebarItemIconProps) => props.theme.sidebar.icons.size};
     align-self   : center;
     justify-self : center;
 

@@ -90,5 +90,5 @@ export const InputFieldStyled = styled.input`
         background-repeat   : no-repeat;
         background-position : 98%;
         background-size     : 24px;
-    }
+    }    
 `;

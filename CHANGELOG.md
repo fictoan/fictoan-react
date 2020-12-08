@@ -1,3 +1,6 @@
+### 0.31.13
+Add `size` property for `SidebarItemIcon` to be picked from theme file.
+
 ### 0.31.12
 Add `font-family` to tables, and inherit from body font.
 

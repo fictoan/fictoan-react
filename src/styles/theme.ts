@@ -328,6 +328,7 @@ export const RFTheme = {
         },
 
         icons : {
+            size : "24px",
             stroked : {
                 thickness : 2,
                 default : {
