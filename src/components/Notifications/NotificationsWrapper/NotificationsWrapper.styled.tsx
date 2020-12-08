@@ -10,6 +10,7 @@ export const NotificationsWrapperStyled = styled.div`
     z-index    : 5000000;
     padding    : 4vh 2vw;
     overflow-y : scroll;
+    overflow-x : hidden;
 
     &.left  { left : 0; }
     &.right { right : 0; }
