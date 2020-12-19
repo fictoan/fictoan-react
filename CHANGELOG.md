@@ -1,3 +1,7 @@
+### 0.31.18
+Upgrade to React 17.0.1.
+Tweak colour and font family for other input elements.
+
 ### 0.31.17
 Change `fontFamily` to `font` for `Button` component.
 Fix font fallback styling inconsistency for labels, tables, and links.

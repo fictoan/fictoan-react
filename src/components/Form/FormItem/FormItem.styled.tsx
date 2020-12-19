@@ -24,6 +24,7 @@ export const FormItemStyled = styled.div`
         align-self    : flex-start;
         margin-bottom : 4px;
         color         : ${(props: FormItemProps) => props.theme.input.default.label};
+        font-family   : ${(props: FormItemProps) => props.theme.text.font.sans};
         order         : -1;
         flex-wrap     : wrap;
     }

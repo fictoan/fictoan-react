@@ -41,7 +41,7 @@ export const RadioButtonStyled = styled.div`
         display        : inline-block;
         position       : relative;
         font-family    : ${(props: RadioButtonProps) => props.theme.text.font.sans};
-        color          : ${customColours.shade};
+        color          : ${(props: RadioButtonProps) => props.theme.text.paras.color};
         cursor         : pointer;
         vertical-align : middle;
         line-height    : 1.1;

@@ -17,7 +17,7 @@ const SharedStyling = css`
         display     : inline-flex;
         position    : relative;
         font-family : ${(props: CheckboxProps) => props.theme.text.font.sans};
-        color       : ${customColours.shade};
+        color       : ${(props: CheckboxProps) => props.theme.text.paras.color};
         cursor      : pointer;
         line-height : 1;
         user-select : none;
