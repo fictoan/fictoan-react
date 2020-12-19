@@ -90,4 +90,8 @@ export const NotificationsItemStyled = styled.div`
     }
 
     & p { margin-bottom : 0; }
+
+    &.dismissed {
+        transform: translateX(560px);
+    }
 `;

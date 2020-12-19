@@ -1,5 +1,8 @@
-### 0.31.14
+### 0.31.15
 Fix `bg` of `SidebarWrapper`.
+
+### 0.31.14
+Rework Notification component.
 
 ### 0.31.13
 Add `size` property for `SidebarItemIcon` to be picked from theme file.

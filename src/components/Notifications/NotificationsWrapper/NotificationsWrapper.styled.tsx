@@ -5,19 +5,24 @@ import { NotificationsItemStyled } from "../NotificationsItem/NotificationItem.s
 
 export const NotificationsWrapperStyled = styled.div`
     position   : fixed;
-    top        : 0;
     display    : flex;
     width      : 400px;
-    height     : 100%;
     z-index    : 5000000;
     padding    : 4vh 2vw;
     overflow-y : scroll;
+    overflow-x : hidden;
 
     &.left  { left : 0; }
     &.right { right : 0; }
 
-    &.top    { flex-direction : column; }
-    &.bottom { flex-direction : column-reverse; }
+    &.top    {
+        flex-direction : column;
+        top            : 0;
+    }
+    &.bottom {
+        flex-direction : column-reverse;
+        bottom         : 0;
+    }
 
     &.top {
         ${NotificationsItemStyled}:first-of-type { margin-top : 0; }
