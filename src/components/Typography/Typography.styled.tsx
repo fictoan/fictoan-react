@@ -47,6 +47,7 @@ export const TypographyStyled = css`
 
     a {
         cursor      : pointer;
+        font-family : ${(props: GlobalStyledProps) => props.theme.text.paras.font};
         color       : ${(props: GlobalStyledProps) => props.theme.text.links.default.color};
         font-weight : bold;
         transition  : all 0.2s;

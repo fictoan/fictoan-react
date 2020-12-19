@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 
 import { defaultColours } from "../../../styles/DefaultColours";
 import { customColours } from "../../../styles/theme";
+import { CheckboxProps } from "./CheckBox";
 
 /*  COMMON STYLES  ========================================================  */
 const SharedStyling = css`
@@ -15,7 +16,7 @@ const SharedStyling = css`
     label {
         display     : inline-flex;
         position    : relative;
-        font-family : inherit;
+        font-family : ${(props: CheckboxProps) => props.theme.text.font.sans};
         color       : ${customColours.shade};
         cursor      : pointer;
         line-height : 1;

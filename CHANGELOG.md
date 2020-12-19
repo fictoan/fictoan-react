@@ -1,8 +1,12 @@
+### 0.31.17
+Change `fontFamily` to `font` for `Button` component.
+Fix font fallback styling inconsistency for labels, tables, and links.
+
+### 0.31.16
+Rework Notification component.
+
 ### 0.31.15
 Fix `bg` of `SidebarWrapper`.
-
-### 0.31.14
-Rework Notification component.
 
 ### 0.31.13
 Add `size` property for `SidebarItemIcon` to be picked from theme file.

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import { defaultColours } from "../../../styles/DefaultColours";
 import { customColours } from "../../../styles/theme";
+import { RadioButtonProps } from "./constants";
 
 export const RadioButtonStyled = styled.div`
     display      : inline-flex;
@@ -39,7 +40,7 @@ export const RadioButtonStyled = styled.div`
     & label {
         display        : inline-block;
         position       : relative;
-        font-family    : inherit;
+        font-family    : ${(props: RadioButtonProps) => props.theme.text.font.sans};
         color          : ${customColours.shade};
         cursor         : pointer;
         vertical-align : middle;

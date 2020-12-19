@@ -11,11 +11,11 @@ export const ResetStyled = css`
     *:focus { outline : 0; }
 
     /* This affects all type scale values */
-    html { font-size : $baseFontSize; }
+    html { font-size : 1em; }
 
     body {
         -moz-osx-font-smoothing : grayscale;
-        -webkit-font-smoothing : antialiased;
+        -webkit-font-smoothing  : antialiased;
     }
 
     /* Basics */

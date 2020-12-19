@@ -19,7 +19,6 @@ export const RFTheme = {
         bg : defaultColours.white,
     },
 
-
     //  TEXT  /////////////////////////////////////////////////////////////////
     text : {
         font : {
@@ -45,6 +44,7 @@ export const RFTheme = {
         },
 
         links : {
+            font : "sans-serif",
             default : {
                 color : defaultColours.blue90,
             },
@@ -168,8 +168,7 @@ export const RFTheme = {
 
     //  BUTTON  ///////////////////////////////////////////////////////////////
     button : {
-        // TODO: uniform font vs fontFamily
-        fontFamily: "sans-serif",
+        font : "sans-serif",
         primary : {
             default : {
                 bg           : customColours.hue,
@@ -302,10 +301,6 @@ export const RFTheme = {
         select : {
             chevron : customColours.hue
         },
-        radioButton : {
-            default : {
-            }
-        }
     },
 
 
