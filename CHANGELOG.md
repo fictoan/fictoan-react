@@ -1,3 +1,6 @@
+### 0.31.22
+Remove opinionated `ul`, `ol`, and `li` styles.
+
 ### 0.31.21
 Add opinionated version of Normalize.css.
 

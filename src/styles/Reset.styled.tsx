@@ -81,15 +81,7 @@ export const ResetStyled = css`
     select {
         border-radius      : 0;
         -webkit-appearance : none;
-        -moz-appearance : none;
-    }
-
-
-    /* List items */
-    ul, li {
-        margin     : 0;
-        padding    : 0;
-        list-style : none;
+        -moz-appearance    : none;
     }
 
     /* Details and Summary */
