@@ -15,8 +15,10 @@ export const RadioButtonStyled = styled.div`
         /* top           : 4px; */
         left          : 0;
         border-radius : 50%;
-        background    : ${defaultColours.slate30};
+        background    : ${(props: RadioButtonProps) => props.theme.input.radioButton.inset.default.bg};
     }
+
+    &:hover label::before { background : ${(props: RadioButtonProps) => props.theme.input.radioButton.inset.onHover.bg}; }
 
     /*  The white inner circle  */
     & label::after {
@@ -25,15 +27,17 @@ export const RadioButtonStyled = styled.div`
         top           : 4px;
         width         : 8px;
         height        : 8px;
-        background    : ${defaultColours.white};
+        background    : ${(props: RadioButtonProps) => props.theme.input.radioButton.circle.default.bg};
         border-radius : 50%;
     }
 
-    input[type="radio"]:checked + label::before { background : ${customColours.hue}; }
-    input[type="radio"]:checked + label::after  { opacity : 1; }
+    &:checked + label::before,
+    input[type="radio"]:checked + label::before { 
+        background : ${(props: RadioButtonProps) => props.theme.input.radioButton.inset.isSelected.bg};
+    }
 
-    &:checked + label::before { background : ${customColours.hue}; }
-    &:checked + label::after { opacity : 1; }
+    &:checked + label::after,
+    input[type="radio"]:checked + label::after { opacity : 1; }
 
     &:only-of-type { margin-right : 0; }
 
@@ -58,22 +62,15 @@ export const RadioButtonStyled = styled.div`
 
     /*  The grey square  */
     &:disabled + label::before {
+        opacity        : 0.24;
         user-select    : none;
         pointer-events : none;
-        background     : ${defaultColours.slate30};
+        background     : ${(props: RadioButtonProps) => props.theme.input.radioButton.inset.isDisabled.bg};
         box-shadow     : inset 0 2px 8px -2px hsla(0, 0, 0, 0.24);
     }
 
-    &:hover label::before { background : ${defaultColours.slate40}; }
-
-    /*  The grey square  */
-    label::after { opacity : 0; }
-
-    &:checked + label::before { background : ${customColours.hue}; }
-    &:checked + label::after { opacity : 1; }
-
-    &:disabled         + label,
-    &:disabled:checked + label  {
+    input[type="radio"]:disabled         + label,
+    input[type="radio"]:disabled:checked + label  {
         pointer-events : none;
         cursor         : default;
         opacity        : 0.24;

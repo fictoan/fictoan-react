@@ -298,9 +298,65 @@ export const RFTheme = {
                 border : defaultColours.red30,
             }
         },
+
         select : {
             chevron : customColours.hue
         },
+
+        radioButton : {
+            inset : {
+                default : {
+                    bg : defaultColours.slate20
+                },
+                onHover : {
+                    bg : defaultColours.slate40
+                },
+                isSelected : {
+                    bg : customColours.hue
+                },
+                isDisabled : {
+                    bg : defaultColours.slate10
+                }
+            },
+            circle : {
+                default : {
+                    bg : defaultColours.white
+                },
+            }
+        },
+
+        checkBox : {
+            square : {
+                default : {
+                    bg : defaultColours.slate20
+                },
+                onHover : {
+                    bg : defaultColours.slate40
+                },
+                isChecked : {
+                    bg : customColours.hue
+                },
+                isDisabled : {
+                    bg : defaultColours.slate10
+                }
+            },
+            check : {
+                default : {
+                    border : defaultColours.white
+                },
+            }
+        },
+
+        toggleSwitch : {
+            switch : {
+                default : {
+                    bg : defaultColours.white
+                },
+                isChecked : {
+                    bg : defaultColours.white
+                }
+            }
+        }
     },
 
 

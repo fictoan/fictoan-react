@@ -126,6 +126,8 @@ export const GlobalStaticStyled = createGlobalStyle`
     }
 
     .push-to-ends { justify-content : space-between; }
+    
+    .is-clickable { cursor : pointer; }
 
 
     /* BOX MODEL HELPERS  ======================================================== */
@@ -262,7 +264,7 @@ export const GlobalStaticStyled = createGlobalStyle`
     .shape-curved   { border-radius : 50000px; }
     .shape-circular { border-radius : 50%; }
 
-    /* Shadows for any element */
+    /* Remove shadows */
     .no-shadow { box-shadow : none !important; }
 
     .shadow-mild {

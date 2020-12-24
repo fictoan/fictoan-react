@@ -1,3 +1,6 @@
+### 0.31.19
+Add theme variables for `RadioButton`, `CheckBox` and `ToggleSwitch`.
+
 ### 0.31.18
 Upgrade to React 17.0.1.
 Tweak colour and font family for other input elements.
