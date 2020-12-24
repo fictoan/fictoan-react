@@ -1,3 +1,6 @@
+### 0.31.20
+Remove Normalize.css.
+
 ### 0.31.19
 Add theme variables for `RadioButton`, `CheckBox` and `ToggleSwitch`.
 
