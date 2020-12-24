@@ -1,3 +1,6 @@
+### 0.31.21
+Add opinionated version of Normalize.css.
+
 ### 0.31.20
 Remove Normalize.css.
 

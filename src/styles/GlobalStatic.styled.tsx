@@ -1,9 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 
+import { NormalizeStyled } from "./Normalize.styled";
 import { ResetStyled } from "./Reset.styled";
 import { ColoursStyled } from "./Colours.styled";
 
 export const GlobalStaticStyled = createGlobalStyle`
+    ${ NormalizeStyled }
     ${ ResetStyled }
     ${ ColoursStyled }
 
