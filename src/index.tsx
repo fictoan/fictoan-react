@@ -53,6 +53,8 @@ import { Table } from "./components/Table/Table";
 
 import { CodeBlock } from "./components/CodeBlock/CodeBlock";
 
+import { Tabs } from "./components/Tabs/Tabs";
+
 import { ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
 import { ThemeType, ThemeProps } from "./components/Element/constants";
 
@@ -101,10 +103,11 @@ export {
     NotificationItem,
     InfoPanel,
     CodeBlock,
+    Tabs,
     ThemeProvider,
     ThemeType,
     ThemeProps,
     GlobalStaticStyled,
     defaultColours,
-    RFTheme
-}
+    RFTheme,
+};

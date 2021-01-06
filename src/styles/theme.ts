@@ -1,4 +1,4 @@
-import { lighten } from "polished";
+import { lighten, darken } from "polished";
 
 import { defaultColours } from "./DefaultColours";
 
@@ -503,5 +503,30 @@ export const RFTheme = {
         fill   : customColours.hue,
         label  : customColours.shade,
         value  : `${lighten(0.24, customColours.shade)}`,
-    }
+    },
+
+    //  TABS  ////////////////////////////////////////////////////////////////
+    tabs : {
+        label : {
+            default : {
+                text : `${lighten(0.16, defaultColours.grey)}`,
+            },
+            onHover : {
+                text : `${lighten(0.16, customColours.hue)}`
+            },
+            isActive : {
+                border : customColours.hue,
+                text   : customColours.hue
+            },
+            isDisabled : {
+                text   : `${darken(0.24, defaultColours.slate)}`,
+            },
+            hasAlert : {
+                circle : {
+                    bg     : defaultColours.red90,
+                    border : defaultColours.slate10
+                }
+            },
+        }
+    },
 }
