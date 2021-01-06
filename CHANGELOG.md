@@ -1,3 +1,6 @@
+### 0.32.1
+Add Tabs component
+
 ### 0.31.22
 Remove opinionated `ul`, `ol`, and `li` styles.
 

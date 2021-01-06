@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const tabsStyled = styled.section`
+export const TabsStyled = styled.section`
     nav {
         width   : 100%;
         display : flex;
