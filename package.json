@@ -55,7 +55,7 @@
         "prismjs": "^1.21.0"
     },
     "peerDependencies": {
-        "react": "^16.13.0",
+        "react": "16.x || 17.x",
         "styled-components": "^5.1.1",
         "framer-motion": ">=3.0.0"
     }
