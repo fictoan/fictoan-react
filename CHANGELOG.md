@@ -1,3 +1,6 @@
+### 0.32.4
+Add @emotion/is-prop-valid as an optional dependency.
+
 ### 0.32.3
 Add ability to set Sidebar logo width via the theme.
 
