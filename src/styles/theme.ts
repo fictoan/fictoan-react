@@ -371,7 +371,8 @@ export const RFTheme = {
 
         header : {
             bg           : defaultColours.white,
-            borderBottom : defaultColours.slate10
+            borderBottom : defaultColours.slate10,
+            logoWidth    : "50%"
         },
 
         body : {

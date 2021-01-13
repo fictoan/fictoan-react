@@ -20,7 +20,7 @@ export const SidebarHeaderStyled = styled.header`
 
     .header-logo {
         display : block;
-        width   : 50%;
+        width   : ${(props: SidebarHeaderProps) => props.theme.sidebar.header.logoWidth};
     }
 
     .header-icon { display : none; }
