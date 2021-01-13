@@ -55,8 +55,11 @@
         "prismjs": "^1.21.0"
     },
     "peerDependencies": {
+        "framer-motion": ">=3.0.0",
         "react": "16.x || 17.x",
-        "styled-components": "^5.1.1",
-        "framer-motion": ">=3.0.0"
+        "styled-components": "^5.1.1"
+    },
+    "optionalDependencies": {
+        "@emotion/is-prop-valid": "^1.0.0"
     }
 }
