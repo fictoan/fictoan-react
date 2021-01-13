@@ -1,3 +1,6 @@
+### 0.32.3
+Add ability to set Sidebar logo width via the theme.
+
 ### 0.32.1
 Add Tabs component
 
