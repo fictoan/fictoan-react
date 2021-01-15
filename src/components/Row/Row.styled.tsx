@@ -68,7 +68,34 @@ export const RowStyled = styled.div`
         padding-left  : 24vw;
         padding-right : 24vw;
     }
-    
+
+    @media all and (max-width : 2400px) {
+        &.side-padding-tiny {
+            padding-left  : 8vw;
+            padding-right : 8vw;
+        }
+
+        &.side-padding-small {
+            padding-left  : 12vw;
+            padding-right : 12vw;
+        }
+
+        &.side-padding-medium {
+            padding-left  : 16vw;
+            padding-right : 16vw;
+        }
+
+        &.side-padding-large {
+            padding-left  : 24vw;
+            padding-right : 24vw;
+        }
+
+        &.side-padding-huge {
+            padding-left  : 32vw;
+            padding-right : 32vw;
+        }
+    }
+
     @media all and (max-width : 1600px) {
         &.side-padding-tiny {
             padding-left  : 2vw;
@@ -129,10 +156,10 @@ export const RowStyled = styled.div`
             padding-right : 6vw;
         }
 
-        &:not(.retain-layout-on-mobile) > ${PortionStyled}:not([class*='on-mobile']) { grid-column : span 24; }
+        &:not(.retain-layout-on-mobile) > ${PortionStyled}:not([class*="on-mobile"]) { grid-column : span 24; }
     }
 
     @media all and (min-width : 601px) and (max-width : 900px) {
-        &:not(.retain-layout-on-tab-pt) > ${PortionStyled}:not([class*='on-tab-pt']) { grid-column : span 24; }
+        &:not(.retain-layout-on-tab-pt) > ${PortionStyled}:not([class*="on-tab-pt"]) { grid-column : span 24; }
     }
 `;

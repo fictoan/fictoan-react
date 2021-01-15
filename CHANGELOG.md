@@ -1,3 +1,6 @@
+### 0.32.4
+Cap `sidePadding` for ultra-wide res displays at 2400px.
+
 ### 0.32.3
 Add ability to set Sidebar logo width via the theme.
 
