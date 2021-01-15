@@ -1,6 +1,6 @@
 {
     "name": "fictoan-react",
-    "version": "0.32.6",
+    "version": "0.32.7",
     "private": false,
     "main": "dist/index.js",
     "module": "dist/index.es.js",

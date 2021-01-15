@@ -69,7 +69,7 @@ export const RowStyled = styled.div`
         padding-right : 24vw;
     }
 
-    @media all and (max-width : 2400px) {
+    @media all and (min-width : 2400px) {
         &.side-padding-tiny {
             padding-left  : 8vw;
             padding-right : 8vw;

@@ -1,5 +1,5 @@
-### 0.32.6
-Cap `sidePadding` for ultra-wide res displays at 2400px.
+### 0.32.7
+Cap `sidePadding` and `sideMargin` for `Row` and `HRule` in ultra-wide res displays above 2400px.
 
 ### 0.32.5
 Add @emotion/is-prop-valid as an optional dependency.

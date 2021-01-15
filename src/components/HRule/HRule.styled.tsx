@@ -17,6 +17,14 @@ export const HRStyled = styled.hr`
     &.side-margin-large  { width: calc(100% - 36vw); }
     &.side-margin-huge   { width: calc(100% - 48vw); }
 
+    @media all and (min-width : 2400px) {
+        &.side-margin-tiny   { width: calc(100% -  16vw); }
+        &.side-margin-small  { width: calc(100% -  24vw); }
+        &.side-margin-medium { width: calc(100% - 32vw); }
+        &.side-margin-large  { width: calc(100% - 48vw); }
+        &.side-margin-huge   { width: calc(100% - 64vw); }
+    }
+
     @media all and (max-width : 1600px) {
         &.side-margin-tiny   { width: calc(100% -  4vw); }
         &.side-margin-small  { width: calc(100% -  8vw); }
