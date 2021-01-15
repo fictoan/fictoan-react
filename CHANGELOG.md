@@ -1,5 +1,8 @@
-### 0.32.4
+### 0.32.6
 Cap `sidePadding` for ultra-wide res displays at 2400px.
+
+### 0.32.5
+Add @emotion/is-prop-valid as an optional dependency.
 
 ### 0.32.3
 Add ability to set Sidebar logo width via the theme.
