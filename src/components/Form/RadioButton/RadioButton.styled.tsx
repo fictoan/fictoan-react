@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
-import { defaultColours } from "../../../styles/DefaultColours";
-import { customColours } from "../../../styles/theme";
 import { RadioButtonProps } from "./constants";
+
 
 export const RadioButtonStyled = styled.div`
     display      : inline-flex;
@@ -66,7 +65,7 @@ export const RadioButtonStyled = styled.div`
         user-select    : none;
         pointer-events : none;
         background     : ${(props: RadioButtonProps) => props.theme.input.radioButton.inset.isDisabled.bg};
-        box-shadow     : inset 0 2px 8px -2px hsla(0, 0, 0, 0.24);
+        box-shadow     : inset 0 2px 8px -2px rgba(0, 0, 0, 0.24);
     }
 
     input[type="radio"]:disabled         + label,

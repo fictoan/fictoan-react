@@ -60,7 +60,7 @@ export const CodeStyled = css`
     pre[class*=language-css],
     pre[class*=language-less],
     pre[class*=language-sass] {
-        ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.css.fallback};
+        color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.css.fallback};
     }
 
     pre[class*=language-scss] { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.css.fallback}; }

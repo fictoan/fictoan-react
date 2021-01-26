@@ -3,8 +3,6 @@ import styled, { css } from "styled-components";
 import { FormItemProps } from "../FormItem/FormItem";
 import { InputFieldStyled } from "../InputField/InputField.styled";
 
-import { customColours } from "../../../styles/theme";
-
 
 export const FormItemStyled = styled.div`
     display        : flex;
@@ -60,7 +58,6 @@ export const FormItemStyled = styled.div`
     }
 
     label span {
-        font-size   : 80%;
         font-weight : normal;
         color       : ${(props: FormItemProps) => props.theme.input.onFocus.helpText};
         display     : none;
