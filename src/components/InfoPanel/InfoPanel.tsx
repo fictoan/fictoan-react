@@ -10,13 +10,14 @@ export interface InfoPanelCustomProps {
     width           ? : "tiny" | "small" | "medium" | "large" | "huge";
     isOpen          ? : boolean;
     onCloseCallback ? : () => void;
+    heading         ? : string;
 }
 
 export type InfoPanelElementType = HTMLDivElement;
 export type InfoPanelProps = CommonAndHTMLProps<InfoPanelElementType> & InfoPanelCustomProps;
 
 export const InfoPanel = React.forwardRef(
-    ({ width, isOpen, children, onCloseCallback, ...props }: InfoPanelProps, ref: React.Ref<InfoPanelElementType>) => {
+    ({ width, isOpen, heading, children, onCloseCallback, ...props }: InfoPanelProps, ref: React.Ref<InfoPanelElementType>) => {
         let classNames = [];
 
         if (width) {

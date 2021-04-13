@@ -39,19 +39,22 @@ export const InfoPanelStyled = styled.aside`
     }
 
     & .dismiss-button {
-        position         : fixed;
-        display          : block;
+        position         : sticky;
+        display          : flex;
         width            : 32px;
         height           : 32px;
         background-color : ${(props : InfoPanelProps) => props.theme.infoPanel.dismissButton.bg};
-        top              : 24px;
-        right            : 24px;
+        top              : 0;
+        right            : 0;
         z-index          : 100001;
         font-size        : 32px;
         color            : ${(props : InfoPanelProps) => props.theme.infoPanel.dismissButton.color};
         text-align       : center;
-        line-height      : 1;
+        line-height      : 0.88;
         cursor           : pointer;
+        place-content    : center;
+        place-self       : flex-end;
+        backdrop-filter  : blur(2px);
 
         &::after {
             display : block;

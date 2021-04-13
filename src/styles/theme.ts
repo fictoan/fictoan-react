@@ -1,4 +1,4 @@
-import { lighten, darken } from "polished";
+import { lighten, darken, transparentize } from "polished";
 
 import { defaultColours } from "./DefaultColours";
 
@@ -145,7 +145,7 @@ export const RFTheme = {
         bg     : defaultColours.white,
         border : defaultColours.slate20,
         dismissButton : {
-            bg      : defaultColours.white,
+            bg      : `${transparentize(0.24, defaultColours.white)}`,
             color   : defaultColours.slate90,
             content : "×"
         }
