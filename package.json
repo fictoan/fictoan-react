@@ -34,6 +34,7 @@
         "@rollup/plugin-commonjs": "^11.0.2",
         "@rollup/plugin-node-resolve": "^7.1.1",
         "@rollup/plugin-url": "^4.0.2",
+        "@svgr/rollup": "^5.5.0",
         "@types/lodash": "^4.14.149",
         "@types/react": "^16.9.23",
         "@types/styled-components": "^5.0.1",
