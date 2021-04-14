@@ -2,6 +2,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import url from "@rollup/plugin-url";
 import typescript from "rollup-plugin-typescript2";
+const svgr = require("@svgr/rollup").default;
 
 import pkg from "./package.json";
 
@@ -15,14 +16,14 @@ export default {
             file: pkg.main,
             format: "cjs",
             sourcemap: true,
-            exports: "named"
+            exports: "named",
         },
         {
             file: pkg.module,
             format: "es",
             sourcemap: true,
-            exports: "named"
-        }
+            exports: "named",
+        },
     ],
     external: [
         "@types/lodash",
@@ -30,19 +31,20 @@ export default {
         "@types/styled-components",
         "lodash/merge",
         "react",
-        "styled-components"
+        "styled-components",
     ],
     plugins: [
         typescript(),
         url(),
         resolve({
-            extensions
+            extensions,
         }),
         commonjs({
             extensions,
             namedExports: {
-                "node_modules/lodash/lodash.js": ["merge"]
-            }
-        })
-    ]
+                "node_modules/lodash/lodash.js": ["merge"],
+            },
+        }),
+        svgr(),
+    ],
 };

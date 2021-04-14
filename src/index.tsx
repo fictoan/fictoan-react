@@ -50,6 +50,7 @@ import { BreadcrumbWrapper } from "./components/Breadcrumbs/BreadcrumbWrapper/Br
 import { BreadcrumbItem } from "./components/Breadcrumbs/BreadcrumbItem/BreadcrumbItem";
 
 import { Table } from "./components/Table/Table";
+import { TablePagination } from "./components/Table/TablePagination/TablePagination";
 
 import { CodeBlock } from "./components/CodeBlock/CodeBlock";
 
@@ -96,6 +97,7 @@ export {
     CheckBox,
     Switch,
     Table,
+    TablePagination,
     ProgressBar,
     BreadcrumbWrapper,
     BreadcrumbItem,
