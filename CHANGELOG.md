@@ -1,5 +1,9 @@
+### 0.32.10
+Add TablePagination component
+
 ### 0.32.9
 Fix `InfoPanel` close button fixed postion bug.
+
 ### 0.32.7
 Cap `sidePadding` and `sideMargin` for `Row` and `HRule` in ultra-wide res displays above 2400px.
 
