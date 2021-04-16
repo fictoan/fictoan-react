@@ -1,6 +1,9 @@
+### 0.32.12
+Optimise for minified builds.
+Remove `framer-motion` dependency.
+
 ### 0.32.10
 Add TablePagination component
-
 ### 0.32.9
 Fix `InfoPanel` close button fixed postion bug.
 
