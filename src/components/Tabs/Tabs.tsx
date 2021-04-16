@@ -1,5 +1,4 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect } from "react";
 
 import { Element } from "../Element/Element";
 import { CommonAndHTMLProps } from "../Element/constants";
@@ -22,7 +21,19 @@ export type TabsElementType = HTMLDivElement;
 export type TabsProps = CommonAndHTMLProps<TabsElementType> & TabsCustomProps;
 
 export const Tabs = React.forwardRef(({ tabs, ...props }: TabsProps, ref: React.Ref<TabsElementType>) => {
-    const [activeTab, setActiveTab] = React.useState<number>(0);
+    const [indexToSet, setIndexToSet] = React.useState<number>(0);
+    const [activeTabIndex, setActiveTabIndex] = React.useState<number>(0);
+    const [isExiting, setIsExiting] = React.useState<boolean>(false);
+
+    // HACK FOR ANIMATION ///////////////////////
+    useEffect(() => {
+        setIsExiting(true);
+        setTimeout(() => {
+            setIsExiting(false);
+            setActiveTabIndex(indexToSet);
+        }, 120);
+    }, [indexToSet]);
+    ////////////////////////////////////////////
 
     return (
         <Element<TabsElementType> as={TabsStyled} ref={ref} {...props}>
@@ -30,28 +41,20 @@ export const Tabs = React.forwardRef(({ tabs, ...props }: TabsProps, ref: React.
                 {tabs.map((tab, index) => (
                     <Text
                         key={tab.key}
-                        className={`is-clickable ${index === activeTab ? "is-active" : ""}`}
-                        onClick={() => setActiveTab(index)}
+                        className={`is-clickable ${index === activeTabIndex ? "is-active" : ""}`}
+                        onClick={() => setIndexToSet(index)}
                     >
                         {tab.label}
                     </Text>
                 ))}
             </nav>
             <HRule kind="secondary" marginTop="micro" marginBottom="micro" />
-            {tabs.map(
-                (tab, index) =>
-                    index === activeTab && (
-                        <motion.div
-                            key={tab.key}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ ease: "easeInOut", duration: 0.24 }}
-                        >
-                            {tab.content}
-                        </motion.div>
-                    )
-            )}
+            <Element 
+                as="div"
+                className={`tabs-content ${isExiting ? "exiting" : ""}`}
+            >
+                {tabs[activeTabIndex].content}
+            </Element>
         </Element>
     );
 });
