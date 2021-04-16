@@ -2,7 +2,12 @@ import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import url from "@rollup/plugin-url";
 import typescript from "rollup-plugin-typescript2";
+import { terser } from "rollup-plugin-terser";
 const svgr = require("@svgr/rollup").default;
+const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default;
+const styledComponentsTransformer = createStyledComponentsTransformer({
+    minify: true
+});
 
 import pkg from "./package.json";
 
@@ -34,7 +39,14 @@ export default {
         "styled-components",
     ],
     plugins: [
-        typescript(),
+        typescript({
+            clean: true,
+            transformers: [
+                () => ({
+                    before: [styledComponentsTransformer],
+                }),
+            ],
+        }),
         url(),
         resolve({
             extensions,
@@ -46,5 +58,6 @@ export default {
             },
         }),
         svgr(),
+        terser()
     ],
 };
