@@ -1,3 +1,6 @@
+### 0.32.13
+Simplify TablePagination component (breaking).
+
 ### 0.32.10
 Add TablePagination component
 
