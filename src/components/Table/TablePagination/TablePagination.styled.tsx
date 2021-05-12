@@ -20,8 +20,8 @@ export const TablePaginationStyled = styled.div`
             position         : relative;
             align-self       : center;
             white-space      : nowrap;
-            background-color : ${props => props.theme.Sidebar.label.bg};
-            color            : ${props => props.theme.Sidebar.label.text};
+            background-color : ${(props: TablePaginationProps) => props.theme.tablePagination.bg};
+            color            : ${(props: TablePaginationProps) => props.theme.tablePagination.text};
             padding          : 2px 8px;
             font-size        : 14px;
             border-radius    : 4px;
@@ -30,7 +30,7 @@ export const TablePaginationStyled = styled.div`
         }
 
         &:hover {
-            svg { stroke: ${props => props.theme.Sidebar.icon.onHover.stroke}; }
+            svg { stroke: ${(props: TablePaginationProps) => props.theme.tablePagination.svg.onHover.stroke}; }
 
             span {
                 opacity    : 1;

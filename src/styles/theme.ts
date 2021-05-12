@@ -494,6 +494,16 @@ export const RFTheme = {
         onHover : {
             bg   : defaultColours.amber20,
             text : customColours.shade
+        },
+    },
+
+    tablePagination : {
+        bg   : defaultColours.white,
+        text : defaultColours.grey,
+        svg  : {
+            onHover : {
+                stroke: defaultColours.slate60,
+            }
         }
     },
 
