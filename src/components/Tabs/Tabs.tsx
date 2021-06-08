@@ -21,40 +21,53 @@ export type TabsElementType = HTMLDivElement;
 export type TabsProps = CommonAndHTMLProps<TabsElementType> & TabsCustomProps;
 
 export const Tabs = React.forwardRef(({ tabs, ...props }: TabsProps, ref: React.Ref<TabsElementType>) => {
-    const [indexToSet, setIndexToSet] = React.useState<number>(0);
-    const [activeTabIndex, setActiveTabIndex] = React.useState<number>(0);
+    const [activeTab, setActiveTab] = React.useState<TabType | undefined>(tabs.length > 0 ? tabs[0] : undefined);
     const [isExiting, setIsExiting] = React.useState<boolean>(false);
 
-    // HACK FOR ANIMATION ///////////////////////
-    useEffect(() => {
+    const handleTabChange = (tab: TabType) => {
         setIsExiting(true);
         setTimeout(() => {
             setIsExiting(false);
-            setActiveTabIndex(indexToSet);
+            setActiveTab(tab);
         }, 120);
-    }, [indexToSet]);
-    ////////////////////////////////////////////
+    };
+
+    useEffect(() => {
+        if (tabs.length > 0) {
+            const matchingTab = tabs.find((tab) => tab.key === activeTab?.key);
+            if (matchingTab) {
+                handleTabChange(matchingTab);
+            } else {
+                handleTabChange(tabs[0]);
+            }
+        } else {
+            setActiveTab(undefined);
+        }
+    }, [tabs]);
 
     return (
         <Element<TabsElementType> as={TabsStyled} ref={ref} {...props}>
-            <nav>
-                {tabs.map((tab, index) => (
-                    <Text
-                        key={tab.key}
-                        className={`is-clickable ${index === activeTabIndex ? "is-active" : ""}`}
-                        onClick={() => setIndexToSet(index)}
-                    >
-                        {tab.label}
-                    </Text>
-                ))}
-            </nav>
-            <HRule kind="secondary" marginTop="micro" marginBottom="micro" />
-            <Element 
-                as="div"
-                className={`tabs-content ${isExiting ? "exiting" : ""}`}
-            >
-                {tabs[activeTabIndex].content}
-            </Element>
+            {tabs.length > 0 && activeTab ? (
+                <>
+                    <nav>
+                        {tabs.map((tab) => (
+                            <Text
+                                key={tab.key}
+                                className={`is-clickable ${tab.key === activeTab.key ? "is-active" : ""}`}
+                                onClick={() => handleTabChange(tab)}
+                            >
+                                {tab.label}
+                            </Text>
+                        ))}
+                    </nav>
+                    <HRule kind="secondary" marginTop="micro" marginBottom="micro" />
+                    <Element as="div" className={`tabs-content ${isExiting ? "exiting" : ""}`}>
+                        {activeTab.content}
+                    </Element>
+                </>
+            ) : (
+                <></>
+            )}
         </Element>
     );
 });
