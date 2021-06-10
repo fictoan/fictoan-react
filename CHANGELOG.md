@@ -1,3 +1,6 @@
+### 0.32.14
+Fix crash in tabs component.
+
 ### 0.32.13
 Simplify TablePagination component (breaking).
 
