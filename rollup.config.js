@@ -3,6 +3,8 @@ import resolve from "@rollup/plugin-node-resolve";
 import url from "@rollup/plugin-url";
 import typescript from "rollup-plugin-typescript2";
 import { terser } from "rollup-plugin-terser";
+import analyze from 'rollup-plugin-analyzer';
+import visualizer from 'rollup-plugin-visualizer';
 const svgr = require("@svgr/rollup").default;
 const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default;
 const styledComponentsTransformer = createStyledComponentsTransformer({
@@ -22,19 +24,23 @@ export default {
             format: "cjs",
             sourcemap: true,
             exports: "named",
+            preserveModules: true,
+            preserveModulesRoot: 'src'
         },
         {
             file: pkg.module,
             format: "es",
             sourcemap: true,
             exports: "named",
+            preserveModules: true,
+            preserveModulesRoot: 'src'
         },
     ],
     external: [
-        "@types/lodash",
+        "@types/lodash-es",
         "@types/react",
         "@types/styled-components",
-        "lodash/merge",
+        "lodash-es/merge",
         "react",
         "styled-components",
     ],
@@ -54,10 +60,12 @@ export default {
         commonjs({
             extensions,
             namedExports: {
-                "node_modules/lodash/lodash.js": ["merge"],
+                "node_modules/lodash-es/lodash.js": ["merge"],
             },
         }),
         svgr(),
-        terser()
+        terser(),
+        // visualizer(),
+        // analyze({ summaryOnly: true })
     ],
 };

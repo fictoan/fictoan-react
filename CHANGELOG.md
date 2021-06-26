@@ -1,3 +1,8 @@
+### 0.32.15
+- Replace lodash with lodash-es for tree shaking
+- Add `preserveModules` to build output
+- Add `sideEffects: false` to package.json
+
 ### 0.32.14
 Fix crash in tabs component.
 

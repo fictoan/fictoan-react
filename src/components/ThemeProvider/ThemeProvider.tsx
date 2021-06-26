@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider as TP } from "styled-components";
-import { merge } from "lodash";
+import { merge } from "lodash-es";
 
 import { Element } from "../Element/Element";
 import { CommonAndHTMLProps, ThemeProps } from "../Element/constants";
