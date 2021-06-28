@@ -1,10 +1,10 @@
 {
     "name": "fictoan-react",
-    "version": "0.32.15",
+    "version": "0.32.14",
     "private": false,
-    "main": "dist/index.js",
-    "module": "dist/index.es.js",
-    "jsnext:main": "dist/index.es.js",
+    "main": "dist/cjs/index.js",
+    "module": "dist/es/index.js",
+    "jsnext:main": "dist/es/index.js",
     "sideEffects": false,
     "engines": {
         "node": ">=8",
@@ -17,6 +17,7 @@
     "license": "MIT",
     "scripts": {
         "start": "rollup -c -w",
+        "lint": "eslint '**/*.tsx' --ignore-pattern node_modules/",
         "prebuild": "rm -rf dist",
         "build": "rollup -c",
         "predeploy": "$npm_execpath run build",
@@ -32,20 +33,30 @@
         "not op_mini all"
     ],
     "devDependencies": {
-        "@rollup/plugin-commonjs": "^11.0.2",
-        "@rollup/plugin-node-resolve": "^7.1.1",
+        "@babel/preset-react": "^7.14.5",
+        "@rollup/plugin-babel": "^5.3.0",
+        "@rollup/plugin-commonjs": "^19.0.0",
+        "@rollup/plugin-json": "^4.1.0",
+        "@rollup/plugin-node-resolve": "^13.0.0",
         "@rollup/plugin-url": "^4.0.2",
         "@svgr/rollup": "^5.5.0",
         "@types/lodash-es": "^4.17.4",
-        "@types/react": "^16.9.23",
-        "@types/styled-components": "^5.0.1",
-        "react": "^17.0.1",
-        "rollup": "^1.31.1",
-        "rollup-plugin-analyzer": "^4.0.0",
+        "@types/react": "^17.0.11",
+        "@types/react-syntax-highlighter": "^13.5.1",
+        "@types/styled-components": "^5.1.10",
+        "@typescript-eslint/eslint-plugin": "^4.28.0",
+        "@typescript-eslint/parser": "^4.28.0",
+        "agadoo": "^2.0.0",
+        "eslint": "^7.29.0",
+        "eslint-plugin-react": "^7.24.0",
+        "eslint-plugin-tree-shaking": "^1.9.2",
+        "react": "^17.0.2",
+        "rollup": "^2.52.3",
+        "rollup-plugin-rename-node-modules": "^1.1.0",
         "rollup-plugin-terser": "^7.0.2",
         "rollup-plugin-typescript2": "^0.26.0",
-        "rollup-plugin-visualizer": "4.2.2",
-        "styled-components": "^5.1.1",
+        "rollup-plugin-visualizer": "5.5.0",
+        "styled-components": "^5.3.0",
         "tslib": "^1.11.1",
         "typescript": "^3.8.2",
         "typescript-plugin-styled-components": "^1.5.0"
@@ -55,15 +66,14 @@
     ],
     "dependencies": {
         "lodash-es": "^4.17.21",
-        "polished": "^3.4.4",
-        "prism-react-renderer": "^1.1.0",
-        "prismjs": "^1.23.0"
+        "polished": "^4.1.3",
+        "react-syntax-highlighter": "^15.4.3"
     },
     "peerDependencies": {
         "react": "16.x || 17.x",
         "styled-components": "^5.1.1"
     },
     "optionalDependencies": {
-        "@emotion/is-prop-valid": "^0.8.2"
+        "@emotion/is-prop-valid": "^1.1.0"
     }
 }

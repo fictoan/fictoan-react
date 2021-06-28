@@ -1,7 +1,13 @@
-### 0.32.15
+### 0.32.14-beta.0
 - Replace lodash with lodash-es for tree shaking
 - Add `preserveModules` to build output
 - Add `sideEffects: false` to package.json
+- Bump rollup to 2.52.3
+
+- Remove `prism-react-renderer` and `prismjs` as they couldn't be tree-shaken. 
+Add `react-syntax-highlighter` which is more customizable and tree-shakable.
+- Add `@rollup/plugin-babel` to add /*#__PURE__*/ prefix to `React.forwardRef` which is required for tree-shaking.
+- Add eslint and agadoo for testing purposes.
 
 ### 0.32.14
 Fix crash in tabs component.

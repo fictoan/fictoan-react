@@ -34,7 +34,7 @@ export const CodeStyled = css`
         width                  : 100%;
         max-width              : 100%;
         font-family            : ${(props: CodeBlockProps) => props.theme.text.font.mono};
-        color                  : ${(props: CodeBlockProps) => props.theme.text.code.block.text};
+        /* color                  : ${(props: CodeBlockProps) => props.theme.text.code.block.text}; */
         font-size              : ${(props: CodeBlockProps) => props.theme.text.code.block.scale}%;
         line-height            : ${(props: CodeBlockProps) => props.theme.text.code.block.lineHeight};
         font-weight            : 400;
@@ -72,7 +72,7 @@ export const CodeStyled = css`
     pre[class*=language-json] .token.string {
         color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.json.tokens.string};
     }
-
+/* 
     .token.tag         { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.tag}; }
     .token.atrule      { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.atrule}; }
     .token.attr-name   { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.attrName}; }
@@ -105,7 +105,7 @@ export const CodeStyled = css`
 
     .token.namespace { opacity : 0.72; }
 
-    .token.italic { font-style : italic; }
+    .token.italic { font-style : italic; } */
 
     pre::selection,
     code::selection,

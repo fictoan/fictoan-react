@@ -1,9 +1,11 @@
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import url from "@rollup/plugin-url";
+import json from '@rollup/plugin-json';
+import { getBabelOutputPlugin } from '@rollup/plugin-babel';
+import renameNodeModules from "rollup-plugin-rename-node-modules";
 import typescript from "rollup-plugin-typescript2";
 import { terser } from "rollup-plugin-terser";
-import analyze from 'rollup-plugin-analyzer';
 import visualizer from 'rollup-plugin-visualizer';
 const svgr = require("@svgr/rollup").default;
 const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default;
@@ -20,7 +22,7 @@ export default {
     input: "src/index.tsx",
     output: [
         {
-            file: pkg.main,
+            dir: "dist/cjs",
             format: "cjs",
             sourcemap: true,
             exports: "named",
@@ -28,7 +30,7 @@ export default {
             preserveModulesRoot: 'src'
         },
         {
-            file: pkg.module,
+            dir: "dist/es",
             format: "es",
             sourcemap: true,
             exports: "named",
@@ -37,10 +39,8 @@ export default {
         },
     ],
     external: [
-        "@types/lodash-es",
         "@types/react",
         "@types/styled-components",
-        "lodash-es/merge",
         "react",
         "styled-components",
     ],
@@ -54,18 +54,28 @@ export default {
             ],
         }),
         url(),
+        json(),
         resolve({
             extensions,
         }),
         commonjs({
             extensions,
-            namedExports: {
-                "node_modules/lodash-es/lodash.js": ["merge"],
-            },
         }),
         svgr(),
-        terser(),
-        // visualizer(),
-        // analyze({ summaryOnly: true })
+        getBabelOutputPlugin({
+            presets: ['@babel/preset-react']
+        }),
+        terser({
+            format: {
+                preserve_annotations: true,
+                comments: /__PURE__/
+            }
+        }),
+        // Required with preserveModules as node_modules is ignored when publishing
+        renameNodeModules(),
+        // visualizer({
+        //     template: "treemap",
+        //     gzipSize: true
+        // }),
     ],
 };
