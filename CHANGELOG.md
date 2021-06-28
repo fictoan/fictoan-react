@@ -9,6 +9,8 @@ Add `react-syntax-highlighter` which is more customizable and tree-shakable.
 - Add `@rollup/plugin-babel` to add /*#__PURE__*/ prefix to `React.forwardRef` which is required for tree-shaking.
 - Add eslint and agadoo for testing purposes.
 
+- Programatically generate Colours.styled.tsx classes
+
 ### 0.32.14
 Fix crash in tabs component.
 
