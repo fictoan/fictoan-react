@@ -6,9 +6,15 @@ import { Element } from "../Element/Element";
 import { CommonAndHTMLProps, ThemeProps } from "../Element/constants";
 
 import { GlobalStyled as DynamicGlobalStyled } from "./Global.styled";
-import { GlobalStaticStyled as StaticGlobalStyled } from "../../styles/GlobalStatic.styled";
 
 import { RFTheme } from "../../styles/theme";
+
+// CSS files to be injected to head section
+import "../../styles/Normalize.css";
+import "../../styles/Reset.css";
+import "../../styles/Utility.css";
+import "../../styles/Colours.css";
+
 
 export type ThemeProviderElementType = HTMLDivElement;
 export type RenderProps = () => JSX.Element;
@@ -25,15 +31,10 @@ export const ThemeProvider = ({ theme, localStyled, children, ...props }: ThemeP
     }, [theme]);
 
     return (
-        <>
-            {/* Styles that don't need to be computed */}
-            <StaticGlobalStyled />
-
-            <Element<ThemeProviderElementType> as={TP} theme={mergedTheme} {...props}>
-                <DynamicGlobalStyled />
-                {localStyled && localStyled()}
-                {children}
-            </Element>
-        </>
+        <Element<ThemeProviderElementType> as={TP} theme={mergedTheme} {...props}>
+            <DynamicGlobalStyled />
+            {localStyled && localStyled()}
+            {children}
+        </Element>
     );
 };

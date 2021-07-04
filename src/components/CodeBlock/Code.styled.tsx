@@ -1,9 +1,9 @@
-import { css } from "styled-components";
+import styled from "styled-components";
 
 import { CodeBlockProps } from "./CodeBlock";
 
 
-export const CodeStyled = css`
+export const CodeStyled = styled.div`
     /*  For inline code  */
     :not(pre) > code {
         font-family      : ${(props: CodeBlockProps) => props.theme.text.font.mono};
@@ -34,7 +34,7 @@ export const CodeStyled = css`
         width                  : 100%;
         max-width              : 100%;
         font-family            : ${(props: CodeBlockProps) => props.theme.text.font.mono};
-        /* color                  : ${(props: CodeBlockProps) => props.theme.text.code.block.text}; */
+        color                  : ${(props: CodeBlockProps) => props.theme.text.code.block.text};
         font-size              : ${(props: CodeBlockProps) => props.theme.text.code.block.scale}%;
         line-height            : ${(props: CodeBlockProps) => props.theme.text.code.block.lineHeight};
         font-weight            : 400;
@@ -72,40 +72,108 @@ export const CodeStyled = css`
     pre[class*=language-json] .token.string {
         color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.json.tokens.string};
     }
-/* 
-    .token.tag         { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.tag}; }
-    .token.atrule      { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.atrule}; }
-    .token.attr-name   { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.attrName}; }
-    .token.attr-value  { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.attrValue}; }
-    .token.boolean     { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.boolean}; }
-    .token.cdata       { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.cdata}; }
-    .token.class-name  { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.className}; }
-    .token.comment     { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.comment}; }
-    .token.constant    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.constant} }
-    .token.deleted     { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.deleted}; }
-    .token.delimiter   { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.delimiter}; }
-    .token.doctype     { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.doctype}; }
-    .token.entity      { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.entity} }
-    .token.function    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.function}; }
-    .token.hexcode     { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.hexcode}; }
-    .token.inserted    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.inserted} }
-    .token.keyword     { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.keyword}; }
-    .token.number      { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.number} }
-    .token.operator    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.operator}; }
-    .token.plain       { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.plain} }
-    .token.prolog      { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.prolog}; }
-    .token.property    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.property}; }
-    .token.punctuation { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.punctuation}; }
-    .token.regex       { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.regex} }
-    .token.selector    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.selector}; }
-    .token.string      { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.string}; }
-    .token.symbol      { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.symbol} }
-    .token.url         { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.url} }
-    .token.variable    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.variable}; }
 
-    .token.namespace { opacity : 0.72; }
-
-    .token.italic { font-style : italic; } */
+    /*********************************************************
+    * General
+    */
+    @media print {
+        pre[class*="language-"],
+        code[class*="language-"] {
+            text-shadow: none;
+        }
+    }
+    :not(pre) > code[class*="language-"] {
+        padding: .1em .3em;
+        border-radius: .3em;
+        color: #db4c69;
+        background: #f0f0f0;
+    }
+    /*********************************************************
+    * Tokens
+    */
+    .namespace {
+        opacity: .7;
+    }
+    .token.comment,
+    .token.prolog,
+    .token.doctype,
+    .token.cdata {
+        color: #b0b0b0;
+    }
+    .token.punctuation {
+        color: #a8a8a8;
+    }
+    .token.property,
+    .token.tag,
+    .token.boolean,
+    .token.number,
+    .token.constant,
+    .token.symbol,
+    .token.deleted {
+        color: #c97b40;
+    }
+    .token.selector,
+    .token.attr-name,
+    .token.string,
+    .token.char,
+    .token.builtin,
+    .token.inserted {
+        color: #2e9975;
+    }
+    .token.operator,
+    .token.entity,
+    .token.url,
+    .language-css .token.string,
+    .style .token.string {
+        color: #7a1542;
+        background: #f0f0f0;
+    }
+    .token.atrule,
+    .token.attr-value,
+    .token.keyword {
+        color: #5ea6c5;
+    }
+    .token.function {
+        color: #dd4a68;
+    }
+    .token.regex,
+    .token.important,
+    .token.variable {
+        color: #2bb63b;
+    }
+    .token.important,
+    .token.bold {
+        font-weight: bold;
+    }
+    .token.italic {
+        font-style: italic;
+    }
+    .token.entity {
+        cursor: help;
+    }
+    /*********************************************************
+    * Line highlighting
+    */
+    pre[data-line] {
+        position: relative;
+    }
+    pre[class*="language-"] > code[class*="language-"] {
+        position: relative;
+        z-index: 1;
+    }
+    .line-highlight {
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding: inherit 0;
+        margin-top: 1em;
+        background: #b4ecf3;
+        box-shadow: inset 5px 0 0 #55d5ec;
+        z-index: 0;
+        pointer-events: none;
+        line-height: inherit;
+        white-space: pre;
+    }
 
     pre::selection,
     code::selection,

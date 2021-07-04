@@ -1,13 +1,9 @@
 ### 0.32.14-beta.0
 - Replace lodash with lodash-es for tree shaking
-- Add `preserveModules` to build output
-- Add `sideEffects: false` to package.json
-- Bump rollup to 2.52.3
-
-- Remove `prism-react-renderer` and `prismjs` as they couldn't be tree-shaken. 
-Add `react-syntax-highlighter` which is more customizable and tree-shakable.
-- Add `@rollup/plugin-babel` to add /*#__PURE__*/ prefix to `React.forwardRef` which is required for tree-shaking.
-- Add eslint and agadoo for testing purposes.
+- Bump rollup to 2.52.7
+- Replace `prism-react-renderer` and `prismjs` with `react-syntax-highlighter` which is more customizable and tree-shakable
+- Add `@rollup/plugin-babel` to add /*#__PURE__*/ prefix to `React.forwardRef` which is required for tree-shaking
+- Add CSS files for Normalize, Reset, Colours and Utility to move static styles out of JS. Injecting to head tag using `rollup-plugin-styles`
 
 - Programatically generate Colours.styled.tsx classes
 

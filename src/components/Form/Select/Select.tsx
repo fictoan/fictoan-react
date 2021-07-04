@@ -12,7 +12,7 @@ export type SelectElementType = HTMLSelectElement;
 export type OptionElementType = HTMLOptionElement;
 
 // prettier-ignore
-interface SelectCustomProps {
+export interface SelectCustomProps {
     options       : CommonAndHTMLProps<OptionElementType>[];
     isFullWidth ? : boolean;
     label       ? : string;

@@ -5,7 +5,7 @@ import { defaultColours } from "./DefaultColours";
 export const ColoursStyled = css`
     ${(() : any => {
         const specialColours = ["white", "black", "transparent"];
-        const colours = ["white", "black", "transparent", "grey", "slate", "red", "orange", "amber", "yellow", "spring", "pistachio", "green", "teal", "cyan", "sky", "blue", "indigo", "voilet", "purple", "pink", "salmon", "crimson", "brick", "sienna", "brown"];
+        const colours = ["white", "black", "transparent", "grey", "slate", "red", "orange", "amber", "yellow", "spring", "pistachio", "green", "teal", "cyan", "sky", "blue", "indigo", "violet", "purple", "pink", "salmon", "crimson", "brick", "sienna", "brown"];
         const prefixes = {
             "bg": (colour : string) => `{ background-color : ${colour} }`,
             "text": (colour : string) => `{ color : ${colour} }`,
