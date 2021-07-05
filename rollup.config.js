@@ -6,7 +6,6 @@ import styles from "rollup-plugin-styles";
 import typescript from "rollup-plugin-typescript2";
 import { getBabelOutputPlugin } from '@rollup/plugin-babel';
 import { terser } from "rollup-plugin-terser";
-import { sizeSnapshot } from "rollup-plugin-size-snapshot";
 import progress from 'rollup-plugin-progress';
 import visualizer from 'rollup-plugin-visualizer';
 import { getFiles } from './scripts/buildUtils';
@@ -48,8 +47,6 @@ export default {
         },
     ],
     external: [
-        "@types/react",
-        "@types/styled-components",
         "react",
         "styled-components",
     ],
@@ -75,14 +72,12 @@ export default {
         getBabelOutputPlugin({
             presets: ['@babel/preset-react']
         }),
-        // sizeSnapshot(),
         terser({
             format: {
                 preserve_annotations: true,
                 comments: /__PURE__/
             }
         }),
-        // Required with preserveModules as node_modules is ignored when publishing
         progress(),
         visualizer({
             template: "treemap",
