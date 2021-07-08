@@ -19,7 +19,6 @@
     "license": "MIT",
     "scripts": {
         "start": "rollup -c -w",
-        "lint": "eslint '**/*.tsx' --ignore-pattern node_modules/",
         "prebuild": "rm -rf dist",
         "build": "rollup -c",
         "predeploy": "$npm_execpath run build",
