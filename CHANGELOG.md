@@ -1,81 +1,81 @@
-### 0.32.14-beta.0
+### 0.33.0
 - Replace lodash with lodash-es for tree shaking
 - Bump rollup to 2.52.7
 - Replace `prism-react-renderer` and `prismjs` with `react-syntax-highlighter` which is more customizable and tree-shakable
 - Add `@rollup/plugin-babel` to add /*#__PURE__*/ prefix to `React.forwardRef` which is required for tree-shaking
 - Add CSS files for Normalize, Reset, Colours and Utility to move static styles out of JS. Injecting to head tag using `rollup-plugin-styles`
-- Programmatically generate Colours.styled.tsx classes
+- Programmatically generate Colours.styled.tsx classes (To be added to build flow soon)
 
 ### 0.32.14
-Fix crash in tabs component.
+- Fix crash in tabs component.
 
 ### 0.32.13
-Simplify TablePagination component (breaking).
+- Simplify TablePagination component (breaking).
 
 ### 0.32.10
-Add TablePagination component
+- Add TablePagination component
 
 ### 0.32.9
-Fix `InfoPanel` close button fixed postion bug.
+- Fix `InfoPanel` close button fixed position bug.
 
 ### 0.32.7
-Cap `sidePadding` and `sideMargin` for `Row` and `HRule` in ultra-wide res displays above 2400px.
+- Cap `sidePadding` and `sideMargin` for `Row` and `HRule` in ultra-wide res displays above 2400px.
 
 ### 0.32.5
-Add @emotion/is-prop-valid as an optional dependency.
+- Add @emotion/is-prop-valid as an optional dependency.
 
 ### 0.32.3
-Add ability to set Sidebar logo width via the theme.
+- Add ability to set Sidebar logo width via the theme.
 
 ### 0.32.1
-Add Tabs component
+- Add Tabs component
 
 ### 0.31.22
-Remove opinionated `ul`, `ol`, and `li` styles.
+- Remove opinionated `ul`, `ol`, and `li` styles.
 
 ### 0.31.21
-Add opinionated version of Normalize.css.
+- Add opinionated version of Normalize.css.
 
 ### 0.31.20
-Remove Normalize.css.
+- Remove Normalize.css.
 
 ### 0.31.19
-Add theme variables for `RadioButton`, `CheckBox` and `ToggleSwitch`.
+- Add theme variables for `RadioButton`, `CheckBox` and `ToggleSwitch`.
 
 ### 0.31.18
-Upgrade to React 17.0.1.
-Tweak colour and font family for other input elements.
+- Upgrade to React 17.0.1.
+- Tweak colour and font family for other input elements.
 
 ### 0.31.17
-Change `fontFamily` to `font` for `Button` component.
-Fix font fallback styling inconsistency for labels, tables, and links.
+- Change `fontFamily` to `font` for `Button` component.
+- Fix font fallback styling inconsistency for labels, tables, and links.
 
 ### 0.31.16
-Rework Notification component.
+- Rework Notification component.
 
 ### 0.31.15
-Fix `bg` of `SidebarWrapper`.
+- Fix `bg` of `SidebarWrapper`.
 
 ### 0.31.13
-Add `size` property for `SidebarItemIcon` to be picked from theme file.
+- Add `size` property for `SidebarItemIcon` to be picked from theme file.
 
 ### 0.31.12
-Add `font-family` to tables, and inherit from body font.
+- Add `font-family` to tables, and inherit from body font.
 
 ### 0.31.11
-Remove improper colour override for dark sidebar theme.
+- Remove improper colour override for dark sidebar theme.
 
 ### 0.31.10
-Move React & styled-components to peerDependencies
+- Move React & styled-components to peerDependencies
 
 ### 0.31.8
-Switch to useState & useEffect for merging theme
+- Switch to useState & useEffect for merging theme
 
 ### 0.31.7
-Fix Card theme issue for setting `borderRadius`.
+- Fix Card theme issue for setting `borderRadius`.
 
 ### 0.31.6
-Fix broken builds (0.31.2 - 0.31.5)
+- Fix broken builds (0.31.2 - 0.31.5)
 
 ### 0.31.2
 - Set ThemeType to recursive optional typeof RFTheme.
