@@ -1,9 +1,20 @@
-### 0.32.12
-Optimise for minified builds.
-Remove `framer-motion` dependency.
+### 0.32.14-beta.0
+- Replace lodash with lodash-es for tree shaking
+- Bump rollup to 2.52.7
+- Replace `prism-react-renderer` and `prismjs` with `react-syntax-highlighter` which is more customizable and tree-shakable
+- Add `@rollup/plugin-babel` to add /*#__PURE__*/ prefix to `React.forwardRef` which is required for tree-shaking
+- Add CSS files for Normalize, Reset, Colours and Utility to move static styles out of JS. Injecting to head tag using `rollup-plugin-styles`
+- Programmatically generate Colours.styled.tsx classes
+
+### 0.32.14
+Fix crash in tabs component.
+
+### 0.32.13
+Simplify TablePagination component (breaking).
 
 ### 0.32.10
 Add TablePagination component
+
 ### 0.32.9
 Fix `InfoPanel` close button fixed postion bug.
 
@@ -106,10 +117,10 @@ Fix broken builds (0.31.2 - 0.31.5)
 - Fix `a` tag hover colour bug.
 
 ### v0.30.4
-- Fix type bug that wouldn’t let `paras` inherit `font-family`. 
+- Fix type bug that wouldn’t let `paras` inherit `font-family`.
 
 ### v0.30.3
-- Fix lodash `merge` speed issue. 
+- Fix lodash `merge` speed issue.
 
 ### v0.30.0
 - Remove static CSS classes from `GlobalStyles`.
@@ -130,7 +141,7 @@ Fix broken builds (0.31.2 - 0.31.5)
 - Add `spring`, `brick` and `sienna` colour values.
 
 ### v0.28.5
-- Fix `FormItem` margin bottom bug inside `FormItemGroup`. 
+- Fix `FormItem` margin bottom bug inside `FormItemGroup`.
 
 ### v0.28.4
 - Add `nano` and `micro` sizing for Text.

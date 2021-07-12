@@ -1,4 +1,6 @@
-import { lighten, darken, transparentize } from "polished";
+import lighten from "polished/lib/color/lighten";
+import darken from "polished/lib/color/darken";
+import transparentize from "polished/lib/color/transparentize";
 
 import { defaultColours } from "./DefaultColours";
 
@@ -494,6 +496,16 @@ export const RFTheme = {
         onHover : {
             bg   : defaultColours.amber20,
             text : customColours.shade
+        },
+    },
+
+    tablePagination : {
+        bg   : defaultColours.white,
+        text : defaultColours.grey,
+        svg  : {
+            onHover : {
+                stroke: defaultColours.slate60,
+            }
         }
     },
 

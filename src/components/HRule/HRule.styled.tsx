@@ -6,7 +6,6 @@ import { HRProps } from "./HRule";
 export const HRStyled = styled.hr`
     display : flex;
     border  : 0;
-    margin  : 4vmax auto;
     width   : 100%;
 
     &.side-margin-nano   { width: calc(100% -  2vw); }

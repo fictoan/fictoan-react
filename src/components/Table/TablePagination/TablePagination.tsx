@@ -13,14 +13,16 @@ import { TablePaginationStyled } from "./TablePagination.styled";
 
 // prettier-ignore
 export interface TablePaginationCustomProps {
-    pageIndex      : number;
-    pageCount      : number;
-    pageSize       : number;
-    isFirstPage  ? : boolean;
-    isLastPage   ? : boolean;
-    totalRecords ? : number;
-    isFetching   ? : boolean;
-    onPageChange   : (page: number) => void;
+    pageIndex         : number;
+    rangeStart        : number;
+    rangeEnd          : number;
+    hasPreviousPage   : boolean;
+    hasNextPage       : boolean;
+    totalRecords    ? : number;
+    isLoading       ? : boolean;
+    loadingText     ? : string;
+    emptyText       ? : string;
+    onPageChange      : (page: number) => void;
 }
 
 export type TablePaginationElementType = HTMLElement;
@@ -30,12 +32,14 @@ export const TablePagination = React.forwardRef(
     (
         {
             pageIndex,
-            pageCount,
-            pageSize,
-            isFirstPage,
-            isLastPage,
+            rangeStart,
+            rangeEnd,
+            hasPreviousPage,
+            hasNextPage,
             totalRecords,
-            isFetching,
+            isLoading,
+            loadingText,
+            emptyText,
             onPageChange: handlePageChange,
             ...props
         }: TablePaginationProps,
@@ -44,14 +48,14 @@ export const TablePagination = React.forwardRef(
         return (
             <Element<TablePaginationElementType> as={TablePaginationStyled} ref={ref} {...props}>
                 <Element as="div" className="vertically-centre-items" marginBottom="none">
-                    {pageCount > 0 ? (
+                    {totalRecords === 0 ? (
                         <Heading as="h6" marginRight="nano">
-                            {pageSize * pageIndex + 1} &ndash; {pageSize * pageIndex + Math.min(pageSize, pageSize)}
-                            {totalRecords ? ` of ${totalRecords}` : ``}
+                            {emptyText ? emptyText : "No records"}
                         </Heading>
                     ) : (
                         <Heading as="h6" marginRight="nano">
-                            No records
+                            {rangeStart} &ndash; {rangeEnd}
+                            {totalRecords ? ` of ${totalRecords}` : ``}
                         </Heading>
                     )}
 
@@ -60,8 +64,8 @@ export const TablePagination = React.forwardRef(
                         <span>First page</span>
                     </Element>
 
-                    <Element as="div" classNames={["nav-icon", `${isFirstPage && `is-inactive`}`]}>
-                        <PreviousButton onClick={() => !isFirstPage && handlePageChange(pageIndex - 1)} />
+                    <Element as="div" classNames={["nav-icon", `${!hasPreviousPage && `is-inactive`}`]}>
+                        <PreviousButton onClick={() => hasPreviousPage && handlePageChange(pageIndex - 1)} />
                         <span>Previous</span>
                     </Element>
 
@@ -69,17 +73,17 @@ export const TablePagination = React.forwardRef(
                         {pageIndex + 1}
                     </Text>
 
-                    <Element as="div" classNames={["nav-icon", `${isLastPage && `is-inactive`}`]}>
-                        <NextButton onClick={() => !isLastPage && handlePageChange(pageIndex + 1)} />
+                    <Element as="div" classNames={["nav-icon", `${!hasNextPage && `is-inactive`}`]}>
+                        <NextButton onClick={() => hasNextPage && handlePageChange(pageIndex + 1)} />
                         <span>Next</span>
                     </Element>
 
-                    {isFetching && (
+                    {isLoading && (
                         <Element as="div" marginLeft="nano" className="loading-icon vertically-centre-items">
                             <Button kind="secondary" shape="rounded" padding="none" marginRight="micro" isLoading>
                                 L
                             </Button>
-                            <Text size="small">Fetching records...</Text>
+                            {loadingText && <Text size="small">{loadingText}</Text>}
                         </Element>
                     )}
                 </Element>
