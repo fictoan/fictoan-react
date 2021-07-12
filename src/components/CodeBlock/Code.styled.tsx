@@ -1,34 +1,9 @@
-import { css } from "styled-components";
+import styled from "styled-components";
 
 import { CodeBlockProps } from "./CodeBlock";
 
 
-export const CodeStyled = css`
-    /*  For inline code  */
-    :not(pre) > code {
-        font-family      : ${(props: CodeBlockProps) => props.theme.text.font.mono};
-        margin           : 8px 0;
-        border-radius    : 4px;
-        padding          : 2px 8px;
-        border           : none;
-        background-color : ${(props: CodeBlockProps) => props.theme.text.code.inline.bg};
-        color            : ${(props: CodeBlockProps) => props.theme.text.code.inline.text};
-        font-size        : ${(props: CodeBlockProps) => props.theme.text.code.inline.scale}%;
-        font-weight      : normal;
-        white-space      : pre-wrap;
-    }
-
-    @media all and (max-width : 720px) {
-        code,
-        :not(pre) > code {
-            word-wrap   : break-word;
-            white-space : normal;
-        }
-
-        pre { padding : 16px; }
-    }
-
-    /*  For block code  */
+export const CodeStyled = styled.div`
     pre {
         display                : block;
         width                  : 100%;
@@ -57,22 +32,15 @@ export const CodeStyled = css`
         tab-size               : 4;
     }
 
-    pre[class*=language-css],
-    pre[class*=language-less],
-    pre[class*=language-sass] {
-        color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.css.fallback};
+    @media print {
+        pre[class*="language-"],
+        code[class*="language-"] {
+            text-shadow: none;
+        }
     }
-
-    pre[class*=language-scss] { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.css.fallback}; }
-
-    pre[class*=language-html] { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.html.fallback}; }
-
-    pre[class*=language-js]   { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.js.fallback}; }
-
-    pre[class*=language-json] .token.string {
-        color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.json.tokens.string};
-    }
-
+    /*********************************************************
+    * Tokens
+    */
     .token.tag         { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.tag}; }
     .token.atrule      { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.atrule}; }
     .token.attr-name   { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.attrName}; }
@@ -104,7 +72,6 @@ export const CodeStyled = css`
     .token.variable    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.variable}; }
 
     .token.namespace { opacity : 0.72; }
-
     .token.italic { font-style : italic; }
 
     pre::selection,
@@ -120,26 +87,19 @@ export const CodeStyled = css`
         background  : ${(props: CodeBlockProps) => props.theme.text.selection.bg} !important;
     }
 
-
-    /*  Keyboard key element  =================================  */
-    kbd {
-        display          : inline-block;
-        font-family      : ${(props: CodeBlockProps) => props.theme.text.font.mono};
-        margin           : 0 4px;
-        padding          : 4px 8px;
-        color            : ${(props: CodeBlockProps) => props.theme.text.kbd.text};
-        background-color : ${(props: CodeBlockProps) => props.theme.text.kbd.bg};
-        cursor           : pointer;
-        font-size        : 14px;
-        line-height      : 1.4;
-        border-radius    : 4px;
-        text-shadow      : 0 1px 0 #fff;
-        box-shadow       : 0 3px 0 0 rgba(0, 0, 0, 0.16);
-        user-select      : none;
+    code[class*=language-css],
+    code[class*=language-less],
+    code[class*=language-sass] {
+        color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.css.fallback};
     }
 
-    kbd:active {
-        transform  : translateY(3px);
-        box-shadow : none;
+    code[class*=language-scss] { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.css.fallback}; }
+
+    code[class*=language-html] { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.html.fallback}; }
+
+    code[class*=language-js]   { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.js.fallback}; }
+
+    code[class*=language-json] .token.string {
+        color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.json.tokens.string};
     }
 `;
