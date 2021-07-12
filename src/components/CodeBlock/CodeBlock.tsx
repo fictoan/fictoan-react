@@ -19,7 +19,6 @@ import ruby from "react-syntax-highlighter/dist/esm/languages/prism/ruby";
 import scala from "react-syntax-highlighter/dist/esm/languages/prism/scala";
 import typescript from "react-syntax-highlighter/dist/esm/languages/prism/typescript";
 import tsx from "react-syntax-highlighter/dist/esm/languages/prism/tsx";
-import prism from "react-syntax-highlighter/dist/esm/styles/prism/prism";
 
 SyntaxHighlighter.registerLanguage("bash", bash);
 SyntaxHighlighter.registerLanguage("csharp", csharp);
@@ -65,7 +64,7 @@ export const CodeBlock = React.forwardRef(
         return (
             <Element<HTMLDivElement> as={CodeStyled} ref={ref} {...props}>
                 {show && (
-                    <SyntaxHighlighter key={JSON.stringify(source)} language={language || "json"} style={prism} useInlineStyles={false}>
+                    <SyntaxHighlighter key={JSON.stringify(source)} language={language || "json"} useInlineStyles={false}>
                         {source}
                     </SyntaxHighlighter>
                 )}

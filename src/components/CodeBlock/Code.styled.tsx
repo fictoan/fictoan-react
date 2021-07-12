@@ -4,31 +4,6 @@ import { CodeBlockProps } from "./CodeBlock";
 
 
 export const CodeStyled = styled.div`
-    /*  For inline code  */
-    :not(pre) > code {
-        font-family      : ${(props: CodeBlockProps) => props.theme.text.font.mono};
-        margin           : 8px 0;
-        border-radius    : 4px;
-        padding          : 2px 8px;
-        border           : none;
-        background-color : ${(props: CodeBlockProps) => props.theme.text.code.inline.bg};
-        color            : ${(props: CodeBlockProps) => props.theme.text.code.inline.text};
-        font-size        : ${(props: CodeBlockProps) => props.theme.text.code.inline.scale}%;
-        font-weight      : normal;
-        white-space      : pre-wrap;
-    }
-
-    @media all and (max-width : 720px) {
-        code,
-        :not(pre) > code {
-            word-wrap   : break-word;
-            white-space : normal;
-        }
-
-        pre { padding : 16px; }
-    }
-
-    /*  For block code  */
     pre {
         display                : block;
         width                  : 100%;
@@ -57,123 +32,47 @@ export const CodeStyled = styled.div`
         tab-size               : 4;
     }
 
-    pre[class*=language-css],
-    pre[class*=language-less],
-    pre[class*=language-sass] {
-        color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.css.fallback};
-    }
-
-    pre[class*=language-scss] { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.css.fallback}; }
-
-    pre[class*=language-html] { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.html.fallback}; }
-
-    pre[class*=language-js]   { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.js.fallback}; }
-
-    pre[class*=language-json] .token.string {
-        color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.json.tokens.string};
-    }
-
-    /*********************************************************
-    * General
-    */
     @media print {
         pre[class*="language-"],
         code[class*="language-"] {
             text-shadow: none;
         }
     }
-    :not(pre) > code[class*="language-"] {
-        padding: .1em .3em;
-        border-radius: .3em;
-        color: #db4c69;
-        background: #f0f0f0;
-    }
     /*********************************************************
     * Tokens
     */
-    .namespace {
-        opacity: .7;
-    }
-    .token.comment,
-    .token.prolog,
-    .token.doctype,
-    .token.cdata {
-        color: #b0b0b0;
-    }
-    .token.punctuation {
-        color: #a8a8a8;
-    }
-    .token.property,
-    .token.tag,
-    .token.boolean,
-    .token.number,
-    .token.constant,
-    .token.symbol,
-    .token.deleted {
-        color: #c97b40;
-    }
-    .token.selector,
-    .token.attr-name,
-    .token.string,
-    .token.char,
-    .token.builtin,
-    .token.inserted {
-        color: #2e9975;
-    }
-    .token.operator,
-    .token.entity,
-    .token.url,
-    .language-css .token.string,
-    .style .token.string {
-        color: #7a1542;
-        background: #f0f0f0;
-    }
-    .token.atrule,
-    .token.attr-value,
-    .token.keyword {
-        color: #5ea6c5;
-    }
-    .token.function {
-        color: #dd4a68;
-    }
-    .token.regex,
-    .token.important,
-    .token.variable {
-        color: #2bb63b;
-    }
-    .token.important,
-    .token.bold {
-        font-weight: bold;
-    }
-    .token.italic {
-        font-style: italic;
-    }
-    .token.entity {
-        cursor: help;
-    }
-    /*********************************************************
-    * Line highlighting
-    */
-    pre[data-line] {
-        position: relative;
-    }
-    pre[class*="language-"] > code[class*="language-"] {
-        position: relative;
-        z-index: 1;
-    }
-    .line-highlight {
-        position: absolute;
-        left: 0;
-        right: 0;
-        padding: inherit 0;
-        margin-top: 1em;
-        background: #b4ecf3;
-        box-shadow: inset 5px 0 0 #55d5ec;
-        z-index: 0;
-        pointer-events: none;
-        line-height: inherit;
-        white-space: pre;
-    }
+    .token.tag         { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.tag}; }
+    .token.atrule      { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.atrule}; }
+    .token.attr-name   { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.attrName}; }
+    .token.attr-value  { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.attrValue}; }
+    .token.boolean     { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.boolean}; }
+    .token.cdata       { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.cdata}; }
+    .token.class-name  { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.className}; }
+    .token.comment     { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.comment}; }
+    .token.constant    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.constant} }
+    .token.deleted     { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.deleted}; }
+    .token.delimiter   { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.delimiter}; }
+    .token.doctype     { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.doctype}; }
+    .token.entity      { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.entity} }
+    .token.function    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.function}; }
+    .token.hexcode     { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.hexcode}; }
+    .token.inserted    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.inserted} }
+    .token.keyword     { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.keyword}; }
+    .token.number      { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.number} }
+    .token.operator    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.operator}; }
+    .token.plain       { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.plain} }
+    .token.prolog      { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.prolog}; }
+    .token.property    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.property}; }
+    .token.punctuation { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.punctuation}; }
+    .token.regex       { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.regex} }
+    .token.selector    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.selector}; }
+    .token.string      { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.string}; }
+    .token.symbol      { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.symbol} }
+    .token.url         { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.url} }
+    .token.variable    { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.tokens.variable}; }
+
+    .token.namespace { opacity : 0.72; }
+    .token.italic { font-style : italic; }
 
     pre::selection,
     code::selection,
@@ -188,26 +87,19 @@ export const CodeStyled = styled.div`
         background  : ${(props: CodeBlockProps) => props.theme.text.selection.bg} !important;
     }
 
-
-    /*  Keyboard key element  =================================  */
-    kbd {
-        display          : inline-block;
-        font-family      : ${(props: CodeBlockProps) => props.theme.text.font.mono};
-        margin           : 0 4px;
-        padding          : 4px 8px;
-        color            : ${(props: CodeBlockProps) => props.theme.text.kbd.text};
-        background-color : ${(props: CodeBlockProps) => props.theme.text.kbd.bg};
-        cursor           : pointer;
-        font-size        : 14px;
-        line-height      : 1.4;
-        border-radius    : 4px;
-        text-shadow      : 0 1px 0 #fff;
-        box-shadow       : 0 3px 0 0 rgba(0, 0, 0, 0.16);
-        user-select      : none;
+    code[class*=language-css],
+    code[class*=language-less],
+    code[class*=language-sass] {
+        color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.css.fallback};
     }
 
-    kbd:active {
-        transform  : translateY(3px);
-        box-shadow : none;
+    code[class*=language-scss] { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.css.fallback}; }
+
+    code[class*=language-html] { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.html.fallback}; }
+
+    code[class*=language-js]   { color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.js.fallback}; }
+
+    code[class*=language-json] .token.string {
+        color : ${(props: CodeBlockProps) => props.theme.text.code.prism.languages.json.tokens.string};
     }
 `;
