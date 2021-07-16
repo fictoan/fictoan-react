@@ -1,3 +1,6 @@
+### 0.33.1
+- Support heading in `InfoPanel`
+
 ### 0.33.0
 - Replace lodash with lodash-es for tree shaking
 - Bump rollup to 2.52.7
