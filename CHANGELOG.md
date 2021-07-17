@@ -1,3 +1,6 @@
+### 0.33.3
+- Fix npm publish bug
+
 ### 0.33.2
 - Fix CSS overrides for all components
 
