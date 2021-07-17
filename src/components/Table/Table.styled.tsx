@@ -4,9 +4,12 @@ import { TableProps } from "./Table";
 
 
 export const TableStyled = styled.table`
-    background-color : ${(props: TableProps) => props.theme.table.bg};
     color            : ${(props: TableProps) => props.theme.table.text};
     font-family      : ${(props: TableProps) => props.theme.text.paras.font};
+    
+    &:not([class*="bg-"]) {
+        background-color : ${(props: TableProps) => props.theme.table.bg};
+    }
 
     &.bordered-rows td,
     &.bordered-rows th {

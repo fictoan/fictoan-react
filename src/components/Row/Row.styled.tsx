@@ -5,9 +5,7 @@ import { PortionStyled } from "../Portion/Portion.styled";
 
 export const RowStyled = styled.div`
     display               : grid;
-    width                 : 100%;
     grid-template-columns : repeat(24, 1fr);
-    margin-bottom         : 4vh;
 
     &.no-gutters     { grid-gap :    0; }
     &.nano-gutters   { grid-gap :  2px; }
