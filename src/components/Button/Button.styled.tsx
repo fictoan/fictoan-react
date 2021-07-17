@@ -182,21 +182,13 @@ export const ButtonStyled = styled.button`
 
     /*  Animation for loader  */
     @-webkit-keyframes spinner {
-        from {
-            -webkit-transform : rotate(0deg);
-        }
-        to {
-            -webkit-transform : rotate(359deg);
-        }
+        from { -webkit-transform : rotate(0deg); }
+        to   { -webkit-transform : rotate(359deg); }
     }
 
     @keyframes spinner {
-        from {
-            transform : rotate(0deg);
-        }
-        to {
-            transform : rotate(359deg);
-        }
+        from { transform : rotate(0deg); }
+        to   { transform : rotate(359deg); }
     }
 
     //  BUTTON WITH DELETE  ///////////////////////////////////////////////////

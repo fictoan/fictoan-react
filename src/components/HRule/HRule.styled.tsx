@@ -4,8 +4,8 @@ import { HRProps } from "./HRule";
 
 
 export const HRStyled = styled.hr`
-    border  : 0;
-    width   : 100%;
+    border : 0;
+    width  : 100%;
 
     &.side-margin-nano   { width: calc(100% -  2vw); }
     &.side-margin-micro  { width: calc(100% -  4vw); }
