@@ -25,5 +25,5 @@ export const Card = React.forwardRef(({ shadow, shape, ...props }: CardProps, re
         classNames.push(`shadow-${shadow}`);
     }
 
-    return <Element<CardElementType> as={CardStyled} ref={ref} classNames={classNames} {...props} />;
+    return <Element<CardElementType> as={CardStyled} ref={ref} classNames={classNames} isFullWidth {...props} />;
 });

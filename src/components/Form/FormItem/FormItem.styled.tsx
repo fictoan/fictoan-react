@@ -2,13 +2,14 @@ import styled, { css } from "styled-components";
 
 import { FormItemProps } from "../FormItem/FormItem";
 import { InputFieldStyled } from "../InputField/InputField.styled";
+import { TextAreaStyled } from "../TextArea/TextArea.styled";
 
 
 export const FormItemStyled = styled.div`
     display        : flex;
+    flex-direction : column;
     position       : relative;
     width          : 100%;
-    flex-direction : column;
     align-items    : flex-start;
 
     ${(props: FormItemProps) => props.isAnswers && css`
@@ -27,7 +28,7 @@ export const FormItemStyled = styled.div`
         flex-wrap     : wrap;
     }
 
-    ${InputFieldStyled} {
+    ${InputFieldStyled}, ${TextAreaStyled} {
         &:focus ~ label { font-weight : bold; }
 
         &:required ~ label::before {

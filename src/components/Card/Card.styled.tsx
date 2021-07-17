@@ -4,8 +4,6 @@ import { CardProps } from "./Card";
 
 export const CardStyled = styled.div`
     position         : relative;
-    width            : 100%;
-    height           : auto;
     border           : 1px solid ${(props: CardProps) => props.theme.card.border};
     background-color : ${(props: CardProps) => props.theme.card.bg};
 

@@ -4,16 +4,11 @@ import { InfoPanelProps } from "./InfoPanel";
 
 
 export const InfoPanelStyled = styled.aside`
-    display          : flex;
     position         : fixed;
     top              : 0;
     right            : 0;
     bottom           : 0;
     transform        : translateX(-42vw);
-    padding          : 2vw;
-    flex-direction   : column;
-    max-width        : 40vw;
-    width            : auto;
     min-height       : 100vh;
     overflow-y       : auto;
     transition       : all 0.4s ease-in-out;

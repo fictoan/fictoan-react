@@ -4,7 +4,6 @@ import { HRProps } from "./HRule";
 
 
 export const HRStyled = styled.hr`
-    display : flex;
     border  : 0;
     width   : 100%;
 

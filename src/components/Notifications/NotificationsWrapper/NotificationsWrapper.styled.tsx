@@ -9,16 +9,18 @@ export const NotificationsWrapperStyled = styled.div`
     width      : 400px;
     z-index    : 5000000;
     padding    : 4vh 2vw;
-    overflow-y : scroll;
+    overflow-y : auto;
     overflow-x : hidden;
 
     &.left  { left : 0; }
+    
     &.right { right : 0; }
 
     &.top    {
         flex-direction : column;
         top            : 0;
     }
+
     &.bottom {
         flex-direction : column-reverse;
         bottom         : 0;
