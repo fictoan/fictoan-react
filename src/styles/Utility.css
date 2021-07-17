@@ -82,8 +82,8 @@ footer { flex-shrink : 0; }
 
 .no-border { border: none !important; }
 
-    /* For when you want things bang in the centre */
-    /* of both axes. Apply to parent. */
+/* For when you want things bang in the centre */
+/* of both axes. Apply to parent. */
 .totally-centre-items,
 .totally-center-items {
     display         : flex !important;
@@ -93,11 +93,15 @@ footer { flex-shrink : 0; }
 
 /* For when you want child elements vertically in  */
 /* the middle. Apply to parent */
-.vertically-centre-items { display : flex; }
+.vertically-centre-items,
+.vertically-center-items { 
+    display : flex; 
+}
 
 .vertically-centre-items > *,
 .vertically-center-items > * {
     align-self : center;
+    width : fit-content;
 }
 
 /* Parent div needs to be a flex element */

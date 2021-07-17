@@ -48,6 +48,6 @@ export const Portion = React.forwardRef(
             classNames.push("horizontal");
         }
 
-        return <Element<PortionElementType> as={PortionStyled} ref={ref} classNames={classNames} {...props} />;
+        return <Element<PortionElementType> as={PortionStyled} ref={ref} classNames={classNames} isFullWidth {...props} />;
     }
 );
