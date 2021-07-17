@@ -8,13 +8,10 @@ export const NotificationsItemStyled = styled.div`
     position         : relative;
     display          : flex;
     width            : 100%;
-    height           : auto;
-    padding          : 16px;
     background-color : ${(props: NotificationItemProps) => props.theme.notification.default.bg};
     border-radius    : 4px;
     border           : 1px solid hsla(0, 0%, 0%, 0.04);
     transition       : all 0.4s;
-    margin           : 8px 0;
     box-shadow       : 0  2px  0.2px rgba(0,0,0,0.016), 
                        0  4px  0.8px rgba(0,0,0,0.024),
                        0  6px  2.4px rgba(0,0,0,0.032),

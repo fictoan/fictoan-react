@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export const FormItemJointGroupStyled = styled.div`
     display        : flex;
-    flex-direction : row;
     flex-wrap      : wrap;
     width          : 100%;
 

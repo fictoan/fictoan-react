@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
 export const PortionStyled = styled.div`
-    display        : flex;
-    flex-direction : column;
-    width          : 100%;
-
-    &.horizontal { flex-direction : row; }
+    &.horizontal { 
+        display        : flex;
+        flex-direction : row;
+    }
 
     &.\\31 { grid-column : span 1; }
 

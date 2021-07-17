@@ -1,3 +1,6 @@
+### 0.33.2
+- Fix CSS overrides for all components
+
 ### 0.33.1
 - Support heading in `InfoPanel`
 

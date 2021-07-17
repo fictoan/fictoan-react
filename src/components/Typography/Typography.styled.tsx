@@ -58,24 +58,6 @@ export const TypographyStyled = css`
 
     a:active { opacity: 0.72; }
 
-    .weight-100 { font-weight : 100; }
-    .weight-200 { font-weight : 200; }
-    .weight-300 { font-weight : 300; }
-    .weight-400 { font-weight : 400; }
-    .weight-500 { font-weight : 500; }
-    .weight-600 { font-weight : 600; }
-    .weight-700 { font-weight : 700; }
-    .weight-800 { font-weight : 800; }
-    .weight-900 { font-weight : 900; }
-
-    .text-nano   { font-size :  48%; }
-    .text-micro  { font-size :  64%; }
-    .text-tiny   { font-size :  72%; }
-    .text-small  { font-size :  90%; }
-    .text-medium { font-size : 100%; }
-    .text-large  { font-size : 120%; }
-    .text-huge   { font-size : 160%; }
-
     .font-sans  { font-family : ${(props: GlobalStyledProps) => props.theme.text.font.sans}; }
     .font-serif { font-family : ${(props: GlobalStyledProps) => props.theme.text.font.serif}; }
     .font-mono  { font-family : ${(props: GlobalStyledProps) => props.theme.text.font.mono}; }

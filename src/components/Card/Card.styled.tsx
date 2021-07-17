@@ -3,11 +3,15 @@ import styled from "styled-components";
 import { CardProps } from "./Card";
 
 export const CardStyled = styled.div`
-    position         : relative;
-    width            : 100%;
-    height           : auto;
-    border           : 1px solid ${(props: CardProps) => props.theme.card.border};
-    background-color : ${(props: CardProps) => props.theme.card.bg};
+    position : relative;
+    
+    &:not([class*="border-"]) {
+        border : 1px solid ${(props: CardProps) => props.theme.card.border};
+    }
+
+    &:not([class*="bg-"]) {
+        background-color : ${(props: CardProps) => props.theme.card.bg};
+    }
 
     &.shape-rounded { border-radius : ${(props: CardProps) => props.theme.card.borderRadius}; }
 
@@ -19,5 +23,6 @@ export const CardStyled = styled.div`
 
     @media all and (max-width : 600px) {
         &[class*="padding"] { padding : 4vmin; }
+        .padding-none { padding : 0 !important; }
     }
 `

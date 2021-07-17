@@ -5,7 +5,6 @@ import { FormItemStyled } from "../FormItem/FormItem.styled";
 
 export const FormItemGroupStyled = styled.div`
     display        : flex;
-    flex-direction : row;
     flex-wrap      : wrap;
     width          : 100%;
 

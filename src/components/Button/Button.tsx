@@ -54,6 +54,6 @@ export const Button = React.forwardRef(
             classNames.push("with-delete");
         }
 
-        return <Element<ButtonElementType> as={ButtonStyled} ref={ref} classNames={classNames} {...props} />;
+        return <Element<ButtonElementType> as={ButtonStyled} ref={ref} classNames={classNames} paddingTop="nano" paddingBottom="nano" paddingLeft="micro" paddingRight="micro" {...props} />;
     }
 );
