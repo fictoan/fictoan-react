@@ -4,21 +4,17 @@ import { ButtonProps } from "./Button";
 
 export const ButtonStyled = styled.button`
     position            : relative;
-    display             : inline-flex;
     cursor              : pointer;
-    padding             : 12px 24px;
     font-family         : ${(props: ButtonProps) => props.theme.button.font};
     font-weight         : bold;
     font-size           : 92%;
     text-align          : center;
-    justify-content     : center;
-    align-self          : flex-start;
     text-decoration     : none;
     line-height         : 1;
     transition          : all 0.2s;
     background-position : center;
     user-select         : none;
-    
+
     > * {
       all : unset;
     }

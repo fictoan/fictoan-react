@@ -101,7 +101,6 @@ footer { flex-shrink : 0; }
 .vertically-centre-items > *,
 .vertically-center-items > * {
     align-self : center;
-    width : fit-content;
 }
 
 /* Parent div needs to be a flex element */
