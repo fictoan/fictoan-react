@@ -62,10 +62,14 @@ export const TableStyled = styled.table`
     }
     
     // TEXT ALIGN  ============================================================
-    &.align-text-left   { text-align : left; }
+    &.align-text-left th,
+    &.align-text-left td { text-align : left; }
 
-    &.align-text-right  { text-align : right; }
+    &.align-text-right th,
+    &.align-text-right td { text-align : right; }
 
-    &.align-text-centre,
-    &.align-text-center { text-align : center; }
+    &.align-text-centre th,
+    &.align-text-centre td,
+    &.align-text-center th,
+    &.align-text-center td { text-align : center; }
 `;

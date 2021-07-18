@@ -1,3 +1,6 @@
+### 0.33.5
+- Fix `alignText` styling for `Table`. 😬
+
 ### 0.33.4
 - Add `alignText` prop for `Table`.
 
