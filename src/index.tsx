@@ -60,7 +60,7 @@ import { ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
 import { ThemeType, ThemeProps } from "./components/Element/constants";
 
 import { defaultColours } from "./styles/DefaultColours";
-import { RFTheme } from "./styles/theme";
+import { FictoanTheme } from "./styles/theme";
 
 export {
     Element,
@@ -109,5 +109,5 @@ export {
     ThemeType,
     ThemeProps,
     defaultColours,
-    RFTheme,
+    FictoanTheme,
 };
