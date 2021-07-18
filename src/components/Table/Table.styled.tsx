@@ -4,13 +4,14 @@ import { TableProps } from "./Table";
 
 
 export const TableStyled = styled.table`
-    color            : ${(props: TableProps) => props.theme.table.text};
-    font-family      : ${(props: TableProps) => props.theme.text.paras.font};
+    color       : ${(props: TableProps) => props.theme.table.text};
+    font-family : ${(props: TableProps) => props.theme.text.paras.font};
     
     &:not([class*="bg-"]) {
         background-color : ${(props: TableProps) => props.theme.table.bg};
     }
 
+    // BORDERS  ===============================================================
     &.bordered-rows td,
     &.bordered-rows th {
         border              : 0 solid ${(props: TableProps) => props.theme.table.border};
@@ -26,7 +27,7 @@ export const TableStyled = styled.table`
     &.bordered-both td,
     &.bordered-both th { border : 1px solid ${(props: TableProps) => props.theme.table.border}; }
 
-
+    // PADDING  ===============================================================
     &.padding-all-tiny  th,
     &.padding-all-tiny  td  { padding : 4px 8px; }
 
@@ -43,14 +44,28 @@ export const TableStyled = styled.table`
     &.padding-all-huge  td  { padding : 32px 40px; }
 
 
-    &.striped thead tr { background-color : ${(props: TableProps) => props.theme.table.striped.header.bg}; }
+    // STRIPES  ===============================================================
+    &.striped thead tr {
+        background-color : ${(props: TableProps) => props.theme.table.striped.header.bg};
+    }
 
-    &.striped tbody tr:not(.is-selected):nth-child(even) { background-color : ${(props: TableProps) => props.theme.table.striped.cell.bg}; }
+    &.striped tbody tr:not(.is-selected):nth-child(even) {
+        background-color : ${(props: TableProps) => props.theme.table.striped.cell.bg};
+    }
 
+    // HOVERABLE  =============================================================
     &.hoverable tbody tr:hover {
         background-color : ${(props: TableProps) => props.theme.table.onHover.bg} !important;
         color            : ${(props: TableProps) => props.theme.table.onHover.text};
         transition       : all 0.2s;
         cursor           : pointer;
     }
+    
+    // TEXT ALIGN  ============================================================
+    &.align-text-left   { text-align : left; }
+
+    &.align-text-right  { text-align : right; }
+
+    &.align-text-centre,
+    &.align-text-center { text-align : center; }
 `;

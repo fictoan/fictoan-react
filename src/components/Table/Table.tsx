@@ -11,13 +11,14 @@ export interface TableCustomProps {
     isStriped   ? : boolean;
     isHoverable ? : boolean;
     isFullWidth ? : boolean;
+    alignText   ? : "left" | "right" | "centre" | "center";
 }
 
 export type TableElementType = HTMLTableElement;
 export type TableProps = CommonAndHTMLProps<TableElementType> & TableCustomProps;
 
 export const Table = React.forwardRef(
-    ({ bordersFor, isStriped, isHoverable, isFullWidth, ...props }: TableProps, ref: React.Ref<TableElementType>) => {
+    ({ bordersFor, isStriped, isHoverable, isFullWidth, alignText, ...props }: TableProps, ref: React.Ref<TableElementType>) => {
         let classNames = [];
 
         if (bordersFor) {
@@ -34,6 +35,10 @@ export const Table = React.forwardRef(
 
         if (isFullWidth) {
             classNames.push("full-width");
+        }
+
+        if (alignText) {
+            classNames.push(`align-text-${alignText}`);
         }
 
         return <Element<TableElementType> as={TableStyled} classNames={classNames} {...props} />;
