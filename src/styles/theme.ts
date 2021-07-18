@@ -11,7 +11,7 @@ export const customColours = {
     accent   : defaultColours.green80,
 }
 
-export const RFTheme = {
+export const FictoanTheme = {
     customColours : customColours,
 
     //  GLOBALS  //////////////////////////////////////////////////////////////
@@ -22,138 +22,6 @@ export const RFTheme = {
     //  BASICS  ///////////////////////////////////////////////////////////////
     body : {
         bg : defaultColours.white,
-    },
-
-    //  TEXT  /////////////////////////////////////////////////////////////////
-    text : {
-        font : {
-            sans  : "sans-serif",
-            serif : "serif",
-            mono  : "monospace",
-        },
-
-        paras : {
-            font       : "sans-serif",
-            size       : 1,
-            color      : defaultColours.grey,
-            weight     : 400,
-            lineHeight : 1.64,
-        },
-
-        headings : {
-            font       : "sans-serif",
-            color      : customColours.shade,
-            weight     : 600,
-            multiplier : 1.24,
-            lineHeight : 1.24
-        },
-
-        links : {
-            font : "sans-serif",
-            default : {
-                color : defaultColours.blue90,
-            },
-            onHover : {
-                color : defaultColours.blue60
-            }
-        },
-
-        selection : {
-            bg   : customColours.hue,
-            text : defaultColours.white
-        },
-
-        code : {
-            inline : {
-                bg    : defaultColours.blue10,
-                text  : defaultColours.blue90,
-                scale : 80
-            },
-            block : {
-                bg         : `${lighten(0.02, defaultColours.slate10)}`,
-                text       : defaultColours.blue70,
-                scale      : 80,
-                lineHeight : 1.8
-            },
-            prism : {
-                tokens : {
-                    tag         : defaultColours.violet,
-                    atrule      : defaultColours.teal90,
-                    attrName    : defaultColours.orange,
-                    attrValue   : defaultColours.green80,
-                    boolean     : defaultColours.green80,
-                    cdata       : defaultColours.grey70,
-                    className   : defaultColours.red,
-                    comment     : defaultColours.grey70,
-                    constant    : defaultColours.green80,
-                    deleted     : defaultColours.slate80,
-                    delimiter   : defaultColours.grey90,
-                    doctype     : defaultColours.grey90,
-                    entity      : defaultColours.green80,
-                    function    : defaultColours.orange,
-                    hexcode     : defaultColours.green,
-                    inserted    : defaultColours.green80,
-                    italic      : defaultColours.green80,
-                    keyword     : defaultColours.orange90,
-                    namespace   : defaultColours.green80,
-                    number      : defaultColours.green80,
-                    operator    : defaultColours.pistachio,
-                    plain       : defaultColours.grey,
-                    prolog      : defaultColours.grey90,
-                    property    : defaultColours.red90,
-                    punctuation : defaultColours.grey60,
-                    regex       : defaultColours.green80,
-                    selector    : defaultColours.violet,
-                    string      : defaultColours.crimson60,
-                    symbol      : defaultColours.green80,
-                    url         : defaultColours.green80,
-                    variable    : defaultColours.orange80,
-                },
-
-                languages : {
-                    css : {
-                        fallback : defaultColours.orange90
-                    },
-                    html : {
-                        fallback : defaultColours.grey
-                    },
-                    js : {
-                        fallback : defaultColours.violet90
-                    },
-                    json : {
-                        fallback : defaultColours.teal,
-                        tokens   : {
-                            string : defaultColours.teal
-                        }
-                    }
-                }
-            }
-        },
-
-        kbd : {
-            text : defaultColours.grey,
-            bg   : defaultColours.grey10
-        }
-    },
-
-
-    //  CARD  /////////////////////////////////////////////////////////////////
-    card : {
-        bg           : defaultColours.white,
-        border       : `${lighten(0.96, defaultColours.black)}`,
-        borderRadius : "4px",
-    },
-
-
-    //  INFO PANEL  ///////////////////////////////////////////////////////////
-    infoPanel : {
-        bg     : defaultColours.white,
-        border : defaultColours.slate20,
-        dismissButton : {
-            bg      : `${transparentize(0.24, defaultColours.white)}`,
-            color   : defaultColours.slate90,
-            content : "×"
-        }
     },
 
 
@@ -240,6 +108,14 @@ export const RFTheme = {
                 spinnerBorder : customColours.hue,
             }
         }
+    },
+
+
+    //  CARD  /////////////////////////////////////////////////////////////////
+    card : {
+        bg           : defaultColours.white,
+        border       : `${lighten(0.96, defaultColours.black)}`,
+        borderRadius : "4px",
     },
 
 
@@ -368,6 +244,50 @@ export const RFTheme = {
     },
 
 
+    //  INFO PANEL  ///////////////////////////////////////////////////////////
+    infoPanel : {
+        bg     : defaultColours.white,
+        border : defaultColours.slate20,
+        dismissButton : {
+            bg      : `${transparentize(0.24, defaultColours.white)}`,
+            color   : defaultColours.slate90,
+            content : "×"
+        }
+    },
+
+
+    //  NOTIFICATION  /////////////////////////////////////////////////////////
+    notification : {
+        default : {
+            bg   : defaultColours.slate10,
+            text : customColours.shade
+        },
+        types: {
+            info : {
+                border : defaultColours.blue60,
+            },
+            warning : {
+                border : defaultColours.amber,
+            },
+            error : {
+                border : defaultColours.red90,
+            },
+            success : {
+                border : defaultColours.green90,
+            }
+        }
+    },
+
+
+    //  PROGRESS BAR  /////////////////////////////////////////////////////////
+    progressBar : {
+        bg     : defaultColours.slate20,
+        fill   : customColours.hue,
+        label  : customColours.shade,
+        value  : `${lighten(0.24, customColours.shade)}`,
+    },
+
+
     //  SIDEBAR  //////////////////////////////////////////////////////////////
     sidebar : {
         isCollapsed : {
@@ -461,29 +381,6 @@ export const RFTheme = {
     },
 
 
-    //  NOTIFICATION  /////////////////////////////////////////////////////////
-    notification : {
-        default : {
-            bg   : defaultColours.slate10,
-            text : customColours.shade
-        },
-        types: {
-            info : {
-                border : defaultColours.blue60,
-            },
-            warning : {
-                border : defaultColours.amber,
-            },
-            error : {
-                border : defaultColours.red90,
-            },
-            success : {
-                border : defaultColours.green90,
-            }
-        }
-    },
-
-
     //  TABLE  ////////////////////////////////////////////////////////////////
     table : {
         bg      : defaultColours.white,
@@ -514,14 +411,6 @@ export const RFTheme = {
     },
 
 
-    //  PROGRESS BAR  /////////////////////////////////////////////////////////
-    progressBar : {
-        bg     : defaultColours.slate20,
-        fill   : customColours.hue,
-        label  : customColours.shade,
-        value  : `${lighten(0.24, customColours.shade)}`,
-    },
-
     //  TABS  ////////////////////////////////////////////////////////////////
     tabs : {
         label : {
@@ -544,6 +433,119 @@ export const RFTheme = {
                     border : defaultColours.slate10
                 }
             },
+        }
+    },
+
+
+    //  TEXT  /////////////////////////////////////////////////////////////////
+    text : {
+        font : {
+            sans  : "sans-serif",
+            serif : "serif",
+            mono  : "monospace",
+        },
+
+        paras : {
+            font       : "sans-serif",
+            size       : 1,
+            color      : defaultColours.grey,
+            weight     : 400,
+            lineHeight : 1.64,
+        },
+
+        headings : {
+            font       : "sans-serif",
+            color      : customColours.shade,
+            weight     : 600,
+            multiplier : 1.24,
+            lineHeight : 1.24
+        },
+
+        links : {
+            font : "sans-serif",
+            default : {
+                color : defaultColours.blue90,
+            },
+            onHover : {
+                color : defaultColours.blue60
+            }
+        },
+
+        selection : {
+            bg   : customColours.hue,
+            text : defaultColours.white
+        },
+
+        code : {
+            inline : {
+                bg    : defaultColours.blue10,
+                text  : defaultColours.blue90,
+                scale : 80
+            },
+            block : {
+                bg         : `${lighten(0.02, defaultColours.slate10)}`,
+                text       : defaultColours.blue70,
+                scale      : 80,
+                lineHeight : 1.8
+            },
+            prism : {
+                tokens : {
+                    tag         : defaultColours.violet,
+                    atrule      : defaultColours.teal90,
+                    attrName    : defaultColours.orange,
+                    attrValue   : defaultColours.green80,
+                    boolean     : defaultColours.green80,
+                    cdata       : defaultColours.grey70,
+                    className   : defaultColours.red,
+                    comment     : defaultColours.grey70,
+                    constant    : defaultColours.green80,
+                    deleted     : defaultColours.slate80,
+                    delimiter   : defaultColours.grey90,
+                    doctype     : defaultColours.grey90,
+                    entity      : defaultColours.green80,
+                    function    : defaultColours.orange,
+                    hexcode     : defaultColours.green,
+                    inserted    : defaultColours.green80,
+                    italic      : defaultColours.green80,
+                    keyword     : defaultColours.orange90,
+                    namespace   : defaultColours.green80,
+                    number      : defaultColours.green80,
+                    operator    : defaultColours.pistachio,
+                    plain       : defaultColours.grey,
+                    prolog      : defaultColours.grey90,
+                    property    : defaultColours.red90,
+                    punctuation : defaultColours.grey60,
+                    regex       : defaultColours.green80,
+                    selector    : defaultColours.violet,
+                    string      : defaultColours.crimson60,
+                    symbol      : defaultColours.green80,
+                    url         : defaultColours.green80,
+                    variable    : defaultColours.orange80,
+                },
+
+                languages : {
+                    css : {
+                        fallback : defaultColours.orange90
+                    },
+                    html : {
+                        fallback : defaultColours.grey
+                    },
+                    js : {
+                        fallback : defaultColours.violet90
+                    },
+                    json : {
+                        fallback : defaultColours.teal,
+                        tokens   : {
+                            string : defaultColours.teal
+                        }
+                    }
+                }
+            }
+        },
+
+        kbd : {
+            text : defaultColours.grey,
+            bg   : defaultColours.grey10
         }
     },
 }

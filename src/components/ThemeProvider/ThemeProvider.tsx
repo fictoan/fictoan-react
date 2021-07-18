@@ -7,7 +7,7 @@ import { CommonAndHTMLProps, ThemeProps } from "../Element/constants";
 
 import { GlobalStyled as DynamicGlobalStyled } from "./Global.styled";
 
-import { RFTheme } from "../../styles/theme";
+import { FictoanTheme } from "../../styles/theme";
 
 // CSS files to be injected to head section
 import "../../styles/Normalize.css";
@@ -25,9 +25,9 @@ export interface ThemeProviderProps extends CommonAndHTMLProps<ThemeProviderElem
 }
 
 export const ThemeProvider = ({ theme, localStyled, children, ...props }: ThemeProviderProps) => {
-    const [mergedTheme, setMergedTheme] = React.useState(merge({}, RFTheme, theme));
+    const [mergedTheme, setMergedTheme] = React.useState(merge({}, FictoanTheme, theme));
     React.useEffect(() => {
-        setMergedTheme(merge({}, RFTheme, theme));
+        setMergedTheme(merge({}, FictoanTheme, theme));
     }, [theme]);
 
     return (

@@ -1,6 +1,6 @@
 import { HTMLProps } from "react";
 
-import { RFTheme } from "../../styles/theme";
+import { FictoanTheme } from "../../styles/theme";
 
 // TODO: Remove once https://github.com/microsoft/TypeScript/pull/40002 ships with TS 4.1.0
 type DeepPartial<T> = {
@@ -10,7 +10,7 @@ type DeepPartial<T> = {
         ? ReadonlyArray<DeepPartial<U>>
         : DeepPartial<T[P]>;
 };
-export type ThemeType = DeepPartial<typeof RFTheme>;
+export type ThemeType = DeepPartial<typeof FictoanTheme>;
 
 // prettier-ignore
 export interface ThemeProps {
