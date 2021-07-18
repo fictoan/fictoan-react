@@ -1,6 +1,4 @@
-import lighten from "polished/lib/color/lighten";
-import darken from "polished/lib/color/darken";
-import transparentize from "polished/lib/color/transparentize";
+import { lighten, darken, transparentize } from "polished";
 
 import { defaultColours } from "./DefaultColours";
 
@@ -15,6 +13,11 @@ export const customColours = {
 
 export const RFTheme = {
     customColours : customColours,
+
+    //  GLOBALS  //////////////////////////////////////////////////////////////
+    globals : {
+        borderWidth : "1px"
+    },
 
     //  BASICS  ///////////////////////////////////////////////////////////////
     body : {
@@ -170,7 +173,10 @@ export const RFTheme = {
 
     //  BUTTON  ///////////////////////////////////////////////////////////////
     button : {
-        font : "sans-serif",
+        font        : "sans-serif",
+        isLoading : {
+            spinnerBorder : customColours.hue
+        },
         primary : {
             default : {
                 bg           : customColours.hue,
@@ -200,7 +206,7 @@ export const RFTheme = {
                 borderRadius : "4px",
             },
             onHover : {
-                bg     : `${lighten(0.32, customColours.hue)}`,
+                bg     : `${lighten(0.4, customColours.hue)}`,
                 border : customColours.hue,
                 text   : customColours.hue,
             },
@@ -216,7 +222,7 @@ export const RFTheme = {
         tertiary : {
             default : {
                 bg           : defaultColours.transparent,
-                border       : defaultColours.transparent,
+                border       : customColours.hue,
                 text         : customColours.hue,
                 borderRadius : "4px",
             },
@@ -447,8 +453,6 @@ export const RFTheme = {
                 border : defaultColours.slate40
             }
         },
-
-
 
         footer : {
             bg        : defaultColours.white,

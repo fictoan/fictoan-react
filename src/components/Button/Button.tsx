@@ -7,21 +7,19 @@ import { ButtonStyled } from "./Button.styled";
 
 // prettier-ignore
 export interface ButtonCustomProps {
-    kind      ? : "primary" | "secondary" | "tertiary" | "custom";
-    size      ? : "tiny" | "small" | "medium" | "large" | "huge";
-    shape     ? : "rounded" | "curved";
-    shadow    ? : "mild" | "soft" | "hard";
-    border    ? : string;
-    isLoading ? : boolean;
-    hasDelete ? : boolean;
+    kind          ? : "primary" | "secondary" | "tertiary" | "custom";
+    size          ? : "tiny" | "small" | "medium" | "large" | "huge";
+    shape         ? : "rounded" | "curved" | "circular";
+    shadow        ? : "mild" | "soft" | "hard";
+    isLoading     ? : boolean;
+    hasDelete     ? : boolean;
 }
 
 export type ButtonElementType = HTMLButtonElement;
 export type ButtonProps = CommonAndHTMLProps<ButtonElementType> & ButtonCustomProps;
 
 export const Button = React.forwardRef(
-    (
-        { size, shape, shadow, border, kind, isLoading, hasDelete, ...props }: ButtonProps,
+    ({ size, shape, shadow, kind, isLoading, hasDelete, ...props }: ButtonProps,
         ref: React.Ref<ButtonElementType>
     ) => {
         let classNames = [];
@@ -42,18 +40,14 @@ export const Button = React.forwardRef(
             classNames.push(`shadow-${shadow}`);
         }
 
-        if (border) {
-            classNames.push(`border-${border}`);
-        }
-
         if (isLoading) {
-            classNames.push("with-loader");
+            classNames.push("is-loading");
         }
 
         if (hasDelete) {
-            classNames.push("with-delete");
+            classNames.push("has-delete");
         }
 
-        return <Element<ButtonElementType> as={ButtonStyled} ref={ref} classNames={classNames} paddingTop="nano" paddingBottom="nano" paddingLeft="micro" paddingRight="micro" {...props} />;
+        return <Element<ButtonElementType> as={ButtonStyled} ref={ref} classNames={classNames} {...props} />;
     }
 );
