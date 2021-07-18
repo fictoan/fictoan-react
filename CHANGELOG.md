@@ -1,3 +1,6 @@
+### 0.33.4
+- Add `alignText` prop for `Table`.
+
 ### 0.33.3
 - Fix npm publish bug
 
