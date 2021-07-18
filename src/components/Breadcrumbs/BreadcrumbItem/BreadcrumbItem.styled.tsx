@@ -12,14 +12,14 @@ export const BreadcrumbItemStyled = styled.li`
         position : absolute;
         content  : "/";
         right    : -14px;
-        color    : ${(props : BreadcrumbItemProps) => props.theme.breadcrumb.item.separator};
+        color    : ${(props : BreadcrumbItemProps) => props.theme.breadcrumbs.item.separator};
     }
 
     &:last-child,
-    &:last-child a { color : ${(props: BreadcrumbItemProps) => props.theme.breadcrumb.item.active}; }
+    &:last-child a { color : ${(props: BreadcrumbItemProps) => props.theme.breadcrumbs.item.active}; }
 
     &:not(:last-child),
-    &:not(:last-child) a { color : ${(props: BreadcrumbItemProps) => props.theme.breadcrumb.item.inactive}; }
+    &:not(:last-child) a { color : ${(props: BreadcrumbItemProps) => props.theme.breadcrumbs.item.inactive}; }
 
     &:last-child::after { content : ""; }
 `;

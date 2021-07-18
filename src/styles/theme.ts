@@ -26,7 +26,7 @@ export const FictoanTheme = {
 
 
     //  BREADCRUMBS  ///////////////////////////////////////////////////////////
-    breadcrumb : {
+    breadcrumbs : {
         wrapper : {
             bg : defaultColours.white,
         },
