@@ -62,9 +62,13 @@ export const CodeBlock = React.forwardRef(
         }, []);
 
         return (
-            <Element<HTMLDivElement> as={CodeStyled} ref={ref} {...props}>
+            <Element<CodeBlockElementType> as={CodeStyled} ref={ref} {...props}>
                 {show && (
-                    <SyntaxHighlighter key={JSON.stringify(source)} language={language || "json"} useInlineStyles={false}>
+                    <SyntaxHighlighter
+                        key={JSON.stringify(source)}
+                        language={language || "json"}
+                        useInlineStyles={false}
+                    >
                         {source}
                     </SyntaxHighlighter>
                 )}

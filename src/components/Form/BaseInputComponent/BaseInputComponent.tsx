@@ -4,11 +4,11 @@ import { Element } from "../../Element/Element";
 
 import { InputLabel } from "../InputLabel/InputLabel";
 import { FormItem } from "../FormItem/FormItem";
-import { InputFieldElementType } from "../InputField/InputField";
 import { BaseInputComponentWithIconProps } from "./constants";
 
+export type InputFieldElementType = HTMLInputElement;
 export const BaseInputComponent = React.forwardRef(
-    <K extends InputFieldElementType>(
+    <K extends HTMLInputElement>(
         {
             as: Component,
             className,

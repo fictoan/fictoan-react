@@ -20,7 +20,7 @@ export interface SelectCustomProps {
     errorText   ? : string;
 }
 
-export type OptionProps = CommonAndHTMLProps<SelectElementType>;
+export type OptionProps = CommonAndHTMLProps<OptionElementType>;
 export type SelectProps = CommonAndHTMLProps<SelectElementType> & SelectCustomProps;
 
 const Option = ({ name, ...props }: OptionProps) => {
@@ -37,9 +37,9 @@ export const Select = React.forwardRef(
         ref: React.Ref<SelectElementType>
     ) => {
         return (
-            <FormItem ref={ref}>
+            <FormItem>
                 <Element<HTMLDivElement> as={SelectWrapperStyled} isFullWidth={isFullWidth} className={className}>
-                    <Element<SelectElementType> as={SelectStyled} {...props}>
+                    <Element<SelectElementType> as={SelectStyled} ref={ref} {...props}>
                         {options.map((option, index) => {
                             return <Option key={index} {...option} />;
                         })}
