@@ -1,3 +1,6 @@
+### 0.33.6
+- Add autoprefixer to add vendor styles to CSS
+
 ### 0.33.5
 - Fix `alignText` styling for `Table`. 😬
 
