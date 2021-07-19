@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 import { defaultColours } from "../../styles/DefaultColours";
-import { ProgressBarProps } from "./ProgressBar";
+import { ProgressBarMetaProps, ProgressBarProps } from "./ProgressBar";
 
 const convertToFictoanColor = (colorString:string) => {
     if (!colorString) return null
@@ -21,18 +21,18 @@ export const ProgressBarMetaStyled = styled.div`
         display       : inline-flex;
         font-weight   : bold;
         margin        : 0;
-        color         : ${(props: ProgressBarProps) => props.theme.progressBar.label};
+        color         : ${(props: ProgressBarMetaProps) => props.theme.progressBar.label};
     }
 
     p:last-of-type {
         display    : inline-flex;
         text-align : right;
         margin     : 0;
-        color      : ${(props: ProgressBarProps) => props.theme.progressBar.value};
+        color      : ${(props: ProgressBarMetaProps) => props.theme.progressBar.value};
 
         &::after {
             display : inline-flex;
-            content : "${(props: ProgressBarProps) => props.unit}";
+            content : "${(props: ProgressBarMetaProps) => props.unit}";
         }
     }
 `;

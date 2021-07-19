@@ -7,19 +7,25 @@ import { ProgressBarStyled, ProgressBarMetaStyled } from "./ProgressBar.styled";
 import { Text } from "../Typography/Text";
 
 // prettier-ignore
+export interface ProgressBarLabelCustomProps {
+    unit ? : string;
+}
+
 export interface ProgressBarCustomProps {
-    isThin  ? : boolean;
-    barBg   ? : string;
-    barFill ? : string;
-    unit    ? : string;
+    isThin?: boolean;
+    barBg?: string;
+    barFill?: string;
 }
 
 export type ProgressBarElementType = HTMLProgressElement;
 export type ProgressBarProps = CommonAndHTMLProps<ProgressBarElementType> & ProgressBarCustomProps;
-export type ProgressBarMetaProps = CommonAndHTMLProps<HTMLDivElement> & ProgressBarCustomProps;
+export type ProgressBarMetaProps = CommonAndHTMLProps<HTMLDivElement> & ProgressBarLabelCustomProps;
 
 export const ProgressBar = React.forwardRef(
-    ({ label, value, isThin, ...props }: ProgressBarProps, ref: React.Ref<ProgressBarElementType>) => {
+    (
+        { label, value, isThin, ...props }: ProgressBarProps & ProgressBarMetaProps,
+        ref: React.Ref<ProgressBarElementType>
+    ) => {
         let classNames = [];
 
         if (isThin) {
@@ -29,7 +35,7 @@ export const ProgressBar = React.forwardRef(
         return (
             <div>
                 {label && (
-                    <Element<ProgressBarMetaProps> as={ProgressBarMetaStyled} {...props}>
+                    <Element<HTMLDivElement> as={ProgressBarMetaStyled}>
                         <Text>{label}</Text>
                         <Text>{value}</Text>
                     </Element>
