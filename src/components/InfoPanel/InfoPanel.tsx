@@ -7,17 +7,19 @@ import { InfoPanelStyled } from "./InfoPanel.styled";
 
 // prettier-ignore
 export interface InfoPanelCustomProps {
-    width               ? : "tiny" | "small" | "medium" | "large" | "huge";
-    isOpen              ? : boolean;
-    onCloseCallback     ? : () => void;
-    closeOnClickOutside ? : boolean;
+    width           ? : "tiny" | "small" | "medium" | "large" | "huge";
+    isOpen          ? : boolean;
+    onCloseCallback ? : () => void;
 }
 
 export type InfoPanelElementType = HTMLDivElement;
 export type InfoPanelProps = CommonAndHTMLProps<InfoPanelElementType> & InfoPanelCustomProps;
 
 export const InfoPanel = React.forwardRef(
-    ({ width, isOpen, children, onCloseCallback, ...props }: InfoPanelProps, ref: React.Ref<InfoPanelElementType>) => {
+    (
+        { width = "medium", isOpen, children, onCloseCallback, ...props }: InfoPanelProps,
+        ref: React.Ref<InfoPanelElementType>
+    ) => {
         let classNames = [];
 
         if (width) {
@@ -37,12 +39,7 @@ export const InfoPanel = React.forwardRef(
         return (
             !!isOpen && (
                 <Element<InfoPanelElementType>
-                    as={InfoPanelStyled}
-                    ref={ref}
-                    classNames={classNames}
-                    padding="tiny"
-                    width="medium"
-                    {...props}
+                    as={InfoPanelStyled} ref={ref} classNames={classNames} padding="tiny" {...props}
                 >
                     <div className="dismiss-button" onClick={closeInfoPanel} role="button" />
                     {children}
