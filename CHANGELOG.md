@@ -1,3 +1,6 @@
+### 0.33.7
+- Fix types for `CodeBlock`, `BaseInputElement`, `ProgressBar`, `TextArea`, and `Select`.
+
 ### 0.33.6
 - Add autoprefixer to add vendor styles to CSS
 
