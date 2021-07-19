@@ -1,6 +1,10 @@
 {
     "compilerOptions": {
-        "lib": ["es5", "es6"],
+        "lib": [
+            "es5",
+            "es6",
+            "dom"
+        ],
         "outDir": "dist",
         "sourceMap": true,
         "noImplicitAny": true,
