@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import { Element } from "../Element/Element";
 import { CommonAndHTMLProps } from "../Element/constants";
@@ -16,34 +16,8 @@ export interface InfoPanelCustomProps {
 export type InfoPanelElementType = HTMLDivElement;
 export type InfoPanelProps = CommonAndHTMLProps<InfoPanelElementType> & InfoPanelCustomProps;
 
-
-export const InfoPanel = React.forwardRef((
-    {
-        width,
-        isOpen,
-        children,
-        onCloseCallback,
-        closeOnClickOutside,
-        ...props
-    }: InfoPanelProps, ref: React.Ref<InfoPanelElementType>) => {
-        useEffect(() => {
-            const handleEsc = (event: KeyboardEvent) => {
-                if (event.key === "Escape") {
-                    onCloseCallback();
-                }
-            };
-            window.addEventListener("keydown", handleEsc);
-            if (closeOnClickOutside) {
-                window.addEventListener("click", closeInfoPanel);
-                window.addEventListener("touchstart", closeInfoPanel);
-            }
-            return () => {
-                window.removeEventListener("keydown", handleEsc);
-                window.removeEventListener("click", closeInfoPanel);
-                window.removeEventListener("touchstart", closeInfoPanel);
-            };
-        }, [onCloseCallback, closeOnClickOutside]);
-
+export const InfoPanel = React.forwardRef(
+    ({ width, isOpen, children, onCloseCallback, ...props }: InfoPanelProps, ref: React.Ref<InfoPanelElementType>) => {
         let classNames = [];
 
         if (width) {
@@ -70,7 +44,7 @@ export const InfoPanel = React.forwardRef((
                     width="medium"
                     {...props}
                 >
-                    <div className="dismiss-button" onClick={closeInfoPanel} role="button"/>
+                    <div className="dismiss-button" onClick={closeInfoPanel} role="button" />
                     {children}
                 </Element>
             )
