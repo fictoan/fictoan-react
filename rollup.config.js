@@ -4,6 +4,7 @@ import url from "@rollup/plugin-url";
 import json from '@rollup/plugin-json';
 import styles from "rollup-plugin-styles";
 import typescript from "rollup-plugin-typescript2";
+import autoprefixer from "autoprefixer";
 import { getBabelOutputPlugin } from '@rollup/plugin-babel';
 import { terser } from "rollup-plugin-terser";
 import progress from 'rollup-plugin-progress';
@@ -62,7 +63,10 @@ export default {
         url(),
         json(),
         styles({
-            minimize: true
+            minimize: true,
+            plugins: [
+                autoprefixer()
+            ]
         }),
         resolve({
             extensions
