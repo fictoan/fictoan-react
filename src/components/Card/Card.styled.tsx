@@ -31,4 +31,4 @@ export const CardStyled = styled.div`
 
         .padding-none { padding : 0 !important; }
     }
-`
+`;
