@@ -27,14 +27,17 @@ export const FictoanTheme = {
 
     //  BREADCRUMBS  ///////////////////////////////////////////////////////////
     breadcrumbs : {
-        wrapper : {
+        wrapper   : {
             bg : defaultColours.white
         },
-        item    : {
-            text      : customColours.shade,
-            separator : defaultColours.slate40,
-            active    : customColours.shade,
-            inactive  : customColours.shade
+        item      : {
+            text     : customColours.shade,
+            active   : customColours.shade,
+            inactive : customColours.shade
+        },
+        separator : {
+            text    : defaultColours.slate80,
+            content : "\"/\""
         }
     },
 

@@ -8,13 +8,13 @@ import { Text } from "../Typography/Text";
 import { TabsStyled } from "./Tabs.styled";
 
 interface TabType {
-    key: string;
-    label: string;
-    content: React.ReactNode;
+    key     : string;
+    label   : string;
+    content : React.ReactNode;
 }
 
 interface TabsCustomProps {
-    tabs: TabType[];
+    tabs : TabType[];
 }
 
 export type TabsElementType = HTMLDivElement;
