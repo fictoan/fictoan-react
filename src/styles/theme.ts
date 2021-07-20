@@ -249,9 +249,7 @@ export const FictoanTheme = {
         bg     : defaultColours.white,
         border : defaultColours.slate20,
         dismissButton : {
-            bg      : `${transparentize(0.24, defaultColours.white)}`,
             color   : defaultColours.slate90,
-            content : "×"
         }
     },
 

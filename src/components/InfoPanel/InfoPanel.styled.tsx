@@ -10,9 +10,8 @@ export const InfoPanelStyled = styled.aside`
     bottom           : 0;
     transform        : translateX(-42vw);
     min-height       : 100vh;
-    overflow-y       : auto;
     transition       : all 0.4s ease-in-out;
-    box-shadow       : 4px 0 24px -16px rgba(0, 0, 0, 0.24);
+    box-shadow       : 4px 0 24px -16px rgba(0, 0, 0, 0.92);
     z-index          : 100000;
     border-left      : 1px solid ${(props : InfoPanelProps) => props.theme.infoPanel.border};
 
@@ -45,26 +44,42 @@ export const InfoPanelStyled = styled.aside`
     }
 
     & .dismiss-button {
-        position         : sticky;
+        position         : absolute;
         display          : flex;
         width            : 32px;
         height           : 32px;
-        background-color : ${(props : InfoPanelProps) => props.theme.infoPanel.dismissButton.bg};
-        top              : 0;
-        right            : 0;
+        background-color : ${(props : InfoPanelProps) => props.theme.infoPanel.bg};
+        top              : 16px;
+        left             : -32px;
         z-index          : 100001;
-        font-size        : 32px;
         color            : ${(props : InfoPanelProps) => props.theme.infoPanel.dismissButton.color};
-        text-align       : center;
-        line-height      : 0.88;
         cursor           : pointer;
         place-content    : center;
-        place-self       : flex-end;
         backdrop-filter  : blur(2px);
+        border           : solid ${(props : InfoPanelProps) => props.theme.infoPanel.border};
+        border-width     : 1px 0 1px 1px;
+        border-radius    : 4px 0 0 4px;
+        box-shadow       : -4px 0 4px -1px rgba(0, 0, 0, 8%);
 
-        &::after {
-            display : block;
-            content : "${(props : InfoPanelProps) => props.theme.infoPanel.dismissButton.content}";
+        &::before {
+            display      : block;
+            content      : "";
+            width        : 12px;
+            height       : 12px;
+            place-self   : center;
+            margin-right : 4px;
+            border-style : solid;
+            border-width : 2px 2px 0 0;
+            transform    : rotate(45deg);
+            color        : ${(props: InfoPanelProps) => props.theme.infoPanel.dismissButton.color};
+            transition   : all 0.2s;
+            cursor       : pointer;
         }
+    }
+    
+    .info-panel-content-wrapper {
+        width      : 100%;
+        height     : 100%;
+        overflow-y : auto;
     }
 `;
