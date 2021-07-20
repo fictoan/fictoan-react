@@ -1,4 +1,4 @@
-import { lighten, darken, transparentize } from "polished";
+import { darken, lighten } from "polished";
 
 import { defaultColours } from "./DefaultColours";
 
@@ -8,8 +8,8 @@ export const customColours = {
     tint     : defaultColours.amber,
     shade    : defaultColours.grey,
     analogue : defaultColours.indigo50,
-    accent   : defaultColours.green80,
-}
+    accent   : defaultColours.green80
+};
 
 export const FictoanTheme = {
     customColours : customColours,
@@ -21,16 +21,16 @@ export const FictoanTheme = {
 
     //  BASICS  ///////////////////////////////////////////////////////////////
     body : {
-        bg : defaultColours.white,
+        bg : defaultColours.white
     },
 
 
     //  BREADCRUMBS  ///////////////////////////////////////////////////////////
     breadcrumbs : {
         wrapper : {
-            bg : defaultColours.white,
+            bg : defaultColours.white
         },
-        item : {
+        item    : {
             text      : customColours.shade,
             separator : defaultColours.slate40,
             active    : customColours.shade,
@@ -41,71 +41,71 @@ export const FictoanTheme = {
 
     //  BUTTON  ///////////////////////////////////////////////////////////////
     button : {
-        font        : "sans-serif",
+        font      : "sans-serif",
         isLoading : {
             spinnerBorder : customColours.hue
         },
-        primary : {
-            default : {
+        primary   : {
+            default   : {
                 bg           : customColours.hue,
                 border       : customColours.hue,
                 text         : defaultColours.white,
-                borderRadius : "4px",
+                borderRadius : "4px"
             },
-            onHover : {
+            onHover   : {
                 bg     : customColours.hue,
                 border : customColours.hue,
-                text   : defaultColours.white,
+                text   : defaultColours.white
             },
-            isActive : {
+            isActive  : {
                 bg     : customColours.hue,
                 border : customColours.hue,
-                text   : defaultColours.white,
+                text   : defaultColours.white
             },
             isLoading : {
                 spinnerBorder : defaultColours.white
             }
         },
         secondary : {
-            default : {
+            default   : {
                 bg           : `${lighten(0.4, customColours.hue)}`,
                 border       : customColours.hue,
                 text         : customColours.hue,
-                borderRadius : "4px",
+                borderRadius : "4px"
             },
-            onHover : {
+            onHover   : {
                 bg     : `${lighten(0.4, customColours.hue)}`,
                 border : customColours.hue,
-                text   : customColours.hue,
+                text   : customColours.hue
             },
-            isActive : {
+            isActive  : {
                 bg     : `${lighten(0.2, customColours.hue)}`,
                 border : customColours.hue,
-                text   : customColours.hue,
+                text   : customColours.hue
             },
             isLoading : {
-                spinnerBorder : customColours.hue,
+                spinnerBorder : customColours.hue
             }
         },
-        tertiary : {
-            default : {
+        tertiary  : {
+            default   : {
                 bg           : defaultColours.transparent,
                 border       : customColours.hue,
                 text         : customColours.hue,
-                borderRadius : "4px",
+                borderRadius : "4px"
             },
-            onHover : {
+            onHover   : {
                 bg     : `${lighten(0.40, customColours.hue)}`,
                 border : defaultColours.transparent,
-                text   : customColours.hue,
+                text   : customColours.hue
             },
-            isActive : {
+            isActive  : {
                 bg     : `${lighten(0.32, customColours.hue)}`,
                 border : defaultColours.transparent,
-                text   : customColours.hue,
+                text   : customColours.hue
             },
             isLoading : {
-                spinnerBorder : customColours.hue,
+                spinnerBorder : customColours.hue
             }
         }
     },
@@ -115,13 +115,13 @@ export const FictoanTheme = {
     card : {
         bg           : defaultColours.white,
         border       : `${lighten(0.96, defaultColours.black)}`,
-        borderRadius : "4px",
+        borderRadius : "4px"
     },
 
 
     //  RULE  /////////////////////////////////////////////////////////////////
     hr : {
-        primary : {
+        primary   : {
             bg     : defaultColours.blue80,
             height : "1px"
         },
@@ -129,7 +129,7 @@ export const FictoanTheme = {
             bg     : defaultColours.slate40,
             height : "1px"
         },
-        tertiary : {
+        tertiary  : {
             bg     : defaultColours.slate20,
             height : "1px"
         }
@@ -138,48 +138,48 @@ export const FictoanTheme = {
 
     //  INPUT  ////////////////////////////////////////////////////////////////
     input : {
-        default : {
+        default    : {
             bg           : defaultColours.white,
             border       : defaultColours.slate40,
             label        : customColours.shade,
             text         : customColours.shade,
-            borderRadius : "4px",
+            borderRadius : "4px"
         },
-        onFocus : {
+        onFocus    : {
             bg       : defaultColours.white,
             border   : customColours.hue,
             text     : customColours.shade,
-            helpText : customColours.shade,
+            helpText : customColours.shade
         },
-        isValid : {
+        isValid    : {
             bg     : defaultColours.white,
             border : defaultColours.green80,
             label  : customColours.shade
         },
-        isInvalid : {
+        isInvalid  : {
             bg       : defaultColours.red10,
             border   : defaultColours.red80,
             label    : defaultColours.red,
-            helpText : defaultColours.red,
+            helpText : defaultColours.red
         },
         isReadOnly : {
             bg     : defaultColours.grey50,
             border : defaultColours.grey50,
             label  : customColours.shade
         },
-        required : {
+        required   : {
             text : defaultColours.red
         },
-        icons : {
+        icons      : {
             default : {
-                fill : defaultColours.slate30,
+                fill : defaultColours.slate30
             },
             onFocus : {
-                fill : customColours.hue,
+                fill : customColours.hue
             },
             isValid : {
                 bg     : defaultColours.grey50,
-                border : defaultColours.red30,
+                border : defaultColours.red30
             }
         },
 
@@ -188,11 +188,11 @@ export const FictoanTheme = {
         },
 
         radioButton : {
-            inset : {
-                default : {
+            inset  : {
+                default    : {
                     bg : defaultColours.slate20
                 },
-                onHover : {
+                onHover    : {
                     bg : defaultColours.slate40
                 },
                 isSelected : {
@@ -205,35 +205,35 @@ export const FictoanTheme = {
             circle : {
                 default : {
                     bg : defaultColours.white
-                },
+                }
             }
         },
 
         checkBox : {
             square : {
-                default : {
+                default    : {
                     bg : defaultColours.slate20
                 },
-                onHover : {
+                onHover    : {
                     bg : defaultColours.slate40
                 },
-                isChecked : {
+                isChecked  : {
                     bg : customColours.hue
                 },
                 isDisabled : {
                     bg : defaultColours.slate10
                 }
             },
-            check : {
+            check  : {
                 default : {
                     border : defaultColours.white
-                },
+                }
             }
         },
 
         toggleSwitch : {
             switch : {
-                default : {
+                default   : {
                     bg : defaultColours.white
                 },
                 isChecked : {
@@ -246,10 +246,10 @@ export const FictoanTheme = {
 
     //  INFO PANEL  ///////////////////////////////////////////////////////////
     infoPanel : {
-        bg     : defaultColours.white,
-        border : defaultColours.slate20,
+        bg            : defaultColours.white,
+        border        : defaultColours.slate20,
         dismissButton : {
-            color   : defaultColours.slate90,
+            color : defaultColours.slate90
         }
     },
 
@@ -260,18 +260,18 @@ export const FictoanTheme = {
             bg   : defaultColours.slate10,
             text : customColours.shade
         },
-        types: {
-            info : {
-                border : defaultColours.blue60,
+        types   : {
+            info    : {
+                border : defaultColours.blue60
             },
             warning : {
-                border : defaultColours.amber,
+                border : defaultColours.amber
             },
-            error : {
-                border : defaultColours.red90,
+            error   : {
+                border : defaultColours.red90
             },
             success : {
-                border : defaultColours.green90,
+                border : defaultColours.green90
             }
         }
     },
@@ -279,10 +279,10 @@ export const FictoanTheme = {
 
     //  PROGRESS BAR  /////////////////////////////////////////////////////////
     progressBar : {
-        bg     : defaultColours.slate20,
-        fill   : customColours.hue,
-        label  : customColours.shade,
-        value  : `${lighten(0.24, customColours.shade)}`,
+        bg    : defaultColours.slate20,
+        fill  : customColours.hue,
+        label : customColours.shade,
+        value : `${lighten(0.24, customColours.shade)}`
     },
 
 
@@ -302,66 +302,66 @@ export const FictoanTheme = {
         },
 
         body : {
-            bg : defaultColours.white,
+            bg : defaultColours.white
         },
 
         icons : {
-            size : "24px",
+            size    : "24px",
             stroked : {
                 thickness : 2,
-                default : {
-                    line : defaultColours.slate40,
+                default   : {
+                    line : defaultColours.slate40
                 },
-                onHover : {
-                    line : defaultColours.slate80,
+                onHover   : {
+                    line : defaultColours.slate80
                 },
-                isActive : {
-                    line : defaultColours.slate,
+                isActive  : {
+                    line : defaultColours.slate
                 }
             },
-            filled : {
-                default : {
-                    bg : defaultColours.slate40,
+            filled  : {
+                default  : {
+                    bg : defaultColours.slate40
                 },
-                onHover : {
-                    bg : defaultColours.slate80,
+                onHover  : {
+                    bg : defaultColours.slate80
                 },
                 isActive : {
-                    bg : defaultColours.slate,
+                    bg : defaultColours.slate
                 }
             }
         },
 
         links : {
-            default : {
+            default    : {
                 bg     : defaultColours.white,
                 text   : customColours.shade,
                 scale  : 100,
-                weight : 600,
+                weight : 600
             },
-            onHover : {
+            onHover    : {
                 bg   : defaultColours.slate10,
-                text : customColours.hue,
+                text : customColours.hue
             },
             isSelected : {
                 bg     : defaultColours.white,
                 border : customColours.hue,
-                text   : customColours.hue,
+                text   : customColours.hue
             },
-            hasAlert : {
+            hasAlert   : {
                 bg : defaultColours.red70
-            },
+            }
         },
 
         subLinks : {
-            header : {
-                weight : 600,
+            header  : {
+                weight : 600
             },
-            default: {
+            default : {
                 bg     : defaultColours.white,
                 text   : `${lighten(0.24, customColours.shade)}`,
                 weight : 400,
-                scale  : 92,
+                scale  : 92
             },
             onHover : {
                 bg   : defaultColours.slate10,
@@ -386,16 +386,16 @@ export const FictoanTheme = {
         border  : defaultColours.slate40,
         striped : {
             header : {
-                bg : defaultColours.blue40,
+                bg : defaultColours.blue40
             },
-            cell : {
-                bg : defaultColours.slate20,
+            cell   : {
+                bg : defaultColours.slate20
             }
         },
         onHover : {
             bg   : defaultColours.amber20,
             text : customColours.shade
-        },
+        }
     },
 
     tablePagination : {
@@ -403,7 +403,7 @@ export const FictoanTheme = {
         text : defaultColours.grey,
         svg  : {
             onHover : {
-                stroke: defaultColours.slate60,
+                stroke : defaultColours.slate60
             }
         }
     },
@@ -412,25 +412,25 @@ export const FictoanTheme = {
     //  TABS  ////////////////////////////////////////////////////////////////
     tabs : {
         label : {
-            default : {
-                text : `${lighten(0.16, defaultColours.grey)}`,
+            default    : {
+                text : `${lighten(0.16, defaultColours.grey)}`
             },
-            onHover : {
+            onHover    : {
                 text : `${lighten(0.16, customColours.hue)}`
             },
-            isActive : {
+            isActive   : {
                 border : customColours.hue,
                 text   : customColours.hue
             },
             isDisabled : {
-                text   : `${darken(0.24, defaultColours.slate)}`,
+                text : `${darken(0.24, defaultColours.slate)}`
             },
-            hasAlert : {
+            hasAlert   : {
                 circle : {
                     bg     : defaultColours.red90,
                     border : defaultColours.slate10
                 }
-            },
+            }
         }
     },
 
@@ -440,7 +440,7 @@ export const FictoanTheme = {
         font : {
             sans  : "sans-serif",
             serif : "serif",
-            mono  : "monospace",
+            mono  : "monospace"
         },
 
         paras : {
@@ -448,7 +448,7 @@ export const FictoanTheme = {
             size       : 1,
             color      : defaultColours.grey,
             weight     : 400,
-            lineHeight : 1.64,
+            lineHeight : 1.64
         },
 
         headings : {
@@ -460,9 +460,9 @@ export const FictoanTheme = {
         },
 
         links : {
-            font : "sans-serif",
+            font    : "sans-serif",
             default : {
-                color : defaultColours.blue90,
+                color : defaultColours.blue90
             },
             onHover : {
                 color : defaultColours.blue60
@@ -480,13 +480,13 @@ export const FictoanTheme = {
                 text  : defaultColours.blue90,
                 scale : 80
             },
-            block : {
+            block  : {
                 bg         : `${lighten(0.02, defaultColours.slate10)}`,
                 text       : defaultColours.blue70,
                 scale      : 80,
                 lineHeight : 1.8
             },
-            prism : {
+            prism  : {
                 tokens : {
                     tag         : defaultColours.violet,
                     atrule      : defaultColours.teal90,
@@ -518,17 +518,17 @@ export const FictoanTheme = {
                     string      : defaultColours.crimson60,
                     symbol      : defaultColours.green80,
                     url         : defaultColours.green80,
-                    variable    : defaultColours.orange80,
+                    variable    : defaultColours.orange80
                 },
 
                 languages : {
-                    css : {
+                    css  : {
                         fallback : defaultColours.orange90
                     },
                     html : {
                         fallback : defaultColours.grey
                     },
-                    js : {
+                    js   : {
                         fallback : defaultColours.violet90
                     },
                     json : {
@@ -545,5 +545,5 @@ export const FictoanTheme = {
             text : defaultColours.grey,
             bg   : defaultColours.grey10
         }
-    },
-}
+    }
+};
