@@ -7,8 +7,9 @@ import { NotificationsWrapperStyled } from "./NotificationsWrapper.styled";
 
 // prettier-ignore
 export interface NotificationsWrapperCustomProps {
-    position : "left" | "right";
-    anchor   : "top" | "bottom";
+    position ? : "left" | "right";
+    anchor   ? : "top" | "bottom";
+    order    ? : "new-on-top" | "new-on-bottom";
 }
 
 export type NotificationsWrapperElementType = HTMLDivElement;
@@ -16,7 +17,12 @@ export type NotificationsWrapperProps = CommonAndHTMLProps<NotificationsWrapperE
     NotificationsWrapperCustomProps;
 
 export const NotificationsWrapper = React.forwardRef(
-    ({ position, anchor, ...props }: NotificationsWrapperProps, ref: React.Ref<NotificationsWrapperElementType>) => {
+    ({
+         position = "right",
+         anchor = "top",
+         order = "new-on-top",
+         ...props
+    } : NotificationsWrapperProps, ref : React.Ref<NotificationsWrapperElementType>) => {
         let classNames = [];
 
         if (position) {
@@ -25,6 +31,10 @@ export const NotificationsWrapper = React.forwardRef(
 
         if (anchor) {
             classNames.push(anchor);
+        }
+
+        if (order) {
+            classNames.push(order);
         }
 
         return (

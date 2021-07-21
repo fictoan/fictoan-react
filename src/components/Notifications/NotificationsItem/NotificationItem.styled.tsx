@@ -86,8 +86,6 @@ export const NotificationsItemStyled = styled.div`
         line-height : 0;
     }
 
-    & p { margin-bottom : 0; }
-
     &.dismissed {
         transform: translateX(560px);
     }

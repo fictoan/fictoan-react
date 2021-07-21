@@ -8,7 +8,7 @@ export const NotificationsWrapperStyled = styled.div`
     display    : flex;
     width      : 400px;
     z-index    : 5000000;
-    padding    : 4vh 2vw;
+    padding    : 2vw;
     overflow-y : auto;
     overflow-x : hidden;
 
@@ -16,23 +16,36 @@ export const NotificationsWrapperStyled = styled.div`
     
     &.right { right : 0; }
 
-    &.top    {
-        flex-direction : column;
-        top            : 0;
-    }
+    &.top { top : 0; }
 
-    &.bottom {
+    &.bottom { bottom : 0; }
+
+
+    &.top.new-on-top {
         flex-direction : column-reverse;
-        bottom         : 0;
+
+        ${NotificationsItemStyled}:first-of-type { margin-bottom : 0; }
+        ${NotificationsItemStyled}:last-of-type  { margin-top : 0; }
     }
 
-    &.top {
+    &.top.new-on-bottom {
+        flex-direction : column;
+
         ${NotificationsItemStyled}:first-of-type { margin-top : 0; }
         ${NotificationsItemStyled}:last-of-type  { margin-bottom : 0; }
     }
 
-    &.bottom {
+    &.bottom.new-on-top {
+        flex-direction : column-reverse;
+
         ${NotificationsItemStyled}:first-of-type { margin-bottom : 0; }
         ${NotificationsItemStyled}:last-of-type  { margin-top : 0; }
+    }
+
+    &.bottom.new-on-bottom {
+        flex-direction : column;
+
+        ${NotificationsItemStyled}:first-of-type { margin-top : 0; }
+        ${NotificationsItemStyled}:last-of-type  { margin-bottom : 0; }
     }
 `;
