@@ -7,10 +7,10 @@ import { NotificationsItemStyled } from "./NotificationItem.styled";
 
 // prettier-ignore
 export interface NotificationItemCustomProps {
-    show            : boolean;
-    onClose         : () => void;
     kind          ? : "info" | "warning" | "error" | "success";
+    show            : boolean;
     isDismissible ? : boolean;
+    onClose         : () => void;
     timeout       ? : number;
 }
 
