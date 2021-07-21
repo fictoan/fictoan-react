@@ -260,7 +260,7 @@ export const FictoanTheme = {
     //  NOTIFICATION  /////////////////////////////////////////////////////////
     notification : {
         default : {
-            bg   : defaultColours.slate10,
+            bg   : defaultColours.white,
             text : customColours.shade
         },
         kinds   : {
