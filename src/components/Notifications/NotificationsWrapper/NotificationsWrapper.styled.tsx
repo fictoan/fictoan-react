@@ -20,7 +20,6 @@ export const NotificationsWrapperStyled = styled.div`
 
     &.bottom { bottom : 0; }
 
-
     &.top.new-on-top {
         flex-direction : column-reverse;
 

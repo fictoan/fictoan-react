@@ -263,7 +263,7 @@ export const FictoanTheme = {
             bg   : defaultColours.slate10,
             text : customColours.shade
         },
-        types   : {
+        kinds   : {
             info    : {
                 border : defaultColours.blue60
             },
