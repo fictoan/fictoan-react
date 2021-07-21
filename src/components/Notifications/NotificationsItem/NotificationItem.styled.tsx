@@ -30,31 +30,31 @@ export const NotificationsItemStyled = styled.div`
     }
     
     &.info {
-        background-color : ${(props: NotificationItemProps) => props.theme.notification.types.info.border && lighten(0.32, props.theme.notification.types.info.border)};
-        border           : 1px solid ${(props: NotificationItemProps) => props.theme.notification.types.info.border};
+        background-color : ${(props: NotificationItemProps) => props.theme.notification.kinds.info.border && lighten(0.32, props.theme.notification.kinds.info.border)};
+        border           : 1px solid ${(props: NotificationItemProps) => props.theme.notification.kinds.info.border};
 
-        ::before { background-color : ${(props: NotificationItemProps) => props.theme.notification.types.info.border}; }
+        ::before { background-color : ${(props: NotificationItemProps) => props.theme.notification.kinds.info.border}; }
     }
 
     &.warning {
-        background-color : ${(props: NotificationItemProps) => props.theme.notification.types.warning.border && lighten(0.32, props.theme.notification.types.warning.border)};
-        border           : 1px solid ${(props: NotificationItemProps) => props.theme.notification.types.warning.border};
+        background-color : ${(props: NotificationItemProps) => props.theme.notification.kinds.warning.border && lighten(0.32, props.theme.notification.kinds.warning.border)};
+        border           : 1px solid ${(props: NotificationItemProps) => props.theme.notification.kinds.warning.border};
 
-        ::before { background-color : ${(props: NotificationItemProps) => props.theme.notification.types.warning.border}; }
+        ::before { background-color : ${(props: NotificationItemProps) => props.theme.notification.kinds.warning.border}; }
     }
 
     &.error {
-        background-color : ${(props: NotificationItemProps) => props.theme.notification.types.error.border && lighten(0.32, props.theme.notification.types.error.border)};
-        border           : 1px solid ${(props: NotificationItemProps) => props.theme.notification.types.error.border};
+        background-color : ${(props: NotificationItemProps) => props.theme.notification.kinds.error.border && lighten(0.32, props.theme.notification.kinds.error.border)};
+        border           : 1px solid ${(props: NotificationItemProps) => props.theme.notification.kinds.error.border};
 
-        ::before { background-color : ${(props: NotificationItemProps) => props.theme.notification.types.error.border}; }
+        ::before { background-color : ${(props: NotificationItemProps) => props.theme.notification.kinds.error.border}; }
     }
 
     &.success {
-        background-color : ${(props: NotificationItemProps) => props.theme.notification.types.success.border && lighten(0.32, props.theme.notification.types.success.border)};
-        border           : 1px solid ${(props: NotificationItemProps) => props.theme.notification.types.success.border};
+        background-color : ${(props: NotificationItemProps) => props.theme.notification.kinds.success.border && lighten(0.32, props.theme.notification.kinds.success.border)};
+        border           : 1px solid ${(props: NotificationItemProps) => props.theme.notification.kinds.success.border};
 
-        ::before { background-color : ${(props: NotificationItemProps) => props.theme.notification.types.success.border}; }
+        ::before { background-color : ${(props: NotificationItemProps) => props.theme.notification.kinds.success.border}; }
     }
 
 
