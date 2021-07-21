@@ -9,7 +9,7 @@ import { NotificationsItemStyled } from "./NotificationItem.styled";
 export interface NotificationItemCustomProps {
     show            : boolean;
     onClose         : () => void;
-    type          ? : "info" | "warning" | "error" | "success";
+    kind          ? : "info" | "warning" | "error" | "success";
     isDismissible ? : boolean;
     timeout       ? : number;
 }
@@ -19,7 +19,7 @@ export type NotificationItemProps = CommonAndHTMLProps<NotificationItemElementTy
 
 export const NotificationItem = React.forwardRef(
     (
-        { show, onClose, type, children, isDismissible, timeout, ...props }: NotificationItemProps,
+        { show, onClose, kind, children, isDismissible, timeout, ...props }: NotificationItemProps,
         ref: React.Ref<NotificationItemElementType>
     ) => {
         let classNames = [];
@@ -41,8 +41,8 @@ export const NotificationItem = React.forwardRef(
             };
         }, [show]);
 
-        if (type) {
-            classNames.push(type);
+        if (kind) {
+            classNames.push(kind);
         }
 
         if (isDismissible) {
@@ -69,7 +69,9 @@ export const NotificationItem = React.forwardRef(
                     marginBottom="nano"
                     {...props}
                 >
-                    <Element as="div" padding="nano" className="notification-content">{children}</Element>
+                    <Element as="div" padding="nano" className="notification-content">
+                        {children}
+                    </Element>
 
                     {isDismissible && (
                         <div
