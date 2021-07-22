@@ -43,31 +43,35 @@ export const ProgressBarStyled = styled.progress`
     flex-direction : row;
     width          : 100%;
 
-
     &[value] {
-        position      : relative;
-        flex          : 1 1 100%;
-        height        : 8px;
-        border-radius : 8000px;
-        background    : ${(props: ProgressBarProps) => convertToFictoanColor(props.barBg) || props.theme.progressBar.bg};
-        box-shadow    : 0 2px 8px -2px hsla(0, 0, 0, 0.24) inset;
+        position   : relative;
+        flex       : 1 1 100%;
+        height     : ${(props: ProgressBarProps) => props.height};
+        background : ${(props: ProgressBarProps) => convertToFictoanColor(props.barBg) || props.theme.progressBar.bg};
+        box-shadow : 0 2px 8px -2px hsla(0, 0, 0, 0.24) inset;
     }
-
-    &.is-thin[value] { height : 4px; }
 
     &[value]::-webkit-progress-bar {
-        border-radius      : 8000px;
-        background         : ${(props: ProgressBarProps) => convertToFictoanColor(props.barBg) || props.theme.progressBar.bg};
-        box-shadow         : 0 2px 8px -2px hsla(0, 0, 0, 0.24) inset;
+        background : ${(props: ProgressBarProps) => convertToFictoanColor(props.barBg) || props.theme.progressBar.bg};
+        box-shadow : 0 2px 8px -2px hsla(0, 0, 0, 0.24) inset;
     }
 
-    &::-webkit-progress-value {
-        border-radius      : 8000px;
-        background         : ${(props: ProgressBarProps) => convertToFictoanColor(props.barFill) || props.theme.progressBar.fill};
-    }
-
+    &::-webkit-progress-value,
     &[value]::-moz-progress-bar {
+        background : ${(props: ProgressBarProps) => convertToFictoanColor(props.barFill) || props.theme.progressBar.fill};
+    }
+
+    .shape-rounded[value],
+    .shape-rounded::-webkit-progress-value,
+    .shape-rounded[value]::-moz-progress-bar,
+    .shape-rounded[value]::-webkit-progress-bar {
+        border-radius : ${(props: ProgressBarProps) => props.theme.progressBar.borderRadius};
+    }
+
+    .shape-curved[value],
+    .shape-curved::-webkit-progress-value,
+    .shape-curved[value]::-moz-progress-bar,
+    .shape-curved[value]::-webkit-progress-bar {
         border-radius : 8000px;
-        background    : ${(props: ProgressBarProps) => convertToFictoanColor(props.barFill) || props.theme.progressBar.fill};
     }
 `;
