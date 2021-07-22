@@ -61,17 +61,11 @@ export const ProgressBarStyled = styled.progress`
         background : ${(props: ProgressBarProps) => convertToFictoanColor(props.barFill) || props.theme.progressBar.fill};
     }
 
-    .shape-rounded[value],
-    .shape-rounded::-webkit-progress-value,
-    .shape-rounded[value]::-moz-progress-bar,
-    .shape-rounded[value]::-webkit-progress-bar {
+    &.shape-rounded::-webkit-progress-value, &.shape-rounded, &.shape-rounded::-webkit-progress-bar {
         border-radius : ${(props: ProgressBarProps) => props.theme.progressBar.borderRadius};
     }
 
-    .shape-curved[value],
-    .shape-curved::-webkit-progress-value,
-    .shape-curved[value]::-moz-progress-bar,
-    .shape-curved[value]::-webkit-progress-bar {
+    &.shape-curved::-webkit-progress-value, &.shape-curved, &.shape-curved::-webkit-progress-bar {
         border-radius : 8000px;
     }
 `;
