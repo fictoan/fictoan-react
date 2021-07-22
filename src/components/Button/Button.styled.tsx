@@ -1,3 +1,5 @@
+import { defaultColours } from "src/styles/DefaultColours";
+import { convertToFictoanColor } from "src/utils/helpers";
 import styled from "styled-components";
 
 import { ButtonProps } from "./Button";
@@ -11,10 +13,13 @@ export const ButtonStyled = styled.button`
     text-align          : center;
     text-decoration     : none;
     line-height         : 1;
-    padding             : 12px 24px;
     transition          : all 0.2s ease-in-out;
     background-position : center;
     user-select         : none;
+    
+    &:not([class*="padding-"]) {
+        padding : 12px 24px;
+    }
 
     // To make sure a button’s children
     // don’t style themselves like a douchebag
@@ -66,14 +71,14 @@ export const ButtonStyled = styled.button`
         :hover {
             background-color : ${(props: ButtonProps) => props.theme.button.secondary.onHover.bg};
             color            : ${(props: ButtonProps) => props.theme.button.secondary.onHover.text};
-            border           : solid ${(props: ButtonProps) => props.theme.button.secondary.onHover.border}
+            border           : solid ${(props: ButtonProps) => props.theme.button.secondary.onHover.border};
             border-width     : ${(props: ButtonProps) => props.theme.globals.borderWidth};
         }
 
         :active {
             background-color : ${(props: ButtonProps) => props.theme.button.secondary.isActive.bg};
             color            : ${(props: ButtonProps) => props.theme.button.secondary.isActive.text};
-            border           : solid ${(props: ButtonProps) => props.theme.button.secondary.isActive.border}
+            border           : solid ${(props: ButtonProps) => props.theme.button.secondary.isActive.border};
             border-width     : ${(props: ButtonProps) => props.theme.globals.borderWidth};
         }
 
@@ -94,14 +99,14 @@ export const ButtonStyled = styled.button`
         :hover {
             background-color : ${(props: ButtonProps) => props.theme.button.tertiary.onHover.bg};
             color            : ${(props: ButtonProps) => props.theme.button.tertiary.onHover.text};
-            border           : solid ${(props: ButtonProps) => props.theme.button.tertiary.onHover.border}
+            border           : solid ${(props: ButtonProps) => props.theme.button.tertiary.onHover.border};
             border-width     : ${(props: ButtonProps) => props.theme.globals.borderWidth};
         }
 
         :active {
             background-color : ${(props: ButtonProps) => props.theme.button.tertiary.isActive.bg};
             color            : ${(props: ButtonProps) => props.theme.button.tertiary.isActive.text};
-            border           : solid ${(props: ButtonProps) => props.theme.button.tertiary.isActive.border}
+            border           : solid ${(props: ButtonProps) => props.theme.button.tertiary.isActive.border};
             border-width     : ${(props: ButtonProps) => props.theme.globals.borderWidth};
         }
 
@@ -212,19 +217,23 @@ export const ButtonStyled = styled.button`
     }
 
     &.is-loading::after {
-        display           : block;
-        position          : absolute;
-        margin            : auto;
-        left              : 0;
-        top               : 0;
-        bottom            : 0;
-        right             : 0;
-        height            : 16px;
-        width             : 16px;
-        border-radius     : 50%;
-        content           : "";
-        -webkit-animation : spinner 0.4s infinite linear;
-        animation         : spinner 0.4s infinite linear;
+        display            : block;
+        position           : absolute;
+        margin             : auto;
+        left               : 0;
+        top                : 0;
+        bottom             : 0;
+        right              : 0;
+        height             : 16px;
+        width              : 16px;
+        border-radius      : 50%;
+        content            : "";
+        border             : 3px solid;
+        border-color       : ${(props: ButtonProps) => convertToFictoanColor(props.textColor ?? props.textColour)};
+        border-top-color   : transparent;
+        border-right-color : transparent;
+        -webkit-animation  : spinner 0.4s infinite linear;
+        animation          : spinner 0.4s infinite linear;
     }
 
     &.size-tiny.is-loading::after,

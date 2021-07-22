@@ -6,10 +6,10 @@ import { ElementProps } from "./constants";
 
 export const Element = React.forwardRef(
     <K extends {}>(
-        {
-            as: Component,
-            className,
-            classNames = [],
+        props : ElementProps<K>,
+        ref: React.LegacyRef<HTMLElement>
+    ) => {
+        const {
             size,
             isFullWidth,
             isFullHeight,
@@ -40,15 +40,15 @@ export const Element = React.forwardRef(
             paddingRight,
             paddingBottom,
             paddingLeft,
-            padding,
-            ...props
-        }: ElementProps<K>,
-        ref: React.LegacyRef<HTMLElement>
-    ) => {
+            padding
+        } = props;
+
+        const { as: Component, className, classNames = [], ...sanitizedProps } = props;
+
         return (
             <Component
                 ref={ref}
-                {...props}
+                {...sanitizedProps}
                 className={createClassName(
                     [
                         className,
