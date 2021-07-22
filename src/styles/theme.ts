@@ -16,7 +16,7 @@ export const FictoanTheme = {
 
     //  GLOBALS  //////////////////////////////////////////////////////////////
     globals : {
-        borderWidth : "1px"
+        borderWidth : "1px",
     },
 
     //  BASICS  ///////////////////////////////////////////////////////////////
@@ -282,10 +282,11 @@ export const FictoanTheme = {
 
     //  PROGRESS BAR  /////////////////////////////////////////////////////////
     progressBar : {
-        bg    : defaultColours.slate20,
-        fill  : customColours.hue,
-        label : customColours.shade,
-        value : `${lighten(0.24, customColours.shade)}`
+        bg           : defaultColours.slate20,
+        fill         : customColours.hue,
+        label        : customColours.shade,
+        value        : customColours.shade,
+        borderRadius : "4px"
     },
 
 

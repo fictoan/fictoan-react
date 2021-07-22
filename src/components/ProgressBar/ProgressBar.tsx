@@ -8,10 +8,10 @@ import { Text } from "../Typography/Text";
 
 // prettier-ignore
 export interface ProgressBarCustomProps {
-    isThin  ? : boolean;
     barBg   ? : string;
     barFill ? : string;
     unit    ? : string;
+    shape   ? : "rounded" | "curved";
 }
 
 export type ProgressBarElementType = HTMLProgressElement;
@@ -19,15 +19,15 @@ export type ProgressBarProps = CommonAndHTMLProps<ProgressBarElementType> & Prog
 export type ProgressBarMetaProps = CommonAndHTMLProps<HTMLDivElement> & ProgressBarCustomProps;
 
 export const ProgressBar = React.forwardRef(
-    ({ label, value, isThin, ...props }: ProgressBarProps, ref: React.Ref<ProgressBarElementType>) => {
+    ({ label, value, shape, ...props }: ProgressBarProps, ref: React.Ref<ProgressBarElementType>) => {
         let classNames = [];
 
-        if (isThin) {
-            classNames.push("is-thin");
+        if (shape) {
+            classNames.push(`shape-${shape}`);
         }
 
         return (
-            <div>
+            <>
                 {label && (
                     <Element<ProgressBarMetaProps> as={ProgressBarMetaStyled} {...props}>
                         <Text>{label}</Text>
@@ -41,7 +41,7 @@ export const ProgressBar = React.forwardRef(
                     value={value}
                     {...props}
                 />
-            </div>
+            </>
         );
     }
 );
