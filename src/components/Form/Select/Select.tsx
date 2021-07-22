@@ -14,7 +14,6 @@ export type OptionElementType = HTMLOptionElement;
 // prettier-ignore
 export interface SelectCustomProps {
     options       : CommonAndHTMLProps<OptionElementType>[];
-    isFullWidth ? : boolean;
     label       ? : string;
     helpText    ? : string;
     errorText   ? : string;
@@ -33,13 +32,13 @@ const Option = ({ name, ...props }: OptionProps) => {
 
 export const Select = React.forwardRef(
     (
-        { label, helpText, errorText, isFullWidth, className, options, ...props }: SelectProps,
+        { label, helpText, errorText, className, options, ...props }: SelectProps,
         ref: React.Ref<SelectElementType>
     ) => {
         return (
-            <FormItem>
-                <Element<HTMLDivElement> as={SelectWrapperStyled} isFullWidth={isFullWidth} className={className}>
-                    <Element<SelectElementType> as={SelectStyled} ref={ref} {...props}>
+            <FormItem ref={ref}>
+                <Element<HTMLDivElement> as={SelectWrapperStyled} className={className}>
+                    <Element<SelectElementType> as={SelectStyled} {...props}>
                         {options.map((option, index) => {
                             return <Option key={index} {...option} />;
                         })}

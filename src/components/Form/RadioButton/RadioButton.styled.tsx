@@ -14,10 +14,10 @@ export const RadioButtonStyled = styled.div`
         /* top           : 4px; */
         left          : 0;
         border-radius : 50%;
-        background    : ${(props: RadioButtonProps) => props.theme.input.radioButton.inset.default.bg};
+        background    : ${(props: RadioButtonProps) => props.theme.radioButton.inset.default.bg};
     }
 
-    &:hover label::before { background : ${(props: RadioButtonProps) => props.theme.input.radioButton.inset.onHover.bg}; }
+    &:hover label::before { background : ${(props: RadioButtonProps) => props.theme.radioButton.inset.onHover.bg}; }
 
     /*  The white inner circle  */
     & label::after {
@@ -26,13 +26,13 @@ export const RadioButtonStyled = styled.div`
         top           : 4px;
         width         : 8px;
         height        : 8px;
-        background    : ${(props: RadioButtonProps) => props.theme.input.radioButton.circle.default.bg};
+        background    : ${(props: RadioButtonProps) => props.theme.radioButton.circle.default.bg};
         border-radius : 50%;
     }
 
     &:checked + label::before,
     input[type="radio"]:checked + label::before { 
-        background : ${(props: RadioButtonProps) => props.theme.input.radioButton.inset.isSelected.bg};
+        background : ${(props: RadioButtonProps) => props.theme.radioButton.inset.isSelected.bg};
     }
 
     &:checked + label::after,
@@ -64,7 +64,7 @@ export const RadioButtonStyled = styled.div`
         opacity        : 0.24;
         user-select    : none;
         pointer-events : none;
-        background     : ${(props: RadioButtonProps) => props.theme.input.radioButton.inset.isDisabled.bg};
+        background     : ${(props: RadioButtonProps) => props.theme.radioButton.inset.isDisabled.bg};
         box-shadow     : inset 0 2px 8px -2px rgba(0, 0, 0, 0.24);
     }
 

@@ -20,7 +20,8 @@ const SharedStyling = css`
         line-height : 1;
         user-select : none;
 
-        &::before, &::after {
+        &::before,
+        &::after {
             display    : inline-flex;
             content    : "";
             transition : all 0.1s ease-out;
@@ -32,18 +33,18 @@ const SharedStyling = css`
     input[type="checkbox"]:disabled + label::before {
         user-select    : none;
         pointer-events : none;
-        background     : ${(props: CheckboxProps) => props.theme.input.checkBox.square.default.bg};
+        background     : ${(props: CheckboxProps) => props.theme.checkBox.square.default.bg};
         box-shadow     : 0 2px 4px -2px hsla(0, 0, 0, 0.24) inset;
     }
 
     &:hover label::before {
-        background : ${(props: CheckboxProps) => props.theme.input.checkBox.square.onHover.bg};
+        background : ${(props: CheckboxProps) => props.theme.checkBox.square.onHover.bg};
     }
 
     label::after { opacity : 0; }
 
     input[type="checkbox"]:checked + label::before {
-        background : ${(props: CheckboxProps) => props.theme.input.checkBox.square.isChecked.bg};
+        background : ${(props: CheckboxProps) => props.theme.checkBox.square.isChecked.bg};
     }
 
     input[type="checkbox"]:disabled + label,
@@ -78,8 +79,8 @@ export const CheckBoxStyled = styled.div`
         width         : 12px;
         left          : 2px;
         top           : 4px;
-        border-left   : 2px solid ${(props: CheckboxProps) => props.theme.input.checkBox.check.default.border};
-        border-bottom : 2px solid ${(props: CheckboxProps) => props.theme.input.checkBox.check.default.border};
+        border-left   : 2px solid ${(props: CheckboxProps) => props.theme.checkBox.check.default.border};
+        border-bottom : 2px solid ${(props: CheckboxProps) => props.theme.checkBox.check.default.border};
         transform     : rotate(-45deg);
     }
 
@@ -116,7 +117,7 @@ export const SwitchStyled = styled.div`
         height        : 8px;
         left          : 2px;
         top           : 4px;
-        background    : ${(props: CheckboxProps) => props.theme.input.toggleSwitch.switch.default.bg};
+        background    : ${(props: CheckboxProps) => props.theme.toggleSwitch.switch.default.bg};
         border-radius : 50%;
         content       : "";
         transition    : all 0.1s ease-out;
@@ -126,6 +127,6 @@ export const SwitchStyled = styled.div`
 
     input[type="checkbox"]:checked + label::after {
         transform  : translateX(12px);
-        background : ${(props: CheckboxProps) => props.theme.input.toggleSwitch.switch.isChecked.bg};
+        background : ${(props: CheckboxProps) => props.theme.toggleSwitch.switch.isChecked.bg};
     }
 `;
