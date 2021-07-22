@@ -7,11 +7,11 @@ import { NotificationsItemStyled } from "./NotificationItem.styled";
 
 // prettier-ignore
 export interface NotificationItemCustomProps {
-    kind          ? : "info" | "warning" | "error" | "success";
-    show            : boolean;
-    isDismissible ? : boolean;
-    onClose         : () => void;
-    timeout       ? : number;
+    kind            ? : "info" | "warning" | "error" | "success";
+    show              : boolean;
+    isDismissible   ? : boolean;
+    onCloseCallback   : () => void;
+    timeout         ? : number;
 }
 
 export type NotificationItemElementType = HTMLDivElement;
@@ -19,7 +19,7 @@ export type NotificationItemProps = CommonAndHTMLProps<NotificationItemElementTy
 
 export const NotificationItem = React.forwardRef(
     (
-        { show, onClose, kind, children, isDismissible, timeout, ...props }: NotificationItemProps,
+        { show, onCloseCallback, kind, children, isDismissible, timeout, ...props }: NotificationItemProps,
         ref: React.Ref<NotificationItemElementType>
     ) => {
         let classNames = [];
@@ -32,7 +32,7 @@ export const NotificationItem = React.forwardRef(
 
             const timer = show
                 ? setTimeout(() => {
-                      onClose();
+                    onCloseCallback();
                   }, timeout ?? 8000)
                 : undefined;
 
@@ -51,7 +51,7 @@ export const NotificationItem = React.forwardRef(
 
         const onDismissClick = (event: SyntheticEvent<HTMLDivElement>) => {
             event.preventDefault();
-            onClose();
+            onCloseCallback();
         };
 
         const onTransitionEnd = () => {
