@@ -1,15 +1,8 @@
 import styled, { css } from "styled-components";
 
-import { defaultColours } from "../../styles/DefaultColours";
 import { ProgressBarMetaProps, ProgressBarProps } from "./ProgressBar";
+import { convertToFictoanColor } from "src/utils/helpers";
 
-const convertToFictoanColor = (colorString:string) => {
-    if (!colorString) return null
-
-    const c:string = colorString.replace('-', '');
-
-    return defaultColours.hasOwnProperty(c) ? defaultColours[c] : null
-}
 
 export const ProgressBarMetaStyled = styled.div`
     display         : flex;

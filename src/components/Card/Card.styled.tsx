@@ -5,6 +5,7 @@ import { CardProps } from "./Card";
 
 export const CardStyled = styled.div`
     position : relative;
+    width    : 100%;
 
     &[class*="border-"] {
         border-width : ${(props: CardProps) => props.theme.globals.borderWidth};
