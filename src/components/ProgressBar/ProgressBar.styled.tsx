@@ -56,16 +56,27 @@ export const ProgressBarStyled = styled.progress`
         box-shadow : 0 2px 8px -2px hsla(0, 0, 0, 0.24) inset;
     }
 
-    &::-webkit-progress-value,
+    &::-webkit-progress-value {
+        background         : ${(props: ProgressBarProps) => convertToFictoanColor(props.barFill) || props.theme.progressBar.fill};
+    }
+
     &[value]::-moz-progress-bar {
-        background : ${(props: ProgressBarProps) => convertToFictoanColor(props.barFill) || props.theme.progressBar.fill};
+        background    : ${(props: ProgressBarProps) => convertToFictoanColor(props.barFill) || props.theme.progressBar.fill};
     }
 
     &.shape-rounded::-webkit-progress-value, &.shape-rounded, &.shape-rounded::-webkit-progress-bar {
         border-radius : ${(props: ProgressBarProps) => props.theme.progressBar.borderRadius};
     }
 
+    &.shape-rounded::-moz-progress-bar {
+        border-radius : ${(props: ProgressBarProps) => props.theme.progressBar.borderRadius};
+    }
+
     &.shape-curved::-webkit-progress-value, &.shape-curved, &.shape-curved::-webkit-progress-bar {
+        border-radius : 8000px;
+    }
+
+    &.shape-curved::-moz-progress-bar {
         border-radius : 8000px;
     }
 `;
