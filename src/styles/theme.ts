@@ -1,4 +1,5 @@
-import { darken, lighten } from "polished";
+import lighten from "polished/lib/color/lighten";
+import darken from "polished/lib/color/darken";
 
 import { defaultColours } from "./DefaultColours";
 
