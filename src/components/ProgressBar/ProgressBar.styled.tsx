@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import { ProgressBarMetaProps, ProgressBarProps } from "./ProgressBar";
 import { convertToFictoanColor } from "src/utils/helpers";
