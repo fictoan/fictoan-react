@@ -36,9 +36,9 @@ export const Select = React.forwardRef(
         ref: React.Ref<SelectElementType>
     ) => {
         return (
-            <FormItem ref={ref}>
+            <FormItem>
                 <Element<HTMLDivElement> as={SelectWrapperStyled} className={className}>
-                    <Element<SelectElementType> as={SelectStyled} {...props}>
+                    <Element<SelectElementType> as={SelectStyled} ref={ref} {...props}>
                         {options.map((option, index) => {
                             return <Option key={index} {...option} />;
                         })}
