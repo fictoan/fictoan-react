@@ -8,8 +8,8 @@ export const TextAreaStyled = styled.textarea`
     width            : 100%;
     flex             : 1 1 auto;
     font-family      : ${(props: InputFieldProps) => props.theme.text.font.sans};
-    background-color : ${(props: InputFieldProps) => props.theme.input.default.bg};
-    border           : 1px solid ${(props: InputFieldProps) => props.theme.input.default.border};
+    background-color : ${(props: InputFieldProps) => props.theme.inputField.default.bg};
+    border           : 1px solid ${(props: InputFieldProps) => props.theme.inputField.default.border};
     border-radius    : 4px;
     padding          : 12px;
     line-height      : 1;
@@ -19,15 +19,15 @@ export const TextAreaStyled = styled.textarea`
 
     &:active,
     &:focus {
-        background-color : ${(props: InputFieldProps) => props.theme.input.onFocus.bg};
-        border           : 2px solid ${(props: InputFieldProps) => props.theme.input.onFocus.border};
+        background-color : ${(props: InputFieldProps) => props.theme.inputField.onFocus.bg};
+        border           : 2px solid ${(props: InputFieldProps) => props.theme.inputField.onFocus.border};
         padding          : 11px;
     }
 
     &:read-only {
-        background-color : ${(props: InputFieldProps) => props.theme.input.isReadOnly.bg};
-        color            : ${(props: InputFieldProps) => props.theme.input.default.text};
+        background-color : ${(props: InputFieldProps) => props.theme.inputField.isReadOnly.bg};
+        color            : ${(props: InputFieldProps) => props.theme.inputField.default.text};
     }
 
-    &:read-only:focus { border : 2px solid ${(props: InputFieldProps) => props.theme.input.default.text}; }
+    &:read-only:focus { border : 2px solid ${(props: InputFieldProps) => props.theme.inputField.default.text}; }
 `;

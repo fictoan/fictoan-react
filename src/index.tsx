@@ -46,7 +46,7 @@ import { InfoPanel } from "./components/InfoPanel/InfoPanel";
 import { NotificationsWrapper } from "./components/Notifications/NotificationsWrapper/NotificationsWrapper";
 import { NotificationItem } from "./components/Notifications/NotificationsItem/NotificationItem";
 
-import { BreadcrumbWrapper } from "./components/Breadcrumbs/BreadcrumbWrapper/BreadcrumbWrapper";
+import { BreadcrumbsWrapper } from "./components/Breadcrumbs/BreadcrumbsWrapper/BreadcrumbsWrapper";
 import { BreadcrumbItem } from "./components/Breadcrumbs/BreadcrumbItem/BreadcrumbItem";
 
 import { Table } from "./components/Table/Table";
@@ -60,7 +60,7 @@ import { ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
 import { ThemeType, ThemeProps } from "./components/Element/constants";
 
 import { defaultColours } from "./styles/DefaultColours";
-import { RFTheme } from "./styles/theme";
+import { FictoanTheme } from "./styles/theme";
 
 export {
     Element,
@@ -98,7 +98,7 @@ export {
     Table,
     TablePagination,
     ProgressBar,
-    BreadcrumbWrapper,
+    BreadcrumbsWrapper,
     BreadcrumbItem,
     NotificationsWrapper,
     NotificationItem,
@@ -109,5 +109,5 @@ export {
     ThemeType,
     ThemeProps,
     defaultColours,
-    RFTheme,
+    FictoanTheme,
 };

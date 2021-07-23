@@ -22,7 +22,7 @@ export const FormItemStyled = styled.div`
         flex          : 1 0 auto;
         align-self    : flex-start;
         margin-bottom : 4px;
-        color         : ${(props: FormItemProps) => props.theme.input.default.label};
+        color         : ${(props: FormItemProps) => props.theme.inputField.default.label};
         font-family   : ${(props: FormItemProps) => props.theme.text.font.sans};
         order         : -1;
         flex-wrap     : wrap;
@@ -39,7 +39,7 @@ export const FormItemStyled = styled.div`
             margin    : auto;
             content   : " *";
             font-size : 120%;
-            color     : ${(props: FormItemProps) => props.theme.input.required.text};
+            color     : ${(props: FormItemProps) => props.theme.inputField.required.text};
         }
 
         &:focus ~ label > span.ff-input-help,
@@ -48,19 +48,19 @@ export const FormItemStyled = styled.div`
         }
 
         &:not(:focus):not(:placeholder-shown) ~ label > span.ff-input-help {
-            color : ${(props: FormItemProps) => props.theme.input.onFocus.helpText};
+            color : ${(props: FormItemProps) => props.theme.inputField.onFocus.helpText};
         }
 
         &:invalid:focus:not(:placeholder-shown) ~ label > span.ff-input-error,
         &:invalid:not(:focus):not(:placeholder-shown) ~ label > span.ff-input-error {
             display : inline-flex;
-            color   : ${(props: FormItemProps) => props.theme.input.isInvalid.helpText};
+            color   : ${(props: FormItemProps) => props.theme.inputField.isInvalid.helpText};
         }
     }
 
     label span {
         font-weight : normal;
-        color       : ${(props: FormItemProps) => props.theme.input.onFocus.helpText};
+        color       : ${(props: FormItemProps) => props.theme.inputField.onFocus.helpText};
         display     : none;
         align-self  : center;
         transition  : opacity 0.2s;

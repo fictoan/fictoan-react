@@ -2,9 +2,15 @@ import styled from "styled-components";
 
 import { CardProps } from "./Card";
 
+
 export const CardStyled = styled.div`
     position : relative;
-    
+    width    : 100%;
+
+    &[class*="border-"] {
+        border-width : ${(props: CardProps) => props.theme.globals.borderWidth};
+    }
+
     &:not([class*="border-"]) {
         border : 1px solid ${(props: CardProps) => props.theme.card.border};
     }
@@ -23,6 +29,7 @@ export const CardStyled = styled.div`
 
     @media all and (max-width : 600px) {
         &[class*="padding"] { padding : 4vmin; }
+
         .padding-none { padding : 0 !important; }
     }
-`
+`;

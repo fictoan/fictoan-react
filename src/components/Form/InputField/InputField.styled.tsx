@@ -8,26 +8,26 @@ export const InputFieldStyled = styled.input`
     width            : 100%;
     flex             : 1 1 auto;
     font-family      : ${(props: InputFieldProps) => props.theme.text.font.sans};
-    color            : ${(props: InputFieldProps) => props.theme.input.default.text};
-    background-color : ${(props: InputFieldProps) => props.theme.input.default.bg};
-    border           : 1px solid ${(props: InputFieldProps) => props.theme.input.default.border};
-    border-radius    : ${(props: InputFieldProps) => props.theme.input.default.borderRadius};
+    color            : ${(props: InputFieldProps) => props.theme.inputField.default.text};
+    background-color : ${(props: InputFieldProps) => props.theme.inputField.default.bg};
+    border           : 1px solid ${(props: InputFieldProps) => props.theme.inputField.default.border};
+    border-radius    : ${(props: InputFieldProps) => props.theme.inputField.default.borderRadius};
     padding          : 12px;
     line-height      : 1;
 
     &:active,
     &:focus {
-        background-color : ${(props: InputFieldProps) => props.theme.input.onFocus.bg};
-        border           : 2px solid ${(props: InputFieldProps) => props.theme.input.onFocus.border};
+        background-color : ${(props: InputFieldProps) => props.theme.inputField.onFocus.bg};
+        border           : 2px solid ${(props: InputFieldProps) => props.theme.inputField.onFocus.border};
         padding          : 11px;
     }
 
     &:read-only {
-        background-color : ${(props: InputFieldProps) => props.theme.input.isReadOnly.bg};
-        color            : ${(props: InputFieldProps) => props.theme.input.default.text};
+        background-color : ${(props: InputFieldProps) => props.theme.inputField.isReadOnly.bg};
+        color            : ${(props: InputFieldProps) => props.theme.inputField.default.text};
     }
 
-    &:read-only:focus { border : 2px solid ${(props: InputFieldProps) => props.theme.input.default.text}; }
+    &:read-only:focus { border : 2px solid ${(props: InputFieldProps) => props.theme.inputField.default.text}; }
 
     &[type=password] { letter-spacing : 4px; }
 
@@ -45,7 +45,7 @@ export const InputFieldStyled = styled.input`
 
     span.icon-left svg,
     span.icon-right svg {
-        fill       : ${(props: InputFieldProps) => props.theme.input.icons.default.fill};
+        fill       : ${(props: InputFieldProps) => props.theme.inputField.icons.default.fill};
         transition : all 0.2s;
         width      : 24px;
         height     : 24px;
@@ -59,7 +59,7 @@ export const InputFieldStyled = styled.input`
     }
 
     &.with-icon-left:focus ~ span.icon-left svg {
-        fill : ${(props: InputFieldProps) => props.theme.input.icons.onFocus.fill};
+        fill : ${(props: InputFieldProps) => props.theme.inputField.icons.onFocus.fill};
     }
 
     /*  Grey check mark  */
@@ -84,8 +84,8 @@ export const InputFieldStyled = styled.input`
 
     /*  Red check mark  */
     &:invalid:not(:focus):not(:placeholder-shown) {
-        border              : 1px solid ${(props: InputFieldProps) => props.theme.input.icons.isValid.border};
-        background-color    : ${(props: InputFieldProps) => props.theme.input.isInvalid.bg};
+        border              : 1px solid ${(props: InputFieldProps) => props.theme.inputField.icons.isValid.border};
+        background-color    : ${(props: InputFieldProps) => props.theme.inputField.isInvalid.bg};
         background-image    : url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+ICA8bGluZSB4MT0iNi41IiB5MT0iMTcuNSIgeDI9IjE4LjUiIHkyPSI1LjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2VmNDM0MyIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjIiLz4gIDxsaW5lIHgxPSI2LjUiIHkxPSI1LjUiIHgyPSIxOC41IiB5Mj0iMTcuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZWY0MzQzIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==);
         background-repeat   : no-repeat;
         background-position : 98%;
