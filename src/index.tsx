@@ -1,4 +1,4 @@
-import { Element } from "./components/Element/Element";
+import { BaseElement as Element } from "./components/Element/BaseElement";
 
 import { Row } from "./components/Row/Row";
 import { Portion } from "./components/Portion/Portion";
