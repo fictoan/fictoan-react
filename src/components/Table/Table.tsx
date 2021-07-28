@@ -18,7 +18,10 @@ export type TableElementType = HTMLTableElement;
 export type TableProps = CommonAndHTMLProps<TableElementType> & TableCustomProps;
 
 export const Table = React.forwardRef(
-    ({ bordersFor, isStriped, isHoverable, isFullWidth, alignText, ...props }: TableProps, ref: React.Ref<TableElementType>) => {
+    (
+        { bordersFor, isStriped, isHoverable, isFullWidth, alignText, ...props }: TableProps,
+        ref: React.Ref<TableElementType>
+    ) => {
         let classNames = [];
 
         if (bordersFor) {

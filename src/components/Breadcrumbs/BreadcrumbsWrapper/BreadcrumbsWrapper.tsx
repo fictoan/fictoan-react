@@ -10,9 +10,14 @@ export type BreadcrumbsWrapperProps = CommonAndHTMLProps<BreadcrumbsWrapperEleme
 
 export const BreadcrumbsWrapper = React.forwardRef(
     ({ ...props }: BreadcrumbsWrapperProps, ref: React.Ref<BreadcrumbsWrapperElementType>) => {
-        return <Element<BreadcrumbsWrapperElementType>
-            as={BreadcrumbsWrapperStyled} ref={ref} {...props}
-            paddingTop="nano" paddingBottom="nano"
-        />;
+        return (
+            <Element<BreadcrumbsWrapperElementType>
+                as={BreadcrumbsWrapperStyled}
+                ref={ref}
+                {...props}
+                paddingTop="nano"
+                paddingBottom="nano"
+            />
+        );
     }
 );

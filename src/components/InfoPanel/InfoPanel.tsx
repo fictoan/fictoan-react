@@ -39,7 +39,11 @@ export const InfoPanel = React.forwardRef(
         return (
             !!isOpen && (
                 <Element<InfoPanelElementType>
-                    as={InfoPanelStyled} ref={ref} classNames={classNames} padding={padding ?? "tiny"} {...props}
+                    as={InfoPanelStyled}
+                    ref={ref}
+                    classNames={classNames}
+                    padding={padding ?? "tiny"}
+                    {...props}
                 >
                     <Element as="div" className="dismiss-button" onClick={closeInfoPanel} role="button" />
                     <Element as="div" className="info-panel-content-wrapper">

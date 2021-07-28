@@ -17,12 +17,10 @@ export type NotificationsWrapperProps = CommonAndHTMLProps<NotificationsWrapperE
     NotificationsWrapperCustomProps;
 
 export const NotificationsWrapper = React.forwardRef(
-    ({
-         position = "right",
-         anchor = "top",
-         order = "new-on-top",
-         ...props
-    } : NotificationsWrapperProps, ref : React.Ref<NotificationsWrapperElementType>) => {
+    (
+        { position = "right", anchor = "top", order = "new-on-top", ...props }: NotificationsWrapperProps,
+        ref: React.Ref<NotificationsWrapperElementType>
+    ) => {
         let classNames = [];
 
         if (position) {
