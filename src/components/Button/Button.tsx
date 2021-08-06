@@ -19,9 +19,7 @@ export type ButtonElementType = HTMLButtonElement;
 export type ButtonProps = CommonAndHTMLProps<ButtonElementType> & ButtonCustomProps;
 
 export const Button = React.forwardRef(
-    ({ size, shape, shadow, kind, isLoading, hasDelete, ...props }: ButtonProps,
-        ref: React.Ref<ButtonElementType>
-    ) => {
+    ({ size, shape, shadow, kind, isLoading, hasDelete, ...props }: ButtonProps, ref: React.Ref<ButtonElementType>) => {
         let classNames = [];
 
         if (kind) {

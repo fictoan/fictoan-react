@@ -7,12 +7,14 @@ import { Text } from "../Typography/Text";
 
 import { TabsStyled } from "./Tabs.styled";
 
+// prettier-ignore
 interface TabType {
     key     : string;
     label   : string;
     content : React.ReactNode;
 }
 
+// prettier-ignore
 interface TabsCustomProps {
     tabs : TabType[];
 }

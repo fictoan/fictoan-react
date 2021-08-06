@@ -26,6 +26,15 @@ export const HRule = React.forwardRef(
             classNames.push(`side-margin-${sideMargin}`);
         }
 
-        return <Element<HRElementType> as={HRStyled} ref={ref} classNames={classNames} marginTop="small" marginBottom="small" {...props} />;
+        return (
+            <Element<HRElementType>
+                as={HRStyled}
+                ref={ref}
+                classNames={classNames}
+                marginTop="small"
+                marginBottom="small"
+                {...props}
+            />
+        );
     }
 );

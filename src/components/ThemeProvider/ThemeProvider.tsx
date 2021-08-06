@@ -15,7 +15,6 @@ import "../../styles/Reset.css";
 import "../../styles/Utility.css";
 import "../../styles/Colours.css";
 
-
 export type ThemeProviderElementType = HTMLDivElement;
 export type RenderProps = () => JSX.Element;
 

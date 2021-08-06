@@ -32,7 +32,7 @@ export const NotificationItem = React.forwardRef(
 
             const timer = show
                 ? setTimeout(() => {
-                    onCloseCallback();
+                      onCloseCallback();
                   }, timeout ?? 8000)
                 : undefined;
 

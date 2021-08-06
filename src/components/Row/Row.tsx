@@ -57,6 +57,15 @@ export const Row = React.forwardRef(
             classNames.push("retain-layout-on-tab-ls retain-layout-on-tab-pt retain-layout-on-mobile");
         }
 
-        return <Element<RowElementType> as={RowStyled} ref={ref} classNames={classNames} marginBottom="tiny" isFullWidth {...props} />;
+        return (
+            <Element<RowElementType>
+                as={RowStyled}
+                ref={ref}
+                classNames={classNames}
+                marginBottom="tiny"
+                isFullWidth
+                {...props}
+            />
+        );
     }
 );

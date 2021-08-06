@@ -31,10 +31,7 @@ const Option = ({ name, ...props }: OptionProps) => {
 };
 
 export const Select = React.forwardRef(
-    (
-        { label, helpText, errorText, className, options, ...props }: SelectProps,
-        ref: React.Ref<SelectElementType>
-    ) => {
+    ({ label, helpText, errorText, className, options, ...props }: SelectProps, ref: React.Ref<SelectElementType>) => {
         return (
             <FormItem>
                 <Element<HTMLDivElement> as={SelectWrapperStyled} className={className}>

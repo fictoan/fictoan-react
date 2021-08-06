@@ -11,6 +11,7 @@ export interface ProgressBarLabelCustomProps {
     unit ? : string;
 }
 
+// prettier-ignore
 export interface ProgressBarCustomProps {
     barBg   ? : string;
     barFill ? : string;
