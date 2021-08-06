@@ -1,3 +1,6 @@
+### 0.33.11
+- Fix transition for `SidebarHeader`
+
 ### 0.33.10
 - Add `isSticky` prop for `SidebarHeader` and `SidebarFooter`
 - Add new component `SidebarLinksWrapper` to better manage `SidebarHeader` and `SidebarFooter`
