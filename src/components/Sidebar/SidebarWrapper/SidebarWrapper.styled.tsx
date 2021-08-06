@@ -44,6 +44,8 @@ export const SidebarWrapperStyled = styled.aside`
         overflow-y : scroll;
 
         ${SidebarHeaderStyled} {
+            width : 48px;
+
             .header-logo { display : none; }
 
             .header-icon {

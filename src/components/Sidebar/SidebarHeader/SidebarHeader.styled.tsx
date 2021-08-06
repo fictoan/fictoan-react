@@ -10,6 +10,7 @@ export const SidebarHeaderStyled = styled.header`
     align-content    : center;
     align-items      : center;
     justify-content  : center;
+    transition       : all 0.4s ease-in-out;
     background-color : ${(props : SidebarHeaderProps) => props.theme.sidebar.header.bg};
     border-bottom    : 1px solid ${(props : SidebarHeaderProps) => props.theme.sidebar.header.borderBottom};
 

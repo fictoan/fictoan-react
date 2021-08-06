@@ -315,71 +315,71 @@ export const FictoanTheme = {
             marginBottom : "32px",
 
             icons : {
-            size    : "24px",
-            stroked : {
-                thickness : 2,
-                default   : {
-                    line : defaultColours.slate40
+                size    : "24px",
+                stroked : {
+                    thickness : 2,
+                    default   : {
+                        line : defaultColours.slate40
+                    },
+                    onHover   : {
+                        line : defaultColours.slate80
+                    },
+                    isActive  : {
+                        line : defaultColours.slate
+                    }
                 },
-                onHover   : {
-                    line : defaultColours.slate80
-                },
-                isActive  : {
-                    line : defaultColours.slate
+                filled  : {
+                    default  : {
+                        bg : defaultColours.slate40
+                    },
+                    onHover  : {
+                        bg : defaultColours.slate80
+                    },
+                    isActive : {
+                        bg : defaultColours.slate
+                    }
                 }
-            },
-            filled  : {
-                default  : {
-                    bg : defaultColours.slate40
-                },
-                onHover  : {
-                    bg : defaultColours.slate80
-                },
-                isActive : {
-                    bg : defaultColours.slate
-                }
-            }
         },
 
             links : {
-            default    : {
-                bg     : defaultColours.white,
-                text   : customColours.shade,
-                scale  : 100,
-                weight : 600
+                default    : {
+                    bg     : defaultColours.white,
+                    text   : customColours.shade,
+                    scale  : 100,
+                    weight : 600
+                },
+                onHover    : {
+                    bg   : defaultColours.slate10,
+                    text : customColours.hue
+                },
+                isSelected : {
+                    bg     : defaultColours.white,
+                    border : customColours.hue,
+                    text   : customColours.hue
+                },
+                hasAlert   : {
+                    bg : defaultColours.red70
+                }
             },
-            onHover    : {
-                bg   : defaultColours.slate10,
-                text : customColours.hue
-            },
-            isSelected : {
-                bg     : defaultColours.white,
-                border : customColours.hue,
-                text   : customColours.hue
-            },
-            hasAlert   : {
-                bg : defaultColours.red70
-            }
-        },
 
             subLinks : {
-            header  : {
-                weight : 600
+                header  : {
+                    weight : 600
+                },
+                default : {
+                    bg     : defaultColours.white,
+                    text   : `${lighten(0.24, customColours.shade)}`,
+                    weight : 400,
+                    scale  : 92
+                },
+                onHover : {
+                    bg   : defaultColours.slate10,
+                    text : customColours.hue
+                },
+                chevron : {
+                    border : defaultColours.slate40
+                }
             },
-            default : {
-                bg     : defaultColours.white,
-                text   : `${lighten(0.24, customColours.shade)}`,
-                weight : 400,
-                scale  : 92
-            },
-            onHover : {
-                bg   : defaultColours.slate10,
-                text : customColours.hue
-            },
-            chevron : {
-                border : defaultColours.slate40
-            }
-        },
         },
 
         footer : {
