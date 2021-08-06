@@ -10,8 +10,13 @@ export const SidebarHeaderStyled = styled.header`
     align-content    : center;
     align-items      : center;
     justify-content  : center;
-    background-color : ${(props: SidebarHeaderProps) => props.theme.sidebar.header.bg};
-    border-bottom    : 1px solid ${(props: SidebarHeaderProps) => props.theme.sidebar.header.borderBottom};
+    background-color : ${(props : SidebarHeaderProps) => props.theme.sidebar.header.bg};
+    border-bottom    : 1px solid ${(props : SidebarHeaderProps) => props.theme.sidebar.header.borderBottom};
+
+    &.is-sticky {
+        position : fixed;
+        width    : 240px;
+    }
 
     * {
         line-height : 1;
@@ -20,8 +25,10 @@ export const SidebarHeaderStyled = styled.header`
 
     .header-logo {
         display : block;
-        width   : ${(props: SidebarHeaderProps) => props.theme.sidebar.header.logoWidth};
+        width   : ${(props : SidebarHeaderProps) => props.theme.sidebar.header.logoWidth};
     }
 
-    .header-icon { display : none; }
+    .header-icon {
+        display : none;
+    }
 `;

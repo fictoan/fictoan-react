@@ -4,6 +4,7 @@ import { SidebarWrapperProps } from "./SidebarWrapper";
 import { SidebarItemIconProps } from "../SidebarItemIcon/SidebarItemIcon";
 
 import { SidebarHeaderStyled } from "../SidebarHeader/SidebarHeader.styled";
+import { SidebarLinksWrapperStyled } from "../SidebarLinksWrapper/SidebarLinksWrapper.styled";
 import { SidebarItemStyled } from "../SidebarItem/SidebarItem.styled"
 import { SidebarItemTextStyled } from "../SidebarItemText/SidebarItemText.styled"
 import { SidebarItemIconStyled } from "../SidebarItemIcon/SidebarItemIcon.styled"
@@ -79,11 +80,8 @@ export const SidebarWrapperStyled = styled.aside`
         }
     }
 
-    //.sidebar-section {
-    //    padding        : 12px 24px;
-    //    display        : flex;
-    //    flex-direction : column;
-    //}
+    ${SidebarHeaderStyled}.is-sticky ~ ${SidebarLinksWrapperStyled} { margin-top : 100px; }
+    ${SidebarFooterStyled}.is-sticky ~ ${SidebarLinksWrapperStyled} { margin-bottom : 100px; }
 
     a {
         width : unset;

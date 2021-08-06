@@ -17,7 +17,7 @@ export const FictoanTheme = {
 
     //  GLOBALS  //////////////////////////////////////////////////////////////
     globals : {
-        borderWidth : "1px",
+        borderWidth : "1px"
     },
 
     //  BASICS  ///////////////////////////////////////////////////////////////
@@ -300,17 +300,21 @@ export const FictoanTheme = {
             }
         },
 
+        body : {
+            bg : defaultColours.white
+        },
+
         header : {
             bg           : defaultColours.white,
             borderBottom : defaultColours.slate10,
             logoWidth    : "50%"
         },
 
-        body : {
-            bg : defaultColours.white
-        },
+        linksWrapper : {
+            marginTop    : "100px",
+            marginBottom : "32px",
 
-        icons : {
+            icons : {
             size    : "24px",
             stroked : {
                 thickness : 2,
@@ -337,7 +341,7 @@ export const FictoanTheme = {
             }
         },
 
-        links : {
+            links : {
             default    : {
                 bg     : defaultColours.white,
                 text   : customColours.shade,
@@ -358,7 +362,7 @@ export const FictoanTheme = {
             }
         },
 
-        subLinks : {
+            subLinks : {
             header  : {
                 weight : 600
             },
@@ -376,8 +380,10 @@ export const FictoanTheme = {
                 border : defaultColours.slate40
             }
         },
+        },
 
         footer : {
+            height    : "32px",
             bg        : defaultColours.white,
             borderTop : defaultColours.slate10
         }

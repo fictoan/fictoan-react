@@ -1,3 +1,7 @@
+### 0.33.10
+- Add `isSticky` prop for `SidebarHeader` and `SidebarFooter`
+- Add new component `SidebarLinksWrapper` to better manage `SidebarHeader` and `SidebarFooter`
+
 ### 0.33.9
 - Fix `polished` imports
 

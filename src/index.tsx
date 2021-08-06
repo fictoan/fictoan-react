@@ -8,6 +8,7 @@ import { Text } from "./components/Typography/Text";
 
 import { SidebarWrapper } from "./components/Sidebar/SidebarWrapper/SidebarWrapper";
 import { SidebarHeader } from "./components/Sidebar/SidebarHeader/SidebarHeader";
+import { SidebarLinksWrapper } from "./components/Sidebar/SidebarLinksWrapper/SidebarLinksWrapper";
 import { SidebarItem } from "./components/Sidebar/SidebarItem/SidebarItem";
 import { SidebarItemIcon } from "./components/Sidebar/SidebarItemIcon/SidebarItemIcon";
 import { SidebarItemText } from "./components/Sidebar/SidebarItemText/SidebarItemText";
@@ -71,6 +72,7 @@ export {
     Card,
     SidebarWrapper,
     SidebarHeader,
+    SidebarLinksWrapper,
     SidebarItem,
     SidebarItemIcon,
     SidebarItemText,
