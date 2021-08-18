@@ -56,6 +56,8 @@ export const ButtonStyled = styled.button`
 
         &.is-loading::after {
             border             : 3px solid ${(props: ButtonProps) => props.theme.button.primary.isLoading.spinnerBorder};
+            border-top-color   : transparent;
+            border-right-color : transparent;
         }
     }
 
@@ -82,6 +84,8 @@ export const ButtonStyled = styled.button`
 
         &.is-loading::after {
             border             : 3px solid ${(props: ButtonProps) => props.theme.button.secondary.isLoading.spinnerBorder};
+            border-top-color   : transparent;
+            border-right-color : transparent;
         }
     }
 
@@ -108,6 +112,8 @@ export const ButtonStyled = styled.button`
 
         &.is-loading::after {
             border             : 3px solid ${(props: ButtonProps) => props.theme.button.tertiary.isLoading.spinnerBorder};
+            border-top-color   : transparent;
+            border-right-color : transparent;
         }
     }
 
