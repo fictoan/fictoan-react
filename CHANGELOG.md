@@ -1,3 +1,7 @@
+### 0.33.12
+- Remove `Element` props being passed to all HTML elements as attributes
+- Fix Button `is-loading` colours
+
 ### 0.33.11
 - Fix transition for `SidebarHeader`
 
