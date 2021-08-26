@@ -10,6 +10,7 @@ import { Element } from "../../Element/Element";
 import { Heading } from "../../Typography/Heading";
 import { Text } from "../../Typography/Text";
 import { TablePaginationStyled } from "./TablePagination.styled";
+import { Spinner } from "src/components/Spinner/Spinner";
 
 // prettier-ignore
 export interface TablePaginationCustomProps {
@@ -79,11 +80,13 @@ export const TablePagination = React.forwardRef(
                     </Element>
 
                     {isLoading && (
-                        <Element as="div" marginLeft="nano" className="loading-icon vertically-centre-items">
-                            <Button kind="secondary" shape="rounded" padding="none" marginRight="micro" isLoading>
-                                L
-                            </Button>
-                            {loadingText && <Text size="small">{loadingText}</Text>}
+                        <Element as="div" marginLeft="nano" className="vertically-centre-items">
+                            <Spinner />
+                            {loadingText && (
+                                <Text size="small" marginLeft="nano">
+                                    {loadingText}
+                                </Text>
+                            )}
                         </Element>
                     )}
                 </Element>

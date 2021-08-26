@@ -1,3 +1,6 @@
+### 0.33.14
+- Add `Spinner` component
+
 ### 0.33.12
 - Remove `Element` props being passed to all HTML elements as attributes
 - Fix Button `is-loading` colours

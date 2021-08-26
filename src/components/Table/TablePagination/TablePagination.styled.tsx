@@ -38,15 +38,4 @@ export const TablePaginationStyled = styled.div`
             }
         }
     }
-
-    .loading-icon .with-loader {
-        background-color : transparent;
-        border-color     : transparent;
-    }
-
-    .loading-icon .with-loader::after {
-        border             : 3px solid ${(props: TablePaginationProps) => props.theme.table.border};
-        border-top-color   : transparent;
-        border-right-color : transparent;
-    }
 `;
