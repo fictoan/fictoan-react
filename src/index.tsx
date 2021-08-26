@@ -56,6 +56,7 @@ import { TablePagination } from "./components/Table/TablePagination/TablePaginat
 import { CodeBlock } from "./components/CodeBlock/CodeBlock";
 
 import { Tabs } from "./components/Tabs/Tabs";
+import { Spinner } from "./components/Spinner/Spinner";
 
 import { ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
 import { ThemeType, ThemeProps } from "./components/Element/constants";
@@ -107,6 +108,7 @@ export {
     InfoPanel,
     CodeBlock,
     Tabs,
+    Spinner,
     ThemeProvider,
     ThemeType,
     ThemeProps,

@@ -556,5 +556,9 @@ export const FictoanTheme = {
             text : defaultColours.grey,
             bg   : defaultColours.grey10
         }
+    },
+
+    spinner: {
+        color: defaultColours.teal,
     }
 };
