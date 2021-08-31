@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-import { convertToFictoanColor } from "src/utils/helpers";
-
 import { SpinnerProps } from "./Spinner";
 
 export const SpinnerStyled = styled.div`
     position           : relative;
+    padding            : 8px;
 	border             : 3px solid;
 	border-top-color   : transparent;
 	border-right-color : transparent;
@@ -36,23 +35,39 @@ export const SpinnerStyled = styled.div`
 
     //  DIFFERENT SIZES  //////////////////////////////////////////////////////
     &.size-tiny {
-        height : 8px;
-        width  : 8px;
+        padding : 4px;
+
+        &::after {
+            height : 8px;
+            width  : 8px;
+        }
     }
 
     &.size-small {
-        height : 12px;
-        width  : 12px;
+        padding : 6px;
+
+        &::after {
+            height : 12px;
+            width  : 12px;
+        }
     }
 
     &.size-large {
-        height : 32px;
-        width  : 32px;
+        padding : 16px;
+
+        &::after {
+            height : 32px;
+            width  : 32px;
+        }
     }
 
     &.size-huge {
-        height : 48px;
-        width  : 48px;
+        padding : 24px;
+
+        &::after {
+            height : 48px;
+            width  : 48px;
+        }
     }
 
     /*  Animation for loader  */
