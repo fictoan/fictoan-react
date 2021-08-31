@@ -1,3 +1,6 @@
+### 0.33.15
+- Fix `spinner` padding
+
 ### 0.33.14
 - Add `Spinner` component
 
