@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { ProgressBarMetaProps, ProgressBarProps } from "./ProgressBar";
-import { convertToFictoanColor } from "src/utils/helpers";
+import { convertToFictoanColor } from "../../utils/helpers";
 
 
 export const ProgressBarMetaStyled = styled.div`

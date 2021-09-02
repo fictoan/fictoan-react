@@ -1,5 +1,4 @@
-import { defaultColours } from "src/styles/DefaultColours";
-import { convertToFictoanColor } from "src/utils/helpers";
+import { convertToFictoanColor } from "../../utils/helpers";
 import styled from "styled-components";
 
 import { ButtonProps } from "./Button";

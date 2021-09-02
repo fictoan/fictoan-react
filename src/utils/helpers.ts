@@ -1,4 +1,4 @@
-import { defaultColours } from "src/styles/DefaultColours";
+import { defaultColours } from "../styles/DefaultColours";
 
 export const convertToFictoanColor = (colorString: string) => {
     if (!colorString) return null;
