@@ -1,44 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
-import bash from "react-syntax-highlighter/dist/esm/languages/prism/bash";
-import csharp from "react-syntax-highlighter/dist/esm/languages/prism/csharp";
-import css from "react-syntax-highlighter/dist/esm/languages/prism/css";
-import diff from "react-syntax-highlighter/dist/esm/languages/prism/diff";
-import django from "react-syntax-highlighter/dist/esm/languages/prism/django";
-import go from "react-syntax-highlighter/dist/esm/languages/prism/go";
-import http from "react-syntax-highlighter/dist/esm/languages/prism/http";
-import java from "react-syntax-highlighter/dist/esm/languages/prism/java";
-import javascript from "react-syntax-highlighter/dist/esm/languages/prism/javascript";
-import json from "react-syntax-highlighter/dist/esm/languages/prism/json";
-import jsx from "react-syntax-highlighter/dist/esm/languages/prism/jsx";
-import makefile from "react-syntax-highlighter/dist/esm/languages/prism/makefile";
-import markup from "react-syntax-highlighter/dist/esm/languages/prism/markup";
-import php from "react-syntax-highlighter/dist/esm/languages/prism/php";
-import python from "react-syntax-highlighter/dist/esm/languages/prism/python";
-import ruby from "react-syntax-highlighter/dist/esm/languages/prism/ruby";
-import scala from "react-syntax-highlighter/dist/esm/languages/prism/scala";
-import typescript from "react-syntax-highlighter/dist/esm/languages/prism/typescript";
-import tsx from "react-syntax-highlighter/dist/esm/languages/prism/tsx";
+import React from "react";
+import PrismReactRenderer, { defaultProps, Prism, Language } from "prism-react-renderer";
 
-SyntaxHighlighter.registerLanguage("bash", bash);
-SyntaxHighlighter.registerLanguage("csharp", csharp);
-SyntaxHighlighter.registerLanguage("css", css);
-SyntaxHighlighter.registerLanguage("diff", diff);
-SyntaxHighlighter.registerLanguage("django", django);
-SyntaxHighlighter.registerLanguage("go", go);
-SyntaxHighlighter.registerLanguage("http", http);
-SyntaxHighlighter.registerLanguage("java", java);
-SyntaxHighlighter.registerLanguage("javascript", javascript);
-SyntaxHighlighter.registerLanguage("json", json);
-SyntaxHighlighter.registerLanguage("jsx", jsx);
-SyntaxHighlighter.registerLanguage("makefile", makefile);
-SyntaxHighlighter.registerLanguage("markup", markup);
-SyntaxHighlighter.registerLanguage("php", php);
-SyntaxHighlighter.registerLanguage("python", python);
-SyntaxHighlighter.registerLanguage("ruby", ruby);
-SyntaxHighlighter.registerLanguage("scala", scala);
-SyntaxHighlighter.registerLanguage("typescript", typescript);
-SyntaxHighlighter.registerLanguage("tsx", tsx);
+import { registerLanguage as registerJava} from "./prismjs-components/prism-java";
+import { registerLanguage as registerCSharp} from "./prismjs-components/prism-csharp";
+import { registerLanguage as registerScala} from "./prismjs-components/prism-scala";
+import { registerLanguage as registerRuby} from "./prismjs-components/prism-ruby";
+import { registerLanguage as registerHttp} from "./prismjs-components/prism-http";
+
+registerJava(Prism);
+registerCSharp(Prism);
+registerScala(Prism);
+registerRuby(Prism);
+registerHttp(Prism);
 
 import { CommonAndHTMLProps } from "../Element/constants";
 import { Element } from "../Element/Element";
@@ -47,31 +20,36 @@ import { CodeStyled } from "./Code.styled";
 // prettier-ignore
 export interface CodeBlockCustomProps {
     source   ? : object | string;
-    language ? : string;
+    language ? : Language;
 }
 
 export type CodeBlockElementType = HTMLPreElement;
 export type CodeBlockProps = CommonAndHTMLProps<CodeBlockElementType> & CodeBlockCustomProps;
 
 export const CodeBlock = React.forwardRef(
-    ({ source, language, ...props }: CodeBlockProps, ref: React.Ref<CodeBlockElementType>) => {
-        const [show, setShow] = useState<boolean>(false);
-
-        useEffect(() => {
-            setShow(true);
-        }, []);
-
+    ({ source, ...props }: CodeBlockProps, ref: React.Ref<CodeBlockElementType>) => {
         return (
             <Element<CodeBlockElementType> as={CodeStyled} ref={ref} {...props}>
-                {show && (
-                    <SyntaxHighlighter
-                        key={JSON.stringify(source)}
-                        language={language || "json"}
-                        useInlineStyles={false}
-                    >
-                        {source}
-                    </SyntaxHighlighter>
-                )}
+                <PrismReactRenderer
+                    {...defaultProps}
+                    Prism={Prism}
+                    code={typeof source === "object" ? JSON.stringify(source, null, 2) : source}
+                    language="json"
+                    {...props}
+                    theme={undefined}
+                >
+                    {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                        <pre ref={ref} className={className} style={style}>
+                            {tokens.map((line, i) => (
+                                <div {...getLineProps({ line, key: i })}>
+                                    {line.map((token, key) => (
+                                        <span {...getTokenProps({ token, key })} />
+                                    ))}
+                                </div>
+                            ))}
+                        </pre>
+                    )}
+                </PrismReactRenderer>
             </Element>
         );
     }
