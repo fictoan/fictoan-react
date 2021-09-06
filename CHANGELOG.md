@@ -1,3 +1,8 @@
+### 0.34.0
+- Replaced `react-syntax-highlighter` with `prism-react-renderer`
+- Added simple wrappers for `prism-components` to import specific languages from `prismjs`
+- Fix CodeBlock erratic output issue
+
 ### 0.33.15
 - Fix `spinner` padding
 
