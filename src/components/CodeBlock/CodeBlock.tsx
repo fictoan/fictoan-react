@@ -1,11 +1,11 @@
 import React from "react";
-import PrismReactRenderer, { defaultProps, Prism, Language } from "prism-react-renderer";
+import PrismReactRenderer, { Prism, Language } from "prism-react-renderer";
 
-import { registerLanguage as registerJava} from "./prismjs-components/prism-java";
-import { registerLanguage as registerCSharp} from "./prismjs-components/prism-csharp";
-import { registerLanguage as registerScala} from "./prismjs-components/prism-scala";
-import { registerLanguage as registerRuby} from "./prismjs-components/prism-ruby";
-import { registerLanguage as registerHttp} from "./prismjs-components/prism-http";
+import { registerLanguage as registerJava } from "./prismjs-components/prism-java";
+import { registerLanguage as registerCSharp } from "./prismjs-components/prism-csharp";
+import { registerLanguage as registerScala } from "./prismjs-components/prism-scala";
+import { registerLanguage as registerRuby } from "./prismjs-components/prism-ruby";
+import { registerLanguage as registerHttp } from "./prismjs-components/prism-http";
 
 registerJava(Prism);
 registerCSharp(Prism);
@@ -31,11 +31,10 @@ export const CodeBlock = React.forwardRef(
         return (
             <Element<CodeBlockElementType> as={CodeStyled} ref={ref} {...props}>
                 <PrismReactRenderer
-                    {...defaultProps}
-                    Prism={Prism}
                     code={typeof source === "object" ? JSON.stringify(source, null, 2) : source}
                     language="json"
                     {...props}
+                    Prism={Prism}
                     theme={undefined}
                 >
                     {({ className, style, tokens, getLineProps, getTokenProps }) => (
