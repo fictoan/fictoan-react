@@ -1,0 +1,21 @@
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
+
+import { VAR_COMPONENT_NAME } from "./VAR_COMPONENT_NAME";
+import { CommonArgTypes } from "../../utils/storyUtils";
+
+export default {
+    title: "Components/VAR_COMPONENT_NAME",
+    component: VAR_COMPONENT_NAME,
+    argTypes: {
+      ...CommonArgTypes,
+    },
+} as ComponentMeta<typeof VAR_COMPONENT_NAME>;
+
+const Template: ComponentStory<typeof VAR_COMPONENT_NAME> = (args) => <VAR_COMPONENT_NAME {...args} />;
+
+
+export const Default: ComponentStory<typeof VAR_COMPONENT_NAME> = Template.bind({});
+Default.args = {
+    
+};

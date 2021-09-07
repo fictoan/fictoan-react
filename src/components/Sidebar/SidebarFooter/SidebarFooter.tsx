@@ -11,7 +11,7 @@ export interface SidebarFooterCustomProps {
 }
 
 export type SidebarFooterElementType = HTMLDivElement;
-export type SidebarFooterProps = CommonAndHTMLProps<SidebarFooterElementType> & SidebarFooterCustomProps;
+export type SidebarFooterProps = Omit<CommonAndHTMLProps<SidebarFooterElementType>, keyof SidebarFooterCustomProps> & SidebarFooterCustomProps;
 
 export const SidebarFooter = React.forwardRef(
     ({isSticky,  ...props }: SidebarFooterProps, ref: React.Ref<SidebarFooterElementType>) => {

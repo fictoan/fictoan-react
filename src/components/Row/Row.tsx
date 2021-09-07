@@ -16,7 +16,7 @@ export interface RowCustomProps {
 }
 
 export type RowElementType = HTMLDivElement;
-export type RowProps = CommonAndHTMLProps<RowElementType> & RowCustomProps;
+export type RowProps = Omit<CommonAndHTMLProps<RowElementType>, keyof RowCustomProps> & RowCustomProps;
 
 export const Row = React.forwardRef(
     (

@@ -14,7 +14,7 @@ export interface TextCustomProps {
 }
 
 export type TextElementType = HTMLParagraphElement;
-export type TextProps = CommonAndHTMLProps<TextElementType> & TextCustomProps;
+export type TextProps = Omit<CommonAndHTMLProps<TextElementType>, keyof TextCustomProps> & TextCustomProps;
 
 export const Text = React.forwardRef(
     ({ weight, size, isSans, isSerif, isMono, align, ...props }: TextProps, ref: React.Ref<TextElementType>) => {

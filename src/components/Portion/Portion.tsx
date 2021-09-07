@@ -15,7 +15,7 @@ export interface PortionCustomProps {
 }
 
 export type PortionElementType = HTMLDivElement;
-export type PortionProps = CommonAndHTMLProps<PortionElementType> & PortionCustomProps;
+export type PortionProps = Omit<CommonAndHTMLProps<PortionElementType>, keyof PortionCustomProps> & PortionCustomProps;
 
 export const Portion = React.forwardRef(
     (

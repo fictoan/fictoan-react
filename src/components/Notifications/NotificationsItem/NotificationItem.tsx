@@ -15,7 +15,7 @@ export interface NotificationItemCustomProps {
 }
 
 export type NotificationItemElementType = HTMLDivElement;
-export type NotificationItemProps = CommonAndHTMLProps<NotificationItemElementType> & NotificationItemCustomProps;
+export type NotificationItemProps = Omit<CommonAndHTMLProps<NotificationItemElementType>, keyof NotificationItemCustomProps> & NotificationItemCustomProps;
 
 export const NotificationItem = React.forwardRef(
     (

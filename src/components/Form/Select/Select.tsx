@@ -20,7 +20,7 @@ export interface SelectCustomProps {
 }
 
 export type OptionProps = CommonAndHTMLProps<OptionElementType>;
-export type SelectProps = CommonAndHTMLProps<SelectElementType> & SelectCustomProps;
+export type SelectProps = Omit<CommonAndHTMLProps<SelectElementType>, keyof SelectCustomProps> & SelectCustomProps;
 
 const Option = ({ name, ...props }: OptionProps) => {
     return (

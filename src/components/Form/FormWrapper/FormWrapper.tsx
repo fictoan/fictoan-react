@@ -11,7 +11,7 @@ export interface FormWrapperCustomProps {
 }
 
 export type FormWrapperElementType = HTMLFormElement;
-export type FormWrapperProps = CommonAndHTMLProps<FormWrapperElementType> & FormWrapperCustomProps;
+export type FormWrapperProps = Omit<CommonAndHTMLProps<FormWrapperElementType>, keyof FormWrapperCustomProps> & FormWrapperCustomProps;
 
 export const FormWrapper = React.forwardRef(
     ({ spacing = "small", ...props }: FormWrapperProps, ref: React.Ref<FormWrapperElementType>) => {

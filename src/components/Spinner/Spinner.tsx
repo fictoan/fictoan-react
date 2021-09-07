@@ -11,7 +11,7 @@ export interface SpinnerCustomProps {
 }
 
 export type SpinnerElementType = HTMLDivElement;
-export type SpinnerProps = CommonAndHTMLProps<SpinnerElementType> & SpinnerCustomProps;
+export type SpinnerProps = Omit<CommonAndHTMLProps<SpinnerElementType>, keyof SpinnerCustomProps> & SpinnerCustomProps;
 
 export const Spinner = React.forwardRef(
     ({ size = "medium", ...props }: SpinnerProps, ref: React.Ref<SpinnerElementType>) => {

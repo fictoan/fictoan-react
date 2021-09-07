@@ -1,0 +1,25 @@
+import React from "react";
+
+import { VAR_COMPONENT_NAMEStyled } from "./VAR_COMPONENT_NAME.styled";
+
+export interface VAR_COMPONENT_NAMEProps {
+    /** 
+    * Define props types here
+    */
+    // description: string;
+}
+
+export type VAR_COMPONENT_NAMEElementType = HTMLDivElement;
+
+export const VAR_COMPONENT_NAME = React.forwardRef(
+    (
+        { }: VAR_COMPONENT_NAMEProps,
+        ref: React.Ref<VAR_COMPONENT_NAMEElementType>
+    ) => {
+        return (
+            <VAR_COMPONENT_NAMEStyled data-testid="VAR_COMPONENT_NAMETest">
+                
+            </VAR_COMPONENT_NAMEStyled>
+        );
+    }
+);

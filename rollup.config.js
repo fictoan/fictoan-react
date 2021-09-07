@@ -9,7 +9,7 @@ import { getBabelOutputPlugin } from '@rollup/plugin-babel';
 import { terser } from "rollup-plugin-terser";
 import progress from 'rollup-plugin-progress';
 import visualizer from 'rollup-plugin-visualizer';
-import { getFiles } from './scripts/buildUtils';
+import { getFiles } from './build-utils/index';
 const svgr = require("@svgr/rollup").default;
 const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default;
 const styledComponentsTransformer = createStyledComponentsTransformer({
@@ -27,7 +27,7 @@ const computeFileNames = (chunkInfo) => {
 export default {
     input: [
         "src/index.tsx",
-        ...getFiles('./src/components', [".tsx"]),
+        ...getFiles('./src/components', [".tsx"], [".stories.tsx", ".test.tsx"]),
     ],
     output: [
         {

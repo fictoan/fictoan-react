@@ -15,12 +15,12 @@ interface TabType {
 }
 
 // prettier-ignore
-interface TabsCustomProps {
+export interface TabsCustomProps {
     tabs : TabType[];
 }
 
 export type TabsElementType = HTMLDivElement;
-export type TabsProps = CommonAndHTMLProps<TabsElementType> & TabsCustomProps;
+export type TabsProps = Omit<CommonAndHTMLProps<TabsElementType>, keyof TabsCustomProps> & TabsCustomProps;
 
 export const Tabs = React.forwardRef(({ tabs, ...props }: TabsProps, ref: React.Ref<TabsElementType>) => {
     const [activeTab, setActiveTab] = React.useState<TabType | undefined>(tabs.length > 0 ? tabs[0] : undefined);

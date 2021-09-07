@@ -11,7 +11,7 @@ export interface FormItemCustomProps {
 }
 
 export type FormItemElementType = HTMLDivElement;
-export type FormItemProps = CommonAndHTMLProps<FormItemElementType> & FormItemCustomProps;
+export type FormItemProps = Omit<CommonAndHTMLProps<FormItemElementType>, keyof FormItemCustomProps> & FormItemCustomProps;
 
 export const FormItem = React.forwardRef(({ ...props }: FormItemProps, ref: React.Ref<FormItemElementType>) => {
     return <Element<FormItemElementType> as={FormItemStyled} ref={ref} {...props} />;

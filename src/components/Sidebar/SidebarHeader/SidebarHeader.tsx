@@ -11,7 +11,7 @@ export interface SidebarHeaderCustomProps {
 }
 
 export type SidebarHeaderElementType = HTMLDivElement;
-export type SidebarHeaderProps = CommonAndHTMLProps<SidebarHeaderElementType> & SidebarHeaderCustomProps;
+export type SidebarHeaderProps = Omit<CommonAndHTMLProps<SidebarHeaderElementType>, keyof SidebarHeaderCustomProps> & SidebarHeaderCustomProps;
 
 export const SidebarHeader = React.forwardRef(
     ({isSticky, ...props }: SidebarHeaderProps, ref: React.Ref<SidebarHeaderElementType>) => {

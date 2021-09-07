@@ -12,7 +12,7 @@ export interface CardCustomProps {
 }
 
 export type CardElementType = HTMLDivElement;
-export type CardProps = CommonAndHTMLProps<CardElementType> & CardCustomProps;
+export type CardProps = Omit<CommonAndHTMLProps<CardElementType>, keyof CardCustomProps> & CardCustomProps;
 
 export const Card = React.forwardRef(({ shadow, shape, ...props }: CardProps, ref: React.Ref<CardElementType>) => {
     let classNames = [];

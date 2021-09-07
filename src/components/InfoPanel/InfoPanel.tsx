@@ -13,7 +13,7 @@ export interface InfoPanelCustomProps {
 }
 
 export type InfoPanelElementType = HTMLDivElement;
-export type InfoPanelProps = CommonAndHTMLProps<InfoPanelElementType> & InfoPanelCustomProps;
+export type InfoPanelProps = Omit<CommonAndHTMLProps<InfoPanelElementType>, keyof InfoPanelCustomProps> & InfoPanelCustomProps;
 
 export const InfoPanel = React.forwardRef(
     (

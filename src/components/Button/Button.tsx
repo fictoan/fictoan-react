@@ -16,7 +16,7 @@ export interface ButtonCustomProps {
 }
 
 export type ButtonElementType = HTMLButtonElement;
-export type ButtonProps = CommonAndHTMLProps<ButtonElementType> & ButtonCustomProps;
+export type ButtonProps = Omit<CommonAndHTMLProps<ButtonElementType>, keyof ButtonCustomProps> & ButtonCustomProps;
 
 export const Button = React.forwardRef(
     ({ size, shape, shadow, kind, isLoading, hasDelete, ...props }: ButtonProps, ref: React.Ref<ButtonElementType>) => {
@@ -46,6 +46,6 @@ export const Button = React.forwardRef(
             classNames.push("has-delete");
         }
 
-        return <Element<ButtonElementType> as={ButtonStyled} ref={ref} classNames={classNames} {...props} />;
+        return <Element<ButtonElementType> as={ButtonStyled} ref={ref} classNames={classNames} data-testid="ButtonTest" {...props} />;
     }
 );

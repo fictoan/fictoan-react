@@ -10,7 +10,7 @@ import { Element } from "../../Element/Element";
 import { Heading } from "../../Typography/Heading";
 import { Text } from "../../Typography/Text";
 import { TablePaginationStyled } from "./TablePagination.styled";
-import { Spinner } from "src/components/Spinner/Spinner";
+import { Spinner } from "../../Spinner/Spinner";
 
 // prettier-ignore
 export interface TablePaginationCustomProps {
@@ -27,7 +27,7 @@ export interface TablePaginationCustomProps {
 }
 
 export type TablePaginationElementType = HTMLElement;
-export type TablePaginationProps = CommonAndHTMLProps<TablePaginationElementType> & TablePaginationCustomProps;
+export type TablePaginationProps = Omit<CommonAndHTMLProps<TablePaginationElementType>, keyof TablePaginationCustomProps> & TablePaginationCustomProps;
 
 export const TablePagination = React.forwardRef(
     (
