@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './NotificationsWrapper.stories';
+import { NotificationsWrapper } from "./NotificationsWrapper";
+import { CommonArgTypes } from "../../../utils/storyUtils";
+
+<Meta title="Components/NotificationsWrapper" component={NotificationsWrapper} argTypes={{ ...CommonArgTypes }} />
+
+# NotificationsWrapper
+
+This is a NotificationsWrapper component.
+
+<Canvas>
+    <Story story={stories.Default} />
+</Canvas>

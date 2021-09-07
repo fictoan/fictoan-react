@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './CodeBlock.stories';
+import { CodeBlock } from "./CodeBlock";
+import { CommonArgTypes } from "../../utils/storyUtils";
+
+<Meta title="Components/CodeBlock" component={CodeBlock} argTypes={{ ...CommonArgTypes }} />
+
+# CodeBlock
+
+This is a CodeBlock component.
+
+<Canvas>
+    <Story story={stories.Default} />
+</Canvas>

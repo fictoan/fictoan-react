@@ -58,8 +58,12 @@ create_component() {
   awk '{gsub("VAR_COMPONENT_NAME", ENVIRON["name"], $0); print}' > $components_path/$name/$name.styled.tsx
 
   print_line "Creating file $components_path/$name/$name.stories.tsx"
-  cat scripts/.template/Component/Component.stories.template | 
+  cat scripts/.template/Component/Component.stories.tsx.template | 
   awk '{gsub("VAR_COMPONENT_NAME", ENVIRON["name"], $0); print}' > $components_path/$name/$name.stories.tsx
+
+  print_line "Creating file $components_path/$name/$name.stories.mdx"
+  cat scripts/.template/Component/Component.stories.mdx.template | 
+  awk '{gsub("VAR_COMPONENT_NAME", ENVIRON["name"], $0); print}' > $components_path/$name/$name.stories.mdx
 
   print_line "Creating file $components_path/$name/$name.test.tsx"
   cat scripts/.template/Component/Component.test.template | 

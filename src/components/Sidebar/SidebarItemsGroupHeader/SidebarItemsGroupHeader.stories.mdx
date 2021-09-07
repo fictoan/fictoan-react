@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './SidebarItemsGroupHeader.stories';
+import { SidebarItemsGroupHeader } from "./SidebarItemsGroupHeader";
+import { CommonArgTypes } from "../../../utils/storyUtils";
+
+<Meta title="Components/SidebarItemsGroupHeader" component={SidebarItemsGroupHeader} argTypes={{ ...CommonArgTypes }} />
+
+# SidebarItemsGroupHeader
+
+This is a SidebarItemsGroupHeader component.
+
+<Canvas>
+    <Story story={stories.Default} />
+</Canvas>

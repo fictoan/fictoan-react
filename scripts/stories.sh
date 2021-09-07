@@ -12,13 +12,17 @@ create_stories_and_tests() {
     # echo $file_name
     # echo $component_name
 
-    print_line "Creating file $file_name.stories.tsx"
-    cat scripts/.template/Component/Component.stories.template | 
-    awk '{gsub("VAR_COMPONENT_NAME", ENVIRON["component_name"], $0); print}' > $file_name.stories.tsx
+    # print_line "Creating file $file_name.stories.tsx"
+    # cat scripts/.template/Component/Component.stories.tsx.template | 
+    # awk '{gsub("VAR_COMPONENT_NAME", ENVIRON["component_name"], $0); print}' > $file_name.stories.tsx
 
-    print_line "Creating file $file_name.test.tsx"
-    cat scripts/.template/Component/Component.test.template | 
-    awk '{gsub("VAR_COMPONENT_NAME", ENVIRON["component_name"], $0); print}' > $file_name.test.tsx
+    print_line "Creating file $file_name.stories.mdx"
+    cat scripts/.template/Component/Component.stories.mdx.template | 
+    awk '{gsub("VAR_COMPONENT_NAME", ENVIRON["component_name"], $0); print}' > $file_name.stories.mdx
+
+    # print_line "Creating file $file_name.test.tsx"
+    # cat scripts/.template/Component/Component.test.template | 
+    # awk '{gsub("VAR_COMPONENT_NAME", ENVIRON["component_name"], $0); print}' > $file_name.test.tsx
   done < files.txt
 
 

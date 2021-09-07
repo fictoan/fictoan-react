@@ -1,21 +1,14 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentStory } from "@storybook/react";
 
 import { BreadcrumbsWrapper } from "./BreadcrumbsWrapper";
-import { CommonArgTypes } from "../../../utils/storyUtils";
+import { Default as BreadcrumbItem } from "../BreadcrumbItem/BreadcrumbItem.stories";
 
-export default {
-    title: "Components/BreadcrumbsWrapper",
-    component: BreadcrumbsWrapper,
-    argTypes: {
-      ...CommonArgTypes,
-    },
-} as ComponentMeta<typeof BreadcrumbsWrapper>;
-
-const Template: ComponentStory<typeof BreadcrumbsWrapper> = (args) => <BreadcrumbsWrapper {...args} />;
-
-
-export const Default: ComponentStory<typeof BreadcrumbsWrapper> = Template.bind({});
-Default.args = {
-    
-};
+export const Default: ComponentStory<typeof BreadcrumbsWrapper> = (args) => (
+    <BreadcrumbsWrapper {...args}>
+        <BreadcrumbItem {...BreadcrumbItem.args}>Item 1</BreadcrumbItem>
+        <BreadcrumbItem {...BreadcrumbItem.args}>Item 2</BreadcrumbItem>
+        <BreadcrumbItem {...BreadcrumbItem.args}>Item 3</BreadcrumbItem>
+    </BreadcrumbsWrapper>
+);
+BreadcrumbsWrapper.displayName = "BreadcrumbsWrapper";

@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './Row.stories';
+import { Row } from "./Row";
+import { CommonArgTypes } from "../../utils/storyUtils";
+
+<Meta title="Components/Row" component={Row} argTypes={{ ...CommonArgTypes }} />
+
+# Row
+
+This is a Row component.
+
+<Canvas>
+    <Story story={stories.Default} />
+</Canvas>

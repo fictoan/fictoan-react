@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './HRule.stories';
+import { HRule } from "./HRule";
+import { CommonArgTypes } from "../../utils/storyUtils";
+
+<Meta title="Components/HRule" component={HRule} argTypes={{ ...CommonArgTypes }} />
+
+# HRule
+
+This is a HRule component.
+
+<Canvas>
+    <Story story={stories.Default} />
+</Canvas>

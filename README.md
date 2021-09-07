@@ -39,6 +39,14 @@ const MyComponent = props => {
 }
 ```
 
+## Storybook
+Start development server for storybook
+```sh
+yarn storybook
+```
+
+Storybook recipe used for this project: https://github.com/storybookjs/storybook/blob/next/addons/docs/docs/recipes.md#csf-stories-with-mdx-docs
+
 ## License
 Licensed under the [MIT License](LICENSE).
 

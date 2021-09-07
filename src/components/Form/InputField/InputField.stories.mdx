@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './InputField.stories';
+import { InputField } from "./InputField";
+import { CommonArgTypes } from "../../../utils/storyUtils";
+
+<Meta title="Components/InputField" component={InputField} argTypes={{ ...CommonArgTypes }} />
+
+# InputField
+
+This is a InputField component.
+
+<Canvas>
+    <Story story={stories.Default} />
+</Canvas>

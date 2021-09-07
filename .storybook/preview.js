@@ -1,6 +1,5 @@
 import React from 'react';
 import { ThemeProvider } from '../src/components/ThemeProvider/ThemeProvider';
-import { defaultColours } from '../src/styles/DefaultColours';
 
 export const parameters = {
     actions: { argTypesRegex: "^on[A-Z].*" },

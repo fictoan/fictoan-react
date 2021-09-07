@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './FileUpload.stories';
+import { FileUpload } from "./FileUpload";
+import { CommonArgTypes } from "../../../utils/storyUtils";
+
+<Meta title="Components/FileUpload" component={FileUpload} argTypes={{ ...CommonArgTypes }} />
+
+# FileUpload
+
+This is a FileUpload component.
+
+<Canvas>
+    <Story story={stories.Default} />
+</Canvas>

@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './NotificationItem.stories';
+import { NotificationItem } from "./NotificationItem";
+import { CommonArgTypes } from "../../../utils/storyUtils";
+
+<Meta title="Components/NotificationItem" component={NotificationItem} argTypes={{ ...CommonArgTypes }} />
+
+# NotificationItem
+
+This is a NotificationItem component.
+
+<Canvas>
+    <Story story={stories.Default} />
+</Canvas>

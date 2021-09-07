@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './Element.stories';
+import { Element } from "./Element";
+import { CommonArgTypes } from "../../utils/storyUtils";
+
+<Meta title="Components/Element" component={Element} argTypes={{ ...CommonArgTypes }} />
+
+# Element
+
+This is a Element component.
+
+<Canvas>
+    <Story story={stories.Default} />
+</Canvas>

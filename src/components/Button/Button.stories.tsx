@@ -1,19 +1,6 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-
+import { ComponentStory } from "@storybook/react";
 import { Button } from "./Button";
-import { CommonArgTypes } from "../../utils/storyUtils";
-
-export default {
-    title: "Components/Button",
-    component: Button,
-    argTypes: {
-      ...CommonArgTypes,
-    },
-    args: {
-        children: "Button"
-    }
-} as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 

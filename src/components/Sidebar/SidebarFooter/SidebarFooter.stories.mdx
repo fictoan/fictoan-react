@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './SidebarFooter.stories';
+import { SidebarFooter } from "./SidebarFooter";
+import { CommonArgTypes } from "../../../utils/storyUtils";
+
+<Meta title="Components/SidebarFooter" component={SidebarFooter} argTypes={{ ...CommonArgTypes }} />
+
+# SidebarFooter
+
+This is a SidebarFooter component.
+
+<Canvas>
+    <Story story={stories.Default} />
+</Canvas>

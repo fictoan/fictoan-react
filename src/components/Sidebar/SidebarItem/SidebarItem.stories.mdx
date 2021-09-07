@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './SidebarItem.stories';
+import { SidebarItem } from "./SidebarItem";
+import { CommonArgTypes } from "../../../utils/storyUtils";
+
+<Meta title="Components/SidebarItem" component={SidebarItem} argTypes={{ ...CommonArgTypes }} />
+
+# SidebarItem
+
+This is a SidebarItem component.
+
+<Canvas>
+    <Story story={stories.Default} />
+</Canvas>

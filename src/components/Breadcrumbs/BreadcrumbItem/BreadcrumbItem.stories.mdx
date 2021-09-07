@@ -1,0 +1,19 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from "./BreadcrumbItem.stories";
+import { BreadcrumbItem } from "./BreadcrumbItem";
+import { CommonArgTypes } from "../../../utils/storyUtils";
+
+<Meta
+    title="Components/BreadcrumbItem"
+    component={BreadcrumbItem}
+    argTypes={{ ...CommonArgTypes }}
+    args={{ children: { table: { disable: true } } }}
+/>
+
+# BreadcrumbItem
+
+This is a BreadcrumbItem component.
+
+<Canvas>
+    <Story story={stories.Default} />
+</Canvas>

@@ -339,7 +339,7 @@ export const FictoanTheme = {
                         bg : defaultColours.slate
                     }
                 }
-        },
+            },
 
             links : {
                 default    : {

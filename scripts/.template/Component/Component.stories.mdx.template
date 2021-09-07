@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './VAR_COMPONENT_NAME.stories';
+import { VAR_COMPONENT_NAME } from "./VAR_COMPONENT_NAME";
+import { CommonArgTypes } from "../../utils/storyUtils";
+
+<Meta title="Components/VAR_COMPONENT_NAME" component={VAR_COMPONENT_NAME} argTypes={{ ...CommonArgTypes }} />
+
+# VAR_COMPONENT_NAME
+
+This is a VAR_COMPONENT_NAME component.
+
+<Canvas>
+    <Story story={stories.Default} />
+</Canvas>
