@@ -3,11 +3,11 @@ import * as stories from './Element.stories';
 import { Element } from "./Element";
 import { CommonArgTypes } from "../../utils/storyUtils";
 
-<Meta title="Components/Element" component={Element} argTypes={{ ...CommonArgTypes }} />
+<Meta title="Components/Element" component={Element} argTypes={{ ...CommonArgTypes }} args={{ as: "div" }} />
 
 # Element
 
-This is a Element component.
+This is an Element component.
 
 <Canvas>
     <Story story={stories.Default} />

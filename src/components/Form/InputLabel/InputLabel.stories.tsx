@@ -7,5 +7,5 @@ Template.displayName = InputLabel.displayName;
 
 export const Default: FictoanStory<typeof InputLabel> = createStoryFromTemplate(Template);
 Default.args = {
-    
+    label: "Label for a field",
 };

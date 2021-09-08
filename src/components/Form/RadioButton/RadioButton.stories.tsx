@@ -7,5 +7,7 @@ Template.displayName = RadioButton.displayName;
 
 export const Default: FictoanStory<typeof RadioButton> = createStoryFromTemplate(Template);
 Default.args = {
-    
+    label: "Option",
+    id: "radio-button",
+    name: "radio-button-demo"
 };

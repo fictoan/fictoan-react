@@ -7,5 +7,7 @@ Template.displayName = FileUpload.displayName;
 
 export const Default: FictoanStory<typeof FileUpload> = createStoryFromTemplate(Template);
 Default.args = {
-    
+    label: "Upload file",
+    id: "file-upload",
+    name: "file"
 };

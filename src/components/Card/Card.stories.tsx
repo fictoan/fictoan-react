@@ -10,5 +10,5 @@ Default.args = {
     padding: "medium",
     shape: "rounded",
     shadow: "mild",
-    children: "Hey there! This is a card"
+    children: "Hey there! This is a card."
 };

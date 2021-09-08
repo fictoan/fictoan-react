@@ -5,7 +5,33 @@ import { InputField } from "./InputField";
 const Template: FictoanStory<typeof InputField> = (args) => <InputField {...args} />;
 Template.displayName = InputField.displayName;
 
-export const Default: FictoanStory<typeof InputField> = createStoryFromTemplate(Template);
-Default.args = {
-    
+export const Text: FictoanStory<typeof InputField> = createStoryFromTemplate(Template);
+Text.args = {
+    type: "text",
+    label: "First Name",
+    placeholder: "Enter your name",
+    helpText: "This field can only contain a string"
+};
+
+export const Number: FictoanStory<typeof InputField> = createStoryFromTemplate(Template);
+Number.args = {
+    type: "number",
+    label: "Age",
+    placeholder: "Enter your age",
+    helpText: "This field can only contain a number"
+};
+
+export const Email: FictoanStory<typeof InputField> = createStoryFromTemplate(Template);
+Email.args = {
+    type: "email",
+    label: "Email",
+    placeholder: "Enter your email address",
+    helpText: "This field can only contain an email"
+};
+
+export const Password: FictoanStory<typeof InputField> = createStoryFromTemplate(Template);
+Password.args = {
+    type: "password",
+    label: "Password",
+    helpText: "This field will obfuscate your input"
 };

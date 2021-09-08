@@ -7,5 +7,7 @@ Template.displayName = CheckBox.displayName;
 
 export const Default: FictoanStory<typeof CheckBox> = createStoryFromTemplate(Template);
 Default.args = {
-    
+    label: "Accept terms & conditions",
+    id: "accept-checkbox",
+    name: "accept-terms"
 };

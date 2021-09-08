@@ -7,5 +7,21 @@ Template.displayName = Select.displayName;
 
 export const Default: FictoanStory<typeof Select> = createStoryFromTemplate(Template);
 Default.args = {
-    
+    label: "Options",
+    id: "select",
+    name: "select-demo",
+    options: [
+        {
+            label: "Option A",
+            value: "Option A"
+        },
+        {
+            label: "Option B",
+            value: "Option B"
+        },
+        {
+            label: "...",
+            value: "..."
+        },
+    ]
 };

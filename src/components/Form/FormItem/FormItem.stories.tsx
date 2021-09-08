@@ -1,11 +1,10 @@
 import React from "react";
 import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
 import { FormItem } from "./FormItem";
+import { Number as NumberInput } from "../InputField/InputField.stories";
 
-const Template: FictoanStory<typeof FormItem> = (args) => <FormItem {...args} />;
-Template.displayName = FormItem.displayName;
-
-export const Default: FictoanStory<typeof FormItem> = createStoryFromTemplate(Template);
+export const Default: FictoanStory<typeof FormItem> = (args) => <FormItem {...args} />;
 Default.args = {
-    
-};
+    children: <NumberInput {...NumberInput.args}></NumberInput>
+}
+Default.displayName = FormItem.displayName;
