@@ -1,25 +1,26 @@
 import React from "react";
-import { ComponentStory } from "@storybook/react";
+import { createStoryFromTemplate, FictoanStory } from "../../utils/storyUtils";
 import { Button } from "./Button";
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: FictoanStory<typeof Button> = (args) => <Button {...args} />;
+Template.displayName = Button.displayName;
 
-export const Primary = Template.bind({});
+export const Primary: FictoanStory<typeof Button> = createStoryFromTemplate(Template);
 Primary.args = {
     kind: "primary"
 };
 
-export const Secondary = Template.bind({});
+export const Secondary: FictoanStory<typeof Button> = createStoryFromTemplate(Template);
 Secondary.args = {
     kind: "secondary"
 };
 
-export const Tertiary = Template.bind({});
+export const Tertiary: FictoanStory<typeof Button> = createStoryFromTemplate(Template);
 Tertiary.args = {
     kind: "tertiary"
 };
 
-export const Custom = Template.bind({});
+export const Custom: FictoanStory<typeof Button> = createStoryFromTemplate(Template);
 Custom.args = {
     kind: "custom",
     bgColour: "cyan",

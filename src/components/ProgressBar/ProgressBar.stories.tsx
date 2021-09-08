@@ -1,11 +1,11 @@
 import React from "react";
-import { ComponentStory } from "@storybook/react";
+import { createStoryFromTemplate, FictoanStory } from "../../utils/storyUtils";
 import { ProgressBar } from "./ProgressBar";
 
-const Template: ComponentStory<typeof ProgressBar> = (args) => <ProgressBar {...args} />;
+const Template: FictoanStory<typeof ProgressBar> = (args) => <ProgressBar {...args} />;
+Template.displayName = ProgressBar.displayName;
 
-
-export const Default: ComponentStory<typeof ProgressBar> = Template.bind({});
+export const Default: FictoanStory<typeof ProgressBar> = createStoryFromTemplate(Template);
 Default.args = {
     
 };

@@ -1,12 +1,11 @@
 import React from "react";
-import { ComponentStory } from "@storybook/react";
-
+import { createStoryFromTemplate, FictoanStory } from "../../utils/storyUtils";
 import { Card } from "./Card";
 
-const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
+const Template: FictoanStory<typeof Card> = (args) => <Card {...args} />;
+Template.displayName = Card.displayName;
 
-
-export const Default: ComponentStory<typeof Card> = Template.bind({});
+export const Default: FictoanStory<typeof Card> = createStoryFromTemplate(Template);
 Default.args = {
     padding: "medium",
     shape: "rounded",

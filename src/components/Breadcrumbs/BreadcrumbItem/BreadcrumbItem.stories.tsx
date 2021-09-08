@@ -1,13 +1,11 @@
 import React from "react";
-import { ComponentStory } from "@storybook/react";
-
+import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
 import { BreadcrumbItem } from "./BreadcrumbItem";
-import { CommonArgTypes } from "../../../utils/storyUtils";
 
-const Template: ComponentStory<typeof BreadcrumbItem> = (args) => <BreadcrumbItem {...args} />;
+const Template: FictoanStory<typeof BreadcrumbItem> = (args) => <BreadcrumbItem {...args} />;
+Template.displayName = BreadcrumbItem.displayName;
 
-export const Default = Template.bind({});
-Default.displayName = "BreadcrumbItem";
+export const Default: FictoanStory<typeof BreadcrumbItem> = createStoryFromTemplate(Template);
 Default.args = {
     children: "Breadcrumb Item"
 };

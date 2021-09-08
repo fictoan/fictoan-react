@@ -1,12 +1,11 @@
 import React from "react";
-import { ComponentStory } from "@storybook/react";
-
+import { createStoryFromTemplate, FictoanStory } from "../../utils/storyUtils";
 import { Element } from "./Element";
 
-const Template: ComponentStory<typeof Element> = (args) => <Element {...args} />;
+const Template: FictoanStory<typeof Element> = (args) => <Element {...args} />;
+Template.displayName = Element.displayName;
 
-
-export const Default: ComponentStory<typeof Element> = Template.bind({});
+export const Default: FictoanStory<typeof Element> = createStoryFromTemplate(Template);
 Default.args = {
     
 };

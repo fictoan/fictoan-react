@@ -1,11 +1,11 @@
 import React from "react";
-import { ComponentStory } from "@storybook/react";
+import { createStoryFromTemplate, FictoanStory } from "../../utils/storyUtils";
 import { HRule } from "./HRule";
 
-const Template: ComponentStory<typeof HRule> = (args) => <HRule {...args} />;
+const Template: FictoanStory<typeof HRule> = (args) => <HRule {...args} />;
+Template.displayName = HRule.displayName;
 
-
-export const Default: ComponentStory<typeof HRule> = Template.bind({});
+export const Default: FictoanStory<typeof HRule> = createStoryFromTemplate(Template);
 Default.args = {
     
 };

@@ -1,11 +1,11 @@
 import React from "react";
-import { ComponentStory } from "@storybook/react";
+import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
 import { FileUpload } from "./FileUpload";
 
-const Template: ComponentStory<typeof FileUpload> = (args) => <FileUpload {...args} />;
+const Template: FictoanStory<typeof FileUpload> = (args) => <FileUpload {...args} />;
+Template.displayName = FileUpload.displayName;
 
-
-export const Default: ComponentStory<typeof FileUpload> = Template.bind({});
+export const Default: FictoanStory<typeof FileUpload> = createStoryFromTemplate(Template);
 Default.args = {
     
 };

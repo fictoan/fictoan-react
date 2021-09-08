@@ -1,12 +1,11 @@
 import React from "react";
-import { ComponentStory } from "@storybook/react";
-
+import { createStoryFromTemplate, FictoanStory } from "../../utils/storyUtils";
 import { CodeBlock } from "./CodeBlock";
 
-const Template: ComponentStory<typeof CodeBlock> = (args) => <CodeBlock {...args} />;
+const Template: FictoanStory<typeof CodeBlock> = (args) => <CodeBlock {...args} />;
+Template.displayName = CodeBlock.displayName;
 
-
-export const Default: ComponentStory<typeof CodeBlock> = Template.bind({});
+export const Default: FictoanStory<typeof CodeBlock> = createStoryFromTemplate(Template);
 Default.args = {
     source: `const add = (a, b) => {
     return a + b;

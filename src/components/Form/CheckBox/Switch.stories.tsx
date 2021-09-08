@@ -1,12 +1,11 @@
 import React from "react";
-import { ComponentStory } from "@storybook/react";
-
+import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
 import { Switch } from "./Switch";
 
-const Template: ComponentStory<typeof Switch> = (args) => <Switch {...args} />;
+const Template: FictoanStory<typeof Switch> = (args) => <Switch {...args} />;
+Template.displayName = Switch.displayName;
 
-
-export const Default: ComponentStory<typeof Switch> = Template.bind({});
+export const Default: FictoanStory<typeof Switch> = createStoryFromTemplate(Template);
 Default.args = {
     
 };

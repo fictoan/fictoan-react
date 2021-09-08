@@ -1,11 +1,11 @@
 import React from "react";
-import { ComponentStory } from "@storybook/react";
+import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
 import { FormWrapper } from "./FormWrapper";
 
-const Template: ComponentStory<typeof FormWrapper> = (args) => <FormWrapper {...args} />;
+const Template: FictoanStory<typeof FormWrapper> = (args) => <FormWrapper {...args} />;
+Template.displayName = FormWrapper.displayName;
 
-
-export const Default: ComponentStory<typeof FormWrapper> = Template.bind({});
+export const Default: FictoanStory<typeof FormWrapper> = createStoryFromTemplate(Template);
 Default.args = {
     
 };

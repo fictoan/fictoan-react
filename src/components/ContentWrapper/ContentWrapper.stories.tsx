@@ -1,13 +1,11 @@
 import React from "react";
-import { ComponentStory } from "@storybook/react";
-
+import { createStoryFromTemplate, FictoanStory } from "../../utils/storyUtils";
 import { ContentWrapper } from "./ContentWrapper";
-import { CommonArgTypes } from "../../utils/storyUtils";
 
-const Template: ComponentStory<typeof ContentWrapper> = (args) => <ContentWrapper {...args} />;
+const Template: FictoanStory<typeof ContentWrapper> = (args) => <ContentWrapper {...args} />;
+Template.displayName = ContentWrapper.displayName;
 
-
-export const Default: ComponentStory<typeof ContentWrapper> = Template.bind({});
+export const Default: FictoanStory<typeof ContentWrapper> = createStoryFromTemplate(Template);
 Default.args = {
     
 };

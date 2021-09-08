@@ -1,11 +1,11 @@
 import React from "react";
-import { ComponentStory } from "@storybook/react";
+import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
 import { RadioButton } from "./RadioButton";
 
-const Template: ComponentStory<typeof RadioButton> = (args) => <RadioButton {...args} />;
+const Template: FictoanStory<typeof RadioButton> = (args) => <RadioButton {...args} />;
+Template.displayName = RadioButton.displayName;
 
-
-export const Default: ComponentStory<typeof RadioButton> = Template.bind({});
+export const Default: FictoanStory<typeof RadioButton> = createStoryFromTemplate(Template);
 Default.args = {
     
 };

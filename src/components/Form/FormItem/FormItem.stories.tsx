@@ -1,12 +1,11 @@
 import React from "react";
-import { ComponentStory } from "@storybook/react";
-
+import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
 import { FormItem } from "./FormItem";
 
-const Template: ComponentStory<typeof FormItem> = (args) => <FormItem {...args} />;
+const Template: FictoanStory<typeof FormItem> = (args) => <FormItem {...args} />;
+Template.displayName = FormItem.displayName;
 
-
-export const Default: ComponentStory<typeof FormItem> = Template.bind({});
+export const Default: FictoanStory<typeof FormItem> = createStoryFromTemplate(Template);
 Default.args = {
     
 };

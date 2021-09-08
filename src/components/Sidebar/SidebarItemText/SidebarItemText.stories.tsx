@@ -1,11 +1,11 @@
 import React from "react";
-import { ComponentStory } from "@storybook/react";
+import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
 import { SidebarItemText } from "./SidebarItemText";
 
-const Template: ComponentStory<typeof SidebarItemText> = (args) => <SidebarItemText {...args} />;
+const Template: FictoanStory<typeof SidebarItemText> = (args) => <SidebarItemText {...args} />;
+Template.displayName = SidebarItemText.displayName;
 
-
-export const Default: ComponentStory<typeof SidebarItemText> = Template.bind({});
+export const Default: FictoanStory<typeof SidebarItemText> = createStoryFromTemplate(Template);
 Default.args = {
     
 };

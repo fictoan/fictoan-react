@@ -1,11 +1,11 @@
 import React from "react";
-import { ComponentStory } from "@storybook/react";
+import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
 import { NotificationItem } from "./NotificationItem";
 
-const Template: ComponentStory<typeof NotificationItem> = (args) => <NotificationItem {...args} />;
+const Template: FictoanStory<typeof NotificationItem> = (args) => <NotificationItem {...args} />;
+Template.displayName = NotificationItem.displayName;
 
-
-export const Default: ComponentStory<typeof NotificationItem> = Template.bind({});
+export const Default: FictoanStory<typeof NotificationItem> = createStoryFromTemplate(Template);
 Default.args = {
     
 };

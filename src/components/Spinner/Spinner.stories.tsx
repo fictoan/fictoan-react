@@ -1,11 +1,11 @@
 import React from "react";
-import { ComponentStory } from "@storybook/react";
+import { createStoryFromTemplate, FictoanStory } from "../../utils/storyUtils";
 import { Spinner } from "./Spinner";
 
-const Template: ComponentStory<typeof Spinner> = (args) => <Spinner {...args} />;
+const Template: FictoanStory<typeof Spinner> = (args) => <Spinner {...args} />;
+Template.displayName = Spinner.displayName;
 
-
-export const Default: ComponentStory<typeof Spinner> = Template.bind({});
+export const Default: FictoanStory<typeof Spinner> = createStoryFromTemplate(Template);
 Default.args = {
     
 };

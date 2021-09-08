@@ -1,11 +1,11 @@
 import React from "react";
-import { ComponentStory } from "@storybook/react";
+import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
 import { InputField } from "./InputField";
 
-const Template: ComponentStory<typeof InputField> = (args) => <InputField {...args} />;
+const Template: FictoanStory<typeof InputField> = (args) => <InputField {...args} />;
+Template.displayName = InputField.displayName;
 
-
-export const Default: ComponentStory<typeof InputField> = Template.bind({});
+export const Default: FictoanStory<typeof InputField> = createStoryFromTemplate(Template);
 Default.args = {
     
 };

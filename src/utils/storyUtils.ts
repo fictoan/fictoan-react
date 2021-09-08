@@ -1,4 +1,6 @@
-import { ArgTypes } from "@storybook/react";
+import React from "react";
+import { ArgTypes, ComponentStory } from "@storybook/react";
+import { JSXElementConstructor } from "react";
 import { defaultColours } from "../styles/DefaultColours";
 
 const DefaultOptions = {
@@ -13,6 +15,14 @@ const DefaultOptions = {
         color.replace(/([a-z]*)(\d*)/, Number.isInteger(parseInt(color[color.length - 1])) ? "$1-$2" : "$1")
     ),
 } as const;
+
+export type FictoanStory<T extends keyof JSX.IntrinsicElements | JSXElementConstructor<any>> = ComponentStory<T> & { displayName?: string };
+
+export const createStoryFromTemplate = (template: FictoanStory<any>) => {
+    const story = template.bind({});
+    story.displayName = template.displayName;
+    return story;
+}
 
 type ArgTypeOptions = {
     defaultValue?: any;
