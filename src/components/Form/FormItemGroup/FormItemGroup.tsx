@@ -5,11 +5,22 @@ import { CommonAndHTMLProps } from "../../Element/constants";
 
 import { FormItemGroupStyled } from "./FormItemGroup.styled";
 
+// prettier-ignore
+export interface FormItemGroupCustomProps {
+    isJoint ? : boolean;
+}
+
 export type FormItemGroupElementType = HTMLDivElement;
-export type FormItemGroupProps = CommonAndHTMLProps<FormItemGroupElementType>;
+export type FormItemGroupProps = Omit<CommonAndHTMLProps<FormItemGroupElementType>, keyof FormItemGroupCustomProps> & FormItemGroupCustomProps;
 
 export const FormItemGroup = React.forwardRef(
-    ({ ...props }: FormItemGroupProps, ref: React.Ref<FormItemGroupElementType>) => {
-        return <Element<FormItemGroupElementType> as={FormItemGroupStyled} ref={ref} {...props} />;
+    ({ isJoint, ...props }: FormItemGroupProps, ref: React.Ref<FormItemGroupElementType>) => {
+        let classNames = [];
+
+        if (isJoint) {
+            classNames.push("is-joint");
+        }
+
+        return <Element<FormItemGroupElementType> as={FormItemGroupStyled} ref={ref} classNames={classNames} {...props} />;
     }
 );

@@ -23,5 +23,6 @@ Default.args = {
             label: "...",
             value: "..."
         },
-    ]
+    ],
+    required: true
 };

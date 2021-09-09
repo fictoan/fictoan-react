@@ -13,24 +13,24 @@ export const Default: FictoanStory<typeof FormWrapper> = (args) => (
     <FormWrapper {...args}>
         <FormItemGroup>
             <FormItem>
-                <TextInput {...TextInput.args} label="First name"></TextInput>
+                <TextInput {...TextInput.args} label="First name" required></TextInput>
             </FormItem>
             <FormItem>
-                <TextInput {...TextInput.args} label="Last name"></TextInput>
+                <TextInput {...TextInput.args} label="Last name" required></TextInput>
             </FormItem>
         </FormItemGroup>
         <FormItem>
-            <EmailInput {...EmailInput.args}></EmailInput>
+            <EmailInput {...EmailInput.args} required></EmailInput>
         </FormItem>
         <FormItem>
-            <PasswordInput {...PasswordInput.args}></PasswordInput>
+            <PasswordInput {...PasswordInput.args} required></PasswordInput>
         </FormItem>
         <FormItem>
             <InputLabel label="Choose your option" htmlFor="radio-buttons-demo" />
-            <RadioGroup {...RadioGroup.args} id="radio-buttons-demo"></RadioGroup>
+            <RadioGroup {...RadioGroup.args} id="radio-buttons-demo" required></RadioGroup>
         </FormItem>
         <FormItem>
-            <CheckBox {...CheckBox.args}></CheckBox>
+            <CheckBox {...CheckBox.args} required></CheckBox>
         </FormItem>
         <FormItem>
             <Button {...Button.args} type="button">Submit</Button>

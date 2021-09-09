@@ -2,6 +2,12 @@
 - Add Storybook
 - Add `label`, `id` and remove `name` props from RadioGroup `options` type
 - Remove `as` from RadioButton and CheckBox props
+<!-- Form improvements -->
+- Remove `isAnswers` prop from FormItem
+- Remove FormItemJointGroup component; Add `isJoint` prop to FormItemGroup
+- Remove Extra spacing after FormItemGroup
+<!-- Sidebar improvements -->
+<!-- - Fix Sidebar footer isStick -->
 
 ### 0.34.0
 - Replace `react-syntax-highlighter` with `prism-react-renderer`
