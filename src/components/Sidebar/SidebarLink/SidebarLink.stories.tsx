@@ -7,5 +7,5 @@ Template.displayName = SidebarLink.displayName;
 
 export const Default: FictoanStory<typeof SidebarLink> = createStoryFromTemplate(Template);
 Default.args = {
-    
+    children: "This is the Sidebar Link"
 };

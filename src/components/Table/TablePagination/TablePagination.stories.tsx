@@ -7,5 +7,10 @@ Template.displayName = TablePagination.displayName;
 
 export const Default: FictoanStory<typeof TablePagination> = createStoryFromTemplate(Template);
 Default.args = {
-    
+    pageIndex: 1,
+    rangeStart: 1,
+    rangeEnd: 10,
+    hasPreviousPage: false,
+    hasNextPage: true,
+    totalRecords: 100
 };

@@ -7,5 +7,5 @@ Template.displayName = InfoPanel.displayName;
 
 export const Default: FictoanStory<typeof InfoPanel> = createStoryFromTemplate(Template);
 Default.args = {
-    
+    children: "This is an InfoPanel"
 };

@@ -6,6 +6,4 @@ const Template: FictoanStory<typeof SidebarItemIcon> = (args) => <SidebarItemIco
 Template.displayName = SidebarItemIcon.displayName;
 
 export const Default: FictoanStory<typeof SidebarItemIcon> = createStoryFromTemplate(Template);
-Default.args = {
-    
-};
+Default.args = {};

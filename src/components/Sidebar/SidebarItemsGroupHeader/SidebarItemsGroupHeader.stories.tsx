@@ -7,5 +7,5 @@ Template.displayName = SidebarItemsGroupHeader.displayName;
 
 export const Default: FictoanStory<typeof SidebarItemsGroupHeader> = createStoryFromTemplate(Template);
 Default.args = {
-    
+    children: "This is the Sidebar Items Group Header"
 };

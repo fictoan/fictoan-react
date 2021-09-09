@@ -7,5 +7,6 @@ Template.displayName = Heading.displayName;
 
 export const Default: FictoanStory<typeof Heading> = createStoryFromTemplate(Template);
 Default.args = {
-    
+    as: "h1",
+    children: "This is a heading"
 };
