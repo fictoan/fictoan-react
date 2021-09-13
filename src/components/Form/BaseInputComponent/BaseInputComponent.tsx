@@ -6,7 +6,7 @@ import { InputLabel } from "../InputLabel/InputLabel";
 import { FormItem } from "../FormItem/FormItem";
 import { BaseInputComponentWithIconProps } from "./constants";
 
-export type InputFieldElementType = HTMLInputElement | HTMLDivElement;
+export type InputFieldElementType = HTMLInputElement | HTMLDivElement | HTMLSelectElement;
 export const BaseInputComponent = React.forwardRef(
     <K extends InputFieldElementType>(
         {
