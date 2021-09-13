@@ -6,6 +6,8 @@
 - Remove `isAnswers` prop from FormItem
 - Remove FormItemJointGroup component; Add `isJoint` prop to FormItemGroup
 - Remove Extra spacing after FormItemGroup
+- Add `fields` and `onFieldsChange` prop to FormWrapper to allow form creation using an array of config
+- RadioGroup now uses BaseInputComponent as well
 <!-- Sidebar improvements -->
 <!-- - Fix Sidebar footer isStick -->
 

@@ -6,9 +6,9 @@ import { InputLabel } from "../InputLabel/InputLabel";
 import { FormItem } from "../FormItem/FormItem";
 import { BaseInputComponentWithIconProps } from "./constants";
 
-export type InputFieldElementType = HTMLInputElement;
+export type InputFieldElementType = HTMLInputElement | HTMLDivElement;
 export const BaseInputComponent = React.forwardRef(
-    <K extends HTMLInputElement>(
+    <K extends InputFieldElementType>(
         {
             as: Component,
             className,
@@ -21,7 +21,7 @@ export const BaseInputComponent = React.forwardRef(
             classNames,
             ...inputProps
         }: BaseInputComponentWithIconProps<K>,
-        ref: React.LegacyRef<HTMLInputElement>
+        ref: React.LegacyRef<InputFieldElementType>
     ) => (
         <FormItem>
             <Element<K>
@@ -43,5 +43,5 @@ export const BaseInputComponent = React.forwardRef(
         </FormItem>
     )
 ) as <K extends InputFieldElementType>(
-    props: BaseInputComponentWithIconProps<K> & { ref?: React.LegacyRef<HTMLInputElement> }
+    props: BaseInputComponentWithIconProps<K> & { ref?: React.LegacyRef<InputFieldElementType> }
 ) => React.ReactElement;
