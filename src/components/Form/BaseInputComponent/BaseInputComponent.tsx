@@ -36,10 +36,15 @@ export const BaseInputComponent = React.forwardRef(
                 {...inputProps}
             />
 
-            {iconLeft && <span className="icon-left">{iconLeft}</span>}
-            {iconRight && <span className="icon-right">{iconRight}</span>}
+            {iconLeft && <Element as="span" className="icon-left">{iconLeft}</Element>}
+            {iconRight && <Element as="span" className="icon-right">{iconRight}</Element>}
 
-            {label && <InputLabel label={label} helpText={helpText} errorText={errorText} htmlFor={inputProps.id} />}
+            {label && <InputLabel label={label} htmlFor={inputProps.id} />}
+
+            <Element as="div" className="info-section vertically-center-items" marginTop="nano">
+                {helpText && <Element as="span" className="help-text">{helpText}</Element>}
+                {errorText && <Element as="span" className="error-text">{errorText}</Element>}
+            </Element>
         </FormItem>
     )
 ) as <K extends InputFieldElementType>(

@@ -30,7 +30,6 @@ Default.args = {
             <PasswordInput {...PasswordInput.args} required></PasswordInput>
         </FormItem>,
         <FormItem>
-            <InputLabel label="Choose your option" htmlFor="radio-buttons-demo" />
             <RadioGroup {...RadioGroup.args} id="radio-buttons-demo" required></RadioGroup>
         </FormItem>,
         <FormItem>

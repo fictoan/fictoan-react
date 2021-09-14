@@ -147,13 +147,13 @@ export const FictoanTheme = {
             border       : defaultColours.slate40,
             label        : customColours.shade,
             text         : customColours.shade,
-            borderRadius : "4px"
+            borderRadius : "4px",
+            helpText     : defaultColours.slate60
         },
         onFocus    : {
             bg       : defaultColours.white,
             border   : customColours.hue,
             text     : customColours.shade,
-            helpText : customColours.shade
         },
         isValid    : {
             bg     : defaultColours.white,
@@ -161,10 +161,10 @@ export const FictoanTheme = {
             label  : customColours.shade
         },
         isInvalid  : {
-            bg       : defaultColours.red10,
-            border   : defaultColours.red80,
-            label    : defaultColours.red,
-            helpText : defaultColours.red
+            bg        : defaultColours.red10,
+            border    : defaultColours.red80,
+            label     : defaultColours.red,
+            errorText : defaultColours.red
         },
         isReadOnly : {
             bg     : defaultColours.grey50,
@@ -560,10 +560,5 @@ export const FictoanTheme = {
 
     spinner: {
         color: defaultColours.teal,
-    },
-
-    tooltip: {
-        color : defaultColours.white,
-        bg    : defaultColours.grey
     }
 };

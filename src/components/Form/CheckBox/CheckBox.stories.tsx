@@ -10,5 +10,6 @@ Default.args = {
     label: "Accept terms & conditions",
     id: "accept-checkbox",
     name: "accept-terms",
-    required: true
+    required: true,
+    helpText: "Hope you read them as well"
 };

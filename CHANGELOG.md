@@ -9,6 +9,12 @@
 - Add `fields` and `onFieldsChange` prop to FormWrapper to allow form creation using an array of config
 - RadioGroup and Select now uses BaseInputComponent
 - Add basic Tooltip component
+- Add better and consistent help & error text for each form field; Make InputLabel atomic
+
+**BREAKING CHANGES**
+- `helpText` is now part of inputField.default instead of inputField.onFocus inside theme
+- `helpText` inside inputField.isInvalid has been renamed to `errorText`
+
 <!-- Sidebar improvements -->
 <!-- - Fix Sidebar footer isStick -->
 
