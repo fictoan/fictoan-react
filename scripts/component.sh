@@ -65,9 +65,9 @@ create_component() {
   cat scripts/.template/Component/Component.stories.mdx.template | 
   awk '{gsub("VAR_COMPONENT_NAME", ENVIRON["name"], $0); print}' > $components_path/$name/$name.stories.mdx
 
-  print_line "Creating file $components_path/$name/$name.test.tsx"
-  cat scripts/.template/Component/Component.test.template | 
-  awk '{gsub("VAR_COMPONENT_NAME", ENVIRON["name"], $0); print}' > $components_path/$name/$name.test.tsx
+#   print_line "Creating file $components_path/$name/$name.test.tsx"
+#   cat scripts/.template/Component/Component.test.template | 
+#   awk '{gsub("VAR_COMPONENT_NAME", ENVIRON["name"], $0); print}' > $components_path/$name/$name.test.tsx
 }
 
 check_project_type

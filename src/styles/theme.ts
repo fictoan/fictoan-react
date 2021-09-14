@@ -560,5 +560,10 @@ export const FictoanTheme = {
 
     spinner: {
         color: defaultColours.teal,
+    },
+
+    tooltip: {
+        color : defaultColours.white,
+        bg    : defaultColours.grey
     }
 };

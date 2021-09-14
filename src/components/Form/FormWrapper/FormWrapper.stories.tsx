@@ -44,7 +44,7 @@ Default.args = {
 
 export const UsingFieldsProp: FictoanStory<typeof FormWrapper> = createStoryFromTemplate(Template);
 UsingFieldsProp.args = {
-    // onFieldsChange: (e) => console.log(e.currentTarget.name, e.currentTarget.type, e.currentTarget.value),
+    onFieldsChange: (e) => console.log(e.currentTarget.name, e.currentTarget.type, e.currentTarget.value),
     fields: [
         {
             as: "CheckBox",

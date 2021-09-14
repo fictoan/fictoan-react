@@ -8,6 +8,7 @@
 - Remove Extra spacing after FormItemGroup
 - Add `fields` and `onFieldsChange` prop to FormWrapper to allow form creation using an array of config
 - RadioGroup and Select now uses BaseInputComponent
+- Add basic Tooltip component
 <!-- Sidebar improvements -->
 <!-- - Fix Sidebar footer isStick -->
 
