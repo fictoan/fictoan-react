@@ -2,6 +2,7 @@ import React from "react";
 
 import { Element } from "../../Element/Element";
 import { CommonAndHTMLProps, SpacingTypes } from "../../Element/constants";
+import { Callout } from "../../Callout/Callout";
 
 import { FormWrapperStyled } from "./FormWrapper.styled";
 import { FormFieldsConfig, generateFormThroughConfig } from "./FormGenerator";
@@ -11,6 +12,7 @@ export interface FormWrapperCustomProps {
     spacing        ? : SpacingTypes;
     fields         ? : FormFieldsConfig[];
     onFieldsChange ? : React.FormEventHandler;
+    errorText      ? : string;
 }
 
 export type FormWrapperElementType = HTMLFormElement;
@@ -18,7 +20,7 @@ export type FormWrapperProps = Omit<CommonAndHTMLProps<FormWrapperElementType>, 
     FormWrapperCustomProps;
 
 export const FormWrapper = React.forwardRef(
-    ({ spacing = "small", fields, onFieldsChange, children, ...props }: FormWrapperProps, ref: React.Ref<FormWrapperElementType>) => {
+    ({ spacing = "small", fields, onFieldsChange, children, errorText, ...props }: FormWrapperProps, ref: React.Ref<FormWrapperElementType>) => {
         let classNames = [];
 
         if (spacing) {
@@ -34,9 +36,12 @@ export const FormWrapper = React.forwardRef(
                 as={FormWrapperStyled}
                 ref={ref}
                 classNames={classNames}
-                children={children}
                 {...props}
-            />
+            >
+                {children}
+
+                {errorText && <Callout kind="error">{errorText}</Callout>}
+            </Element>
         );
     }
 );

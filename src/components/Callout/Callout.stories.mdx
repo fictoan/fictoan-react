@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './Callout.stories';
+import { Callout } from "./Callout";
+import { CommonArgTypes } from "../../utils/storyUtils";
+
+<Meta title="Components/Callout" component={Callout} argTypes={{ ...CommonArgTypes }} />
+
+# Callout
+
+This is a Callout component.
+
+<Canvas>
+    <Story story={stories.Default} />
+</Canvas>

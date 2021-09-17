@@ -4,7 +4,6 @@ import { FormWrapper } from "./FormWrapper";
 import { Text as TextInput, Email as EmailInput, Password as PasswordInput } from "../InputField/InputField.stories";
 import { Default as FormItemGroup } from "../FormItemGroup/FormItemGroup.stories";
 import { Default as FormItem } from "../FormItem/FormItem.stories";
-import { Default as InputLabel } from "../InputLabel/InputLabel.stories";
 import { Default as RadioGroup } from "../RadioButton/RadioGroup.stories";
 import { Default as CheckBox } from "../CheckBox/CheckBox.stories";
 import { Primary as Button } from "../../Button/Button.stories";
@@ -14,6 +13,7 @@ Template.displayName = FormWrapper.displayName;
 
 export const Default: FictoanStory<typeof FormWrapper> = createStoryFromTemplate(Template);
 Default.args = {
+    errorText: "Something went wrong. Please try again.",
     children: [
         <FormItemGroup>
             <FormItem>
