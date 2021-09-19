@@ -8,14 +8,11 @@ import { Text } from "./components/Typography/Text";
 
 import { SidebarWrapper } from "./components/Sidebar/SidebarWrapper/SidebarWrapper";
 import { SidebarHeader } from "./components/Sidebar/SidebarHeader/SidebarHeader";
-import { SidebarLinksWrapper } from "./components/Sidebar/SidebarLinksWrapper/SidebarLinksWrapper";
 import { SidebarItem } from "./components/Sidebar/SidebarItem/SidebarItem";
 import { SidebarItemIcon } from "./components/Sidebar/SidebarItemIcon/SidebarItemIcon";
 import { SidebarItemText } from "./components/Sidebar/SidebarItemText/SidebarItemText";
 import { SidebarItemsGroup } from "./components/Sidebar/SidebarItemsGroup/SidebarItemsGroup";
 import { SidebarItemsGroupHeader } from "./components/Sidebar/SidebarItemsGroupHeader/SidebarItemsGroupHeader";
-import { SidebarLink } from "./components/Sidebar/SidebarLink/SidebarLink";
-import { SidebarNestedLinks } from "./components/Sidebar/SidebarNestedLinks/SidebarNestedLinks";
 import { SidebarFooter } from "./components/Sidebar/SidebarFooter/SidebarFooter";
 
 import { ContentWrapper } from "./components/ContentWrapper/ContentWrapper";
@@ -73,14 +70,11 @@ export {
     Card,
     SidebarWrapper,
     SidebarHeader,
-    SidebarLinksWrapper,
     SidebarItem,
     SidebarItemIcon,
     SidebarItemText,
     SidebarItemsGroup,
     SidebarItemsGroupHeader,
-    SidebarLink,
-    SidebarNestedLinks,
     SidebarFooter,
     ContentWrapper,
     FormWrapper,

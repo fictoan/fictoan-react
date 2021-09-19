@@ -2,6 +2,12 @@
 - Add Storybook
 - Add `label`, `id` and remove `name` props from RadioGroup `options` type
 - Remove `as` from RadioButton and CheckBox props
+<!-- Sidebar improvements -->
+- Remove `isSticky` from Sidebar footer
+- `sidebar.body.bg` is now `sidebar.bg` in theme
+- Add sidebar width properties to theme; SidebarHeader, SidebarFooter and SidebarItem span 100% automatically
+- Make SidebarHeader and SidebarFooter sticky instead of fixed to get simpler and consistent sidebar layout
+- Remove `linksWrapper.marginTop` and `linksWrapper.marginBottom` from theme
 
 ### 0.34.0
 - Replace `react-syntax-highlighter` with `prism-react-renderer`
