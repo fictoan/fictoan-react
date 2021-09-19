@@ -25,6 +25,10 @@ Default.args = {
             <SidebarItemIcon></SidebarItemIcon>
             <SidebarItemText linkText="Item 2"></SidebarItemText>
         </SidebarItem>,
+        <SidebarItem>
+            <SidebarItemIcon></SidebarItemIcon>
+            <SidebarItemText linkText="Item 3"></SidebarItemText>
+        </SidebarItem>,
 
         <SidebarItemsGroup>
             <SidebarItemsGroupHeader>
@@ -44,6 +48,8 @@ Default.args = {
             </SidebarItem>
         </SidebarItemsGroup>,
 
-        <SidebarFooter>Sidebar Footer</SidebarFooter>
+        <SidebarFooter padding="micro">
+            Sidebar footer
+        </SidebarFooter>
     ]
 };

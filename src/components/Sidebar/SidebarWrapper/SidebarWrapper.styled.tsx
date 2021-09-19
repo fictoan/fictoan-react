@@ -4,7 +4,6 @@ import { SidebarWrapperProps } from "./SidebarWrapper";
 import { SidebarItemIconProps } from "../SidebarItemIcon/SidebarItemIcon";
 
 import { SidebarHeaderStyled } from "../SidebarHeader/SidebarHeader.styled";
-import { SidebarLinksWrapperStyled } from "../SidebarLinksWrapper/SidebarLinksWrapper.styled";
 import { SidebarItemStyled } from "../SidebarItem/SidebarItem.styled"
 import { SidebarItemTextStyled } from "../SidebarItemText/SidebarItemText.styled"
 import { SidebarItemIconStyled } from "../SidebarItemIcon/SidebarItemIcon.styled"
@@ -15,16 +14,16 @@ import { SidebarFooterStyled } from "../SidebarFooter/SidebarFooter.styled";
 
 export const SidebarWrapperStyled = styled.aside`
     display          : flex;
+    flex-direction   : column;
     position         : fixed;
     top              : 0;
     left             : 0;
     bottom           : 0;
-    flex-direction   : column;
-    width            : 240px;
+    width            : ${(props: SidebarWrapperProps) => props.theme.sidebar.width};
     min-height       : 100vh;
     overflow-y       : auto;
     transition       : all 0.4s ease-in-out;
-    background-color : ${(props: SidebarWrapperProps) => props.theme.sidebar.body.bg};
+    background-color : ${(props: SidebarWrapperProps) => props.theme.sidebar.bg};
     box-shadow       : 2px 0 8px -4px rgba(0, 0, 0, 0.16);
     z-index          : 10000;
     font-size        : ${(props: SidebarWrapperProps) => props.theme.sidebar.linksWrapper.links.default.scale}%;
@@ -33,19 +32,16 @@ export const SidebarWrapperStyled = styled.aside`
     * { user-select : none; }
     
     @media (max-width : 900px) {
-        left    : -300px;
+        left    : ${(props: SidebarWrapperProps) => `calc(-1 * 100%)`};
         z-index : 4000;
     }
 
     /*  COLLAPSED  ========================================================  */
     &.collapsed {
-        width      : 48px;
+        width      : ${(props: SidebarWrapperProps) => props.theme.sidebar.isCollapsed.width};
         overflow-x : hidden;
-        overflow-y : scroll;
 
         ${SidebarHeaderStyled} {
-            width : 48px;
-
             .header-logo { display : none; }
 
             .header-icon {
@@ -60,13 +56,13 @@ export const SidebarWrapperStyled = styled.aside`
             position : absolute;
         }
 
+        // TODO: Ask why + selector is required here
         ${SidebarItemStyled}:hover ${SidebarItemIconStyled} + ${SidebarItemTextStyled} {
             display          : flex;
             position         : fixed;
             left             : 40px;
             align-self       : center;
             border-radius    : 4px;
-            margin-top       : 8px;
             padding          : 4px 8px;
             background-color : ${(props: SidebarWrapperProps) => props.theme.sidebar.isCollapsed.label.bg};
             color            : ${(props: SidebarWrapperProps) => props.theme.sidebar.isCollapsed.label.text};
@@ -77,13 +73,9 @@ export const SidebarWrapperStyled = styled.aside`
         ${SidebarItemsGroupHeaderStyled}::after { display : none; }
 
         ${SidebarFooterStyled} {
-            width        : 48px;
             padding-left : 0;
         }
     }
-
-    ${SidebarHeaderStyled}.is-sticky ~ ${SidebarLinksWrapperStyled} { margin-top : 100px; }
-    ${SidebarFooterStyled}.is-sticky ~ ${SidebarLinksWrapperStyled} { margin-bottom : 100px; }
 
     a {
         width : unset;

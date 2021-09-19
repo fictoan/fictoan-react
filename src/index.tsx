@@ -8,14 +8,12 @@ export { Text } from "./components/Typography/Text";
 
 export { SidebarWrapper } from "./components/Sidebar/SidebarWrapper/SidebarWrapper";
 export { SidebarHeader } from "./components/Sidebar/SidebarHeader/SidebarHeader";
-export { SidebarLinksWrapper } from "./components/Sidebar/SidebarLinksWrapper/SidebarLinksWrapper";
+export { SidebarItemsWrapper } from "./components/Sidebar/SidebarItemsWrapper/SidebarItemsWrapper";
 export { SidebarItem } from "./components/Sidebar/SidebarItem/SidebarItem";
 export { SidebarItemIcon } from "./components/Sidebar/SidebarItemIcon/SidebarItemIcon";
 export { SidebarItemText } from "./components/Sidebar/SidebarItemText/SidebarItemText";
 export { SidebarItemsGroup } from "./components/Sidebar/SidebarItemsGroup/SidebarItemsGroup";
 export { SidebarItemsGroupHeader } from "./components/Sidebar/SidebarItemsGroupHeader/SidebarItemsGroupHeader";
-export { SidebarLink } from "./components/Sidebar/SidebarLink/SidebarLink";
-export { SidebarNestedLinks } from "./components/Sidebar/SidebarNestedLinks/SidebarNestedLinks";
 export { SidebarFooter } from "./components/Sidebar/SidebarFooter/SidebarFooter";
 
 export { ContentWrapper } from "./components/ContentWrapper/ContentWrapper";

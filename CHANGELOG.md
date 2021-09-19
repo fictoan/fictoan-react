@@ -13,13 +13,20 @@
 - Add Callout component
 - Add error text for FormWrapper which uses Callout component
 
+<!-- Sidebar improvements -->
+- Remove `isSticky` from Sidebar footer
+- `sidebar.body.bg` is now `sidebar.bg` in theme
+- Add sidebar width properties to theme; SidebarHeader, SidebarFooter and SidebarItem span 100% automatically
+- Make SidebarHeader and SidebarFooter sticky instead of fixed to get simpler and consistent sidebar layout
+- Remove `linksWrapper.marginTop` and `linksWrapper.marginBottom` from theme
+
 **BREAKING CHANGES**
 - FormItemJointGroup removed
 - `helpText` is now part of inputField.default instead of inputField.onFocus inside theme
 - `helpText` inside inputField.isInvalid has been renamed to `errorText`
-
-<!-- Sidebar improvements -->
-<!-- - Fix Sidebar footer isStick -->
+- Remove `isSticky` from Sidebar footer
+- `sidebar.body.bg` is now `sidebar.bg` in theme
+- Remove `linksWrapper.marginTop` and `linksWrapper.marginBottom` from theme
 
 ### 0.34.0
 - Replace `react-syntax-highlighter` with `prism-react-renderer`
