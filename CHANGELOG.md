@@ -12,6 +12,7 @@
 - Add better and consistent help & error text for each form field; Make InputLabel atomic
 - Add Callout component
 - Add error text for FormWrapper which uses Callout component
+- Add sizes to Switch component
 
 <!-- Sidebar improvements -->
 - Remove `isSticky` from Sidebar footer
@@ -30,6 +31,7 @@
 - `sidebar.body.bg` is now `sidebar.bg` in theme
 - Remove `linksWrapper.marginTop` and `linksWrapper.marginBottom` from theme
 - Remove SidebarItemsGroup and SidebarItemsGroupHeader; Use ExpandableContent component instead
+- Default Switch size now `medium` which is larger than before; Set to `small` for previous size
 
 ### 0.34.0
 - Replace `react-syntax-highlighter` with `prism-react-renderer`
