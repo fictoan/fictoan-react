@@ -8,7 +8,6 @@ export { Text } from "./components/Typography/Text";
 
 export { SidebarWrapper } from "./components/Sidebar/SidebarWrapper/SidebarWrapper";
 export { SidebarHeader } from "./components/Sidebar/SidebarHeader/SidebarHeader";
-export { SidebarItemsWrapper } from "./components/Sidebar/SidebarItemsWrapper/SidebarItemsWrapper";
 export { SidebarItem } from "./components/Sidebar/SidebarItem/SidebarItem";
 export { SidebarItemIcon } from "./components/Sidebar/SidebarItemIcon/SidebarItemIcon";
 export { SidebarItemText } from "./components/Sidebar/SidebarItemText/SidebarItemText";
