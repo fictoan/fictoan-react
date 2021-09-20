@@ -19,6 +19,8 @@
 - Add sidebar width properties to theme; SidebarHeader, SidebarFooter and SidebarItem span 100% automatically
 - Make SidebarHeader and SidebarFooter sticky instead of fixed to get simpler and consistent sidebar layout
 - Remove `linksWrapper.marginTop` and `linksWrapper.marginBottom` from theme
+- Remove SidebarItemsGroup and SidebarItemsGroupHeader
+- Add ExpandableContent component which implements details and summary tags
 
 **BREAKING CHANGES**
 - FormItemJointGroup removed
@@ -27,6 +29,7 @@
 - Remove `isSticky` from Sidebar footer
 - `sidebar.body.bg` is now `sidebar.bg` in theme
 - Remove `linksWrapper.marginTop` and `linksWrapper.marginBottom` from theme
+- Remove SidebarItemsGroup and SidebarItemsGroupHeader; Use ExpandableContent component instead
 
 ### 0.34.0
 - Replace `react-syntax-highlighter` with `prism-react-renderer`

@@ -11,8 +11,6 @@ export { SidebarHeader } from "./components/Sidebar/SidebarHeader/SidebarHeader"
 export { SidebarItem } from "./components/Sidebar/SidebarItem/SidebarItem";
 export { SidebarItemIcon } from "./components/Sidebar/SidebarItemIcon/SidebarItemIcon";
 export { SidebarItemText } from "./components/Sidebar/SidebarItemText/SidebarItemText";
-export { SidebarItemsGroup } from "./components/Sidebar/SidebarItemsGroup/SidebarItemsGroup";
-export { SidebarItemsGroupHeader } from "./components/Sidebar/SidebarItemsGroupHeader/SidebarItemsGroupHeader";
 export { SidebarFooter } from "./components/Sidebar/SidebarFooter/SidebarFooter";
 
 export { ContentWrapper } from "./components/ContentWrapper/ContentWrapper";
@@ -33,6 +31,8 @@ export { RadioGroup } from "./components/Form/RadioButton/RadioGroup";
 export { RadioButton } from "./components/Form/RadioButton/RadioButton";
 export { CheckBox } from "./components/Form/CheckBox/CheckBox";
 export { Switch } from "./components/Form/CheckBox/Switch";
+
+export { ExpandableContent } from "./components/ExpandableContent/ExpandableContent";
 
 export { ProgressBar } from "./components/ProgressBar/ProgressBar";
 

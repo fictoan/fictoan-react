@@ -7,8 +7,6 @@ import { SidebarHeaderStyled } from "../SidebarHeader/SidebarHeader.styled";
 import { SidebarItemStyled } from "../SidebarItem/SidebarItem.styled"
 import { SidebarItemTextStyled } from "../SidebarItemText/SidebarItemText.styled"
 import { SidebarItemIconStyled } from "../SidebarItemIcon/SidebarItemIcon.styled"
-import { SidebarItemsGroupStyled } from "../SidebarItemsGroup/SidebarItemsGroup.styled";
-import { SidebarItemsGroupHeaderStyled } from "../SidebarItemsGroupHeader/SidebarItemsGroupHeader.styled";
 import { SidebarFooterStyled } from "../SidebarFooter/SidebarFooter.styled";
 
 
@@ -32,7 +30,7 @@ export const SidebarWrapperStyled = styled.aside`
     * { user-select : none; }
     
     @media (max-width : 900px) {
-        left    : ${(props: SidebarWrapperProps) => `calc(-1 * 100%)`};
+        left    : calc(-1 * 100%);
         z-index : 4000;
     }
 
@@ -69,8 +67,6 @@ export const SidebarWrapperStyled = styled.aside`
             font-size        : 88%;
             box-shadow       : 0 4px 16px -2px rgba(0, 0, 0, 0.24);
         }
-
-        ${SidebarItemsGroupHeaderStyled}::after { display : none; }
 
         ${SidebarFooterStyled} {
             padding-left : 0;
@@ -112,36 +108,4 @@ export const SidebarWrapperStyled = styled.aside`
 
         p { color : ${(props : SidebarWrapperProps) => props.theme.sidebar.linksWrapper.links.isSelected.text}; }
     }
-
-
-    /*  For Open and Collapse groups  */
-    ${SidebarItemsGroupStyled}       { position : relative; }
-    ${SidebarItemsGroupStyled}:hover { cursor : pointer; }
-
-    ${SidebarItemsGroupStyled} > ${SidebarItemsGroupHeaderStyled}::after {
-        display      : inline-block;
-        position     : absolute;
-        width        : 8px;
-        height       : 8px;
-        top          : 16px;
-        right        : 18px;
-        content      : "";
-        border-style : solid;
-        border-width : 0 2px 2px 0;
-        transform    : rotate(45deg);
-        color        : ${(props: SidebarWrapperProps) => props.theme.sidebar.linksWrapper.subLinks.chevron.border};
-        transition   : all 0.2s;
-        cursor       : pointer;
-    }
-
-    ${SidebarItemsGroupStyled}[open] > ${SidebarItemsGroupHeaderStyled}::after {
-        transform : rotate(225deg);
-        top       : 18px;
-    }
-
-    /* details a & {
-        grid-template-rows: 24px;
-    } */
-
-    
 `;
