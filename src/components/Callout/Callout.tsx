@@ -6,7 +6,7 @@ import { Text } from "../Typography/Text";
 import { CalloutStyled } from "./Callout.styled";
 
 export interface CalloutCustomProps {
-    kind: "note" | "highlight" | "tip" | "error" | "warning";
+    kind: "success" | "info" | "error" | "warning";
     children: ReactNode;
 }
 

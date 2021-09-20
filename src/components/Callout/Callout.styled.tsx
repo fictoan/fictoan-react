@@ -20,18 +20,13 @@ export const CalloutStyled = styled.div`
         border-color     : ${defaultColours.red};
     }
 
-    &.tip {
+    &.info {
         background-color : ${transparentize(0.80, defaultColours.blue)};
         border-color     : ${defaultColours.blue};
     }
 
-    &.highlight {
+    &.success {
         background-color : ${transparentize(0.80, defaultColours.green)};
         border-color     : ${defaultColours.green};
-    }
-
-    &.note {
-        background-color : ${transparentize(0.80, defaultColours.slate)};
-        border-color     : ${defaultColours.slate};
     }
 `;
