@@ -27,7 +27,6 @@ import { Button } from "./components/Button/Button";
 import { FormWrapper } from "./components/Form/FormWrapper/FormWrapper";
 import { FormItem } from "./components/Form/FormItem/FormItem";
 import { FormItemGroup } from "./components/Form/FormItemGroup/FormItemGroup";
-import { FormItemJointGroup } from "./components/Form/FormItemGroup/FormItemJointGroup";
 import { InputField } from "./components/Form/InputField/InputField";
 import { TextArea } from "./components/Form/TextArea/TextArea";
 import { InputLabel } from "./components/Form/InputLabel/InputLabel";
@@ -57,6 +56,8 @@ import { CodeBlock } from "./components/CodeBlock/CodeBlock";
 
 import { Tabs } from "./components/Tabs/Tabs";
 import { Spinner } from "./components/Spinner/Spinner";
+import { Callout } from "./components/Callout/Callout";
+import { Tooltip } from "./components/Tooltip/Tooltip";
 
 import { ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
 import { ThemeType, ThemeProps } from "./components/Element/constants";
@@ -86,7 +87,6 @@ export {
     FormWrapper,
     FormItem,
     FormItemGroup,
-    FormItemJointGroup,
     InputField,
     TextArea,
     Select,
@@ -109,6 +109,8 @@ export {
     CodeBlock,
     Tabs,
     Spinner,
+    Callout,
+    Tooltip,
     ThemeProvider,
     ThemeType,
     ThemeProps,
