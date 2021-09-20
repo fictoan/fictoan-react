@@ -23,6 +23,24 @@ export const FormItemGroupStyled = styled.div`
 
     & > ${FormItemStyled}:not(:last-of-type) { margin-right : 24px; }
 
+    &.is-joint {
+        & > ${FormItemStyled} {
+            margin-right: 0;
+
+            &:first-of-type input, select, textarea {
+                border-top-right-radius    : 0;
+                border-bottom-right-radius : 0;
+            }
+            &:not(:first-of-type):not(:last-of-type) input, select, textarea {
+                border-radius : 0;
+            }
+            &:last-of-type input, select, textarea {
+                border-top-left-radius    : 0;
+                border-bottom-left-radius : 0;
+            }
+        }
+    }
+
     @media screen and (max-width: 520px) {
         &:not(.retain-layout) > ${FormItemStyled} {
             flex         : 1 1 auto;
@@ -31,17 +49,4 @@ export const FormItemGroupStyled = styled.div`
 
         &:not(.retain-layout) > ${FormItemStyled}:not(:last-child) { margin-bottom : 16px; }
     }
-
-    & > .ff-form-question {
-        flex       : 1 0 0;
-        align-self : flex-start;
-    }
-
-    & > .ff-form-answers { flex : 3 1 0; }
-
-    /* .ff-form .ff-form-unit, */
-    /* .ff-form .ff-input-group { margin-bottom : 40px; } */
-
-    /* .ff-input-group > .ff-form-unit, */
-    /* .ff-form > .ff-input-group:last-of-type:not(:only-of-type) { margin-bottom : 0; } */
 `;

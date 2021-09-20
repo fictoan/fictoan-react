@@ -11,6 +11,8 @@ export interface InputIconProps {
 
 // prettier-ignore
 export interface InputCommonProps {
+    helpText     ? : string;
+    errorText    ? : string;
     validateThis ? : boolean;
     valid        ? : boolean;
     invalid      ? : boolean;

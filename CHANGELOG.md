@@ -2,6 +2,24 @@
 - Add Storybook
 - Add `label`, `id` and remove `name` props from RadioGroup `options` type
 - Remove `as` from RadioButton and CheckBox props
+<!-- Form improvements -->
+- Remove `isAnswers` prop from FormItem
+- Remove FormItemJointGroup component; Add `isJoint` prop to FormItemGroup
+- Remove Extra spacing after FormItemGroup
+- Add `fields` and `onFieldsChange` prop to FormWrapper to allow form creation using an array of config
+- RadioGroup and Select now uses BaseInputComponent
+- Add basic Tooltip component
+- Add better and consistent help & error text for each form field; Make InputLabel atomic
+- Add Callout component
+- Add error text for FormWrapper which uses Callout component
+
+**BREAKING CHANGES**
+- FormItemJointGroup removed
+- `helpText` is now part of inputField.default instead of inputField.onFocus inside theme
+- `helpText` inside inputField.isInvalid has been renamed to `errorText`
+
+<!-- Sidebar improvements -->
+<!-- - Fix Sidebar footer isStick -->
 
 ### 0.34.0
 - Replace `react-syntax-highlighter` with `prism-react-renderer`

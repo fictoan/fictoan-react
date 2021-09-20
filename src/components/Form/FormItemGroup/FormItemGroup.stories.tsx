@@ -6,6 +6,7 @@ import { Default as FormItem } from "../FormItem/FormItem.stories";
 
 export const Default: FictoanStory<typeof FormItemGroup> = (args) => <FormItemGroup {...args}></FormItemGroup>;
 Default.args = {
+    isJoint: true,
     children: [
         <FormItem {...FormItem.args}>
             <TextInput {...TextInput.args}></TextInput>

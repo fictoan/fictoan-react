@@ -1,15 +1,20 @@
 import React from "react";
 
 import { RadioButton } from "./RadioButton";
-import { RadioGroupOption, RadioGroupProps } from "./constants";
+import { RadioGroupProps } from "./constants";
 import { Element } from "../../Element/Element";
+import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 
-export const RadioGroup = React.forwardRef(({ options, ...props }: RadioGroupProps, ref: React.Ref<HTMLDivElement>) => {
+const RadioGroupOptions = ({ options, defaultValue, ...props }: RadioGroupProps) => {
     return (
-        <Element as="div" ref={ref}>
-            {options.map((option: RadioGroupOption, i: number) => {
-                return <RadioButton key={i} {...props} {...option} />;
+        <Element as="div">
+            {options.map((option, index) => {
+                return <RadioButton key={index} {...props} {...option} />;
             })}
         </Element>
     );
+};
+
+export const RadioGroup = React.forwardRef((props: RadioGroupProps, ref: React.Ref<HTMLDivElement>) => {
+    return <BaseInputComponent<HTMLDivElement> as={RadioGroupOptions} ref={ref} {...props} />;
 });

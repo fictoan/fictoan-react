@@ -6,9 +6,9 @@ import { InputLabel } from "../InputLabel/InputLabel";
 import { FormItem } from "../FormItem/FormItem";
 import { BaseInputComponentWithIconProps } from "./constants";
 
-export type InputFieldElementType = HTMLInputElement;
+export type InputFieldElementType = HTMLInputElement | HTMLDivElement | HTMLSelectElement;
 export const BaseInputComponent = React.forwardRef(
-    <K extends HTMLInputElement>(
+    <K extends InputFieldElementType>(
         {
             as: Component,
             className,
@@ -21,7 +21,7 @@ export const BaseInputComponent = React.forwardRef(
             classNames,
             ...inputProps
         }: BaseInputComponentWithIconProps<K>,
-        ref: React.LegacyRef<HTMLInputElement>
+        ref: React.LegacyRef<InputFieldElementType>
     ) => (
         <FormItem>
             <Element<K>
@@ -36,12 +36,17 @@ export const BaseInputComponent = React.forwardRef(
                 {...inputProps}
             />
 
-            {iconLeft && <span className="icon-left">{iconLeft}</span>}
-            {iconRight && <span className="icon-right">{iconRight}</span>}
+            {iconLeft && <Element as="span" className="icon-left">{iconLeft}</Element>}
+            {iconRight && <Element as="span" className="icon-right">{iconRight}</Element>}
 
-            {label && <InputLabel label={label} helpText={helpText} errorText={errorText} htmlFor={inputProps.id} />}
+            {label && <InputLabel label={label} htmlFor={inputProps.id} />}
+
+            <Element as="div" className="info-section vertically-center-items" marginTop="nano">
+                {helpText && <Element as="span" className="help-text">{helpText}</Element>}
+                {errorText && <Element as="span" className="error-text">{errorText}</Element>}
+            </Element>
         </FormItem>
     )
 ) as <K extends InputFieldElementType>(
-    props: BaseInputComponentWithIconProps<K> & { ref?: React.LegacyRef<HTMLInputElement> }
+    props: BaseInputComponentWithIconProps<K> & { ref?: React.LegacyRef<InputFieldElementType> }
 ) => React.ReactElement;

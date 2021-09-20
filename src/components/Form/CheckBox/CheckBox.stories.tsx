@@ -9,5 +9,7 @@ export const Default: FictoanStory<typeof CheckBox> = createStoryFromTemplate(Te
 Default.args = {
     label: "Accept terms & conditions",
     id: "accept-checkbox",
-    name: "accept-terms"
+    name: "accept-terms",
+    required: true,
+    helpText: "Hope you read them as well"
 };

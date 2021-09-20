@@ -17,7 +17,7 @@ export interface ThemeProps {
     theme ? : ThemeType;
 }
 
-type SpacingTypes = "none" | "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
+export type SpacingTypes = "none" | "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
 
 // prettier-ignore
 export interface CommonProps extends ThemeProps {

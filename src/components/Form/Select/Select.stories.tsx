@@ -23,5 +23,7 @@ Default.args = {
             label: "...",
             value: "..."
         },
-    ]
+    ],
+    required: true,
+    helpText: "Select an option from the list"
 };

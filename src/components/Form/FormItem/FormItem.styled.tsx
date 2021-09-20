@@ -12,10 +12,6 @@ export const FormItemStyled = styled.div`
     width          : 100%;
     align-items    : flex-start;
 
-    ${(props: FormItemProps) => props.isAnswers && css`
-        * { margin-bottom: 8px; }
-    `}
-
     & > label {
         position      : relative;
         display       : flex;
@@ -27,6 +23,32 @@ export const FormItemStyled = styled.div`
         order         : -1;
         flex-wrap     : wrap;
     }
+    
+    .info-section {
+        flex-wrap: wrap;
+        
+        span.help-text, span.error-text {
+            font-size : 95%;
+        }
+
+        span.help-text {
+            color : ${(props: FormItemProps) => props.theme.inputField.default.helpText};
+        }
+    
+        span.error-text {
+            display: none;
+        }
+
+        span:not(:last-of-type) {
+            margin-right: 10px;
+
+            /* &::after {
+                content: "\\0000a0\\2022\\0000a0";
+                margin-left: 5px;
+            } */
+        }
+    }
+
 
     ${InputFieldStyled}, ${TextAreaStyled} {
         &:focus ~ label { font-weight : bold; }
@@ -35,36 +57,16 @@ export const FormItemStyled = styled.div`
             position  : absolute;
             top       : -4px;
             bottom    : 0;
-            left      : -14px;
+            left      : -12px;
             margin    : auto;
-            content   : " *";
+            content   : "*";
             font-size : 120%;
             color     : ${(props: FormItemProps) => props.theme.inputField.required.text};
         }
-
-        &:focus ~ label > span.ff-input-help,
-        &:active ~ label > span.ff-input-help {
-            display : inline-flex;
-        }
-
-        &:not(:focus):not(:placeholder-shown) ~ label > span.ff-input-help {
-            color : ${(props: FormItemProps) => props.theme.inputField.onFocus.helpText};
-        }
-
-        &:invalid:focus:not(:placeholder-shown) ~ label > span.ff-input-error,
-        &:invalid:not(:focus):not(:placeholder-shown) ~ label > span.ff-input-error {
-            display : inline-flex;
-            color   : ${(props: FormItemProps) => props.theme.inputField.isInvalid.helpText};
+    
+        &:invalid:not(:focus):not(:placeholder-shown) ~ .info-section span.error-text {
+            display: block;
+            color : ${(props: FormItemProps) => props.theme.inputField.isInvalid.errorText};
         }
     }
-
-    label span {
-        font-weight : normal;
-        color       : ${(props: FormItemProps) => props.theme.inputField.onFocus.helpText};
-        display     : none;
-        align-self  : center;
-        transition  : opacity 0.2s;
-    }
-
-    label > span::before { content : "\\0000a0\\2022\\0000a0"; }
 `;

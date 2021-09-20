@@ -1,14 +1,14 @@
 import React from "react";
 
 import { Element } from "../Element/Element";
-import { CommonAndHTMLProps } from "../Element/constants";
+import { CommonAndHTMLProps, SpacingTypes } from "../Element/constants";
 
 import { RowStyled } from "./Row.styled";
 
 // prettier-ignore
 export interface RowCustomProps {
     sidePadding          ? : "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
-    gutters              ? : "none" | "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
+    gutters              ? : SpacingTypes;
     retainLayoutOnTabLS  ? : boolean;
     retainLayoutOnTabPT  ? : boolean;
     retainLayoutOnMobile ? : boolean;

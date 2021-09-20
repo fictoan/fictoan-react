@@ -21,5 +21,6 @@ Default.args = {
             value: "Option B",
             id: "radio-option-b"
         },
-    ]
+    ],
+    helpText: "Select an option"
 };
