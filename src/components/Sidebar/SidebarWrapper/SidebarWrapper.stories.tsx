@@ -17,7 +17,7 @@ Default.args = {
     children: [
         <SidebarHeader>Sidebar Header</SidebarHeader>,
 
-        <SidebarItem>
+        <SidebarItem hasAlert>
             <SidebarItemIcon></SidebarItemIcon>
             <SidebarItemText linkText="Item 1"></SidebarItemText>
         </SidebarItem>,
