@@ -24,6 +24,10 @@ export const SelectWrapperStyled = styled.div`
         z-index        : 500;
         pointer-events : none;
     }
+
+    &[disabled]::after {
+        color : ${(props: SelectProps) => props.theme.inputField.isReadOnly.text};
+    }
 `;
 
 export const SelectStyled = styled.select`

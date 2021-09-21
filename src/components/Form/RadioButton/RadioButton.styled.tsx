@@ -61,17 +61,7 @@ export const RadioButtonStyled = styled.div`
 
     /*  The grey square  */
     &:disabled + label::before {
-        opacity        : 0.24;
-        user-select    : none;
-        pointer-events : none;
         background     : ${(props: RadioButtonProps) => props.theme.radioButton.inset.isDisabled.bg};
         box-shadow     : inset 0 2px 8px -2px rgba(0, 0, 0, 0.24);
-    }
-
-    input[type="radio"]:disabled         + label,
-    input[type="radio"]:disabled:checked + label  {
-        pointer-events : none;
-        cursor         : default;
-        opacity        : 0.24;
     }
 `

@@ -46,13 +46,6 @@ const SharedStyling = css`
     input[type="checkbox"]:checked + label::before {
         background : ${(props: CheckboxProps) => props.theme.checkBox.square.isChecked.bg};
     }
-
-    input[type="checkbox"]:disabled + label,
-    input[type="checkbox"]:disabled:checked + label {
-        pointer-events : none;
-        cursor         : default;
-        opacity        : 0.24;
-    }
 `;
 
 /*  CHECKBOX  =============================================================  */
@@ -159,9 +152,9 @@ export const SwitchStyled = styled.div`
             }
         
             &::after {
-                left          : 4px;
-                width         : 10px;
-                height        : 10px;
+                left          : 3px;
+                width         : 12px;
+                height        : 12px;
             }
         }
         input[type="checkbox"]:checked + label::after {

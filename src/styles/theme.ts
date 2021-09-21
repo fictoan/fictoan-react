@@ -167,8 +167,9 @@ export const FictoanTheme = {
             errorText : defaultColours.red
         },
         isReadOnly : {
-            bg     : defaultColours.grey50,
-            border : defaultColours.grey50,
+            bg     : defaultColours.slate10,
+            border : defaultColours.slate20,
+            text   : defaultColours.slate60,
             label  : customColours.shade
         },
         required   : {

@@ -5,9 +5,9 @@ import { RadioGroupProps } from "./constants";
 import { Element } from "../../Element/Element";
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 
-const RadioGroupOptions = ({ options, defaultValue, ...props }: RadioGroupProps) => {
+const RadioGroupOptions = ({ options, defaultValue, required, ...props }: RadioGroupProps) => {
     return (
-        <Element as="div">
+        <Element as="div" required={required}>
             {options.map((option, index) => {
                 return <RadioButton key={index} {...props} {...option} />;
             })}

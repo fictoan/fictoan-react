@@ -22,7 +22,7 @@ export type SelectProps = Omit<CommonAndHTMLProps<SelectElementType>, keyof Sele
 
 const SelectWithOptions = ({ options, className, ...props }: SelectProps) => {
     return (
-        <Element<HTMLDivElement> as={SelectWrapperStyled} className={className}>
+        <Element<HTMLDivElement> as={SelectWrapperStyled} className={className} disabled={props.disabled}>
             <Element<SelectElementType> as={SelectStyled} {...props}>
                 {options.map((option, index) => (
                     <Element<OptionElementType> as="option" key={index} {...option}>

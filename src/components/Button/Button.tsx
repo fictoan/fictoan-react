@@ -7,12 +7,12 @@ import { ButtonStyled } from "./Button.styled";
 
 // prettier-ignore
 export interface ButtonCustomProps {
-    kind          ? : "primary" | "secondary" | "tertiary" | "custom";
-    size          ? : "tiny" | "small" | "medium" | "large" | "huge";
-    shape         ? : "rounded" | "curved" | "circular";
-    shadow        ? : "mild" | "soft" | "hard";
-    isLoading     ? : boolean;
-    hasDelete     ? : boolean;
+    kind      ? : "primary" | "secondary" | "tertiary" | "custom";
+    size      ? : "tiny" | "small" | "medium" | "large" | "huge";
+    shape     ? : "rounded" | "curved" | "circular";
+    shadow    ? : "mild" | "soft" | "hard";
+    isLoading ? : boolean;
+    hasDelete ? : boolean;
 }
 
 export type ButtonElementType = HTMLButtonElement;

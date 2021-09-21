@@ -6,6 +6,9 @@ import { Default as FormItemGroup } from "../FormItemGroup/FormItemGroup.stories
 import { Default as FormItem } from "../FormItem/FormItem.stories";
 import { Default as RadioGroup } from "../RadioButton/RadioGroup.stories";
 import { Default as CheckBox } from "../CheckBox/CheckBox.stories";
+import { Default as Switch } from "../CheckBox/Switch.stories";
+import { Default as Select } from "../Select/Select.stories";
+import { Default as TextArea } from "../TextArea/TextArea.stories";
 import { Primary as Button } from "../../Button/Button.stories";
 
 const Template: FictoanStory<typeof FormWrapper> = (args) => <FormWrapper {...args} />;
@@ -30,10 +33,19 @@ Default.args = {
             <PasswordInput {...PasswordInput.args} required></PasswordInput>
         </FormItem>,
         <FormItem>
+            <TextArea {...TextArea.args} required></TextArea>
+        </FormItem>,
+        <FormItem>
+            <Select {...Select.args} required></Select>
+        </FormItem>,
+        <FormItem>
             <RadioGroup {...RadioGroup.args} id="radio-buttons-demo" required></RadioGroup>
         </FormItem>,
         <FormItem>
             <CheckBox {...CheckBox.args} required></CheckBox>
+        </FormItem>,
+        <FormItem>
+            <Switch {...Switch.args} required></Switch>
         </FormItem>,
         <FormItem>
             <Button {...Button.args} type="button">Submit</Button>

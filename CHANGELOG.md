@@ -14,6 +14,7 @@
 - Add error text for FormWrapper which uses Callout component
 - Add sizes to Switch component
 - Make Select chevron consistent with ExpandableContent
+- Make required and disabled states consistent in form fields
 <!-- Sidebar improvements -->
 - Remove `isSticky` from Sidebar footer
 - `sidebar.body.bg` is now `sidebar.bg` in theme
