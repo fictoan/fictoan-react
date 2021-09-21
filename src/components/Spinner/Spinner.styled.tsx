@@ -5,13 +5,13 @@ import { SpinnerProps } from "./Spinner";
 export const SpinnerStyled = styled.div`
     position           : relative;
     padding            : 8px;
-	border             : 3px solid;
-	border-top-color   : transparent;
-	border-right-color : transparent;
-	color              : transparent !important;
-	box-shadow         : none;
-	user-select        : none;
-	pointer-events     : none;
+    border             : 3px solid;
+    border-top-color   : transparent;
+    border-right-color : transparent;
+    color              : transparent !important;
+    box-shadow         : none;
+    user-select        : none;
+    pointer-events     : none;
 
     &::after {
         display            : block;
@@ -26,7 +26,7 @@ export const SpinnerStyled = styled.div`
         border-radius      : 50%;
         content            : "";
         border             : 3px solid;
-        border-color       : ${(props: SpinnerProps) => props.theme.spinner.color};
+        border-color       : ${(props : SpinnerProps) => props.theme.spinner.color};
         border-top-color   : transparent;
         border-right-color : transparent;
         -webkit-animation  : spinner 0.4s infinite linear;
