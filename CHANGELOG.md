@@ -2,6 +2,7 @@
 - Add Storybook
 - Add `label`, `id` and remove `name` props from RadioGroup `options` type
 - Remove `as` from RadioButton and CheckBox props
+- Make `shadow` a global prop
 <!-- Form improvements -->
 - Remove `isAnswers` prop from FormItem
 - Remove FormItemJointGroup component; Add `isJoint` prop to FormItemGroup

@@ -19,6 +19,8 @@ export interface ThemeProps {
 
 export type SpacingTypes = "none" | "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
 
+export type ShadowTypes = "mild" | "soft" | "hard";
+
 // prettier-ignore
 export interface CommonProps extends ThemeProps {
     bgColor           ? : string;
@@ -51,6 +53,7 @@ export interface CommonProps extends ThemeProps {
     paddingBottom     ? : SpacingTypes;
     paddingLeft       ? : SpacingTypes;
     padding           ? : SpacingTypes;
+    shadow            ? : ShadowTypes;
     classNames        ? : any[];
 }
 

@@ -40,6 +40,7 @@ export const Element = React.forwardRef(<K extends {}>(props: ElementProps<K>, r
         paddingBottom,
         paddingLeft,
         padding,
+        shadow,
         ...minimalProps
     } = props;
 
@@ -83,6 +84,7 @@ export const Element = React.forwardRef(<K extends {}>(props: ElementProps<K>, r
                     paddingBottom && `padding-bottom-${paddingBottom}`,
                     paddingLeft && `padding-left-${paddingLeft}`,
                     padding && `padding-all-${padding}`,
+                    shadow && `shadow-${shadow}`,
                 ].concat(classNames)
             )}
             // data-testid={`${Component.displayName}Test`}

@@ -10,7 +10,6 @@ export interface ButtonCustomProps {
     kind      ? : "primary" | "secondary" | "tertiary" | "custom";
     size      ? : "tiny" | "small" | "medium" | "large" | "huge";
     shape     ? : "rounded" | "curved" | "circular";
-    shadow    ? : "mild" | "soft" | "hard";
     isLoading ? : boolean;
     hasDelete ? : boolean;
 }
@@ -19,7 +18,7 @@ export type ButtonElementType = HTMLButtonElement;
 export type ButtonProps = Omit<CommonAndHTMLProps<ButtonElementType>, keyof ButtonCustomProps> & ButtonCustomProps;
 
 export const Button = React.forwardRef(
-    ({ size, shape, shadow, kind, isLoading, hasDelete, ...props }: ButtonProps, ref: React.Ref<ButtonElementType>) => {
+    ({ size, shape, kind, isLoading, hasDelete, ...props }: ButtonProps, ref: React.Ref<ButtonElementType>) => {
         let classNames = [];
 
         if (kind) {
@@ -32,10 +31,6 @@ export const Button = React.forwardRef(
 
         if (shape) {
             classNames.push(`shape-${shape}`);
-        }
-
-        if (shadow) {
-            classNames.push(`shadow-${shadow}`);
         }
 
         if (isLoading) {
