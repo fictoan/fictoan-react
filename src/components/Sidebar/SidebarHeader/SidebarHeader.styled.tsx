@@ -5,9 +5,9 @@ import { SidebarHeaderProps } from "./SidebarHeader";
 export const SidebarHeaderStyled = styled.header`
     display          : flex;
     width            : 100%;
-    height           : 80px;
     min-height       : 80px;
     align-content    : center;
+    order            : -1;
     align-items      : center;
     justify-content  : center;
     transition       : all 0.4s ease-in-out;
@@ -15,8 +15,9 @@ export const SidebarHeaderStyled = styled.header`
     border-bottom    : 1px solid ${(props : SidebarHeaderProps) => props.theme.sidebar.header.borderBottom};
 
     &.is-sticky {
-        position : fixed;
-        width    : 240px;
+        position : sticky;
+        top      : 0;
+        left     : 0;
     }
 
     * {

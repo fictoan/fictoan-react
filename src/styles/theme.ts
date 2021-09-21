@@ -293,15 +293,15 @@ export const FictoanTheme = {
 
     //  SIDEBAR  //////////////////////////////////////////////////////////////
     sidebar : {
+        width : "240px",
+        bg    : defaultColours.white,
+
         isCollapsed : {
+            width : "48px",
             label : {
                 text : defaultColours.white,
                 bg   : customColours.hue
             }
-        },
-
-        body : {
-            bg : defaultColours.white
         },
 
         header : {
@@ -311,9 +311,6 @@ export const FictoanTheme = {
         },
 
         linksWrapper : {
-            marginTop    : "100px",
-            marginBottom : "32px",
-
             icons : {
                 size    : "24px",
                 stroked : {

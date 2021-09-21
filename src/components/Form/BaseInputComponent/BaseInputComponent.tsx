@@ -41,10 +41,12 @@ export const BaseInputComponent = React.forwardRef(
 
             {label && <InputLabel label={label} htmlFor={inputProps.id} />}
 
-            <Element as="div" className="info-section vertically-center-items" marginTop="nano">
-                {helpText && <Element as="span" className="help-text">{helpText}</Element>}
-                {errorText && <Element as="span" className="error-text">{errorText}</Element>}
-            </Element>
+            {(helpText || errorText) && (
+                <Element as="div" className="info-section vertically-center-items" marginTop="nano">
+                    {helpText && <Element as="span" className="help-text">{helpText}</Element>}
+                    {errorText && <Element as="span" className="error-text">{errorText}</Element>}
+                </Element>
+            )}
         </FormItem>
     )
 ) as <K extends InputFieldElementType>(

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { SidebarWrapperStyled } from "../Sidebar/SidebarWrapper/SidebarWrapper.styled"
+import { ContentWrapperProps } from "./ContentWrapper";
 
 export const ContentWrapperStyled = styled.main`
     width      : 100%;
@@ -8,13 +9,13 @@ export const ContentWrapperStyled = styled.main`
     transition : all 0.4s ease-in-out;
 
     ${SidebarWrapperStyled} + & {
-        width       : calc(100% - 240px);
-        margin-left : 240px;
+        width       : ${(props: ContentWrapperProps) => `calc(100% - ${props.theme.sidebar.width})`};
+        margin-left : ${(props: ContentWrapperProps) => props.theme.sidebar.width};
     }
 
     ${SidebarWrapperStyled}.collapsed + & {
-        width       : calc(100% - 48px);
-        margin-left : 48px;
+        width       : ${(props: ContentWrapperProps) => `calc(100% - ${props.theme.sidebar.isCollapsed.width})`};
+        margin-left : ${(props: ContentWrapperProps) => props.theme.sidebar.isCollapsed.width};
     }
 
     @media (max-width : 900px) {
