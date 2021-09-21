@@ -1,39 +1,66 @@
-### 0.34.1
-- Add Storybook
-- Add `label`, `id` and remove `name` props from RadioGroup `options` type
+### 0.35.0
+**General**
+- Add Storybook for easy testing and documentation
+  - Each component folder now contains a `<component_name>.stories.tsx` (to create stories) and `<component_name>.stories.mdx` (to write docs) file
+- Add make commands for easy creation of components
+- Remove `name` props from RadioGroup `options` type; Add `label` and `id`
 - Remove `as` from RadioButton and CheckBox props
 - Make `shadow` a global prop
-<!-- Form improvements -->
+- Add ExpandableContent component which implements details and summary tags
+
+**Form improvements**
 - Remove `isAnswers` prop from FormItem
-- Remove FormItemJointGroup component; Add `isJoint` prop to FormItemGroup
+- Remove FormItemJointGroup component
+  - Add `isJoint` prop to FormItemGroup
 - Remove Extra spacing after FormItemGroup
-- Add `fields` and `onFieldsChange` prop to FormWrapper to allow form creation using an array of config
-- RadioGroup and Select now uses BaseInputComponent
-- Add basic Tooltip component
-- Add better and consistent help & error text for each form field; Make InputLabel atomic
-- Add Callout component
+- Add `fields` and `onFieldsChange` prop to FormWrapper to allow form creation using an array of config 🎉 
+- RadioGroup and Select now use BaseInputComponent
+- Add better and consistent help & error text for each form field
+  - Make InputLabel atomic
 - Add error text for FormWrapper which uses Callout component
 - Add sizes to Switch component
 - Make Select chevron consistent with ExpandableContent
 - Make required and disabled states consistent in form fields
-<!-- Sidebar improvements -->
+
+**Sidebar improvements**
+- Remove `name` props from RadioGroup `options` type; Add `label` and `id`
 - Remove `isSticky` from Sidebar footer
 - `sidebar.body.bg` is now `sidebar.bg` in theme
 - Add sidebar width properties to theme; SidebarHeader, SidebarFooter and SidebarItem span 100% automatically
+- Remove `isSticky` from SidebarFooter, it always sticks to bottom
+- Remove SidebarLink, SidebarNestedLinks and SidebarLinksWrapper
 - Make SidebarHeader and SidebarFooter sticky instead of fixed to get simpler and consistent sidebar layout
-- Remove `linksWrapper.marginTop` and `linksWrapper.marginBottom` from theme
+- Remove `sidebar.linksWrapper.marginTop` and `sidebar.linksWrapper.marginBottom` from theme
 - Remove SidebarItemsGroup and SidebarItemsGroupHeader
-- Add ExpandableContent component which implements details and summary tags
 
-**BREAKING CHANGES**
-- FormItemJointGroup removed
-- `helpText` is now part of inputField.default instead of inputField.onFocus inside theme
-- `helpText` inside inputField.isInvalid has been renamed to `errorText`
-- Remove `isSticky` from Sidebar footer
-- `sidebar.body.bg` is now `sidebar.bg` in theme
-- Remove `linksWrapper.marginTop` and `linksWrapper.marginBottom` from theme
-- Remove SidebarItemsGroup and SidebarItemsGroupHeader; Use ExpandableContent component instead
-- Default Switch size now `medium` which is larger than before; Set to `small` for previous size
+**New components**
+- ~Tooltip~ (buggy, needs better implementation)
+- Callout
+- ExpandableContent
+
+**Removed components**
+- FormItemJointGroup
+- SidebarLink
+- SidebarNestedLinks
+- SidebarLinksWrapper
+- SidebarItemsGroup
+- SidebarItemsGroupHeader
+
+## BREAKING CHANGES ⚠️ 
+- Inside theme:
+  - `inputField.default.helpText` is now `inputField.onFocus.helpText`
+  - `inputField.isInvalid.helpText` is now `inputField.isInvalid.errorText`
+  - `sidebar.body.bg` is now `sidebar.bg`
+  - `sidebar.linksWrapper.marginTop` and `sidebar.linksWrapper.marginBottom` have been removed
+- Remove `isSticky` from SidebarFooter 
+  - It always sticks to bottom
+- Remove FormItemJointGroup
+  - Use `isJoint` prop inside FormItemGroup instead
+- Remove SidebarItemsGroup and SidebarItemsGroupHeader 
+  - Use ExpandableContent component instead
+- Default Switch size now `medium` which is larger than before 
+  - Set to size `small` for old size
+
 
 ### 0.34.0
 - Replace `react-syntax-highlighter` with `prism-react-renderer`
