@@ -42,10 +42,11 @@ export const constructArgType = (
 ) => {
     switch (type) {
         case "select":
+        case "radio":
             return {
                 description,
                 type: {
-                    name: "select",
+                    name: type,
                     required: required || false,
                 },
                 table: {
@@ -59,7 +60,7 @@ export const constructArgType = (
                     defaultValue: { summary: defaultValue || "-" },
                 },
                 control: {
-                    type: "select",
+                    type: type,
                 },
                 options: DefaultOptions[defaultOptionsKey] || options || [],
             };
@@ -223,6 +224,8 @@ export const CommonArgTypes: ArgTypes = {
     }),
     isFullWidth: constructArgType("boolean", "This is a boolean field", { defaultValue: false, category: "Common" }),
     isFullHeight: constructArgType("boolean", "This is a boolean field", { defaultValue: false, category: "Common" }),
+    shadow: constructArgType("radio", "This is a radio field", { defaultOptionsKey: "shadow", category: "Common" }),
+    shape: constructArgType("radio", "This is a radio field", { defaultOptionsKey: "shape", category: "Common" }),
     theme: {
         table: {
             disable: true,

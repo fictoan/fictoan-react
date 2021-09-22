@@ -6,7 +6,9 @@
 - Remove `name` props from RadioGroup `options` type; Add `label` and `id`
 - Remove `as` from RadioButton and CheckBox props
 - Make `shadow` a global prop
+- Make `shape` a global prop
 - Add ExpandableContent component which implements details and summary tags
+- Add Tag component
 
 **Form improvements**
 - Remove `isAnswers` prop from FormItem
@@ -37,6 +39,7 @@
 - ~Tooltip~ (buggy, needs better implementation)
 - Callout
 - ExpandableContent
+- Tag
 
 **Removed components**
 - FormItemJointGroup

@@ -5,13 +5,8 @@ import { CommonAndHTMLProps } from "../Element/constants";
 
 import { CardStyled } from "./Card.styled";
 
-// prettier-ignore
-export interface CardCustomProps {
-    shape  ? : "rounded" | "curved";
-}
-
 export type CardElementType = HTMLDivElement;
-export type CardProps = Omit<CommonAndHTMLProps<CardElementType>, keyof CardCustomProps> & CardCustomProps;
+export type CardProps = CommonAndHTMLProps<CardElementType>;
 
 export const Card = React.forwardRef(({ shape, ...props }: CardProps, ref: React.Ref<CardElementType>) => {
     let classNames = [];

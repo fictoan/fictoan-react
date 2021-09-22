@@ -21,6 +21,8 @@ export type SpacingTypes = "none" | "nano" | "micro" | "tiny" | "small" | "mediu
 
 export type ShadowTypes = "mild" | "soft" | "hard";
 
+export type ShapeTypes = "rounded" | "curved";
+
 // prettier-ignore
 export interface CommonProps extends ThemeProps {
     bgColor           ? : string;
@@ -54,13 +56,14 @@ export interface CommonProps extends ThemeProps {
     paddingLeft       ? : SpacingTypes;
     padding           ? : SpacingTypes;
     shadow            ? : ShadowTypes;
+    shape             ? : ShapeTypes;
     classNames        ? : any[];
 }
 
-export interface CommonAndHTMLProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "size" | "ref"> {}
+export interface CommonAndHTMLProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "size" | "ref" | "shape"> {}
 
 // prettier-ignore
-export interface ElementProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as" | "ref"> {
+export interface ElementProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as" | "ref" | "shape"> {
     as          : any;
     className ? : string;
 }

@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './Tag.stories';
+import { Tag } from "./Tag";
+import { CommonArgTypes } from "../../utils/storyUtils";
+
+<Meta title="Components/Tag" component={Tag} argTypes={{ ...CommonArgTypes, textColor: undefined, textColour: undefined, shape: undefined }} />
+
+# Tag
+
+This is a Tag component.
+
+<Canvas>
+    <Story story={stories.Default} />
+</Canvas>

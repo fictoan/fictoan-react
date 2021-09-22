@@ -54,6 +54,7 @@ export { CodeBlock } from "./components/CodeBlock/CodeBlock";
 export { Tabs } from "./components/Tabs/Tabs";
 export { Spinner } from "./components/Spinner/Spinner";
 export { Callout } from "./components/Callout/Callout";
+export { Tag } from "./components/Tag/Tag";
 
 export { ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
 export { ThemeType, ThemeProps } from "./components/Element/constants";
