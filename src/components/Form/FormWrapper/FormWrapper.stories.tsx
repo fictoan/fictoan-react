@@ -187,5 +187,10 @@ UsingFieldsProp.args = {
             validateThis: false,
             required: false,
         },
+    ],
+    children: [
+        <FormItem>
+            <Button {...Button.args} type="button">Submit</Button>
+        </FormItem>
     ]
 }

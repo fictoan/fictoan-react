@@ -8,12 +8,13 @@ import { PortionProps, Portion } from "../../Portion/Portion";
 import { InputLabelCustomProps } from "../InputLabel/InputLabel";
 import { InputCommonProps } from "../BaseInputComponent/constants";
 import { InputField } from "../InputField/InputField";
+import { FileUpload } from "../InputField/FileUpload";
 import { InputLabel } from "../InputLabel/InputLabel";
 import { CheckBox } from "../CheckBox/CheckBox";
 import { Switch } from "../CheckBox/Switch";
 import { RadioButton } from "../RadioButton/RadioButton";
 import { RadioGroup } from "../RadioButton/RadioGroup";
-import { OptionElementType, Select } from "../Select/Select";
+import { Select } from "../Select/Select";
 import { TextArea } from "../TextArea/TextArea";
 import { RadioGroupOption } from "../RadioButton/constants";
 
@@ -41,6 +42,7 @@ const FormElements: Record<string, ReactNode | string> = {
     CheckBox: CheckBox,
     Switch: Switch,
     InputField: InputField,
+    FileUpload: FileUpload,
     InputLabel: InputLabel,
     RadioButton: RadioButton,
     RadioGroup: RadioGroup,
@@ -54,7 +56,7 @@ const getFormItem = (formField: FormFieldsType, onFieldsChange: React.FormEventH
 
     return (
         <Element
-            as={FormElements[elementName]}
+            as={FormElements[elementName] || InputField}
             {...formFieldProps}
             isFullWidth
             // disabled={disabledIds.includes(formFieldProps.id)}

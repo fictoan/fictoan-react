@@ -1,6 +1,5 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Card, CardProps } from "../Card/Card";
-import { CommonAndHTMLProps } from "../Element/constants";
 
 import { TooltipStyled } from "./Tooltip.styled";
 

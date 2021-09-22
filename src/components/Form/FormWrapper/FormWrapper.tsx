@@ -28,7 +28,7 @@ export const FormWrapper = React.forwardRef(
         }
 
         if (fields && fields.length > 0) {
-            children = generateFormThroughConfig(fields, onFieldsChange, spacing);
+            children = [generateFormThroughConfig(fields, onFieldsChange, spacing), children];
         }
 
         return (
