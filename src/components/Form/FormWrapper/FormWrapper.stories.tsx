@@ -36,10 +36,10 @@ Default.args = {
             <TextArea {...TextArea.args} required></TextArea>
         </FormItem>,
         <FormItem>
-            <Select {...Select.args} required></Select>
+            <Select {...Select.args} required options={Select.args.options}></Select>
         </FormItem>,
         <FormItem>
-            <RadioGroup {...RadioGroup.args} id="radio-buttons-demo" required></RadioGroup>
+            <RadioGroup {...RadioGroup.args} id="radio-buttons-demo" required options={RadioGroup.args.options}></RadioGroup>
         </FormItem>,
         <FormItem>
             <CheckBox {...CheckBox.args} required></CheckBox>
@@ -55,7 +55,7 @@ Default.args = {
 
 export const UsingFieldsProp: FictoanStory<typeof FormWrapper> = createStoryFromTemplate(Template);
 UsingFieldsProp.args = {
-    onFieldsChange: (e) => console.log(e.currentTarget.name, e.currentTarget.type, e.currentTarget.value),
+    // onFieldsChange: (e) => console.log(e.currentTarget.name, e.currentTarget.type, e.currentTarget.value),
     fields: [
         {
             as: "CheckBox",

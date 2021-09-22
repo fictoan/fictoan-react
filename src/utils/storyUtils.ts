@@ -1,4 +1,3 @@
-import React from "react";
 import { ArgTypes, ComponentStory } from "@storybook/react";
 import { JSXElementConstructor } from "react";
 import { defaultColours } from "../styles/DefaultColours";

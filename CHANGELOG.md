@@ -36,7 +36,7 @@
 - Remove SidebarItemsGroup and SidebarItemsGroupHeader
 
 **New components**
-- ~Tooltip~ (buggy, needs better implementation)
+- Tooltip (very basic, might overflow screens)
 - Callout
 - ExpandableContent
 - Tag

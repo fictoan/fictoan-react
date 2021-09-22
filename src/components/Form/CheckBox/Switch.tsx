@@ -12,7 +12,7 @@ export interface SwitchCustomProps {
 }
 
 export type SwitchElementType = HTMLInputElement;
-export type SwitchProps = Omit<BaseInputComponentProps<SwitchElementType>, keyof SwitchCustomProps> & SwitchCustomProps;
+export type SwitchProps = Omit<BaseInputComponentProps<SwitchElementType>, keyof SwitchCustomProps | "as"> & SwitchCustomProps;
 
 
 export const Switch = React.forwardRef(({ size = "medium", ...props }: SwitchProps, ref: React.Ref<SwitchElementType>) => {
