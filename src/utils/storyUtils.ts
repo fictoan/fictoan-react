@@ -7,9 +7,10 @@ const DefaultOptions = {
     size: ["tiny", "small", "medium", "large", "huge"],
     kind: ["primary", "secondary", "tertiary", "custom"],
     shape: ["rounded", "curved"],
-    shadow: ["mild", "soft", "hard"],
+    shadow: ["none", "mild", "soft", "hard"],
     align: ["left", "center", "centre", "right"],
     weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+    opacity: ["00", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"],
     colors: Object.keys(defaultColours).map((color) =>
         color.replace(/([a-z]*)(\d*)/, Number.isInteger(parseInt(color[color.length - 1])) ? "$1-$2" : "$1")
     ),
@@ -225,6 +226,7 @@ export const CommonArgTypes: ArgTypes = {
     isFullHeight: constructArgType("boolean", "This is a boolean field", { defaultValue: false, category: "Common" }),
     shadow: constructArgType("radio", "This is a radio field", { defaultOptionsKey: "shadow", category: "Common" }),
     shape: constructArgType("radio", "This is a radio field", { defaultOptionsKey: "shape", category: "Common" }),
+    opacity: constructArgType("radio", "This is a radio field", { defaultOptionsKey: "opacity", category: "Common" }),
     theme: {
         table: {
             disable: true,

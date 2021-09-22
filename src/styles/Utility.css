@@ -95,7 +95,7 @@ footer { flex-shrink : 0; }
 /* the middle. Apply to parent */
 .vertically-centre-items,
 .vertically-center-items { 
-    display : flex; 
+    display : flex;
 }
 
 .vertically-centre-items > *,
@@ -258,7 +258,7 @@ footer { flex-shrink : 0; }
 .shape-circular { border-radius : 50%; }
 
 /* Remove shadows */
-.no-shadow { box-shadow : none !important; }
+.shadow-none { box-shadow : none !important; }
 
 .shadow-mild {
     box-shadow :

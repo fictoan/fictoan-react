@@ -9,6 +9,7 @@
 - Make `shape` a global prop
 - Add ExpandableContent component which implements details and summary tags
 - Add Tag component
+- Add `opacity` as a global prop
 
 **Form improvements**
 - Remove `isAnswers` prop from FormItem

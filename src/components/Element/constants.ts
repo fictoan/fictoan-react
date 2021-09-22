@@ -18,10 +18,9 @@ export interface ThemeProps {
 }
 
 export type SpacingTypes = "none" | "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
-
-export type ShadowTypes = "mild" | "soft" | "hard";
-
+export type ShadowTypes = "none" | "mild" | "soft" | "hard";
 export type ShapeTypes = "rounded" | "curved";
+export type OpacityTypes = "00" | "10" | "20" | "30" | "40" | "50" | "60" | "70" | "80" | "90" | "100";
 
 // prettier-ignore
 export interface CommonProps extends ThemeProps {
@@ -57,6 +56,7 @@ export interface CommonProps extends ThemeProps {
     padding           ? : SpacingTypes;
     shadow            ? : ShadowTypes;
     shape             ? : ShapeTypes;
+    opacity           ? : OpacityTypes;
     classNames        ? : any[];
 }
 
