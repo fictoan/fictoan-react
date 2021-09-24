@@ -5,6 +5,11 @@ import { HRule } from "./HRule";
 const Template: FictoanStory<typeof HRule> = (args) => <HRule {...args} />;
 Template.displayName = HRule.displayName;
 
+export const Default: FictoanStory<typeof HRule> = createStoryFromTemplate(Template);
+Default.args = {
+
+};
+
 export const Primary: FictoanStory<typeof HRule> = createStoryFromTemplate(Template);
 Primary.args = {
     kind: "primary"

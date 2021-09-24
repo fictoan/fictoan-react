@@ -10,6 +10,8 @@
 - Add ExpandableContent component which implements details and summary tags
 - Add Tag component
 - Add `opacity` as a global prop
+- HRule now supports custom background colors
+  - Add `hr.default` to theme
 
 **Form improvements**
 - Remove `isAnswers` prop from FormItem
@@ -60,6 +62,7 @@
   - It always sticks to bottom
 - Remove FormItemJointGroup
   - Use `isJoint` prop inside FormItemGroup instead
+- Remove SidebarLink, SidebarNestedLinks and SidebarLinksWrapper
 - Remove SidebarItemsGroup and SidebarItemsGroupHeader 
   - Use ExpandableContent component instead
 - Default Switch size now `medium` which is larger than before 

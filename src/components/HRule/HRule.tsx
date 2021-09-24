@@ -15,7 +15,7 @@ export type HRElementType = HTMLHRElement;
 export type HRProps = Omit<CommonAndHTMLProps<HRElementType>, keyof HRCustomProps> & HRCustomProps;
 
 export const HRule = React.forwardRef(
-    ({ kind = "primary", sideMargin, ...props }: HRProps, ref: React.Ref<HRElementType>) => {
+    ({ kind, sideMargin, ...props }: HRProps, ref: React.Ref<HRElementType>) => {
         let classNames = [];
 
         if (kind) {

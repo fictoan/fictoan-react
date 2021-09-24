@@ -125,6 +125,10 @@ export const FictoanTheme = {
 
     //  RULE  /////////////////////////////////////////////////////////////////
     hr : {
+        default   : {
+            bg     : defaultColours.blue80,
+            height : "1px"
+        },
         primary   : {
             bg     : defaultColours.blue80,
             height : "1px"
