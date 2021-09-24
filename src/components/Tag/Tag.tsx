@@ -10,7 +10,6 @@ export type TagProps = TextProps;
 export const Tag = React.forwardRef(
     (
         {
-            color,
             isSans,
             isSerif,
             isMono,
@@ -31,7 +30,7 @@ export const Tag = React.forwardRef(
             size,
             weight,
             align,
-            textColour: color || textColour || textColor,
+            textColour: textColour || textColor,
         };
 
         return (

@@ -1,6 +1,6 @@
 import { ArgTypes, ComponentStory } from "@storybook/react";
 import { JSXElementConstructor } from "react";
-import { defaultColours } from "../styles/DefaultColours";
+import { defaultColourProps } from "../styles/DefaultColourProps";
 
 const DefaultOptions = {
     spacing: ["none", "nano", "micro", "tiny", "small", "medium", "large", "huge"],
@@ -11,18 +11,19 @@ const DefaultOptions = {
     align: ["left", "center", "centre", "right"],
     weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
     opacity: ["00", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"],
-    colors: Object.keys(defaultColours).map((color) =>
-        color.replace(/([a-z]*)(\d*)/, Number.isInteger(parseInt(color[color.length - 1])) ? "$1-$2" : "$1")
-    ),
+    // colors: Object.keys(defaultColours).map((color) => color.replace(/([a-z]*)(\d+)/, "$1-$2")),
+    colors: defaultColourProps,
 } as const;
 
-export type FictoanStory<T extends keyof JSX.IntrinsicElements | JSXElementConstructor<any>> = ComponentStory<T> & { displayName?: string };
+export type FictoanStory<T extends keyof JSX.IntrinsicElements | JSXElementConstructor<any>> = ComponentStory<T> & {
+    displayName?: string;
+};
 
 export const createStoryFromTemplate = (template: FictoanStory<any>) => {
     const story = template.bind({});
     story.displayName = template.displayName;
     return story;
-}
+};
 
 type ArgTypeOptions = {
     defaultValue?: any;

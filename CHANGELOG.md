@@ -12,6 +12,8 @@
 - Add `opacity` as a global prop
 - HRule now supports custom background colors
   - Add `hr.default` to theme
+- All colour props are now typed
+  - Add command (`make color-props`) to generate colour props from default colors
 
 **Form improvements**
 - Remove `isAnswers` prop from FormItem

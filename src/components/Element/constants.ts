@@ -1,5 +1,6 @@
 import { HTMLProps } from "react";
 
+import { defaultColourProps } from "../../styles/DefaultColourProps";
 import { FictoanTheme } from "../../styles/theme";
 
 // TODO: Remove once https://github.com/microsoft/TypeScript/pull/40002 ships with TS 4.1.0
@@ -21,19 +22,20 @@ export type SpacingTypes = "none" | "nano" | "micro" | "tiny" | "small" | "mediu
 export type ShadowTypes = "none" | "mild" | "soft" | "hard";
 export type ShapeTypes = "rounded" | "curved";
 export type OpacityTypes = "00" | "10" | "20" | "30" | "40" | "50" | "60" | "70" | "80" | "90" | "100";
+export type ColourPropTypes = typeof defaultColourProps[number];
 
 // prettier-ignore
 export interface CommonProps extends ThemeProps {
-    bgColor           ? : string;
-    bgColour          ? : string;
-    textColor         ? : string;
-    textColour        ? : string;
-    borderColor       ? : string;
-    borderColour      ? : string;
-    fillColor         ? : string;
-    fillColour        ? : string;
-    strokeColor       ? : string;
-    strokeColour      ? : string;
+    bgColor           ? : ColourPropTypes;
+    bgColour          ? : ColourPropTypes;
+    textColor         ? : ColourPropTypes;
+    textColour        ? : ColourPropTypes;
+    borderColor       ? : ColourPropTypes;
+    borderColour      ? : ColourPropTypes;
+    fillColor         ? : ColourPropTypes;
+    fillColour        ? : ColourPropTypes;
+    strokeColor       ? : ColourPropTypes;
+    strokeColour      ? : ColourPropTypes;
     hideOnMobile      ? : boolean;
     showOnlyOnMobile  ? : boolean;
     hideOnTabPT       ? : boolean;

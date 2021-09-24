@@ -2,6 +2,7 @@ import { convertToFictoanColor } from "../../utils/helpers";
 import styled from "styled-components";
 
 import { ButtonProps } from "./Button";
+import { ColourPropTypes } from "../Element/constants";
 
 export const ButtonStyled = styled.button`
     position            : relative;
@@ -228,7 +229,7 @@ export const ButtonStyled = styled.button`
         border-radius      : 50%;
         content            : "";
         border             : 3px solid;
-        border-color       : ${(props: ButtonProps) => convertToFictoanColor(props.textColor ?? props.textColour)};
+        border-color       : ${(props: ButtonProps) => convertToFictoanColor((props.textColor ?? props.textColour) as ColourPropTypes)};
         border-top-color   : transparent;
         border-right-color : transparent;
         -webkit-animation  : spinner 0.4s infinite linear;
