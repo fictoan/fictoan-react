@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './Tooltip.stories';
+import { Tooltip } from "./Tooltip";
+import { CommonArgTypes } from "../../utils/storyUtils";
+
+<Meta title="Components/Tooltip" component={Tooltip} argTypes={{ ...CommonArgTypes }} />
+
+# Tooltip
+
+This is a Tooltip component.
+
+<Canvas>
+    <Story story={stories.Default} />
+</Canvas>

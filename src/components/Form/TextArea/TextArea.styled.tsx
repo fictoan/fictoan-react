@@ -23,11 +23,4 @@ export const TextAreaStyled = styled.textarea`
         border           : 2px solid ${(props: InputFieldProps) => props.theme.inputField.onFocus.border};
         padding          : 11px;
     }
-
-    &:read-only {
-        background-color : ${(props: InputFieldProps) => props.theme.inputField.isReadOnly.bg};
-        color            : ${(props: InputFieldProps) => props.theme.inputField.default.text};
-    }
-
-    &:read-only:focus { border : 2px solid ${(props: InputFieldProps) => props.theme.inputField.default.text}; }
 `;

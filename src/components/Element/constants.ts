@@ -1,5 +1,6 @@
 import { HTMLProps } from "react";
 
+import { defaultColourProps } from "../../styles/DefaultColourProps";
 import { FictoanTheme } from "../../styles/theme";
 
 // TODO: Remove once https://github.com/microsoft/TypeScript/pull/40002 ships with TS 4.1.0
@@ -17,20 +18,24 @@ export interface ThemeProps {
     theme ? : ThemeType;
 }
 
-type SpacingTypes = "none" | "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
+export type SpacingTypes = "none" | "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
+export type ShadowTypes = "none" | "mild" | "soft" | "hard";
+export type ShapeTypes = "rounded" | "curved";
+export type OpacityTypes = "00" | "10" | "20" | "30" | "40" | "50" | "60" | "70" | "80" | "90" | "100";
+export type ColourPropTypes = typeof defaultColourProps[number];
 
 // prettier-ignore
 export interface CommonProps extends ThemeProps {
-    bgColor           ? : string;
-    bgColour          ? : string;
-    textColor         ? : string;
-    textColour        ? : string;
-    borderColor       ? : string;
-    borderColour      ? : string;
-    fillColor         ? : string;
-    fillColour        ? : string;
-    strokeColor       ? : string;
-    strokeColour      ? : string;
+    bgColor           ? : ColourPropTypes;
+    bgColour          ? : ColourPropTypes;
+    textColor         ? : ColourPropTypes;
+    textColour        ? : ColourPropTypes;
+    borderColor       ? : ColourPropTypes;
+    borderColour      ? : ColourPropTypes;
+    fillColor         ? : ColourPropTypes;
+    fillColour        ? : ColourPropTypes;
+    strokeColor       ? : ColourPropTypes;
+    strokeColour      ? : ColourPropTypes;
     hideOnMobile      ? : boolean;
     showOnlyOnMobile  ? : boolean;
     hideOnTabPT       ? : boolean;
@@ -51,13 +56,16 @@ export interface CommonProps extends ThemeProps {
     paddingBottom     ? : SpacingTypes;
     paddingLeft       ? : SpacingTypes;
     padding           ? : SpacingTypes;
+    shadow            ? : ShadowTypes;
+    shape             ? : ShapeTypes;
+    opacity           ? : OpacityTypes;
     classNames        ? : any[];
 }
 
-export interface CommonAndHTMLProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "size" | "ref"> {}
+export interface CommonAndHTMLProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "size" | "ref" | "shape"> {}
 
 // prettier-ignore
-export interface ElementProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as" | "ref"> {
+export interface ElementProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as" | "ref" | "shape"> {
     as          : any;
     className ? : string;
 }

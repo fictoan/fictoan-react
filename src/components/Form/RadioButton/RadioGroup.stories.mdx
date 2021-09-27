@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './RadioGroup.stories';
+import { RadioGroup } from "./RadioGroup";
+import { CommonArgTypes } from "../../../utils/storyUtils";
+
+<Meta title="Components/Form/RadioGroup" component={RadioGroup} argTypes={{ ...CommonArgTypes }} />
+
+# RadioGroup
+
+This is a RadioGroup component.
+
+<Canvas>
+    <Story story={stories.Default} />
+</Canvas>

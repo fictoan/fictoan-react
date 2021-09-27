@@ -1,3 +1,76 @@
+### 0.35.0
+**General**
+- Add Storybook for easy testing and documentation
+  - Each component folder now contains a `<component_name>.stories.tsx` (to create stories) and `<component_name>.stories.mdx` (to write docs) file
+- Add make commands for easy creation of components
+- Remove `name` props from RadioGroup `options` type; Add `label` and `id`
+- Remove `as` from RadioButton and CheckBox props
+- Make `shadow` a global prop
+- Make `shape` a global prop
+- Add ExpandableContent component which implements details and summary tags
+- Add Tag component
+- Add `opacity` as a global prop
+- HRule now supports custom background colors
+  - Add `hr.default` to theme
+- All colour props are now typed
+  - Add command (`make color-props`) to generate colour props from default colors
+
+**Form improvements**
+- Remove `isAnswers` prop from FormItem
+- Remove FormItemJointGroup component
+  - Add `isJoint` prop to FormItemGroup
+- Remove Extra spacing after FormItemGroup
+- Add `fields` and `onFieldsChange` prop to FormWrapper to allow form creation using an array of config 🎉 
+- RadioGroup and Select now use BaseInputComponent
+- Add better and consistent help & error text for each form field
+  - Make InputLabel atomic
+- Add error text for FormWrapper which uses Callout component
+- Add sizes to Switch component
+- Make Select chevron consistent with ExpandableContent
+- Make required and disabled states consistent in form fields
+
+**Sidebar improvements**
+- Remove `name` props from RadioGroup `options` type; Add `label` and `id`
+- Remove `isSticky` from Sidebar footer
+- `sidebar.body.bg` is now `sidebar.bg` in theme
+- Add sidebar width properties to theme; SidebarHeader, SidebarFooter and SidebarItem span 100% automatically
+- Remove `isSticky` from SidebarFooter, it always sticks to bottom
+- Remove SidebarLink, SidebarNestedLinks and SidebarLinksWrapper
+- Make SidebarHeader and SidebarFooter sticky instead of fixed to get simpler and consistent sidebar layout
+- Remove `sidebar.linksWrapper.marginTop` and `sidebar.linksWrapper.marginBottom` from theme
+- Remove SidebarItemsGroup and SidebarItemsGroupHeader
+
+**New components**
+- Tooltip (very basic, might overflow screens)
+- Callout
+- ExpandableContent
+- Tag
+
+**Removed components**
+- FormItemJointGroup
+- SidebarLink
+- SidebarNestedLinks
+- SidebarLinksWrapper
+- SidebarItemsGroup
+- SidebarItemsGroupHeader
+
+## BREAKING CHANGES ⚠️ 
+- Inside theme:
+  - `inputField.default.helpText` is now `inputField.onFocus.helpText`
+  - `inputField.isInvalid.helpText` is now `inputField.isInvalid.errorText`
+  - `sidebar.body.bg` is now `sidebar.bg`
+  - `sidebar.linksWrapper.marginTop` and `sidebar.linksWrapper.marginBottom` have been removed
+- Remove `isSticky` from SidebarFooter 
+  - It always sticks to bottom
+- Remove FormItemJointGroup
+  - Use `isJoint` prop inside FormItemGroup instead
+- Remove SidebarLink, SidebarNestedLinks and SidebarLinksWrapper
+- Remove SidebarItemsGroup and SidebarItemsGroupHeader 
+  - Use ExpandableContent component instead
+- Default Switch size now `medium` which is larger than before 
+  - Set to size `small` for old size
+
+
 ### 0.34.0
 - Replace `react-syntax-highlighter` with `prism-react-renderer`
 - Add simple wrappers for `prism-components` to import specific languages from `prismjs`

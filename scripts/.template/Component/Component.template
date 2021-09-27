@@ -1,0 +1,26 @@
+import React from "react";
+import { CommonAndHTMLProps } from "../Element/constants";
+import { Element } from "../Element/Element";
+
+import { VAR_COMPONENT_NAMEStyled } from "./VAR_COMPONENT_NAME.styled";
+
+export interface VAR_COMPONENT_NAMECustomProps {
+    /** Define props types here */
+    // description: string;
+}
+
+export type VAR_COMPONENT_NAMEElementType = HTMLDivElement;
+export type VAR_COMPONENT_NAMEProps = Omit<CommonAndHTMLProps<VAR_COMPONENT_NAMEElementType>, keyof VAR_COMPONENT_NAMECustomProps> & VAR_COMPONENT_NAMECustomProps;
+
+export const VAR_COMPONENT_NAME = React.forwardRef(
+    (
+        { ...props }: VAR_COMPONENT_NAMEProps,
+        ref: React.Ref<VAR_COMPONENT_NAMEElementType>
+    ) => {
+        return (
+            <Element<VAR_COMPONENT_NAMEElementType> as={VAR_COMPONENT_NAMEStyled} ref={ref} {...props}>
+                
+            </Element>
+        );
+    }
+);

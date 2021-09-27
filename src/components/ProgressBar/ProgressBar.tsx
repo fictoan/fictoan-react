@@ -16,21 +16,14 @@ export interface ProgressBarCustomProps {
     barBg   ? : string;
     barFill ? : string;
     unit    ? : string;
-    shape   ? : "rounded" | "curved";
 }
 
 export type ProgressBarElementType = HTMLProgressElement;
-export type ProgressBarProps = CommonAndHTMLProps<ProgressBarElementType> & ProgressBarCustomProps;
-export type ProgressBarMetaProps = CommonAndHTMLProps<HTMLDivElement> & ProgressBarLabelCustomProps;
+export type ProgressBarProps = Omit<CommonAndHTMLProps<ProgressBarElementType>, keyof ProgressBarCustomProps> & ProgressBarCustomProps;
+export type ProgressBarMetaProps = Omit<CommonAndHTMLProps<HTMLDivElement>, keyof ProgressBarLabelCustomProps> & ProgressBarLabelCustomProps;
 
 export const ProgressBar = React.forwardRef(
-    ({ label, value, shape, ...props }: ProgressBarProps, ref: React.Ref<ProgressBarElementType>) => {
-        let classNames = [];
-
-        if (shape) {
-            classNames.push(`shape-${shape}`);
-        }
-
+    ({ label, value, ...props }: ProgressBarProps, ref: React.Ref<ProgressBarElementType>) => {
         return (
             <>
                 {label && (
@@ -42,7 +35,6 @@ export const ProgressBar = React.forwardRef(
                 <Element<ProgressBarElementType>
                     as={ProgressBarStyled}
                     ref={ref}
-                    classNames={classNames}
                     value={value}
                     {...props}
                 />

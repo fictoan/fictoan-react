@@ -1,0 +1,18 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './FormWrapper.stories';
+import { FormWrapper } from "./FormWrapper";
+import { CommonArgTypes } from "../../../utils/storyUtils";
+
+<Meta title="Components/Form/FormWrapper" component={FormWrapper} argTypes={{ ...CommonArgTypes }} />
+
+# FormWrapper
+
+This is a FormWrapper component.
+
+<Canvas>
+    <Story story={stories.Default} />
+</Canvas>
+
+<Canvas>
+    <Story story={stories.UsingFieldsProp} />
+</Canvas>

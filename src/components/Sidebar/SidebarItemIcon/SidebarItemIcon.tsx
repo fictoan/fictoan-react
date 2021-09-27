@@ -11,7 +11,7 @@ export interface SidebarItemIconCustomProps {
 }
 
 export type SidebarItemIconElementType = HTMLDivElement;
-export type SidebarItemIconProps = CommonAndHTMLProps<SidebarItemIconElementType> & SidebarItemIconCustomProps;
+export type SidebarItemIconProps = Omit<CommonAndHTMLProps<SidebarItemIconElementType>, keyof SidebarItemIconCustomProps> & SidebarItemIconCustomProps;
 
 export const SidebarItemIcon = React.forwardRef(
     ({ iconType, ...props }: SidebarItemIconProps, ref: React.Ref<SidebarItemIconElementType>) => {

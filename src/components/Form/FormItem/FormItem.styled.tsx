@@ -1,7 +1,8 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import { FormItemProps } from "../FormItem/FormItem";
 import { InputFieldStyled } from "../InputField/InputField.styled";
+import { SelectWrapperStyled } from "../Select/Select.styled";
 import { TextAreaStyled } from "../TextArea/TextArea.styled";
 
 
@@ -11,10 +12,6 @@ export const FormItemStyled = styled.div`
     position       : relative;
     width          : 100%;
     align-items    : flex-start;
-
-    ${(props: FormItemProps) => props.isAnswers && css`
-        * { margin-bottom: 8px; }
-    `}
 
     & > label {
         position      : relative;
@@ -27,44 +24,78 @@ export const FormItemStyled = styled.div`
         order         : -1;
         flex-wrap     : wrap;
     }
-
-    ${InputFieldStyled}, ${TextAreaStyled} {
-        &:focus ~ label { font-weight : bold; }
-
-        &:required ~ label::before {
-            position  : absolute;
-            top       : -4px;
-            bottom    : 0;
-            left      : -14px;
-            margin    : auto;
-            content   : " *";
-            font-size : 120%;
-            color     : ${(props: FormItemProps) => props.theme.inputField.required.text};
+    
+    .info-section {
+        flex-wrap: wrap;
+        
+        span.help-text, span.error-text {
+            font-size : 95%;
         }
 
-        &:focus ~ label > span.ff-input-help,
-        &:active ~ label > span.ff-input-help {
-            display : inline-flex;
+        span.help-text {
+            color : ${(props: FormItemProps) => props.theme.inputField.default.helpText};
+        }
+    
+        span.error-text {
+            display: none;
         }
 
-        &:not(:focus):not(:placeholder-shown) ~ label > span.ff-input-help {
-            color : ${(props: FormItemProps) => props.theme.inputField.onFocus.helpText};
-        }
-
-        &:invalid:focus:not(:placeholder-shown) ~ label > span.ff-input-error,
-        &:invalid:not(:focus):not(:placeholder-shown) ~ label > span.ff-input-error {
-            display : inline-flex;
-            color   : ${(props: FormItemProps) => props.theme.inputField.isInvalid.helpText};
+        span:not(:last-of-type) {
+            margin-right: 10px;
         }
     }
 
-    label span {
-        font-weight : normal;
-        color       : ${(props: FormItemProps) => props.theme.inputField.onFocus.helpText};
-        display     : none;
-        align-self  : center;
-        transition  : opacity 0.2s;
+    &[required] {
+        & > div, // For RadioGroup
+        & > ${InputFieldStyled}, 
+        & > ${TextAreaStyled}, 
+        & > ${SelectWrapperStyled} {
+            & ~ label::before {
+                position  : absolute;
+                top       : -4px;
+                bottom    : 0;
+                left      : -12px;
+                margin    : auto;
+                content   : "*";
+                font-size : 120%;
+                color     : ${(props: FormItemProps) => props.theme.inputField.required.text};
+            }
+        }
     }
 
-    label > span::before { content : "\\0000a0\\2022\\0000a0"; }
+    input[type="radio"]:disabled + label,
+    input[type="checkbox"]:disabled + label {
+        pointer-events : none;
+        user-select    : none;
+        cursor         : default;
+        opacity        : 0.36;
+    }
+    
+    ${InputFieldStyled}, ${TextAreaStyled}, ${SelectWrapperStyled} {
+        &:read-only {
+            background-color : ${(props: FormItemProps) => props.theme.inputField.isReadOnly.bg};
+            color            : ${(props: FormItemProps) => props.theme.inputField.default.text};
+
+            &:focus { border : 2px solid ${(props: FormItemProps) => props.theme.inputField.default.text}; }
+        }
+
+        &:disabled, &[disabled] select {
+            background-color : ${(props: FormItemProps) => props.theme.inputField.isReadOnly.bg};
+            border-color     : ${(props: FormItemProps) => props.theme.inputField.isReadOnly.border};
+            color            : ${(props: FormItemProps) => props.theme.inputField.isReadOnly.text};
+            
+            & + label {
+                color : ${(props: FormItemProps) => props.theme.inputField.isReadOnly.label};
+            }
+        }
+
+        &:not(:disabled) {
+            &:focus ~ label { font-weight : bold; }
+            
+            &:invalid:not(:focus):not(:placeholder-shown) ~ .info-section span.error-text {
+                display: block;
+                color : ${(props: FormItemProps) => props.theme.inputField.isInvalid.errorText};
+            }
+        }
+    }
 `;

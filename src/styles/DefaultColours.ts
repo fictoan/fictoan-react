@@ -1,8 +1,5 @@
-interface DefaultColours {
-    [key:string] : string
-}
 
-export const defaultColours:DefaultColours = {
+export const defaultColours = {
     "black"       : "hsl(   0,   0%,   0%)",
     "white"       : "hsl(   0,   0%, 100%)",
     "transparent" : "hsla(   0,   0%, 100%, 0)",
@@ -248,4 +245,4 @@ export const defaultColours:DefaultColours = {
     "grey30" : "hsl(   0,   0%,  83%)",
     "grey20" : "hsl(   0,   0%,  90%)",
     "grey10" : "hsl(   0,   0%,  97%)",
-}
+} as const;

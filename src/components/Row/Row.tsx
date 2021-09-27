@@ -1,14 +1,14 @@
 import React from "react";
 
 import { Element } from "../Element/Element";
-import { CommonAndHTMLProps } from "../Element/constants";
+import { CommonAndHTMLProps, SpacingTypes } from "../Element/constants";
 
 import { RowStyled } from "./Row.styled";
 
 // prettier-ignore
 export interface RowCustomProps {
     sidePadding          ? : "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
-    gutters              ? : "none" | "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
+    gutters              ? : SpacingTypes;
     retainLayoutOnTabLS  ? : boolean;
     retainLayoutOnTabPT  ? : boolean;
     retainLayoutOnMobile ? : boolean;
@@ -16,7 +16,7 @@ export interface RowCustomProps {
 }
 
 export type RowElementType = HTMLDivElement;
-export type RowProps = CommonAndHTMLProps<RowElementType> & RowCustomProps;
+export type RowProps = Omit<CommonAndHTMLProps<RowElementType>, keyof RowCustomProps> & RowCustomProps;
 
 export const Row = React.forwardRef(
     (

@@ -5,22 +5,11 @@ import { CommonAndHTMLProps } from "../../Element/constants";
 
 import { SidebarFooterStyled } from "./SidebarFooter.styled";
 
-// prettier-ignore
-export interface SidebarFooterCustomProps {
-    isSticky ? : boolean;
-}
-
 export type SidebarFooterElementType = HTMLDivElement;
-export type SidebarFooterProps = CommonAndHTMLProps<SidebarFooterElementType> & SidebarFooterCustomProps;
+export type SidebarFooterProps = CommonAndHTMLProps<SidebarFooterElementType>;
 
 export const SidebarFooter = React.forwardRef(
-    ({isSticky,  ...props }: SidebarFooterProps, ref: React.Ref<SidebarFooterElementType>) => {
-        let classNames = [];
-
-        if (isSticky) {
-            classNames.push("is-sticky");
-        }
-
+    (props: SidebarFooterProps, ref: React.Ref<SidebarFooterElementType>) => {
         return <Element<SidebarFooterElementType> as={SidebarFooterStyled} ref={ref} {...props} />;
     }
 );

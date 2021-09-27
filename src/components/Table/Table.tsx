@@ -15,7 +15,7 @@ export interface TableCustomProps {
 }
 
 export type TableElementType = HTMLTableElement;
-export type TableProps = CommonAndHTMLProps<TableElementType> & TableCustomProps;
+export type TableProps = Omit<CommonAndHTMLProps<TableElementType>, keyof TableCustomProps> & TableCustomProps;
 
 export const Table = React.forwardRef(
     (

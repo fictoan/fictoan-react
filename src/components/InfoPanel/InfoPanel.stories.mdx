@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './InfoPanel.stories';
+import { InfoPanel } from "./InfoPanel";
+import { CommonArgTypes } from "../../utils/storyUtils";
+
+<Meta title="Components/InfoPanel" component={InfoPanel} argTypes={{ ...CommonArgTypes }} />
+
+# InfoPanel
+
+This is a InfoPanel component.
+
+<Canvas>
+    <Story story={stories.Default} />
+</Canvas>

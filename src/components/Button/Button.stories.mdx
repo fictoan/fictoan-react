@@ -1,0 +1,22 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './Button.stories';
+import { Button } from "./Button";
+import { CommonArgTypes } from "../../utils/storyUtils";
+
+<Meta title="Components/Button" component={Button} argTypes={{ ...CommonArgTypes, shape: undefined }} args={{ children: "Button" }} />
+
+# Button
+
+This is a simple Button component with 3 kinds available: `primary`, `secondary` and `tertiary`
+
+<Canvas>
+    <Story story={stories.Primary} />
+    <Story story={stories.Secondary} />
+    <Story story={stories.Tertiary} />
+</Canvas>
+
+You can also have a custom styling for the button using kind `custom`
+
+<Canvas>
+    <Story story={stories.Custom} />
+</Canvas>

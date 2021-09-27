@@ -6,6 +6,11 @@ import { HRProps } from "./HRule";
 export const HRStyled = styled.hr`
     border : 0;
     width  : 100%;
+    height : ${(props: HRProps) => props.theme.hr.default.height};
+
+    &:not([class*="bg-"]) {
+        background-color : ${(props: HRProps) => props.theme.hr.default.bg};
+    }
 
     &.side-margin-nano   { width: calc(100% -  2vw); }
     &.side-margin-micro  { width: calc(100% -  4vw); }

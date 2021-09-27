@@ -46,13 +46,6 @@ const SharedStyling = css`
     input[type="checkbox"]:checked + label::before {
         background : ${(props: CheckboxProps) => props.theme.checkBox.square.isChecked.bg};
     }
-
-    input[type="checkbox"]:disabled + label,
-    input[type="checkbox"]:disabled:checked + label {
-        pointer-events : none;
-        cursor         : default;
-        opacity        : 0.24;
-    }
 `;
 
 /*  CHECKBOX  =============================================================  */
@@ -96,37 +89,95 @@ export const SwitchStyled = styled.div`
 
     input[type="checkbox"] { display : none; }
 
-    label { padding-left : 32px; }
-
-    /*  The grey oblong */
-    label::before {
-        position      : absolute;
-        top           : 2px;
-        left          : 0;
-        width         : 24px;
-        height        : 12px;
-        border-radius : 8px;
-        margin-right  : 4px;
-    }
-
-    /*  The white inner circle */
-    label::after {
-        position      : absolute;
-        display       : inline-block;
-        width         : 8px;
-        height        : 8px;
-        left          : 2px;
-        top           : 4px;
-        background    : ${(props: CheckboxProps) => props.theme.toggleSwitch.switch.default.bg};
-        border-radius : 50%;
-        content       : "";
-        transition    : all 0.1s ease-out;
-        box-shadow    : 0 2px 4px -2px hsla(0, 0, 0, 0.6);
-        opacity       : 1;
+    label { 
+        position: relative;
+    
+        /*  The grey oblong */
+        &::before {
+            position      : absolute;
+            top           : 50%;
+            left          : 0;
+            transform     : translateY(-50%);
+            border-radius : 16px;
+            margin-right  : 4px;
+        }
+    
+        /*  The white inner circle */
+        &::after {
+            content       : "";
+            position      : absolute;
+            top           : 50%;
+            transform     : translateY(-50%);
+            display       : inline-block;
+            background    : ${(props: CheckboxProps) => props.theme.toggleSwitch.switch.default.bg};
+            border-radius : 50%;
+            transition    : all 0.1s ease-out;
+            box-shadow    : 0 2px 4px -2px hsla(0, 0, 0, 0.6);
+            opacity       : 1;
+        }
     }
 
     input[type="checkbox"]:checked + label::after {
-        transform  : translateX(12px);
         background : ${(props: CheckboxProps) => props.theme.toggleSwitch.switch.isChecked.bg};
     }
+
+
+    /* Sizes */
+    &.size-small {
+        label { 
+            padding-left : 32px; 
+        
+            &::before {
+                width         : 24px;
+                height        : 12px;
+            }
+        
+            &::after {
+                left          : 2px;
+                width         : 8px;
+                height        : 8px;
+            }
+        }
+        input[type="checkbox"]:checked + label::after {
+            transform  : translateY(-50%) translateX(12px);
+        }
+    }
+    &.size-medium {
+        label { 
+            padding-left : 44px; 
+        
+            &::before {
+                width         : 36px;
+                height        : 18px;
+            }
+        
+            &::after {
+                left          : 3px;
+                width         : 12px;
+                height        : 12px;
+            }
+        }
+        input[type="checkbox"]:checked + label::after {
+            transform  : translateY(-50%) translateX(18px);
+        }
+    }
+    &.size-large {
+        label { 
+            padding-left : 56px; 
+        
+            &::before {
+                width         : 48px;
+                height        : 24px;
+            }
+            
+            &::after {
+                left          : 4px;
+                width         : 16px;
+                height        : 16px;
+            }
+        }
+        input[type="checkbox"]:checked + label::after {
+            transform  : translateY(-50%) translateX(24px);
+        }
+    }    
 `;

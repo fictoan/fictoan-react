@@ -40,6 +40,9 @@ export const Element = React.forwardRef(<K extends {}>(props: ElementProps<K>, r
         paddingBottom,
         paddingLeft,
         padding,
+        shadow,
+        shape,
+        opacity,
         ...minimalProps
     } = props;
 
@@ -55,16 +58,16 @@ export const Element = React.forwardRef(<K extends {}>(props: ElementProps<K>, r
                     size && `size-${size}`,
                     isFullWidth && "full-width",
                     isFullHeight && "full-height",
-                    bgColor && `bg-${bgColor}`,
-                    bgColour && `bg-${bgColour}`,
-                    textColor && `text-${textColor}`,
-                    textColour && `text-${textColour}`,
-                    borderColor && `border-${borderColor}`,
-                    borderColour && `border-${borderColour}`,
-                    fillColor && `fill-${fillColor}`,
-                    fillColour && `fill-${fillColour}`,
-                    strokeColor && `stroke-${strokeColor}`,
-                    strokeColour && `stroke-${strokeColour}`,
+                    bgColor && `bg-${String(bgColor)}`,
+                    bgColour && `bg-${String(bgColour)}`,
+                    textColor && `text-${String(textColor)}`,
+                    textColour && `text-${String(textColour)}`,
+                    borderColor && `border-${String(borderColor)}`,
+                    borderColour && `border-${String(borderColour)}`,
+                    fillColor && `fill-${String(fillColor)}`,
+                    fillColour && `fill-${String(fillColour)}`,
+                    strokeColor && `stroke-${String(strokeColor)}`,
+                    strokeColour && `stroke-${String(strokeColour)}`,
                     hideOnMobile && "hide-on-mobile",
                     showOnlyOnMobile && "show-only-on-mobile",
                     hideOnTabPT && "hide-on-tab-pt",
@@ -83,8 +86,12 @@ export const Element = React.forwardRef(<K extends {}>(props: ElementProps<K>, r
                     paddingBottom && `padding-bottom-${paddingBottom}`,
                     paddingLeft && `padding-left-${paddingLeft}`,
                     padding && `padding-all-${padding}`,
+                    shadow && `shadow-${shadow}`,
+                    shape && `shape-${shape}`,
+                    opacity && `opacity-${opacity}`,
                 ].concat(classNames)
             )}
+            // data-testid={`${Component.displayName}Test`}
         />
     );
 }) as <K extends {}>(props: ElementProps<K> & { ref?: React.LegacyRef<HTMLElement> }) => React.ReactElement;

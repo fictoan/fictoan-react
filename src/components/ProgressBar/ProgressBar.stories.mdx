@@ -1,0 +1,15 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './ProgressBar.stories';
+import { ProgressBar } from "./ProgressBar";
+import { CommonArgTypes } from "../../utils/storyUtils";
+
+<Meta title="Components/ProgressBar" component={ProgressBar} argTypes={{ ...CommonArgTypes }} />
+
+# ProgressBar
+
+This is a ProgressBar component.
+
+<Canvas>
+    <Story story={stories.Default} />
+    <Story story={stories.WithoutValue} />
+</Canvas>

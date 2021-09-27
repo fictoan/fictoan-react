@@ -125,6 +125,10 @@ export const FictoanTheme = {
 
     //  RULE  /////////////////////////////////////////////////////////////////
     hr : {
+        default   : {
+            bg     : defaultColours.blue80,
+            height : "1px"
+        },
         primary   : {
             bg     : defaultColours.blue80,
             height : "1px"
@@ -147,13 +151,13 @@ export const FictoanTheme = {
             border       : defaultColours.slate40,
             label        : customColours.shade,
             text         : customColours.shade,
-            borderRadius : "4px"
+            borderRadius : "4px",
+            helpText     : defaultColours.slate60
         },
         onFocus    : {
             bg       : defaultColours.white,
             border   : customColours.hue,
             text     : customColours.shade,
-            helpText : customColours.shade
         },
         isValid    : {
             bg     : defaultColours.white,
@@ -161,14 +165,15 @@ export const FictoanTheme = {
             label  : customColours.shade
         },
         isInvalid  : {
-            bg       : defaultColours.red10,
-            border   : defaultColours.red80,
-            label    : defaultColours.red,
-            helpText : defaultColours.red
+            bg        : defaultColours.red10,
+            border    : defaultColours.red80,
+            label     : defaultColours.red,
+            errorText : defaultColours.red
         },
         isReadOnly : {
-            bg     : defaultColours.grey50,
-            border : defaultColours.grey50,
+            bg     : defaultColours.slate10,
+            border : defaultColours.slate20,
+            text   : defaultColours.slate60,
             label  : customColours.shade
         },
         required   : {
@@ -293,15 +298,15 @@ export const FictoanTheme = {
 
     //  SIDEBAR  //////////////////////////////////////////////////////////////
     sidebar : {
+        width : "240px",
+        bg    : defaultColours.white,
+
         isCollapsed : {
+            width : "48px",
             label : {
                 text : defaultColours.white,
                 bg   : customColours.hue
             }
-        },
-
-        body : {
-            bg : defaultColours.white
         },
 
         header : {
@@ -311,9 +316,6 @@ export const FictoanTheme = {
         },
 
         linksWrapper : {
-            marginTop    : "100px",
-            marginBottom : "32px",
-
             icons : {
                 size    : "24px",
                 stroked : {
@@ -339,7 +341,7 @@ export const FictoanTheme = {
                         bg : defaultColours.slate
                     }
                 }
-        },
+            },
 
             links : {
                 default    : {

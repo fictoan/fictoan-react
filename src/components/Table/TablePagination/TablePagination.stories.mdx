@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './TablePagination.stories';
+import { TablePagination } from "./TablePagination";
+import { CommonArgTypes } from "../../../utils/storyUtils";
+
+<Meta title="Components/TablePagination" component={TablePagination} argTypes={{ ...CommonArgTypes }} />
+
+# TablePagination
+
+This is a TablePagination component.
+
+<Canvas>
+    <Story story={stories.Default} />
+</Canvas>

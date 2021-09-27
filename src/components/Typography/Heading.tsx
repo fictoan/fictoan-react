@@ -14,7 +14,7 @@ export interface HeadingCustomProps {
 }
 
 export type HeadingElementType = HTMLHeadingElement;
-export type HeadingProps = CommonAndHTMLProps<HeadingElementType> & HeadingCustomProps;
+export type HeadingProps = Omit<CommonAndHTMLProps<HeadingElementType>, keyof HeadingCustomProps> & HeadingCustomProps;
 
 export const Heading = React.forwardRef(
     ({ as, weight, isSans, isSerif, isMono, align, ...props }: HeadingProps, ref: React.Ref<HeadingElementType>) => {

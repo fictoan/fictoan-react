@@ -5,7 +5,7 @@ import { SidebarItemProps } from "./SidebarItem";
 export const SidebarItemStyled = styled.div`
     display               : grid;
     align-items           : center;
-    grid-template-columns : 48px 1fr;
+    grid-template-columns : ${(props: SidebarItemProps) => props.theme.sidebar.isCollapsed.width} 1fr;
     grid-template-rows    : 40px;
 
     & > a { width : unset; }
@@ -17,18 +17,20 @@ export const SidebarItemStyled = styled.div`
 
     &.has-alert {
         position : relative;
-        width    : fit-content;
+        
+        &::after {
+            content          : "";
+            display          : block;
+            position         : absolute;
+            top              : 50%;
+            transform        : translateY(-50%);
+            pointer-events   : none;
+            right            : 6px;
+            height           : 8px;
+            width            : 8px;
+            border-radius    : 50%;
+            background-color : ${(props: SidebarItemProps) => props.theme.sidebar.linksWrapper.links.hasAlert.bg};
+        }
     }
 
-    &.has-alert::after {
-        display          : block;
-        content          : "";
-        position         : absolute;
-        top              : calc(50% - 3px);
-        right            : -12px;
-        height           : 8px;
-        width            : 8px;
-        border-radius    : 50%;
-        background-color : ${(props: SidebarItemProps) => props.theme.sidebar.linksWrapper.links.hasAlert.bg};
-    }
 `;

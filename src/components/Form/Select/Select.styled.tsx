@@ -4,30 +4,36 @@ import { SelectProps } from "./Select";
 
 
 export const SelectWrapperStyled = styled.div`
-    position    : relative;
-    width       : max-content;
-    align-self  : flex-start;
+    position   : relative;
+    width      : max-content;
+    align-self : flex-start;
 
     &::after {
+        content        : "";
+        display        : inline-block;
         position       : absolute;
-        display        : block;
-        content        : "\\2303";
-        top            : 6px;
+        top            : 50%;
         right          : 12px;
-        font-size      : 24px;
+        width          : 10px;
+        height         : 10px;
+        border-style   : solid;
+        border-width   : 0 2px 2px 0;
+        transform      : translateY(-50%) rotate(45deg);
         color          : ${(props: SelectProps) => props.theme.select.chevron};
-        line-height    : 1.2;
-        border-color   : ${(props: SelectProps) => props.theme.select.chevron};
+        transition     : transform 0.2s linear;
         z-index        : 500;
         pointer-events : none;
-        transform      : rotate(180deg);
+    }
+
+    &[disabled]::after {
+        color : ${(props: SelectProps) => props.theme.inputField.isReadOnly.text};
     }
 `;
 
 export const SelectStyled = styled.select`
     display          : flex;
     height           : 100%;
-    padding          : 12px 48px 12px 8px;
+    padding          : 12px 36px 12px 8px;
     font-family      : ${(props: SelectProps) => props.theme.text.font.sans};
     background-color : ${(props: SelectProps) => props.theme.inputField.default.bg};
     border-radius    : 4px;

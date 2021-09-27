@@ -22,13 +22,6 @@ export const InputFieldStyled = styled.input`
         padding          : 11px;
     }
 
-    &:read-only {
-        background-color : ${(props: InputFieldProps) => props.theme.inputField.isReadOnly.bg};
-        color            : ${(props: InputFieldProps) => props.theme.inputField.default.text};
-    }
-
-    &:read-only:focus { border : 2px solid ${(props: InputFieldProps) => props.theme.inputField.default.text}; }
-
     &[type=password] { letter-spacing : 4px; }
 
     /*  LEFT AND  RIGHT ICONS  ============================================  */
