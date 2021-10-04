@@ -1,7 +1,7 @@
 import { HTMLProps } from "react";
 
 import { defaultColourProps } from "../../styles/DefaultColourProps";
-import { FictoanTheme } from "../../styles/theme";
+import { customColours, FictoanTheme } from "../../styles/theme";
 
 // TODO: Remove once https://github.com/microsoft/TypeScript/pull/40002 ships with TS 4.1.0
 type DeepPartial<T> = {
@@ -22,7 +22,7 @@ export type SpacingTypes = "none" | "nano" | "micro" | "tiny" | "small" | "mediu
 export type ShadowTypes = "none" | "mild" | "soft" | "hard";
 export type ShapeTypes = "rounded" | "curved";
 export type OpacityTypes = "00" | "10" | "20" | "30" | "40" | "50" | "60" | "70" | "80" | "90" | "100";
-export type ColourPropTypes = typeof defaultColourProps[number];
+export type ColourPropTypes = typeof defaultColourProps[number] | keyof typeof customColours | "";
 
 // prettier-ignore
 export interface CommonProps extends ThemeProps {

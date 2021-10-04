@@ -5,16 +5,16 @@ import { defaultColours } from "./DefaultColours";
 
 type CustomColoursType = { [k in string]: string };
 
-export const customColours: CustomColoursType = {
+export const customColours = {
     hue      : defaultColours.blue90,
     tint     : defaultColours.amber,
     shade    : defaultColours.grey,
     analogue : defaultColours.indigo50,
     accent   : defaultColours.green80
-};
+} as const;
 
 export const FictoanTheme = {
-    customColours : customColours,
+    customColours : customColours as CustomColoursType,
 
     //  GLOBALS  //////////////////////////////////////////////////////////////
     globals : {
