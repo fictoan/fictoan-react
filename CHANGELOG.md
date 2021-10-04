@@ -1,5 +1,5 @@
 ### 0.35.1
-- Fix theme throwing error on color overrides
+- Fix theme throwing error on colour overrides
 - Add custom colours to ColorPropsType and export it from library
 - Fix InputField element type
 
