@@ -1,3 +1,6 @@
+### 0.35.1
+- Fix theme throwing error on color overrides
+
 ### 0.35.0
 **General**
 - Add Storybook for easy testing and documentation
