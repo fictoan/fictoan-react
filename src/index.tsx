@@ -58,6 +58,6 @@ export { Tag } from "./components/Tag/Tag";
 export { Tooltip } from "./components/Tooltip/Tooltip";
 
 export { ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
-export { ThemeType, ThemeProps } from "./components/Element/constants";
+export { ThemeType, ThemeProps, ColourPropTypes } from "./components/Element/constants";
 export { defaultColours } from "./styles/DefaultColours";
 export { FictoanTheme } from "./styles/theme";
