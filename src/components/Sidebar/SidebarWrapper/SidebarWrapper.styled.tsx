@@ -54,7 +54,6 @@ export const SidebarWrapperStyled = styled.aside`
             position : absolute;
         }
 
-        // TODO: Ask why + selector is required here
         ${SidebarItemStyled}:hover ${SidebarItemIconStyled} + ${SidebarItemTextStyled} {
             display          : flex;
             position         : fixed;

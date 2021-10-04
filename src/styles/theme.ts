@@ -3,8 +3,9 @@ import darken from "polished/lib/color/darken";
 
 import { defaultColours } from "./DefaultColours";
 
+type CustomColoursType = { [k in string]: string };
 
-export const customColours = {
+export const customColours: CustomColoursType = {
     hue      : defaultColours.blue90,
     tint     : defaultColours.amber,
     shade    : defaultColours.grey,
@@ -22,22 +23,22 @@ export const FictoanTheme = {
 
     //  BASICS  ///////////////////////////////////////////////////////////////
     body : {
-        bg : defaultColours.white
+        bg : String(defaultColours.white)
     },
 
 
     //  BREADCRUMBS  ///////////////////////////////////////////////////////////
     breadcrumbs : {
         wrapper   : {
-            bg : defaultColours.white
+            bg : String(defaultColours.white)
         },
         item      : {
-            text     : customColours.shade,
-            active   : customColours.shade,
-            inactive : customColours.shade
+            text     : String(customColours.shade),
+            active   : String(customColours.shade),
+            inactive : String(customColours.shade)
         },
         separator : {
-            text    : defaultColours.slate80,
+            text    : String(defaultColours.slate80),
             content : "\"/\""
         }
     },
@@ -47,69 +48,69 @@ export const FictoanTheme = {
     button : {
         font      : "sans-serif",
         isLoading : {
-            spinnerBorder : customColours.hue
+            spinnerBorder : String(customColours.hue)
         },
         primary   : {
             default   : {
-                bg           : customColours.hue,
-                border       : customColours.hue,
-                text         : defaultColours.white,
+                bg           : String(customColours.hue),
+                border       : String(customColours.hue),
+                text         : String(defaultColours.white),
                 borderRadius : "4px"
             },
             onHover   : {
-                bg     : customColours.hue,
-                border : customColours.hue,
-                text   : defaultColours.white
+                bg     : String(customColours.hue),
+                border : String(customColours.hue),
+                text   : String(defaultColours.white)
             },
             isActive  : {
-                bg     : customColours.hue,
-                border : customColours.hue,
-                text   : defaultColours.white
+                bg     : String(customColours.hue),
+                border : String(customColours.hue),
+                text   : String(defaultColours.white)
             },
             isLoading : {
-                spinnerBorder : defaultColours.white
+                spinnerBorder : String(defaultColours.white)
             }
         },
         secondary : {
             default   : {
-                bg           : `${lighten(0.4, customColours.hue)}`,
-                border       : customColours.hue,
-                text         : customColours.hue,
+                bg           : `${lighten(0.4, String(customColours.hue))}`,
+                border       : String(customColours.hue),
+                text         : String(customColours.hue),
                 borderRadius : "4px"
             },
             onHover   : {
-                bg     : `${lighten(0.4, customColours.hue)}`,
-                border : customColours.hue,
-                text   : customColours.hue
+                bg     : `${lighten(0.4, String(customColours.hue))}`,
+                border : String(customColours.hue),
+                text   : String(customColours.hue)
             },
             isActive  : {
-                bg     : `${lighten(0.2, customColours.hue)}`,
-                border : customColours.hue,
-                text   : customColours.hue
+                bg     : `${lighten(0.2, String(customColours.hue))}`,
+                border : String(customColours.hue),
+                text   : String(customColours.hue)
             },
             isLoading : {
-                spinnerBorder : customColours.hue
+                spinnerBorder : String(customColours.hue)
             }
         },
         tertiary  : {
             default   : {
-                bg           : defaultColours.transparent,
-                border       : customColours.hue,
-                text         : customColours.hue,
+                bg           : String(defaultColours.transparent),
+                border       : String(customColours.hue),
+                text         : String(customColours.hue),
                 borderRadius : "4px"
             },
             onHover   : {
-                bg     : `${lighten(0.40, customColours.hue)}`,
-                border : defaultColours.transparent,
-                text   : customColours.hue
+                bg     : `${lighten(0.40, String(customColours.hue))}`,
+                border : String(defaultColours.transparent),
+                text   : String(customColours.hue)
             },
             isActive  : {
-                bg     : `${lighten(0.32, customColours.hue)}`,
-                border : defaultColours.transparent,
-                text   : customColours.hue
+                bg     : `${lighten(0.32, String(customColours.hue))}`,
+                border : String(defaultColours.transparent),
+                text   : String(customColours.hue)
             },
             isLoading : {
-                spinnerBorder : customColours.hue
+                spinnerBorder : String(customColours.hue)
             }
         }
     },
@@ -117,8 +118,8 @@ export const FictoanTheme = {
 
     //  CARD  /////////////////////////////////////////////////////////////////
     card : {
-        bg           : defaultColours.white,
-        border       : `${lighten(0.96, defaultColours.black)}`,
+        bg           : String(defaultColours.white),
+        border       : `${lighten(0.96, String(defaultColours.black))}`,
         borderRadius : "4px"
     },
 
@@ -126,19 +127,19 @@ export const FictoanTheme = {
     //  RULE  /////////////////////////////////////////////////////////////////
     hr : {
         default   : {
-            bg     : defaultColours.blue80,
+            bg     : String(defaultColours.blue80),
             height : "1px"
         },
         primary   : {
-            bg     : defaultColours.blue80,
+            bg     : String(defaultColours.blue80),
             height : "1px"
         },
         secondary : {
-            bg     : defaultColours.slate40,
+            bg     : String(defaultColours.slate40),
             height : "1px"
         },
         tertiary  : {
-            bg     : defaultColours.slate20,
+            bg     : String(defaultColours.slate20),
             height : "1px"
         }
     },
@@ -147,74 +148,74 @@ export const FictoanTheme = {
     //  INPUT  ////////////////////////////////////////////////////////////////
     inputField : {
         default    : {
-            bg           : defaultColours.white,
-            border       : defaultColours.slate40,
-            label        : customColours.shade,
-            text         : customColours.shade,
+            bg           : String(defaultColours.white),
+            border       : String(defaultColours.slate40),
+            label        : String(customColours.shade),
+            text         : String(customColours.shade),
             borderRadius : "4px",
-            helpText     : defaultColours.slate60
+            helpText     : String(defaultColours.slate60)
         },
         onFocus    : {
-            bg       : defaultColours.white,
-            border   : customColours.hue,
-            text     : customColours.shade,
+            bg       : String(defaultColours.white),
+            border   : String(customColours.hue),
+            text     : String(customColours.shade),
         },
         isValid    : {
-            bg     : defaultColours.white,
-            border : defaultColours.green80,
-            label  : customColours.shade
+            bg     : String(defaultColours.white),
+            border : String(defaultColours.green80),
+            label  : String(customColours.shade)
         },
         isInvalid  : {
-            bg        : defaultColours.red10,
-            border    : defaultColours.red80,
-            label     : defaultColours.red,
-            errorText : defaultColours.red
+            bg        : String(defaultColours.red10),
+            border    : String(defaultColours.red80),
+            label     : String(defaultColours.red),
+            errorText : String(defaultColours.red)
         },
         isReadOnly : {
-            bg     : defaultColours.slate10,
-            border : defaultColours.slate20,
-            text   : defaultColours.slate60,
-            label  : customColours.shade
+            bg     : String(defaultColours.slate10),
+            border : String(defaultColours.slate20),
+            text   : String(defaultColours.slate60),
+            label  : String(customColours.shade)
         },
         required   : {
-            text : defaultColours.red
+            text : String(defaultColours.red)
         },
         icons      : {
             default : {
-                fill : defaultColours.slate30
+                fill : String(defaultColours.slate30)
             },
             onFocus : {
-                fill : customColours.hue
+                fill : String(customColours.hue)
             },
             isValid : {
-                bg     : defaultColours.grey50,
-                border : defaultColours.red30
+                bg     : String(defaultColours.grey50),
+                border : String(defaultColours.red30)
             }
         }
     },
 
     select : {
-        chevron : customColours.hue
+        chevron : String(customColours.hue)
     },
 
     radioButton : {
         inset  : {
             default    : {
-                bg : defaultColours.slate20
+                bg : String(defaultColours.slate20)
             },
             onHover    : {
-                bg : defaultColours.slate40
+                bg : String(defaultColours.slate40)
             },
             isSelected : {
-                bg : customColours.hue
+                bg : String(customColours.hue)
             },
             isDisabled : {
-                bg : defaultColours.slate10
+                bg : String(defaultColours.slate10)
             }
         },
         circle : {
             default : {
-                bg : defaultColours.white
+                bg : String(defaultColours.white)
             }
         }
     },
@@ -222,21 +223,21 @@ export const FictoanTheme = {
     checkBox : {
         square : {
             default    : {
-                bg : defaultColours.slate20
+                bg : String(defaultColours.slate20)
             },
             onHover    : {
-                bg : defaultColours.slate40
+                bg : String(defaultColours.slate40)
             },
             isChecked  : {
-                bg : customColours.hue
+                bg : String(customColours.hue)
             },
             isDisabled : {
-                bg : defaultColours.slate10
+                bg : String(defaultColours.slate10)
             }
         },
         check  : {
             default : {
-                border : defaultColours.white
+                border : String(defaultColours.white)
             }
         }
     },
@@ -244,10 +245,10 @@ export const FictoanTheme = {
     toggleSwitch : {
         switch : {
             default   : {
-                bg : defaultColours.white
+                bg : String(defaultColours.white)
             },
             isChecked : {
-                bg : defaultColours.white
+                bg : String(defaultColours.white)
             }
         }
     },
@@ -255,10 +256,10 @@ export const FictoanTheme = {
 
     //  INFO PANEL  ///////////////////////////////////////////////////////////
     infoPanel : {
-        bg            : defaultColours.white,
-        border        : defaultColours.slate20,
+        bg            : String(defaultColours.white),
+        border        : String(defaultColours.slate20),
         dismissButton : {
-            color : defaultColours.slate90
+            color : String(defaultColours.slate90)
         }
     },
 
@@ -266,21 +267,21 @@ export const FictoanTheme = {
     //  NOTIFICATION  /////////////////////////////////////////////////////////
     notification : {
         default : {
-            bg   : defaultColours.white,
-            text : customColours.shade
+            bg   : String(defaultColours.white),
+            text : String(customColours.shade)
         },
         kinds   : {
             info    : {
-                border : defaultColours.blue60
+                border : String(defaultColours.blue60)
             },
             warning : {
-                border : defaultColours.amber
+                border : String(defaultColours.amber)
             },
             error   : {
-                border : defaultColours.red90
+                border : String(defaultColours.red90)
             },
             success : {
-                border : defaultColours.green90
+                border : String(defaultColours.green90)
             }
         }
     },
@@ -288,10 +289,10 @@ export const FictoanTheme = {
 
     //  PROGRESS BAR  /////////////////////////////////////////////////////////
     progressBar : {
-        bg           : defaultColours.slate20,
-        fill         : customColours.hue,
-        label        : customColours.shade,
-        value        : customColours.shade,
+        bg           : String(defaultColours.slate20),
+        fill         : String(customColours.hue),
+        label        : String(customColours.shade),
+        value        : String(customColours.shade),
         borderRadius : "4px"
     },
 
@@ -299,19 +300,19 @@ export const FictoanTheme = {
     //  SIDEBAR  //////////////////////////////////////////////////////////////
     sidebar : {
         width : "240px",
-        bg    : defaultColours.white,
+        bg    : String(defaultColours.white),
 
         isCollapsed : {
             width : "48px",
             label : {
-                text : defaultColours.white,
-                bg   : customColours.hue
+                text : String(defaultColours.white),
+                bg   : String(customColours.hue)
             }
         },
 
         header : {
-            bg           : defaultColours.white,
-            borderBottom : defaultColours.slate10,
+            bg           : String(defaultColours.white),
+            borderBottom : String(defaultColours.slate10),
             logoWidth    : "50%"
         },
 
@@ -321,46 +322,46 @@ export const FictoanTheme = {
                 stroked : {
                     thickness : 2,
                     default   : {
-                        line : defaultColours.slate40
+                        line : String(defaultColours.slate40)
                     },
                     onHover   : {
-                        line : defaultColours.slate80
+                        line : String(defaultColours.slate80)
                     },
                     isActive  : {
-                        line : defaultColours.slate
+                        line : String(defaultColours.slate)
                     }
                 },
                 filled  : {
                     default  : {
-                        bg : defaultColours.slate40
+                        bg : String(defaultColours.slate40)
                     },
                     onHover  : {
-                        bg : defaultColours.slate80
+                        bg : String(defaultColours.slate80)
                     },
                     isActive : {
-                        bg : defaultColours.slate
+                        bg : String(defaultColours.slate)
                     }
                 }
             },
 
             links : {
                 default    : {
-                    bg     : defaultColours.white,
-                    text   : customColours.shade,
+                    bg     : String(defaultColours.white),
+                    text   : String(customColours.shade),
                     scale  : 100,
                     weight : 600
                 },
                 onHover    : {
-                    bg   : defaultColours.slate10,
-                    text : customColours.hue
+                    bg   : String(defaultColours.slate10),
+                    text : String(customColours.hue)
                 },
                 isSelected : {
-                    bg     : defaultColours.white,
-                    border : customColours.hue,
-                    text   : customColours.hue
+                    bg     : String(defaultColours.white),
+                    border : String(customColours.hue),
+                    text   : String(customColours.hue)
                 },
                 hasAlert   : {
-                    bg : defaultColours.red70
+                    bg : String(defaultColours.red70)
                 }
             },
 
@@ -369,54 +370,54 @@ export const FictoanTheme = {
                     weight : 600
                 },
                 default : {
-                    bg     : defaultColours.white,
-                    text   : `${lighten(0.24, customColours.shade)}`,
+                    bg     : String(defaultColours.white),
+                    text   : `${lighten(0.24, String(customColours.shade))}`,
                     weight : 400,
                     scale  : 92
                 },
                 onHover : {
-                    bg   : defaultColours.slate10,
-                    text : customColours.hue
+                    bg   : String(defaultColours.slate10),
+                    text : String(customColours.hue)
                 },
                 chevron : {
-                    border : defaultColours.slate40
+                    border : String(defaultColours.slate40)
                 }
             },
         },
 
         footer : {
             height    : "32px",
-            bg        : defaultColours.white,
-            borderTop : defaultColours.slate10
+            bg        : String(defaultColours.white),
+            borderTop : String(defaultColours.slate10)
         }
     },
 
 
     //  TABLE  ////////////////////////////////////////////////////////////////
     table : {
-        bg      : defaultColours.white,
-        text    : customColours.shade,
-        border  : defaultColours.slate40,
+        bg      : String(defaultColours.white),
+        text    : String(customColours.shade),
+        border  : String(defaultColours.slate40),
         striped : {
             header : {
-                bg : defaultColours.blue40
+                bg : String(defaultColours.blue40)
             },
             cell   : {
-                bg : defaultColours.slate20
+                bg : String(defaultColours.slate20)
             }
         },
         onHover : {
-            bg   : defaultColours.amber20,
-            text : customColours.shade
+            bg   : String(defaultColours.amber20),
+            text : String(customColours.shade)
         }
     },
 
     tablePagination : {
-        bg   : defaultColours.white,
-        text : defaultColours.grey,
+        bg   : String(defaultColours.white),
+        text : String(defaultColours.grey),
         svg  : {
             onHover : {
-                stroke : defaultColours.slate60
+                stroke : String(defaultColours.slate60)
             }
         }
     },
@@ -426,22 +427,22 @@ export const FictoanTheme = {
     tabs : {
         label : {
             default    : {
-                text : `${lighten(0.16, defaultColours.grey)}`
+                text : `${lighten(0.16, String(defaultColours.grey))}`
             },
             onHover    : {
-                text : `${lighten(0.16, customColours.hue)}`
+                text : `${lighten(0.16, String(customColours.hue))}`
             },
             isActive   : {
-                border : customColours.hue,
-                text   : customColours.hue
+                border : String(customColours.hue),
+                text   : String(customColours.hue)
             },
             isDisabled : {
-                text : `${darken(0.24, defaultColours.slate)}`
+                text : `${darken(0.24, String(defaultColours.slate))}`
             },
             hasAlert   : {
                 circle : {
-                    bg     : defaultColours.red90,
-                    border : defaultColours.slate10
+                    bg     : String(defaultColours.red90),
+                    border : String(defaultColours.slate10)
                 }
             }
         }
@@ -459,14 +460,14 @@ export const FictoanTheme = {
         paras : {
             font       : "sans-serif",
             size       : 1,
-            color      : defaultColours.grey,
+            color      : String(defaultColours.grey),
             weight     : 400,
             lineHeight : 1.64
         },
 
         headings : {
             font       : "sans-serif",
-            color      : customColours.shade,
+            color      : String(customColours.shade),
             weight     : 600,
             multiplier : 1.24,
             lineHeight : 1.24
@@ -475,79 +476,79 @@ export const FictoanTheme = {
         links : {
             font    : "sans-serif",
             default : {
-                color : defaultColours.blue90
+                color : String(defaultColours.blue90)
             },
             onHover : {
-                color : defaultColours.blue60
+                color : String(defaultColours.blue60)
             }
         },
 
         selection : {
-            bg   : customColours.hue,
-            text : defaultColours.white
+            bg   : String(customColours.hue),
+            text : String(defaultColours.white)
         },
 
         code : {
             inline : {
-                bg    : defaultColours.blue10,
-                text  : defaultColours.blue90,
+                bg    : String(defaultColours.blue10),
+                text  : String(defaultColours.blue90),
                 scale : 80
             },
             block  : {
-                bg         : `${lighten(0.02, defaultColours.slate10)}`,
-                text       : defaultColours.blue70,
+                bg         : `${lighten(0.02, String(defaultColours.slate10))}`,
+                text       : String(defaultColours.blue70),
                 scale      : 80,
                 lineHeight : 1.8
             },
             prism  : {
                 tokens : {
-                    tag         : defaultColours.violet,
-                    atrule      : defaultColours.teal90,
-                    attrName    : defaultColours.orange,
-                    attrValue   : defaultColours.green80,
-                    boolean     : defaultColours.green80,
-                    cdata       : defaultColours.grey70,
-                    className   : defaultColours.red,
-                    comment     : defaultColours.grey70,
-                    constant    : defaultColours.green80,
-                    deleted     : defaultColours.slate80,
-                    delimiter   : defaultColours.grey90,
-                    doctype     : defaultColours.grey90,
-                    entity      : defaultColours.green80,
-                    function    : defaultColours.orange,
-                    hexcode     : defaultColours.green,
-                    inserted    : defaultColours.green80,
-                    italic      : defaultColours.green80,
-                    keyword     : defaultColours.orange90,
-                    namespace   : defaultColours.green80,
-                    number      : defaultColours.green80,
-                    operator    : defaultColours.pistachio,
-                    plain       : defaultColours.grey,
-                    prolog      : defaultColours.grey90,
-                    property    : defaultColours.red90,
-                    punctuation : defaultColours.grey60,
-                    regex       : defaultColours.green80,
-                    selector    : defaultColours.violet,
-                    string      : defaultColours.crimson60,
-                    symbol      : defaultColours.green80,
-                    url         : defaultColours.green80,
-                    variable    : defaultColours.orange80
+                    tag         : String(defaultColours.violet),
+                    atrule      : String(defaultColours.teal90),
+                    attrName    : String(defaultColours.orange),
+                    attrValue   : String(defaultColours.green80),
+                    boolean     : String(defaultColours.green80),
+                    cdata       : String(defaultColours.grey70),
+                    className   : String(defaultColours.red),
+                    comment     : String(defaultColours.grey70),
+                    constant    : String(defaultColours.green80),
+                    deleted     : String(defaultColours.slate80),
+                    delimiter   : String(defaultColours.grey90),
+                    doctype     : String(defaultColours.grey90),
+                    entity      : String(defaultColours.green80),
+                    function    : String(defaultColours.orange),
+                    hexcode     : String(defaultColours.green),
+                    inserted    : String(defaultColours.green80),
+                    italic      : String(defaultColours.green80),
+                    keyword     : String(defaultColours.orange90),
+                    namespace   : String(defaultColours.green80),
+                    number      : String(defaultColours.green80),
+                    operator    : String(defaultColours.pistachio),
+                    plain       : String(defaultColours.grey),
+                    prolog      : String(defaultColours.grey90),
+                    property    : String(defaultColours.red90),
+                    punctuation : String(defaultColours.grey60),
+                    regex       : String(defaultColours.green80),
+                    selector    : String(defaultColours.violet),
+                    string      : String(defaultColours.crimson60),
+                    symbol      : String(defaultColours.green80),
+                    url         : String(defaultColours.green80),
+                    variable    : String(defaultColours.orange80)
                 },
 
                 languages : {
                     css  : {
-                        fallback : defaultColours.orange90
+                        fallback : String(defaultColours.orange90)
                     },
                     html : {
-                        fallback : defaultColours.grey
+                        fallback : String(defaultColours.grey)
                     },
                     js   : {
-                        fallback : defaultColours.violet90
+                        fallback : String(defaultColours.violet90)
                     },
                     json : {
-                        fallback : defaultColours.teal,
+                        fallback : String(defaultColours.teal),
                         tokens   : {
-                            string : defaultColours.teal
+                            string : String(defaultColours.teal)
                         }
                     }
                 }
@@ -555,12 +556,12 @@ export const FictoanTheme = {
         },
 
         kbd : {
-            text : defaultColours.grey,
-            bg   : defaultColours.grey10
+            text : String(defaultColours.grey),
+            bg   : String(defaultColours.grey10)
         }
     },
 
     spinner: {
-        color: defaultColours.teal,
+        color: String(defaultColours.teal),
     }
 };
