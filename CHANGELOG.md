@@ -1,4 +1,7 @@
-### 0.35.1
+### 0.35.3
+- Fix focus states for checkbox, switch, radio and select
+
+### 0.35.2
 - Fix theme throwing error on colour overrides
 - Add custom colours to ColorPropsType and export it from library
 - Fix InputField element type
