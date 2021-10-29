@@ -40,4 +40,10 @@ export const SelectStyled = styled.select`
     align-items      : center;
     border           : 1px solid ${(props: SelectProps) => props.theme.inputField.default.border};
     width            : 100%;
+
+    &:focus {
+        background-color : ${(props: SelectProps) => props.theme.inputField.onFocus.bg};
+        border           : 2px solid ${(props: SelectProps) => props.theme.inputField.onFocus.border};
+        padding          : 11px 35px 11px 7px;
+    }
 `;
