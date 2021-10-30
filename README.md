@@ -47,6 +47,9 @@ yarn storybook
 
 Storybook recipe used for this project: https://github.com/storybookjs/storybook/blob/next/addons/docs/docs/recipes.md#csf-stories-with-mdx-docs
 
+## Contributing
+You can view the contributing guide [here](.github/CONTRIBUTING.md).
+
 ## License
 Licensed under the [MIT License](LICENSE).
 
