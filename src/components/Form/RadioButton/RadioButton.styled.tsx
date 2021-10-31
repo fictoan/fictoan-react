@@ -7,6 +7,15 @@ export const RadioButtonStyled = styled.div`
     display      : inline-flex;
     margin-right : 24px;
 
+    input[type="radio"] { 
+        position: absolute;
+        height: 1px; 
+        width: 1px;
+        overflow: hidden;
+        clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+        clip: rect(1px, 1px, 1px, 1px);
+    }
+
     /*  The grey outer circle  */
     & label::before {
         width         : 16px;
@@ -34,10 +43,16 @@ export const RadioButtonStyled = styled.div`
     input[type="radio"]:checked + label::before { 
         background : ${(props: RadioButtonProps) => props.theme.radioButton.inset.isSelected.bg};
     }
-
+    
     &:checked + label::after,
     input[type="radio"]:checked + label::after { opacity : 1; }
+    
 
+    &:focus + label::before,
+    input[type="radio"]:focus + label::before {
+        outline: solid 2px ${(props: RadioButtonProps) => props.theme.radioButton.inset.isSelected.bg};
+    }
+    
     &:only-of-type { margin-right : 0; }
 
     & label {

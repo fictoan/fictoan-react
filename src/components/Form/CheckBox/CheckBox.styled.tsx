@@ -11,6 +11,15 @@ const SharedStyling = css`
 
     &:only-of-type { margin-right : 0; }
 
+    input[type="checkbox"] { 
+        position: absolute;
+        height: 1px; 
+        width: 1px;
+        overflow: hidden;
+        clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+        clip: rect(1px, 1px, 1px, 1px);
+    }
+
     label {
         display     : inline-flex;
         position    : relative;
@@ -46,14 +55,16 @@ const SharedStyling = css`
     input[type="checkbox"]:checked + label::before {
         background : ${(props: CheckboxProps) => props.theme.checkBox.square.isChecked.bg};
     }
+
+    input[type="checkbox"]:focus + label::before {
+        outline: solid 2px ${(props: CheckboxProps) => props.theme.checkBox.square.isChecked.bg};
+    }
 `;
 
 /*  CHECKBOX  =============================================================  */
 export const CheckBoxStyled = styled.div`
 
     ${SharedStyling}
-
-    input[type="checkbox"] { display : none; }
 
     /*  The bg square */
     label::before {
@@ -86,8 +97,6 @@ export const CheckBoxStyled = styled.div`
 export const SwitchStyled = styled.div`
 
     ${SharedStyling}
-
-    input[type="checkbox"] { display : none; }
 
     label { 
         position: relative;
