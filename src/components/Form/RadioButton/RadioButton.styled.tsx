@@ -7,59 +7,67 @@ export const RadioButtonStyled = styled.div`
     display      : inline-flex;
     margin-right : 24px;
 
-    input[type="radio"] { 
-        position: absolute;
-        height: 1px; 
-        width: 1px;
-        overflow: hidden;
-        clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-        clip: rect(1px, 1px, 1px, 1px);
+    input[type="radio"] {
+        position : absolute;
+        height   : 1px;
+        width    : 1px;
+        overflow : hidden;
+        clip     : rect(1px 1px 1px 1px); /* IE6, IE7 */
+        clip     : rect(1px, 1px, 1px, 1px);
     }
 
     /*  The grey outer circle  */
+
     & label::before {
         width         : 16px;
         height        : 16px;
         /* top           : 4px; */
         left          : 0;
         border-radius : 50%;
-        background    : ${(props: RadioButtonProps) => props.theme.radioButton.inset.default.bg};
+        background    : ${(props : RadioButtonProps) => props.theme.radioButton.inset.default.bg};
     }
 
-    &:hover label::before { background : ${(props: RadioButtonProps) => props.theme.radioButton.inset.onHover.bg}; }
+    &:hover label::before {
+        background : ${(props : RadioButtonProps) => props.theme.radioButton.inset.onHover.bg};
+    }
 
     /*  The white inner circle  */
+
     & label::after {
         opacity       : 0;
         left          : 4px;
         top           : 4px;
         width         : 8px;
         height        : 8px;
-        background    : ${(props: RadioButtonProps) => props.theme.radioButton.circle.default.bg};
+        background    : ${(props : RadioButtonProps) => props.theme.radioButton.circle.default.bg};
         border-radius : 50%;
     }
 
     &:checked + label::before,
-    input[type="radio"]:checked + label::before { 
-        background : ${(props: RadioButtonProps) => props.theme.radioButton.inset.isSelected.bg};
+    input[type="radio"]:checked + label::before {
+        background : ${(props : RadioButtonProps) => props.theme.radioButton.inset.isSelected.bg};
     }
-    
+
     &:checked + label::after,
-    input[type="radio"]:checked + label::after { opacity : 1; }
-    
+    input[type="radio"]:checked + label::after {
+        opacity : 1;
+    }
+
 
     &:focus + label::before,
     input[type="radio"]:focus + label::before {
-        outline: solid 2px ${(props: RadioButtonProps) => props.theme.radioButton.inset.isSelected.bg};
+        outline : solid 2px ${(props : RadioButtonProps) => props.theme.radioButton.inset.isSelected.bg};
     }
-    
-    &:only-of-type { margin-right : 0; }
+
+    &:only-of-type {
+        margin-right : 0;
+    }
 
     & label {
         display        : inline-block;
         position       : relative;
-        font-family    : ${(props: RadioButtonProps) => props.theme.text.font.sans};
-        color          : ${(props: RadioButtonProps) => props.theme.text.paras.color};
+        font-family    : ${(props : RadioButtonProps) => props.theme.text.font.sans};
+        color          : ${(props : RadioButtonProps) => props.theme.text.paras.color};
         cursor         : pointer;
         vertical-align : middle;
         line-height    : 1.1;
@@ -75,8 +83,9 @@ export const RadioButtonStyled = styled.div`
     }
 
     /*  The grey square  */
+
     &:disabled + label::before {
-        background     : ${(props: RadioButtonProps) => props.theme.radioButton.inset.isDisabled.bg};
-        box-shadow     : inset 0 2px 8px -2px rgba(0, 0, 0, 0.24);
+        background : ${(props : RadioButtonProps) => props.theme.radioButton.inset.isDisabled.bg};
+        box-shadow : inset 0 2px 8px -2px rgba(0, 0, 0, 0.24);
     }
-`
+`;
