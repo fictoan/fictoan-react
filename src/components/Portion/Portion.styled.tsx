@@ -139,134 +139,134 @@ export const PortionStyled = styled.div`
 
     @media all and (min-width : 601px) and (max-width : 900px) {
 
-        &.\\31 -on-tab-pt { grid-column : span 1; }
+        &.\\31 -on-tablet-portrait { grid-column : span 1; }
 
-        &.one-twelfth-on-tab-pt,
-        &.\\32 -on-tab-pt { grid-column : span 2; }
+        &.one-twelfth-on-tablet-portrait,
+        &.\\32 -on-tablet-portrait { grid-column : span 2; }
 
-        &.one-eighth-on-tab-pt,
-        &.\\33 -on-tab-pt { grid-column : span 3; }
+        &.one-eighth-on-tablet-portrait,
+        &.\\33 -on-tablet-portrait { grid-column : span 3; }
 
-        &.one-sixth-on-tab-pt,
-        &.\\34 -on-tab-pt { grid-column : span 4; }
+        &.one-sixth-on-tablet-portrait,
+        &.\\34 -on-tablet-portrait { grid-column : span 4; }
 
-        &.\\35 -on-tab-pt { grid-column : span 5; }
+        &.\\35 -on-tablet-portrait { grid-column : span 5; }
 
-        &.one-fourth-on-tab-pt,
-        &.\\36 -on-tab-pt { grid-column : span 6; }
+        &.one-fourth-on-tablet-portrait,
+        &.\\36 -on-tablet-portrait { grid-column : span 6; }
 
-        &.\\37 -on-tab-pt { grid-column : span 7; }
+        &.\\37 -on-tablet-portrait { grid-column : span 7; }
 
-        &.one-third-on-tab-pt,
-        &.\\38 -on-tab-pt { grid-column : span 8; }
+        &.one-third-on-tablet-portrait,
+        &.\\38 -on-tablet-portrait { grid-column : span 8; }
 
-        &.\\39 -on-tab-pt { grid-column : span 9; }
+        &.\\39 -on-tablet-portrait { grid-column : span 9; }
 
-        &.five-twelfth-on-tab-pt,
-        &.\\31 0-on-tab-pt { grid-column : span 10; }
+        &.five-twelfth-on-tablet-portrait,
+        &.\\31 0-on-tablet-portrait { grid-column : span 10; }
 
-        &.\\31 1-on-tab-pt { grid-column : span 11; }
+        &.\\31 1-on-tablet-portrait { grid-column : span 11; }
 
-        &.half-on-tab-pt,
-        &.\\31 2-on-tab-pt { grid-column : span 12; }
+        &.half-on-tablet-portrait,
+        &.\\31 2-on-tablet-portrait { grid-column : span 12; }
 
-        &.\\31 3-on-tab-pt { grid-column : span 13; }
+        &.\\31 3-on-tablet-portrait { grid-column : span 13; }
 
-        &.seven-twelfth-on-tab-pt,
-        &.\\31 4-on-tab-pt { grid-column : span 14; }
+        &.seven-twelfth-on-tablet-portrait,
+        &.\\31 4-on-tablet-portrait { grid-column : span 14; }
 
-        &.\\31 5-on-tab-pt { grid-column : span 15; }
+        &.\\31 5-on-tablet-portrait { grid-column : span 15; }
 
-        &.two-third-on-tab-pt,
-        &.\\31 6-on-tab-pt { grid-column : span 16; }
+        &.two-third-on-tablet-portrait,
+        &.\\31 6-on-tablet-portrait { grid-column : span 16; }
 
-        &.\\31 7-on-tab-pt { grid-column : span 17; }
+        &.\\31 7-on-tablet-portrait { grid-column : span 17; }
 
-        &.three-fourth-on-tab-pt,
-        &.\\31 8-on-tab-pt { grid-column : span 18; }
+        &.three-fourth-on-tablet-portrait,
+        &.\\31 8-on-tablet-portrait { grid-column : span 18; }
 
-        &.\\31 9-on-tab-pt { grid-column : span 19; }
+        &.\\31 9-on-tablet-portrait { grid-column : span 19; }
 
-        &.five-sixth-on-tab-pt,
-        &.\\32 0-on-tab-pt { grid-column : span 20; }
+        &.five-sixth-on-tablet-portrait,
+        &.\\32 0-on-tablet-portrait { grid-column : span 20; }
 
-        &.seven-eighth-on-tab-pt,
-        &.\\32 1-on-tab-pt { grid-column : span 21; }
+        &.seven-eighth-on-tablet-portrait,
+        &.\\32 1-on-tablet-portrait { grid-column : span 21; }
 
-        &.eleven-twelfth-on-tab-pt,
-        &.\\32 2-on-tab-pt { grid-column : span 22; }
+        &.eleven-twelfth-on-tablet-portrait,
+        &.\\32 2-on-tablet-portrait { grid-column : span 22; }
 
-        &.\\32 3-on-tab-pt { grid-column : span 23; }
+        &.\\32 3-on-tablet-portrait { grid-column : span 23; }
 
-        &.whole-on-tab-pt,
-        &.\\32 4-on-tab-pt { grid-column : span 24; }
+        &.whole-on-tablet-portrait,
+        &.\\32 4-on-tablet-portrait { grid-column : span 24; }
     }
 
 
 
     @media all and (min-width : 901px) and (max-width : 1200px) {
-        /* .row:not(.retain-layout-on-tab-ls) > &:not([class*='on-tab-ls']) { grid-column : span 24; } */
+        /* .row:not(.retain-layout-on-tablet-landscape) > &:not([class*='on-tablet-landscape']) { grid-column : span 24; } */
 
-        &.\\31 -on-tab-ls { grid-column : span 1; }
+        &.\\31 -on-tablet-landscape { grid-column : span 1; }
 
-        &.one-twelfth-on-tab-ls,
-        &.\\32 -on-tab-ls { grid-column : span 2; }
+        &.one-twelfth-on-tablet-landscape,
+        &.\\32 -on-tablet-landscape { grid-column : span 2; }
 
-        &.one-eighth-on-tab-ls,
-        &.\\33 -on-tab-ls { grid-column : span 3; }
+        &.one-eighth-on-tablet-landscape,
+        &.\\33 -on-tablet-landscape { grid-column : span 3; }
 
-        &.one-sixth-on-tab-ls,
-        &.\\34 -on-tab-ls { grid-column : span 4; }
+        &.one-sixth-on-tablet-landscape,
+        &.\\34 -on-tablet-landscape { grid-column : span 4; }
 
-        &.\\35 -on-tab-ls { grid-column : span 5; }
+        &.\\35 -on-tablet-landscape { grid-column : span 5; }
 
-        &.one-fourth-on-tab-ls,
-        &.\\36 -on-tab-ls { grid-column : span 6; }
+        &.one-fourth-on-tablet-landscape,
+        &.\\36 -on-tablet-landscape { grid-column : span 6; }
 
-        &.\\37 -on-tab-ls { grid-column : span 7; }
+        &.\\37 -on-tablet-landscape { grid-column : span 7; }
 
-        &.one-third-on-tab-ls,
-        &.\\38 -on-tab-ls { grid-column : span 8; }
+        &.one-third-on-tablet-landscape,
+        &.\\38 -on-tablet-landscape { grid-column : span 8; }
 
-        &.\\39 -on-tab-ls { grid-column : span 9; }
+        &.\\39 -on-tablet-landscape { grid-column : span 9; }
 
-        &.five-twelfth-on-tab-ls,
-        &.\\31 0-on-tab-ls { grid-column : span 10; }
+        &.five-twelfth-on-tablet-landscape,
+        &.\\31 0-on-tablet-landscape { grid-column : span 10; }
 
-        &.\\31 1-on-tab-ls { grid-column : span 11; }
+        &.\\31 1-on-tablet-landscape { grid-column : span 11; }
 
-        &.half-on-tab-ls,
-        &.\\31 2-on-tab-ls { grid-column : span 12; }
+        &.half-on-tablet-landscape,
+        &.\\31 2-on-tablet-landscape { grid-column : span 12; }
 
-        &.\\31 3-on-tab-ls { grid-column : span 13; }
+        &.\\31 3-on-tablet-landscape { grid-column : span 13; }
 
-        &.seven-twelfth-on-tab-ls,
-        &.\\31 4-on-tab-ls { grid-column : span 14; }
+        &.seven-twelfth-on-tablet-landscape,
+        &.\\31 4-on-tablet-landscape { grid-column : span 14; }
 
-        &.\\31 5-on-tab-ls { grid-column : span 15; }
+        &.\\31 5-on-tablet-landscape { grid-column : span 15; }
 
-        &.two-third-on-tab-ls,
-        &.\\31 6-on-tab-ls { grid-column : span 16; }
+        &.two-third-on-tablet-landscape,
+        &.\\31 6-on-tablet-landscape { grid-column : span 16; }
 
-        &.\\31 7-on-tab-ls { grid-column : span 17; }
+        &.\\31 7-on-tablet-landscape { grid-column : span 17; }
 
-        &.three-fourth-on-tab-ls,
-        &.\\31 8-on-tab-ls { grid-column : span 18; }
+        &.three-fourth-on-tablet-landscape,
+        &.\\31 8-on-tablet-landscape { grid-column : span 18; }
 
-        &.\\31 9-on-tab-ls { grid-column : span 19; }
+        &.\\31 9-on-tablet-landscape { grid-column : span 19; }
 
-        &.five-sixth-on-tab-ls,
-        &.\\32 0-on-tab-ls { grid-column : span 20; }
+        &.five-sixth-on-tablet-landscape,
+        &.\\32 0-on-tablet-landscape { grid-column : span 20; }
 
-        &.seven-eighth-on-tab-ls,
-        &.\\32 1-on-tab-ls { grid-column : span 21; }
+        &.seven-eighth-on-tablet-landscape,
+        &.\\32 1-on-tablet-landscape { grid-column : span 21; }
 
-        &.eleven-twelfth-on-tab-ls,
-        &.\\32 2-on-tab-ls { grid-column : span 22; }
+        &.eleven-twelfth-on-tablet-landscape,
+        &.\\32 2-on-tablet-landscape { grid-column : span 22; }
 
-        &.\\32 3-on-tab-ls { grid-column : span 23; }
+        &.\\32 3-on-tablet-landscape { grid-column : span 23; }
 
-        &.whole-on-tab-ls,
-        &.\\32 4-on-tab-ls { grid-column : span 24; }
+        &.whole-on-tablet-landscape,
+        &.\\32 4-on-tablet-landscape { grid-column : span 24; }
     }
 `;

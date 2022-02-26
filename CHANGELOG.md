@@ -1,3 +1,6 @@
+### 0.35.4
+- Rename `tabLS` to `tabletLandscape` and `tabPT` to `tabletPortrait` for more consistency with the naming scheme and less ambiguity.
+
 ### 0.35.3
 - Fix focus states for checkbox, switch, radio and select
 
@@ -36,9 +39,9 @@
 - Add sizes to Switch component
 - Make Select chevron consistent with ExpandableContent
 - Make required and disabled states consistent in form fields
+- Remove `name` props from RadioGroup `options` type; Add `label` and `id`
 
 **Sidebar improvements**
-- Remove `name` props from RadioGroup `options` type; Add `label` and `id`
 - Remove `isSticky` from Sidebar footer
 - `sidebar.body.bg` is now `sidebar.bg` in theme
 - Add sidebar width properties to theme; SidebarHeader, SidebarFooter and SidebarItem span 100% automatically

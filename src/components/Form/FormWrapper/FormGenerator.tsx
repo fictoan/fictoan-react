@@ -73,12 +73,12 @@ export const generateFormThroughConfig = (
     let formChildren: ReactNode[] = [];
 
     for (const i in fields) {
-        const { desktopSpan, tabLSSpan, tabPTSpan, mobileSpan, isHorizontal, ...formField } = fields[i];
+        const { desktopSpan, tabletLandscape, tabletPortraitSpan, mobileSpan, isHorizontal, ...formField } = fields[i];
 
         const portionPorps = {
             desktopSpan,
-            tabLSSpan,
-            tabPTSpan,
+            tabletLandscape,
+            tabletPortraitSpan,
             mobileSpan,
             isHorizontal,
         };

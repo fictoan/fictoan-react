@@ -158,6 +158,6 @@ export const RowStyled = styled.div`
     }
 
     @media all and (min-width : 601px) and (max-width : 900px) {
-        &:not(.retain-layout-on-tab-pt) > ${PortionStyled}:not([class*="on-tab-pt"]) { grid-column : span 24; }
+        &:not(.retain-layout-on-tablet-portrait) > ${PortionStyled}:not([class*="on-tablet-portrait"]) { grid-column : span 24; }
     }
 `;

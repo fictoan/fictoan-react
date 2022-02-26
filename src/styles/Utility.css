@@ -13,8 +13,8 @@ footer { flex-shrink : 0; }
 /* Responsive classes  ================================================  */
 /* Desktop   */
 .show-only-on-mobile  { display : none !important; }
-.show-only-on-tab-pt  { display : none !important; }
-.show-only-on-tab-ls  { display : none !important; }
+.show-only-on-tablet-portrait  { display : none !important; }
+.show-only-on-tablet-landscape  { display : none !important; }
 .show-only-on-desktop { display : block !important; }
 
 .hide-on-desktop     { display : none !important; }
@@ -32,21 +32,21 @@ footer { flex-shrink : 0; }
     /* Tablet portrait  */
 @media all and (min-width : 601px) and (max-width : 900px) {
     .show-only-on-desktop { display : none !important; }
-    .hide-on-tab-pt       { display : none !important; }
-    .show-only-on-tab-pt  { display : block !important; }
+    .hide-on-tablet-portrait       { display : none !important; }
+    .show-only-on-tablet-portrait  { display : block !important; }
 
-    .center-on-tab-pt,
-    .centre-on-tab-pt { text-align : center !important; }
+    .center-on-tablet-portrait,
+    .centre-on-tablet-portrait { text-align : center !important; }
 }
 
     /* Tablet landscape  */
 @media all and (min-width : 901px) and (max-width : 1200px) {
     .show-only-on-desktop { display : none !important; }
-    .hide-on-tab-ls       { display : none !important; }
-    .show-only-on-tab-ls  { display : block !important; }
+    .hide-on-tablet-landscape       { display : none !important; }
+    .show-only-on-tablet-landscape  { display : block !important; }
 
-    .center-on-tab-ls,
-    .centre-on-tab-ls { text-align : center !important; }
+    .center-on-tablet-landscape,
+    .centre-on-tablet-landscape { text-align : center !important; }
 }
 
 /* Reset for custom element */
@@ -71,13 +71,13 @@ footer { flex-shrink : 0; }
 }
 
 @media all and (min-width : 601px) and (max-width : 900px) {
-    .full-width-on-tab-pt { width : 100% !important; }
-    .full-height-on-tab-pt { height : 100% !important; }
+    .full-width-on-tablet-portrait { width : 100% !important; }
+    .full-height-on-tablet-portrait { height : 100% !important; }
 }
 
 @media all and (min-width : 901px) and (max-width : 1200px) {
-    .full-width-on-tab-ls { width : 100% !important; }
-    .full-height-on-tab-ls { height : 100% !important; }
+    .full-width-on-tablet-landscape { width : 100% !important; }
+    .full-height-on-tablet-landscape { height : 100% !important; }
 }
 
 .no-border { border: none !important; }

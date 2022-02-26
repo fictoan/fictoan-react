@@ -42,11 +42,11 @@ export const Row = React.forwardRef(
         }
 
         if (retainLayoutOnTabLS) {
-            classNames.push("retain-layout-on-tab-ls");
+            classNames.push("retain-layout-on-tablet-landscape");
         }
 
         if (retainLayoutOnTabPT) {
-            classNames.push("retain-layout-on-tab-pt");
+            classNames.push("retain-layout-on-tablet-portrait");
         }
 
         if (retainLayoutOnMobile) {
@@ -54,7 +54,7 @@ export const Row = React.forwardRef(
         }
 
         if (retainLayoutAlways) {
-            classNames.push("retain-layout-on-tab-ls retain-layout-on-tab-pt retain-layout-on-mobile");
+            classNames.push("retain-layout-on-tablet-landscape retain-layout-on-tablet-portrait retain-layout-on-mobile");
         }
 
         return (
