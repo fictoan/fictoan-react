@@ -1,4 +1,4 @@
-import { HTMLProps } from "react";
+import { ElementType, HTMLProps } from "react";
 
 import { defaultColourProps } from "../../styles/DefaultColourProps";
 import { customColours, FictoanTheme } from "../../styles/theme";
@@ -23,7 +23,6 @@ export type ShadowTypes = "none" | "mild" | "soft" | "hard";
 export type ShapeTypes = "rounded" | "curved";
 export type OpacityTypes = "00" | "10" | "20" | "30" | "40" | "50" | "60" | "70" | "80" | "90" | "100";
 export type ColourPropTypes = typeof defaultColourProps[number] | keyof typeof customColours | "";
-export type NativeTagTypes = | "a" | "abbr" | "address" | "area" | "article" | "aside" | "audio" | "b" | "base" | "bdi" | "bdo" | "blockquote" | "body" | "br" | "button" | "canvas" | "caption" | "cite" | "code" | "col" | "colgroup" | "data" | "datalist" | "dd" | "del" | "details" | "dfn" | "dialog" | "div" | "dl" | "dt" | "em" | "embed" | "fieldset" | "figcaption" | "figure" | "footer" | "form" | "head" | "header" | "hgroup" | "h1" | "hr" | "html" | "i" | "iframe" | "img" | "input" | "ins" | "kbd" | "keygen" | "label" | "legend" | "li" | "link" | "main" | "map" | "mark" | "menu" | "menuitem" | "meta" | "meter" | "nav" | "noscript" | "object" | "ol" | "optgroup" | "option" | "output" | "p" | "param" | "picture" | "pre" | "progress" | "q" | "rp" | "rt" | "ruby" | "s" | "samp" | "script" | "section" | "select" | "small" | "source" | "span" | "strong" | "style" | "sub" | "summary" | "sup" | "svg" | "table" | "tbody" | "td" | "template" | "textarea" | "tfoot" | "th" | "thead" | "time" | "title" | "tr" | "track" | "u" | "ul" | "var" | "video" | "wbr";
 
 // prettier-ignore
 export interface CommonProps extends ThemeProps {
@@ -63,10 +62,10 @@ export interface CommonProps extends ThemeProps {
     classNames        ? : any[];
 }
 
-export interface CommonAndHTMLProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "size" | "ref" | "shape"> {}
+export interface CommonAndHTMLProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as" | "size" | "ref" | "shape"> {}
 
 // prettier-ignore
 export interface ElementProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as" | "ref" | "shape"> {
-    as          : string;
+    as          : ElementType;
     className ? : string;
 }

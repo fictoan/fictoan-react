@@ -51,7 +51,7 @@ export const Element = React.forwardRef(<K extends {}>(props: ElementProps<K>, r
     return (
         <Component
             ref={ref}
-            {...(typeof Component === "object" && Component.hasOwnProperty("styledComponentId") ? sanitizedProps : minimalProps )}
+            {...(typeof Component !== "string" && Component.hasOwnProperty("styledComponentId") ? sanitizedProps : minimalProps )}
             className={createClassName(
                 [
                     className,
