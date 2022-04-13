@@ -61,7 +61,7 @@ const getFormItem = (formField: FormFieldsType, onFieldsChange: React.FormEventH
             isFullWidth
             // disabled={disabledIds.includes(formFieldProps.id)}
             onChange={onFieldsChange}
-        ></Element>
+        />
     );
 };
 
@@ -75,7 +75,7 @@ export const generateFormThroughConfig = (
     for (const i in fields) {
         const { desktopSpan, tabletLandscape, tabletPortraitSpan, mobileSpan, isHorizontal, ...formField } = fields[i];
 
-        const portionPorps = {
+        const portionProps = {
             desktopSpan,
             tabletLandscape,
             tabletPortraitSpan,
@@ -83,7 +83,7 @@ export const generateFormThroughConfig = (
             isHorizontal,
         };
 
-        formChildren.push(<Portion {...portionPorps} key={`fields-${i}`}>{getFormItem(formField, onFieldsChange)}</Portion>);
+        formChildren.push(<Portion {...portionProps} key={`fields-${i}`}>{getFormItem(formField, onFieldsChange)}</Portion>);
     }
     return <Row gutters={spacing}>{formChildren}</Row>;
 };

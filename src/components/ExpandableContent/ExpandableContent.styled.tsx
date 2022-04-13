@@ -22,7 +22,7 @@ export const ExpandableContentStyled = styled.details`
             border-style : solid;
             border-width : 0 2px 2px 0;
             transform    : translateY(-50%) rotate(45deg);
-            color        : ${(props: ExpandableContentProps) => props.theme.sidebar.linksWrapper.subLinks.chevron.border};
+            color        : ${(props: ExpandableContentProps) => props.theme.sidebar.subLinks.chevron.border};
             transition   : transform 0.2s linear;
             cursor       : pointer;
         }

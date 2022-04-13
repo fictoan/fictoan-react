@@ -13,7 +13,7 @@ Fictoan is an intuitive framework for designers looking to code interfaces.
 
 ## Features
 - Simple, straight-forward React custom props, exactly like setting properties in a design app.
-- All Attributes are intuitive and in plain English.
+- All attributes are intuitive and in plain English.
 - Most attributes are also the same across different components.
 
 ## Getting Started
@@ -38,6 +38,8 @@ const MyComponent = props => {
     );
 }
 ```
+
+Just note, you’d need to install `styled-components` too, which is a peer-dependency for Fictoan.
 
 ## Storybook
 Start development server for storybook

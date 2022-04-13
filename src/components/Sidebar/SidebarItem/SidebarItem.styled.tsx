@@ -11,8 +11,8 @@ export const SidebarItemStyled = styled.div`
     & > a { width : unset; }
 
     &:hover {
-        color            : ${(props: SidebarItemProps) => props.theme.sidebar.linksWrapper.links.onHover.text};
-        background-color : ${(props: SidebarItemProps) => props.theme.sidebar.linksWrapper.links.onHover.bg};
+        color            : ${(props: SidebarItemProps) => props.theme.sidebar.links.onHover.text};
+        background-color : ${(props: SidebarItemProps) => props.theme.sidebar.links.onHover.bg};
     }
 
     &.has-alert {
@@ -29,7 +29,7 @@ export const SidebarItemStyled = styled.div`
             height           : 8px;
             width            : 8px;
             border-radius    : 50%;
-            background-color : ${(props: SidebarItemProps) => props.theme.sidebar.linksWrapper.links.hasAlert.bg};
+            background-color : ${(props: SidebarItemProps) => props.theme.sidebar.links.hasAlert.bg};
         }
     }
 

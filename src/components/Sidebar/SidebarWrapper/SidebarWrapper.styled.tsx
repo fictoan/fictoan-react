@@ -24,7 +24,7 @@ export const SidebarWrapperStyled = styled.aside`
     background-color : ${(props: SidebarWrapperProps) => props.theme.sidebar.bg};
     box-shadow       : 2px 0 8px -4px rgba(0, 0, 0, 0.16);
     z-index          : 10000;
-    font-size        : ${(props: SidebarWrapperProps) => props.theme.sidebar.linksWrapper.links.default.scale}%;
+    font-size        : ${(props: SidebarWrapperProps) => props.theme.sidebar.links.default.scale}%;
 
     /*  BASICS  ===========================================================  */
     * { user-select : none; }
@@ -67,20 +67,20 @@ export const SidebarWrapperStyled = styled.aside`
             box-shadow       : 0 4px 16px -2px rgba(0, 0, 0, 0.24);
         }
 
-        ${SidebarFooterStyled} {
-            padding-left : 0;
-        }
+        ${SidebarFooterStyled} { padding-left : 0; }
     }
 
     a {
         width : unset;
-        color : ${(props: SidebarWrapperProps) => props.theme.sidebar.linksWrapper.links.default.text};
+        color : ${(props: SidebarWrapperProps) => props.theme.sidebar.links.default.text};
     }
+    
+    summary ~ a p { color : ${(props: SidebarWrapperProps) => props.theme.sidebar.subLinks.default.text}; }
 
     a.active {
         position         : relative;
         display          : block;
-        background-color : ${(props: SidebarWrapperProps) => props.theme.sidebar.linksWrapper.links.isSelected.bg};
+        background-color : ${(props: SidebarWrapperProps) => props.theme.sidebar.links.isSelected.bg};
 
         &::before {
             display                    : block;
@@ -92,19 +92,19 @@ export const SidebarWrapperStyled = styled.aside`
             content                    : "";
             border-top-right-radius    : 4px;
             border-bottom-right-radius : 4px;
-            background-color           : ${(props: SidebarWrapperProps) => props.theme.sidebar.linksWrapper.links.isSelected.border};
+            background-color           : ${(props: SidebarWrapperProps) => props.theme.sidebar.links.isSelected.border};
         }
         
         & .icon-stroked svg {
             fill         : none;
-            stroke       : ${(props: SidebarItemIconProps) => props.theme.sidebar.linksWrapper.icons.stroked.isActive.line};
+            stroke       : ${(props: SidebarItemIconProps) => props.theme.sidebar.icons.stroked.isActive.line};
         }
 
         & .icon-filled svg {
             stroke : none;
-            fill   : ${(props: SidebarItemIconProps) => props.theme.sidebar.linksWrapper.icons.filled.isActive.bg};
+            fill   : ${(props: SidebarItemIconProps) => props.theme.sidebar.icons.filled.isActive.bg};
         }
 
-        p { color : ${(props : SidebarWrapperProps) => props.theme.sidebar.linksWrapper.links.isSelected.text}; }
+        p { color : ${(props : SidebarWrapperProps) => props.theme.sidebar.links.isSelected.text}; }
     }
 `;

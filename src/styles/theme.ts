@@ -316,73 +316,71 @@ export const FictoanTheme = {
             logoWidth    : "50%"
         },
 
-        linksWrapper : {
-            icons : {
-                size    : "24px",
-                stroked : {
-                    thickness : 2,
-                    default   : {
-                        line : String(defaultColours.slate40)
-                    },
-                    onHover   : {
-                        line : String(defaultColours.slate80)
-                    },
-                    isActive  : {
-                        line : String(defaultColours.slate)
-                    }
+        icons : {
+            size    : "24px",
+            stroked : {
+                thickness : 2,
+                default   : {
+                    line : String(defaultColours.slate40)
                 },
-                filled  : {
-                    default  : {
-                        bg : String(defaultColours.slate40)
-                    },
-                    onHover  : {
-                        bg : String(defaultColours.slate80)
-                    },
-                    isActive : {
-                        bg : String(defaultColours.slate)
-                    }
+                onHover   : {
+                    line : String(defaultColours.slate80)
+                },
+                isActive  : {
+                    line : String(defaultColours.slate)
                 }
             },
+            filled  : {
+                default  : {
+                    bg : String(defaultColours.slate40)
+                },
+                onHover  : {
+                    bg : String(defaultColours.slate80)
+                },
+                isActive : {
+                    bg : String(defaultColours.slate)
+                }
+            }
+        },
 
-            links : {
-                default    : {
-                    bg     : String(defaultColours.white),
-                    text   : String(customColours.shade),
-                    scale  : 100,
-                    weight : 600
-                },
-                onHover    : {
-                    bg   : String(defaultColours.slate10),
-                    text : String(customColours.hue)
-                },
-                isSelected : {
-                    bg     : String(defaultColours.white),
-                    border : String(customColours.hue),
-                    text   : String(customColours.hue)
-                },
-                hasAlert   : {
-                    bg : String(defaultColours.red70)
-                }
+        links : {
+            default    : {
+                bg     : String(defaultColours.white),
+                text   : String(customColours.shade),
+                scale  : 100,
+                weight : 600
             },
+            onHover    : {
+                bg   : String(defaultColours.slate10),
+                text : String(customColours.hue)
+            },
+            isSelected : {
+                bg     : String(defaultColours.white),
+                border : String(customColours.hue),
+                text   : String(customColours.hue)
+            },
+            hasAlert   : {
+                bg : String(defaultColours.red70)
+            }
+        },
 
-            subLinks : {
-                header  : {
-                    weight : 600
-                },
-                default : {
-                    bg     : String(defaultColours.white),
-                    text   : `${lighten(0.24, String(customColours.shade))}`,
-                    weight : 400,
-                    scale  : 92
-                },
-                onHover : {
-                    bg   : String(defaultColours.slate10),
-                    text : String(customColours.hue)
-                },
-                chevron : {
-                    border : String(defaultColours.slate40)
-                }
+        subLinks : {
+            header  : {
+                weight : 600
             },
+            default : {
+                bg     : String(defaultColours.white),
+                text   : `${lighten(0.24, String(customColours.shade))}`,
+                weight : 400,
+                scale  : 92
+            },
+            onHover : {
+                bg   : String(defaultColours.slate10),
+                text : String(customColours.hue)
+            },
+            chevron : {
+                border : String(defaultColours.slate40)
+            }
         },
 
         footer : {

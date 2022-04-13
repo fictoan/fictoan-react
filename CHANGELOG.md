@@ -1,3 +1,9 @@
+### 0.36.0
+- Fix text colour for nested links in sidebar for better differentiation
+- Fix typo in `portionProps`
+- Refactor sidebar theme object hierarchy for links and sublinks, remove `linksWrapper` object
+- Mention `styled-components` requirement in the README
+
 ### 0.35.4
 - Rename `tabLS` to `tabletLandscape` and `tabPT` to `tabletPortrait` for more consistency with the naming scheme and less ambiguity.
 
@@ -18,8 +24,8 @@
 - Remove `as` from RadioButton and CheckBox props
 - Make `shadow` a global prop
 - Make `shape` a global prop
-- Add ExpandableContent component which implements details and summary tags
-- Add Tag component
+- Add `ExpandableContent` component which implements details and summary tags
+- Add `Tag` component
 - Add `opacity` as a global prop
 - HRule now supports custom background colors
   - Add `hr.default` to theme
