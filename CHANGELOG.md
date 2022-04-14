@@ -1,3 +1,6 @@
+### 0.36.1
+- Add types for `Element`’s `as` attribute
+
 ### 0.36.0
 - Fix text colour for nested links in sidebar for better differentiation
 - Fix typo in `portionProps`
