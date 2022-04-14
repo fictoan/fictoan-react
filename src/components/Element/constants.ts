@@ -1,4 +1,4 @@
-import { HTMLProps } from "react";
+import { ElementType, HTMLProps } from "react";
 
 import { defaultColourProps } from "../../styles/DefaultColourProps";
 import { customColours, FictoanTheme } from "../../styles/theme";
@@ -62,10 +62,10 @@ export interface CommonProps extends ThemeProps {
     classNames        ? : any[];
 }
 
-export interface CommonAndHTMLProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "size" | "ref" | "shape"> {}
+export interface CommonAndHTMLProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as" | "size" | "ref" | "shape"> {}
 
 // prettier-ignore
 export interface ElementProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as" | "ref" | "shape"> {
-    as          : any;
+    as          : ElementType;
     className ? : string;
 }

@@ -1,15 +1,14 @@
-import React, { ReactNode } from "react";
+import React, { ElementType, ReactNode } from "react";
 
 import { Element } from "../../Element/Element";
 import { ElementProps, SpacingTypes } from "../../Element/constants";
 
 import { Row } from "../../Row/Row";
 import { PortionProps, Portion } from "../../Portion/Portion";
-import { InputLabelCustomProps } from "../InputLabel/InputLabel";
+import { InputLabel, InputLabelCustomProps } from "../InputLabel/InputLabel";
 import { InputCommonProps } from "../BaseInputComponent/constants";
 import { InputField } from "../InputField/InputField";
 import { FileUpload } from "../InputField/FileUpload";
-import { InputLabel } from "../InputLabel/InputLabel";
 import { CheckBox } from "../CheckBox/CheckBox";
 import { Switch } from "../CheckBox/Switch";
 import { RadioButton } from "../RadioButton/RadioButton";
@@ -33,12 +32,12 @@ interface FormFieldOptionsType extends RadioGroupOption {
 }
 
 export interface FormFieldsConfig extends FormFieldsConfigBase {
-    as: string;
+    as: ElementType;
     options?: FormFieldOptionsType[];
 }
 
 // Supported Form elements for "as" prop in config
-const FormElements: Record<string, ReactNode | string> = {
+const FormElements: Record<string, ElementType> = {
     CheckBox: CheckBox,
     Switch: Switch,
     InputField: InputField,
@@ -56,7 +55,7 @@ const getFormItem = (formField: FormFieldsType, onFieldsChange: React.FormEventH
 
     return (
         <Element
-            as={FormElements[elementName] || InputField}
+            as={FormElements[elementName as keyof typeof FormElements] || InputField}
             {...formFieldProps}
             isFullWidth
             // disabled={disabledIds.includes(formFieldProps.id)}
