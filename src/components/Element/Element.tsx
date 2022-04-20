@@ -24,10 +24,10 @@ export const Element = React.forwardRef(<K extends {}>(props: ElementProps<K>, r
         strokeColour,
         hideOnMobile,
         showOnlyOnMobile,
-        hideOnTabPT,
-        showOnlyOnTabPT,
-        hideOnTabLS,
-        showOnlyOnTabLS,
+        hideOnTabletPortrait,
+        showOnlyOnTabletPortrait,
+        hideOnTabletLandscape,
+        showOnlyOnTabletLandscape,
         hideOnDesktop,
         showOnlyOnDesktop,
         marginTop,
@@ -70,10 +70,10 @@ export const Element = React.forwardRef(<K extends {}>(props: ElementProps<K>, r
                     strokeColour && `stroke-${String(strokeColour)}`,
                     hideOnMobile && "hide-on-mobile",
                     showOnlyOnMobile && "show-only-on-mobile",
-                    hideOnTabPT && "hide-on-tablet-portrait",
-                    showOnlyOnTabPT && "show-only-on-tablet-portrait",
-                    hideOnTabLS && "hide-on-tablet-landscape",
-                    showOnlyOnTabLS && "show-only-on-tablet-landscape",
+                    hideOnTabletPortrait && "hide-on-tablet-portrait",
+                    showOnlyOnTabletPortrait && "show-only-on-tablet-portrait",
+                    hideOnTabletLandscape && "hide-on-tablet-landscape",
+                    showOnlyOnTabletLandscape && "show-only-on-tablet-landscape",
                     hideOnDesktop && "hide-on-desktop",
                     showOnlyOnDesktop && "show-only-on-desktop",
                     marginTop && `margin-top-${marginTop}`,
@@ -91,7 +91,6 @@ export const Element = React.forwardRef(<K extends {}>(props: ElementProps<K>, r
                     opacity && `opacity-${opacity}`,
                 ].concat(classNames)
             )}
-            // data-testid={`${Component.displayName}Test`}
         />
     );
 }) as <K extends {}>(props: ElementProps<K> & { ref?: React.LegacyRef<HTMLElement> }) => React.ReactElement;

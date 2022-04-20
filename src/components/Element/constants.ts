@@ -26,40 +26,40 @@ export type ColourPropTypes = typeof defaultColourProps[number] | keyof typeof c
 
 // prettier-ignore
 export interface CommonProps extends ThemeProps {
-    bgColor           ? : ColourPropTypes;
-    bgColour          ? : ColourPropTypes;
-    textColor         ? : ColourPropTypes;
-    textColour        ? : ColourPropTypes;
-    borderColor       ? : ColourPropTypes;
-    borderColour      ? : ColourPropTypes;
-    fillColor         ? : ColourPropTypes;
-    fillColour        ? : ColourPropTypes;
-    strokeColor       ? : ColourPropTypes;
-    strokeColour      ? : ColourPropTypes;
-    hideOnMobile      ? : boolean;
-    showOnlyOnMobile  ? : boolean;
-    hideOnTabPT       ? : boolean;
-    showOnlyOnTabPT   ? : boolean;
-    hideOnTabLS       ? : boolean;
-    showOnlyOnTabLS   ? : boolean;
-    hideOnDesktop     ? : boolean;
-    showOnlyOnDesktop ? : boolean;
-    isFullWidth       ? : boolean;
-    isFullHeight      ? : boolean;
-    marginTop         ? : SpacingTypes;
-    marginRight       ? : SpacingTypes;
-    marginBottom      ? : SpacingTypes;
-    marginLeft        ? : SpacingTypes;
-    margin            ? : SpacingTypes;
-    paddingTop        ? : SpacingTypes;
-    paddingRight      ? : SpacingTypes;
-    paddingBottom     ? : SpacingTypes;
-    paddingLeft       ? : SpacingTypes;
-    padding           ? : SpacingTypes;
-    shadow            ? : ShadowTypes;
-    shape             ? : ShapeTypes;
-    opacity           ? : OpacityTypes;
-    classNames        ? : any[];
+    bgColor                   ? : ColourPropTypes;
+    bgColour                  ? : ColourPropTypes;
+    textColor                 ? : ColourPropTypes;
+    textColour                ? : ColourPropTypes;
+    borderColor               ? : ColourPropTypes;
+    borderColour              ? : ColourPropTypes;
+    fillColor                 ? : ColourPropTypes;
+    fillColour                ? : ColourPropTypes;
+    strokeColor               ? : ColourPropTypes;
+    strokeColour              ? : ColourPropTypes;
+    hideOnMobile              ? : boolean;
+    showOnlyOnMobile          ? : boolean;
+    hideOnTabletPortrait      ? : boolean;
+    showOnlyOnTabletPortrait  ? : boolean;
+    hideOnTabletLandscape     ? : boolean;
+    showOnlyOnTabletLandscape ? : boolean;
+    hideOnDesktop             ? : boolean;
+    showOnlyOnDesktop         ? : boolean;
+    isFullWidth               ? : boolean;
+    isFullHeight              ? : boolean;
+    marginTop                 ? : SpacingTypes;
+    marginRight               ? : SpacingTypes;
+    marginBottom              ? : SpacingTypes;
+    marginLeft                ? : SpacingTypes;
+    margin                    ? : SpacingTypes;
+    paddingTop                ? : SpacingTypes;
+    paddingRight              ? : SpacingTypes;
+    paddingBottom             ? : SpacingTypes;
+    paddingLeft               ? : SpacingTypes;
+    padding                   ? : SpacingTypes;
+    shadow                    ? : ShadowTypes;
+    shape                     ? : ShapeTypes;
+    opacity                   ? : OpacityTypes;
+    classNames                ? : any[];
 }
 
 export interface CommonAndHTMLProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as" | "size" | "ref" | "shape"> {}

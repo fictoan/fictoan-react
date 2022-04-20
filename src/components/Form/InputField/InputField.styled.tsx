@@ -75,7 +75,7 @@ export const InputFieldStyled = styled.input`
         background-image : url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+ICA8cG9seWxpbmUgcG9pbnRzPSIzLjUgMTIuNSA4LjUgMTcuNSAyMC41IDUuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMGVjMDVjIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==);
     }
 
-    /*  Red check mark  */
+    /*  Red cross  */
     &:invalid:not(:focus):not(:placeholder-shown) {
         border              : 1px solid ${(props: InputFieldProps) => props.theme.inputField.icons.isValid.border};
         background-color    : ${(props: InputFieldProps) => props.theme.inputField.isInvalid.bg};

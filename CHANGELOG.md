@@ -1,3 +1,6 @@
+### 0.36.2
+- Fix inconsistent `tabLS` and `tabPT` props
+
 ### 0.36.1
 - Add types for `Element`’s `as` attribute
 

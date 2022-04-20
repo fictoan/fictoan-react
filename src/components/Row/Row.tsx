@@ -7,12 +7,12 @@ import { RowStyled } from "./Row.styled";
 
 // prettier-ignore
 export interface RowCustomProps {
-    sidePadding          ? : "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
-    gutters              ? : SpacingTypes;
-    retainLayoutOnTabLS  ? : boolean;
-    retainLayoutOnTabPT  ? : boolean;
-    retainLayoutOnMobile ? : boolean;
-    retainLayoutAlways   ? : boolean;
+    sidePadding                    ? : "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
+    gutters                        ? : SpacingTypes;
+    retainLayoutOnTabletLandscape  ? : boolean;
+    retainLayoutOnTabletPortrait   ? : boolean;
+    retainLayoutOnMobile           ? : boolean;
+    retainLayoutAlways             ? : boolean;
 }
 
 export type RowElementType = HTMLDivElement;
@@ -23,8 +23,8 @@ export const Row = React.forwardRef(
         {
             sidePadding,
             gutters = "medium",
-            retainLayoutOnTabLS,
-            retainLayoutOnTabPT,
+            retainLayoutOnTabletLandscape,
+            retainLayoutOnTabletPortrait,
             retainLayoutOnMobile,
             retainLayoutAlways,
             ...props
@@ -41,11 +41,11 @@ export const Row = React.forwardRef(
             classNames.push(gutters === "none" ? "no-gutters" : `${gutters}-gutters`);
         }
 
-        if (retainLayoutOnTabLS) {
+        if (retainLayoutOnTabletLandscape) {
             classNames.push("retain-layout-on-tablet-landscape");
         }
 
-        if (retainLayoutOnTabPT) {
+        if (retainLayoutOnTabletPortrait) {
             classNames.push("retain-layout-on-tablet-portrait");
         }
 
