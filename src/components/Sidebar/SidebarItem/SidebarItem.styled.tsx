@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 import { SidebarItemProps } from "./SidebarItem";
 
+import { SidebarItemTextStyled } from "../SidebarItemText/SidebarItemText.styled";
+
 export const SidebarItemStyled = styled.div`
     display               : grid;
     align-items           : center;
@@ -13,6 +15,10 @@ export const SidebarItemStyled = styled.div`
     &:hover {
         color            : ${(props: SidebarItemProps) => props.theme.sidebar.links.onHover.text};
         background-color : ${(props: SidebarItemProps) => props.theme.sidebar.links.onHover.bg};
+    }
+
+    &:hover a ${SidebarItemTextStyled} {
+        color : ${(props : SidebarItemProps) => props.theme.sidebar.links.onHover.text};
     }
 
     &.has-alert {

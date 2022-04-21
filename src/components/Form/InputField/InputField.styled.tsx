@@ -11,14 +11,14 @@ export const InputFieldStyled = styled.input`
     color            : ${(props: InputFieldProps) => props.theme.inputField.default.text};
     background-color : ${(props: InputFieldProps) => props.theme.inputField.default.bg};
     border           : 1px solid ${(props: InputFieldProps) => props.theme.inputField.default.border};
-    border-radius    : ${(props: InputFieldProps) => props.theme.inputField.default.borderRadius};
+    border-radius    : ${(props : InputFieldProps) => props.theme.inputField.default.borderRadius};
     padding          : 12px;
     line-height      : 1;
 
     &:active,
     &:focus {
         background-color : ${(props: InputFieldProps) => props.theme.inputField.onFocus.bg};
-        border           : 2px solid ${(props: InputFieldProps) => props.theme.inputField.onFocus.border};
+        border           : 2px solid ${(props : InputFieldProps) => props.theme.inputField.onFocus.border};
         padding          : 11px;
     }
 

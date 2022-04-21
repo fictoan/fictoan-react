@@ -1,3 +1,7 @@
+### 0.36.3
+- Fix `Select` border-radius inheritance bug
+- Fix `SidebarItemText` hover state text colour
+
 ### 0.36.2
 - Fix inconsistent `tabLS` and `tabPT` props
 

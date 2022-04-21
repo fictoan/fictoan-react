@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 import { SidebarWrapperProps } from "./SidebarWrapper";
 import { SidebarItemIconProps } from "../SidebarItemIcon/SidebarItemIcon";
+import { SidebarItemTextProps } from "../SidebarItemText/SidebarItemText";
 
 import { SidebarHeaderStyled } from "../SidebarHeader/SidebarHeader.styled";
-import { SidebarItemStyled } from "../SidebarItem/SidebarItem.styled"
-import { SidebarItemTextStyled } from "../SidebarItemText/SidebarItemText.styled"
-import { SidebarItemIconStyled } from "../SidebarItemIcon/SidebarItemIcon.styled"
+import { SidebarItemStyled } from "../SidebarItem/SidebarItem.styled";
+import { SidebarItemTextStyled } from "../SidebarItemText/SidebarItemText.styled";
+import { SidebarItemIconStyled } from "../SidebarItemIcon/SidebarItemIcon.styled";
 import { SidebarFooterStyled } from "../SidebarFooter/SidebarFooter.styled";
 
 
@@ -75,7 +76,9 @@ export const SidebarWrapperStyled = styled.aside`
         color : ${(props: SidebarWrapperProps) => props.theme.sidebar.links.default.text};
     }
     
-    summary ~ a p { color : ${(props: SidebarWrapperProps) => props.theme.sidebar.subLinks.default.text}; }
+    summary ~ a p { color : ${(props: SidebarWrapperProps) => props.theme.sidebar.links.default.text}; }
+
+    a p:hover { color : ${(props : SidebarWrapperProps) => props.theme.sidebar.links.onHover.text}; }
 
     a.active {
         position         : relative;

@@ -7,6 +7,7 @@ export const SelectWrapperStyled = styled.div`
     position   : relative;
     width      : max-content;
     align-self : flex-start;
+    border-radius    : ${(props : SelectProps) => props.theme.inputField.default.borderRadius};
 
     &::after {
         content        : "";

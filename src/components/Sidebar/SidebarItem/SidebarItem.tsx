@@ -6,7 +6,7 @@ import { CommonAndHTMLProps } from "../../Element/constants";
 import { SidebarItemStyled } from "./SidebarItem.styled";
 
 export interface SidebarItemCustomProps {
-    hasAlert ?: boolean;
+    hasAlert ? : boolean;
 }
 
 export type SidebarItemElementType = HTMLDivElement;
