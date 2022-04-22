@@ -43,6 +43,11 @@ export const Element = React.forwardRef(<K extends {}>(props: ElementProps<K>, r
         shadow,
         shape,
         opacity,
+        horizontallyCentreThis,
+        horizontallyCenterThis,
+        verticallyCentreItems,
+        verticallyCenterItems,
+        pushItemsToEnds,
         ...minimalProps
     } = props;
 
@@ -89,6 +94,11 @@ export const Element = React.forwardRef(<K extends {}>(props: ElementProps<K>, r
                     shadow && `shadow-${shadow}`,
                     shape && `shape-${shape}`,
                     opacity && `opacity-${opacity}`,
+                    horizontallyCentreThis && "horizontally-centre-this",
+                    horizontallyCenterThis && "horizontally-centre-this",
+                    verticallyCentreItems && "vertically-centre-items",
+                    verticallyCenterItems && "vertically-centre-items",
+                    pushItemsToEnds && "push-to-ends",
                 ].concat(classNames)
             )}
         />

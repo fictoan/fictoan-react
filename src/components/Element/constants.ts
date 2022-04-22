@@ -59,6 +59,11 @@ export interface CommonProps extends ThemeProps {
     shadow                    ? : ShadowTypes;
     shape                     ? : ShapeTypes;
     opacity                   ? : OpacityTypes;
+    horizontallyCentreThis    ? : boolean;
+    horizontallyCenterThis    ? : boolean;
+    verticallyCentreItems     ? : boolean;
+    verticallyCenterItems     ? : boolean;
+    pushItemsToEnds           ? : boolean;
     classNames                ? : any[];
 }
 

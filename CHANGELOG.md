@@ -1,3 +1,6 @@
+### 0.36.4
+- Add `horizontallyCentreThis`, `horizontallyCenterThis`, `verticallyCentreItems`, `verticallyCenterItems`, `pushItemsToEnds` as props instead of class names
+
 ### 0.36.3
 - Fix `Select` border-radius inheritance bug
 - Fix `SidebarItemText` hover state text colour
