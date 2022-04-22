@@ -8,5 +8,6 @@ Template.displayName = NotificationsWrapper.displayName;
 
 export const Default: FictoanStory<typeof NotificationsWrapper> = createStoryFromTemplate(Template);
 Default.args = {
-    children: <NotificationItem {...NotificationItem.args}></NotificationItem>
+    // @ts-ignore
+    children: <NotificationItem {...NotificationItem.args}/>
 };

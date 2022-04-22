@@ -56,6 +56,8 @@ export { Spinner } from "./components/Spinner/Spinner";
 export { Callout } from "./components/Callout/Callout";
 export { Tag } from "./components/Tag/Tag";
 export { Tooltip } from "./components/Tooltip/Tooltip";
+export { ToastsWrapper } from "./components/Toast/ToastsWrapper/ToastsWrapper";
+export { Toast } from "./components/Toast/ToastItem/Toast";
 
 export { ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
 export { ThemeType, ThemeProps, ColourPropTypes } from "./components/Element/constants";

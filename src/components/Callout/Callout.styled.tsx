@@ -19,7 +19,7 @@ export const CalloutStyled = styled.div`
         background-color : ${transparentize(0.80, defaultColours.green)};
         border-color     : ${defaultColours.green};
     }
-    
+
     &.warning {
         background-color : ${transparentize(0.80, defaultColours.amber)};
         border-color     : ${defaultColours.amber};
@@ -29,5 +29,4 @@ export const CalloutStyled = styled.div`
         background-color : ${transparentize(0.80, defaultColours.red)};
         border-color     : ${defaultColours.red};
     }
-
 `;

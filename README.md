@@ -28,13 +28,13 @@ npm install fictoan-react
 
 And start using!
 ```jsx
-import { Card } from "fictoan-react";
+import { Toast } from "fictoan-react";
 
 const MyComponent = props => {
     return (
-        <Card shape="rounded" bgColour="white" borderColour="slate-20" shadow="soft">
-            My Awesome Card
-        </Card>
+        <Toast shape="rounded" bgColour="white" borderColour="slate-20" shadow="soft">
+            My Awesome Toast
+        </Toast>
     );
 }
 ```

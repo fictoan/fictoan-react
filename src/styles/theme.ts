@@ -554,11 +554,18 @@ export const FictoanTheme = {
         },
 
         kbd : {
-            text : String(defaultColours.grey),
-            bg   : String(defaultColours.grey10)
+            bg   : String(defaultColours.grey10),
+            text : String(defaultColours.grey)
         }
     },
 
+    //  TOAST  ////////////////////////////////////////////////////////////////
+    toast : {
+        bg   : String(defaultColours.slate10),
+        text : String(defaultColours.black)
+    },
+
+    //  LOADER  ///////////////////////////////////////////////////////////////
     spinner: {
         color: String(defaultColours.teal),
     }

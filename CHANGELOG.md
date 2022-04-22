@@ -1,3 +1,6 @@
+### 0.37.0
+- Add `Toast` component
+
 ### 0.36.4
 - Add `horizontallyCentreThis`, `horizontallyCenterThis`, `verticallyCentreItems`, `verticallyCenterItems`, `pushItemsToEnds` as props instead of class names
 
@@ -251,7 +254,7 @@ Breaking changes
 - Switch to useState & useEffect for merging theme
 
 ### 0.31.7
-- Fix Card theme issue for setting `borderRadius`
+- Fix Toast theme issue for setting `borderRadius`
 
 ### 0.31.6
 - Fix broken builds (0.31.2 - 0.31.5)

@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './Toast.stories';
+import { Toast } from "./Toast";
+import { CommonArgTypes } from "../../../utils/storyUtils";
+
+<Meta title="Components/Toast" component={Toast} argTypes={{ ...CommonArgTypes }} />
+
+# Toast
+
+This is a Toast component.
+
+<Canvas>
+    <Story story={stories.Default} />
+</Canvas>

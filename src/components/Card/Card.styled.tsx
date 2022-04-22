@@ -7,17 +7,11 @@ export const CardStyled = styled.div`
     position : relative;
     width    : 100%;
 
-    &[class*="border-"] {
-        border-width : ${(props: CardProps) => props.theme.globals.borderWidth};
-    }
+    &[class*="border-"] { border-width : ${(props: CardProps) => props.theme.globals.borderWidth}; }
 
-    &:not([class*="border-"]) {
-        border : 1px solid ${(props: CardProps) => props.theme.card.border};
-    }
-
-    &:not([class*="bg-"]) {
-        background-color : ${(props: CardProps) => props.theme.card.bg};
-    }
+    &:not([class*="border-"]) { border : 1px solid ${(props: CardProps) => props.theme.card.border}; }
+    
+    &:not([class*="bg-"]) { background-color : ${(props: CardProps) => props.theme.card.bg}; }
 
     &.shape-rounded { border-radius : ${(props: CardProps) => props.theme.card.borderRadius}; }
 
