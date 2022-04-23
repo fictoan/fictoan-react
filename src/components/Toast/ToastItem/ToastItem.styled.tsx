@@ -1,21 +1,21 @@
 import styled from "styled-components";
 
-import { ToastProps } from "./Toast";
+import { ToastItemProps } from "./ToastItem";
 import { ToastsWrapperStyled } from "../ToastsWrapper/ToastsWrapper.styled";
 
 
-export const ToastStyled = styled.div`
+export const ToastItemStyled = styled.div`
     position         : relative;
     display          : flex;
     width            : fit-content;
     height           : fit-content;
-    border-radius    : ${(props : ToastProps) => props.theme.inputField.default.borderRadius};
-    background-color : ${(props : ToastProps) => props.theme.toast.bg};
+    border-radius    : ${(props : ToastItemProps) => props.theme.inputField.default.borderRadius};
+    background-color : ${(props : ToastItemProps) => props.theme.toast.bg};
     transition       : all 0.4s;
     padding          : 8px 16px;
 
     p {
-        color : ${(props : ToastProps) => props.theme.toast.text};
+        color : ${(props : ToastItemProps) => props.theme.toast.text};
     }
 
     //  TOP TOAST  ////////////////////////////////////////////////////////////

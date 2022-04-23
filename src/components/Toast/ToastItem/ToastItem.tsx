@@ -3,22 +3,22 @@ import React, { useState, useEffect } from "react";
 import { Element } from "../../Element/Element";
 import { CommonAndHTMLProps } from "../../Element/constants";
 
-import { ToastStyled } from "./Toast.styled";
+import { ToastItemStyled } from "./ToastItem.styled";
 
 // prettier-ignore
-export interface ToastCustomProps {
+export interface ToastItemCustomProps {
     show            ? : boolean;
     timeout         ? : number;
     onCloseCallback   : () => void;
 }
 
-export type ToastElementType = HTMLDivElement;
-export type ToastProps = Omit<CommonAndHTMLProps<ToastElementType>, keyof ToastCustomProps> & ToastCustomProps;
+export type ToastItemElementType = HTMLDivElement;
+export type ToastItemProps = Omit<CommonAndHTMLProps<ToastItemElementType>, keyof ToastItemCustomProps> & ToastItemCustomProps;
 
-export const Toast = React.forwardRef(
+export const ToastItem = React.forwardRef(
     (
-        { show, children, timeout, onCloseCallback, ...props }: ToastProps,
-        ref: React.Ref<ToastElementType>
+        { show, children, timeout, onCloseCallback, ...props }: ToastItemProps,
+        ref: React.Ref<ToastItemElementType>
     ) => {
         let classNames: string[] = [];
         const [isVisible, setIsVisible] = useState<boolean>(show);
@@ -43,8 +43,8 @@ export const Toast = React.forwardRef(
 
         return (
             isVisible && (
-                <Element<ToastElementType>
-                    as={ToastStyled}
+                <Element<ToastItemElementType>
+                    as={ToastItemStyled}
                     classNames={[...classNames, show ? "visible" : ""]}
                     onTransitionEnd={onTransitionEnd}
                     padding="nano"
