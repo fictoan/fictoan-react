@@ -45,8 +45,8 @@ export const SidebarWrapperStyled = styled.aside`
 
             .header-icon {
                 display : block;
-                width   : 32px;
-                height  : 32px;
+                width   : ${(props : SidebarWrapperProps) => props.theme.sidebar.header.logoWidth};
+                height  : ${(props : SidebarWrapperProps) => props.theme.sidebar.header.iconWidth};
             }
         }
 

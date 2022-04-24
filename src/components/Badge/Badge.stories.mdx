@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+import * as stories from './Badge.stories';
+import { Badge } from "./Badge";
+import { CommonArgTypes } from "../../utils/storyUtils";
+
+<Meta title="Components/Badge" component={Badge} argTypes={{ ...CommonArgTypes, shape : undefined }} args={{ children : "Button" }} />
+
+# Badge
+
+This is a Badge component.
+
+<Canvas>
+    <Story story={stories.Custom} />
+</Canvas>

@@ -1,3 +1,6 @@
+### 0.38.0
+- Add `Badge` component
+
 ### 0.37.1
 - Rename `Toast` to `ToastItem` for better consistency
 
@@ -120,7 +123,7 @@
 
 ### 0.33.12
 - Remove `Element` props being passed to all HTML elements as attributes
-- Fix Button `is-loading` colours
+- Fix Badge `is-loading` colours
 
 ### 0.33.11
 - Fix transition for `SidebarHeader`
@@ -139,7 +142,7 @@ Breaking changes
   - `BreadcrumbWrapper` renamed to `BreadcrumbsWrapper`
   - The `separator` is now configurable in the theme file
 
-- Button
+- Badge
   - `isLoading` class now works for `custom` kind buttons also
   - Fix padding inconsistencies
   - `with-loader` and `with-delete` classes renamed to `is-loading` and `has-delete`
@@ -158,7 +161,7 @@ Breaking changes
 
 - ProgressBar
   - `isThin` prop is deprecated in favour of a far more flexible `height` prop
-  - `shape` prop is now available just like the `Button`
+  - `shape` prop is now available just like the `Badge`
 
 - The theme object is now called `FictoanTheme`
 
@@ -232,7 +235,7 @@ Breaking changes
 - Tweak colour and font family for other input elements
 
 ### 0.31.17
-- Change `fontFamily` to `font` for `Button` component
+- Change `fontFamily` to `font` for `Badge` component
 - Fix font fallback styling inconsistency for labels, tables, and links
 
 ### 0.31.16

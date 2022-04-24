@@ -3,7 +3,7 @@ import darken from "polished/lib/color/darken";
 
 import { defaultColours } from "./DefaultColours";
 
-type CustomColoursType = { [k in string]: string };
+type CustomColoursType = { [k in string] : string };
 
 export const customColours = {
     hue      : defaultColours.blue90,
@@ -25,7 +25,6 @@ export const FictoanTheme = {
     body : {
         bg : String(defaultColours.white)
     },
-
 
     //  BREADCRUMBS  ///////////////////////////////////////////////////////////
     breadcrumbs : {
@@ -156,9 +155,9 @@ export const FictoanTheme = {
             helpText     : String(defaultColours.slate60)
         },
         onFocus    : {
-            bg       : String(defaultColours.white),
-            border   : String(customColours.hue),
-            text     : String(customColours.shade),
+            bg     : String(defaultColours.white),
+            border : String(customColours.hue),
+            text   : String(customColours.shade)
         },
         isValid    : {
             bg     : String(defaultColours.white),
@@ -313,7 +312,8 @@ export const FictoanTheme = {
         header : {
             bg           : String(defaultColours.white),
             borderBottom : String(defaultColours.slate10),
-            logoWidth    : "50%"
+            logoWidth    : "50%",
+            iconWidth    : "40px"
         },
 
         icons : {
@@ -566,7 +566,7 @@ export const FictoanTheme = {
     },
 
     //  LOADER  ///////////////////////////////////////////////////////////////
-    spinner: {
-        color: String(defaultColours.teal),
+    spinner : {
+        color : String(defaultColours.teal)
     }
 };

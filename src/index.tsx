@@ -8,6 +8,9 @@ export { Portion } from "./components/Portion/Portion";
 export { Heading } from "./components/Typography/Heading";
 export { Text } from "./components/Typography/Text";
 
+// BADGE  //////////////////////////////////////////////////////////////////
+export { Badge } from "./components/Badge/Badge";
+
 // BREADCRUMBS  ///////////////////////////////////////////////////////////////
 export { BreadcrumbsWrapper } from "./components/Breadcrumbs/BreadcrumbsWrapper/BreadcrumbsWrapper";
 export { BreadcrumbItem } from "./components/Breadcrumbs/BreadcrumbItem/BreadcrumbItem";
@@ -57,7 +60,6 @@ export { InfoPanel } from "./components/InfoPanel/InfoPanel";
 export { NotificationsWrapper } from "./components/Notifications/NotificationsWrapper/NotificationsWrapper";
 export { NotificationItem } from "./components/Notifications/NotificationsItem/NotificationItem";
 
-
 // TABLE  /////////////////////////////////////////////////////////////////////
 export { Table } from "./components/Table/Table";
 export { TablePagination } from "./components/Table/TablePagination/TablePagination";
@@ -73,9 +75,6 @@ export { Spinner } from "./components/Spinner/Spinner";
 
 // CALLOUT  ///////////////////////////////////////////////////////////////////
 export { Callout } from "./components/Callout/Callout";
-
-// TAG PILL  //////////////////////////////////////////////////////////////////
-export { Tag } from "./components/Tag/Tag";
 
 // TOOLTIP  ///////////////////////////////////////////////////////////////////
 export { Tooltip } from "./components/Tooltip/Tooltip";

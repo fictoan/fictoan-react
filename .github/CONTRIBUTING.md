@@ -71,7 +71,7 @@ Each component folder contains the following files to write stories:
 
 ### Defining stories
 
-* Any React component you export from *.stories.tsx can be a story. Stories for fictoan-react will have type `FictoanStory<typeof <component>>` (eg. `FictoanStory<typeof Button>`). 
+* Any React component you export from *.stories.tsx can be a story. Stories for fictoan-react will have type `FictoanStory<typeof <component>>` (eg. `FictoanStory<typeof Badge>`). 
 
 * A util function `createStoryFromTemplate(Template)` will create a new story given a base template. For this story, the `args` property will hold the props being passed to it.
 
