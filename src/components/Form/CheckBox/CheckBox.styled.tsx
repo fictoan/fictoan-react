@@ -40,7 +40,6 @@ const SharedStyling = css`
     }
 
     /*  The grey square */
-
     label::before,
     input[type="checkbox"]:disabled + label::before {
         user-select    : none;
@@ -68,9 +67,9 @@ const SharedStyling = css`
 
 /*  CHECKBOX  =============================================================  */
 export const CheckBoxStyled = styled.div`
-
     ${SharedStyling}
-        /*  The bg square */
+
+    /*  The square */
     label::before {
         position      : absolute;
         height        : 16px;
@@ -81,7 +80,6 @@ export const CheckBoxStyled = styled.div`
     }
 
     /*  The white tick inside */
-
     label::after {
         position      : absolute;
         height        : 6px;
@@ -104,13 +102,12 @@ export const CheckBoxStyled = styled.div`
 
 /*  TOGGLE SWITCH  ========================================================  */
 export const SwitchStyled = styled.div`
-
     ${SharedStyling}
+
     label {
         position : relative;
 
-        /*  The grey oblong */
-
+        /*  The grey stadium shape for the case */
         &::before {
             position      : absolute;
             top           : 50%;
@@ -118,17 +115,17 @@ export const SwitchStyled = styled.div`
             transform     : translateY(-50%);
             border-radius : 16px;
             margin-right  : 4px;
+            background    : ${(props : CheckboxProps) => props.theme.toggleSwitch.case.default.bg};
         }
 
-        /*  The white inner circle */
-
+        /*  The white inner circle actuator */
         &::after {
             content       : "";
             position      : absolute;
             top           : 50%;
             transform     : translateY(-50%);
             display       : inline-block;
-            background    : ${(props : CheckboxProps) => props.theme.toggleSwitch.switch.default.bg};
+            background    : ${(props : CheckboxProps) => props.theme.toggleSwitch.actuator.default.bg};
             border-radius : 50%;
             transition    : all 0.1s ease-out;
             box-shadow    : 0 2px 4px -2px hsla(0, 0, 0, 0.6);
@@ -136,13 +133,34 @@ export const SwitchStyled = styled.div`
         }
     }
 
+    /* States for the stadium */
+    input[type="checkbox"]:hover + label::before {
+        background : ${(props : CheckboxProps) => props.theme.toggleSwitch.case.onHover.bg};
+    }
+
+    input[type="checkbox"]:checked + label::before {
+        background : ${(props : CheckboxProps) => props.theme.toggleSwitch.case.isChecked.bg};
+    }
+
+    input[type="checkbox"]:disabled + label::before {
+        background : ${(props : CheckboxProps) => props.theme.toggleSwitch.case.isDisabled.bg};
+    }
+
+    /* States for the circle */
+    input[type="checkbox"]:hover + label::after {
+        background : ${(props : CheckboxProps) => props.theme.toggleSwitch.actuator.onHover.bg};
+    }
+
     input[type="checkbox"]:checked + label::after {
-        background : ${(props : CheckboxProps) => props.theme.toggleSwitch.switch.isChecked.bg};
+        background : ${(props : CheckboxProps) => props.theme.toggleSwitch.actuator.isChecked.bg};
+    }
+
+    input[type="checkbox"]:disabled + label::after {
+        background : ${(props : CheckboxProps) => props.theme.toggleSwitch.actuator.isDisabled.bg};
     }
 
 
     /* Sizes */
-
     &.size-small {
         label {
             padding-left : 32px;

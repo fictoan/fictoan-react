@@ -241,13 +241,34 @@ export const FictoanTheme = {
         }
     },
 
+    //  SWITCH  ///////////////////////////////////////////////////////////////
     toggleSwitch : {
-        switch : {
+        case : {
             default   : {
-                bg : String(defaultColours.white)
+                bg : defaultColours.slate30
+            },
+            onHover   : {
+                bg : defaultColours.green40
             },
             isChecked : {
-                bg : String(defaultColours.white)
+                bg : defaultColours.green90
+            },
+            isDisabled : {
+                bg : defaultColours.grey
+            }
+        },
+        actuator : {
+            default   : {
+                bg : defaultColours.white
+            },
+            onHover   : {
+                bg : defaultColours.white
+            },
+            isChecked : {
+                bg : defaultColours.white
+            },
+            isDisabled : {
+                bg : defaultColours.grey70
             }
         }
     },

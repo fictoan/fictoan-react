@@ -1,3 +1,10 @@
+### 0.39.0
+- Fix `Badge` line height bug
+- Fix `Switch` theme colour mismatch
+
+### 0.38.3
+- Tweak `Badge` padding values
+
 ### 0.38.2
 - Fix `Badge` height bug
 
