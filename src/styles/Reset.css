@@ -1,14 +1,22 @@
-/*  RESET  ============================================================  */
+/*  ///////////////////////////////////////////////////////////////////////  */
+/*  FICTOAN OPINIONATED RESET  */
+/*  ///////////////////////////////////////////////////////////////////////  */
 /*  Consider removing this if you have
 a zillion elements in your page  */
 *,
 *:before,
-*:after { box-sizing : border-box; }
+*:after {
+    box-sizing : border-box;
+}
 
-*:focus { outline : 0; }
+*:focus {
+    outline : 0;
+}
 
 /* This affects all type scale values */
-html { font-size : 1em; }
+html {
+    font-size : 1em;
+}
 
 body {
     -moz-osx-font-smoothing : grayscale;
@@ -25,7 +33,9 @@ img {
     width   : 100%;
 }
 
-a { text-decoration : none; }
+a {
+    text-decoration : none;
+}
 
 button {
     border  : 0;
@@ -33,14 +43,21 @@ button {
 }
 
 /* Input fields */
-::-webkit-input-placeholder { opacity : 0.5; }
-::-moz-placeholder { opacity : 0.5; }
+::-webkit-input-placeholder {
+    opacity : 0.5;
+}
 
-input { outline : none; }
+::-moz-placeholder {
+    opacity : 0.5;
+}
+
+input {
+    outline : none;
+}
 
 input[type="number"] {
     -webkit-appearance : none;
-    -moz-appearance : none;
+    -moz-appearance    : none;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -57,9 +74,13 @@ input[type="number"]::-webkit-inner-spin-button {
 /* :-webkit-autofill:hover, */
 /* :-webkit-autofill:focus { box-shadow : 0 0 0 5000px white inset; } */
 
-input[type="date"]::-webkit-inner-spin-button { display : none; }
+input[type="date"]::-webkit-inner-spin-button {
+    display : none;
+}
 
-input[type="date"]::-webkit-calendar-picker-indicator { opacity : 0; }
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity : 0;
+}
 
 progress[value],
 progress::-webkit-progress-value,
@@ -82,9 +103,13 @@ select {
 }
 
 /* Details and Summary */
-::-webkit-details-marker { display : none; }
+::-webkit-details-marker {
+    display : none;
+}
 
-details > summary:first-of-type { list-style-type : none; }
+details > summary:first-of-type {
+    list-style-type : none;
+}
 
 /* Code */
 pre, code {
@@ -93,9 +118,17 @@ pre, code {
 }
 
 /* Tables */
-table { border-collapse : collapse; }
+table {
+    border-collapse : collapse;
+}
 
 th {
     font-weight : unset;
     text-align  : unset;
+}
+
+/* Badge */
+mark {
+    background-color : lightskyblue;
+    color            : blue;
 }

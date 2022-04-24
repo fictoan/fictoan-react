@@ -1,4 +1,7 @@
 ### 0.38.0
+- Add opinionated defaults for `mark` element
+
+### 0.38.0
 - Add `Badge` component
 
 ### 0.37.1
