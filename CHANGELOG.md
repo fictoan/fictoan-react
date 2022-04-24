@@ -1,4 +1,7 @@
-### 0.38.0
+### 0.38.2
+- Fix `Badge` height bug
+
+### 0.38.1
 - Add opinionated defaults for `mark` element
 
 ### 0.38.0

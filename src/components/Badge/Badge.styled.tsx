@@ -15,6 +15,8 @@ export const BadgeStyled = styled.mark`
     background-position : center;
     user-select         : none;
     padding             : 2px 4px;
+    width               : fit-content;
+    height              : fit-content;
 
     // To make sure a button’s children
     // don’t style themselves like a douchebag
