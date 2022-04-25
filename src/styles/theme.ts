@@ -219,6 +219,7 @@ export const FictoanTheme = {
         }
     },
 
+    //  CHECKBOX  /////////////////////////////////////////////////////////////
     checkBox : {
         square : {
             default    : {
