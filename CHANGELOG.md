@@ -1,3 +1,6 @@
+### 0.39.2
+- Move `unit` prop in the `ProgressBar` from being displayed via CSS to markup
+
 ### 0.39.1
 - Tweak `Badge` padding values
 

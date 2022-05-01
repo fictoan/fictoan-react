@@ -29,7 +29,7 @@ export const ProgressBar = React.forwardRef(
                 {label && (
                     <Element<HTMLDivElement> as={ProgressBarMetaStyled}>
                         <Text>{label}</Text>
-                        <Text>{value}</Text>
+                        <Text>{value}{props.unit && props.unit}</Text>
                     </Element>
                 )}
                 <Element<ProgressBarElementType>
