@@ -1,5 +1,8 @@
+### 0.40.0
+- Add `BottomDrawer` component
+
 ### 0.39.3
-- Rename `timeout` prop for `ToastItem` and `NotificationItem` to `showFor`
+- Rename `timeout` prop for `BottomDrawer` and `NotificationItem` to `showFor`
 - Fix `Select` border-radius bug
 
 ### 0.39.2
@@ -25,7 +28,7 @@
 - Add `Badge` component
 
 ### 0.37.1
-- Rename `Toast` to `ToastItem` for better consistency
+- Rename `Toast` to `BottomDrawer` for better consistency
 
 ### 0.37.0
 - Add `Toast` component
@@ -283,7 +286,7 @@ Breaking changes
 - Switch to useState & useEffect for merging theme
 
 ### 0.31.7
-- Fix ToastItem theme issue for setting `borderRadius`
+- Fix BottomDrawer theme issue for setting `borderRadius`
 
 ### 0.31.6
 - Fix broken builds (0.31.2 - 0.31.5)

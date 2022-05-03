@@ -83,6 +83,9 @@ export { Tooltip } from "./components/Tooltip/Tooltip";
 export { ToastsWrapper } from "./components/Toast/ToastsWrapper/ToastsWrapper";
 export { ToastItem } from "./components/Toast/ToastItem/ToastItem";
 
+// BOTTOM DRAWER  /////////////////////////////////////////////////////////////
+export { BottomDrawer } from "./components/BottomDrawer/BottomDrawer";
+
 // THEME  /////////////////////////////////////////////////////////////////////
 export { defaultColours } from "./styles/DefaultColours";
 export { FictoanTheme } from "./styles/theme";
