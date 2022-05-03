@@ -8,7 +8,7 @@ import { ToastItemStyled } from "./ToastItem.styled";
 // prettier-ignore
 export interface ToastItemCustomProps {
     show            ? : boolean;
-    timeout         ? : number;
+    showFor         ? : number;
     onCloseCallback   : () => void;
 }
 
@@ -17,7 +17,7 @@ export type ToastItemProps = Omit<CommonAndHTMLProps<ToastItemElementType>, keyo
 
 export const ToastItem = React.forwardRef(
     (
-        { show, children, timeout, onCloseCallback, ...props }: ToastItemProps,
+        { show, children, showFor, onCloseCallback, ...props }: ToastItemProps,
         ref: React.Ref<ToastItemElementType>
     ) => {
         let classNames: string[] = [];
@@ -29,7 +29,7 @@ export const ToastItem = React.forwardRef(
             const timer = show
                 ? setTimeout(() => {
                     onCloseCallback();
-                }, timeout ?? 4000)
+                }, showFor ?? 4000)
                 : undefined;
 
             return () => {

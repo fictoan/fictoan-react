@@ -1,3 +1,7 @@
+### 0.39.3
+- Rename `timeout` prop for `ToastItem` and `NotificationItem` to `showFor`
+- Fix `Select` border-radius bug
+
 ### 0.39.2
 - Move `unit` prop in the `ProgressBar` from being displayed via CSS to markup
 

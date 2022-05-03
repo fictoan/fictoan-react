@@ -11,7 +11,7 @@ export interface NotificationItemCustomProps {
     show              : boolean;
     isDismissible   ? : boolean;
     onCloseCallback   : () => void;
-    timeout         ? : number;
+    showFor         ? : number;
 }
 
 export type NotificationItemElementType = HTMLDivElement;
@@ -19,7 +19,7 @@ export type NotificationItemProps = Omit<CommonAndHTMLProps<NotificationItemElem
 
 export const NotificationItem = React.forwardRef(
     (
-        { show, onCloseCallback, kind, children, isDismissible, timeout, ...props }: NotificationItemProps,
+        { show, onCloseCallback, kind, children, isDismissible, showFor, ...props }: NotificationItemProps,
         ref: React.Ref<NotificationItemElementType>
     ) => {
         let classNames = [];
@@ -33,7 +33,7 @@ export const NotificationItem = React.forwardRef(
             const timer = show
                 ? setTimeout(() => {
                       onCloseCallback();
-                  }, timeout ?? 8000)
+                  }, showFor ?? 8000)
                 : undefined;
 
             return () => {
