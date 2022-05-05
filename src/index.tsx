@@ -86,9 +86,11 @@ export { ToastItem } from "./components/Toast/ToastItem/ToastItem";
 // BOTTOM DRAWER  /////////////////////////////////////////////////////////////
 export { BottomDrawer } from "./components/BottomDrawer/BottomDrawer";
 
+// PIN INPUT FIELD  ///////////////////////////////////////////////////////////
+export { PinInputField } from "./components/PinInputField/PinInputField";
+
 // THEME  /////////////////////////////////////////////////////////////////////
 export { defaultColours } from "./styles/DefaultColours";
 export { FictoanTheme } from "./styles/theme";
 export { ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
 export { ThemeType, ThemeProps, ColourPropTypes } from "./components/Element/constants";
-
