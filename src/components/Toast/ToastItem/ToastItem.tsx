@@ -9,7 +9,7 @@ import { ToastItemStyled } from "./ToastItem.styled";
 export interface ToastItemCustomProps {
     show            ? : boolean;
     showFor         ? : number;
-    onCloseCallback   : () => void;
+    onCloseCallback ? : () => void;
 }
 
 export type ToastItemElementType = HTMLDivElement;
