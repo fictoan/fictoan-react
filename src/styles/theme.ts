@@ -152,7 +152,10 @@ export const FictoanTheme = {
             label        : String(customColours.shade),
             text         : String(customColours.shade),
             borderRadius : "4px",
-            helpText     : String(defaultColours.slate60)
+            helpText     : {
+                text  : String(defaultColours.slate60),
+                scale : "92%"
+            }
         },
         onFocus    : {
             bg     : String(defaultColours.white),

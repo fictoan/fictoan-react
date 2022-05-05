@@ -26,22 +26,22 @@ export const FormItemStyled = styled.div`
     }
     
     .info-section {
-        flex-wrap: wrap;
+        flex-wrap : wrap;
         
         span.help-text, span.error-text {
-            font-size : 95%;
+            font-size : ${(props: FormItemProps) => props.theme.inputField.default.helpText.scale};
         }
 
         span.help-text {
-            color : ${(props: FormItemProps) => props.theme.inputField.default.helpText};
+            color : ${(props: FormItemProps) => props.theme.inputField.default.helpText.text};
         }
     
         span.error-text {
-            display: none;
+            display : none;
         }
 
         span:not(:last-of-type) {
-            margin-right: 10px;
+            margin-right : 8px;
         }
     }
 
