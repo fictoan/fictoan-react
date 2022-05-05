@@ -1,4 +1,4 @@
-### 0.41.0
+### 0.41.1
 - Add `PinInputField` component
 
 ### 0.40.0
