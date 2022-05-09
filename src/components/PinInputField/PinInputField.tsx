@@ -9,14 +9,14 @@ import { PinInputStyled } from "./PinInputField.styled";
 // prettier-ignore
 type PinInputFieldCustomProps = {
     numberOfFields   : number;
-    onComplete     ? : (value: string) => void;
+    onChange       ? : (value: string) => void;
     type           ? : "alphanumeric" | "number";
     mask           ? : boolean;
     otp            ? : boolean;
 };
 
 export type PinInputFieldElementType = HTMLDivElement;
-export type RowProps = Omit<CommonAndHTMLProps<PinInputFieldElementType>, keyof PinInputFieldCustomProps> &
+export type PinInputFieldProps = Omit<CommonAndHTMLProps<PinInputFieldElementType>, keyof PinInputFieldCustomProps> &
     PinInputFieldCustomProps;
 
 function validate(value: string, type: "alphanumeric" | "number") {
@@ -28,7 +28,7 @@ function validate(value: string, type: "alphanumeric" | "number") {
 
 export const PinInputField = React.forwardRef(
     (
-        { numberOfFields: length, onComplete, type = "number", mask = false, otp = false }: PinInputFieldCustomProps,
+        { numberOfFields: length, onChange, type = "number", mask = false, otp = false }: PinInputFieldProps,
         ref: React.Ref<PinInputFieldElementType>
     ) => {
         const [inputRefs, setInputRefs] = useState<React.RefObject<HTMLInputElement>[]>([]);
@@ -75,19 +75,18 @@ export const PinInputField = React.forwardRef(
                 const nextValues = [...values];
                 nextValues[index] = value;
                 setValues(nextValues);
+                onChange(nextValues.join(""));
 
                 const isComplete =
                     value !== "" &&
                     nextValues.length === length &&
                     nextValues.every((inputValue) => inputValue != null && inputValue !== "");
 
-                if (isComplete) {
-                    onComplete?.(nextValues.join(""));
-                } else {
+                if (!isComplete) {
                     focusNext(index);
                 }
             },
-            [focusNext, length, onComplete, values]
+            [focusNext, length, onChange, values]
         );
 
         const getNextValue = useCallback((value: string, eventValue: string) => {
@@ -117,9 +116,7 @@ export const PinInputField = React.forwardRef(
                     const nextValue = eventValue.split("").filter((_, index) => index < length);
                     setValues(nextValue);
                     focus(i + nextValue.length < length ? i + nextValue.length : length - 1);
-                    if (nextValue.length === length) {
-                        onComplete?.(nextValue.join(""));
-                    }
+                    onChange?.(nextValue.join(""));
                 }
             } else {
                 if (validate(nextValue, type)) {
