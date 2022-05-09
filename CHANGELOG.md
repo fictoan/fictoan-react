@@ -1,3 +1,6 @@
+### 0.41.2
+- Replace `onComplete` with `onChange` callback for `PinInputField`
+
 ### 0.41.1
 - Add `PinInputField` component
 
