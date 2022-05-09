@@ -1,3 +1,6 @@
+### 0.41.3
+- Fix missing font family for `hepText` and `errorText`
+
 ### 0.41.2
 - Replace `onComplete` with `onChange` callback for `PinInputField`
 
