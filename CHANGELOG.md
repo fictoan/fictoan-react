@@ -1,5 +1,8 @@
-### 0.41.4
+### 0.41.5
 - Add `spacing` and `retainLayout` props for `FormItemGroup`
+
+### 0.41.4
+- Fix bug in `onChange` implementation for `PinInputField`
 
 ### 0.41.3
 - Fix missing font family for `hepText` and `errorText`

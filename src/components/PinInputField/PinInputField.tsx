@@ -75,7 +75,7 @@ export const PinInputField = React.forwardRef(
                 const nextValues = [...values];
                 nextValues[index] = value;
                 setValues(nextValues);
-                onChange(nextValues.join(""));
+                onChange?.(nextValues.join(""));
 
                 const isComplete =
                     value !== "" &&
