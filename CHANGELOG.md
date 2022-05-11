@@ -1,3 +1,6 @@
+### 0.41.4
+- Add `spacing` and `retainLayout` props for `FormItemGroup`
+
 ### 0.41.3
 - Fix missing font family for `hepText` and `errorText`
 

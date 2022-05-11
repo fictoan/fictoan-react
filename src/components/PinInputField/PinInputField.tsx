@@ -9,7 +9,7 @@ import { PinInputStyled } from "./PinInputField.styled";
 // prettier-ignore
 type PinInputFieldCustomProps = {
     numberOfFields   : number;
-    onChange       ? : (value: string) => void;
+    onChange       ? : (value : string) => void;
     type           ? : "alphanumeric" | "number";
     mask           ? : boolean;
     otp            ? : boolean;
