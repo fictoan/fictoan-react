@@ -19,6 +19,7 @@ export const InputFieldStyled = styled.input`
     &:focus {
         background-color : ${(props: InputFieldProps) => props.theme.inputField.onFocus.bg};
         border           : 2px solid ${(props : InputFieldProps) => props.theme.inputField.onFocus.border};
+        color            : ${(props: InputFieldProps) => props.theme.inputField.onFocus.text};
         padding          : 11px;
     }
 

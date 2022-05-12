@@ -3,12 +3,6 @@ import styled from "styled-components";
 import { FormItemStyled } from "../FormItem/FormItem.styled";
 import { FormItemGroupStyled } from "../FormItemGroup/FormItemGroup.styled";
 
-import { CheckBoxStyled } from "../CheckBox/CheckBox.styled";
-import { InputFieldStyled } from "../InputField/InputField.styled";
-import { SelectStyled } from "../Select/Select.styled";
-import { TextAreaStyled } from "../TextArea/TextArea.styled";
-import { FormWrapperProps } from "./FormWrapper";
-
 export const FormWrapperStyled = styled.form`
     display        : flex;
     position       : relative;

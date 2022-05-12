@@ -1,3 +1,6 @@
+### 0.41.6
+- Fix `InputField` text colour dark theme bug
+
 ### 0.41.5
 - Add `spacing` and `retainLayout` props for `FormItemGroup`
 
