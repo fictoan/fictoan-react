@@ -1,3 +1,6 @@
+### 0.41.7
+- Add different letter spacing values for empty and filled `input[type=password]`
+
 ### 0.41.6
 - Fix `InputField` text colour dark theme bug
 

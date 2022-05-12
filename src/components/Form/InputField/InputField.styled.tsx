@@ -25,6 +25,8 @@ export const InputFieldStyled = styled.input`
 
     &[type=password] { letter-spacing : 4px; }
 
+    &[type=password]:placeholder-shown { letter-spacing : unset; }
+
     /*  LEFT AND  RIGHT ICONS  ============================================  */
     &.with-icon-left  { padding-left : 40px; }
     &.with-icon-right { padding-right : 40px; }
