@@ -1,3 +1,6 @@
+### 0.41.9
+- Allow controlling auto-focus behaviour for `PinInputField`
+
 ### 0.41.8
 - Add ability to theme disabled states for `primary`, `secondary` and `tertiary` buttons separately
 

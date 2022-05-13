@@ -13,6 +13,7 @@ type PinInputFieldCustomProps = {
     type           ? : "alphanumeric" | "number";
     mask           ? : boolean;
     otp            ? : boolean;
+    autoFocus      ? : boolean;
 };
 
 export type PinInputFieldElementType = HTMLDivElement;
@@ -28,13 +29,20 @@ function validate(value: string, type: "alphanumeric" | "number") {
 
 export const PinInputField = React.forwardRef(
     (
-        { numberOfFields: length, onChange, type = "number", mask = false, otp = false }: PinInputFieldProps,
+        {
+            numberOfFields: length,
+            onChange,
+            type = "number",
+            mask = false,
+            otp = false,
+            autoFocus = false,
+        }: PinInputFieldProps,
         ref: React.Ref<PinInputFieldElementType>
     ) => {
         const [inputRefs, setInputRefs] = useState<React.RefObject<HTMLInputElement>[]>([]);
         const [values, setValues] = useState<string[]>([]);
         const [moveFocus, setMoveFocus] = useState<boolean>(true);
-        const [focusedIndex, setFocusedIndex] = useState<number>(0);
+        const [focusedIndex, setFocusedIndex] = useState<number>(-1);
 
         const focus = useCallback(
             (index: number) => {
@@ -50,14 +58,14 @@ export const PinInputField = React.forwardRef(
                     .fill(0)
                     .map((_, i) => {
                         const ref = inputRefs[i] || createRef();
-                        if (i === 0) {
+                        if (autoFocus && i === 0) {
                             ref.current?.focus();
                         }
                         return ref;
                     });
                 return refs;
             });
-        }, [length]);
+        }, [length, autoFocus]);
 
         const focusNext = useCallback(
             (index: number) => {
@@ -180,7 +188,7 @@ export const PinInputField = React.forwardRef(
                         placeholder={focusedIndex !== i ? `\u2981` : undefined}
                         autoComplete={otp ? "one-time-code" : "off"}
                         value={values[i] || ""}
-                        autoFocus={i === 0}
+                        autoFocus={autoFocus && i === 0}
                     />
                 ))}
             </Element>
