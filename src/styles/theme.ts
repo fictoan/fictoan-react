@@ -50,66 +50,81 @@ export const FictoanTheme = {
             spinnerBorder : String(customColours.hue)
         },
         primary   : {
-            default   : {
+            default    : {
                 bg           : String(customColours.hue),
                 border       : String(customColours.hue),
                 text         : String(defaultColours.white),
                 borderRadius : "4px"
             },
-            onHover   : {
+            onHover    : {
                 bg     : String(customColours.hue),
                 border : String(customColours.hue),
                 text   : String(defaultColours.white)
             },
-            isActive  : {
+            isActive   : {
                 bg     : String(customColours.hue),
                 border : String(customColours.hue),
                 text   : String(defaultColours.white)
             },
-            isLoading : {
+            isDisabled : {
+                bg     : String(customColours.hue),
+                border : String(customColours.hue),
+                text   : String(defaultColours.white)
+            },
+            isLoading  : {
                 spinnerBorder : String(defaultColours.white)
             }
         },
         secondary : {
-            default   : {
+            default    : {
                 bg           : `${lighten(0.4, String(customColours.hue))}`,
                 border       : String(customColours.hue),
                 text         : String(customColours.hue),
                 borderRadius : "4px"
             },
-            onHover   : {
+            onHover    : {
                 bg     : `${lighten(0.4, String(customColours.hue))}`,
                 border : String(customColours.hue),
                 text   : String(customColours.hue)
             },
-            isActive  : {
+            isActive   : {
                 bg     : `${lighten(0.2, String(customColours.hue))}`,
                 border : String(customColours.hue),
                 text   : String(customColours.hue)
             },
-            isLoading : {
+            isLoading  : {
                 spinnerBorder : String(customColours.hue)
+            },
+            isDisabled : {
+                bg     : `${lighten(0.4, String(customColours.hue))}`,
+                border : String(customColours.hue),
+                text   : String(customColours.hue)
             }
         },
         tertiary  : {
-            default   : {
+            default    : {
                 bg           : String(defaultColours.transparent),
                 border       : String(customColours.hue),
                 text         : String(customColours.hue),
                 borderRadius : "4px"
             },
-            onHover   : {
+            onHover    : {
                 bg     : `${lighten(0.40, String(customColours.hue))}`,
                 border : String(defaultColours.transparent),
                 text   : String(customColours.hue)
             },
-            isActive  : {
+            isActive   : {
                 bg     : `${lighten(0.32, String(customColours.hue))}`,
                 border : String(defaultColours.transparent),
                 text   : String(customColours.hue)
             },
-            isLoading : {
+            isLoading  : {
                 spinnerBorder : String(customColours.hue)
+            },
+            isDisabled : {
+                bg     : String(defaultColours.transparent),
+                border : String(customColours.hue),
+                text   : String(customColours.hue)
             }
         }
     },
@@ -247,14 +262,14 @@ export const FictoanTheme = {
 
     //  SWITCH  ///////////////////////////////////////////////////////////////
     toggleSwitch : {
-        case : {
-            default   : {
+        case     : {
+            default    : {
                 bg : defaultColours.slate30
             },
-            onHover   : {
+            onHover    : {
                 bg : defaultColours.green40
             },
-            isChecked : {
+            isChecked  : {
                 bg : defaultColours.green90
             },
             isDisabled : {
@@ -262,13 +277,13 @@ export const FictoanTheme = {
             }
         },
         actuator : {
-            default   : {
+            default    : {
                 bg : defaultColours.white
             },
-            onHover   : {
+            onHover    : {
                 bg : defaultColours.white
             },
-            isChecked : {
+            isChecked  : {
                 bg : defaultColours.white
             },
             isDisabled : {

@@ -7,7 +7,7 @@ import { ColourPropTypes } from "../Element/constants";
 export const ButtonStyled = styled.button`
     position            : relative;
     cursor              : pointer;
-    font-family         : ${(props: ButtonProps) => props.theme.button.font};
+    font-family         : ${(props : ButtonProps) => props.theme.button.font};
     font-weight         : bold;
     font-size           : 92%;
     text-align          : center;
@@ -16,110 +16,144 @@ export const ButtonStyled = styled.button`
     transition          : all 0.2s ease-in-out;
     background-position : center;
     user-select         : none;
-    
+
     &:not([class*="padding-"]) {
         padding : 12px 24px;
     }
 
-    // To make sure a button’s children
-    // don’t style themselves like a douchebag
-    > * {
-        all : unset;
-    }
-
-    &.is-loading::after {
-        border             : 3px solid ;
-        border-top-color   : transparent;
-        border-right-color : transparent;
-    }
-
-    &.primary {
-        background-color : ${(props: ButtonProps) => props.theme.button.primary.default.bg};
-        color            : ${(props: ButtonProps) => props.theme.button.primary.default.text};
-        border           : solid ${(props: ButtonProps) => props.theme.button.primary.default.border};
-        border-width     : ${(props: ButtonProps) => props.theme.globals.borderWidth};
-        border-radius    : ${(props: ButtonProps) => props.theme.button.primary.default.borderRadius};
-
-        :hover {
-            background-color : ${(props: ButtonProps) => props.theme.button.primary.onHover.bg};
-            color            : ${(props: ButtonProps) => props.theme.button.primary.onHover.text};
-            border           : solid ${(props: ButtonProps) => props.theme.button.primary.onHover.border};
-            border-width     : ${(props: ButtonProps) => props.theme.globals.borderWidth};
-        }
-
-        :active {
-            background-color : ${(props: ButtonProps) => props.theme.button.primary.isActive.bg};
-            color            : ${(props: ButtonProps) => props.theme.button.primary.isActive.text};
-            border           : solid ${(props: ButtonProps) => props.theme.button.primary.isActive.border};
-            border-width     : ${(props: ButtonProps) => props.theme.globals.borderWidth};
-        }
-
-        &.is-loading::after {
-            border             : 3px solid ${(props: ButtonProps) => props.theme.button.primary.isLoading.spinnerBorder};
-            border-top-color   : transparent;
-            border-right-color : transparent;
-        }
-    }
-
-    &.secondary {
-        background-color : ${(props: ButtonProps) => props.theme.button.secondary.default.bg};
-        color            : ${(props: ButtonProps) => props.theme.button.secondary.default.text};
-        border           : solid ${(props: ButtonProps) => props.theme.button.secondary.default.border};
-        border-radius    : ${(props: ButtonProps) => props.theme.button.secondary.default.borderRadius};
-        border-width     : ${(props: ButtonProps) => props.theme.globals.borderWidth};
-
-        :hover {
-            background-color : ${(props: ButtonProps) => props.theme.button.secondary.onHover.bg};
-            color            : ${(props: ButtonProps) => props.theme.button.secondary.onHover.text};
-            border           : solid ${(props: ButtonProps) => props.theme.button.secondary.onHover.border};
-            border-width     : ${(props: ButtonProps) => props.theme.globals.borderWidth};
-        }
-
-        :active {
-            background-color : ${(props: ButtonProps) => props.theme.button.secondary.isActive.bg};
-            color            : ${(props: ButtonProps) => props.theme.button.secondary.isActive.text};
-            border           : solid ${(props: ButtonProps) => props.theme.button.secondary.isActive.border};
-            border-width     : ${(props: ButtonProps) => props.theme.globals.borderWidth};
-        }
-
-        &.is-loading::after {
-            border             : 3px solid ${(props: ButtonProps) => props.theme.button.secondary.isLoading.spinnerBorder};
-            border-top-color   : transparent;
-            border-right-color : transparent;
-        }
-    }
-
-    &.tertiary {
-        background-color : ${(props: ButtonProps) => props.theme.button.tertiary.default.bg};
-        color            : ${(props: ButtonProps) => props.theme.button.tertiary.default.text};
-        border           : solid ${(props: ButtonProps) => props.theme.button.tertiary.default.border};
-        border-radius    : ${(props: ButtonProps) => props.theme.button.tertiary.default.borderRadius};
-        border-width     : ${(props: ButtonProps) => props.theme.globals.borderWidth};
-
-        :hover {
-            background-color : ${(props: ButtonProps) => props.theme.button.tertiary.onHover.bg};
-            color            : ${(props: ButtonProps) => props.theme.button.tertiary.onHover.text};
-            border           : solid ${(props: ButtonProps) => props.theme.button.tertiary.onHover.border};
-            border-width     : ${(props: ButtonProps) => props.theme.globals.borderWidth};
-        }
-
-        :active {
-            background-color : ${(props: ButtonProps) => props.theme.button.tertiary.isActive.bg};
-            color            : ${(props: ButtonProps) => props.theme.button.tertiary.isActive.text};
-            border           : solid ${(props: ButtonProps) => props.theme.button.tertiary.isActive.border};
-            border-width     : ${(props: ButtonProps) => props.theme.globals.borderWidth};
-        }
-
-        &.is-loading::after {
-            border             : 3px solid ${(props: ButtonProps) => props.theme.button.tertiary.isLoading.spinnerBorder};
-            border-top-color   : transparent;
-            border-right-color : transparent;
-        }
-    }
+    // To make sure a button’s children don’t style themselves like a douchebag
+    > * { all : unset; }
 
     &:active {
         box-shadow : none;
         opacity    : 0.72;
+    }
+
+    &.is-loading::after {
+        border             : 3px solid;
+        border-top-color   : transparent;
+        border-right-color : transparent;
+    }
+
+    //  Common disabled styles  -----------------------------------------------
+    &[disabled] {
+        box-shadow     : none;
+        user-select    : none;
+        pointer-events : none;
+        opacity        : 0.32;
+        filter         : grayscale(100%);
+        cursor         : not-allowed;
+    }
+
+    //  PRIMARY BUTTON  ///////////////////////////////////////////////////////
+    &.primary {
+        background-color : ${(props : ButtonProps) => props.theme.button.primary.default.bg};
+        color            : ${(props : ButtonProps) => props.theme.button.primary.default.text};
+        border           : solid ${(props : ButtonProps) => props.theme.button.primary.default.border};
+        border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+        border-radius    : ${(props : ButtonProps) => props.theme.button.primary.default.borderRadius};
+
+        :hover {
+            background-color : ${(props : ButtonProps) => props.theme.button.primary.onHover.bg};
+            color            : ${(props : ButtonProps) => props.theme.button.primary.onHover.text};
+            border           : solid ${(props : ButtonProps) => props.theme.button.primary.onHover.border};
+            border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+        }
+
+        :active {
+            background-color : ${(props : ButtonProps) => props.theme.button.primary.isActive.bg};
+            color            : ${(props : ButtonProps) => props.theme.button.primary.isActive.text};
+            border           : solid ${(props : ButtonProps) => props.theme.button.primary.isActive.border};
+            border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+        }
+
+        &.is-loading::after {
+            border             : 3px solid ${(props : ButtonProps) => props.theme.button.primary.isLoading.spinnerBorder};
+            border-top-color   : transparent;
+            border-right-color : transparent;
+        }
+
+        //  DISABLED PRIMARY --------------------------------------------------
+        &[disabled] {
+            background-color : ${(props : ButtonProps) => props.theme.button.primary.isDisabled.bg};
+            color            : ${(props : ButtonProps) => props.theme.button.primary.isDisabled.text};
+            border           : solid ${(props : ButtonProps) => props.theme.button.primary.isDisabled.border};
+            border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+        }
+    }
+
+    //  SECONDARY BUTTON  /////////////////////////////////////////////////////
+    &.secondary {
+        background-color : ${(props : ButtonProps) => props.theme.button.secondary.default.bg};
+        color            : ${(props : ButtonProps) => props.theme.button.secondary.default.text};
+        border           : solid ${(props : ButtonProps) => props.theme.button.secondary.default.border};
+        border-radius    : ${(props : ButtonProps) => props.theme.button.secondary.default.borderRadius};
+        border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+
+        :hover {
+            background-color : ${(props : ButtonProps) => props.theme.button.secondary.onHover.bg};
+            color            : ${(props : ButtonProps) => props.theme.button.secondary.onHover.text};
+            border           : solid ${(props : ButtonProps) => props.theme.button.secondary.onHover.border};
+            border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+        }
+
+        :active {
+            background-color : ${(props : ButtonProps) => props.theme.button.secondary.isActive.bg};
+            color            : ${(props : ButtonProps) => props.theme.button.secondary.isActive.text};
+            border           : solid ${(props : ButtonProps) => props.theme.button.secondary.isActive.border};
+            border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+        }
+
+        &.is-loading::after {
+            border             : 3px solid ${(props : ButtonProps) => props.theme.button.secondary.isLoading.spinnerBorder};
+            border-top-color   : transparent;
+            border-right-color : transparent;
+        }
+
+        //  DISABLED SECONDARY ------------------------------------------------
+        &[disabled] {
+            background-color : ${(props : ButtonProps) => props.theme.button.secondary.isDisabled.bg};
+            color            : ${(props : ButtonProps) => props.theme.button.secondary.isDisabled.text};
+            border           : solid ${(props : ButtonProps) => props.theme.button.secondary.isDisabled.border};
+            border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+        }
+    }
+
+    //  TERTIARY BUTTON  //////////////////////////////////////////////////////
+    &.tertiary {
+        background-color : ${(props : ButtonProps) => props.theme.button.tertiary.default.bg};
+        color            : ${(props : ButtonProps) => props.theme.button.tertiary.default.text};
+        border           : solid ${(props : ButtonProps) => props.theme.button.tertiary.default.border};
+        border-radius    : ${(props : ButtonProps) => props.theme.button.tertiary.default.borderRadius};
+        border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+
+        :hover {
+            background-color : ${(props : ButtonProps) => props.theme.button.tertiary.onHover.bg};
+            color            : ${(props : ButtonProps) => props.theme.button.tertiary.onHover.text};
+            border           : solid ${(props : ButtonProps) => props.theme.button.tertiary.onHover.border};
+            border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+        }
+
+        :active {
+            background-color : ${(props : ButtonProps) => props.theme.button.tertiary.isActive.bg};
+            color            : ${(props : ButtonProps) => props.theme.button.tertiary.isActive.text};
+            border           : solid ${(props : ButtonProps) => props.theme.button.tertiary.isActive.border};
+            border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+        }
+
+        &.is-loading::after {
+            border             : 3px solid ${(props : ButtonProps) => props.theme.button.tertiary.isLoading.spinnerBorder};
+            border-top-color   : transparent;
+            border-right-color : transparent;
+        }
+
+        //  DISABLED TERTIARY -------------------------------------------------
+        &[disabled] {
+            background-color : ${(props : ButtonProps) => props.theme.button.tertiary.isDisabled.bg};
+            color            : ${(props : ButtonProps) => props.theme.button.tertiary.isDisabled.text};
+            border           : solid ${(props : ButtonProps) => props.theme.button.tertiary.isDisabled.border};
+            border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+        }
     }
 
     //  ROUND BUTTON  /////////////////////////////////////////////////////////
@@ -172,40 +206,30 @@ export const ButtonStyled = styled.button`
     }
 
     &[class*="border-"] {
-        border-width : ${(props: ButtonProps) => props.theme.globals.borderWidth};
+        border-width : ${(props : ButtonProps) => props.theme.globals.borderWidth};
     }
 
-    &.border-none {
-        border-width : 0 !important;
-    }
-
-    &[disabled] {
-        box-shadow     : none;
-        user-select    : none;
-        pointer-events : none;
-        opacity        : 0.32;
-        filter         : grayscale(100%);
-    }
+    &.border-none { border-width : 0 !important; }
 
     //  DIFFERENT SIZES  //////////////////////////////////////////////////////
     &.size-tiny {
         padding   : 4px 8px;
-        font-size : ${(props: ButtonProps) => props.theme.text.paras.size * Math.pow(props.theme.text.headings.multiplier, -2)}em;
+        font-size : ${(props : ButtonProps) => props.theme.text.paras.size * Math.pow(props.theme.text.headings.multiplier, -2)}em;
     }
 
     &.size-small {
         padding   : 6px 12px;
-        font-size : ${(props: ButtonProps) => props.theme.text.paras.size * Math.pow(props.theme.text.headings.multiplier, -1)}em;
+        font-size : ${(props : ButtonProps) => props.theme.text.paras.size * Math.pow(props.theme.text.headings.multiplier, -1)}em;
     }
 
     &.size-large {
         padding   : 16px 32px;
-        font-size : ${(props: ButtonProps) => props.theme.text.paras.size * Math.pow(props.theme.text.headings.multiplier, 2)}em;
+        font-size : ${(props : ButtonProps) => props.theme.text.paras.size * Math.pow(props.theme.text.headings.multiplier, 2)}em;
     }
 
     &.size-huge {
         padding   : 24px 40px;
-        font-size : ${(props: ButtonProps) => props.theme.text.paras.size * Math.pow(props.theme.text.headings.multiplier, 4)}em;
+        font-size : ${(props : ButtonProps) => props.theme.text.paras.size * Math.pow(props.theme.text.headings.multiplier, 4)}em;
     }
 
     //  BUTTON WITH SPINNER  //////////////////////////////////////////////////
@@ -229,7 +253,7 @@ export const ButtonStyled = styled.button`
         border-radius      : 50%;
         content            : "";
         border             : 3px solid;
-        border-color       : ${(props: ButtonProps) => convertToFictoanColor((props.textColor ?? props.textColour) as ColourPropTypes)};
+        border-color       : ${(props : ButtonProps) => convertToFictoanColor((props.textColor ?? props.textColour) as ColourPropTypes)};
         border-top-color   : transparent;
         border-right-color : transparent;
         -webkit-animation  : spinner 0.4s infinite linear;
@@ -262,7 +286,9 @@ export const ButtonStyled = styled.button`
     }
 
     //  BUTTON WITH DELETE  ///////////////////////////////////////////////////
-    &.has-delete { display : inline-flex; }
+    &.has-delete {
+        display : inline-flex;
+    }
 
     &.has-delete::after {
         display     : inline-flex;

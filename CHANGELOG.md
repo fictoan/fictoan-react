@@ -1,3 +1,6 @@
+### 0.41.8
+- Add ability to theme disabled states for `primary`, `secondary` and `tertiary` buttons separately
+
 ### 0.41.7
 - Add different letter spacing values for empty and filled `input[type=password]`
 
