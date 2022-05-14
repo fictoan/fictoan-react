@@ -26,6 +26,7 @@ export const ColoursStyled = css`
                 if (colour === "transparent") {
                     colourValue = "transparent";
                 } else {
+                    // @ts-ignore
                     colourValue = defaultColours[baseVariable];
                 }
                 if (colourValue) {
@@ -36,7 +37,9 @@ export const ColoursStyled = css`
                     for (const range of rangeValues) {
                         const className = `.${prefix}-${colour}-${range}`;
                         const variable = `${colour}${range}`;
+                        // @ts-ignore
                         if (defaultColours[variable]) {
+                            // @ts-ignore
                             classes += `${className} ${generateStyle(defaultColours[variable])} `;
                         }
                     }

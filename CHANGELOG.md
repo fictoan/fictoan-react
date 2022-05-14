@@ -1,3 +1,6 @@
+### 0.41.11
+- Add `spacing` prop for `PinInputField`
+
 ### 0.41.10
 - Add separate theme object for `BottomDrawer`
 

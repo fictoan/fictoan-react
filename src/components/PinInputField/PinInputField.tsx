@@ -1,7 +1,7 @@
 import React, { createRef, useCallback, useEffect, useState } from "react";
 
 import { Element } from "../Element/Element";
-import { CommonAndHTMLProps } from "../Element/constants";
+import { CommonAndHTMLProps, SpacingTypes } from "../Element/constants";
 import { InputField } from "../Form/InputField/InputField";
 
 import { PinInputStyled } from "./PinInputField.styled";
@@ -14,6 +14,7 @@ type PinInputFieldCustomProps = {
     mask           ? : boolean;
     otp            ? : boolean;
     autoFocus      ? : boolean;
+    spacing        ? : SpacingTypes;
 };
 
 export type PinInputFieldElementType = HTMLDivElement;
@@ -36,6 +37,7 @@ export const PinInputField = React.forwardRef(
             mask = false,
             otp = false,
             autoFocus = false,
+            spacing = "small"
         }: PinInputFieldProps,
         ref: React.Ref<PinInputFieldElementType>
     ) => {
@@ -172,8 +174,18 @@ export const PinInputField = React.forwardRef(
             setFocusedIndex(-1);
         };
 
+        let classNames = [];
+
+        if (spacing) {
+            classNames.push(`spacing-${spacing}`);
+        }
+
         return (
-            <Element<PinInputFieldElementType> as={PinInputStyled} ref={ref}>
+            <Element<PinInputFieldElementType>
+                as={PinInputStyled}
+                classNames={classNames}
+                ref={ref}
+            >
                 {[...Array(length)].map((_, i) => (
                     <InputField
                         key={i}
