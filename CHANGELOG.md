@@ -1,3 +1,6 @@
+### 0.41.10
+- Add separate theme object for `BottomDrawer`
+
 ### 0.41.9
 - Allow controlling auto-focus behaviour for `PinInputField`
 

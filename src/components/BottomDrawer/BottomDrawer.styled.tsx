@@ -18,7 +18,7 @@ export const BottomDrawerStyled = styled.aside`
     &.open { transform : translateY(0); }
 
     &:not([class*="bg-"]) {
-        background-color : ${(props: BottomDrawerProps) => props.theme.infoPanel.bg};
+        background-color : ${(props: BottomDrawerProps) => props.theme.bottomDrawer.bg};
     }
 
     & .dismiss-button {
@@ -26,15 +26,15 @@ export const BottomDrawerStyled = styled.aside`
         display          : flex;
         width            : 32px;
         height           : 32px;
-        background-color : ${(props : BottomDrawerProps) => props.theme.infoPanel.bg};
+        background-color : ${(props : BottomDrawerProps) => props.theme.bottomDrawer.bg};
         top              : -36px;
         right            : 36px;
         z-index          : 100001;
-        color            : ${(props : BottomDrawerProps) => props.theme.infoPanel.dismissButton.color};
+        color            : ${(props : BottomDrawerProps) => props.theme.bottomDrawer.dismissButton.color};
         cursor           : pointer;
         place-content    : center;
         backdrop-filter  : blur(2px);
-        border           : solid ${(props : BottomDrawerProps) => props.theme.infoPanel.border};
+        border           : solid ${(props : BottomDrawerProps) => props.theme.bottomDrawer.border};
         border-width     : 1px 0 1px 1px;
         border-radius    : 50%;
         box-shadow       : -4px 0 4px -1px rgba(0, 0, 0, 8%);
@@ -43,7 +43,7 @@ export const BottomDrawerStyled = styled.aside`
             display            : grid;
             content            : "\\00D7";
             place-self         : center;
-            color              : ${(props: BottomDrawerProps) => props.theme.infoPanel.dismissButton.color};
+            color              : ${(props: BottomDrawerProps) => props.theme.bottomDrawer.dismissButton.color};
             -webkit-transition : all 0.2s;
             transition         : all 0.2s;
             cursor             : pointer;

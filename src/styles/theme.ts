@@ -21,10 +21,22 @@ export const FictoanTheme = {
         borderWidth : "1px"
     },
 
+
     //  BASICS  ///////////////////////////////////////////////////////////////
     body : {
         bg : String(defaultColours.white)
     },
+
+
+    //  BOTTOM DRAWER  ////////////////////////////////////////////////////////
+    bottomDrawer : {
+        bg            : String(defaultColours.white),
+        border        : String(defaultColours.slate20),
+        dismissButton : {
+            color : String(defaultColours.slate90)
+        }
+    },
+
 
     //  BREADCRUMBS  ///////////////////////////////////////////////////////////
     breadcrumbs : {
@@ -598,6 +610,7 @@ export const FictoanTheme = {
             text : String(defaultColours.grey)
         }
     },
+
 
     //  TOAST  ////////////////////////////////////////////////////////////////
     toast : {
