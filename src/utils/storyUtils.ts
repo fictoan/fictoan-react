@@ -11,7 +11,6 @@ const DefaultOptions = {
     align: ["left", "center", "centre", "right"],
     weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
     opacity: ["00", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"],
-    // colors: Object.keys(defaultColours).map((color) => color.replace(/([a-z]*)(\d+)/, "$1-$2")),
     colors: defaultColourProps,
 } as const;
 
@@ -26,7 +25,7 @@ export const createStoryFromTemplate = (template: FictoanStory<any>) => {
 };
 
 type ArgTypeOptions = {
-    defaultValue?: any;
+    defaultValue?: boolean;
     defaultOptionsKey?: keyof typeof DefaultOptions;
     options?: any;
     required?: boolean;

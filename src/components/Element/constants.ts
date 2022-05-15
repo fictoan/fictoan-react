@@ -64,7 +64,7 @@ export interface CommonProps extends ThemeProps {
     verticallyCentreItems     ? : boolean;
     verticallyCenterItems     ? : boolean;
     pushItemsToEnds           ? : boolean;
-    classNames                ? : any[];
+    classNames                ? : string[];
 }
 
 export interface CommonAndHTMLProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as" | "size" | "ref" | "shape"> {}

@@ -4,9 +4,9 @@ import { GlobalStyledProps } from "../components/ThemeProvider/ThemeProvider";
 
 
 export const ColoursStyled = css`
-    ${((): any => {
+    ${(() => {
         const specialColours = ["white", "black", "transparent"];
-        const colours = ["white", "black", "transparent", "grey", "slate", "red", "orange", "amber", "yellow", "spring", "pistachio", "green", "teal", "cyan", "sky", "blue", "indigo", "violet", "purple", "pink", "salmon", "crimson", "brick", "sienna", "brown"];
+        const colours: (keyof typeof defaultColours)[] = ["white", "black", "transparent", "grey", "slate", "red", "orange", "amber", "yellow", "spring", "pistachio", "green", "teal", "cyan", "sky", "blue", "indigo", "violet", "purple", "pink", "salmon", "crimson", "brick", "sienna", "brown"];
         const prefixes = {
             "bg": (colour: string) => `{ background-color : ${colour} }`,
             "text": (colour: string) => `{ color : ${colour} }`,
@@ -21,12 +21,11 @@ export const ColoursStyled = css`
             for (const [prefix, generateStyle] of Object.entries(prefixes)) {
                 // Base
                 const baseClassName = `.${prefix}-${colour}`;
-                const baseVariable = `${colour}`;
+                const baseVariable = colour;
                 let colourValue = "";
                 if (colour === "transparent") {
                     colourValue = "transparent";
                 } else {
-                    // @ts-ignore
                     colourValue = defaultColours[baseVariable];
                 }
                 if (colourValue) {
@@ -36,10 +35,8 @@ export const ColoursStyled = css`
                 if (!specialColours.includes(colour)) {
                     for (const range of rangeValues) {
                         const className = `.${prefix}-${colour}-${range}`;
-                        const variable = `${colour}${range}`;
-                        // @ts-ignore
+                        const variable = `${colour}${range}` as keyof typeof defaultColours;
                         if (defaultColours[variable]) {
-                            // @ts-ignore
                             classes += `${className} ${generateStyle(defaultColours[variable])} `;
                         }
                     }
