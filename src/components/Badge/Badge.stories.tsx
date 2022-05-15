@@ -9,5 +9,5 @@ export const Custom: FictoanStory<typeof Badge> = createStoryFromTemplate(Templa
 Custom.args = {
     bgColour: "green-10",
     textColour: "green",
-    shape: "curved"
+    shape: "curved",
 };

@@ -4,7 +4,7 @@ import { Portion } from "./Portion";
 import { Row } from "../Row/Row";
 import { Default as Element } from "../Element/Element.stories";
 
-const Template: FictoanStory<typeof Portion> = (args) => <Portion {...args} />
+const Template: FictoanStory<typeof Portion> = (args) => <Portion {...args} />;
 Template.displayName = Portion.displayName;
 
 export const Default: FictoanStory<typeof Portion> = createStoryFromTemplate(Template);
@@ -22,5 +22,5 @@ export const InsideRow: FictoanStory<typeof Portion> = (args) => (
 );
 InsideRow.displayName = Portion.displayName;
 InsideRow.args = {
-    desktopSpan: "8"
-}
+    desktopSpan: "8",
+};

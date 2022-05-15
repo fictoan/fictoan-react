@@ -1,3 +1,6 @@
+### 0.41.13
+- Add span types for `Portion`
+
 ### 0.41.11
 - Add `spacing` prop for `PinInputField`
 

@@ -7,17 +7,17 @@ Template.displayName = Button.displayName;
 
 export const Primary: FictoanStory<typeof Button> = createStoryFromTemplate(Template);
 Primary.args = {
-    kind: "primary"
+    kind: "primary",
 };
 
 export const Secondary: FictoanStory<typeof Button> = createStoryFromTemplate(Template);
 Secondary.args = {
-    kind: "secondary"
+    kind: "secondary",
 };
 
 export const Tertiary: FictoanStory<typeof Button> = createStoryFromTemplate(Template);
 Tertiary.args = {
-    kind: "tertiary"
+    kind: "tertiary",
 };
 
 export const Custom: FictoanStory<typeof Button> = createStoryFromTemplate(Template);
@@ -26,5 +26,5 @@ Custom.args = {
     bgColour: "cyan",
     textColour: "black",
     shadow: "soft",
-    shape: "rounded"
+    shape: "rounded",
 };

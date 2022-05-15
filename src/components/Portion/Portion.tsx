@@ -4,13 +4,14 @@ import { Element } from "../Element/Element";
 import { CommonAndHTMLProps } from "../Element/constants";
 
 import { PortionStyled } from "./Portion.styled";
+import { SpanTypes } from "./types";
 
 // prettier-ignore
 export interface PortionCustomProps {
-    desktopSpan         ? : string;
-    tabletLandscapeSpan ? : string;
-    tabletPortraitSpan  ? : string;
-    mobileSpan          ? : string;
+    desktopSpan         ? : SpanTypes;
+    tabletLandscapeSpan ? : SpanTypes;
+    tabletPortraitSpan  ? : SpanTypes;
+    mobileSpan          ? : SpanTypes;
     isHorizontal        ? : boolean;
 }
 

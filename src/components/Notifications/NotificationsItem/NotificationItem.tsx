@@ -15,7 +15,11 @@ export interface NotificationItemCustomProps {
 }
 
 export type NotificationItemElementType = HTMLDivElement;
-export type NotificationItemProps = Omit<CommonAndHTMLProps<NotificationItemElementType>, keyof NotificationItemCustomProps> & NotificationItemCustomProps;
+export type NotificationItemProps = Omit<
+    CommonAndHTMLProps<NotificationItemElementType>,
+    keyof NotificationItemCustomProps
+> &
+    NotificationItemCustomProps;
 
 export const NotificationItem = React.forwardRef(
     (
@@ -62,6 +66,7 @@ export const NotificationItem = React.forwardRef(
             isVisible && (
                 <Element<NotificationItemElementType>
                     as={NotificationsItemStyled}
+                    ref={ref}
                     classNames={[...classNames, !show ? "dismissed" : ""]}
                     onTransitionEnd={onTransitionEnd}
                     padding="nano"
