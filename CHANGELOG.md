@@ -1,3 +1,6 @@
+### 0.41.14
+- Overhaul `BottomDrawer` to now come with a page overlay
+
 ### 0.41.13
 - Add span types for `Portion`
 

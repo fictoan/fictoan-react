@@ -3,7 +3,7 @@ import darken from "polished/lib/color/darken";
 
 import { defaultColours } from "./DefaultColours";
 
-type CustomColoursType = { [k in string] : string };
+type CustomColoursType = { [k in string]: string };
 
 export const customColours = {
     hue      : defaultColours.blue90,
