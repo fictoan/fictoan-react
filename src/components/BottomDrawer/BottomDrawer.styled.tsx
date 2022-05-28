@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { convertToFictoanColor } from "../../utils/helpers";
+import { ColourPropTypes } from "../Element/constants";
 import { BottomDrawerProps } from "./BottomDrawer";
 
 
@@ -11,8 +13,16 @@ export const BottomDrawerStyled = styled.div`
         left             : 0;
         width            : 100vw;
         height           : 100vh;
-        backdrop-filter  : blur(20px);
-        background-color : ${(props: BottomDrawerProps) => `hsla(0, 0%, 0%, ${props.overlayOpacity}`});
+        backdrop-filter   : blur(20px);
+        background-color : ${(props: BottomDrawerProps) =>
+                            `${convertToFictoanColor(
+                                props.overlayColour ?? (props.theme.bottomDrawer.overlay.bg as ColourPropTypes)
+                            ).replace(
+                                /(^hsla\(.*,.*,.*,)(.*)(\))$/,
+                                `$1${(
+                                    props.overlayOpacity ?? props.theme.bottomDrawer.overlay.opacity
+                                ).toString()}$3`
+                            )}`};
         z-index          : 5000;
     }
 
