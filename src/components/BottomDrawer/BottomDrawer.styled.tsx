@@ -11,8 +11,8 @@ export const BottomDrawerStyled = styled.div`
         left             : 0;
         width            : 100vw;
         height           : 100vh;
-        backdrop-filter  : blur(2px);
-        background-color : hsla(0, 0%, 0%, 0.4);
+        backdrop-filter  : blur(20px);
+        background-color : ${(props: BottomDrawerProps) => `hsla(0, 0%, 0%, ${props.overlayOpacity}`});
         z-index          : 5000;
     }
 

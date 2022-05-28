@@ -9,10 +9,7 @@ import { BottomDrawerStyled } from "./BottomDrawer.styled";
 export interface BottomDrawerCustomProps {
     isOpen          ? : boolean;
     onCloseCallback ? : () => void;
-    // overlayOpacity  ? : OpacityTypes;
-    padding         ? : SpacingTypes;
-    bgColor         ? : ColourPropTypes;
-    bgColour        ? : ColourPropTypes;
+    overlayOpacity  ? : number;
 }
 
 export type BottomDrawerElementType = HTMLDivElement;
@@ -46,7 +43,7 @@ export const BottomDrawer = React.forwardRef(({
                             as="div"
                             classNames={[
                                 ...classNames,
-                                `rest-of-page-overlay`
+                                `rest-of-page-overlay`,
                             ]}
                             onClick={closeBottomDrawer}
                         />
