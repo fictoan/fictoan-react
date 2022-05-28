@@ -15,8 +15,8 @@ export const BottomDrawerStyled = styled.div`
         height           : 100vh;
         backdrop-filter   : blur(20px);
         background-color : ${(props: BottomDrawerProps) =>
-                            `${convertToFictoanColor(
-                                props.overlayColour ?? (props.theme.bottomDrawer.overlay.bg as ColourPropTypes)
+                            `${(
+                                convertToFictoanColor(props.overlayColour) ?? props.theme.bottomDrawer.overlay.bg
                             ).replace(
                                 /(^hsla\(.*,.*,.*,)(.*)(\))$/,
                                 `$1${(
