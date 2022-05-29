@@ -16,8 +16,10 @@ export const Default: FictoanStory<typeof BottomDrawer> = createStoryFromTemplat
 Default.args = {
     isOpen: true,
     children: (
-        <Heading as="h1" margin="tiny">
-            Some heading
-        </Heading>
+        <div>
+            <Heading as="h1">
+                Some heading
+            </Heading>
+        </div>
     ),
 };

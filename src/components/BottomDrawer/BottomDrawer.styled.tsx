@@ -1,50 +1,48 @@
 import styled from "styled-components";
 
 import { convertToFictoanColor } from "../../utils/helpers";
-import { ColourPropTypes } from "../Element/constants";
 import { BottomDrawerProps } from "./BottomDrawer";
 
 
 export const BottomDrawerStyled = styled.div`
-    //TODO: Add ability to theme overlay and add appropriate props
     .rest-of-page-overlay {
         position         : fixed;
         top              : 0;
         left             : 0;
         width            : 100vw;
         height           : 100vh;
-        backdrop-filter   : blur(20px);
-        background-color : ${(props: BottomDrawerProps) =>
-                            `${(
-                                convertToFictoanColor(props.overlayColour) ?? props.theme.bottomDrawer.overlay.bg
-                            ).replace(
-                                /(^hsla\(.*,.*,.*,)(.*)(\))$/,
-                                `$1${(
-                                    props.overlayOpacity ?? props.theme.bottomDrawer.overlay.opacity
-                                ).toString()}$3`
-                            )}`};
         z-index          : 5000;
+        backdrop-filter  : blur(${(props: BottomDrawerProps) => props.theme.bottomDrawer.overlay.blur});
+        background-color : ${(props: BottomDrawerProps) =>
+                `${(convertToFictoanColor(props.overlayColour || props.overlayColor)
+                        ?? props.theme.bottomDrawer.overlay.bg)
+                        .replace(/(^hsla\(.*,.*,.*,)(.*)(\))$/,
+                                `$1${(props.overlayOpacity ?? props.theme.bottomDrawer.overlay.opacity).toString()}$3`)}`
+        };
     }
 
     .bottom-drawer-content-wrapper {
-        position         : fixed;
-        bottom           : 0;
-        transform        : translateY(120%);
-        height           : fit-content;
-        max-height       : 90vh;
-        transition       : all 0.4s ease-in-out;
-        transition-delay : 0.2s;
-        box-shadow       : 4px 0 24px -16px rgba(0, 0, 0, 0.92);
-        z-index          : 100000;
-        width            : 100%;
-        border-radius    : 24px 24px 0 0;
+        position                   : fixed;
+        bottom                     : 0;
+        transform                  : translateY(120%);
+        height                     : fit-content;
+        max-height                 : 90vh;
+        transition                 : all 0.4s ease-in-out;
+        transition-delay           : 0.2s;
+        box-shadow                 : 4px 0 24px -16px rgba(0, 0, 0, 0.92);
+        z-index                    : 100000;
+        width                      : 100%;
+        border-top-left-radius     : ${(props: BottomDrawerProps) => props.theme.bottomDrawer.borderRadius};
+        border-top-right-radius    : ${(props: BottomDrawerProps) => props.theme.bottomDrawer.borderRadius};
+        border-bottom-left-radius  : 0;
+        border-bottom-right-radius : 0;
 
-        &.padding-all-nano   { padding : 8px; }
+        &.padding-all-nano   { padding :  8px; }
         &.padding-all-micro  { padding : 24px; }
-        &.padding-all-tiny   { padding : 2vw; }
-        &.padding-all-small  { padding : 4vw; }
-        &.padding-all-medium { padding : 6vw; }
-        &.padding-all-large  { padding : 8vw; }
+        &.padding-all-tiny   { padding : 02vw; }
+        &.padding-all-small  { padding : 04vw; }
+        &.padding-all-medium { padding : 06vw; }
+        &.padding-all-large  { padding : 08vw; }
         &.padding-all-huge   { padding : 12vw; }
 
         &:not([class*="bg-"]) {

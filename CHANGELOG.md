@@ -1,3 +1,6 @@
+### 0.41.15
+- `BottomDrawer` overlay is now theme-able and style-able with props
+
 ### 0.41.14
 - Overhaul `BottomDrawer` to now come with a page overlay
 

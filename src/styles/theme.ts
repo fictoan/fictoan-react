@@ -32,9 +32,11 @@ export const FictoanTheme = {
     bottomDrawer : {
         bg            : String(defaultColours.white),
         border        : String(defaultColours.slate20),
+        borderRadius  : "24px",
         overlay : {
             bg      : String(defaultColours.black),
             opacity : 0.4,
+            blur    : "4px"
         },
         dismissButton : {
             color : String(defaultColours.slate90)

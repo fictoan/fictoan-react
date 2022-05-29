@@ -11,6 +11,7 @@ export interface BottomDrawerCustomProps {
     onCloseCallback ? : () => void;
     overlayOpacity  ? : number;
     overlayColour   ? : ColourPropTypes;
+    overlayColor    ? : ColourPropTypes;
 }
 
 export type BottomDrawerElementType = HTMLDivElement;
