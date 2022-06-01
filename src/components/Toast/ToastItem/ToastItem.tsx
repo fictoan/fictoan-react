@@ -13,23 +13,23 @@ export interface ToastItemCustomProps {
 }
 
 export type ToastItemElementType = HTMLDivElement;
-export type ToastItemProps = Omit<CommonAndHTMLProps<ToastItemElementType>, keyof ToastItemCustomProps> & ToastItemCustomProps;
+export type ToastItemProps = Omit<CommonAndHTMLProps<ToastItemElementType>, keyof ToastItemCustomProps> &
+    ToastItemCustomProps;
 
 export const ToastItem = React.forwardRef(
-    (
-        { show, children, showFor, onCloseCallback, ...props }: ToastItemProps,
-        ref: React.Ref<ToastItemElementType>
-    ) => {
+    ({ show, children, showFor, onCloseCallback, ...props }: ToastItemProps, ref: React.Ref<ToastItemElementType>) => {
         let classNames: string[] = [];
         const [isVisible, setIsVisible] = useState<boolean>(show);
 
         useEffect(() => {
-            if (show) { setIsVisible(true); }
+            if (show) {
+                setIsVisible(true);
+            }
 
             const timer = show
                 ? setTimeout(() => {
-                    onCloseCallback();
-                }, showFor ?? 4000)
+                      onCloseCallback();
+                  }, showFor ?? 4000)
                 : undefined;
 
             return () => {

@@ -15,10 +15,7 @@ export type NotificationsWrapperProps = CommonAndHTMLProps<NotificationsWrapperE
     NotificationsWrapperCustomProps;
 
 export const ToastsWrapper = React.forwardRef(
-    (
-        { position, ...props }: NotificationsWrapperProps,
-        ref: React.Ref<NotificationsWrapperElementType>
-    ) => {
+    ({ position, ...props }: NotificationsWrapperProps, ref: React.Ref<NotificationsWrapperElementType>) => {
         let classNames = [];
 
         if (position) {

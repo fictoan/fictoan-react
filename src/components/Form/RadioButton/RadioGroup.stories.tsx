@@ -19,8 +19,8 @@ Default.args = {
         {
             label: "Option B",
             value: "Option B",
-            id: "radio-option-b"
+            id: "radio-option-b",
         },
     ],
-    helpText: "Select an option"
+    helpText: "Select an option",
 };

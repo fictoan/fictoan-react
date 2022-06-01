@@ -20,7 +20,10 @@ export type FormWrapperProps = Omit<CommonAndHTMLProps<FormWrapperElementType>, 
     FormWrapperCustomProps;
 
 export const FormWrapper = React.forwardRef(
-    ({ spacing = "small", fields, onFieldsChange, children, errorText, ...props }: FormWrapperProps, ref: React.Ref<FormWrapperElementType>) => {
+    (
+        { spacing = "small", fields, onFieldsChange, children, errorText, ...props }: FormWrapperProps,
+        ref: React.Ref<FormWrapperElementType>
+    ) => {
         let classNames = [];
 
         if (spacing) {
@@ -32,12 +35,7 @@ export const FormWrapper = React.forwardRef(
         }
 
         return (
-            <Element<FormWrapperElementType>
-                as={FormWrapperStyled}
-                ref={ref}
-                classNames={classNames}
-                {...props}
-            >
+            <Element<FormWrapperElementType> as={FormWrapperStyled} ref={ref} classNames={classNames} {...props}>
                 {children}
 
                 {errorText && <Callout kind="error">{errorText}</Callout>}

@@ -13,7 +13,11 @@ export interface SidebarItemTextCustomProps {
 }
 
 export type SidebarItemTextElementType = HTMLParagraphElement;
-export type SidebarItemTextProps = Omit<CommonAndHTMLProps<SidebarItemTextElementType>, keyof SidebarItemTextCustomProps> & SidebarItemTextCustomProps;
+export type SidebarItemTextProps = Omit<
+    CommonAndHTMLProps<SidebarItemTextElementType>,
+    keyof SidebarItemTextCustomProps
+> &
+    SidebarItemTextCustomProps;
 
 export const SidebarItemText = React.forwardRef(
     ({ linkText, weight, size, ...props }: SidebarItemTextProps, ref: React.Ref<SidebarItemTextElementType>) => {

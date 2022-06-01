@@ -29,12 +29,14 @@ Default.args = {
             <SidebarItemText linkText="Item 3"></SidebarItemText>
         </SidebarItem>,
 
-        <ExpandableContent summary={(
-            <SidebarItem>
-                <SidebarItemIcon></SidebarItemIcon>
-                <SidebarItemText linkText="Item Summary" weight="600"></SidebarItemText>
-            </SidebarItem>
-        )}>
+        <ExpandableContent
+            summary={
+                <SidebarItem>
+                    <SidebarItemIcon></SidebarItemIcon>
+                    <SidebarItemText linkText="Item Summary" weight="600"></SidebarItemText>
+                </SidebarItem>
+            }
+        >
             <SidebarItem>
                 <SidebarItemIcon></SidebarItemIcon>
                 <SidebarItemText linkText="Nested Item 1"></SidebarItemText>
@@ -45,8 +47,6 @@ Default.args = {
             </SidebarItem>
         </ExpandableContent>,
 
-        <SidebarFooter padding="micro">
-            Sidebar footer
-        </SidebarFooter>
-    ]
+        <SidebarFooter padding="micro">Sidebar footer</SidebarFooter>,
+    ],
 };

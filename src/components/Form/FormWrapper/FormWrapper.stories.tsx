@@ -39,7 +39,12 @@ Default.args = {
             <Select {...Select.args} required options={Select.args.options}></Select>
         </FormItem>,
         <FormItem>
-            <RadioGroup {...RadioGroup.args} id="radio-buttons-demo" required options={RadioGroup.args.options}></RadioGroup>
+            <RadioGroup
+                {...RadioGroup.args}
+                id="radio-buttons-demo"
+                required
+                options={RadioGroup.args.options}
+            ></RadioGroup>
         </FormItem>,
         <FormItem>
             <CheckBox {...CheckBox.args} required></CheckBox>
@@ -48,10 +53,12 @@ Default.args = {
             <Switch {...Switch.args} required></Switch>
         </FormItem>,
         <FormItem>
-            <Button {...Button.args} type="button">Submit</Button>
-        </FormItem>
-    ]
-}
+            <Button {...Button.args} type="button">
+                Submit
+            </Button>
+        </FormItem>,
+    ],
+};
 
 export const UsingFieldsProp: FictoanStory<typeof FormWrapper> = createStoryFromTemplate(Template);
 UsingFieldsProp.args = {
@@ -65,7 +72,7 @@ UsingFieldsProp.args = {
             defaultChecked: false,
             validateThis: false,
             required: false,
-            desktopSpan: "3"
+            desktopSpan: "3",
         },
         {
             as: "Switch",
@@ -77,7 +84,7 @@ UsingFieldsProp.args = {
             defaultChecked: false,
             validateThis: false,
             required: false,
-            desktopSpan: "3"
+            desktopSpan: "3",
         },
         {
             as: "InputField",
@@ -144,7 +151,7 @@ UsingFieldsProp.args = {
             validateThis: false,
             required: true,
             desktopSpan: "16",
-        },        
+        },
         {
             as: "Select",
             id: "selection",
@@ -159,7 +166,7 @@ UsingFieldsProp.args = {
                 {
                     id: "lol",
                     label: "lol",
-                    value: "lol"
+                    value: "lol",
                 },
             ],
             defaultValue: "",
@@ -181,7 +188,7 @@ UsingFieldsProp.args = {
                 {
                     id: "lol2",
                     label: "lol",
-                    value: "lol"
+                    value: "lol",
                 },
             ],
             validateThis: false,
@@ -190,7 +197,9 @@ UsingFieldsProp.args = {
     ],
     children: [
         <FormItem>
-            <Button {...Button.args} type="button">Submit</Button>
-        </FormItem>
-    ]
-}
+            <Button {...Button.args} type="button">
+                Submit
+            </Button>
+        </FormItem>,
+    ],
+};

@@ -7,5 +7,5 @@ Template.displayName = SidebarHeader.displayName;
 
 export const Default: FictoanStory<typeof SidebarHeader> = createStoryFromTemplate(Template);
 Default.args = {
-    children: "This is the Sidebar Header"
+    children: "This is the Sidebar Header",
 };

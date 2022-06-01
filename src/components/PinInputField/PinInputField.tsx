@@ -37,7 +37,7 @@ export const PinInputField = React.forwardRef(
             mask = false,
             otp = false,
             autoFocus = false,
-            spacing = "small"
+            spacing = "small",
         }: PinInputFieldProps,
         ref: React.Ref<PinInputFieldElementType>
     ) => {
@@ -181,11 +181,7 @@ export const PinInputField = React.forwardRef(
         }
 
         return (
-            <Element<PinInputFieldElementType>
-                as={PinInputStyled}
-                classNames={classNames}
-                ref={ref}
-            >
+            <Element<PinInputFieldElementType> as={PinInputStyled} classNames={classNames} ref={ref}>
                 {[...Array(length)].map((_, i) => (
                     <InputField
                         key={i}

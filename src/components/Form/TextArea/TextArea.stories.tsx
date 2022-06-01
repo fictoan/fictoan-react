@@ -10,5 +10,5 @@ Default.args = {
     label: "Paragraph",
     rows: 5,
     placeholder: "Enter long text here",
-    helpText: "This field can only contain a string"
+    helpText: "This field can only contain a string",
 };

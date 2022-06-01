@@ -9,5 +9,5 @@ export const Default: FictoanStory<typeof FileUpload> = createStoryFromTemplate(
 Default.args = {
     label: "Upload file",
     id: "file-upload",
-    name: "file"
+    name: "file",
 };

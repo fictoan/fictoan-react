@@ -10,7 +10,8 @@ export interface InputLabelCustomProps {
 }
 
 export type InputLabelElementType = HTMLLabelElement;
-export type InputLabelProps = Omit<CommonAndHTMLProps<InputLabelElementType>, keyof InputLabelCustomProps> & InputLabelCustomProps;
+export type InputLabelProps = Omit<CommonAndHTMLProps<InputLabelElementType>, keyof InputLabelCustomProps> &
+    InputLabelCustomProps;
 
 export const InputLabel = React.forwardRef(
     ({ label, ...props }: InputLabelProps, ref: React.Ref<InputLabelElementType>) => {

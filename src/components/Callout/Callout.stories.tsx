@@ -8,5 +8,5 @@ Template.displayName = Callout.displayName;
 export const Default: FictoanStory<typeof Callout> = createStoryFromTemplate(Template);
 Default.args = {
     kind: "info",
-    children: "Hello!"
+    children: "Hello!",
 };

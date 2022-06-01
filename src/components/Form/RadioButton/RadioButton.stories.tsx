@@ -9,5 +9,5 @@ export const Default: FictoanStory<typeof RadioButton> = createStoryFromTemplate
 Default.args = {
     label: "Option",
     id: "radio-button",
-    name: "radio-button-demo"
+    name: "radio-button-demo",
 };

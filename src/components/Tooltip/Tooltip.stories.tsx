@@ -15,5 +15,5 @@ Default.args = {
     borderColor: "transparent",
     shape: "rounded",
     shadow: "mild",
-    children: <Button {...Button.args}>Test</Button>
+    children: <Button {...Button.args}>Test</Button>,
 };

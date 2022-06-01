@@ -7,7 +7,7 @@ Template.displayName = NotificationItem.displayName;
 
 export const Default: FictoanStory<typeof NotificationItem> = createStoryFromTemplate(Template);
 Default.args = {
-    show     : true,
-    kind     : "info",
-    children : "This is a notification",
+    show: true,
+    kind: "info",
+    children: "This is a notification",
 };

@@ -8,5 +8,5 @@ Template.displayName = Switch.displayName;
 export const Default: FictoanStory<typeof Switch> = createStoryFromTemplate(Template);
 Default.args = {
     label: "Turn On",
-    id: "turn-on-switch"
+    id: "turn-on-switch",
 };

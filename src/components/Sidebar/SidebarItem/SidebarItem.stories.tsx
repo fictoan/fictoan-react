@@ -11,6 +11,6 @@ export const Default: FictoanStory<typeof SidebarItem> = createStoryFromTemplate
 Default.args = {
     children: [
         <SidebarItemIcon {...SidebarItemIcon.args}></SidebarItemIcon>,
-        <SidebarItemText linkText="Sidebar Item 1"></SidebarItemText>
-    ]
+        <SidebarItemText linkText="Sidebar Item 1"></SidebarItemText>,
+    ],
 };

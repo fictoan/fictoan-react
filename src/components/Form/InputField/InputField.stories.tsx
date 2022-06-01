@@ -11,7 +11,7 @@ Text.args = {
     label: "First Name",
     placeholder: "Enter your name",
     helpText: "This field can only contain a string",
-    errorText: "Looks invalid, re-check?"
+    errorText: "Looks invalid, re-check?",
 };
 
 export const Number: FictoanStory<typeof InputField> = createStoryFromTemplate(Template);
@@ -20,7 +20,7 @@ Number.args = {
     label: "Age",
     placeholder: "Enter your age",
     helpText: "This field can only contain a number",
-    errorText: "Looks invalid, re-check?"
+    errorText: "Looks invalid, re-check?",
 };
 
 export const Email: FictoanStory<typeof InputField> = createStoryFromTemplate(Template);
@@ -29,7 +29,7 @@ Email.args = {
     label: "Email",
     placeholder: "Enter your email address",
     helpText: "This field can only contain an email",
-    errorText: "Looks invalid, re-check?"
+    errorText: "Looks invalid, re-check?",
 };
 
 export const Password: FictoanStory<typeof InputField> = createStoryFromTemplate(Template);
@@ -37,5 +37,5 @@ Password.args = {
     type: "password",
     label: "Password",
     helpText: "This field will obfuscate your input",
-    errorText: "Looks invalid, re-check?"
+    errorText: "Looks invalid, re-check?",
 };

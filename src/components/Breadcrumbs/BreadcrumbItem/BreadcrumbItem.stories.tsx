@@ -7,5 +7,5 @@ Template.displayName = BreadcrumbItem.displayName;
 
 export const Default: FictoanStory<typeof BreadcrumbItem> = createStoryFromTemplate(Template);
 Default.args = {
-    children: "Breadcrumb Item"
+    children: "Breadcrumb Item",
 };

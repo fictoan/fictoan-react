@@ -11,5 +11,5 @@ Default.args = {
     id: "accept-checkbox",
     name: "accept-terms",
     required: true,
-    helpText: "Hope you read them as well"
+    helpText: "Hope you read them as well",
 };

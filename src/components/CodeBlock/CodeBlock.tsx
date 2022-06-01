@@ -24,7 +24,8 @@ export interface CodeBlockCustomProps {
 }
 
 export type CodeBlockElementType = HTMLPreElement;
-export type CodeBlockProps = Omit<CommonAndHTMLProps<CodeBlockElementType>, keyof CodeBlockCustomProps> & CodeBlockCustomProps;
+export type CodeBlockProps = Omit<CommonAndHTMLProps<CodeBlockElementType>, keyof CodeBlockCustomProps> &
+    CodeBlockCustomProps;
 
 export const CodeBlock = React.forwardRef(
     ({ source, ...props }: CodeBlockProps, ref: React.Ref<CodeBlockElementType>) => {

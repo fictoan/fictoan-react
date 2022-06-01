@@ -14,10 +14,7 @@ export type CalloutElementType = HTMLDivElement;
 export type CalloutProps = Omit<CommonAndHTMLProps<CalloutElementType>, keyof CalloutCustomProps> & CalloutCustomProps;
 
 export const Callout = React.forwardRef(
-    (
-        { kind, children, ...props }: CalloutProps,
-        ref: React.Ref<CalloutElementType>
-    ) => {
+    ({ kind, children, ...props }: CalloutProps, ref: React.Ref<CalloutElementType>) => {
         return (
             <Element<CalloutElementType> as={CalloutStyled} ref={ref} className={kind} {...props}>
                 <Text marginBottom="none" marginTop="none">

@@ -13,17 +13,17 @@ Default.args = {
     options: [
         {
             label: "Option A",
-            value: "Option A"
+            value: "Option A",
         },
         {
             label: "Option B",
-            value: "Option B"
+            value: "Option B",
         },
         {
             label: "...",
-            value: "..."
+            value: "...",
         },
     ],
     required: true,
-    helpText: "Select an option from the list"
+    helpText: "Select an option from the list",
 };

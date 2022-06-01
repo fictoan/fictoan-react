@@ -26,7 +26,11 @@ export interface TablePaginationCustomProps {
 }
 
 export type TablePaginationElementType = HTMLElement;
-export type TablePaginationProps = Omit<CommonAndHTMLProps<TablePaginationElementType>, keyof TablePaginationCustomProps> & TablePaginationCustomProps;
+export type TablePaginationProps = Omit<
+    CommonAndHTMLProps<TablePaginationElementType>,
+    keyof TablePaginationCustomProps
+> &
+    TablePaginationCustomProps;
 
 export const TablePagination = React.forwardRef(
     (

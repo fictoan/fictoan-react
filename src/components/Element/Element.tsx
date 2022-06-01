@@ -6,7 +6,7 @@ import { ElementProps } from "./constants";
 
 export const Element = React.forwardRef(<K extends {}>(props: ElementProps<K>, ref: React.LegacyRef<HTMLElement>) => {
     const {
-        as : Component,
+        as: Component,
         classNames = [],
         className,
         size,
@@ -51,12 +51,14 @@ export const Element = React.forwardRef(<K extends {}>(props: ElementProps<K>, r
         ...minimalProps
     } = props;
 
-    const { as, className : _, classNames : __, ...sanitizedProps } = props;
+    const { as, className: _, classNames: __, ...sanitizedProps } = props;
 
     return (
         <Component
             ref={ref}
-            {...(typeof Component !== "string" && Component.hasOwnProperty("styledComponentId") ? sanitizedProps : minimalProps )}
+            {...(typeof Component !== "string" && Component.hasOwnProperty("styledComponentId")
+                ? sanitizedProps
+                : minimalProps)}
             className={createClassName(
                 [
                     className,

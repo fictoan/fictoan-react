@@ -11,7 +11,8 @@ export interface SidebarWrapperCustomProps {
 }
 
 export type SidebarWrapperElementType = HTMLDivElement;
-export type SidebarWrapperProps = Omit<CommonAndHTMLProps<SidebarWrapperElementType>, keyof SidebarWrapperCustomProps> & SidebarWrapperCustomProps;
+export type SidebarWrapperProps = Omit<CommonAndHTMLProps<SidebarWrapperElementType>, keyof SidebarWrapperCustomProps> &
+    SidebarWrapperCustomProps;
 
 export const SidebarWrapper = React.forwardRef(
     ({ collapsed, ...props }: SidebarWrapperProps, ref: React.Ref<SidebarWrapperElementType>) => {

@@ -36,15 +36,31 @@ export const BaseInputComponent = React.forwardRef(
                 {...inputProps}
             />
 
-            {iconLeft && <Element as="span" className="icon-left">{iconLeft}</Element>}
-            {iconRight && <Element as="span" className="icon-right">{iconRight}</Element>}
+            {iconLeft && (
+                <Element as="span" className="icon-left">
+                    {iconLeft}
+                </Element>
+            )}
+            {iconRight && (
+                <Element as="span" className="icon-right">
+                    {iconRight}
+                </Element>
+            )}
 
             {label && <InputLabel label={label} htmlFor={inputProps.id} />}
 
             {(helpText || errorText) && (
                 <Element as="div" className="info-section vertically-center-items" marginTop="nano">
-                    {helpText && <Element as="span" className="help-text">{helpText}</Element>}
-                    {errorText && <Element as="span" className="error-text">{errorText}</Element>}
+                    {helpText && (
+                        <Element as="span" className="help-text">
+                            {helpText}
+                        </Element>
+                    )}
+                    {errorText && (
+                        <Element as="span" className="error-text">
+                            {errorText}
+                        </Element>
+                    )}
                 </Element>
             )}
         </FormItem>

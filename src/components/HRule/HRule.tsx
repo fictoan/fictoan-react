@@ -14,27 +14,25 @@ export interface HRCustomProps {
 export type HRElementType = HTMLHRElement;
 export type HRProps = Omit<CommonAndHTMLProps<HRElementType>, keyof HRCustomProps> & HRCustomProps;
 
-export const HRule = React.forwardRef(
-    ({ kind, sideMargin, ...props }: HRProps, ref: React.Ref<HRElementType>) => {
-        let classNames = [];
+export const HRule = React.forwardRef(({ kind, sideMargin, ...props }: HRProps, ref: React.Ref<HRElementType>) => {
+    let classNames = [];
 
-        if (kind) {
-            classNames.push(kind);
-        }
-
-        if (sideMargin) {
-            classNames.push(`side-margin-${sideMargin}`);
-        }
-
-        return (
-            <Element<HRElementType>
-                as={HRStyled}
-                ref={ref}
-                classNames={classNames}
-                marginTop="small"
-                marginBottom="small"
-                {...props}
-            />
-        );
+    if (kind) {
+        classNames.push(kind);
     }
-);
+
+    if (sideMargin) {
+        classNames.push(`side-margin-${sideMargin}`);
+    }
+
+    return (
+        <Element<HRElementType>
+            as={HRStyled}
+            ref={ref}
+            classNames={classNames}
+            marginTop="small"
+            marginBottom="small"
+            {...props}
+        />
+    );
+});

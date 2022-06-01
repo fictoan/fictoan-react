@@ -67,7 +67,9 @@ export interface CommonProps extends ThemeProps {
     classNames                ? : string[];
 }
 
-export interface CommonAndHTMLProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as" | "size" | "ref" | "shape"> {}
+export interface CommonAndHTMLProps<T extends {}>
+    extends CommonProps,
+        Omit<HTMLProps<T>, "as" | "size" | "ref" | "shape"> {}
 
 // prettier-ignore
 export interface ElementProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as" | "ref" | "shape"> {
