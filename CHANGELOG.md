@@ -1,3 +1,7 @@
+### 0.41.18
+
+-   Remove style overrides in Tabs component
+
 ### 0.41.17
 
 -   Add `closeOnClickOutside` prop for `InfoPanel` & `BottomDrawer`

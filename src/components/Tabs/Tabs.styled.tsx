@@ -54,8 +54,6 @@ export const TabsStyled = styled.section`
         }
     }
 
-    hr { margin : 0 0 16px 0; }
-
     .tabs-content {
         opacity    : 1;
         transition : opacity 0.4s ease-in-out;
