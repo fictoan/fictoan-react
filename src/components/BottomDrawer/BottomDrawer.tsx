@@ -7,11 +7,12 @@ import { BottomDrawerStyled } from "./BottomDrawer.styled";
 
 // prettier-ignore
 export interface BottomDrawerCustomProps {
-    isOpen          ? : boolean;
-    onCloseCallback ? : () => void;
-    overlayOpacity  ? : number;
-    overlayColour   ? : ColourPropTypes;
-    overlayColor    ? : ColourPropTypes;
+    isOpen              ? : boolean;
+    onCloseCallback     ? : () => void;
+    overlayOpacity      ? : number;
+    overlayColour       ? : ColourPropTypes;
+    overlayColor        ? : ColourPropTypes;
+    closeOnClickOutside ? : boolean;
 }
 
 export type BottomDrawerElementType = HTMLDivElement;
@@ -20,7 +21,16 @@ export type BottomDrawerProps = Omit<CommonAndHTMLProps<BottomDrawerElementType>
 
 export const BottomDrawer = React.forwardRef(
     (
-        { isOpen, children, onCloseCallback, padding, bgColor, bgColour, ...props }: BottomDrawerProps,
+        {
+            isOpen,
+            children,
+            onCloseCallback,
+            closeOnClickOutside,
+            padding,
+            bgColor,
+            bgColour,
+            ...props
+        }: BottomDrawerProps,
         ref: React.Ref<BottomDrawerElementType>
     ) => {
         let classNames = [];
@@ -47,7 +57,9 @@ export const BottomDrawer = React.forwardRef(
                         <Element
                             as="div"
                             classNames={[...classNames, `rest-of-page-overlay`]}
-                            onClick={closeBottomDrawer}
+                            onClick={() => {
+                                if (closeOnClickOutside) closeBottomDrawer();
+                            }}
                         />
 
                         <Element
