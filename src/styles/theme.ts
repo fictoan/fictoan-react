@@ -206,10 +206,16 @@ export const FictoanTheme = {
             label     : String(defaultColours.red),
             errorText : String(defaultColours.red)
         },
+        isDisabled : {
+            bg     : String(defaultColours.slate20),
+            border : String(defaultColours.slate40),
+            text   : String(defaultColours.slate80),
+            label  : String(defaultColours.slate80)
+        },
         isReadOnly : {
             bg     : String(defaultColours.slate10),
             border : String(defaultColours.slate20),
-            text   : String(defaultColours.slate60),
+            text   : String(defaultColours.slate80),
             label  : String(customColours.shade)
         },
         required   : {

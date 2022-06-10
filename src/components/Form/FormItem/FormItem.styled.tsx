@@ -73,23 +73,28 @@ export const FormItemStyled = styled.div`
         opacity        : 0.36;
     }
 
-    ${InputFieldStyled}, ${TextAreaStyled}, ${SelectWrapperStyled} {
+    ${InputFieldStyled},
+    ${TextAreaStyled},
+    ${SelectWrapperStyled} {
         &:read-only {
             background-color : ${(props : FormItemProps) => props.theme.inputField.isReadOnly.bg};
-            color            : ${(props : FormItemProps) => props.theme.inputField.default.text};
+            color            : ${(props : FormItemProps) => props.theme.inputField.isReadOnly.text};
+            cursor           : text;
 
             &:focus {
-                border : 2px solid ${(props : FormItemProps) => props.theme.inputField.default.text};
+                border : ${(props : FormItemProps) => props.theme.globals.borderWidth} solid ${(props : FormItemProps) => props.theme.inputField.isReadOnly.text};
             }
         }
 
-        &:disabled, &[disabled] select {
-            background-color : ${(props : FormItemProps) => props.theme.inputField.isReadOnly.bg};
-            border-color     : ${(props : FormItemProps) => props.theme.inputField.isReadOnly.border};
-            color            : ${(props : FormItemProps) => props.theme.inputField.isReadOnly.text};
+        &:disabled,
+        &[disabled] select {
+            background-color : ${(props : FormItemProps) => props.theme.inputField.isDisabled.bg};
+            border-color     : ${(props : FormItemProps) => props.theme.inputField.isDisabled.border};
+            color            : ${(props : FormItemProps) => props.theme.inputField.isDisabled.text};
+            cursor           : not-allowed;
 
             & + label {
-                color : ${(props : FormItemProps) => props.theme.inputField.isReadOnly.label};
+                color : ${(props : FormItemProps) => props.theme.inputField.isDisabled.label};
             }
         }
 
