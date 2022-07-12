@@ -22,6 +22,7 @@ export type SpacingTypes = "none" | "nano" | "micro" | "tiny" | "small" | "mediu
 export type ShadowTypes = "none" | "mild" | "soft" | "hard";
 export type ShapeTypes = "rounded" | "curved";
 export type OpacityTypes = "00" | "10" | "20" | "30" | "40" | "50" | "60" | "70" | "80" | "90" | "100";
+export type WeightTypes = "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
 export type ColourPropTypes = typeof defaultColourProps[number] | keyof typeof customColours | "";
 
 // prettier-ignore
@@ -64,6 +65,7 @@ export interface CommonProps extends ThemeProps {
     verticallyCentreItems     ? : boolean;
     verticallyCenterItems     ? : boolean;
     pushItemsToEnds           ? : boolean;
+    weight                    ? : WeightTypes;
     classNames                ? : string[];
 }
 

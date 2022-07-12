@@ -1,5 +1,12 @@
+### 0.41.20
+- Add `InputField` invalid state text theme colour
+- Rework text sizes progression
+- Add reset styles for `picture`
+- Add `weight` prop to `Element` to be used in `span` elements
+- Add types for possible font weight values
+
 ### 0.41.19
-- Fix `disabled` styling for `InputField` 
+- Fix `disabled` styling for `InputField`
 
 ### 0.41.18
 - Remove style overrides in Tabs component

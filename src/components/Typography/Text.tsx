@@ -1,16 +1,17 @@
 import React from "react";
 
 import { Element } from "../Element/Element";
-import { CommonAndHTMLProps } from "../Element/constants";
+import { CommonAndHTMLProps, WeightTypes } from "../Element/constants";
 
 // prettier-ignore
 export interface TextCustomProps {
-    isSans  ? : boolean;
-    isSerif ? : boolean;
-    isMono  ? : boolean;
-    weight  ? : "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
-    size    ? : "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
-    align   ? : "left" | "centre" | "center" | "right";
+    isSans    ? : boolean;
+    isSerif   ? : boolean;
+    isMono    ? : boolean;
+    isSubtext ? : boolean;
+    weight    ? : WeightTypes;
+    size      ? : "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
+    align     ? : "left" | "centre" | "center" | "right";
 }
 
 export type TextElementType = HTMLParagraphElement;

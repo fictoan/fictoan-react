@@ -65,6 +65,7 @@ UsingFieldsProp.args = {
     // onFieldsChange: (e) => console.log(e.currentTarget.name, e.currentTarget.type, e.currentTarget.value),
     fields: [
         {
+            // @ts-ignore
             as: "CheckBox",
             id: "accept",
             name: "accept",
@@ -75,6 +76,7 @@ UsingFieldsProp.args = {
             desktopSpan: "3",
         },
         {
+            // @ts-ignore
             as: "Switch",
             id: "customer-parameterIsOptional",
             name: "optional",
@@ -87,6 +89,7 @@ UsingFieldsProp.args = {
             desktopSpan: "3",
         },
         {
+            // @ts-ignore
             as: "InputField",
             id: "customer-parameterName",
             name: "paramName",
@@ -99,6 +102,7 @@ UsingFieldsProp.args = {
             desktopSpan: "24",
         },
         {
+            // @ts-ignore
             as: "InputField",
             id: "email",
             name: "email",
@@ -110,6 +114,7 @@ UsingFieldsProp.args = {
             desktopSpan: "12",
         },
         {
+            // @ts-ignore
             as: "InputField",
             id: "password",
             name: "password",
@@ -121,6 +126,7 @@ UsingFieldsProp.args = {
             desktopSpan: "12",
         },
         {
+            // @ts-ignore
             as: "InputField",
             id: "name",
             name: "name",
@@ -131,6 +137,7 @@ UsingFieldsProp.args = {
             desktopSpan: "12",
         },
         {
+            // @ts-ignore
             as: "InputField",
             id: "age",
             name: "age",
@@ -142,6 +149,7 @@ UsingFieldsProp.args = {
             desktopSpan: "12",
         },
         {
+            // @ts-ignore
             as: "TextArea",
             id: "description",
             name: "description",
@@ -153,6 +161,7 @@ UsingFieldsProp.args = {
             desktopSpan: "16",
         },
         {
+            // @ts-ignore
             as: "Select",
             id: "selection",
             name: "selection",
@@ -174,6 +183,7 @@ UsingFieldsProp.args = {
             required: false,
         },
         {
+            // @ts-ignore
             as: "RadioGroup",
             id: "selection-radio",
             name: "selection-radio",

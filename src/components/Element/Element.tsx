@@ -48,6 +48,7 @@ export const Element = React.forwardRef(<K extends {}>(props: ElementProps<K>, r
         verticallyCentreItems,
         verticallyCenterItems,
         pushItemsToEnds,
+        weight,
         ...minimalProps
     } = props;
 
@@ -101,6 +102,7 @@ export const Element = React.forwardRef(<K extends {}>(props: ElementProps<K>, r
                     verticallyCentreItems && "vertically-centre-items",
                     verticallyCenterItems && "vertically-centre-items",
                     pushItemsToEnds && "push-to-ends",
+                    weight && `weight-${weight}`,
                 ].concat(classNames)
             )}
         />
