@@ -1,4 +1,4 @@
-### 0.41.20
+### 0.41.21
 - Add `InputField` invalid state text theme colour
 - Rework text sizes progression
 - Add reset styles for `picture`
