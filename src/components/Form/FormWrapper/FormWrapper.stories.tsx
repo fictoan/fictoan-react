@@ -39,7 +39,12 @@ Default.args = {
             <Select {...Select.args} required options={Select.args.options}></Select>
         </FormItem>,
         <FormItem>
-            <RadioGroup {...RadioGroup.args} id="radio-buttons-demo" required options={RadioGroup.args.options}></RadioGroup>
+            <RadioGroup
+                {...RadioGroup.args}
+                id="radio-buttons-demo"
+                required
+                options={RadioGroup.args.options}
+            ></RadioGroup>
         </FormItem>,
         <FormItem>
             <CheckBox {...CheckBox.args} required></CheckBox>
@@ -48,16 +53,19 @@ Default.args = {
             <Switch {...Switch.args} required></Switch>
         </FormItem>,
         <FormItem>
-            <Button {...Button.args} type="button">Submit</Button>
-        </FormItem>
-    ]
-}
+            <Button {...Button.args} type="button">
+                Submit
+            </Button>
+        </FormItem>,
+    ],
+};
 
 export const UsingFieldsProp: FictoanStory<typeof FormWrapper> = createStoryFromTemplate(Template);
 UsingFieldsProp.args = {
     // onFieldsChange: (e) => console.log(e.currentTarget.name, e.currentTarget.type, e.currentTarget.value),
     fields: [
         {
+            // @ts-ignore
             as: "CheckBox",
             id: "accept",
             name: "accept",
@@ -65,9 +73,10 @@ UsingFieldsProp.args = {
             defaultChecked: false,
             validateThis: false,
             required: false,
-            desktopSpan: "3"
+            desktopSpan: "3",
         },
         {
+            // @ts-ignore
             as: "Switch",
             id: "customer-parameterIsOptional",
             name: "optional",
@@ -77,9 +86,10 @@ UsingFieldsProp.args = {
             defaultChecked: false,
             validateThis: false,
             required: false,
-            desktopSpan: "3"
+            desktopSpan: "3",
         },
         {
+            // @ts-ignore
             as: "InputField",
             id: "customer-parameterName",
             name: "paramName",
@@ -92,6 +102,7 @@ UsingFieldsProp.args = {
             desktopSpan: "24",
         },
         {
+            // @ts-ignore
             as: "InputField",
             id: "email",
             name: "email",
@@ -103,6 +114,7 @@ UsingFieldsProp.args = {
             desktopSpan: "12",
         },
         {
+            // @ts-ignore
             as: "InputField",
             id: "password",
             name: "password",
@@ -114,6 +126,7 @@ UsingFieldsProp.args = {
             desktopSpan: "12",
         },
         {
+            // @ts-ignore
             as: "InputField",
             id: "name",
             name: "name",
@@ -124,6 +137,7 @@ UsingFieldsProp.args = {
             desktopSpan: "12",
         },
         {
+            // @ts-ignore
             as: "InputField",
             id: "age",
             name: "age",
@@ -135,6 +149,7 @@ UsingFieldsProp.args = {
             desktopSpan: "12",
         },
         {
+            // @ts-ignore
             as: "TextArea",
             id: "description",
             name: "description",
@@ -144,8 +159,9 @@ UsingFieldsProp.args = {
             validateThis: false,
             required: true,
             desktopSpan: "16",
-        },        
+        },
         {
+            // @ts-ignore
             as: "Select",
             id: "selection",
             name: "selection",
@@ -159,7 +175,7 @@ UsingFieldsProp.args = {
                 {
                     id: "lol",
                     label: "lol",
-                    value: "lol"
+                    value: "lol",
                 },
             ],
             defaultValue: "",
@@ -167,6 +183,7 @@ UsingFieldsProp.args = {
             required: false,
         },
         {
+            // @ts-ignore
             as: "RadioGroup",
             id: "selection-radio",
             name: "selection-radio",
@@ -181,7 +198,7 @@ UsingFieldsProp.args = {
                 {
                     id: "lol2",
                     label: "lol",
-                    value: "lol"
+                    value: "lol",
                 },
             ],
             validateThis: false,
@@ -190,7 +207,9 @@ UsingFieldsProp.args = {
     ],
     children: [
         <FormItem>
-            <Button {...Button.args} type="button">Submit</Button>
-        </FormItem>
-    ]
-}
+            <Button {...Button.args} type="button">
+                Submit
+            </Button>
+        </FormItem>,
+    ],
+};

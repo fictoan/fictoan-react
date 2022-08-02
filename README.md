@@ -16,7 +16,7 @@ Fictoan is an intuitive framework for designers looking to code and rapidly iter
 - All attributes are intuitive and in plain English.
 - Most attributes are also the same across different components.
 
-## Getting Started
+## Getting started
 Install using `yarn`:
 ```sh
 yarn add fictoan-react

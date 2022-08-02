@@ -19,8 +19,10 @@ export interface ProgressBarCustomProps {
 }
 
 export type ProgressBarElementType = HTMLProgressElement;
-export type ProgressBarProps = Omit<CommonAndHTMLProps<ProgressBarElementType>, keyof ProgressBarCustomProps> & ProgressBarCustomProps;
-export type ProgressBarMetaProps = Omit<CommonAndHTMLProps<HTMLDivElement>, keyof ProgressBarLabelCustomProps> & ProgressBarLabelCustomProps;
+export type ProgressBarProps = Omit<CommonAndHTMLProps<ProgressBarElementType>, keyof ProgressBarCustomProps> &
+    ProgressBarCustomProps;
+export type ProgressBarMetaProps = Omit<CommonAndHTMLProps<HTMLDivElement>, keyof ProgressBarLabelCustomProps> &
+    ProgressBarLabelCustomProps;
 
 export const ProgressBar = React.forwardRef(
     ({ label, value, ...props }: ProgressBarProps, ref: React.Ref<ProgressBarElementType>) => {
@@ -29,15 +31,13 @@ export const ProgressBar = React.forwardRef(
                 {label && (
                     <Element<HTMLDivElement> as={ProgressBarMetaStyled}>
                         <Text>{label}</Text>
-                        <Text>{value}{props.unit && props.unit}</Text>
+                        <Text>
+                            {value}
+                            {props.unit && props.unit}
+                        </Text>
                     </Element>
                 )}
-                <Element<ProgressBarElementType>
-                    as={ProgressBarStyled}
-                    ref={ref}
-                    value={value}
-                    {...props}
-                />
+                <Element<ProgressBarElementType> as={ProgressBarStyled} ref={ref} value={value} {...props} />
             </>
         );
     }

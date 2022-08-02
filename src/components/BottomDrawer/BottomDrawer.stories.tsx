@@ -17,9 +17,7 @@ Default.args = {
     isOpen: true,
     children: (
         <div>
-            <Heading as="h1">
-                Some heading
-            </Heading>
+            <Heading as="h1">Some heading</Heading>
         </div>
     ),
 };

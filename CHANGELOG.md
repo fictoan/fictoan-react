@@ -1,5 +1,23 @@
-### 0.41.17
+# CHANGELOG
+
+### 0.41.23
 - Remove `line-height` property from `body` and apply it more specifically to text elements only
+
+### 0.41.22
+- Add `InputField` invalid state text theme colour
+- Rework text sizes progression
+- Add reset styles for `picture`
+- Add `weight` prop to `Element` to be used in `span` elements
+- Add types for possible font weight values
+
+### 0.41.19
+- Fix `disabled` styling for `InputField`
+
+### 0.41.18
+- Remove style overrides in Tabs component
+
+### 0.41.17
+- Add `closeOnClickOutside` prop for `InfoPanel` & `BottomDrawer`
 
 ### 0.41.16
 - Fix wrong font value for links in theme file
@@ -112,9 +130,10 @@
 - Fix InputField element type
 
 ### 0.35.0
+
 **General**
 - Add Storybook for easy testing and documentation
-  - Each component folder now contains a `<component_name>.stories.tsx` (to create stories) and `<component_name>.stories.mdx` (to write docs) file
+    - Each component folder now contains a `<component_name>.stories.tsx` (to create stories) and `<component_name>.stories.mdx` (to write docs) file
 - Add make commands for easy creation of components
 - Remove `name` props from RadioGroup `options` type; Add `label` and `id`
 - Remove `as` from RadioButton and CheckBox props
@@ -124,19 +143,19 @@
 - Add `Tag` component
 - Add `opacity` as a global prop
 - HRule now supports custom background colors
-  - Add `hr.default` to theme
+    - Add `hr.default` to theme
 - All colour props are now typed
-  - Add command (`make color-props`) to generate colour props from default colors
+    - Add command (`make color-props`) to generate colour props from default colors
 
 **Form improvements**
 - Remove `isAnswers` prop from FormItem
 - Remove FormItemJointGroup component
-  - Add `isJoint` prop to FormItemGroup
+    - Add `isJoint` prop to FormItemGroup
 - Remove Extra spacing after FormItemGroup
-- Add `fields` and `onFieldsChange` prop to FormWrapper to allow form creation using an array of config 🎉 
+- Add `fields` and `onFieldsChange` prop to FormWrapper to allow form creation using an array of config 🎉
 - RadioGroup and Select now use BaseInputComponent
 - Add better and consistent help & error text for each form field
-  - Make InputLabel atomic
+    - Make InputLabel atomic
 - Add error text for FormWrapper which uses Callout component
 - Add sizes to Switch component
 - Make Select chevron consistent with ExpandableContent
@@ -167,22 +186,22 @@
 - SidebarItemsGroup
 - SidebarItemsGroupHeader
 
-## BREAKING CHANGES ⚠️ 
-- Inside theme:
-  - `inputField.default.helpText` is now `inputField.onFocus.helpText`
-  - `inputField.isInvalid.helpText` is now `inputField.isInvalid.errorText`
-  - `sidebar.body.bg` is now `sidebar.bg`
-  - `sidebar.linksWrapper.marginTop` and `sidebar.linksWrapper.marginBottom` have been removed
-- Remove `isSticky` from SidebarFooter 
-  - It always sticks to bottom
-- Remove FormItemJointGroup
-  - Use `isJoint` prop inside FormItemGroup instead
-- Remove SidebarLink, SidebarNestedLinks and SidebarLinksWrapper
-- Remove SidebarItemsGroup and SidebarItemsGroupHeader 
-  - Use ExpandableContent component instead
-- Default Switch size now `medium` which is larger than before 
-  - Set to size `small` for old size
+## BREAKING CHANGES ⚠️
 
+- Inside theme:
+    - `inputField.default.helpText` is now `inputField.onFocus.helpText`
+    - `inputField.isInvalid.helpText` is now `inputField.isInvalid.errorText`
+    - `sidebar.body.bg` is now `sidebar.bg`
+    - `sidebar.linksWrapper.marginTop` and `sidebar.linksWrapper.marginBottom` have been removed
+- Remove `isSticky` from SidebarFooter
+    - It always sticks to bottom
+- Remove FormItemJointGroup
+    - Use `isJoint` prop inside FormItemGroup instead
+- Remove SidebarLink, SidebarNestedLinks and SidebarLinksWrapper
+- Remove SidebarItemsGroup and SidebarItemsGroupHeader
+    - Use ExpandableContent component instead
+- Default Switch size now `medium` which is larger than before
+    - Set to size `small` for old size
 
 ### 0.34.0
 - Replace `react-syntax-highlighter` with `prism-react-renderer`
@@ -210,32 +229,32 @@
 - Fix `polished` imports
 
 ### 0.33.8
-Breaking changes
+## BREAKING CHANGES ⚠️
 
 - Breadcrumbs
-  - `BreadcrumbWrapper` renamed to `BreadcrumbsWrapper`
-  - The `separator` is now configurable in the theme file
+    - `BreadcrumbWrapper` renamed to `BreadcrumbsWrapper`
+    - The `separator` is now configurable in the theme file
 
 - Badge
-  - `isLoading` class now works for `custom` kind buttons also
-  - Fix padding inconsistencies
-  - `with-loader` and `with-delete` classes renamed to `is-loading` and `has-delete`
+    - `isLoading` class now works for `custom` kind buttons also
+    - Fix padding inconsistencies
+    - `with-loader` and `with-delete` classes renamed to `is-loading` and `has-delete`
 
 - Form elements
-  - `input` theme object is now `inputField`
-  - `CheckBox`,  `RadioButton`, `Select` etc have been moved out from inside `input`
+    - `input` theme object is now `inputField`
+    - `CheckBox`, `RadioButton`, `Select` etc have been moved out from inside `input`
 
 - InfoPanel
-  - Dismiss button now styled differently, and does not interfere with the content
+    - Dismiss button now styled differently, and does not interfere with the content
 
 - Notifications
-  - The `type` prop is now `kind` to be more consistent with the rest of the components
-  - `onClose` is renamed to `onCloseCallback`
-  - `NotificationWrapper` has a `order` prop to set the stacking order of `NotificationItem` children
+    - The `type` prop is now `kind` to be more consistent with the rest of the components
+    - `onClose` is renamed to `onCloseCallback`
+    - `NotificationWrapper` has a `order` prop to set the stacking order of `NotificationItem` children
 
 - ProgressBar
-  - `isThin` prop is deprecated in favour of a far more flexible `height` prop
-  - `shape` prop is now available just like the `Badge`
+    - `isThin` prop is deprecated in favour of a far more flexible `height` prop
+    - `shape` prop is now available just like the `Badge`
 
 - The theme object is now called `FictoanTheme`
 
@@ -264,7 +283,7 @@ Breaking changes
 - Replace lodash with lodash-es for tree shaking
 - Bump rollup to 2.52.7
 - Replace `prism-react-renderer` and `prismjs` with `react-syntax-highlighter` which is more customizable and tree-shakable
-- Add `@rollup/plugin-babel` to add /*#__PURE__*/ prefix to `React.forwardRef` which is required for tree-shaking
+- Add `@rollup/plugin-babel` to add /_#**PURE**_/ prefix to `React.forwardRef` which is required for tree-shaking
 - Add CSS files for Normalize, Reset, Colours and Utility to move static styles out of JS. Injecting to head tag using `rollup-plugin-styles`
 - Programmatically generate Colours.styled.tsx classes (To be added to build flow soon)
 
@@ -410,49 +429,41 @@ Breaking changes
 
 ### v0.28.3
 - Tweak links theme styling
-  -  `links.default.text` is now `links.default.color`
-  -  `links.onHover.text` is now `links.onHover.color`
+    - `links.default.text` is now `links.default.color`
+    - `links.onHover.text` is now `links.onHover.color`
 
 ### v0.28.2
 - Fix Textarea styling bug
 - Add `nano` and `micro` text sizes
 - Text theme tweaks
-  -  `size` object deprecated
-  -  `size.default` is now `paras.size`
-  -  `size.multiplier` is now `headings.multiplier`
-
+    - `size` object deprecated
+    - `size.default` is now `paras.size`
+    - `size.multiplier` is now `headings.multiplier`
 
 ### v0.27.0
 - Add props for ProgressBar to display a label and value
-
 
 ### v0.23.8
 - Remove all SCSS files
 - Remove unused svg icon
 - Move `theme` to `styles` folder
 
-
 ### v0.23.7
 - Use relative path everywhere
-
 
 ### v0.23.6
 - Generate typings
 
-
 ### v0.23.5
 - Upgrade all packages
-
 
 ### v0.21.2
 - Update styled components
 - Remove unused component `EventHandler`
 - Fix rollup dependencies
 
-
 ### v0.21.1
 - Add `onCloseButtonClick` prop in `NotificationItem`
-
 
 ### v0.21.0
 - Code cleanup

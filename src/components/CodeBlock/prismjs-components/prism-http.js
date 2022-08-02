@@ -2,73 +2,74 @@ export const registerLanguage = (Prism) => {
     // Copied from https://raw.githubusercontent.com/PrismJS/prism/master/components/prism-http.js
     (function (Prism) {
         Prism.languages.http = {
-            'request-line': {
-                pattern: /^(?:GET|HEAD|POST|PUT|DELETE|CONNECT|OPTIONS|TRACE|PATCH|PRI|SEARCH)\s(?:https?:\/\/|\/)\S*\sHTTP\/[0-9.]+/m,
+            "request-line": {
+                pattern:
+                    /^(?:GET|HEAD|POST|PUT|DELETE|CONNECT|OPTIONS|TRACE|PATCH|PRI|SEARCH)\s(?:https?:\/\/|\/)\S*\sHTTP\/[0-9.]+/m,
                 inside: {
                     // HTTP Method
-                    'method': {
+                    method: {
                         pattern: /^[A-Z]+\b/,
-                        alias: 'property'
+                        alias: "property",
                     },
                     // Request Target e.g. http://example.com, /path/to/file
-                    'request-target': {
+                    "request-target": {
                         pattern: /^(\s)(?:https?:\/\/|\/)\S*(?=\s)/,
                         lookbehind: true,
-                        alias: 'url',
-                        inside: Prism.languages.uri
+                        alias: "url",
+                        inside: Prism.languages.uri,
                     },
                     // HTTP Version
-                    'http-version': {
+                    "http-version": {
                         pattern: /^(\s)HTTP\/[0-9.]+/,
                         lookbehind: true,
-                        alias: 'property'
+                        alias: "property",
                     },
-                }
+                },
             },
-            'response-status': {
+            "response-status": {
                 pattern: /^HTTP\/[0-9.]+ \d+ .+/m,
                 inside: {
                     // HTTP Version
-                    'http-version': {
+                    "http-version": {
                         pattern: /^HTTP\/[0-9.]+/,
-                        alias: 'property'
+                        alias: "property",
                     },
                     // Status Code
-                    'status-code': {
+                    "status-code": {
                         pattern: /^(\s)\d+(?=\s)/,
                         lookbehind: true,
-                        alias: 'number'
+                        alias: "number",
                     },
                     // Reason Phrase
-                    'reason-phrase': {
+                    "reason-phrase": {
                         pattern: /^(\s).+/,
                         lookbehind: true,
-                        alias: 'string'
-                    }
-                }
+                        alias: "string",
+                    },
+                },
             },
             // HTTP header name
-            'header-name': {
+            "header-name": {
                 pattern: /^[\w-]+:(?=.)/m,
-                alias: 'keyword'
-            }
+                alias: "keyword",
+            },
         };
 
         // Create a mapping of Content-Type headers to language definitions
         var langs = Prism.languages;
         var httpLanguages = {
-            'application/javascript': langs.javascript,
-            'application/json': langs.json || langs.javascript,
-            'application/xml': langs.xml,
-            'text/xml': langs.xml,
-            'text/html': langs.html,
-            'text/css': langs.css
+            "application/javascript": langs.javascript,
+            "application/json": langs.json || langs.javascript,
+            "application/xml": langs.xml,
+            "text/xml": langs.xml,
+            "text/html": langs.html,
+            "text/css": langs.css,
         };
 
         // Declare which types can also be suffixes
         var suffixTypes = {
-            'application/json': true,
-            'application/xml': true
+            "application/json": true,
+            "application/xml": true,
         };
 
         /**
@@ -78,9 +79,9 @@ export const registerLanguage = (Prism) => {
          * @returns {string}
          */
         function getSuffixPattern(contentType) {
-            var suffix = contentType.replace(/^[a-z]+\//, '');
-            var suffixPattern = '\\w+/(?:[\\w.-]+\\+)+' + suffix + '(?![+\\w.-])';
-            return '(?:' + contentType + '|' + suffixPattern + ')';
+            var suffix = contentType.replace(/^[a-z]+\//, "");
+            var suffixPattern = "\\w+/(?:[\\w.-]+\\+)+" + suffix + "(?![+\\w.-])";
+            return "(?:" + contentType + "|" + suffixPattern + ")";
         }
 
         // Insert each content type parser that has its associated language
@@ -91,16 +92,18 @@ export const registerLanguage = (Prism) => {
                 options = options || {};
 
                 var pattern = suffixTypes[contentType] ? getSuffixPattern(contentType) : contentType;
-                options[contentType.replace(/\//g, '-')] = {
-                    pattern: RegExp('(content-type:\\s*' + pattern + '(?:(?:\\r\\n?|\\n).+)*)(?:\\r?\\n|\\r){2}[\\s\\S]*', 'i'),
+                options[contentType.replace(/\//g, "-")] = {
+                    pattern: RegExp(
+                        "(content-type:\\s*" + pattern + "(?:(?:\\r\\n?|\\n).+)*)(?:\\r?\\n|\\r){2}[\\s\\S]*",
+                        "i"
+                    ),
                     lookbehind: true,
-                    inside: httpLanguages[contentType]
+                    inside: httpLanguages[contentType],
                 };
             }
         }
         if (options) {
-            Prism.languages.insertBefore('http', 'header-name', options);
+            Prism.languages.insertBefore("http", "header-name", options);
         }
-
-    }(Prism));
-}
+    })(Prism);
+};

@@ -8,7 +8,5 @@ Template.displayName = ExpandableContent.displayName;
 export const Default: FictoanStory<typeof ExpandableContent> = createStoryFromTemplate(Template);
 Default.args = {
     summary: "Some summary text",
-    children: [
-        "Inner details"
-    ]
+    children: ["Inner details"],
 };

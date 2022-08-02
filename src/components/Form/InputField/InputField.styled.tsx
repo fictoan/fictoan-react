@@ -80,6 +80,7 @@ export const InputFieldStyled = styled.input`
 
     /*  Red cross  */
     &:invalid:not(:focus):not(:placeholder-shown) {
+        color               : ${(props: InputFieldProps) => props.theme.inputField.isInvalid.text};
         border              : 1px solid ${(props: InputFieldProps) => props.theme.inputField.icons.isValid.border};
         background-color    : ${(props: InputFieldProps) => props.theme.inputField.isInvalid.bg};
         background-image    : url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+ICA8bGluZSB4MT0iNi41IiB5MT0iMTcuNSIgeDI9IjE4LjUiIHkyPSI1LjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2VmNDM0MyIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjIiLz4gIDxsaW5lIHgxPSI2LjUiIHkxPSI1LjUiIHgyPSIxOC41IiB5Mj0iMTcuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZWY0MzQzIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==);

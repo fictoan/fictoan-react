@@ -7,5 +7,5 @@ Template.displayName = SidebarFooter.displayName;
 
 export const Default: FictoanStory<typeof SidebarFooter> = createStoryFromTemplate(Template);
 Default.args = {
-    children: "This is the Sidebar Footer"
+    children: "This is the Sidebar Footer",
 };

@@ -7,5 +7,5 @@ Template.displayName = SidebarItemText.displayName;
 
 export const Default: FictoanStory<typeof SidebarItemText> = createStoryFromTemplate(Template);
 Default.args = {
-    linkText: "This is the Sidebar Item text"
+    linkText: "This is the Sidebar Item text",
 };

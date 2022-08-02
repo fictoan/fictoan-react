@@ -9,7 +9,7 @@ export const Default: FictoanStory<typeof ProgressBar> = createStoryFromTemplate
 Default.args = {
     label: "Loading...",
     value: 0.6,
-    shape: "rounded"
+    shape: "rounded",
 };
 
 export const WithoutValue: FictoanStory<typeof ProgressBar> = createStoryFromTemplate(Template);

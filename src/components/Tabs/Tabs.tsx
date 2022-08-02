@@ -57,12 +57,13 @@ export const Tabs = React.forwardRef(({ tabs, ...props }: TabsProps, ref: React.
                                 key={tab.key}
                                 className={`is-clickable ${tab.key === activeTab.key ? "is-active" : ""}`}
                                 onClick={() => handleTabChange(tab)}
+                                marginBottom="none"
                             >
                                 {tab.label}
                             </Text>
                         ))}
                     </nav>
-                    <HRule kind="secondary" marginTop="micro" marginBottom="micro" />
+                    <HRule kind="secondary" marginTop="none" marginBottom="micro" />
                     <Element as="div" className={`tabs-content ${isExiting ? "exiting" : ""}`}>
                         {activeTab.content}
                     </Element>

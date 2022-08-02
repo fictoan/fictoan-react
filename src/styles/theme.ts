@@ -33,7 +33,7 @@ export const FictoanTheme = {
         bg            : String(defaultColours.white),
         border        : String(defaultColours.slate20),
         borderRadius  : "24px",
-        overlay : {
+        overlay       : {
             bg      : String(defaultColours.black),
             opacity : 0.4,
             blur    : "4px"
@@ -203,13 +203,20 @@ export const FictoanTheme = {
         isInvalid  : {
             bg        : String(defaultColours.red10),
             border    : String(defaultColours.red80),
+            text      : String(defaultColours.red),
             label     : String(defaultColours.red),
             errorText : String(defaultColours.red)
+        },
+        isDisabled : {
+            bg     : String(defaultColours.slate20),
+            border : String(defaultColours.slate40),
+            text   : String(defaultColours.slate80),
+            label  : String(defaultColours.slate80)
         },
         isReadOnly : {
             bg     : String(defaultColours.slate10),
             border : String(defaultColours.slate20),
-            text   : String(defaultColours.slate60),
+            text   : String(defaultColours.slate80),
             label  : String(customColours.shade)
         },
         required   : {

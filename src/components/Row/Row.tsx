@@ -54,7 +54,9 @@ export const Row = React.forwardRef(
         }
 
         if (retainLayoutAlways) {
-            classNames.push("retain-layout-on-tablet-landscape retain-layout-on-tablet-portrait retain-layout-on-mobile");
+            classNames.push(
+                "retain-layout-on-tablet-landscape retain-layout-on-tablet-portrait retain-layout-on-mobile"
+            );
         }
 
         return (

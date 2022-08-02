@@ -9,5 +9,5 @@ export const Default: FictoanStory<typeof Element> = createStoryFromTemplate(Tem
 Default.args = {
     borderColor: "slate-20",
     padding: "micro",
-    children: "This is a div"
+    children: "This is a div",
 };

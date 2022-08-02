@@ -7,6 +7,6 @@ Template.displayName = ToastItem.displayName;
 
 export const Default: FictoanStory<typeof ToastItem> = createStoryFromTemplate(Template);
 Default.args = {
-    show    : true,
-    showFor : 4000,
+    show: true,
+    showFor: 4000,
 };

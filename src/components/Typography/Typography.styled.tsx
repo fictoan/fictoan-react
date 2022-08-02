@@ -71,6 +71,24 @@ export const TypographyStyled = css`
     .text-center { text-align : center; }
     .text-right  { text-align : right; }
 
+    .weight-100 { font-weight : 100; }
+    .weight-200 { font-weight : 200; }
+    .weight-300 { font-weight : 300; }
+    .weight-400 { font-weight : 400; }
+    .weight-500 { font-weight : 500; }
+    .weight-600 { font-weight : 600; }
+    .weight-700 { font-weight : 700; }
+    .weight-800 { font-weight : 800; }
+    .weight-900 { font-weight : 900; }
+
+    .text-nano   { font-size :  32%; }
+    .text-micro  { font-size :  48%; }
+    .text-tiny   { font-size :  64%; }
+    .text-small  { font-size :  80%; }
+    .text-medium { font-size : 100%; }
+    .text-large  { font-size : 128%; }
+    .text-huge   { font-size : 160%; }
+
     /*  Colour of highlight and text colour
     - for Firefox browsers  */
     ::-moz-selection {

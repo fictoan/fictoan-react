@@ -13,12 +13,14 @@ export interface FormItemGroupCustomProps {
 }
 
 export type FormItemGroupElementType = HTMLDivElement;
-export type FormItemGroupProps =
-    Omit<CommonAndHTMLProps<FormItemGroupElementType>, keyof FormItemGroupCustomProps>
-    & FormItemGroupCustomProps;
+export type FormItemGroupProps = Omit<CommonAndHTMLProps<FormItemGroupElementType>, keyof FormItemGroupCustomProps> &
+    FormItemGroupCustomProps;
 
 export const FormItemGroup = React.forwardRef(
-    ({ isJoint, retainLayout, spacing = "medium", children, ...props } : FormItemGroupProps, ref : React.Ref<FormItemGroupElementType>) => {
+    (
+        { isJoint, retainLayout, spacing = "medium", children, ...props }: FormItemGroupProps,
+        ref: React.Ref<FormItemGroupElementType>
+    ) => {
         let classNames = [];
 
         if (isJoint) {
@@ -34,10 +36,7 @@ export const FormItemGroup = React.forwardRef(
         }
 
         return (
-            <Element<FormItemGroupElementType>
-                as={FormItemGroupStyled} ref={ref}
-                classNames={classNames} {...props}
-            >
+            <Element<FormItemGroupElementType> as={FormItemGroupStyled} ref={ref} classNames={classNames} {...props}>
                 {children}
             </Element>
         );

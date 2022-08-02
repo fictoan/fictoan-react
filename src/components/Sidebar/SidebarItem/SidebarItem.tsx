@@ -6,17 +6,18 @@ import { CommonAndHTMLProps } from "../../Element/constants";
 import { SidebarItemStyled } from "./SidebarItem.styled";
 
 export interface SidebarItemCustomProps {
-    hasAlert ? : boolean;
+    hasAlert?: boolean;
 }
 
 export type SidebarItemElementType = HTMLDivElement;
-export type SidebarItemProps = Omit<CommonAndHTMLProps<SidebarItemElementType>, keyof SidebarItemCustomProps> & SidebarItemCustomProps;
+export type SidebarItemProps = Omit<CommonAndHTMLProps<SidebarItemElementType>, keyof SidebarItemCustomProps> &
+    SidebarItemCustomProps;
 
 export const SidebarItem = React.forwardRef(
     ({ hasAlert, ...props }: SidebarItemProps, ref: React.Ref<SidebarItemElementType>) => {
         let classNames = [];
 
-        if(hasAlert) {
+        if (hasAlert) {
             classNames.push("has-alert");
         }
 

@@ -10,5 +10,5 @@ Default.args = {
     source: `const add = (a, b) => {
     return a + b;
 }`,
-    language: "javascript"
+    language: "javascript",
 };

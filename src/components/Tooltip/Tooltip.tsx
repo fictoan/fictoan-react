@@ -27,7 +27,14 @@ export const Tooltip = React.forwardRef(
         return (
             <TooltipStyled onMouseOver={show} onMouseOut={hide}>
                 {label && appear && (
-                    <Card className={`tooltip ${position}`} paddingLeft="nano" paddingRight="nano" borderColor="transparent" ref={ref} {...props}>
+                    <Card
+                        className={`tooltip ${position}`}
+                        paddingLeft="nano"
+                        paddingRight="nano"
+                        borderColor="transparent"
+                        ref={ref}
+                        {...props}
+                    >
                         {label}
                     </Card>
                 )}

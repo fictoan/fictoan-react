@@ -72,7 +72,8 @@ export const generateFormThroughConfig = (
     let formChildren: ReactNode[] = [];
 
     for (const i in fields) {
-        const { desktopSpan, tabletLandscapeSpan, tabletPortraitSpan, mobileSpan, isHorizontal, ...formField } = fields[i];
+        const { desktopSpan, tabletLandscapeSpan, tabletPortraitSpan, mobileSpan, isHorizontal, ...formField } =
+            fields[i];
 
         const portionProps = {
             desktopSpan,
@@ -82,7 +83,11 @@ export const generateFormThroughConfig = (
             isHorizontal,
         };
 
-        formChildren.push(<Portion {...portionProps} key={`fields-${i}`}>{getFormItem(formField, onFieldsChange)}</Portion>);
+        formChildren.push(
+            <Portion {...portionProps} key={`fields-${i}`}>
+                {getFormItem(formField, onFieldsChange)}
+            </Portion>
+        );
     }
     return <Row gutters={spacing}>{formChildren}</Row>;
 };

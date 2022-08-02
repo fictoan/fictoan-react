@@ -12,5 +12,5 @@ Default.args = {
     rangeEnd: 10,
     hasPreviousPage: false,
     hasNextPage: true,
-    totalRecords: 100
+    totalRecords: 100,
 };
