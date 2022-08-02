@@ -6,7 +6,6 @@ import { GlobalStyledProps } from "../ThemeProvider/ThemeProvider";
 export const TypographyStyled = css`
     body {
         font-size        : ${(props: GlobalStyledProps) => props.theme.text.paras.size}em;
-        line-height      : ${(props: GlobalStyledProps) => props.theme.text.paras.lineHeight};
         font-family      : ${(props: GlobalStyledProps) => props.theme.text.font.sans};
         word-wrap        : normal;
         text-rendering   : optimizeLegibility;
@@ -44,6 +43,11 @@ export const TypographyStyled = css`
         font-family : ${(props: GlobalStyledProps) => props.theme.text.paras.font};
         color       : ${(props: GlobalStyledProps) => props.theme.text.paras.color};
     }
+    
+    p,
+    a,
+    li,
+    span { line-height : ${(props: GlobalStyledProps) => props.theme.text.paras.lineHeight}; }
 
     a {
         cursor      : pointer;

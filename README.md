@@ -9,7 +9,7 @@
 <a href="LICENSE"><img src="https://img.shields.io/github/license/fictoan/fictoan-react"/></a>
 </p>
 
-Fictoan is an intuitive framework for designers looking to code interfaces.
+Fictoan is an intuitive framework for designers looking to code and rapidly iterate on UI.
 
 ## Features
 - Simple, straight-forward React custom props, exactly like setting properties in a design app.

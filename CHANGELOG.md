@@ -1,5 +1,8 @@
+### 0.41.17
+- Remove `line-height` property from `body` and apply it more specifically to text elements only
+
 ### 0.41.16
-- Fix wrong font value for links in theme file 
+- Fix wrong font value for links in theme file
 
 ### 0.41.15
 - `BottomDrawer` overlay is now theme-able and style-able with props
