@@ -23,7 +23,7 @@ export { Card, CardStyled } from "./components/Card";
 export { CodeBlock, CodeStyled } from "./components/CodeBlock";
 
 // ELEMENT  ///////////////////////////////////////////////////////////////////
-export { Element } from "./components/Element/Element";
+export { Element } from "./components/Element";
 
 // ACCORDION  /////////////////////////////////////////////////////////////////
 export { ExpandableContent, ExpandableContentStyled } from "./components/ExpandableContent";

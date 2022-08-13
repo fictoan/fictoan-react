@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { NotificationsItemStyled } from "../NotificationItem/NotificationItem.styled";
+import { NotificationItemStyled } from "../NotificationItem/NotificationItem.styled";
 
 
 export const NotificationsWrapperStyled = styled.div`
@@ -23,28 +23,28 @@ export const NotificationsWrapperStyled = styled.div`
     &.top.new-on-top {
         flex-direction : column-reverse;
 
-        ${NotificationsItemStyled}:first-of-type { margin-bottom : 0; }
-        ${NotificationsItemStyled}:last-of-type  { margin-top : 0; }
+        ${NotificationItemStyled}:first-of-type { margin-bottom : 0; }
+        ${NotificationItemStyled}:last-of-type  { margin-top : 0; }
     }
 
     &.top.new-on-bottom {
         flex-direction : column;
 
-        ${NotificationsItemStyled}:first-of-type { margin-top : 0; }
-        ${NotificationsItemStyled}:last-of-type  { margin-bottom : 0; }
+        ${NotificationItemStyled}:first-of-type { margin-top : 0; }
+        ${NotificationItemStyled}:last-of-type  { margin-bottom : 0; }
     }
 
     &.bottom.new-on-top {
         flex-direction : column-reverse;
 
-        ${NotificationsItemStyled}:first-of-type { margin-bottom : 0; }
-        ${NotificationsItemStyled}:last-of-type  { margin-top : 0; }
+        ${NotificationItemStyled}:first-of-type { margin-bottom : 0; }
+        ${NotificationItemStyled}:last-of-type  { margin-top : 0; }
     }
 
     &.bottom.new-on-bottom {
         flex-direction : column;
 
-        ${NotificationsItemStyled}:first-of-type { margin-top : 0; }
-        ${NotificationsItemStyled}:last-of-type  { margin-bottom : 0; }
+        ${NotificationItemStyled}:first-of-type { margin-top : 0; }
+        ${NotificationItemStyled}:last-of-type  { margin-bottom : 0; }
     }
 `;
