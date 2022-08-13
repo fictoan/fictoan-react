@@ -1,93 +1,104 @@
-export { Element } from "./components/Element/Element";
+// BADGE  /////////////////////////////////////////////////////////////////////
+export { Badge, BadgeStyled } from "./components/Badge";
 
-// LAYOUT  ////////////////////////////////////////////////////////////////////
-export { Row } from "./components/Row/Row";
-export { Portion } from "./components/Portion/Portion";
-
-// TEXT  //////////////////////////////////////////////////////////////////////
-export { Heading } from "./components/Typography/Heading";
-export { Text } from "./components/Typography/Text";
-
-// BADGE  //////////////////////////////////////////////////////////////////
-export { Badge } from "./components/Badge/Badge";
+// BOTTOM DRAWER  /////////////////////////////////////////////////////////////
+export { BottomDrawer, BottomDrawerStyled } from "./components/BottomDrawer";
 
 // BREADCRUMBS  ///////////////////////////////////////////////////////////////
-export { BreadcrumbsWrapper } from "./components/Breadcrumbs/BreadcrumbsWrapper/BreadcrumbsWrapper";
-export { BreadcrumbItem } from "./components/Breadcrumbs/BreadcrumbItem/BreadcrumbItem";
+export {
+    BreadcrumbsWrapper, BreadcrumbsWrapperStyled,
+    BreadcrumbItem, BreadcrumbItemStyled
+} from "./components/Breadcrumbs";
 
 // BUTTON  ////////////////////////////////////////////////////////////////////
-export { Button } from "./components/Button/Button";
+export { Button, ButtonStyled } from "./components/Button";
 
-// SIDEBAR  ///////////////////////////////////////////////////////////////////
-export { SidebarWrapper } from "./components/Sidebar/SidebarWrapper/SidebarWrapper";
-export { SidebarHeader } from "./components/Sidebar/SidebarHeader/SidebarHeader";
-export { SidebarItem } from "./components/Sidebar/SidebarItem/SidebarItem";
-export { SidebarItemIcon } from "./components/Sidebar/SidebarItemIcon/SidebarItemIcon";
-export { SidebarItemText } from "./components/Sidebar/SidebarItemText/SidebarItemText";
-export { SidebarFooter } from "./components/Sidebar/SidebarFooter/SidebarFooter";
-export { ContentWrapper } from "./components/ContentWrapper/ContentWrapper";
-
-// H-RULE  ////////////////////////////////////////////////////////////////////
-export { HRule } from "./components/HRule/HRule";
-
-// FORM  //////////////////////////////////////////////////////////////////////
-export { FormWrapper } from "./components/Form/FormWrapper/FormWrapper";
-export { FormItem } from "./components/Form/FormItem/FormItem";
-export { FormItemGroup } from "./components/Form/FormItemGroup/FormItemGroup";
-export { InputField } from "./components/Form/InputField/InputField";
-export { TextArea } from "./components/Form/TextArea/TextArea";
-export { InputLabel } from "./components/Form/InputLabel/InputLabel";
-export { Select } from "./components/Form/Select/Select";
-export { FileUpload } from "./components/Form/InputField/FileUpload";
-export { RadioGroup } from "./components/Form/RadioButton/RadioGroup";
-export { RadioButton } from "./components/Form/RadioButton/RadioButton";
-export { CheckBox } from "./components/Form/CheckBox/CheckBox";
-export { Switch } from "./components/Form/CheckBox/Switch";
-
-// ACCORDION  /////////////////////////////////////////////////////////////////
-export { ExpandableContent } from "./components/ExpandableContent/ExpandableContent";
-
-// PROGRESS BAR  //////////////////////////////////////////////////////////////
-export { ProgressBar } from "./components/ProgressBar/ProgressBar";
+// CALLOUT  ///////////////////////////////////////////////////////////////////
+export { Callout, CalloutStyled } from "./components/Callout";
 
 // CARD  //////////////////////////////////////////////////////////////////////
-export { Card } from "./components/Card/Card";
+export { Card, CardStyled } from "./components/Card";
+
+// CODE  //////////////////////////////////////////////////////////////////////
+export { CodeBlock, CodeStyled } from "./components/CodeBlock";
+
+// ELEMENT  ///////////////////////////////////////////////////////////////////
+export { Element } from "./components/Element/Element";
+
+// ACCORDION  /////////////////////////////////////////////////////////////////
+export { ExpandableContent, ExpandableContentStyled } from "./components/ExpandableContent";
+
+// H-RULE  ////////////////////////////////////////////////////////////////////
+export { HRule, HRuleStyled } from "./components/HRule";
+
+// FORM  //////////////////////////////////////////////////////////////////////
+export {
+    FormWrapper, FormWrapperStyled,
+    FormItem, FormItemStyled,
+    FormItemGroup, FormItemGroupStyled,
+    InputField, InputFieldStyled,
+    TextArea, TextAreaStyled,
+    InputLabel,
+    Select, SelectStyled,
+    FileUpload,
+    RadioGroup,
+    RadioButton, RadioButtonStyled,
+    CheckBox, CheckBoxStyled,
+    Switch, SwitchStyled
+} from "./components/Form";
+
+// LAYOUT  ////////////////////////////////////////////////////////////////////
+export { Row, RowStyled } from "./components/Row";
+export { Portion, PortionStyled } from "./components/Portion";
 
 // INFO PANEL  ////////////////////////////////////////////////////////////////
-export { InfoPanel } from "./components/InfoPanel/InfoPanel";
+export { InfoPanel, InfoPanelStyled } from "./components/InfoPanel";
 
 // NOTIFICATIONS  /////////////////////////////////////////////////////////////
-export { NotificationsWrapper } from "./components/Notifications/NotificationsWrapper/NotificationsWrapper";
-export { NotificationItem } from "./components/Notifications/NotificationsItem/NotificationItem";
+export {
+    NotificationsWrapper, NotificationsWrapperStyled,
+    NotificationItem, NotificationItemStyled
+} from "./components/Notification";
+
+// PIN INPUT FIELD  ///////////////////////////////////////////////////////////
+export { PinInputField, PinInputStyled } from "./components/PinInputField";
+
+// PROGRESS BAR  //////////////////////////////////////////////////////////////
+export { ProgressBar, ProgressBarStyled } from "./components/ProgressBar";
+
+// SIDEBAR and CONTENT WRAPPER ////////////////////////////////////////////////
+export {
+    SidebarWrapper, SidebarWrapperStyled,
+    SidebarHeader, SidebarHeaderStyled,
+    SidebarItem, SidebarItemStyled,
+    SidebarItemIcon, SidebarItemIconStyled,
+    SidebarItemText, SidebarItemTextStyled,
+    SidebarFooter, SidebarFooterStyled
+} from "./components/Sidebar";
+
+export { ContentWrapper, ContentWrapperStyled } from "./components/ContentWrapper";
+
+// SPINNER  ///////////////////////////////////////////////////////////////////
+export { Spinner, SpinnerStyled } from "./components/Spinner";
 
 // TABLE  /////////////////////////////////////////////////////////////////////
 export { Table } from "./components/Table/Table";
 export { TablePagination } from "./components/Table/TablePagination/TablePagination";
 
-// CODE  //////////////////////////////////////////////////////////////////////
-export { CodeBlock } from "./components/CodeBlock/CodeBlock";
-
 // TABS  //////////////////////////////////////////////////////////////////////
-export { Tabs } from "./components/Tabs/Tabs";
+export { Tabs, TabsStyled } from "./components/Tabs";
 
-// SPINNER  ///////////////////////////////////////////////////////////////////
-export { Spinner } from "./components/Spinner/Spinner";
-
-// CALLOUT  ///////////////////////////////////////////////////////////////////
-export { Callout } from "./components/Callout/Callout";
-
-// TOOLTIP  ///////////////////////////////////////////////////////////////////
-export { Tooltip } from "./components/Tooltip/Tooltip";
+// TEXT  //////////////////////////////////////////////////////////////////////
+export { Text, Heading, TypographyStyled } from "./components/Typography";
 
 // TOAST  /////////////////////////////////////////////////////////////////////
-export { ToastsWrapper } from "./components/Toast/ToastsWrapper/ToastsWrapper";
-export { ToastItem } from "./components/Toast/ToastItem/ToastItem";
+export {
+    ToastsWrapper, ToastsWrapperStyled,
+    ToastItem, ToastItemStyled
+} from "./components/Toast";
 
-// BOTTOM DRAWER  /////////////////////////////////////////////////////////////
-export { BottomDrawer } from "./components/BottomDrawer/BottomDrawer";
-
-// PIN INPUT FIELD  ///////////////////////////////////////////////////////////
-export { PinInputField } from "./components/PinInputField/PinInputField";
+// TOOLTIP  ///////////////////////////////////////////////////////////////////
+export { Tooltip, TooltipStyled } from "./components/Tooltip";
 
 // THEME  /////////////////////////////////////////////////////////////////////
 export { defaultColours } from "./styles/DefaultColours";

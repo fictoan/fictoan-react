@@ -4,7 +4,7 @@ import lighten from "polished/lib/color/lighten";
 import { NotificationItemProps } from "./NotificationItem";
 
 
-export const NotificationsItemStyled = styled.div`
+export const NotificationItemStyled = styled.div`
     position         : relative;
     display          : flex;
     width            : 100%;

@@ -1,9 +1,9 @@
 import React from "react";
 
 import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
-import { NotificationItem, NotificationItemCustomProps } from "../NotificationsItem/NotificationItem";
+import { NotificationItem, NotificationItemCustomProps } from "../NotificationItem/NotificationItem";
 import { NotificationsWrapper } from "./NotificationsWrapper";
-import { Default as NotificationItemStory } from "../NotificationsItem/NotificationItem.stories";
+import { Default as NotificationItemStory } from "../NotificationItem/NotificationItem.stories";
 
 const Template: FictoanStory<typeof NotificationsWrapper> = (args) => <NotificationsWrapper {...args} />;
 Template.displayName = NotificationsWrapper.displayName;

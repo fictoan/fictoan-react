@@ -1,5 +1,8 @@
 # CHANGELOG
 
+### 0.41.25
+- Export styled-components also from the project to allow component-wide over-rides
+
 ### 0.41.24
 - Convert `isMono`, `isSans` and `isSerif` to a `style` enum
 - Fix `isSubtext` prop for text elements

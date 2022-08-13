@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { HRProps } from "./HRule";
 
 
-export const HRStyled = styled.hr`
+export const HRuleStyled = styled.hr`
     border : 0;
     width  : 100%;
     height : ${(props: HRProps) => props.theme.hr.default.height};

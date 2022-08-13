@@ -3,7 +3,7 @@ import React, { useState, useEffect, SyntheticEvent } from "react";
 import { Element } from "../../Element/Element";
 import { CommonAndHTMLProps } from "../../Element/constants";
 
-import { NotificationsItemStyled } from "./NotificationItem.styled";
+import { NotificationItemStyled } from "./NotificationItem.styled";
 
 // prettier-ignore
 export interface NotificationItemCustomProps {
@@ -65,7 +65,7 @@ export const NotificationItem = React.forwardRef(
         return (
             isVisible && (
                 <Element<NotificationItemElementType>
-                    as={NotificationsItemStyled}
+                    as={NotificationItemStyled}
                     ref={ref}
                     classNames={[...classNames, !show ? "dismissed" : ""]}
                     onTransitionEnd={onTransitionEnd}
