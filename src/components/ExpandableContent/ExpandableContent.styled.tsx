@@ -2,13 +2,12 @@ import styled from "styled-components";
 import { ExpandableContentProps } from "./ExpandableContent";
 
 export const ExpandableContentStyled = styled.details`
-    cursor: pointer;
-    
     & > summary {
+        cursor   : pointer;
         position : relative;
 
         & > * {
-            padding-right: 32px;
+            padding-right : 32px;
         }
 
         &::after {
@@ -27,7 +26,7 @@ export const ExpandableContentStyled = styled.details`
             cursor       : pointer;
         }
     }
-    
+
     &[open] > summary::after {
         transform : translateY(-50%) rotate(225deg);
     }

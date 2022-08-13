@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { FormItemProps } from "../FormItem/FormItem";
+import { FormItemProps } from "./FormItem";
 import { InputFieldStyled } from "../InputField/InputField.styled";
 import { SelectWrapperStyled } from "../Select/Select.styled";
 import { TextAreaStyled } from "../TextArea/TextArea.styled";

@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 
 import { CheckboxProps } from "./CheckBox";
+import { FormWrapperStyled } from "../FormWrapper/FormWrapper.styled";
 
 /*  COMMON STYLES  ========================================================  */
 const SharedStyling = css`
@@ -98,6 +99,15 @@ export const CheckBoxStyled = styled.div`
     input[type="checkbox"]:checked + label::after {
         opacity : 1;
     }
+    
+    ${FormWrapperStyled}.spacing-none   & { margin-bottom :    0; }
+    ${FormWrapperStyled}.spacing-nano   & { margin-bottom :  8px; }
+    ${FormWrapperStyled}.spacing-micro  & { margin-bottom : 12px; }
+    ${FormWrapperStyled}.spacing-tiny   & { margin-bottom : 16px; }
+    ${FormWrapperStyled}.spacing-small  & { margin-bottom : 24px; }
+    ${FormWrapperStyled}.spacing-medium & { margin-bottom : 32px; }
+    ${FormWrapperStyled}.spacing-large  & { margin-bottom : 40px; }
+    ${FormWrapperStyled}.spacing-huge   & { margin-bottom : 48px; }
 `;
 
 /*  TOGGLE SWITCH  ========================================================  */
@@ -158,7 +168,6 @@ export const SwitchStyled = styled.div`
     input[type="checkbox"]:disabled + label::after {
         background : ${(props : CheckboxProps) => props.theme.toggleSwitch.actuator.isDisabled.bg};
     }
-
 
     /* Sizes */
     &.size-small {
@@ -223,4 +232,13 @@ export const SwitchStyled = styled.div`
             transform : translateY(-50%) translateX(24px);
         }
     }
+    
+    ${FormWrapperStyled}.spacing-none   & { margin-bottom :    0; }
+    ${FormWrapperStyled}.spacing-nano   & { margin-bottom :  8px; }
+    ${FormWrapperStyled}.spacing-micro  & { margin-bottom : 12px; }
+    ${FormWrapperStyled}.spacing-tiny   & { margin-bottom : 16px; }
+    ${FormWrapperStyled}.spacing-small  & { margin-bottom : 24px; }
+    ${FormWrapperStyled}.spacing-medium & { margin-bottom : 32px; }
+    ${FormWrapperStyled}.spacing-large  & { margin-bottom : 40px; }
+    ${FormWrapperStyled}.spacing-huge   & { margin-bottom : 48px; }
 `;

@@ -66,6 +66,8 @@ export const TypographyStyled = css`
     .font-serif { font-family : ${(props: GlobalStyledProps) => props.theme.text.font.serif}; }
     .font-mono  { font-family : ${(props: GlobalStyledProps) => props.theme.text.font.mono}; }
 
+    .sub-text { color : ${(props: GlobalStyledProps) => props.theme.text.paras.subtext}; }
+
     .text-left   { text-align : left; }
     .text-centre,
     .text-center { text-align : center; }

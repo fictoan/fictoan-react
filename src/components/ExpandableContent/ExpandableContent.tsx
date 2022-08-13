@@ -5,10 +5,11 @@ import { Text } from "../Typography/Text";
 
 import { ExpandableContentStyled } from "./ExpandableContent.styled";
 
+// prettier-ignore
 export interface ExpandableContentCustomProps {
-    summary: ReactNode;
-    open?: boolean;
-    children: ReactNode;
+    open     ? : boolean;
+    summary    : ReactNode;
+    children   : ReactNode;
 }
 
 export type ExpandableContentElementType = HTMLDetailsElement;

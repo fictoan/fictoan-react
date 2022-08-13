@@ -525,7 +525,8 @@ export const FictoanTheme = {
             size       : 1,
             color      : String(defaultColours.grey),
             weight     : 400,
-            lineHeight : 1.64
+            lineHeight : 1.64,
+            subtext    : defaultColours.slate80
         },
 
         headings : {

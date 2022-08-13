@@ -1,5 +1,12 @@
 # CHANGELOG
 
+### 0.41.24
+- Convert `isMono`, `isSans` and `isSerif` to a `style` enum
+- Fix `isSubtext` prop for text elements
+- Fix cursor-pointer on hover for `ExpandableGroup`
+- Add back the right margin bottoms for `FormItem` elements inside `FormItemGroup`
+- Fix margin bottom for `CheckBox` and `Switch` inside a `FormWrapper`
+
 ### 0.41.23
 - Remove `line-height` property from `body` and apply it more specifically to text elements only
 

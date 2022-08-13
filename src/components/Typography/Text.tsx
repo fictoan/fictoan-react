@@ -1,16 +1,14 @@
 import React from "react";
 
 import { Element } from "../Element/Element";
-import { CommonAndHTMLProps, WeightTypes } from "../Element/constants";
+import { CommonAndHTMLProps, SpacingTypes, WeightTypes } from "../Element/constants";
 
 // prettier-ignore
 export interface TextCustomProps {
-    isSans    ? : boolean;
-    isSerif   ? : boolean;
-    isMono    ? : boolean;
-    isSubtext ? : boolean;
+    style     ? : "sans-serif" | "serif" | "mono";
     weight    ? : WeightTypes;
-    size      ? : "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
+    isSubtext ? : boolean;
+    size      ? : SpacingTypes;
     align     ? : "left" | "centre" | "center" | "right";
 }
 
@@ -18,7 +16,7 @@ export type TextElementType = HTMLParagraphElement;
 export type TextProps = Omit<CommonAndHTMLProps<TextElementType>, keyof TextCustomProps> & TextCustomProps;
 
 export const Text = React.forwardRef(
-    ({ weight, size, isSans, isSerif, isMono, align, ...props }: TextProps, ref: React.Ref<TextElementType>) => {
+    ({ weight, size, style = "sans-serif", align, isSubtext, ...props }: TextProps, ref: React.Ref<TextElementType>) => {
         let classNames = [];
 
         if (weight) {
@@ -29,16 +27,12 @@ export const Text = React.forwardRef(
             classNames.push(`text-${size}`);
         }
 
-        if (isSans) {
-            classNames.push("font-sans");
+        if (style) {
+            classNames.push(style);
         }
 
-        if (isSerif) {
-            classNames.push("font-serif");
-        }
-
-        if (isMono) {
-            classNames.push("font-mono");
+        if (isSubtext) {
+            classNames.push("sub-text");
         }
 
         if (align) {
