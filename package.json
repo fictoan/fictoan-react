@@ -94,7 +94,7 @@
         "prism-react-renderer": "^1.2.1"
     },
     "peerDependencies": {
-        "react": "16.x || 17.x",
+        "react": ">=16.x",
         "styled-components": "^5.1.1"
     },
     "optionalDependencies": {
