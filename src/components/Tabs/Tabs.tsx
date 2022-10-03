@@ -17,15 +17,15 @@ interface TabType {
 // prettier-ignore
 export interface TabsCustomProps {
     tabs : TabType[];
-    /** additional item to render inside the nav along with tab labels */
-    additionalNavItem?: React.ReactNode; 
+    /** wrapper to render additional content inside the nav along with tab labels */
+    additionalNavContentWrapper?: React.ReactNode; 
 }
 
 export type TabsElementType = HTMLDivElement;
 export type TabsProps = Omit<CommonAndHTMLProps<TabsElementType>, keyof TabsCustomProps> & TabsCustomProps;
 
 export const Tabs = React.forwardRef(
-    ({ tabs, additionalNavItem, ...props }: TabsProps, ref: React.Ref<TabsElementType>) => {
+    ({ tabs, additionalNavContentWrapper, ...props }: TabsProps, ref: React.Ref<TabsElementType>) => {
         const [activeTab, setActiveTab] = React.useState<TabType | undefined>(tabs.length > 0 ? tabs[0] : undefined);
         const [isExiting, setIsExiting] = React.useState<boolean>(false);
 
@@ -69,7 +69,7 @@ export const Tabs = React.forwardRef(
                                     </li>
                                 ))}
                             </ul>
-                            {additionalNavItem && <>{additionalNavItem}</>}
+                            {additionalNavContentWrapper && <>{additionalNavContentWrapper}</>}
                         </nav>
                         <HRule kind="secondary" marginTop="none" marginBottom="micro" />
                         <Element as="div" className={`tabs-content ${isExiting ? "exiting" : ""}`}>

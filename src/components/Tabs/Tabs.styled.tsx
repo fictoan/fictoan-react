@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const TabsStyled = styled.section`
     nav {
-        width   : 100%;
-        display : flex;
-        align-items: center;
+        width       : 100%;
+        display     : flex;
+        align-items : center;
 
         ul.tab-labels-list {
-            display: flex;
+            display : flex;
 
             p { position : relative; }
 
@@ -53,7 +53,7 @@ export const TabsStyled = styled.section`
             }
         
             p.disabled-navlink {
-                color  : ${props => props.theme.tabs.label.isDisabled.text};;
+                color  : ${props => props.theme.tabs.label.isDisabled.text};
                 cursor : not-allowed;
             }
         }
