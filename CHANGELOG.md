@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### 0.41.26
+- Add support for passing additional items to the navbar for `Tabs`
+- Update React peer dependency version
+
 ### 0.41.25
 - Export styled-components also from the project to allow component-wide over-rides
 
