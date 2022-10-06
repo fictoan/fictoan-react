@@ -1,7 +1,7 @@
 # CHANGELOG
 
 ### 0.41.27
-- Add `style` prop for `Heading` too to select font style
+- ⚠ Breaking change: add `style` prop for `Heading` and `Text` to select font style.
 
 ### 0.41.26
 - Add support for passing additional items to the navbar for `Tabs`
