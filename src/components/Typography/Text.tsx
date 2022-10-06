@@ -1,11 +1,11 @@
 import React from "react";
 
-import { Element } from "../Element/Element";
+import { Element } from "../Element";
 import { CommonAndHTMLProps, SpacingTypes, WeightTypes } from "../Element/constants";
 
 // prettier-ignore
 export interface TextCustomProps {
-    style     ? : "sans-serif" | "serif" | "mono";
+    style     ? : "sans-serif" | "serif" | "monospace";
     weight    ? : WeightTypes;
     isSubtext ? : boolean;
     size      ? : SpacingTypes;
@@ -28,7 +28,7 @@ export const Text = React.forwardRef(
         }
 
         if (style) {
-            classNames.push(style);
+            classNames.push(`font-${style}`);
         }
 
         if (isSubtext) {

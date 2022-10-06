@@ -1,5 +1,8 @@
 # CHANGELOG
 
+### 0.41.26
+- Add `style` prop for `Heading` too to select font style
+
 ### 0.41.25
 - Export styled-components also from the project to allow component-wide over-rides
 
