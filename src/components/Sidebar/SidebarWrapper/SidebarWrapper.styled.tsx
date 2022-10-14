@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 import { SidebarWrapperProps } from "./SidebarWrapper";
 import { SidebarItemIconProps } from "../SidebarItemIcon/SidebarItemIcon";
-import { SidebarItemTextProps } from "../SidebarItemText/SidebarItemText";
 
 import { SidebarHeaderStyled } from "../SidebarHeader/SidebarHeader.styled";
 import { SidebarItemStyled } from "../SidebarItem/SidebarItem.styled";
@@ -60,7 +59,7 @@ export const SidebarWrapperStyled = styled.aside`
             position         : fixed;
             left             : 40px;
             align-self       : center;
-            border-radius    : 4px;
+            border-radius    : ${(props: SidebarWrapperProps) => props.theme.sidebar.isCollapsed.label.borderRadius};
             padding          : 4px 8px;
             background-color : ${(props: SidebarWrapperProps) => props.theme.sidebar.isCollapsed.label.bg};
             color            : ${(props: SidebarWrapperProps) => props.theme.sidebar.isCollapsed.label.text};

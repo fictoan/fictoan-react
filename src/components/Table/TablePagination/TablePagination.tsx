@@ -5,11 +5,11 @@ import { ReactComponent as NextButton } from "../../../assets/icons/right.svg";
 import { ReactComponent as FirstPageButton } from "../../../assets/icons/left.svg";
 
 import { CommonAndHTMLProps } from "../../Element/constants";
-import { Element } from "../../Element/Element";
-import { Heading } from "../../Typography/Heading";
-import { Text } from "../../Typography/Text";
+import { Element } from "../../Element";
+import { Heading } from "../../Typography";
+import { Text } from "../../Typography";
 import { TablePaginationStyled } from "./TablePagination.styled";
-import { Spinner } from "../../Spinner/Spinner";
+import { Spinner } from "../../Spinner";
 
 // prettier-ignore
 export interface TablePaginationCustomProps {

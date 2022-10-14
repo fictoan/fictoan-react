@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { BadgeProps } from "./Badge";
+import { globalVariables } from "../../styles/theme";
 
 export const BadgeStyled = styled.mark`
     position            : relative;
@@ -21,21 +22,13 @@ export const BadgeStyled = styled.mark`
         all : unset;
     }
 
-    &.shape-rounded {
-        border-radius : 4px;
-    }
+    &.shape-rounded { border-radius : ${globalVariables.borderWidth}; }
 
-    &.shape-curved {
-        border-radius : 5000px
-    }
+    &.shape-curved { border-radius : 5000px; }
 
-    &[class*="border-"] {
-        border-width : ${(props : BadgeProps) => props.theme.globals.borderWidth};
-    }
+    &[class*="border-"] { border-width : ${globalVariables.borderWidth}; }
 
-    &.border-none {
-        border-width : 0 !important;
-    }
+    &.border-none { border-width : 0 !important; }
 
     //  DIFFERENT SIZES  //////////////////////////////////////////////////////
     &.size-tiny {

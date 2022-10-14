@@ -10,7 +10,7 @@ export const TextAreaStyled = styled.textarea`
     font-family      : ${(props: InputFieldProps) => props.theme.text.font.sans};
     background-color : ${(props: InputFieldProps) => props.theme.inputField.default.bg};
     border           : 1px solid ${(props: InputFieldProps) => props.theme.inputField.default.border};
-    border-radius    : 4px;
+    border-radius    : ${(props: InputFieldProps) => props.theme.inputField.default.borderRadius};
     padding          : 12px;
     line-height      : 1;
     max-width        : 100%;

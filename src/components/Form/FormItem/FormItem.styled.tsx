@@ -4,6 +4,7 @@ import { FormItemProps } from "./FormItem";
 import { InputFieldStyled } from "../InputField/InputField.styled";
 import { SelectWrapperStyled } from "../Select/Select.styled";
 import { TextAreaStyled } from "../TextArea/TextArea.styled";
+import { globalVariables } from "../../../styles/theme";
 
 
 export const FormItemStyled = styled.div`
@@ -82,7 +83,7 @@ export const FormItemStyled = styled.div`
             cursor           : text;
 
             &:focus {
-                border : ${(props : FormItemProps) => props.theme.globals.borderWidth} solid ${(props : FormItemProps) => props.theme.inputField.isReadOnly.text};
+                border : ${globalVariables.borderWidth} solid ${(props : FormItemProps) => props.theme.inputField.isReadOnly.border};
             }
         }
 

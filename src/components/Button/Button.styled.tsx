@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import { ButtonProps } from "./Button";
 import { ColourPropTypes } from "../Element/constants";
+import { globalVariables } from "../../styles/theme";
 
 export const ButtonStyled = styled.button`
     position            : relative;
@@ -50,21 +51,21 @@ export const ButtonStyled = styled.button`
         background-color : ${(props : ButtonProps) => props.theme.button.primary.default.bg};
         color            : ${(props : ButtonProps) => props.theme.button.primary.default.text};
         border           : solid ${(props : ButtonProps) => props.theme.button.primary.default.border};
-        border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+        border-width     : ${globalVariables.borderWidth};
         border-radius    : ${(props : ButtonProps) => props.theme.button.primary.default.borderRadius};
 
         :hover {
             background-color : ${(props : ButtonProps) => props.theme.button.primary.onHover.bg};
             color            : ${(props : ButtonProps) => props.theme.button.primary.onHover.text};
             border           : solid ${(props : ButtonProps) => props.theme.button.primary.onHover.border};
-            border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+            border-width     : ${globalVariables.borderWidth};
         }
 
         :active {
             background-color : ${(props : ButtonProps) => props.theme.button.primary.isActive.bg};
             color            : ${(props : ButtonProps) => props.theme.button.primary.isActive.text};
             border           : solid ${(props : ButtonProps) => props.theme.button.primary.isActive.border};
-            border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+            border-width     : ${globalVariables.borderWidth};
         }
 
         &.is-loading::after {
@@ -78,7 +79,7 @@ export const ButtonStyled = styled.button`
             background-color : ${(props : ButtonProps) => props.theme.button.primary.isDisabled.bg};
             color            : ${(props : ButtonProps) => props.theme.button.primary.isDisabled.text};
             border           : solid ${(props : ButtonProps) => props.theme.button.primary.isDisabled.border};
-            border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+            border-width     : ${globalVariables.borderWidth};
         }
     }
 
@@ -88,20 +89,20 @@ export const ButtonStyled = styled.button`
         color            : ${(props : ButtonProps) => props.theme.button.secondary.default.text};
         border           : solid ${(props : ButtonProps) => props.theme.button.secondary.default.border};
         border-radius    : ${(props : ButtonProps) => props.theme.button.secondary.default.borderRadius};
-        border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+        border-width     : ${globalVariables.borderWidth};
 
         :hover {
             background-color : ${(props : ButtonProps) => props.theme.button.secondary.onHover.bg};
             color            : ${(props : ButtonProps) => props.theme.button.secondary.onHover.text};
             border           : solid ${(props : ButtonProps) => props.theme.button.secondary.onHover.border};
-            border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+            border-width     : ${globalVariables.borderWidth};
         }
 
         :active {
             background-color : ${(props : ButtonProps) => props.theme.button.secondary.isActive.bg};
             color            : ${(props : ButtonProps) => props.theme.button.secondary.isActive.text};
             border           : solid ${(props : ButtonProps) => props.theme.button.secondary.isActive.border};
-            border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+            border-width     : ${globalVariables.borderWidth};
         }
 
         &.is-loading::after {
@@ -115,7 +116,7 @@ export const ButtonStyled = styled.button`
             background-color : ${(props : ButtonProps) => props.theme.button.secondary.isDisabled.bg};
             color            : ${(props : ButtonProps) => props.theme.button.secondary.isDisabled.text};
             border           : solid ${(props : ButtonProps) => props.theme.button.secondary.isDisabled.border};
-            border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+            border-width     : ${globalVariables.borderWidth};
         }
     }
 
@@ -125,20 +126,20 @@ export const ButtonStyled = styled.button`
         color            : ${(props : ButtonProps) => props.theme.button.tertiary.default.text};
         border           : solid ${(props : ButtonProps) => props.theme.button.tertiary.default.border};
         border-radius    : ${(props : ButtonProps) => props.theme.button.tertiary.default.borderRadius};
-        border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+        border-width     : ${globalVariables.borderWidth};
 
         :hover {
             background-color : ${(props : ButtonProps) => props.theme.button.tertiary.onHover.bg};
             color            : ${(props : ButtonProps) => props.theme.button.tertiary.onHover.text};
             border           : solid ${(props : ButtonProps) => props.theme.button.tertiary.onHover.border};
-            border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+            border-width     : ${globalVariables.borderWidth};
         }
 
         :active {
             background-color : ${(props : ButtonProps) => props.theme.button.tertiary.isActive.bg};
             color            : ${(props : ButtonProps) => props.theme.button.tertiary.isActive.text};
             border           : solid ${(props : ButtonProps) => props.theme.button.tertiary.isActive.border};
-            border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+            border-width     : ${globalVariables.borderWidth};
         }
 
         &.is-loading::after {
@@ -152,7 +153,7 @@ export const ButtonStyled = styled.button`
             background-color : ${(props : ButtonProps) => props.theme.button.tertiary.isDisabled.bg};
             color            : ${(props : ButtonProps) => props.theme.button.tertiary.isDisabled.text};
             border           : solid ${(props : ButtonProps) => props.theme.button.tertiary.isDisabled.border};
-            border-width     : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+            border-width     : ${globalVariables.borderWidth};
         }
     }
 
@@ -206,7 +207,7 @@ export const ButtonStyled = styled.button`
     }
 
     &[class*="border-"] {
-        border-width : ${(props : ButtonProps) => props.theme.globals.borderWidth};
+        border-width : ${globalVariables.borderWidth};
     }
 
     &.border-none { border-width : 0 !important; }

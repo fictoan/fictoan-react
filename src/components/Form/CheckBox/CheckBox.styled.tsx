@@ -77,7 +77,7 @@ export const CheckBoxStyled = styled.div`
         width         : 16px;
         top           : 0;
         left          : 0;
-        border-radius : 4px;
+        border-radius : ${(props : CheckboxProps) => props.theme.checkBox.square.default.borderRadius};
     }
 
     /*  The white tick inside */

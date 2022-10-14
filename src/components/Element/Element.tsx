@@ -1,3 +1,5 @@
+// This is a generic component used for creating native HTML elements, while
+// still being able to style them with Fictoan props.
 import React from "react";
 
 import { createClassName } from "../../utils/classNames";

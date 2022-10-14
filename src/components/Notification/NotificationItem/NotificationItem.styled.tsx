@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import lighten from "polished/lib/color/lighten";
 
 import { NotificationItemProps } from "./NotificationItem";
 
@@ -8,8 +7,8 @@ export const NotificationItemStyled = styled.div`
     position         : relative;
     display          : flex;
     width            : 100%;
-    background-color : ${(props: NotificationItemProps) => props.theme.notification.default.bg};
-    border-radius    : 4px;
+    background-color : ${(props: NotificationItemProps) => props.theme.notification.generic.bg};
+    border-radius    : ${(props: NotificationItemProps) => props.theme.notification.generic.borderRadius};
     border           : 1px solid hsla(0, 0%, 0%, 0.04);
     transition       : all 0.4s;
     box-shadow       : 0  2px  0.2px rgba(0,0,0,0.016), 
@@ -30,28 +29,28 @@ export const NotificationItemStyled = styled.div`
     }
     
     &.info {
-        background-color : ${(props: NotificationItemProps) => props.theme.notification.kinds.info.border && lighten(0.32, props.theme.notification.kinds.info.border)};
+        background-color : ${(props: NotificationItemProps) => props.theme.notification.kinds.info.bg};
         border           : 1px solid ${(props: NotificationItemProps) => props.theme.notification.kinds.info.border};
 
         ::before { background-color : ${(props: NotificationItemProps) => props.theme.notification.kinds.info.border}; }
     }
 
     &.warning {
-        background-color : ${(props: NotificationItemProps) => props.theme.notification.kinds.warning.border && lighten(0.32, props.theme.notification.kinds.warning.border)};
+        background-color : ${(props: NotificationItemProps) => props.theme.notification.kinds.warning.bg};
         border           : 1px solid ${(props: NotificationItemProps) => props.theme.notification.kinds.warning.border};
 
         ::before { background-color : ${(props: NotificationItemProps) => props.theme.notification.kinds.warning.border}; }
     }
 
     &.error {
-        background-color : ${(props: NotificationItemProps) => props.theme.notification.kinds.error.border && lighten(0.32, props.theme.notification.kinds.error.border)};
+        background-color : ${(props: NotificationItemProps) => props.theme.notification.kinds.error.bg};
         border           : 1px solid ${(props: NotificationItemProps) => props.theme.notification.kinds.error.border};
 
         ::before { background-color : ${(props: NotificationItemProps) => props.theme.notification.kinds.error.border}; }
     }
 
     &.success {
-        background-color : ${(props: NotificationItemProps) => props.theme.notification.kinds.success.border && lighten(0.32, props.theme.notification.kinds.success.border)};
+        background-color : ${(props: NotificationItemProps) => props.theme.notification.kinds.success.bg};
         border           : 1px solid ${(props: NotificationItemProps) => props.theme.notification.kinds.success.border};
 
         ::before { background-color : ${(props: NotificationItemProps) => props.theme.notification.kinds.success.border}; }
@@ -59,7 +58,7 @@ export const NotificationItemStyled = styled.div`
 
 
     & .notification-content {
-        color       : ${(props: NotificationItemProps) => props.theme.notification.default.text};
+        color       : ${(props: NotificationItemProps) => props.theme.notification.generic.text};
         font-size   : 14px;
         line-height : 1.1;
         word-break  : break-word;

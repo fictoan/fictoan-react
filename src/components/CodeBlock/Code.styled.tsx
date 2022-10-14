@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import { globalVariables } from "../../styles/theme";
 import { CodeBlockProps } from "./CodeBlock";
 
 
@@ -27,7 +28,7 @@ export const CodeStyled = styled.div`
         -webkit-hyphens        : none;
         -ms-hyphens            : none;
         hyphens                : none;
-        border-radius          : 4px;
+        border-radius          : ${globalVariables.borderRadius};
         -moz-tab-size          : 4;
         tab-size               : 4;
     }

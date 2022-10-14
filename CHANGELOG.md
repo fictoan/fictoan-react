@@ -1,5 +1,13 @@
 # CHANGELOG
 
+### 0.42.0
+- Padding and margin values can now be configured via the `globals` object in the theme
+- Convert utility styles into JS file from plain CSS to access props
+- Refactor `TablePagination` for better theme-ing
+- Tweak `notification` theme object
+- Add String() constructor to theme object values
+- Fix a bunch of inconsistencies in theme values
+
 ### 0.41.27
 - ⚠ Breaking change: add `style` prop for `Heading` and `Text` to select font style.
 

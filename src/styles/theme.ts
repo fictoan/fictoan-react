@@ -1,3 +1,11 @@
+///////////////////////////////////////////////////////////////////////////////
+// ADDING NEW THEME OBJECTS
+// - Use consistent keywords like `bg`, `color` etc. (We use the US spelling
+//      here because of the property name).
+// - If the element has states, nest each individual state in its own object:
+//      `default`, `onHover`, `isActive` etc
+///////////////////////////////////////////////////////////////////////////////
+
 import lighten from "polished/lib/color/lighten";
 import darken from "polished/lib/color/darken";
 
@@ -5,6 +13,7 @@ import { defaultColours } from "./DefaultColours";
 
 type CustomColoursType = { [k in string]: string };
 
+// CUSTOM COLOURS  ////////////////////////////////////////////////////////////
 export const customColours = {
     hue      : defaultColours.blue90,
     tint     : defaultColours.amber,
@@ -13,26 +22,36 @@ export const customColours = {
     accent   : defaultColours.green80
 } as const;
 
+// GLOBALS  ///////////////////////////////////////////////////////////////////
+export const globalVariables = {
+    borderWidth  : "1px",
+    borderRadius : "4px",
+    measurements : {
+        nano   : "8px",
+        micro  : "24px",
+        tiny   : "2vmax",
+        small  : "4vmax",
+        medium : "8vmax",
+        large  : "16vmax",
+        huge   : "24vmax",
+    }
+}
+
 export const FictoanTheme = {
     customColours : customColours as CustomColoursType,
 
-    //  GLOBALS  //////////////////////////////////////////////////////////////
-    globals : {
-        borderWidth : "1px"
-    },
 
-
-    //  BASICS  ///////////////////////////////////////////////////////////////
+    // BASICS /////////////////////////////////////////////////////////////////
     body : {
         bg : String(defaultColours.white)
     },
 
 
-    //  BOTTOM DRAWER  ////////////////////////////////////////////////////////
+    // BOTTOM DRAWER  /////////////////////////////////////////////////////////
     bottomDrawer : {
         bg            : String(defaultColours.white),
         border        : String(defaultColours.slate20),
-        borderRadius  : "24px",
+        borderRadius  : String(globalVariables.measurements.micro),
         overlay       : {
             bg      : String(defaultColours.black),
             opacity : 0.4,
@@ -44,7 +63,7 @@ export const FictoanTheme = {
     },
 
 
-    //  BREADCRUMBS  ///////////////////////////////////////////////////////////
+    // BREADCRUMBS ////////////////////////////////////////////////////////////
     breadcrumbs : {
         wrapper   : {
             bg : String(defaultColours.white)
@@ -61,7 +80,7 @@ export const FictoanTheme = {
     },
 
 
-    //  BUTTON  ///////////////////////////////////////////////////////////////
+    // BUTTON /////////////////////////////////////////////////////////////////
     button : {
         font      : "sans-serif",
         isLoading : {
@@ -72,7 +91,7 @@ export const FictoanTheme = {
                 bg           : String(customColours.hue),
                 border       : String(customColours.hue),
                 text         : String(defaultColours.white),
-                borderRadius : "4px"
+                borderRadius : String(globalVariables.borderRadius)
             },
             onHover    : {
                 bg     : String(customColours.hue),
@@ -95,18 +114,18 @@ export const FictoanTheme = {
         },
         secondary : {
             default    : {
-                bg           : `${lighten(0.4, String(customColours.hue))}`,
+                bg           : String(`${lighten(0.4, String(customColours.hue))}`),
                 border       : String(customColours.hue),
                 text         : String(customColours.hue),
-                borderRadius : "4px"
+                borderRadius : String(globalVariables.borderRadius)
             },
             onHover    : {
-                bg     : `${lighten(0.4, String(customColours.hue))}`,
+                bg     : String(`${lighten(0.4, String(customColours.hue))}`),
                 border : String(customColours.hue),
                 text   : String(customColours.hue)
             },
             isActive   : {
-                bg     : `${lighten(0.2, String(customColours.hue))}`,
+                bg     : String(`${lighten(0.2, String(customColours.hue))}`),
                 border : String(customColours.hue),
                 text   : String(customColours.hue)
             },
@@ -114,7 +133,7 @@ export const FictoanTheme = {
                 spinnerBorder : String(customColours.hue)
             },
             isDisabled : {
-                bg     : `${lighten(0.4, String(customColours.hue))}`,
+                bg     : String(`${lighten(0.4, String(customColours.hue))}`),
                 border : String(customColours.hue),
                 text   : String(customColours.hue)
             }
@@ -124,15 +143,15 @@ export const FictoanTheme = {
                 bg           : String(defaultColours.transparent),
                 border       : String(customColours.hue),
                 text         : String(customColours.hue),
-                borderRadius : "4px"
+                borderRadius : String(globalVariables.borderRadius)
             },
             onHover    : {
-                bg     : `${lighten(0.40, String(customColours.hue))}`,
+                bg     : String(`${lighten(0.40, String(customColours.hue))}`),
                 border : String(defaultColours.transparent),
                 text   : String(customColours.hue)
             },
             isActive   : {
-                bg     : `${lighten(0.32, String(customColours.hue))}`,
+                bg     : String(`${lighten(0.32, String(customColours.hue))}`),
                 border : String(defaultColours.transparent),
                 text   : String(customColours.hue)
             },
@@ -148,15 +167,39 @@ export const FictoanTheme = {
     },
 
 
-    //  CARD  /////////////////////////////////////////////////////////////////
+    // CARD ///////////////////////////////////////////////////////////////////
     card : {
         bg           : String(defaultColours.white),
-        border       : `${lighten(0.96, String(defaultColours.black))}`,
-        borderRadius : "4px"
+        border       : String(`${lighten(0.96, String(defaultColours.black))}`),
+        borderRadius : String(globalVariables.borderRadius)
     },
 
 
-    //  RULE  /////////////////////////////////////////////////////////////////
+    // CHECKBOX ///////////////////////////////////////////////////////////////
+    checkBox : {
+        square : {
+            default    : {
+                bg           : String(defaultColours.slate20),
+                borderRadius : String(globalVariables.borderRadius)
+            },
+            onHover    : {
+                bg : String(defaultColours.slate40)
+            },
+            isChecked  : {
+                bg : String(customColours.hue)
+            },
+            isDisabled : {
+                bg : String(defaultColours.slate10)
+            }
+        },
+        check  : {
+            default : {
+                border : String(defaultColours.white)
+            }
+        }
+    },
+
+    // RULE ///////////////////////////////////////////////////////////////////
     hr : {
         default   : {
             bg     : String(defaultColours.blue80),
@@ -176,15 +219,14 @@ export const FictoanTheme = {
         }
     },
 
-
-    //  INPUT  ////////////////////////////////////////////////////////////////
+    // INPUT //////////////////////////////////////////////////////////////////
     inputField : {
         default    : {
             bg           : String(defaultColours.white),
             border       : String(defaultColours.slate40),
             label        : String(customColours.shade),
             text         : String(customColours.shade),
-            borderRadius : "4px",
+            borderRadius : String(globalVariables.borderRadius),
             helpText     : {
                 text  : String(defaultColours.slate60),
                 scale : "92%"
@@ -236,10 +278,57 @@ export const FictoanTheme = {
         }
     },
 
-    select : {
-        chevron : String(customColours.hue)
+
+    // INFO-PANEL  ////////////////////////////////////////////////////////////
+    infoPanel : {
+        bg            : String(defaultColours.white),
+        border        : String(defaultColours.slate20),
+        dismissButton : {
+            color        : String(defaultColours.slate90),
+            borderRadius : String(globalVariables.borderRadius)
+        }
     },
 
+
+    // NOTIFICATION ///////////////////////////////////////////////////////////
+    notification : {
+        generic : {
+            bg           : String(defaultColours.white),
+            text         : String(customColours.shade),
+            borderRadius : String(globalVariables.borderRadius)
+        },
+        kinds   : {
+            info    : {
+                bg     : String(`${lighten(0.32, String(defaultColours.blue60))}`),
+                border : String(defaultColours.blue60)
+            },
+            warning : {
+                bg     : String(`${lighten(0.32, String(defaultColours.amber))}`),
+                border : String(defaultColours.amber)
+            },
+            error   : {
+                bg     : String(`${lighten(0.32, String(defaultColours.red90))}`),
+                border : String(defaultColours.red90)
+            },
+            success : {
+                bg     : String(`${lighten(0.32, String(defaultColours.green90))}`),
+                border : String(defaultColours.green90)
+            }
+        }
+    },
+
+
+    // PROGRESSBAR  ///////////////////////////////////////////////////////////
+    progressBar : {
+        bg           : String(defaultColours.slate20),
+        fill         : String(customColours.hue),
+        label        : String(customColours.shade),
+        value        : String(customColours.shade),
+        borderRadius : String(globalVariables.borderRadius)
+    },
+
+
+    // RADIO BUTTON ///////////////////////////////////////////////////////////
     radioButton : {
         inset  : {
             default    : {
@@ -262,115 +351,24 @@ export const FictoanTheme = {
         }
     },
 
-    //  CHECKBOX  /////////////////////////////////////////////////////////////
-    checkBox : {
-        square : {
-            default    : {
-                bg : String(defaultColours.slate20)
-            },
-            onHover    : {
-                bg : String(defaultColours.slate40)
-            },
-            isChecked  : {
-                bg : String(customColours.hue)
-            },
-            isDisabled : {
-                bg : String(defaultColours.slate10)
-            }
-        },
-        check  : {
-            default : {
-                border : String(defaultColours.white)
-            }
-        }
-    },
 
-    //  SWITCH  ///////////////////////////////////////////////////////////////
-    toggleSwitch : {
-        case     : {
-            default    : {
-                bg : defaultColours.slate30
-            },
-            onHover    : {
-                bg : defaultColours.green40
-            },
-            isChecked  : {
-                bg : defaultColours.green90
-            },
-            isDisabled : {
-                bg : defaultColours.grey
-            }
-        },
-        actuator : {
-            default    : {
-                bg : defaultColours.white
-            },
-            onHover    : {
-                bg : defaultColours.white
-            },
-            isChecked  : {
-                bg : defaultColours.white
-            },
-            isDisabled : {
-                bg : defaultColours.grey70
-            }
-        }
+    // DROPDOWN ///////////////////////////////////////////////////////////////
+    select : {
+        chevron : String(customColours.hue)
     },
 
 
-    //  INFO PANEL  ///////////////////////////////////////////////////////////
-    infoPanel : {
-        bg            : String(defaultColours.white),
-        border        : String(defaultColours.slate20),
-        dismissButton : {
-            color : String(defaultColours.slate90)
-        }
-    },
-
-
-    //  NOTIFICATION  /////////////////////////////////////////////////////////
-    notification : {
-        default : {
-            bg   : String(defaultColours.white),
-            text : String(customColours.shade)
-        },
-        kinds   : {
-            info    : {
-                border : String(defaultColours.blue60)
-            },
-            warning : {
-                border : String(defaultColours.amber)
-            },
-            error   : {
-                border : String(defaultColours.red90)
-            },
-            success : {
-                border : String(defaultColours.green90)
-            }
-        }
-    },
-
-
-    //  PROGRESS BAR  /////////////////////////////////////////////////////////
-    progressBar : {
-        bg           : String(defaultColours.slate20),
-        fill         : String(customColours.hue),
-        label        : String(customColours.shade),
-        value        : String(customColours.shade),
-        borderRadius : "4px"
-    },
-
-
-    //  SIDEBAR  //////////////////////////////////////////////////////////////
+    // SIDEBAR ////////////////////////////////////////////////////////////////
     sidebar : {
-        width : "240px",
+        width : String("240px"),
         bg    : String(defaultColours.white),
 
         isCollapsed : {
             width : "48px",
             label : {
-                text : String(defaultColours.white),
-                bg   : String(customColours.hue)
+                text         : String(defaultColours.white),
+                bg           : String(customColours.hue),
+                borderRadius : String(globalVariables.borderRadius)
             }
         },
 
@@ -435,7 +433,7 @@ export const FictoanTheme = {
             },
             default : {
                 bg     : String(defaultColours.white),
-                text   : `${lighten(0.24, String(customColours.shade))}`,
+                text   : String(`${lighten(0.24, String(customColours.shade))}`),
                 weight : 400,
                 scale  : 92
             },
@@ -456,12 +454,18 @@ export const FictoanTheme = {
     },
 
 
-    //  TABLE  ////////////////////////////////////////////////////////////////
+    // SPINNER ////////////////////////////////////////////////////////////////
+    spinner : {
+        color : String(defaultColours.teal)
+    },
+
+
+    // TABLE //////////////////////////////////////////////////////////////////
     table : {
-        bg      : String(defaultColours.white),
-        text    : String(customColours.shade),
-        border  : String(defaultColours.slate40),
-        striped : {
+        bg         : String(defaultColours.white),
+        text       : String(customColours.shade),
+        border     : String(defaultColours.slate40),
+        striped    : {
             header : {
                 bg : String(defaultColours.blue40)
             },
@@ -469,38 +473,38 @@ export const FictoanTheme = {
                 bg : String(defaultColours.slate20)
             }
         },
-        onHover : {
+        onHover    : {
             bg   : String(defaultColours.amber20),
             text : String(customColours.shade)
-        }
-    },
-
-    tablePagination : {
-        bg   : String(defaultColours.white),
-        text : String(defaultColours.grey),
-        svg  : {
-            onHover : {
-                stroke : String(defaultColours.slate60)
+        },
+        pagination : {
+            bg           : String(defaultColours.white),
+            text         : String(defaultColours.grey),
+            borderRadius : String(globalVariables.borderRadius),
+            navIcon      : {
+                onHover : {
+                    stroke : String(defaultColours.slate60)
+                }
             }
         }
     },
 
 
-    //  TABS  ////////////////////////////////////////////////////////////////
+    // TABS ///////////////////////////////////////////////////////////////////
     tabs : {
         label : {
             default    : {
-                text : `${lighten(0.16, String(defaultColours.grey))}`
+                text : String(`${lighten(0.16, String(defaultColours.grey))}`)
             },
             onHover    : {
-                text : `${lighten(0.16, String(customColours.hue))}`
+                text : String(`${lighten(0.16, String(customColours.hue))}`)
             },
             isActive   : {
                 border : String(customColours.hue),
                 text   : String(customColours.hue)
             },
             isDisabled : {
-                text : `${darken(0.24, String(defaultColours.slate))}`
+                text : String(`${darken(0.24, String(defaultColours.slate))}`)
             },
             hasAlert   : {
                 circle : {
@@ -512,7 +516,7 @@ export const FictoanTheme = {
     },
 
 
-    //  TEXT  /////////////////////////////////////////////////////////////////
+    // TEXT ///////////////////////////////////////////////////////////////////
     text : {
         font : {
             sans  : "sans-serif",
@@ -526,7 +530,7 @@ export const FictoanTheme = {
             color      : String(defaultColours.grey),
             weight     : 400,
             lineHeight : 1.64,
-            subtext    : defaultColours.slate80
+            subtext    : String(defaultColours.slate80)
         },
 
         headings : {
@@ -559,10 +563,11 @@ export const FictoanTheme = {
                 scale : 80
             },
             block  : {
-                bg         : `${lighten(0.02, String(defaultColours.slate10))}`,
-                text       : String(defaultColours.blue70),
-                scale      : 80,
-                lineHeight : 1.8
+                bg           : String(`${lighten(0.02, String(defaultColours.slate10))}`),
+                text         : String(defaultColours.blue70),
+                scale        : 80,
+                lineHeight   : 1.8,
+                borderRadius : String(globalVariables.borderRadius)
             },
             prism  : {
                 tokens : {
@@ -620,20 +625,49 @@ export const FictoanTheme = {
         },
 
         kbd : {
-            bg   : String(defaultColours.grey10),
-            text : String(defaultColours.grey)
+            bg           : String(defaultColours.grey10),
+            text         : String(defaultColours.grey),
+            borderRadius : String(globalVariables.borderRadius)
         }
     },
 
 
-    //  TOAST  ////////////////////////////////////////////////////////////////
+    // TOAST //////////////////////////////////////////////////////////////////
     toast : {
         bg   : String(defaultColours.slate10),
         text : String(defaultColours.black)
     },
 
-    //  LOADER  ///////////////////////////////////////////////////////////////
-    spinner : {
-        color : String(defaultColours.teal)
-    }
+
+    // SWITCH /////////////////////////////////////////////////////////////////
+    toggleSwitch : {
+        case     : {
+            default    : {
+                bg : String(defaultColours.slate30)
+            },
+            onHover    : {
+                bg : String(defaultColours.green40)
+            },
+            isChecked  : {
+                bg : String(defaultColours.green90)
+            },
+            isDisabled : {
+                bg : String(defaultColours.grey)
+            }
+        },
+        actuator : {
+            default    : {
+                bg : String(defaultColours.white)
+            },
+            onHover    : {
+                bg : String(defaultColours.white)
+            },
+            isChecked  : {
+                bg : String(defaultColours.white)
+            },
+            isDisabled : {
+                bg : String(defaultColours.grey70)
+            }
+        }
+    },
 };

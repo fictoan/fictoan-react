@@ -91,13 +91,62 @@ export const TypographyStyled = css`
     .text-large  { font-size : 128%; }
     .text-huge   { font-size : 160%; }
 
-    /*  Colour of highlight and text colour
-    - for Firefox browsers  */
+    // CODE ///////////////////////////////////////////////////////////////////
+    code { font-family : ${(props: GlobalStyledProps) => props.theme.text.font.mono}; }
+
+    /*  Inline code  =================================  */
+    :not(pre) > code {
+        margin           : 8px 0;
+        border-radius    : ${(props: GlobalStyledProps) => props.theme.text.code.block.borderRadius};
+        padding          : 2px 8px;
+        border           : none;
+        background-color : ${(props: GlobalStyledProps) => props.theme.text.code.inline.bg};
+        color            : ${(props: GlobalStyledProps) => props.theme.text.code.inline.text};
+        font-size        : ${(props: GlobalStyledProps) => props.theme.text.code.inline.scale}%;
+        font-weight      : normal;
+        white-space      : pre-wrap;
+    }
+
+    @media all and (max-width : 720px) {
+        code,
+        :not(pre) > code {
+            word-wrap   : break-word;
+            white-space : normal;
+        }
+
+        pre { padding : 16px; }
+    }
+
+    /*  Keyboard key element  =================================  */
+    kbd {
+        display          : inline-block;
+        font-family      : ${(props: GlobalStyledProps) => props.theme.text.font.mono};
+        margin           : 0 4px;
+        padding          : 4px 8px;
+        color            : ${(props: GlobalStyledProps) => props.theme.text.kbd.text};
+        background-color : ${(props: GlobalStyledProps) => props.theme.text.kbd.bg};
+        cursor           : pointer;
+        font-size        : 14px;
+        line-height      : 1.4;
+        border-radius    : ${(props: GlobalStyledProps) => props.theme.text.kbd.borderRadius};
+        text-shadow      : 0 1px 0 #fff;
+        box-shadow       : 0 3px 0 0 rgba(0, 0, 0, 0.16);
+        user-select      : none;
+
+        &:active {
+            transform  : translateY(3px);
+            box-shadow : none;
+        }
+    }
+
+    // TEXT SELECTION /////////////////////////////////////////////////////////
+    // for Firefox browsers
     ::-moz-selection {
         background : ${(props: GlobalStyledProps) => props.theme.text.selection.bg};
         color      : ${(props: GlobalStyledProps) => props.theme.text.selection.text};
     }
-    //  Same thing - for Webkit browsers
+
+    // Same thing - for Webkit browsers
     ::selection {
         background : ${(props: GlobalStyledProps) => props.theme.text.selection.bg};
         color      : ${(props: GlobalStyledProps) => props.theme.text.selection.text};

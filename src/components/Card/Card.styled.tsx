@@ -1,13 +1,20 @@
+///////////////////////////////////////////////////////////////////////////////
+// CARD
+// The card is a simple box that encloses content within, and is one of the
+// oft-used components in modern UI.
+///////////////////////////////////////////////////////////////////////////////
+
 import styled from "styled-components";
 
 import { CardProps } from "./Card";
+import { globalVariables } from "../../styles/theme";
 
 
 export const CardStyled = styled.div`
     position : relative;
     width    : 100%;
 
-    &[class*="border-"] { border-width : ${(props: CardProps) => props.theme.globals.borderWidth}; }
+    &[class*="border-"] { border-width : ${globalVariables.borderWidth}; }
 
     &:not([class*="border-"]) { border : 1px solid ${(props: CardProps) => props.theme.card.border}; }
     

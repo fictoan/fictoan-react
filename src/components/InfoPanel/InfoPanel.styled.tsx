@@ -58,8 +58,9 @@ export const InfoPanelStyled = styled.aside`
         backdrop-filter  : blur(2px);
         border           : solid ${(props : InfoPanelProps) => props.theme.infoPanel.border};
         border-width     : 1px 0 1px 1px;
-        border-radius    : 4px 0 0 4px;
         box-shadow       : -4px 0 4px -1px rgba(0, 0, 0, 8%);
+        border-radius    :
+                ${(props : InfoPanelProps) => props.theme.infoPanel.dismissButton.borderRadius} 0 0 ${(props : InfoPanelProps) => props.theme.infoPanel.dismissButton.borderRadius};
 
         &::before {
             display      : block;
@@ -76,7 +77,7 @@ export const InfoPanelStyled = styled.aside`
             cursor       : pointer;
         }
     }
-    
+
     .info-panel-content-wrapper {
         width      : 100%;
         height     : 100%;

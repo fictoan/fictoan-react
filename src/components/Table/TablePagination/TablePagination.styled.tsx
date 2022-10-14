@@ -20,17 +20,17 @@ export const TablePaginationStyled = styled.div`
             position         : relative;
             align-self       : center;
             white-space      : nowrap;
-            background-color : ${(props: TablePaginationProps) => props.theme.tablePagination.bg};
-            color            : ${(props: TablePaginationProps) => props.theme.tablePagination.text};
+            background-color : ${(props: TablePaginationProps) => props.theme.table.pagination.bg};
+            color            : ${(props: TablePaginationProps) => props.theme.table.pagination.text};
             padding          : 2px 8px;
             font-size        : 14px;
-            border-radius    : 4px;
+            border-radius    : ${(props: TablePaginationProps) => props.theme.table.pagination.borderRadius};
             transition       : all 0.2s;
             box-shadow       : 0 1px 1px -4px rgba(0, 0, 0, 0.04), 0 8px 12px -4px rgba(0, 0, 0, 0.08);
         }
 
         &:hover {
-            svg { stroke: ${(props: TablePaginationProps) => props.theme.tablePagination.svg.onHover.stroke}; }
+            svg { stroke: ${(props: TablePaginationProps) => props.theme.table.pagination.navIcon.onHover.stroke}; }
 
             span {
                 opacity    : 1;

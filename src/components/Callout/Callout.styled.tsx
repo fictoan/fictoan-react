@@ -1,6 +1,8 @@
 import transparentize from "polished/lib/color/transparentize";
-import { defaultColours } from "../../styles/DefaultColours";
 import styled from "styled-components";
+
+import { defaultColours } from "../../styles/DefaultColours";
+import { globalVariables } from "../../styles/theme";
 
 export const CalloutStyled = styled.div`
     display       : block;
@@ -8,7 +10,7 @@ export const CalloutStyled = styled.div`
     word-break    : break-word;
     border-style  : solid;
     padding       : 16px;
-    border-radius : 4px;
+    border-radius : ${globalVariables.borderRadius};
 
     &.info {
         background-color : ${transparentize(0.80, defaultColours.blue)};
