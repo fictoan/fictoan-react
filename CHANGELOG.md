@@ -1,5 +1,8 @@
 # CHANGELOG
 
+### 0.42.1
+- Fix styling issues in `Tabs`
+
 ### 0.42.0
 - Padding and margin values can now be configured via the `globals` object in the theme
 - Convert utility styles into JS file from plain CSS to access props
