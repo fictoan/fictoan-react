@@ -1,5 +1,8 @@
 # CHANGELOG
 
+### 0.42.2
+- Fix broken npm publish action
+
 ### 0.42.1
 - Fix styling issues in `Tabs`
 
