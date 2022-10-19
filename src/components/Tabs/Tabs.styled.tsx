@@ -7,9 +7,12 @@ export const TabsStyled = styled.section`
         align-items : center;
 
         ul.tab-labels-list {
+            padding : 0;
             display : flex;
 
-            p { position : relative; }
+            li {
+                list-style-type : none;
+            }
 
             li:not(last-child) > p {
                 margin-right  : 24px;
@@ -18,6 +21,8 @@ export const TabsStyled = styled.section`
                 padding       : 16px 0;
                 border-bottom : 2px solid transparent;
             }
+
+            p { position : relative; }
         
             p:hover { color : ${props => props.theme.tabs.label.onHover.text}; }
 
