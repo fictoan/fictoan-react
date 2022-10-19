@@ -1,5 +1,8 @@
 # CHANGELOG
 
+### 0.42.3
+- Update command for installing dependencies and build in CI
+
 ### 0.42.2
 - Fix broken npm publish action
 
