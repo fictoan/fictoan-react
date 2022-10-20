@@ -15,7 +15,7 @@ jobs:
       with:
         node-version: '12.x'
     - name: Install deps and build
-      uses: npm ci && npm run build
+      run: npm ci && npm run build
     - name: Publish if version has been updated
       uses: JS-DevTools/npm-publish@v1
       with: # Token is a required input
