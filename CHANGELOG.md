@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### 0.43.0
+- Fix npm publish action workflow
+- Fix unique key issue for `Tabs`
+
 ### 0.42.3
 - Update command for installing dependencies and build in CI
 
