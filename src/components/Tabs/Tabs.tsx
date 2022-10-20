@@ -57,9 +57,8 @@ export const Tabs = React.forwardRef(
                         <nav>
                             <ul className="tab-labels-list">
                                 {tabs.map((tab) => (
-                                    <li>
+                                    <li key={tab.key}>
                                         <Text
-                                            key={tab.key}
                                             className={`is-clickable ${tab.key === activeTab.key ? "is-active" : ""} }`}
                                             onClick={() => handleTabChange(tab)}
                                             marginBottom="none"
