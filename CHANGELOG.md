@@ -1,5 +1,10 @@
 # CHANGELOG
 
+### 0.44.0
+- Rename `style` prop for `Heading` and `Text` to `fontStyle` since `style` is a reserved
+  prop name in React and causes the react/style-prop-object eslint rule to complain in any
+  project with basic react-app rules setup.
+
 ### 0.43.0
 - Fix npm publish action workflow
 - Fix unique key issue for `Tabs`

@@ -5,7 +5,7 @@ import { CommonAndHTMLProps, SpacingTypes, WeightTypes } from "../Element/consta
 
 // prettier-ignore
 export interface TextCustomProps {
-    style     ? : "sans-serif" | "serif" | "monospace";
+    fontStyle ? : "sans-serif" | "serif" | "monospace";
     weight    ? : WeightTypes;
     isSubtext ? : boolean;
     size      ? : SpacingTypes;
@@ -16,7 +16,10 @@ export type TextElementType = HTMLParagraphElement;
 export type TextProps = Omit<CommonAndHTMLProps<TextElementType>, keyof TextCustomProps> & TextCustomProps;
 
 export const Text = React.forwardRef(
-    ({ weight, size, style = "sans-serif", align, isSubtext, ...props }: TextProps, ref: React.Ref<TextElementType>) => {
+    (
+        { weight, size, fontStyle = "sans-serif", align, isSubtext, ...props }: TextProps,
+        ref: React.Ref<TextElementType>
+    ) => {
         let classNames = [];
 
         if (weight) {
@@ -27,8 +30,8 @@ export const Text = React.forwardRef(
             classNames.push(`text-${size}`);
         }
 
-        if (style) {
-            classNames.push(`font-${style}`);
+        if (fontStyle) {
+            classNames.push(`font-${fontStyle}`);
         }
 
         if (isSubtext) {
