@@ -1,5 +1,8 @@
 # CHANGELOG
 
+### 0.45.0
+- Add support for defaultTabIndex props in `Tabs` component because by default it select first tab as active tab
+
 ### 0.44.0
 - Rename `style` prop for `Heading` and `Text` to `fontStyle` since `style` is a reserved
   prop name in React and causes the react/style-prop-object eslint rule to complain in any
