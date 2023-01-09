@@ -7,6 +7,7 @@ export const TabsStyled = styled.section`
         align-items : center;
 
         ul.tab-labels-list {
+            margin  : 0;
             padding : 0;
             display : flex;
 

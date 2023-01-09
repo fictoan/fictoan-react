@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### 0.45.1
+- Export props types for all components
+- Fix excess margin issue for `Tabs` labels
+
 ### 0.45.0
 - Add support for defaultTabIndex props in `Tabs` component because by default it select first tab as active tab
 
