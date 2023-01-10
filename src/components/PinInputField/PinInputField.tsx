@@ -14,6 +14,7 @@ type PinInputFieldCustomProps = {
     mask           ? : boolean;
     otp            ? : boolean;
     autoFocus      ? : boolean;
+    disableCopyPaste      ? : boolean;
     spacing        ? : SpacingTypes;
 };
 
@@ -37,6 +38,7 @@ export const PinInputField = React.forwardRef(
             mask = false,
             otp = false,
             autoFocus = false,
+            disableCopyPaste = false,
             spacing = "small",
         }: PinInputFieldProps,
         ref: React.Ref<PinInputFieldElementType>
@@ -197,6 +199,8 @@ export const PinInputField = React.forwardRef(
                         autoComplete={otp ? "one-time-code" : "off"}
                         value={values[i] || ""}
                         autoFocus={autoFocus && i === 0}
+                        onCopy={e=> disableCopyPaste && e.preventDefault()}
+                        onPaste={e=> disableCopyPaste && e.preventDefault()}
                     />
                 ))}
             </Element>
