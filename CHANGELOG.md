@@ -1,5 +1,8 @@
 # CHANGELOG
 
+### 0.45.1
+- Addtoggle for copy/paste functionality in the `PinInputField` component 
+
 ### 0.45.0
 - Add support for defaultTabIndex props in `Tabs` component because by default it select first tab as active tab
 
