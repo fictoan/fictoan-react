@@ -1,2 +1,2 @@
-export { ExpandableContent } from "./ExpandableContent";
+export { ExpandableContent, ExpandableContentProps } from "./ExpandableContent";
 export { ExpandableContentStyled } from "./ExpandableContent.styled";

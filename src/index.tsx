@@ -1,104 +1,110 @@
 // BADGE  /////////////////////////////////////////////////////////////////////
-export { Badge, BadgeStyled } from "./components/Badge";
+export { Badge, BadgeStyled, BadgeProps } from "./components/Badge";
 
 // BOTTOM DRAWER  /////////////////////////////////////////////////////////////
-export { BottomDrawer, BottomDrawerStyled } from "./components/BottomDrawer";
+export { BottomDrawer, BottomDrawerStyled, BottomDrawerProps } from "./components/BottomDrawer";
 
 // BREADCRUMBS  ///////////////////////////////////////////////////////////////
 export {
-    BreadcrumbsWrapper, BreadcrumbsWrapperStyled,
-    BreadcrumbItem, BreadcrumbItemStyled
+    BreadcrumbsWrapper, BreadcrumbsWrapperStyled, BreadcrumbsWrapperProps,
+    BreadcrumbItem, BreadcrumbItemStyled, BreadcrumbItemProps
 } from "./components/Breadcrumbs";
 
 // BUTTON  ////////////////////////////////////////////////////////////////////
-export { Button, ButtonStyled } from "./components/Button";
+export { Button, ButtonStyled, ButtonProps } from "./components/Button";
 
 // CALLOUT  ///////////////////////////////////////////////////////////////////
-export { Callout, CalloutStyled } from "./components/Callout";
+export { Callout, CalloutStyled, CalloutProps } from "./components/Callout";
 
 // CARD  //////////////////////////////////////////////////////////////////////
-export { Card, CardStyled } from "./components/Card";
+export { Card, CardStyled, CardProps } from "./components/Card";
 
 // CODE  //////////////////////////////////////////////////////////////////////
-export { CodeBlock, CodeStyled } from "./components/CodeBlock";
+export { CodeBlock, CodeBlockStyled, CodeBlockProps } from "./components/CodeBlock";
 
 // ELEMENT  ///////////////////////////////////////////////////////////////////
-export { Element } from "./components/Element";
+export { Element, ElementProps, CommonAndHTMLProps } from "./components/Element";
 
 // ACCORDION  /////////////////////////////////////////////////////////////////
-export { ExpandableContent, ExpandableContentStyled } from "./components/ExpandableContent";
+export { ExpandableContent, ExpandableContentStyled, ExpandableContentProps } from "./components/ExpandableContent";
 
 // H-RULE  ////////////////////////////////////////////////////////////////////
-export { HRule, HRuleStyled } from "./components/HRule";
+export { HRule, HRuleStyled, HRuleProps } from "./components/HRule";
 
 // FORM  //////////////////////////////////////////////////////////////////////
 export {
-    FormWrapper, FormWrapperStyled,
-    FormItem, FormItemStyled,
-    FormItemGroup, FormItemGroupStyled,
-    InputField, InputFieldStyled,
-    TextArea, TextAreaStyled,
-    InputLabel,
-    Select, SelectStyled,
-    FileUpload,
-    RadioGroup,
-    RadioButton, RadioButtonStyled,
-    CheckBox, CheckBoxStyled,
-    Switch, SwitchStyled
+    FormWrapper, FormWrapperStyled, FormWrapperProps,
+    FormItem, FormItemStyled, FormItemProps, 
+    FormItemGroup, FormItemGroupStyled, FormItemGroupProps,
+    InputField, InputFieldStyled, InputFieldProps,
+    TextArea, TextAreaStyled, TextareaProps,
+    InputLabel, InputLabelProps,
+    Select, SelectStyled, SelectProps,
+    FileUpload, FileUploadProps,
+    RadioGroup, RadioGroupProps,
+    RadioButton, RadioButtonStyled, RadioButtonProps,
+    CheckBox, CheckBoxStyled, CheckboxProps,
+    Switch, SwitchStyled, SwitchProps
 } from "./components/Form";
 
 // LAYOUT  ////////////////////////////////////////////////////////////////////
-export { Row, RowStyled } from "./components/Row";
-export { Portion, PortionStyled } from "./components/Portion";
+export { Row, RowStyled, RowProps } from "./components/Row";
+export { Portion, PortionStyled, PortionProps } from "./components/Portion";
 
 // INFO PANEL  ////////////////////////////////////////////////////////////////
-export { InfoPanel, InfoPanelStyled } from "./components/InfoPanel";
+export { InfoPanel, InfoPanelStyled, InfoPanelProps } from "./components/InfoPanel";
 
 // NOTIFICATIONS  /////////////////////////////////////////////////////////////
 export {
-    NotificationsWrapper, NotificationsWrapperStyled,
-    NotificationItem, NotificationItemStyled
+    NotificationsWrapper, NotificationsWrapperStyled, NotificationsWrapperProps,
+    NotificationItem, NotificationItemStyled, NotificationItemProps
 } from "./components/Notification";
 
 // PIN INPUT FIELD  ///////////////////////////////////////////////////////////
-export { PinInputField, PinInputStyled } from "./components/PinInputField";
+export { PinInputField, PinInputStyled, PinInputFieldProps } from "./components/PinInputField";
 
 // PROGRESS BAR  //////////////////////////////////////////////////////////////
-export { ProgressBar, ProgressBarStyled } from "./components/ProgressBar";
+export { ProgressBar, ProgressBarStyled, ProgressBarProps } from "./components/ProgressBar";
 
 // SIDEBAR and CONTENT WRAPPER ////////////////////////////////////////////////
 export {
-    SidebarWrapper, SidebarWrapperStyled,
-    SidebarHeader, SidebarHeaderStyled,
-    SidebarItem, SidebarItemStyled,
-    SidebarItemIcon, SidebarItemIconStyled,
-    SidebarItemText, SidebarItemTextStyled,
-    SidebarFooter, SidebarFooterStyled
+    SidebarWrapper, SidebarWrapperStyled, SidebarWrapperProps,
+    SidebarHeader, SidebarHeaderStyled, SidebarHeaderProps,
+    SidebarItem, SidebarItemStyled, SidebarItemProps,
+    SidebarItemIcon, SidebarItemIconStyled, SidebarItemIconProps,
+    SidebarItemText, SidebarItemTextStyled, SidebarItemTextProps,
+    SidebarFooter, SidebarFooterStyled, SidebarFooterProps
 } from "./components/Sidebar";
 
-export { ContentWrapper, ContentWrapperStyled } from "./components/ContentWrapper";
+export { ContentWrapper, ContentWrapperStyled, ContentWrapperProps } from "./components/ContentWrapper";
 
 // SPINNER  ///////////////////////////////////////////////////////////////////
-export { Spinner, SpinnerStyled } from "./components/Spinner";
+export { Spinner, SpinnerStyled, SpinnerProps } from "./components/Spinner";
 
 // TABLE  /////////////////////////////////////////////////////////////////////
-export { Table } from "./components/Table/Table";
-export { TablePagination } from "./components/Table/TablePagination/TablePagination";
+export { 
+    Table, TableStyled, TableProps,
+    TablePagination, TablePaginationStyled, TablePaginationProps
+} from "./components/Table";
 
 // TABS  //////////////////////////////////////////////////////////////////////
-export { Tabs, TabsStyled } from "./components/Tabs";
+export { Tabs, TabsStyled, TabsProps } from "./components/Tabs";
 
-// TEXT  //////////////////////////////////////////////////////////////////////
-export { Text, Heading, TypographyStyled } from "./components/Typography";
+// TYPOGRAPHY  //////////////////////////////////////////////////////////////////////
+export { 
+    Text, TextProps,
+    Heading, HeadingProps,
+    TypographyStyled
+} from "./components/Typography";
 
 // TOAST  /////////////////////////////////////////////////////////////////////
 export {
-    ToastsWrapper, ToastsWrapperStyled,
-    ToastItem, ToastItemStyled
+    ToastsWrapper, ToastsWrapperStyled, ToastsWrapperProps,
+    ToastItem, ToastItemStyled, ToastItemProps
 } from "./components/Toast";
 
 // TOOLTIP  ///////////////////////////////////////////////////////////////////
-export { Tooltip, TooltipStyled } from "./components/Tooltip";
+export { Tooltip, TooltipStyled, TooltipProps } from "./components/Tooltip";
 
 // THEME  /////////////////////////////////////////////////////////////////////
 export { defaultColours } from "./styles/DefaultColours";
