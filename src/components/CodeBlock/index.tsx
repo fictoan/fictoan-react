@@ -1,2 +1,2 @@
-export { CodeBlock } from "./CodeBlock";
-export { CodeStyled } from "./Code.styled";
+export { CodeBlock, CodeBlockProps } from "./CodeBlock";
+export { CodeStyled as CodeBlockStyled } from "./Code.styled";
