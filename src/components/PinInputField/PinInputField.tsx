@@ -8,14 +8,14 @@ import { PinInputStyled } from "./PinInputField.styled";
 
 // prettier-ignore
 type PinInputFieldCustomProps = {
-    numberOfFields   : number;
-    onChange       ? : (value : string) => void;
-    type           ? : "alphanumeric" | "number";
-    mask           ? : boolean;
-    otp            ? : boolean;
-    autoFocus      ? : boolean;
-    disableCopyPaste      ? : boolean;
-    spacing        ? : SpacingTypes;
+    numberOfFields            : number;
+    onChange                ? : (value : string) => void;
+    type                    ? : "alphanumeric" | "number";
+    mask                    ? : boolean;
+    otp                     ? : boolean;
+    autoFocus               ? : boolean;
+    pasteFromClipboard      ? : "enabled" | "disabled";
+    spacing                 ? : SpacingTypes;
 };
 
 export type PinInputFieldElementType = HTMLDivElement;
@@ -38,7 +38,7 @@ export const PinInputField = React.forwardRef(
             mask = false,
             otp = false,
             autoFocus = false,
-            disableCopyPaste = false,
+            pasteFromClipboard = "enabled",
             spacing = "small",
         }: PinInputFieldProps,
         ref: React.Ref<PinInputFieldElementType>
@@ -199,8 +199,8 @@ export const PinInputField = React.forwardRef(
                         autoComplete={otp ? "one-time-code" : "off"}
                         value={values[i] || ""}
                         autoFocus={autoFocus && i === 0}
-                        onCopy={e=> disableCopyPaste && e.preventDefault()}
-                        onPaste={e=> disableCopyPaste && e.preventDefault()}
+                        onCopy={e=> pasteFromClipboard === "disabled" && e.preventDefault()}
+                        onPaste={e=> pasteFromClipboard === "disabled" && e.preventDefault()}
                     />
                 ))}
             </Element>
