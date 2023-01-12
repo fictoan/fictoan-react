@@ -2,9 +2,6 @@
 ### 0.45.2
 - Fix `PinInputField` prop pasteFromClipbaord to be a toggle (enabled/disabled) rather than a boolean.
 
-### 0.45.2
-- Fix `PinInputField` prop pasteFromClipbaord to be a toggle (enabled/disabled) rather than a boolean.
-
 
 ### 0.45.1
 - Export props types for all components
