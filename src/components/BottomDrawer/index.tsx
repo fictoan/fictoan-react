@@ -1,2 +1,2 @@
-export { BottomDrawer } from "./BottomDrawer";
+export { BottomDrawer, BottomDrawerProps } from "./BottomDrawer";
 export { BottomDrawerStyled } from "./BottomDrawer.styled";

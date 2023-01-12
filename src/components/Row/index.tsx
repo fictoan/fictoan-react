@@ -1,2 +1,2 @@
-export { Row } from "./Row";
+export { Row, RowProps } from "./Row";
 export { RowStyled } from "./Row.styled";
