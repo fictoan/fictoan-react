@@ -1,6 +1,9 @@
 # CHANGELOG
 
 ### 0.45.1
+- Fix prop name for disable copy/paste to pasteFromClipboard which takes either enabled or disabled as parameters for `PinInput Field`
+
+### 0.45.1
 - Export props types for all components
 - Fix excess margin issue for `Tabs` labels
 - Add toggle for disabling copy/paste functionality in the `PinInputField` component 
