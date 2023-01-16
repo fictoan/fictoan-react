@@ -1,6 +1,6 @@
 # CHANGELOG
 
-### 0.45.1
+### 0.45.2
 - Fix prop name for disable copy/paste to pasteFromClipboard which takes either enabled or disabled as parameters for `PinInput Field`
 
 ### 0.45.1
