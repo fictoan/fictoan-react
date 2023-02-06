@@ -23,6 +23,13 @@ export const NotificationsWrapper = React.forwardRef(
     ) => {
         let classNames = [];
 
+        if(ref.current.childElementCount > 0){
+            classNames.push(show)
+        }
+        else{
+            classNames.push(hide)
+        }
+
         if (position) {
             classNames.push(position);
         }

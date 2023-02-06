@@ -5,12 +5,14 @@ import { NotificationItemStyled } from "../NotificationItem/NotificationItem.sty
 
 export const NotificationsWrapperStyled = styled.div`
     position   : fixed;
-    display    : flex;
     width      : 400px;
     z-index    : 5000000;
     padding    : 2vw;
     overflow-y : auto;
     overflow-x : hidden;
+
+    &.show { display    : flex; }
+    &.hide { display    : none; }
 
     &.left  { left : 0; }
     
