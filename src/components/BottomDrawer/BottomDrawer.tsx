@@ -13,6 +13,7 @@ export interface BottomDrawerCustomProps {
     overlayColour       ? : ColourPropTypes;
     overlayColor        ? : ColourPropTypes;
     closeOnClickOutside ? : boolean;
+    showDissmissButton  ? : boolean;
 }
 
 export type BottomDrawerElementType = HTMLDivElement;
@@ -29,6 +30,7 @@ export const BottomDrawer = React.forwardRef(
             padding,
             bgColor,
             bgColour,
+            showDissmissButton = true,
             ...props
         }: BottomDrawerProps,
         ref: React.Ref<BottomDrawerElementType>
@@ -69,7 +71,14 @@ export const BottomDrawer = React.forwardRef(
                             bgColor={bgColor}
                             bgColour={bgColour}
                         >
-                            <Element as="div" className="dismiss-button" onClick={closeBottomDrawer} role="button" />
+                            {showDissmissButton && (
+                                <Element
+                                    as="div"
+                                    className="dismiss-button"
+                                    onClick={closeBottomDrawer}
+                                    role="button"
+                                />
+                            )}
                             {children}
                         </Element>
                     </Element>
