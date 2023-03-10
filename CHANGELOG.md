@@ -1,5 +1,8 @@
 # CHANGELOG
 
+### 0.45.3
+- Add optional `isDismissable` prop for showing a close button for `BottomDrawer` *(true by default)*
+
 ### 0.45.2
 - Fix prop name for disable copy/paste to pasteFromClipboard which takes either enabled or disabled as parameters for `PinInput Field`
 
