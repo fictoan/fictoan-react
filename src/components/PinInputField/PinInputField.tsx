@@ -125,8 +125,12 @@ export const PinInputField = React.forwardRef(
 
             if (eventValue.length > 1 && i < length - 1) {
                 if (validate(eventValue, type)) {
-                    const nextValue = eventValue.split("").filter((_, index) => index < length);
-                    setValues(nextValue);
+                    const nextValue = eventValue.split("").filter((_, index) => index > 0 && i + index - 1 < length);
+                    setValues((values) =>
+                        values.map((v, index) =>
+                            index >= i && index < i + nextValue.length ? nextValue[index - i] : v
+                        )
+                    );
                     focus(i + nextValue.length < length ? i + nextValue.length : length - 1);
                     onChange?.(nextValue.join(""));
                 }
@@ -199,8 +203,8 @@ export const PinInputField = React.forwardRef(
                         autoComplete={otp ? "one-time-code" : "off"}
                         value={values[i] || ""}
                         autoFocus={autoFocus && i === 0}
-                        onCopy={e=> pasteFromClipboard === "disabled" && e.preventDefault()}
-                        onPaste={e=> pasteFromClipboard === "disabled" && e.preventDefault()}
+                        onCopy={(e) => pasteFromClipboard === "disabled" && e.preventDefault()}
+                        onPaste={(e) => pasteFromClipboard === "disabled" && e.preventDefault()}
                     />
                 ))}
             </Element>
