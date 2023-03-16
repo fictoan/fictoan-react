@@ -1,5 +1,8 @@
 # CHANGELOG
 
+### 0.45.4
+- Fix PinInputField behaviour on paste or replace at position
+
 ### 0.45.3
 - Add optional `isDismissable` prop for showing a close button for `BottomDrawer` *(true by default)*
 
