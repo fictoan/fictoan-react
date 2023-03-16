@@ -92,40 +92,43 @@ export const PinInputField = React.forwardRef(
                 const isComplete =
                     value !== "" &&
                     nextValues.length === length &&
-                    nextValues.every((inputValue) => inputValue != null && inputValue !== "");
+                    nextValues.every((inputValue) => inputValue != null && inputValue !== "") &&
+                    index == length - 1;
 
                 if (!isComplete) {
+                    setMoveFocus(true);
                     focusNext(index);
                 }
             },
             [focusNext, length, onChange, values]
         );
 
-        const getNextValue = useCallback((value: string, eventValue: string) => {
-            let nextValue = eventValue;
-            if (value?.length > 0) {
-                if (value[0] === eventValue.charAt(0)) {
-                    nextValue = eventValue.charAt(1);
-                } else if (value[0] === eventValue.charAt(1)) {
-                    nextValue = eventValue.charAt(0);
-                }
-            }
-            return nextValue;
-        }, []);
-
         const handleInputChange = (event: React.FormEvent<HTMLInputElement>, i: number) => {
             const eventValue = event.currentTarget.value;
             const currentValue = values[i];
-            const nextValue = getNextValue(currentValue, eventValue);
 
-            if (nextValue === "") {
+            if (eventValue === "") {
                 setValue("", i);
                 return;
             }
 
+            // Handle scenario where multiple characters are entered in a single InputField
             if (eventValue.length > 1 && i < length - 1) {
                 if (validate(eventValue, type)) {
-                    const nextValue = eventValue.split("").filter((_, index) => index > 0 && i + index - 1 < length);
+                    let nextValue: string[] = [];
+                    // In all cases, we need to ensure characters longer than the remaining fields are removed.
+                    if (currentValue == "") {
+                        // Case: Current input field is empty
+                        nextValue = eventValue.split("").filter((_, index) => i + index < length);
+                    } else if (event.currentTarget.selectionEnd === eventValue.length) {
+                        // Case: Current field has a value and cursor is after it
+                        nextValue = eventValue.split("").filter((_, index) => index > 0 && i + index - 1 < length);
+                    } else {
+                        // Case: Current field has a value and cursor is before it
+                        nextValue = eventValue
+                            .split("")
+                            .filter((_, index) => index < eventValue.length - 1 && i + index < length);
+                    }
                     setValues((values) =>
                         values.map((v, index) =>
                             index >= i && index < i + nextValue.length ? nextValue[index - i] : v
@@ -135,10 +138,17 @@ export const PinInputField = React.forwardRef(
                     onChange?.(nextValue.join(""));
                 }
             } else {
+                let nextValue = eventValue;
+                if (currentValue?.length > 0) {
+                    if (currentValue[0] === eventValue.charAt(0)) {
+                        nextValue = eventValue.charAt(1);
+                    } else if (currentValue[0] === eventValue.charAt(1)) {
+                        nextValue = eventValue.charAt(0);
+                    }
+                }
                 if (validate(nextValue, type)) {
                     setValue(nextValue, i);
                 }
-                setMoveFocus(true);
             }
         };
 
@@ -170,9 +180,22 @@ export const PinInputField = React.forwardRef(
 
         const onFocus = (e: React.FocusEvent<HTMLInputElement>, i: number) => {
             setFocusedIndex(i);
+        };
+
+        // When moving around the InputElements using tab key, browsers automatically select
+        // the value (if it exists) in the InputElement - which we want to disable. Additionally,
+        // when an existing value is selected/highlighted and pasted over, there is no way to
+        // clearly distinguish between the other 2 scenarios of pasting by keeping the cursor before
+        // and after the existing value. Specific example: If the existing value is 5, the event
+        // when highlighting and pasting '567' is the same as placing the cursor before the existing
+        // value and pasting '67'. By disabling this, we eliminate one of these cases.
+        // Is this a hack? Yes. Is there a better way? IDK. Does it matter? Not unless there is a
+        // valid reason for users to need selecting a single InputElement within a PinInput.
+        const onSelect = (e: React.SyntheticEvent<HTMLInputElement, Event>) => {
+            const target = e.target as HTMLInputElement;
             setTimeout(() => {
                 // https://github.com/facebook/react/issues/6483
-                e.target.setSelectionRange(e.target.value.length, e.target.value.length);
+                target.setSelectionRange(target.value.length, target.value.length);
             }, 0);
         };
 
@@ -198,6 +221,7 @@ export const PinInputField = React.forwardRef(
                         onChange={(e) => handleInputChange(e, i)}
                         onKeyDown={(e) => onKeyDown(e, i)}
                         onFocus={(e) => onFocus(e, i)}
+                        onSelect={(e) => onSelect(e)}
                         onBlur={onBlur}
                         placeholder={focusedIndex !== i ? `\u2981` : undefined}
                         autoComplete={otp ? "one-time-code" : "off"}
