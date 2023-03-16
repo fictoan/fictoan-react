@@ -34,6 +34,5 @@ export const Default: FictoanStory<typeof PinInputField> = createStoryFromTempla
 Default.args = {
     numberOfFields: 4,
     type: "number",
-    mask: true,
     otp: true,
 };
