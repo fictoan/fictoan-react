@@ -103,34 +103,42 @@ export const PinInputField = React.forwardRef(
             [focusNext, length, onChange, values]
         );
 
-        const handleInputChange = (event: React.FormEvent<HTMLInputElement>, i: number) => {
+        const handleInputChange = (event: React.FormEvent<HTMLInputElement>, inputFieldIndex: number) => {
             const eventValue = event.currentTarget.value;
-            const currentValue = values[i];
+            const currentValue = values[inputFieldIndex];
 
             if (eventValue === "") {
-                setValue("", i);
+                setValue("", inputFieldIndex);
                 return;
             }
 
             // Handle scenario where multiple characters are entered in a single InputField
-            if (eventValue.length > 1 && i < length - 1) {
+            if (eventValue.length > 1 && inputFieldIndex < length - 1) {
                 if (validate(eventValue, type)) {
                     let nextValue: string[] = [];
                     // In all cases, we need to ensure characters longer than the remaining fields are removed.
                     if (currentValue == "") {
                         // Case: Current input field is empty
-                        nextValue = eventValue.split("").filter((_, j) => i + j < length);
+                        nextValue = eventValue.split("").filter((_, j) => inputFieldIndex + j < length);
                     } else if (event.currentTarget.selectionEnd === eventValue.length) {
                         // Case: Current field has a value and cursor is after it
-                        nextValue = eventValue.split("").filter((_, j) => j > 0 && i + j - 1 < length);
+                        nextValue = eventValue.split("").filter((_, j) => j > 0 && inputFieldIndex + j - 1 < length);
                     } else {
                         // Case: Current field has a value and cursor is before it
-                        nextValue = eventValue.split("").filter((_, j) => j < eventValue.length - 1 && i + j < length);
+                        nextValue = eventValue
+                            .split("")
+                            .filter((_, j) => j < eventValue.length - 1 && inputFieldIndex + j < length);
                     }
                     setValues((values) =>
-                        values.map((v, j) => (j >= i && j < i + nextValue.length ? nextValue[j - i] : v))
+                        values.map((v, j) =>
+                            j >= inputFieldIndex && j < inputFieldIndex + nextValue.length
+                                ? nextValue[j - inputFieldIndex]
+                                : v
+                        )
                     );
-                    focus(i + nextValue.length < length ? i + nextValue.length : length - 1);
+                    focus(
+                        inputFieldIndex + nextValue.length < length ? inputFieldIndex + nextValue.length : length - 1
+                    );
                     onChange?.(nextValue.join(""));
                 }
             } else {
@@ -143,7 +151,7 @@ export const PinInputField = React.forwardRef(
                     }
                 }
                 if (validate(nextValue, type)) {
-                    setValue(nextValue, i);
+                    setValue(nextValue, inputFieldIndex);
                 }
             }
         };
