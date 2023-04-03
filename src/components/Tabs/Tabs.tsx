@@ -10,7 +10,7 @@ import { TabsStyled } from "./Tabs.styled";
 // prettier-ignore
 interface TabType {
     key     : string;
-    label   : string;
+    label   : React.ReactNode;
     content : React.ReactNode;
 }
 
@@ -19,7 +19,7 @@ export interface TabsCustomProps {
     tabs : TabType[];
     /** wrapper to render additional content inside the nav along with tab labels */
     additionalNavContentWrapper?: React.ReactNode; 
-    defaultActiveTab?: string;
+    defaultActiveTab?: React.ReactNode;
 }
 
 export type TabsElementType = HTMLDivElement;
@@ -27,9 +27,11 @@ export type TabsProps = Omit<CommonAndHTMLProps<TabsElementType>, keyof TabsCust
 
 export const Tabs = React.forwardRef(
     ({ tabs, additionalNavContentWrapper, defaultActiveTab, ...props }: TabsProps, ref: React.Ref<TabsElementType>) => {
-        const index = tabs.findIndex(tab => tab.key === defaultActiveTab);
+        const index = tabs.findIndex((tab) => tab.key === defaultActiveTab);
         const defaultTabIndex = index > -1 ? index : 0;
-        const [activeTab, setActiveTab] = React.useState<TabType | undefined>(tabs.length > 0 ? tabs[defaultTabIndex] : undefined);
+        const [activeTab, setActiveTab] = React.useState<TabType | undefined>(
+            tabs.length > 0 ? tabs[defaultTabIndex] : undefined
+        );
         const [isExiting, setIsExiting] = React.useState<boolean>(false);
 
         const handleTabChange = (tab: TabType) => {
