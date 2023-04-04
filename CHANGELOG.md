@@ -1,5 +1,7 @@
 # CHANGELOG
 
+### 0.45.5
+- Add Tab component label prop to be used as reactnode for custom label
 ### 0.45.4
 - Fix PinInputField behaviour on paste or replace at position
 
