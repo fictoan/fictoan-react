@@ -1,7 +1,12 @@
 # CHANGELOG
 
+### 0.46.5
+- Add an imperative reset handler to reset `PinInputField` from the parent component with ref
+- Add a `focusFirstInputOnReset` prop for the above change, to opt out of focusing on first input on reset
+
 ### 0.45.5
 - Add Tab component label prop to be used as reactnode for custom label
+
 ### 0.45.4
 - Fix PinInputField behaviour on paste or replace at position
 

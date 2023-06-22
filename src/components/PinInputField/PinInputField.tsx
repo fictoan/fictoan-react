@@ -1,4 +1,4 @@
-import React, { createRef, useCallback, useEffect, useState } from "react";
+import React, { createRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from "react";
 
 import { Element } from "../Element/Element";
 import { CommonAndHTMLProps, SpacingTypes } from "../Element/constants";
@@ -8,17 +8,18 @@ import { PinInputStyled } from "./PinInputField.styled";
 
 // prettier-ignore
 type PinInputFieldCustomProps = {
-    numberOfFields       : number;
-    onChange           ? : (value : string) => void;
-    type               ? : "alphanumeric" | "number";
-    mask               ? : boolean;
-    otp                ? : boolean;
-    autoFocus          ? : boolean;
-    pasteFromClipboard ? : "enabled" | "disabled";
-    spacing            ? : SpacingTypes;
+    numberOfFields           : number;
+    onChange               ? : (value : string) => void;
+    type                   ? : "alphanumeric" | "number";
+    mask                   ? : boolean;
+    otp                    ? : boolean;
+    autoFocus              ? : boolean;
+    pasteFromClipboard     ? : "enabled" | "disabled";
+    spacing                ? : SpacingTypes;
+    focusFirstInputOnReset ? : boolean;
 };
 
-export type PinInputFieldElementType = HTMLDivElement;
+export type PinInputFieldElementType = HTMLDivElement & { reset: () => void };
 export type PinInputFieldProps = Omit<CommonAndHTMLProps<PinInputFieldElementType>, keyof PinInputFieldCustomProps> &
     PinInputFieldCustomProps;
 
@@ -40,9 +41,11 @@ export const PinInputField = React.forwardRef(
             autoFocus = false,
             pasteFromClipboard = "enabled",
             spacing = "small",
+            focusFirstInputOnReset = true,
         }: PinInputFieldProps,
         ref: React.Ref<PinInputFieldElementType>
     ) => {
+        const pinInputFieldRef = useRef<PinInputFieldElementType>(null);
         const [inputRefs, setInputRefs] = useState<React.RefObject<HTMLInputElement>[]>([]);
         const [values, setValues] = useState<string[]>([]);
         const [moveFocus, setMoveFocus] = useState<boolean>(true);
@@ -71,6 +74,19 @@ export const PinInputField = React.forwardRef(
             });
         }, [length, autoFocus]);
 
+        useImperativeHandle(
+            ref,
+            () => {
+                return {
+                    ...pinInputFieldRef.current,
+                    reset() {
+                        handleResetPinInput();
+                    },
+                };
+            },
+            [inputRefs]
+        );
+
         const focusNext = useCallback(
             (index: number) => {
                 if (!moveFocus) return;
@@ -81,6 +97,15 @@ export const PinInputField = React.forwardRef(
             },
             [focus, length, moveFocus]
         );
+
+        const handleResetPinInput = useCallback(() => {
+            setValues(Array(length).fill(""));
+            onChange?.("");
+            if (focusFirstInputOnReset) {
+                focus(0);
+                setFocusedIndex(0);
+            }
+        }, [length, onChange, focus]);
 
         const setValue = useCallback(
             (value: string, index: number) => {
@@ -214,7 +239,7 @@ export const PinInputField = React.forwardRef(
         }
 
         return (
-            <Element<PinInputFieldElementType> as={PinInputStyled} classNames={classNames} ref={ref}>
+            <Element<PinInputFieldElementType> as={PinInputStyled} classNames={classNames} ref={pinInputFieldRef}>
                 {[...Array(length)].map((_, i) => (
                     <InputField
                         key={i}
