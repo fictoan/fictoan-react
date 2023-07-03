@@ -61,7 +61,7 @@ export {
 } from "./components/Notification";
 
 // PIN INPUT FIELD  ///////////////////////////////////////////////////////////
-export { PinInputField, PinInputStyled, PinInputFieldProps } from "./components/PinInputField";
+export { PinInputField, PinInputStyled,PinInputFieldElementType, PinInputFieldProps } from "./components/PinInputField";
 
 // PROGRESS BAR  //////////////////////////////////////////////////////////////
 export { ProgressBar, ProgressBarStyled, ProgressBarProps } from "./components/ProgressBar";
