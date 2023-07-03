@@ -19,7 +19,7 @@ type PinInputFieldCustomProps = {
     focusFirstInputOnReset ? : boolean;
 };
 
-export type PinInputFieldElementType = HTMLDivElement & { reset?: () => void };
+export type PinInputFieldElementType = HTMLDivElement & { reset: () => void };
 export type PinInputFieldProps = Omit<CommonAndHTMLProps<PinInputFieldElementType>, keyof PinInputFieldCustomProps> &
     PinInputFieldCustomProps;
 
