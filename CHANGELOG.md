@@ -1,5 +1,8 @@
 # CHANGELOG
 
+### 0.46.6
+- Export custom `PinInputFieldElementType` for supporting custom ref types in TypeScript
+
 ### 0.46.5
 - Add an imperative reset handler to reset `PinInputField` from the parent component with ref
 - Add a `focusFirstInputOnReset` prop for the above change, to opt out of focusing on first input on reset
