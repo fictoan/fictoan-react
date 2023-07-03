@@ -1,2 +1,2 @@
-export { PinInputField, PinInputFieldProps } from "./PinInputField";
+export { PinInputField, PinInputFieldProps,PinInputFieldElementType } from "./PinInputField";
 export { PinInputStyled } from "./PinInputField.styled";
