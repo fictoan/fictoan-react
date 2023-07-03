@@ -19,7 +19,7 @@ type PinInputFieldCustomProps = {
     focusFirstInputOnReset ? : boolean;
 };
 
-export type PinInputFieldElementType = HTMLDivElement & { reset?: () => void };
+export type PinInputFieldElementType = HTMLDivElement & { reset: () => void };
 export type PinInputFieldProps = Omit<CommonAndHTMLProps<PinInputFieldElementType>, keyof PinInputFieldCustomProps> &
     PinInputFieldCustomProps;
 
@@ -105,7 +105,7 @@ export const PinInputField = React.forwardRef(
                 focus(0);
                 setFocusedIndex(0);
             }
-        }, [length, onChange, focus]);
+        }, [length, onChange, focus, focusFirstInputOnReset]);
 
         const setValue = useCallback(
             (value: string, index: number) => {
