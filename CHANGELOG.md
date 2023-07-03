@@ -1,6 +1,6 @@
 # CHANGELOG
 
-### 0.46.6
+### 0.46.7
 - Export custom `PinInputFieldElementType` for supporting custom ref types in TypeScript
 
 ### 0.46.5
