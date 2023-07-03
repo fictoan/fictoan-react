@@ -1,6 +1,9 @@
 # CHANGELOG
 
-### 0.46.6
+### 0.46.8
+- Fix `focusFirstInputOnReset` prop behaviour to properly set focus on first input on reset
+
+### 0.46.7
 - Export custom `PinInputFieldElementType` for supporting custom ref types in TypeScript
 
 ### 0.46.5
