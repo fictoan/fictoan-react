@@ -1,13 +1,26 @@
 import React from "react";
-import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
+import {Meta, StoryObj} from "@storybook/react";
 import { FileUpload } from "./FileUpload";
 
-const Template: FictoanStory<typeof FileUpload> = (args) => <FileUpload {...args} />;
-Template.displayName = FileUpload.displayName;
+const meta: Meta<typeof FileUpload> = {
+    component: FileUpload,
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "This is a FileUpload.",
+            },
+        },
+    },
+};
 
-export const Default: FictoanStory<typeof FileUpload> = createStoryFromTemplate(Template);
-Default.args = {
-    label: "Upload file",
-    id: "file-upload",
-    name: "file",
+export default meta;
+type Story = StoryObj<typeof FileUpload>;
+
+export const Default: Story = {
+    args: {
+        label: "Upload file",
+        id: "file-upload",
+        name: "file",
+    },
 };

@@ -1,12 +1,26 @@
 import React from "react";
-import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
+import { Meta, StoryObj } from "@storybook/react";
 import { ToastItem } from "./ToastItem";
 
-const Template: FictoanStory<typeof ToastItem> = (args) => <ToastItem {...args} />;
-Template.displayName = ToastItem.displayName;
+const meta: Meta<typeof ToastItem> = {
+    component: ToastItem,
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "This is a Toast item.",
+            },
+        },
+    },
+};
 
-export const Default: FictoanStory<typeof ToastItem> = createStoryFromTemplate(Template);
-Default.args = {
-    show: true,
-    showFor: 4000,
+export default meta;
+type Story = StoryObj<typeof ToastItem>;
+
+export const Default: Story = {
+    args: {
+        show: true,
+        showFor: 4000,
+        children: "This is a Toast item.",
+    },
 };

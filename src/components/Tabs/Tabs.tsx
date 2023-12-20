@@ -5,7 +5,7 @@ import { CommonAndHTMLProps } from "../Element/constants";
 import { HRule } from "../HRule/HRule";
 import { Text } from "../Typography/Text";
 
-import { TabsStyled } from "./Tabs.styled";
+import "./tabs.css";
 
 // prettier-ignore
 interface TabType {
@@ -56,7 +56,7 @@ export const Tabs = React.forwardRef(
         }, [tabs]);
 
         return (
-            <Element<TabsElementType> as={TabsStyled} ref={ref} {...props}>
+            <Element<TabsElementType> as="div" data-tabs ref={ref} {...props}>
                 {tabs.length > 0 && activeTab ? (
                     <>
                         <nav>
@@ -75,7 +75,9 @@ export const Tabs = React.forwardRef(
                             </ul>
                             {additionalNavContentWrapper && <>{additionalNavContentWrapper}</>}
                         </nav>
+
                         <HRule kind="secondary" marginTop="none" marginBottom="micro" />
+
                         <Element as="div" className={`tabs-content ${isExiting ? "exiting" : ""}`}>
                             {activeTab.content}
                         </Element>

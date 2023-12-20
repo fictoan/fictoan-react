@@ -3,7 +3,7 @@ import React from "react";
 import { Element } from "../../Element/Element";
 import { CommonAndHTMLProps } from "../../Element/constants";
 
-import { SidebarWrapperStyled } from "./SidebarWrapper.styled";
+import "./sidebar-wrapper.css";
 
 // prettier-ignore
 export interface SidebarWrapperCustomProps {
@@ -22,6 +22,6 @@ export const SidebarWrapper = React.forwardRef(
             classNames.push("collapsed");
         }
 
-        return <Element<SidebarWrapperElementType> as={SidebarWrapperStyled} classNames={classNames} {...props} />;
+        return <Element<SidebarWrapperElementType> as="aside" data-sidebar-wrapper classNames={classNames} {...props} />;
     }
 );

@@ -1,2 +1,1 @@
-export { HRule, HRProps as HRuleProps } from "./HRule";
-export { HRuleStyled } from "./HRule.styled";
+export { HRule, type HRProps } from "./HRule";

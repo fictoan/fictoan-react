@@ -3,7 +3,7 @@ import React from "react";
 import { Element } from "../../Element/Element";
 import { CommonAndHTMLProps } from "../../Element/constants";
 
-import { SidebarItemTextStyled } from "../SidebarItemText/SidebarItemText.styled";
+import "./sidebar-item-text.css";
 
 // prettier-ignore
 export interface SidebarItemTextCustomProps {
@@ -33,7 +33,8 @@ export const SidebarItemText = React.forwardRef(
 
         return (
             <Element<SidebarItemTextElementType>
-                as={SidebarItemTextStyled}
+                as="p"
+                data-sidebar-item-text
                 ref={ref}
                 classNames={classNames}
                 {...props}

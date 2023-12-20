@@ -4,9 +4,9 @@ import { CommonAndHTMLProps } from "../../Element/constants";
 
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 import { InputCommonProps, InputIconProps } from "../BaseInputComponent/constants";
-
-import { InputFieldStyled } from "./InputField.styled";
 import { InputLabelCustomProps } from "../InputLabel/InputLabel";
+
+import "./input-field.css";
 
 export type InputFieldElementType = HTMLInputElement;
 export type InputFieldProps = CommonAndHTMLProps<InputFieldElementType> &
@@ -15,5 +15,5 @@ export type InputFieldProps = CommonAndHTMLProps<InputFieldElementType> &
     InputIconProps;
 
 export const InputField = React.forwardRef(({ ...props }: InputFieldProps, ref: React.Ref<InputFieldElementType>) => {
-    return <BaseInputComponent<InputFieldElementType> as={InputFieldStyled} ref={ref} placeholder=" " {...props} />;
+    return <BaseInputComponent<InputFieldElementType> as="input" data-input ref={ref} placeholder=" " {...props} />;
 });

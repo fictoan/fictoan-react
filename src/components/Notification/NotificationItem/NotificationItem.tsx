@@ -3,7 +3,7 @@ import React, { useState, useEffect, SyntheticEvent } from "react";
 import { Element } from "../../Element/Element";
 import { CommonAndHTMLProps } from "../../Element/constants";
 
-import { NotificationItemStyled } from "./NotificationItem.styled";
+import "./notification-item.css";
 
 // prettier-ignore
 export interface NotificationItemCustomProps {
@@ -26,7 +26,8 @@ export const NotificationItem = React.forwardRef(
         { show, onCloseCallback, kind, children, isDismissible, showFor, ...props }: NotificationItemProps,
         ref: React.Ref<NotificationItemElementType>
     ) => {
-        let classNames = [];
+        let classNames: string[] = [];
+
         const [isVisible, setIsVisible] = useState<boolean>(show);
 
         useEffect(() => {
@@ -41,7 +42,7 @@ export const NotificationItem = React.forwardRef(
                 : undefined;
 
             return () => {
-                clearTimeout(timer);
+                timer && clearTimeout(timer);
             };
         }, [show]);
 
@@ -65,7 +66,8 @@ export const NotificationItem = React.forwardRef(
         return (
             isVisible && (
                 <Element<NotificationItemElementType>
-                    as={NotificationItemStyled}
+                    as="div"
+                    data-notification-item
                     ref={ref}
                     classNames={[...classNames, !show ? "dismissed" : ""]}
                     onTransitionEnd={onTransitionEnd}

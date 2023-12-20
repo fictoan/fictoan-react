@@ -28,11 +28,11 @@ export const BaseInputComponent = React.forwardRef(
                 as={Component}
                 ref={ref}
                 classNames={[
-                    className,
-                    iconLeft && "with-icon-left",
-                    iconRight && "with-icon-right",
-                    validateThis && "validate-this",
-                ].concat(classNames)}
+                    className || "",
+                    iconLeft ? "with-icon-left" : "",
+                    iconRight ? "with-icon-right" : "",
+                    validateThis ? "validate-this" : "",
+                ].concat(classNames || [])}
                 {...inputProps}
             />
 

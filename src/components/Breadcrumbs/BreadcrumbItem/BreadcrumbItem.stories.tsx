@@ -1,11 +1,24 @@
-import React from "react";
-import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
+import { Meta, StoryObj } from "@storybook/react";
+
 import { BreadcrumbItem } from "./BreadcrumbItem";
 
-const Template: FictoanStory<typeof BreadcrumbItem> = (args) => <BreadcrumbItem {...args} />;
-Template.displayName = BreadcrumbItem.displayName;
+const meta: Meta<typeof BreadcrumbItem> = {
+    component: BreadcrumbItem,
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "This is a Breadcrumb item.",
+            },
+        },
+    },
+};
 
-export const Default: FictoanStory<typeof BreadcrumbItem> = createStoryFromTemplate(Template);
-Default.args = {
-    children: "Breadcrumb Item",
+export default meta;
+type Story = StoryObj<typeof BreadcrumbItem>;
+
+export const Default: Story = {
+    args: {
+        children: "This is a Breadcrumb item.",
+    },
 };

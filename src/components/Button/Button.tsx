@@ -3,7 +3,7 @@ import React from "react";
 import { Element } from "../Element/Element";
 import { CommonAndHTMLProps } from "../Element/constants";
 
-import { ButtonStyled } from "./Button.styled";
+import "./Button.css";
 
 // prettier-ignore
 export interface ButtonCustomProps {
@@ -18,7 +18,7 @@ export type ButtonElementType = HTMLButtonElement;
 export type ButtonProps = Omit<CommonAndHTMLProps<ButtonElementType>, keyof ButtonCustomProps> & ButtonCustomProps;
 
 export const Button = React.forwardRef(
-    ({ size, shape, kind, isLoading, hasDelete, ...props }: ButtonProps, ref: React.Ref<ButtonElementType>) => {
+    ({ size="medium", shape, kind, isLoading, hasDelete, ...props }: ButtonProps, ref: React.Ref<ButtonElementType>) => {
         let classNames = [];
 
         if (kind) {
@@ -41,6 +41,6 @@ export const Button = React.forwardRef(
             classNames.push("has-delete");
         }
 
-        return <Element<ButtonElementType> as={ButtonStyled} ref={ref} classNames={classNames} {...props} />;
+        return <Element<ButtonElementType> as="button" data-button ref={ref} classNames={classNames} {...props} />;
     }
 );

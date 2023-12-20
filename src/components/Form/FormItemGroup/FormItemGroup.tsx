@@ -3,7 +3,7 @@ import React from "react";
 import { Element } from "../../Element/Element";
 import { CommonAndHTMLProps } from "../../Element/constants";
 
-import { FormItemGroupStyled } from "./FormItemGroup.styled";
+import "./form-item-group.css";
 
 // prettier-ignore
 export interface FormItemGroupCustomProps {
@@ -36,7 +36,7 @@ export const FormItemGroup = React.forwardRef(
         }
 
         return (
-            <Element<FormItemGroupElementType> as={FormItemGroupStyled} ref={ref} classNames={classNames} {...props}>
+            <Element<FormItemGroupElementType> as="div" data-form-item-group ref={ref} classNames={classNames} {...props}>
                 {children}
             </Element>
         );

@@ -1,24 +1,57 @@
-import React from "react";
-import { createStoryFromTemplate, FictoanStory } from "../../utils/storyUtils";
+import type { Meta, StoryObj } from "@storybook/react";
+
 import { HRule } from "./HRule";
 
-const Template: FictoanStory<typeof HRule> = (args) => <HRule {...args} />;
-Template.displayName = HRule.displayName;
-
-export const Default: FictoanStory<typeof HRule> = createStoryFromTemplate(Template);
-Default.args = {};
-
-export const Primary: FictoanStory<typeof HRule> = createStoryFromTemplate(Template);
-Primary.args = {
-    kind: "primary",
+const meta: Meta<typeof HRule> = {
+    component: HRule,
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "This is an HRule, plain and simple.",
+            },
+        },
+    },
 };
 
-export const Secondary: FictoanStory<typeof HRule> = createStoryFromTemplate(Template);
-Secondary.args = {
-    kind: "secondary",
+export default meta;
+type Story = StoryObj<typeof HRule>;
+
+export const Primary: Story = {
+    args: {
+        kind: "primary",
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: "This is the primary HRule.",
+            },
+        },
+    },
 };
 
-export const Tertiary: FictoanStory<typeof HRule> = createStoryFromTemplate(Template);
-Tertiary.args = {
-    kind: "tertiary",
+export const Secondary: Story = {
+    args: {
+        kind: "secondary",
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: "This is the secondary HRule.",
+            },
+        },
+    },
+};
+
+export const Tertiary: Story = {
+    args: {
+        kind: "tertiary",
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: "This is the tertiary HRule.",
+            },
+        },
+    },
 };

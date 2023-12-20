@@ -1,0 +1,17 @@
+/* MEASUREMENTS ///////////////////////////////////////////////////////////// */
+:root {
+    --global-border-radius : 8px;
+    --global-border-width  : 1px;
+}
+
+:root {
+    --nano   : 8px;
+    --micro  : 24px;
+    --tiny   : 2vmax;
+    --small  : 4vmax;
+    --medium : 8vmax;
+    --large  : 16vmax;
+    --huge   : 24vmax;
+}
+
+/* FONTS //////////////////////////////////////////////////////////////////// */

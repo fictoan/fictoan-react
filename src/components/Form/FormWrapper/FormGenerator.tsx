@@ -50,7 +50,7 @@ const FormElements: Record<string, ElementType> = {
     Empty: "div",
 };
 
-const getFormItem = (formField: FormFieldsType, onFieldsChange: React.FormEventHandler | null): ReactNode => {
+const getFormItem = (formField: Omit<FormFieldsConfig, "mobileSpan" | "tabletLandscapeSpan" | "isHorizontal" | "desktopSpan" | "tabletPortraitSpan">, onFieldsChange: React.FormEventHandler | undefined): React.ReactNode => {
     const { as: elementName, ...formFieldProps } = formField;
 
     return (
@@ -66,9 +66,9 @@ const getFormItem = (formField: FormFieldsType, onFieldsChange: React.FormEventH
 
 export const generateFormThroughConfig = (
     fields: FormFieldsConfig[],
-    onFieldsChange: React.FormEventHandler | null,
-    spacing: SpacingTypes
-): ReactNode => {
+    onFieldsChange: React.FormEventHandler | undefined,
+    spacing: SpacingTypes | undefined,
+): React.ReactNode => {
     let formChildren: ReactNode[] = [];
 
     for (const i in fields) {
@@ -89,5 +89,5 @@ export const generateFormThroughConfig = (
             </Portion>
         );
     }
-    return <Row gutters={spacing}>{formChildren}</Row>;
+    return <Row layout="grid" gutters={spacing}>{formChildren}</Row>;
 };

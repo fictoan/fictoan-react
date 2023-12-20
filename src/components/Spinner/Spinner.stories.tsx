@@ -1,9 +1,19 @@
-import React from "react";
-import { createStoryFromTemplate, FictoanStory } from "../../utils/storyUtils";
+import { Meta, StoryObj } from "@storybook/react";
 import { Spinner } from "./Spinner";
 
-const Template: FictoanStory<typeof Spinner> = (args) => <Spinner {...args} />;
-Template.displayName = Spinner.displayName;
+const meta: Meta<typeof Spinner> = {
+    component: Spinner,
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "This is a Spinner.",
+            },
+        },
+    },
+};
 
-export const Default: FictoanStory<typeof Spinner> = createStoryFromTemplate(Template);
-Default.args = {};
+export default meta;
+type Story = StoryObj<typeof Spinner>;
+
+export const Default: Story = {};

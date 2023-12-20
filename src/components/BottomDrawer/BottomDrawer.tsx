@@ -3,7 +3,7 @@ import React from "react";
 import { Element } from "../Element/Element";
 import { ColourPropTypes, CommonAndHTMLProps } from "../Element/constants";
 
-import { BottomDrawerStyled } from "./BottomDrawer.styled";
+import "./bottom-drawer.css";
 
 // prettier-ignore
 export interface BottomDrawerCustomProps {
@@ -51,7 +51,7 @@ export const BottomDrawer = React.forwardRef(
             !!isOpen && (
                 <>
                     <Element<BottomDrawerElementType>
-                        as={BottomDrawerStyled}
+                        as="div"
                         ref={ref}
                         classNames={classNames}
                         {...props}

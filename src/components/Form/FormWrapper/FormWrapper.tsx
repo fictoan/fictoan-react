@@ -3,9 +3,9 @@ import React from "react";
 import { Element } from "../../Element/Element";
 import { CommonAndHTMLProps, SpacingTypes } from "../../Element/constants";
 import { Callout } from "../../Callout/Callout";
-
-import { FormWrapperStyled } from "./FormWrapper.styled";
 import { FormFieldsConfig, generateFormThroughConfig } from "./FormGenerator";
+
+import "./form-wrapper.css";
 
 // prettier-ignore
 export interface FormWrapperCustomProps {
@@ -35,7 +35,7 @@ export const FormWrapper = React.forwardRef(
         }
 
         return (
-            <Element<FormWrapperElementType> as={FormWrapperStyled} ref={ref} classNames={classNames} {...props}>
+            <Element<FormWrapperElementType> as="form" data-form-wrapper ref={ref} classNames={classNames} {...props}>
                 {children}
 
                 {errorText && <Callout kind="error">{errorText}</Callout>}

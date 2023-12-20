@@ -1,11 +1,23 @@
-import React from "react";
-import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
+import {Meta, StoryObj} from "@storybook/react";
 import { InputLabel } from "./InputLabel";
 
-const Template: FictoanStory<typeof InputLabel> = (args) => <InputLabel {...args} />;
-Template.displayName = InputLabel.displayName;
+const meta: Meta<typeof InputLabel> = {
+    component: InputLabel,
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "This is a InputLabel.",
+            },
+        },
+    },
+};
 
-export const Default: FictoanStory<typeof InputLabel> = createStoryFromTemplate(Template);
-Default.args = {
-    label: "Label for a field",
+export default meta;
+type Story = StoryObj<typeof InputLabel>;
+
+export const Default: Story = {
+    args: {
+        label: "Label for a field",
+    },
 };

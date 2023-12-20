@@ -1,0 +1,30 @@
+[data-sidebar-item-icon] {
+    display      : grid;
+    width        : var(--sidebar-item-icon-width);
+    height       : var(--sidebar-item-icon-width);
+    align-self   : center;
+    justify-self : center;
+
+    /* LINE ICON ============================================================ */
+    &.icon-stroked svg {
+        fill         : none;
+        stroke       : var(--sidebar-item-icon-stroke-default);
+        stroke-width : var(--sidebar-item-icon-stroke-width-default);
+    }
+
+    &:hover.icon-stroked svg {
+        fill   : none;
+        stroke : var(--sidebar-item-icon-stroke-hover);
+    }
+
+    /* FILL ICON ============================================================ */
+    &.icon-filled svg {
+        stroke : none;
+        fill   : var(--sidebar-item-icon-fill-default);
+    }
+
+    &:hover.icon-filled svg {
+        stroke : none;
+        fill   : var(--sidebar-item-icon-fill-hover);
+    }
+}

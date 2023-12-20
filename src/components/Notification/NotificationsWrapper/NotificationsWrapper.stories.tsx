@@ -1,14 +1,32 @@
 import React from "react";
-
-import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
-import { NotificationItem, NotificationItemCustomProps } from "../NotificationItem/NotificationItem";
+import { Meta, StoryObj } from "@storybook/react";
 import { NotificationsWrapper } from "./NotificationsWrapper";
-import { Default as NotificationItemStory } from "../NotificationItem/NotificationItem.stories";
+import { NotificationItem } from "../NotificationItem/NotificationItem";
 
-const Template: FictoanStory<typeof NotificationsWrapper> = (args) => <NotificationsWrapper {...args} />;
-Template.displayName = NotificationsWrapper.displayName;
+const meta: Meta<typeof NotificationsWrapper> = {
+    component: NotificationsWrapper,
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "This is a Notification item.",
+            },
+        },
+    },
+};
 
-export const Default: FictoanStory<typeof NotificationsWrapper> = createStoryFromTemplate(Template);
-Default.args = {
-    children: <NotificationItem {...(NotificationItemStory.args as NotificationItemCustomProps)} />,
+export default meta;
+type Story = StoryObj<typeof NotificationsWrapper>;
+
+export const Default: Story = {
+    render: (args) => (
+        <NotificationsWrapper {...args}>
+            <NotificationItem kind="info" show onCloseCallback={() => null}>
+                This is a notification!
+            </NotificationItem>
+            <NotificationItem kind="error" show onCloseCallback={() => null}>
+                This is another notification!
+            </NotificationItem>
+        </NotificationsWrapper>
+    ),
 };

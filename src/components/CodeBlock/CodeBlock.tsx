@@ -1,56 +1,71 @@
-import React from "react";
-import PrismReactRenderer, { Prism, Language } from "prism-react-renderer";
-
-import { registerLanguage as registerJava } from "./prismjs-components/prism-java";
-import { registerLanguage as registerCSharp } from "./prismjs-components/prism-csharp";
-import { registerLanguage as registerScala } from "./prismjs-components/prism-scala";
-import { registerLanguage as registerRuby } from "./prismjs-components/prism-ruby";
-import { registerLanguage as registerHttp } from "./prismjs-components/prism-http";
-
-registerJava(Prism);
-registerCSharp(Prism);
-registerScala(Prism);
-registerRuby(Prism);
-registerHttp(Prism);
+import React, { Suspense } from "react";
 
 import { CommonAndHTMLProps } from "../Element/constants";
 import { Element } from "../Element/Element";
-import { CodeStyled } from "./Code.styled";
 
-// prettier-ignore
+import "./CodeBlock.css";
+
 export interface CodeBlockCustomProps {
     source   ? : object | string;
-    language ? : Language;
+    language ? : string;
 }
 
 export type CodeBlockElementType = HTMLPreElement;
 export type CodeBlockProps = Omit<CommonAndHTMLProps<CodeBlockElementType>, keyof CodeBlockCustomProps> &
     CodeBlockCustomProps;
 
+const PrismReactRenderer = React.lazy(() =>
+    import("prism-react-renderer").then((prismModule) => {
+        if (prismModule.Highlight) {
+            return { default : prismModule.Highlight };
+        }
+
+        // DON’T REMOVE THE WEIRD SPACING, ITS FOR THE ASCII BOX
+        console.log(
+            `FICTOAN : \x1B[35mLooking\x1B[33m for\x1B[32m syntax\x1B[34m highlighting\x1B[36m?\x1B[31m
+╭──────────────────────────────────────────────────────────────────────────────────────────────────╮
+│   Please install the prism-react-renderer (https://www.npmjs.com/package/prism-react-renderer)   │
+│   package to have syntax highlighting in the CodeBlock component.                                │
+│   For example: \x1b[46m\x1b[30myarn add prism-react-renderer\x1B[0m\x1B[31m                                                     │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────╯`,
+        );
+        const fallbackCodeBlock = ({ code }: { code: string }) => (
+            <pre data-code-block className="module-fallback">
+                {code}
+            </pre>
+        );
+        return { default : fallbackCodeBlock };
+    }),
+);
+
 export const CodeBlock = React.forwardRef(
-    ({ source, ...props }: CodeBlockProps, ref: React.Ref<CodeBlockElementType>) => {
+    ({ source, language = "json", ...props }: CodeBlockProps, ref: React.Ref<CodeBlockElementType>) => {
+        const code = typeof source === "object" ? JSON.stringify(source, null, 2) : source ?? "";
+
         return (
-            <Element<CodeBlockElementType> as={CodeStyled} ref={ref} {...props}>
-                <PrismReactRenderer
-                    code={typeof source === "object" ? JSON.stringify(source, null, 2) : source}
-                    language="json"
-                    {...props}
-                    Prism={Prism}
-                    theme={undefined}
-                >
-                    {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                        <pre ref={ref} className={className} style={style}>
-                            {tokens.map((line, i) => (
-                                <div {...getLineProps({ line, key: i })}>
-                                    {line.map((token, key) => (
-                                        <span {...getTokenProps({ token, key })} />
-                                    ))}
-                                </div>
-                            ))}
+            <Element<CodeBlockElementType> data-code-block as="div" {...props}>
+                <Suspense
+                    fallback={
+                        <pre data-code-block className="suspense-fallback">
+                            {code}
                         </pre>
-                    )}
-                </PrismReactRenderer>
+                    }
+                >
+                    <PrismReactRenderer code={code} language={language} theme={undefined}>
+                        {({ className, tokens, getLineProps, getTokenProps }) => (
+                            <pre ref={ref} className={className}>
+                                {tokens.map((line, i) => (
+                                    <div {...getLineProps({ line, key : i })}>
+                                        {line.map((token, key) => (
+                                            <span {...getTokenProps({ token, key })} />
+                                        ))}
+                                    </div>
+                                ))}
+                            </pre>
+                        )}
+                    </PrismReactRenderer>
+                </Suspense>
             </Element>
         );
-    }
+    },
 );

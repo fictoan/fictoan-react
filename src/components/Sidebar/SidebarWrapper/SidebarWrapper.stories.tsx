@@ -1,52 +1,66 @@
+
 import React from "react";
-import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
+import { Meta, StoryObj } from "@storybook/react";
 import { SidebarWrapper } from "./SidebarWrapper";
-import { Default as SidebarHeader } from "../SidebarHeader/SidebarHeader.stories";
-import { Default as SidebarFooter } from "../SidebarFooter/SidebarFooter.stories";
-import { Default as SidebarItem } from "../SidebarItem/SidebarItem.stories";
-import { Default as SidebarItemText } from "../SidebarItemText/SidebarItemText.stories";
-import { Default as SidebarItemIcon } from "../SidebarItemIcon/SidebarItemIcon.stories";
-import { Default as ExpandableContent } from "../../ExpandableContent/ExpandableContent.stories";
+import { SidebarFooter } from "../SidebarFooter/SidebarFooter";
+import { SidebarHeader } from "../SidebarHeader/SidebarHeader";
+import { SidebarItem } from "../SidebarItem/SidebarItem";
+import { SidebarItemIcon } from "../SidebarItemIcon/SidebarItemIcon";
+import { SidebarItemText } from "../SidebarItemText/SidebarItemText";
+import { ExpandableContent } from "../../ExpandableContent/ExpandableContent";
 
-const Template: FictoanStory<typeof SidebarWrapper> = (args) => <SidebarWrapper {...args} />;
-Template.displayName = SidebarWrapper.displayName;
+const meta: Meta<typeof SidebarWrapper> = {
+    component: SidebarWrapper,
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "This is a Sidebar wrapper.",
+            },
+        },
+    },
+};
 
-export const Default: FictoanStory<typeof SidebarWrapper> = createStoryFromTemplate(Template);
-Default.args = {
-    children: [
-        <SidebarHeader>Sidebar Header</SidebarHeader>,
+export default meta;
+type Story = StoryObj<typeof SidebarWrapper>;
 
-        <SidebarItem hasAlert>
-            <SidebarItemIcon></SidebarItemIcon>
-            <SidebarItemText linkText="Item 1"></SidebarItemText>
-        </SidebarItem>,
-        <SidebarItem>
-            <SidebarItemIcon></SidebarItemIcon>
-            <SidebarItemText linkText="Item 2"></SidebarItemText>
-        </SidebarItem>,
-        <SidebarItem>
-            <SidebarItemIcon></SidebarItemIcon>
-            <SidebarItemText linkText="Item 3"></SidebarItemText>
-        </SidebarItem>,
+export const Default: Story = {
+    render: (args) => (
+        <SidebarWrapper {...args}>
+            <SidebarHeader>Sidebar Header</SidebarHeader>
 
-        <ExpandableContent
-            summary={
+            <SidebarItem hasAlert>
+                <SidebarItemIcon></SidebarItemIcon>
+                <SidebarItemText linkText="Item 1"></SidebarItemText>
+            </SidebarItem>
+            <SidebarItem>
+                <SidebarItemIcon></SidebarItemIcon>
+                <SidebarItemText linkText="Item 2"></SidebarItemText>
+            </SidebarItem>
+            <SidebarItem>
+                <SidebarItemIcon></SidebarItemIcon>
+                <SidebarItemText linkText="Item 3"></SidebarItemText>
+            </SidebarItem>
+
+            <ExpandableContent
+                summary={
+                    <SidebarItem>
+                        <SidebarItemIcon></SidebarItemIcon>
+                        <SidebarItemText linkText="Item Summary" weight="600"></SidebarItemText>
+                    </SidebarItem>
+                }
+            >
                 <SidebarItem>
                     <SidebarItemIcon></SidebarItemIcon>
-                    <SidebarItemText linkText="Item Summary" weight="600"></SidebarItemText>
+                    <SidebarItemText linkText="Nested Item 1"></SidebarItemText>
                 </SidebarItem>
-            }
-        >
-            <SidebarItem>
-                <SidebarItemIcon></SidebarItemIcon>
-                <SidebarItemText linkText="Nested Item 1"></SidebarItemText>
-            </SidebarItem>
-            <SidebarItem>
-                <SidebarItemIcon></SidebarItemIcon>
-                <SidebarItemText linkText="Nested Item 2"></SidebarItemText>
-            </SidebarItem>
-        </ExpandableContent>,
+                <SidebarItem>
+                    <SidebarItemIcon></SidebarItemIcon>
+                    <SidebarItemText linkText="Nested Item 2"></SidebarItemText>
+                </SidebarItem>
+            </ExpandableContent>
 
-        <SidebarFooter padding="micro">Sidebar footer</SidebarFooter>,
-    ],
+            <SidebarFooter padding="micro">Sidebar footer</SidebarFooter>
+        </SidebarWrapper>
+    ),
 };

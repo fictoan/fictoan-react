@@ -1,17 +1,11 @@
-export { SidebarWrapper, SidebarWrapperProps } from "./SidebarWrapper/SidebarWrapper";
-export { SidebarWrapperStyled } from "./SidebarWrapper/SidebarWrapper.styled";
+export { SidebarWrapper, type SidebarWrapperProps } from "./SidebarWrapper/SidebarWrapper";
 
-export { SidebarHeader, SidebarHeaderProps } from "./SidebarHeader/SidebarHeader";
-export { SidebarHeaderStyled } from "./SidebarHeader/SidebarHeader.styled";
+export { SidebarHeader, type SidebarHeaderProps } from "./SidebarHeader/SidebarHeader";
 
-export { SidebarItem, SidebarItemProps } from "./SidebarItem/SidebarItem";
-export { SidebarItemStyled } from "./SidebarItem/SidebarItem.styled";
+export { SidebarItem, type SidebarItemProps } from "./SidebarItem/SidebarItem";
 
-export { SidebarItemIcon, SidebarItemIconProps } from "./SidebarItemIcon/SidebarItemIcon";
-export { SidebarItemIconStyled } from "./SidebarItemIcon/SidebarItemIcon.styled";
+export { SidebarItemIcon, type SidebarItemIconProps } from "./SidebarItemIcon/SidebarItemIcon";
 
-export { SidebarItemText, SidebarItemTextProps } from "./SidebarItemText/SidebarItemText";
-export { SidebarItemTextStyled } from "./SidebarItemText/SidebarItemText.styled";
+export { SidebarItemText, type SidebarItemTextProps } from "./SidebarItemText/SidebarItemText";
 
-export { SidebarFooter, SidebarFooterProps } from "./SidebarFooter/SidebarFooter";
-export { SidebarFooterStyled } from "./SidebarFooter/SidebarFooter.styled";
+export { SidebarFooter, type SidebarFooterProps } from "./SidebarFooter/SidebarFooter";

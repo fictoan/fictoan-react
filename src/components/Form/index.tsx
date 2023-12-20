@@ -1,33 +1,26 @@
-export { FormWrapper, FormWrapperProps } from "./FormWrapper/FormWrapper";
-export { FormWrapperStyled } from "./FormWrapper/FormWrapper.styled";
+export { FormWrapper, type FormWrapperProps } from "./FormWrapper/FormWrapper";
 
-export { FormItem, FormItemProps } from "./FormItem/FormItem";
-export { FormItemStyled } from "./FormItem/FormItem.styled";
+export { FormItem, type FormItemProps } from "./FormItem/FormItem";
 
-export { FormItemGroup, FormItemGroupProps } from "./FormItemGroup/FormItemGroup";
-export { FormItemGroupStyled } from "./FormItemGroup/FormItemGroup.styled";
+export { FormItemGroup, type FormItemGroupProps } from "./FormItemGroup/FormItemGroup";
 
-export { InputField, InputFieldProps } from "./InputField/InputField";
-export { InputFieldStyled } from "./InputField/InputField.styled";
+export { InputField, type InputFieldProps } from "./InputField/InputField";
 
-export { TextArea, TextareaProps } from "./TextArea/TextArea";
-export { TextAreaStyled } from "./TextArea/TextArea.styled";
+export { TextArea, type TextareaProps } from "./TextArea/TextArea";
 
-export { InputLabel, InputLabelProps } from "./InputLabel/InputLabel";
+export { InputLabel, type InputLabelProps } from "./InputLabel/InputLabel";
 
-export { Select, SelectProps } from "./Select/Select";
-export { SelectStyled } from "./Select/Select.styled";
+export { Select, type SelectProps } from "./Select/Select";
 
-export { FileUpload, FileUploadProps } from "./InputField/FileUpload";
+export { FileUpload, type FileUploadProps } from "./InputField/FileUpload";
 
 export { RadioGroup } from "./RadioButton/RadioGroup";
-export { RadioButtonProps, RadioGroupProps } from "./RadioButton/constants";
+export { type RadioButtonProps, type RadioGroupProps } from "./RadioButton/constants";
+
+export { Range, type RangeProps } from "./Range";
 
 export { RadioButton } from "./RadioButton/RadioButton";
-export { RadioButtonStyled } from "./RadioButton/RadioButton.styled";
 
-export { CheckBox, CheckboxProps } from "./CheckBox/CheckBox";
-export { CheckBoxStyled } from "./CheckBox/CheckBox.styled";
+export { CheckBox, type CheckboxProps } from "./CheckBox/CheckBox";
 
-export { Switch, SwitchProps } from "./CheckBox/Switch";
-export { SwitchStyled } from "./CheckBox/CheckBox.styled";
+export { Switch, type SwitchProps } from "./CheckBox/Switch";

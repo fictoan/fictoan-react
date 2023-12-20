@@ -1,34 +1,53 @@
 import { ElementType, HTMLProps } from "react";
 
-import { defaultColourProps } from "../../styles/DefaultColourProps";
-import { customColours, FictoanTheme } from "../../styles/theme";
-
-// TODO: Remove once https://github.com/microsoft/TypeScript/pull/40002 ships with TS 4.1.0
-type DeepPartial<T> = {
-    [P in keyof T]?: T[P] extends Array<infer U>
-        ? Array<DeepPartial<U>>
-        : T[P] extends ReadonlyArray<infer U>
-        ? ReadonlyArray<DeepPartial<U>>
-        : DeepPartial<T[P]>;
-};
-export type ThemeType = DeepPartial<typeof FictoanTheme>;
+type ColorWithShade =
+    | "red"
+    | "salmon"
+    | "orange"
+    | "amber"
+    | "yellow"
+    | "spring"
+    | "pistachio"
+    | "green"
+    | "teal"
+    | "cyan"
+    | "sky"
+    | "blue"
+    | "indigo"
+    | "violet"
+    | "purple"
+    | "pink"
+    | "crimson"
+    | "brick"
+    | "sienna"
+    | "brown"
+    | "slate"
+    | "grey";
+type Shade = "dark" | "light";
+type ShadeLevel = 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90;
+type FixedColor = "transparent" | "black" | "white";
+type CustomColor = "hue" | "tint" | "shade" | "analogue" | "accent";
 
 // prettier-ignore
-export interface ThemeProps {
-    theme ? : ThemeType;
-}
+export type SpacingTypes = "none" | "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
+export type ShadowTypes = "none" | "mild" | "hard" | "soft";
+export type ShapeTypes = "rounded" | "curved";
+export type OpacityTypes = "00" | "10" | "20" | "30" | "40" | "50" | "60" | "70" | "80" | "90" | "100";
+export type WeightTypes = "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
+// @deprecated
+export type OldColourPropTypes = `${ColorWithShade}-${ShadeLevel}`;
+
+export type ColourPropTypes =
+    | `${ColorWithShade}-${Shade}-${ShadeLevel}`
+    | ColorWithShade
+    | FixedColor
+    | CustomColor
+    | OldColourPropTypes
+    | "";
 
 // prettier-ignore
-export type SpacingTypes    = "none" | "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
-export type ShadowTypes     = "none" | "mild" | "soft" | "hard";
-export type ShapeTypes      = "rounded" | "curved";
-export type OpacityTypes    = "00" | "10" | "20" | "30" | "40" | "50" | "60" | "70" | "80" | "90" | "100";
-export type WeightTypes     = "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
-export type ColourPropTypes = typeof defaultColourProps[number] | keyof typeof customColours | "";
-
-// prettier-ignore
-export interface CommonProps extends ThemeProps {
-    // STYLING ================================================================
+export interface CommonProps {
+    // STYLING =================================================================
     bgColor      ? : ColourPropTypes;
     bgColour     ? : ColourPropTypes;
     textColor    ? : ColourPropTypes;
@@ -43,7 +62,18 @@ export interface CommonProps extends ThemeProps {
     shape        ? : ShapeTypes;
     opacity      ? : OpacityTypes;
 
-    // LAYOUT =================================================================
+    // LAYOUT ==================================================================
+    // Flexbox -----------------------------------------------------------------
+    layoutAsFlexbox ? : boolean;
+
+    // Grid --------------------------------------------------------------------
+    layoutAsGrid    ? : boolean;
+    columns         ? : string;
+
+    // Common ------------------------------------------------------------------
+    gap             ? : string;
+
+    // SPACING =================================================================
     marginTop              ? : SpacingTypes;
     marginRight            ? : SpacingTypes;
     marginBottom           ? : SpacingTypes;
@@ -62,7 +92,7 @@ export interface CommonProps extends ThemeProps {
     isFullWidth            ? : boolean;
     isFullHeight           ? : boolean;
 
-    // RESPONSIVENESS =========================================================
+    // RESPONSIVENESS ==========================================================
     hideOnMobile              ? : boolean;
     showOnlyOnMobile          ? : boolean;
     hideOnTabletPortrait      ? : boolean;
@@ -72,15 +102,16 @@ export interface CommonProps extends ThemeProps {
     hideOnDesktop             ? : boolean;
     showOnlyOnDesktop         ? : boolean;
 
-    // TEXT ===================================================================
+    // TEXT ====================================================================
     weight ? : WeightTypes;
 
-    // MISC ===================================================================
+    // MISC ====================================================================
     classNames ? : string[];
 }
 
 export interface CommonAndHTMLProps<T extends {}>
-    extends CommonProps, Omit<HTMLProps<T>, "as" | "size" | "ref" | "shape"> {}
+    extends CommonProps,
+        Omit<HTMLProps<T>, "as" | "size" | "ref" | "shape"> {}
 
 // prettier-ignore
 export interface ElementProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as" | "ref" | "shape"> {

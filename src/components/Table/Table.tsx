@@ -3,7 +3,7 @@ import React from "react";
 import { Element } from "../Element";
 import { CommonAndHTMLProps } from "../Element/constants";
 
-import { TableStyled } from "./Table.styled";
+import "./table.css";
 
 // prettier-ignore
 export interface TableCustomProps {
@@ -44,6 +44,6 @@ export const Table = React.forwardRef(
             classNames.push(`align-text-${alignText}`);
         }
 
-        return <Element<TableElementType> as={TableStyled} classNames={classNames} {...props} />;
+        return <Element<TableElementType> as="table" classNames={classNames} {...props} />;
     }
 );

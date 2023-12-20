@@ -3,7 +3,7 @@ import React from "react";
 import { Element } from "../../Element/Element";
 import { CommonAndHTMLProps } from "../../Element/constants";
 
-import { SidebarHeaderStyled } from "./SidebarHeader.styled";
+import "./sidebar-header.css";
 
 // prettier-ignore
 export interface SidebarHeaderCustomProps {
@@ -23,7 +23,7 @@ export const SidebarHeader = React.forwardRef(
         }
 
         return (
-            <Element<SidebarHeaderElementType> as={SidebarHeaderStyled} ref={ref} classNames={classNames} {...props} />
+            <Element<SidebarHeaderElementType> as="header" data-sidebar-header ref={ref} classNames={classNames} {...props} />
         );
     }
 );

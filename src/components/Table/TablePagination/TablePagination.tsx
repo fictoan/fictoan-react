@@ -1,14 +1,17 @@
+/// <reference types="vite-plugin-svgr/client" />
 import React from "react";
 
-import { ReactComponent as PreviousButton } from "../../../assets/icons/left.svg";
-import { ReactComponent as NextButton } from "../../../assets/icons/right.svg";
-import { ReactComponent as FirstPageButton } from "../../../assets/icons/left.svg";
+import PreviousButton from "../../../assets/icons/left.svg?react";
+import NextButton from "../../../assets/icons/right.svg?react";
+import FirstPageButton from "../../../assets/icons/left.svg?react";
 
 import { CommonAndHTMLProps } from "../../Element/constants";
 import { Element } from "../../Element";
 import { Heading } from "../../Typography";
 import { Text } from "../../Typography";
-import { TablePaginationStyled } from "./TablePagination.styled";
+
+import "./table-pagination.css";
+
 import { Spinner } from "../../Spinner";
 
 // prettier-ignore
@@ -50,7 +53,7 @@ export const TablePagination = React.forwardRef(
         ref: React.Ref<TablePaginationElementType>
     ) => {
         return (
-            <Element<TablePaginationElementType> as={TablePaginationStyled} ref={ref} {...props}>
+            <Element<TablePaginationElementType> as="div" data-table-pagination ref={ref} {...props}>
                 <Element as="div" className="vertically-centre-items" marginBottom="none">
                     {totalRecords === 0 ? (
                         <Heading as="h6" marginRight="nano">

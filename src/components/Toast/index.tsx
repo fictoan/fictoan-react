@@ -1,5 +1,2 @@
-export { ToastsWrapper, NotificationsWrapperProps as ToastsWrapperProps } from "./ToastsWrapper/ToastsWrapper";
-export { ToastsWrapperStyled } from "./ToastsWrapper/ToastsWrapper.styled";
-
-export { ToastItem, ToastItemProps } from "./ToastItem/ToastItem";
-export { ToastItemStyled } from "./ToastItem/ToastItem.styled";
+export { ToastsWrapper, type ToastsWrapperProps } from "./ToastsWrapper/ToastsWrapper";
+export { ToastItem, type ToastItemProps } from "./ToastItem/ToastItem";

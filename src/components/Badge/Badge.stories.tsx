@@ -1,13 +1,36 @@
-import React from "react";
-import { createStoryFromTemplate, FictoanStory } from "../../utils/storyUtils";
+import type { Meta, StoryObj } from "@storybook/react";
+
 import { Badge } from "./Badge";
 
-const Template: FictoanStory<typeof Badge> = (args) => <Badge {...args} />;
-Template.displayName = Badge.displayName;
+const meta: Meta<typeof Badge> = {
+    component: Badge,
+    tags: ["autodocs"],
+    args: {
+        children: "Badge",
+    },
+    parameters: {
+        docs: {
+            description: {
+                component: "This is a Badge component.",
+            },
+        },
+    },
+};
 
-export const Custom: FictoanStory<typeof Badge> = createStoryFromTemplate(Template);
-Custom.args = {
-    bgColour: "green-10",
-    textColour: "green",
-    shape: "curved",
+export default meta;
+type Story = StoryObj<typeof Badge>;
+
+export const Custom: Story = {
+    args: {
+        bgColour: "green-light-80",
+        textColour: "green",
+        shape: "curved",
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: "This is the custom badge.",
+            },
+        },
+    },
 };

@@ -1,13 +1,25 @@
-import React from "react";
-import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
+import { Meta, StoryObj } from "@storybook/react";
 import { NotificationItem } from "./NotificationItem";
 
-const Template: FictoanStory<typeof NotificationItem> = (args) => <NotificationItem {...args} />;
-Template.displayName = NotificationItem.displayName;
+const meta: Meta<typeof NotificationItem> = {
+    component: NotificationItem,
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "This is a Notification item.",
+            },
+        },
+    },
+};
 
-export const Default: FictoanStory<typeof NotificationItem> = createStoryFromTemplate(Template);
-Default.args = {
-    show: true,
-    kind: "info",
-    children: "This is a notification",
+export default meta;
+type Story = StoryObj<typeof NotificationItem>;
+
+export const Default: Story = {
+    args: {
+        show: true,
+        kind: "info",
+        children: "This is a notification",
+    },
 };

@@ -1,0 +1,48 @@
+mark[data-badge] {
+    position            : relative;
+    font-family         : var(--badge-font-family);
+    font-weight         : bold;
+    font-size           : 92%;
+    text-align          : center;
+    text-decoration     : none;
+    transition          : all 0.2s ease-in-out;
+    background-position : center;
+    user-select         : none;
+    width               : fit-content;
+    height              : fit-content;
+
+    /* To make sure a badge’s children don’t style themselves like a d-bag*/
+    > * { all : unset; }
+
+    &.shape-rounded { border-radius : var(--badge-border-radius); }
+    &.shape-curved { border-radius : 5000px; }
+
+    &[class*="border-"] { border-width : var(--badge-border-width); }
+    &.border-none { border-width : 0 !important; }
+
+    /* DIFFERENT SIZES ////////////////////////////////////////////////////// */
+    &.size-tiny {
+        padding   : 2px 8px;
+        font-size : 0.64rem;
+    }
+
+    &.size-small {
+        padding   : 3px 10px;
+        font-size : 0.72rem;
+    }
+
+    &.size-medium {
+        padding   : 4px 12px;
+        font-size : 1rem;
+    }
+
+    &.size-large {
+        padding   : 6px 16px;
+        font-size : 1.16rem;
+    }
+
+    &.size-huge {
+        padding   : 8px 20px;
+        font-size : 1.24rem;
+    }
+}

@@ -1,0 +1,45 @@
+[data-notifications-wrapper] {
+    position   : fixed;
+    display    : flex;
+    width      : 400px;
+    z-index    : 5000000;
+    padding    : 2vw;
+    overflow-y : auto;
+    overflow-x : hidden;
+
+    &.left { left : 0; }
+
+    &.right { right : 0; }
+
+    &.top { top : 0; }
+
+    &.bottom { bottom : 0; }
+
+    &.top.new-on-top {
+        flex-direction : column-reverse;
+
+        [data-notification-item]:first-of-type { margin-bottom : 0; }
+        [data-notification-item]:last-of-type { margin-top : 0; }
+    }
+
+    &.top.new-on-bottom {
+        flex-direction : column;
+
+        [data-notification-item]:first-of-type { margin-top : 0; }
+        [data-notification-item]:last-of-type { margin-bottom : 0; }
+    }
+
+    &.bottom.new-on-top {
+        flex-direction : column-reverse;
+
+        [data-notification-item]:first-of-type { margin-bottom : 0; }
+        [data-notification-item]:last-of-type { margin-top : 0; }
+    }
+
+    &.bottom.new-on-bottom {
+        flex-direction : column;
+
+        [data-notification-item]:first-of-type { margin-top : 0; }
+        [data-notification-item]:last-of-type { margin-bottom : 0; }
+    }
+}

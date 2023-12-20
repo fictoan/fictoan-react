@@ -1,0 +1,82 @@
+[data-radio-button] {
+    display      : inline-flex;
+    margin-right : 24px;
+
+    input[type="radio"] {
+        position : absolute;
+        height   : 1px;
+        width    : 1px;
+        overflow : hidden;
+        clip     : rect(1px 1px 1px 1px); /* IE6, IE7 */
+        clip     : rect(1px, 1px, 1px, 1px);
+    }
+
+    /*  The grey outer circle  */
+    & label::before {
+        width         : 16px;
+        height        : 16px;
+        /* top           : 4px; */
+        left          : 0;
+        border-radius : 50%;
+        background    : var(--radio-button-circle-bg-default);
+    }
+
+    &:hover label::before {
+        background : var(--radio-button-circle-bg-hover);
+    }
+
+    /*  The white inner circle  */
+    & label::after {
+        opacity       : 0;
+        left          : 4px;
+        top           : 4px;
+        width         : 8px;
+        height        : 8px;
+        background    : var(--radio-button-dot);
+        border-radius : 50%;
+    }
+
+    &:checked + label::before,
+    input[type="radio"]:checked + label::before {
+        background : var(--radio-button-circle-bg-checked);
+    }
+
+    &:checked + label::after,
+    input[type="radio"]:checked + label::after {
+        opacity : 1;
+    }
+
+    &:focus + label::before,
+    input[type="radio"]:focus + label::before {
+        outline : solid 2px var(--radio-button-circle-bg-checked);
+    }
+
+    &:only-of-type {
+        margin-right : 0;
+    }
+
+    & label {
+        display        : inline-block;
+        position       : relative;
+        font-family    : var(--paragraph-font-family);
+        color          : var(--paragraph-text-colour);
+        cursor         : pointer;
+        vertical-align : middle;
+        line-height    : 1.1;
+        padding-left   : 24px;
+
+        &::before,
+        &::after {
+            display    : inline-block;
+            position   : absolute;
+            content    : "";
+            transition : all 0.1s ease-out;
+        }
+    }
+
+    /*  The grey square  */
+    &:disabled + label::before {
+        background : var(--radio-button-circle-bg-disabled);
+        box-shadow : inset 0 2px 8px -2px rgba(0, 0, 0, 0.24);
+    }
+}

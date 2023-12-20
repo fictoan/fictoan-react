@@ -1,13 +1,29 @@
 import React from "react";
-import { FictoanStory } from "../../../utils/storyUtils";
+import { Meta, StoryObj } from "@storybook/react";
 import { BreadcrumbsWrapper } from "./BreadcrumbsWrapper";
-import { Default as BreadcrumbItem } from "../BreadcrumbItem/BreadcrumbItem.stories";
+import { BreadcrumbItem } from "../BreadcrumbItem/BreadcrumbItem";
 
-export const Default: FictoanStory<typeof BreadcrumbsWrapper> = (args) => (
-    <BreadcrumbsWrapper {...args}>
-        <BreadcrumbItem {...BreadcrumbItem.args}>Item 1</BreadcrumbItem>
-        <BreadcrumbItem {...BreadcrumbItem.args}>Item 2</BreadcrumbItem>
-        <BreadcrumbItem {...BreadcrumbItem.args}>Item 3</BreadcrumbItem>
-    </BreadcrumbsWrapper>
-);
-BreadcrumbsWrapper.displayName = "BreadcrumbsWrapper";
+const meta: Meta<typeof BreadcrumbsWrapper> = {
+    component: BreadcrumbsWrapper,
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "This is a Breadcrumbs wrapper.",
+            },
+        },
+    },
+};
+
+export default meta;
+type Story = StoryObj<typeof BreadcrumbsWrapper>;
+
+export const Default: Story = {
+    render: (args) => (
+        <BreadcrumbsWrapper {...args}>
+            <BreadcrumbItem>Item 1</BreadcrumbItem>
+            <BreadcrumbItem>Item 2</BreadcrumbItem>
+            <BreadcrumbItem>Item 3</BreadcrumbItem>
+        </BreadcrumbsWrapper>
+    ),
+};

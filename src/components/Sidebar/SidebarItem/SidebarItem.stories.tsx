@@ -1,16 +1,32 @@
 import React from "react";
-import { Default as SidebarItemIcon } from "../SidebarItemIcon/SidebarItemIcon.stories";
-import { Default as SidebarItemText } from "../SidebarItemText/SidebarItemText.stories";
-import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
+import { Meta, StoryObj } from "@storybook/react";
+
 import { SidebarItem } from "./SidebarItem";
+import { SidebarItemIcon } from "../SidebarItemIcon/SidebarItemIcon";
+import { SidebarItemText } from "../SidebarItemText/SidebarItemText";
 
-const Template: FictoanStory<typeof SidebarItem> = (args) => <SidebarItem {...args} />;
-Template.displayName = SidebarItem.displayName;
-
-export const Default: FictoanStory<typeof SidebarItem> = createStoryFromTemplate(Template);
-Default.args = {
-    children: [
-        <SidebarItemIcon {...SidebarItemIcon.args}></SidebarItemIcon>,
-        <SidebarItemText linkText="Sidebar Item 1"></SidebarItemText>,
-    ],
+const meta: Meta<typeof SidebarItem> = {
+    component: SidebarItem,
+    tags: ["autodocs"],
+    args: {
+        children: "This is a Sidebar item.",
+    },
+    render: (args) => (
+        <SidebarItem {...args}>
+            <SidebarItemIcon />
+            <SidebarItemText linkText="Sidebar text!"></SidebarItemText>
+        </SidebarItem>
+    ),
+    parameters: {
+        docs: {
+            description: {
+                component: "This is a Sidebar item.",
+            },
+        },
+    },
 };
+
+export default meta;
+type Story = StoryObj<typeof SidebarItem>;
+
+export const Default: Story = {};

@@ -1,13 +1,26 @@
 import React from "react";
-import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
+import {Meta, StoryObj} from "@storybook/react";
 import { RadioButton } from "./RadioButton";
 
-const Template: FictoanStory<typeof RadioButton> = (args) => <RadioButton {...args} />;
-Template.displayName = RadioButton.displayName;
+const meta: Meta<typeof RadioButton> = {
+    component: RadioButton,
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "This is a RadioButton.",
+            },
+        },
+    },
+};
 
-export const Default: FictoanStory<typeof RadioButton> = createStoryFromTemplate(Template);
-Default.args = {
-    label: "Option",
-    id: "radio-button",
-    name: "radio-button-demo",
+export default meta;
+type Story = StoryObj<typeof RadioButton>;
+
+export const Default: Story = {
+    args: {
+        label: "Option",
+        id: "radio-button",
+        name: "radio-button-demo",
+    },
 };

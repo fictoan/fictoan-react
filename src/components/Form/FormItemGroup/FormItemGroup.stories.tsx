@@ -1,22 +1,57 @@
 import React from "react";
-import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
+import { Meta, StoryObj } from "@storybook/react";
 import { FormItemGroup } from "./FormItemGroup";
-import { Number as NumberInput, Text as TextInput, Email as EmailInput } from "../InputField/InputField.stories";
-import { Default as FormItem } from "../FormItem/FormItem.stories";
+import { InputField } from "../InputField/InputField";
+import { FormItem } from "../FormItem/FormItem";
 
-export const Default: FictoanStory<typeof FormItemGroup> = (args) => <FormItemGroup {...args}></FormItemGroup>;
-Default.args = {
-    isJoint: true,
-    children: [
-        <FormItem {...FormItem.args}>
-            <TextInput {...TextInput.args}></TextInput>
-        </FormItem>,
-        <FormItem {...FormItem.args}>
-            <NumberInput {...NumberInput.args}></NumberInput>
-        </FormItem>,
-        <FormItem {...FormItem.args}>
-            <EmailInput {...EmailInput.args}></EmailInput>
-        </FormItem>,
-    ],
+const meta: Meta<typeof FormItemGroup> = {
+    component: FormItemGroup,
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "This is a FormItemGroup.",
+            },
+        },
+    },
 };
-Default.displayName = FormItemGroup.displayName;
+
+export default meta;
+type Story = StoryObj<typeof FormItemGroup>;
+
+export const Default: Story = {
+    args: {
+        isJoint: true,
+    },
+    render: (args) => (
+        <FormItemGroup {...args}>
+            <FormItem>
+                <InputField
+                    type="text"
+                    label="First Name"
+                    placeholder="Enter your name"
+                    helpText="This field can only contain a string"
+                    errorText="Looks invalid, re-check?"
+                ></InputField>
+            </FormItem>
+            <FormItem>
+                <InputField
+                    type="number"
+                    label="Age"
+                    placeholder="Enter your age"
+                    helpText="This field can only contain a number"
+                    errorText="Looks invalid, re-check?"
+                ></InputField>
+            </FormItem>
+            <FormItem>
+                <InputField
+                    type="email"
+                    label="Email"
+                    placeholder="Enter your email address"
+                    helpText="This field can only contain an email"
+                    errorText="Looks invalid re-check?"
+                ></InputField>
+            </FormItem>
+        </FormItemGroup>
+    ),
+};

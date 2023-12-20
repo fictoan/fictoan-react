@@ -1,18 +1,37 @@
-import React from "react";
-import { createStoryFromTemplate, FictoanStory } from "../../utils/storyUtils";
+import { Meta, StoryObj } from "@storybook/react";
 import { ProgressBar } from "./ProgressBar";
 
-const Template: FictoanStory<typeof ProgressBar> = (args) => <ProgressBar {...args} />;
-Template.displayName = ProgressBar.displayName;
-
-export const Default: FictoanStory<typeof ProgressBar> = createStoryFromTemplate(Template);
-Default.args = {
-    label: "Loading...",
-    value: 0.6,
-    shape: "rounded",
+const meta: Meta<typeof ProgressBar> = {
+    component: ProgressBar,
+    tags: ["autodocs"],
+    args: {
+        label: "Loading...",
+        value: 0.6,
+        shape: "rounded",
+    },
+    parameters: {
+        docs: {
+            description: {
+                component: "This is a progress bar.",
+            },
+        },
+    },
 };
 
-export const WithoutValue: FictoanStory<typeof ProgressBar> = createStoryFromTemplate(Template);
-WithoutValue.args = {
-    label: "Loading...",
+export default meta;
+type Story = StoryObj<typeof ProgressBar>;
+
+export const Default: Story = {
+    args: {
+        label: "Loading...",
+        value: 0.6,
+        shape: "rounded",
+    },
+};
+
+export const WithoutValue: Story = {
+    args: {
+        label: "Loading...",
+        height: "24px"
+    },
 };

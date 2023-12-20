@@ -2,9 +2,9 @@ import React from "react";
 
 import { Element } from "../Element/Element";
 import { CommonAndHTMLProps } from "../Element/constants";
-
-import { ProgressBarStyled, ProgressBarMetaStyled } from "./ProgressBar.styled";
 import { Text } from "../Typography/Text";
+
+import "./progress-bar.css";
 
 // prettier-ignore
 export interface ProgressBarLabelCustomProps {
@@ -16,6 +16,7 @@ export interface ProgressBarCustomProps {
     barBg   ? : string;
     barFill ? : string;
     unit    ? : string;
+    height  ? : string;
 }
 
 export type ProgressBarElementType = HTMLProgressElement;
@@ -25,11 +26,11 @@ export type ProgressBarMetaProps = Omit<CommonAndHTMLProps<HTMLDivElement>, keyo
     ProgressBarLabelCustomProps;
 
 export const ProgressBar = React.forwardRef(
-    ({ label, value, ...props }: ProgressBarProps, ref: React.Ref<ProgressBarElementType>) => {
+    ({ label, value,  height, ...props }: ProgressBarProps, ref: React.Ref<ProgressBarElementType>) => {
         return (
             <>
                 {label && (
-                    <Element<HTMLDivElement> as={ProgressBarMetaStyled}>
+                    <Element<HTMLDivElement> as="div" data-progress-bar-meta>
                         <Text>{label}</Text>
                         <Text>
                             {value}
@@ -37,7 +38,7 @@ export const ProgressBar = React.forwardRef(
                         </Text>
                     </Element>
                 )}
-                <Element<ProgressBarElementType> as={ProgressBarStyled} ref={ref} value={value} {...props} />
+                <Element<ProgressBarElementType> as="progress" data-progress-bar ref={ref} value={value} {...props} style={{ height : height }} />
             </>
         );
     }

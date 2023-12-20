@@ -1,10 +1,33 @@
 import React from "react";
-import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
+import { Meta, StoryObj } from "@storybook/react";
 import { FormItem } from "./FormItem";
-import { Number as NumberInput } from "../InputField/InputField.stories";
+import { InputField } from "../InputField/InputField";
 
-export const Default: FictoanStory<typeof FormItem> = (args) => <FormItem {...args} />;
-Default.args = {
-    children: <NumberInput {...NumberInput.args}></NumberInput>,
+const meta: Meta<typeof FormItem> = {
+    component: FormItem,
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "This is a FormItem.",
+            },
+        },
+    },
 };
-Default.displayName = FormItem.displayName;
+
+export default meta;
+type Story = StoryObj<typeof FormItem>;
+
+export const Default: Story = {
+    args: {
+        children: (
+            <InputField
+                type="number"
+                label="Age"
+                placeholder="Enter your age"
+                helpText="This field can only contain a number"
+                errorText="Looks invalid, re-check?"
+            ></InputField>
+        ),
+    },
+};

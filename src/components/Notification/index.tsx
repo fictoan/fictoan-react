@@ -1,5 +1,7 @@
-export { NotificationsWrapper, NotificationsWrapperProps } from "./NotificationsWrapper/NotificationsWrapper";
-export { NotificationsWrapperStyled } from "./NotificationsWrapper/NotificationsWrapper.styled";
+export {
+    NotificationsWrapper, type NotificationsWrapperProps,
+} from "./NotificationsWrapper/NotificationsWrapper";
 
-export { NotificationItem, NotificationItemProps } from "./NotificationItem/NotificationItem";
-export { NotificationItemStyled } from "./NotificationItem/NotificationItem.styled";
+export {
+    NotificationItem, type NotificationItemProps,
+} from "./NotificationItem/NotificationItem";

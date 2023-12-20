@@ -1,11 +1,23 @@
-import React from "react";
-import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
+import { Meta, StoryObj } from "@storybook/react";
 import { SidebarItemText } from "./SidebarItemText";
 
-const Template: FictoanStory<typeof SidebarItemText> = (args) => <SidebarItemText {...args} />;
-Template.displayName = SidebarItemText.displayName;
+const meta: Meta<typeof SidebarItemText> = {
+    component: SidebarItemText,
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "This is a Sidebar item text.",
+            },
+        },
+    },
+};
 
-export const Default: FictoanStory<typeof SidebarItemText> = createStoryFromTemplate(Template);
-Default.args = {
-    linkText: "This is the Sidebar Item text",
+export default meta;
+type Story = StoryObj<typeof SidebarItemText>;
+
+export const Default: Story = {
+    args: {
+        linkText: "This is a Sidebar item text.",
+    },
 };

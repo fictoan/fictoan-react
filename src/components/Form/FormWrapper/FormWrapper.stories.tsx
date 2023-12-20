@@ -1,215 +1,297 @@
 import React from "react";
-import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
+import { Meta, StoryObj } from "@storybook/react";
 import { FormWrapper } from "./FormWrapper";
-import { Text as TextInput, Email as EmailInput, Password as PasswordInput } from "../InputField/InputField.stories";
-import { Default as FormItemGroup } from "../FormItemGroup/FormItemGroup.stories";
-import { Default as FormItem } from "../FormItem/FormItem.stories";
-import { Default as RadioGroup } from "../RadioButton/RadioGroup.stories";
-import { Default as CheckBox } from "../CheckBox/CheckBox.stories";
-import { Default as Switch } from "../CheckBox/Switch.stories";
-import { Default as Select } from "../Select/Select.stories";
-import { Default as TextArea } from "../TextArea/TextArea.stories";
-import { Primary as Button } from "../../Button/Button.stories";
+import { InputField } from "../InputField/InputField";
+import { FormItemGroup } from "../FormItemGroup/FormItemGroup";
+import { FormItem } from "../FormItem/FormItem";
+import { RadioGroup } from "../RadioButton/RadioGroup";
+import { CheckBox } from "../CheckBox/CheckBox";
+import { Switch } from "../CheckBox/Switch";
+import { Select } from "../Select/Select";
+import { TextArea } from "../TextArea/TextArea";
+import { Button } from "../../Button/Button";
 
-const Template: FictoanStory<typeof FormWrapper> = (args) => <FormWrapper {...args} />;
-Template.displayName = FormWrapper.displayName;
-
-export const Default: FictoanStory<typeof FormWrapper> = createStoryFromTemplate(Template);
-Default.args = {
-    errorText: "Something went wrong. Please try again.",
-    children: [
-        <FormItemGroup>
-            <FormItem>
-                <TextInput {...TextInput.args} label="First name" required></TextInput>
-            </FormItem>
-            <FormItem>
-                <TextInput {...TextInput.args} label="Last name" required></TextInput>
-            </FormItem>
-        </FormItemGroup>,
-        <FormItem>
-            <EmailInput {...EmailInput.args} required></EmailInput>
-        </FormItem>,
-        <FormItem>
-            <PasswordInput {...PasswordInput.args} required></PasswordInput>
-        </FormItem>,
-        <FormItem>
-            <TextArea {...TextArea.args} required></TextArea>
-        </FormItem>,
-        <FormItem>
-            <Select {...Select.args} required options={Select.args.options}></Select>
-        </FormItem>,
-        <FormItem>
-            <RadioGroup
-                {...RadioGroup.args}
-                id="radio-buttons-demo"
-                required
-                options={RadioGroup.args.options}
-            ></RadioGroup>
-        </FormItem>,
-        <FormItem>
-            <CheckBox {...CheckBox.args} required></CheckBox>
-        </FormItem>,
-        <FormItem>
-            <Switch {...Switch.args} required></Switch>
-        </FormItem>,
-        <FormItem>
-            <Button {...Button.args} type="button">
-                Submit
-            </Button>
-        </FormItem>,
-    ],
+const meta: Meta<typeof FormWrapper> = {
+    component: FormWrapper,
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "This is a FormWrapper.",
+            },
+        },
+    },
 };
 
-export const UsingFieldsProp: FictoanStory<typeof FormWrapper> = createStoryFromTemplate(Template);
-UsingFieldsProp.args = {
-    // onFieldsChange: (e) => console.log(e.currentTarget.name, e.currentTarget.type, e.currentTarget.value),
-    fields: [
-        {
-            // @ts-ignore
-            as: "CheckBox",
-            id: "accept",
-            name: "accept",
-            label: "Accept",
-            defaultChecked: false,
-            validateThis: false,
-            required: false,
-            desktopSpan: "3",
-        },
-        {
-            // @ts-ignore
-            as: "Switch",
-            id: "customer-parameterIsOptional",
-            name: "optional",
-            label: "Optional",
-            errorText: "",
-            helpText: "",
-            defaultChecked: false,
-            validateThis: false,
-            required: false,
-            desktopSpan: "3",
-        },
-        {
-            // @ts-ignore
-            as: "InputField",
-            id: "customer-parameterName",
-            name: "paramName",
-            label: "Parameter name",
-            errorText: "Looks invalid, recheck?",
-            helpText: "Identification parameter your customer. Eg: Loan number, Account number etc.",
-            defaultValue: "",
-            validateThis: false,
-            required: true,
-            desktopSpan: "24",
-        },
-        {
-            // @ts-ignore
-            as: "InputField",
-            id: "email",
-            name: "email",
-            label: "Email",
-            type: "email",
-            defaultValue: "",
-            validateThis: false,
-            required: true,
-            desktopSpan: "12",
-        },
-        {
-            // @ts-ignore
-            as: "InputField",
-            id: "password",
-            name: "password",
-            label: "Password",
-            type: "password",
-            defaultValue: "",
-            validateThis: false,
-            required: true,
-            desktopSpan: "12",
-        },
-        {
-            // @ts-ignore
-            as: "InputField",
-            id: "name",
-            name: "name",
-            label: "Name",
-            defaultValue: "",
-            validateThis: false,
-            required: false,
-            desktopSpan: "12",
-        },
-        {
-            // @ts-ignore
-            as: "InputField",
-            id: "age",
-            name: "age",
-            label: "Age",
-            type: "number",
-            defaultValue: "",
-            validateThis: false,
-            required: false,
-            desktopSpan: "12",
-        },
-        {
-            // @ts-ignore
-            as: "TextArea",
-            id: "description",
-            name: "description",
-            label: "Description",
-            rows: 6,
-            defaultValue: "",
-            validateThis: false,
-            required: true,
-            desktopSpan: "16",
-        },
-        {
-            // @ts-ignore
-            as: "Select",
-            id: "selection",
-            name: "selection",
-            label: "Selection",
-            options: [
-                {
-                    id: "haha",
-                    label: "haha",
-                    value: "haha",
-                },
-                {
-                    id: "lol",
-                    label: "lol",
-                    value: "lol",
-                },
-            ],
-            defaultValue: "",
-            validateThis: false,
-            required: false,
-        },
-        {
-            // @ts-ignore
-            as: "RadioGroup",
-            id: "selection-radio",
-            name: "selection-radio",
-            label: "Selection-radio",
-            options: [
-                {
-                    id: "haha2",
-                    label: "haha",
-                    value: "haha",
-                    defaultChecked: true,
-                },
-                {
-                    id: "lol2",
-                    label: "lol",
-                    value: "lol",
-                },
-            ],
-            validateThis: false,
-            required: false,
-        },
-    ],
-    children: [
-        <FormItem>
-            <Button {...Button.args} type="button">
-                Submit
-            </Button>
-        </FormItem>,
-    ],
+export default meta;
+type Story = StoryObj<typeof FormWrapper>;
+
+export const Default: Story = {
+    args: {
+        errorText: "Something went wrong. Please try again.",
+        children: [
+            <FormItemGroup>
+                <FormItem>
+                    <InputField
+                        type="text"
+                        label="First Name"
+                        placeholder="Enter your name"
+                        helpText="This field can only contain a string"
+                        errorText="Looks invalid, re-check?"
+                        required
+                    ></InputField>
+                </FormItem>
+                <FormItem>
+                    <InputField
+                        type="number"
+                        label="Age"
+                        placeholder="Enter your age"
+                        helpText="This field can only contain a number"
+                        errorText="Looks invalid, re-check?"
+                        required
+                    ></InputField>
+                </FormItem>
+            </FormItemGroup>,
+            <FormItem>
+                <InputField
+                    type="email"
+                    label="Email"
+                    placeholder="Enter your email address"
+                    helpText="This field can only contain an email"
+                    errorText="Looks invalid re-check?"
+                    required
+                ></InputField>
+            </FormItem>,
+            <FormItem>
+                <InputField
+                    type="password"
+                    label="Password"
+                    helpText="This field will obfuscate your input"
+                    errorText="Looks invalid re-check?"
+                    required
+                ></InputField>
+            </FormItem>,
+            <FormItem>
+                <TextArea
+                    label="Paragraph"
+                    rows={5}
+                    placeholder="Enter long text here"
+                    helpText="This field can only contain a string"
+                ></TextArea>
+            </FormItem>,
+            <FormItem>
+                <Select
+                    label="Options"
+                    id="select"
+                    name="select-demo"
+                    options={[
+                        {
+                            label: "Option A",
+                            value: "Option A",
+                        },
+                        {
+                            label: "Option B",
+                            value: "Option B",
+                        },
+                        {
+                            label: "...",
+                            value: "...",
+                        },
+                    ]}
+                    required
+                    helpText="Select an option from the list"
+                ></Select>
+            </FormItem>,
+            <FormItem>
+                <RadioGroup
+                    label="Options"
+                    id="radio-buttons"
+                    name="radio-input-group-demo"
+                    options={[
+                        {
+                            label: "Option A",
+                            value: "Option A",
+                            id: "radio-option-a",
+                        },
+                        {
+                            label: "Option B",
+                            value: "Option B",
+                            id: "radio-option-b",
+                        },
+                    ]}
+                    helpText="Select an option"
+                    required
+                ></RadioGroup>
+            </FormItem>,
+            <FormItem>
+                <CheckBox
+                    label="Accept terms & conditions"
+                    id="accept-checkbox"
+                    name="accept-terms"
+                    required
+                    helpText="Hope you read them as well"
+                ></CheckBox>
+            </FormItem>,
+            <FormItem>
+                <Switch label="Turn On" id="turn-on-switch"></Switch>
+            </FormItem>,
+            <FormItem>
+                <Button kind="primary" type="button">
+                    Submit
+                </Button>
+            </FormItem>,
+        ],
+    },
+};
+
+export const UsingFieldsProp: Story = {
+    args: {
+        fields: [
+            {
+                // @ts-ignore
+                as: "CheckBox",
+                id: "accept",
+                name: "accept",
+                label: "Accept",
+                defaultChecked: false,
+                validateThis: false,
+                required: false,
+                desktopSpan: "3",
+            },
+            {
+                // @ts-ignore
+                as: "Switch",
+                id: "customer-parameterIsOptional",
+                name: "optional",
+                label: "Optional",
+                errorText: "",
+                helpText: "",
+                defaultChecked: false,
+                validateThis: false,
+                required: false,
+                desktopSpan: "3",
+            },
+            {
+                // @ts-ignore
+                as: "InputField",
+                id: "customer-parameterName",
+                name: "paramName",
+                label: "Parameter name",
+                errorText: "Looks invalid, recheck?",
+                helpText: "Identification parameter your customer. Eg: Loan number, Account number etc.",
+                defaultValue: "",
+                validateThis: false,
+                required: true,
+                desktopSpan: "24",
+            },
+            {
+                // @ts-ignore
+                as: "InputField",
+                id: "email",
+                name: "email",
+                label: "Email",
+                type: "email",
+                defaultValue: "",
+                validateThis: false,
+                required: true,
+                desktopSpan: "12",
+            },
+            {
+                // @ts-ignore
+                as: "InputField",
+                id: "password",
+                name: "password",
+                label: "Password",
+                type: "password",
+                defaultValue: "",
+                validateThis: false,
+                required: true,
+                desktopSpan: "12",
+            },
+            {
+                // @ts-ignore
+                as: "InputField",
+                id: "name",
+                name: "name",
+                label: "Name",
+                defaultValue: "",
+                validateThis: false,
+                required: false,
+                desktopSpan: "12",
+            },
+            {
+                // @ts-ignore
+                as: "InputField",
+                id: "age",
+                name: "age",
+                label: "Age",
+                type: "number",
+                defaultValue: "",
+                validateThis: false,
+                required: false,
+                desktopSpan: "12",
+            },
+            {
+                // @ts-ignore
+                as: "TextArea",
+                id: "description",
+                name: "description",
+                label: "Description",
+                rows: 6,
+                defaultValue: "",
+                validateThis: false,
+                required: true,
+                desktopSpan: "16",
+            },
+            {
+                // @ts-ignore
+                as: "Select",
+                id: "selection",
+                name: "selection",
+                label: "Selection",
+                options: [
+                    {
+                        id: "haha",
+                        label: "haha",
+                        value: "haha",
+                    },
+                    {
+                        id: "lol",
+                        label: "lol",
+                        value: "lol",
+                    },
+                ],
+                defaultValue: "",
+                validateThis: false,
+                required: false,
+            },
+            {
+                // @ts-ignore
+                as: "RadioGroup",
+                id: "selection-radio",
+                name: "selection-radio",
+                label: "Selection-radio",
+                options: [
+                    {
+                        id: "haha2",
+                        label: "haha",
+                        value: "haha",
+                        defaultChecked: true,
+                    },
+                    {
+                        id: "lol2",
+                        label: "lol",
+                        value: "lol",
+                    },
+                ],
+                validateThis: false,
+                required: false,
+            },
+        ],
+        children: [
+            <FormItem>
+                <Button type="button">Submit</Button>
+            </FormItem>,
+        ],
+    },
 };

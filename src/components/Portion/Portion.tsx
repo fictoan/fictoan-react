@@ -3,7 +3,7 @@ import React from "react";
 import { Element } from "../Element/Element";
 import { CommonAndHTMLProps } from "../Element/constants";
 
-import { PortionStyled } from "./Portion.styled";
+import "./portion.css";
 import { SpanTypes } from "./types";
 
 // prettier-ignore
@@ -50,7 +50,7 @@ export const Portion = React.forwardRef(
         }
 
         return (
-            <Element<PortionElementType> as={PortionStyled} ref={ref} classNames={classNames} isFullWidth {...props} />
+            <Element<PortionElementType> as="div" data-portion ref={ref} classNames={classNames} {...props} />
         );
     }
 );

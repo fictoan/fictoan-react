@@ -1,12 +1,24 @@
-import React from "react";
-import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
+import {Meta, StoryObj} from "@storybook/react";
 import { Switch } from "./Switch";
 
-const Template: FictoanStory<typeof Switch> = (args) => <Switch {...args} />;
-Template.displayName = Switch.displayName;
+const meta: Meta<typeof Switch> = {
+    component: Switch,
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "This is a Switch.",
+            },
+        },
+    },
+};
 
-export const Default: FictoanStory<typeof Switch> = createStoryFromTemplate(Template);
-Default.args = {
-    label: "Turn On",
-    id: "turn-on-switch",
+export default meta;
+type Story = StoryObj<typeof Switch>;
+
+export const Default: Story = {
+    args: {
+        label: "Turn On",
+        id: "turn-on-switch",
+    },
 };

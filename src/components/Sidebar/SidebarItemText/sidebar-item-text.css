@@ -1,0 +1,6 @@
+[data-sidebar-item-text] {
+    margin             : 0;
+    overflow           : hidden;
+    -webkit-line-clamp : 1;
+    font-size          : var(--sidebar-item-text-scale);
+}

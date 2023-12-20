@@ -3,19 +3,19 @@ import React from "react";
 import { Element } from "../../Element/Element";
 import { CommonAndHTMLProps } from "../../Element/constants";
 
-import { ToastsWrapperStyled } from "./ToastsWrapper.styled";
+import "./toasts-wrapper.css";
 
 // prettier-ignore
-export interface NotificationsWrapperCustomProps {
+export interface ToastsWrapperCustomProps {
     position ? : "top" | "bottom";
 }
 
-export type NotificationsWrapperElementType = HTMLDivElement;
-export type NotificationsWrapperProps = CommonAndHTMLProps<NotificationsWrapperElementType> &
-    NotificationsWrapperCustomProps;
+export type ToastsWrapperElementType = HTMLDivElement;
+export type ToastsWrapperProps = CommonAndHTMLProps<ToastsWrapperElementType> &
+    ToastsWrapperCustomProps;
 
 export const ToastsWrapper = React.forwardRef(
-    ({ position, ...props }: NotificationsWrapperProps, ref: React.Ref<NotificationsWrapperElementType>) => {
+    ({ position, ...props }: ToastsWrapperProps, ref: React.Ref<ToastsWrapperElementType>) => {
         let classNames = [];
 
         if (position) {
@@ -23,8 +23,9 @@ export const ToastsWrapper = React.forwardRef(
         }
 
         return (
-            <Element<NotificationsWrapperElementType>
-                as={ToastsWrapperStyled}
+            <Element<ToastsWrapperElementType>
+                as="div"
+                data-toasts-wrapper
                 ref={ref}
                 classNames={classNames}
                 {...props}

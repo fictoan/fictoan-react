@@ -1,5 +1,3 @@
-export { BreadcrumbsWrapper, BreadcrumbsWrapperProps } from "./BreadcrumbsWrapper/BreadcrumbsWrapper";
-export { BreadcrumbsWrapperStyled } from "./BreadcrumbsWrapper/BreadcrumbsWrapper.styled";
+export { BreadcrumbsWrapper, type BreadcrumbsWrapperProps } from "./BreadcrumbsWrapper/BreadcrumbsWrapper";
 
-export { BreadcrumbItem, BreadcrumbItemProps } from "./BreadcrumbItem/BreadcrumbItem";
-export { BreadcrumbItemStyled } from "./BreadcrumbItem/BreadcrumbItem.styled";
+export { BreadcrumbItem, type BreadcrumbItemProps } from "./BreadcrumbItem/BreadcrumbItem";

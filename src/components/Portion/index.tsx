@@ -1,2 +1,1 @@
-export { Portion, PortionProps } from "./Portion";
-export { PortionStyled } from "./Portion.styled";
+export { Portion, type PortionProps } from "./Portion";

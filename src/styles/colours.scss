@@ -1,0 +1,144 @@
+@use "sass:math";
+
+$colors : (
+    "red"       : "0, 84%",
+    "salmon"    : "16, 100%",
+    "orange"    : "30, 92%",
+    "amber"     : "40, 97%",
+    "yellow"    : "50, 100%",
+    "spring"    : "65, 80%",
+    "pistachio" : "78, 54%",
+    "green"     : "148, 50%",
+    "teal"      : "174, 62%",
+    "cyan"      : "176, 78%",
+    "sky"       : "194, 97%",
+    "blue"     : "212, 100%",
+    "indigo"    : "237, 66%",
+    "violet"    : "258, 55%",
+    "purple"    : "311, 47%",
+    "pink"      : "336, 96%",
+    "crimson"   : "340, 64%",
+    "brick"     : "0, 68%",
+    "sienna"    : "15, 56%",
+    "brown"     : "24, 34%",
+    "slate"     : "209, 12%",
+    "grey"      : "0, 0%",
+);
+
+$class-prefixes : (
+    "bg": "background-color",
+    "text": "color",
+    "stroke": "stroke",
+    "fill": "fill",
+    "border": "border"
+);
+
+$levels: 10;
+
+:root {
+    @each $color, $value in $colors {
+        --base-#{$color}: #{$value};
+    }
+}
+
+:root {
+    @each $color, $value in $colors {
+        @for $i from 1 through (2 * $levels - 1) {
+            $level: "";
+            $palette-variable-name: "";
+            $lightness: #{$i * math.div(100, ($levels * 2)) + '%'};
+
+            @if $i < $levels {
+                $level: ($levels - $i) * 10;
+                $palette-variable-name: palette-#{$color}-dark-#{$level};
+            } @else if $i > $levels {
+                $level: ($i - $levels) * 10;
+                $palette-variable-name: palette-#{$color}-light-#{$level};
+            } @else if $i == $levels {
+                $palette-variable-name: palette-#{$color};
+            }
+
+            --#{$palette-variable-name}: var(--base-#{$color}), #{$lightness};
+        }
+    }
+}
+
+:root {
+    --black       : hsla(0, 0%, 0%, 1);
+    --white       : hsla(0, 0%, 100%, 1);
+    --transparent : hsla(0, 0%, 100%, 0);
+
+    @each $color, $value in $colors {
+        @for $i from 1 through (2 * $levels - 1) {
+            $level: "";
+            $color-variable-name: "";
+            $palette-variable-name: "";
+
+            @if $i < $levels {
+                $level: ($levels - $i) * 10;
+                $color-variable-name: #{$color}-dark-#{$level};
+                $palette-variable-name: var(--palette-#{$color-variable-name});
+            } @else if $i > $levels {
+                $level: ($i - $levels) * 10;
+                $color-variable-name: #{$color}-light-#{$level};
+                $palette-variable-name: var(--palette-#{$color-variable-name});
+            } @else if $i == $levels {
+                $color-variable-name: #{$color};
+                $palette-variable-name: var(--palette-#{$color-variable-name});
+            }
+
+            --#{$color-variable-name}: hsl(#{$palette-variable-name});
+        }
+    }
+}
+
+@each $prefix, $css-property in $class-prefixes {
+    @each $color, $value in $colors {
+        @for $i from 1 through (2 * $levels - 1) {
+            $level: "";
+            $class-name: "";
+            $css-property-value: "";
+
+            @if $i < $levels {
+                $level: ($levels - $i) * 10;
+                $class-name: #{$prefix}-#{$color}-dark-#{$level};
+                $css-property-value: var(--#{$color}-dark-#{$level});
+            } @else if $i > $levels {
+                $level: ($i - $levels) * 10;
+                $class-name: #{$prefix}-#{$color}-light-#{$level};
+                $css-property-value: var(--#{$color}-light-#{$level});
+            } @else if $i == $levels {
+                $class-name: #{$prefix}-#{$color};
+                $css-property-value: var(--#{$color});
+            }
+
+            @if $prefix == "border" {
+                $css-property-value:  "solid var(--global-border-width) " + $css-property-value;
+            }
+
+            .#{$class-name} {
+                #{$css-property}: #{$css-property-value};
+            }
+        }
+    }
+}
+
+.bg-white { background-color : var(--white); }
+.bg-black { background-color : var(--black); }
+.bg-transparent { background-color : var(--transparent); }
+
+.text-white { color : var(--white); }
+.text-black { color : var(--black); }
+.text-transparent { color : var(--transparent); }
+
+.border-white { border-color : var(--white); }
+.border-black { border-color : var(--black); }
+.border-transparent { border-color : var(--transparent); }
+
+.fill-white { fill : var(--white); }
+.fill-black { fill : var(--black); }
+.fill-transparent { fill : var(--transparent); }
+
+.stroke-white { stroke : var(--white); }
+.stroke-black { stroke : var(--black); }
+.stroke-transparent { stroke : var(--transparent); }

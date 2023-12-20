@@ -1,2 +1,1 @@
-export { InfoPanel, InfoPanelProps } from "./InfoPanel";
-export { InfoPanelStyled } from "./InfoPanel.styled";
+export { InfoPanel, type InfoPanelProps } from "./InfoPanel";

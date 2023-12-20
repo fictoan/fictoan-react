@@ -1,2 +1,1 @@
-export { ContentWrapper, ContentWrapperProps } from "./ContentWrapper";
-export { ContentWrapperStyled } from "./ContentWrapper.styled";
+export { ContentWrapper, type ContentWrapperProps } from "./ContentWrapper";

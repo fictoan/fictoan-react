@@ -3,7 +3,7 @@ import React from "react";
 import { Element } from "../../Element/Element";
 import { CommonAndHTMLProps } from "../../Element/constants";
 
-import { SidebarItemIconStyled } from "./SidebarItemIcon.styled";
+import "./sidebar-item-icon.css";
 
 // prettier-ignore
 export interface SidebarItemIconCustomProps {
@@ -27,7 +27,8 @@ export const SidebarItemIcon = React.forwardRef(
 
         return (
             <Element<SidebarItemIconElementType>
-                as={SidebarItemIconStyled}
+                as="div"
+                data-sidebar-item-icon
                 ref={ref}
                 classNames={classNames}
                 {...props}

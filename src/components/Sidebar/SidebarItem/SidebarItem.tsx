@@ -3,7 +3,7 @@ import React from "react";
 import { Element } from "../../Element/Element";
 import { CommonAndHTMLProps } from "../../Element/constants";
 
-import { SidebarItemStyled } from "./SidebarItem.styled";
+import "./sidebar-item.css";
 
 export interface SidebarItemCustomProps {
     hasAlert?: boolean;
@@ -21,6 +21,6 @@ export const SidebarItem = React.forwardRef(
             classNames.push("has-alert");
         }
 
-        return <Element<SidebarItemElementType> as={SidebarItemStyled} ref={ref} classNames={classNames} {...props} />;
+        return <Element<SidebarItemElementType> as="div" data-sidebar-item ref={ref} classNames={classNames} {...props} />;
     }
 );

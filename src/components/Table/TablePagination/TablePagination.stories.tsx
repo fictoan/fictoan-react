@@ -1,16 +1,29 @@
-import React from "react";
-import { createStoryFromTemplate, FictoanStory } from "../../../utils/storyUtils";
+import { Meta, StoryObj } from "@storybook/react";
 import { TablePagination } from "./TablePagination";
 
-const Template: FictoanStory<typeof TablePagination> = (args) => <TablePagination {...args} />;
-Template.displayName = TablePagination.displayName;
+const meta: Meta<typeof TablePagination> = {
+    component: TablePagination,
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "This is a TablePagination.",
+            },
+        },
+    },
+};
 
-export const Default: FictoanStory<typeof TablePagination> = createStoryFromTemplate(Template);
-Default.args = {
-    pageIndex: 1,
-    rangeStart: 1,
-    rangeEnd: 10,
-    hasPreviousPage: false,
-    hasNextPage: true,
-    totalRecords: 100,
+export default meta;
+
+type Story = StoryObj<typeof TablePagination>;
+
+export const Default: Story = {
+    args: {
+        pageIndex: 1,
+        rangeStart: 1,
+        rangeEnd: 10,
+        hasPreviousPage: false,
+        hasNextPage: true,
+        totalRecords: 100,
+    },
 };

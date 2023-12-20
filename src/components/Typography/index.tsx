@@ -1,3 +1,2 @@
-export { Text, TextProps } from "./Text";
-export { Heading, HeadingProps } from "./Heading";
-export { TypographyStyled } from "./Typography.styled";
+export { Text, type TextProps } from "./Text";
+export { Heading, type HeadingProps } from "./Heading";

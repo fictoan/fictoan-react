@@ -3,7 +3,7 @@ import React from "react";
 import { Element } from "../Element/Element";
 import { CommonAndHTMLProps } from "../Element/constants";
 
-import { SpinnerStyled } from "./Spinner.styled";
+import "./spinner.css";
 
 // prettier-ignore
 export interface SpinnerCustomProps {
@@ -21,6 +21,6 @@ export const Spinner = React.forwardRef(
             classNames.push(`size-${size}`);
         }
 
-        return <Element<SpinnerElementType> as={SpinnerStyled} ref={ref} classNames={classNames} {...props} />;
+        return <Element<SpinnerElementType> as="div" data-spinner ref={ref} classNames={classNames} {...props} />;
     }
 );

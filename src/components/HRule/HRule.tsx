@@ -3,7 +3,7 @@ import React from "react";
 import { Element } from "../Element/Element";
 import { CommonAndHTMLProps } from "../Element/constants";
 
-import { HRuleStyled } from "./HRule.styled";
+import "./h-rule.css";
 
 // prettier-ignore
 export interface HRCustomProps {
@@ -27,7 +27,7 @@ export const HRule = React.forwardRef(({ kind, sideMargin, ...props }: HRProps, 
 
     return (
         <Element<HRElementType>
-            as={HRuleStyled}
+            as="hr"
             ref={ref}
             classNames={classNames}
             marginTop="small"

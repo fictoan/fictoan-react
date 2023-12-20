@@ -1,0 +1,64 @@
+[data-progress-bar-meta] {
+    display         : flex;
+    align-items     : baseline;
+    justify-content : space-between;
+    margin-bottom   : 8px;
+
+    p:first-of-type {
+        display     : inline-flex;
+        font-weight : bold;
+        margin      : 0;
+        color       : var(--progress-bar-label);
+    }
+
+    p:last-of-type {
+        display    : inline-flex;
+        text-align : right;
+        margin     : 0;
+        color      : var(--progress-bar-value);
+    }
+}
+
+progress[data-progress-bar] {
+    display        : flex;
+    flex-wrap      : wrap;
+    flex-direction : row;
+    width          : 100%;
+
+    &[value] {
+        position   : relative;
+        flex       : 1 1 100%;
+        height     : var(--progress-bar-height);
+        background : var(--progress-bar-bg);
+        box-shadow : 0 2px 8px -2px hsla(0, 0%, 0%, 0.24) inset;
+    }
+
+    &[value]::-webkit-progress-bar {
+        background : var(--progress-bar-bg);
+        box-shadow : 0 2px 8px -2px hsla(0, 0%, 0%, 0.24) inset;
+    }
+
+    &::-webkit-progress-value {
+        background : var(--progress-bar-fill);
+    }
+
+    &[value]::-moz-progress-bar {
+        background : var(--progress-bar-fill);
+    }
+
+    &.shape-rounded::-webkit-progress-value, &.shape-rounded, &.shape-rounded::-webkit-progress-bar {
+        border-radius : var(--progress-bar-border-radius);
+    }
+
+    &.shape-rounded::-moz-progress-bar {
+        border-radius : var(--progress-bar-border-radius);
+    }
+
+    &.shape-curved::-webkit-progress-value, &.shape-curved, &.shape-curved::-webkit-progress-bar {
+        border-radius : 8000px;
+    }
+
+    &.shape-curved::-moz-progress-bar {
+        border-radius : 8000px;
+    }
+}

@@ -3,42 +3,71 @@ import React from "react";
 import { Element } from "../Element/Element";
 import { CommonAndHTMLProps, SpacingTypes } from "../Element/constants";
 
-import { RowStyled } from "./Row.styled";
+import "./row.css";
 
 // prettier-ignore
-export interface RowCustomProps {
-    sidePadding                    ? : "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
-    gutters                        ? : SpacingTypes;
-    retainLayoutOnTabletLandscape  ? : boolean;
-    retainLayoutOnTabletPortrait   ? : boolean;
-    retainLayoutOnMobile           ? : boolean;
-    retainLayoutAlways             ? : boolean;
+interface RowCommonProps {
+    sidePadding                   ? : "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
+    gutters                       ? : SpacingTypes;
+    retainLayoutOnTabletLandscape ? : boolean;
+    retainLayoutOnTabletPortrait  ? : boolean;
+    retainLayoutOnMobile          ? : boolean;
+    retainLayoutAlways            ? : boolean;
 }
 
+type ConditionalLayoutProps = | {
+    layout             : "grid";
+    equaliseChildren ? : never;
+    equalizeChildren ? : never;
+} | {
+    layout             : "flexbox";
+    equaliseChildren ? : boolean;
+    equalizeChildren ? : boolean;
+};
+
 export type RowElementType = HTMLDivElement;
-export type RowProps = Omit<CommonAndHTMLProps<RowElementType>, keyof RowCustomProps> & RowCustomProps;
+export type RowCustomProps = RowCommonProps & ConditionalLayoutProps;
+export type RowProps       = Omit<CommonAndHTMLProps<RowElementType>, keyof RowCustomProps> & RowCustomProps;
 
 export const Row = React.forwardRef(
     (
         {
+            layout = "grid",
             sidePadding,
-            gutters = "medium",
+            gutters,
             retainLayoutOnTabletLandscape,
             retainLayoutOnTabletPortrait,
             retainLayoutOnMobile,
             retainLayoutAlways,
+            equaliseChildren,
+            equalizeChildren,
             ...props
         }: RowProps,
         ref: React.Ref<RowElementType>
     ) => {
         let classNames = [];
 
-        if (sidePadding) {
-            classNames.push(`side-padding-${sidePadding}`);
+        // TOP LEVEL CHECK =====================================================
+        if (layout) {
+            classNames.push(`layout-${layout}`);
         }
 
-        if (gutters) {
-            classNames.push(gutters === "none" ? "no-gutters" : `${gutters}-gutters`);
+        // CONDITIONAL GUTTERS =================================================
+        // Add medium gutters by default for grid layouts only, remove them for flexbox layouts
+        const conditionalGutters = gutters ?? (layout === "grid" ? "medium" : "none");
+
+        if (conditionalGutters) {
+            classNames.push(conditionalGutters === "none" ? "no-gutters" : `${conditionalGutters}-gutters`);
+        }
+
+        // FLEXBOX-SPECIFIC CLASSNAMES =========================================
+        if (equaliseChildren || equalizeChildren) {
+            classNames.push("equalise-children");
+        }
+
+        // COMMON CLASSNAMES ===================================================
+        if (sidePadding) {
+            classNames.push(`side-padding-${sidePadding}`);
         }
 
         if (retainLayoutOnTabletLandscape) {
@@ -61,11 +90,11 @@ export const Row = React.forwardRef(
 
         return (
             <Element<RowElementType>
-                as={RowStyled}
+                as="div"
+                data-row
                 ref={ref}
-                classNames={classNames}
+                classNames={[classNames.join(" ")]}
                 marginBottom="tiny"
-                isFullWidth
                 {...props}
             />
         );

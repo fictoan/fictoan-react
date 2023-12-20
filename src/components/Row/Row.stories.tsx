@@ -1,41 +1,51 @@
 import React from "react";
-import { createStoryFromTemplate, FictoanStory } from "../../utils/storyUtils";
+import { Meta, StoryObj } from "@storybook/react";
 import { Row } from "./Row";
-import { Default as Portion } from "../Portion/Portion.stories";
-import { Default as Element } from "../Element/Element.stories";
+import { Portion } from "../Portion/Portion";
+import { Element } from "../Element/Element";
 
-const Template: FictoanStory<typeof Row> = (args) => <Row {...args} />;
-Template.displayName = Row.displayName;
+const meta: Meta<typeof Row> = {
+    component: Row,
+    tags: ["autodocs"],
+    parameters: {
+        docs: {
+            description: {
+                component: "This is a Row.",
+            },
+        },
+    },
+};
 
-export const Default: FictoanStory<typeof Row> = createStoryFromTemplate(Template);
-Default.args = {};
+export default meta;
+type Story = StoryObj<typeof Row>;
 
-export const WithPortions: FictoanStory<typeof Row> = createStoryFromTemplate(Template);
-WithPortions.args = {
-    children: [
-        <Portion desktopSpan="8">
-            <Element as="div" bgColour="slate-20" padding="micro"></Element>
-        </Portion>,
-        <Portion desktopSpan="16">
-            <Element as="div" bgColour="slate-20" padding="micro"></Element>
-        </Portion>,
-        <Portion desktopSpan="16">
-            <Element as="div" bgColour="slate-20" padding="micro"></Element>
-        </Portion>,
-        <Portion desktopSpan="8">
-            <Element as="div" bgColour="slate-20" padding="micro"></Element>
-        </Portion>,
-        <Portion desktopSpan="4">
-            <Element as="div" bgColour="slate-20" padding="micro"></Element>
-        </Portion>,
-        <Portion desktopSpan="4">
-            <Element as="div" bgColour="slate-20" padding="micro"></Element>
-        </Portion>,
-        <Portion desktopSpan="12">
-            <Element as="div" bgColour="slate-20" padding="micro"></Element>
-        </Portion>,
-        <Portion desktopSpan="4">
-            <Element as="div" bgColour="slate-20" padding="micro"></Element>
-        </Portion>,
-    ],
+export const WithPortions: Story = {
+    render: (args) => (
+        <Row {...args}>
+            <Portion desktopSpan="8">
+                <Element as="div" bgColour="slate-light-20" padding="micro" />
+            </Portion>
+            <Portion desktopSpan="16">
+                <Element as="div" bgColour="slate-light-20" padding="micro" />
+            </Portion>
+            <Portion desktopSpan="16">
+                <Element as="div" bgColour="slate-light-20" padding="micro" />
+            </Portion>
+            <Portion desktopSpan="8">
+                <Element as="div" bgColour="slate-light-20" padding="micro" />
+            </Portion>
+            <Portion desktopSpan="4">
+                <Element as="div" bgColour="slate-light-20" padding="micro" />
+            </Portion>
+            <Portion desktopSpan="4">
+                <Element as="div" bgColour="slate-light-20" padding="micro" />
+            </Portion>
+            <Portion desktopSpan="12">
+                <Element as="div" bgColour="slate-light-20" padding="micro" />
+            </Portion>
+            <Portion desktopSpan="4">
+                <Element as="div" bgColour="slate-light-20" padding="micro" />
+            </Portion>
+        </Row>
+    ),
 };

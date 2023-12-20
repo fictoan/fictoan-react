@@ -3,7 +3,7 @@ import React from "react";
 import { Element } from "../../Element/Element";
 import { CommonAndHTMLProps } from "../../Element/constants";
 
-import { NotificationsWrapperStyled } from "./NotificationsWrapper.styled";
+import "./notifications-wrapper.css";
 
 // prettier-ignore
 export interface NotificationsWrapperCustomProps {
@@ -37,7 +37,8 @@ export const NotificationsWrapper = React.forwardRef(
 
         return (
             <Element<NotificationsWrapperElementType>
-                as={NotificationsWrapperStyled}
+                as="div"
+                data-notifications-wrapper
                 ref={ref}
                 classNames={classNames}
                 {...props}
