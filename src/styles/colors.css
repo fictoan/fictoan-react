@@ -1,0 +1,247 @@
+:root {
+    --black: hsla(0, 0%, 0%, 1);
+    --white: hsla(0, 0%, 100%, 1);
+    --transparent: hsla(0, 0%, 100%, 0);
+
+    --red: hsla(0, 84%, 60%, 1);
+    --red90: hsla(0, 84%, 64%, 1);
+    --red80: hsla(0, 84%, 68%, 1);
+    --red70: hsla(0, 84%, 72%, 1);
+    --red60: hsla(0, 84%, 76%, 1);
+    --red50: hsla(0, 84%, 80%, 1);
+    --red40: hsla(0, 84%, 84%, 1);
+    --red30: hsla(0, 84%, 88%, 1);
+    --red20: hsla(0, 84%, 92%, 1);
+    --red10: hsla(0, 84%, 96%, 1);
+
+    --salmon: hsla(9, 100%, 69%, 1);
+    --salmon90: hsla(9, 100%, 72%, 1);
+    --salmon80: hsla(9, 100%, 75%, 1);
+    --salmon70: hsla(9, 100%, 79%, 1);
+    --salmon60: hsla(9, 100%, 81%, 1);
+    --salmon50: hsla(9, 100%, 84%, 1);
+    --salmon40: hsla(9, 100%, 87%, 1);
+    --salmon30: hsla(9, 100%, 91%, 1);
+    --salmon20: hsla(9, 100%, 94%, 1);
+    --salmon10: hsla(9, 100%, 97%, 1);
+
+    --orange: hsla(30, 92%, 56%, 1);
+    --orange90: hsla(30, 92%, 60%, 1);
+    --orange80: hsla(30, 92%, 64%, 1);
+    --orange70: hsla(30, 92%, 68%, 1);
+    --orange60: hsla(30, 92%, 72%, 1);
+    --orange50: hsla(30, 92%, 76%, 1);
+    --orange40: hsla(30, 92%, 80%, 1);
+    --orange30: hsla(30, 92%, 84%, 1);
+    --orange20: hsla(30, 92%, 88%, 1);
+    --orange10: hsla(30, 92%, 92%, 1);
+
+    --amber: hsla(40, 97%, 61%, 1);
+    --amber90: hsla(40, 97%, 65%, 1);
+    --amber80: hsla(40, 96%, 69%, 1);
+    --amber70: hsla(40, 96%, 72%, 1);
+    --amber60: hsla(40, 97%, 76%, 1);
+    --amber50: hsla(40, 96%, 80%, 1);
+    --amber40: hsla(40, 95%, 84%, 1);
+    --amber30: hsla(40, 97%, 88%, 1);
+    --amber20: hsla(40, 95%, 92%, 1);
+    --amber10: hsla(40, 90%, 96%, 1);
+
+    --yellow: hsla(50, 100%, 52%, 1);
+    --yellow90: hsla(50, 100%, 57%, 1);
+    --yellow80: hsla(50, 100%, 62%, 1);
+    --yellow70: hsla(50, 100%, 67%, 1);
+    --yellow60: hsla(50, 100%, 72%, 1);
+    --yellow50: hsla(50, 100%, 77%, 1);
+    --yellow40: hsla(50, 100%, 82%, 1);
+    --yellow30: hsla(50, 100%, 87%, 1);
+    --yellow20: hsla(50, 100%, 92%, 1);
+    --yellow10: hsla(50, 100%, 97%, 1);
+
+    --spring: hsla(65, 80%, 52%, 1);
+    --spring90: hsla(65, 80%, 57%, 1);
+    --spring80: hsla(65, 80%, 62%, 1);
+    --spring70: hsla(65, 80%, 67%, 1);
+    --spring60: hsla(65, 80%, 72%, 1);
+    --spring50: hsla(65, 80%, 77%, 1);
+    --spring40: hsla(65, 80%, 82%, 1);
+    --spring30: hsla(65, 80%, 87%, 1);
+    --spring20: hsla(65, 80%, 92%, 1);
+    --spring10: hsla(65, 80%, 97%, 1);
+
+    --pistachio: hsla(78, 54%, 52%, 1);
+    --pistachio90: hsla(78, 54%, 57%, 1);
+    --pistachio80: hsla(78, 54%, 62%, 1);
+    --pistachio70: hsla(78, 54%, 67%, 1);
+    --pistachio60: hsla(78, 54%, 72%, 1);
+    --pistachio50: hsla(78, 54%, 77%, 1);
+    --pistachio40: hsla(78, 54%, 82%, 1);
+    --pistachio30: hsla(78, 54%, 87%, 1);
+    --pistachio20: hsla(78, 54%, 92%, 1);
+    --pistachio10: hsla(78, 54%, 97%, 1);
+
+    --green: hsla(148, 50%, 42%, 1);
+    --green90: hsla(148, 39%, 48%, 1);
+    --green80: hsla(148, 36%, 54%, 1);
+    --green70: hsla(148, 36%, 59%, 1);
+    --green60: hsla(148, 36%, 65%, 1);
+    --green50: hsla(148, 36%, 71%, 1);
+    --green40: hsla(148, 36%, 77%, 1);
+    --green30: hsla(148, 36%, 82%, 1);
+    --green20: hsla(148, 37%, 88%, 1);
+    --green10: hsla(148, 35%, 94%, 1);
+
+    --teal: hsla(174, 62%, 48%, 1);
+    --teal90: hsla(174, 58%, 53%, 1);
+    --teal80: hsla(174, 58%, 58%, 1);
+    --teal70: hsla(174, 57%, 63%, 1);
+    --teal60: hsla(174, 58%, 69%, 1);
+    --teal50: hsla(174, 58%, 74%, 1);
+    --teal40: hsla(174, 57%, 79%, 1);
+    --teal30: hsla(173, 58%, 84%, 1);
+    --teal20: hsla(174, 56%, 89%, 1);
+    --teal10: hsla(172, 56%, 95%, 1);
+
+    --cyan: hsla(176, 78%, 55%, 1);
+    --cyan90: hsla(176, 77%, 59%, 1);
+    --cyan80: hsla(176, 77%, 64%, 1);
+    --cyan70: hsla(176, 77%, 68%, 1);
+    --cyan60: hsla(176, 77%, 73%, 1);
+    --cyan50: hsla(176, 78%, 77%, 1);
+    --cyan40: hsla(176, 77%, 82%, 1);
+    --cyan30: hsla(176, 77%, 86%, 1);
+    --cyan20: hsla(176, 75%, 91%, 1);
+    --cyan10: hsla(176, 75%, 95%, 1);
+
+    --sky: hsla(194, 97%, 72%, 1);
+    --sky90: hsla(194, 97%, 75%, 1);
+    --sky80: hsla(194, 97%, 77%, 1);
+    --sky70: hsla(194, 96%, 80%, 1);
+    --sky60: hsla(194, 95%, 83%, 1);
+    --sky50: hsla(194, 97%, 86%, 1);
+    --sky40: hsla(194, 97%, 89%, 1);
+    --sky30: hsla(194, 95%, 91%, 1);
+    --sky20: hsla(194, 93%, 94%, 1);
+    --sky10: hsla(194, 88%, 97%, 1);
+
+    --blue: hsla(212, 100%, 42%, 1);
+    --blue90: hsla(212, 100%, 48%, 1);
+    --blue80: hsla(212, 100%, 54%, 1);
+    --blue70: hsla(212, 100%, 59%, 1);
+    --blue60: hsla(212, 100%, 65%, 1);
+    --blue50: hsla(212, 100%, 71%, 1);
+    --blue40: hsla(212, 100%, 77%, 1);
+    --blue30: hsla(212, 100%, 83%, 1);
+    --blue20: hsla(212, 100%, 89%, 1);
+    --blue10: hsla(212, 100%, 95%, 1);
+
+    --indigo: hsla(237, 66%, 53%, 1);
+    --indigo90: hsla(237, 66%, 57%, 1);
+    --indigo80: hsla(237, 66%, 62%, 1);
+    --indigo70: hsla(237, 66%, 67%, 1);
+    --indigo60: hsla(237, 66%, 72%, 1);
+    --indigo50: hsla(237, 65%, 76%, 1);
+    --indigo40: hsla(237, 65%, 81%, 1);
+    --indigo30: hsla(237, 64%, 86%, 1);
+    --indigo20: hsla(237, 64%, 91%, 1);
+    --indigo10: hsla(237, 64%, 96%, 1);
+
+    --violet: hsla(258, 55%, 58%, 1);
+    --violet90: hsla(259, 55%, 62%, 1);
+    --violet80: hsla(259, 55%, 66%, 1);
+    --violet70: hsla(259, 55%, 70%, 1);
+    --violet60: hsla(259, 55%, 75%, 1);
+    --violet50: hsla(258, 55%, 79%, 1);
+    --violet40: hsla(259, 54%, 83%, 1);
+    --violet30: hsla(259, 54%, 87%, 1);
+    --violet20: hsla(260, 55%, 91%, 1);
+    --violet10: hsla(260, 55%, 96%, 1);
+
+    --purple: hsla(311, 47%, 55%, 1);
+    --purple90: hsla(311, 47%, 60%, 1);
+    --purple80: hsla(311, 47%, 64%, 1);
+    --purple70: hsla(311, 47%, 69%, 1);
+    --purple60: hsla(311, 47%, 73%, 1);
+    --purple50: hsla(311, 47%, 78%, 1);
+    --purple40: hsla(311, 47%, 82%, 1);
+    --purple30: hsla(311, 48%, 86%, 1);
+    --purple20: hsla(311, 48%, 91%, 1);
+    --purple10: hsla(311, 48%, 95%, 1);
+
+    --pink: hsla(336, 96%, 72%, 1);
+    --pink90: hsla(336, 95%, 75%, 1);
+    --pink80: hsla(336, 95%, 78%, 1);
+    --pink70: hsla(336, 94%, 80%, 1);
+    --pink60: hsla(336, 95%, 83%, 1);
+    --pink50: hsla(336, 94%, 86%, 1);
+    --pink40: hsla(336, 93%, 89%, 1);
+    --pink30: hsla(337, 95%, 92%, 1);
+    --pink20: hsla(336, 93%, 94%, 1);
+    --pink10: hsla(337, 87%, 97%, 1);
+
+    --crimson: hsla(340, 64%, 42%, 1);
+    --crimson90: hsla(340, 64%, 48%, 1);
+    --crimson80: hsla(340, 64%, 54%, 1);
+    --crimson70: hsla(340, 64%, 59%, 1);
+    --crimson60: hsla(340, 64%, 65%, 1);
+    --crimson50: hsla(340, 64%, 71%, 1);
+    --crimson40: hsla(340, 64%, 77%, 1);
+    --crimson30: hsla(340, 64%, 82%, 1);
+    --crimson20: hsla(340, 64%, 88%, 1);
+    --crimson10: hsla(340, 64%, 94%, 1);
+
+    --brick: hsla(0, 68%, 42%, 1);
+    --brick90: hsla(0, 68%, 48%, 1);
+    --brick80: hsla(0, 68%, 54%, 1);
+    --brick70: hsla(0, 68%, 60%, 1);
+    --brick60: hsla(0, 68%, 66%, 1);
+    --brick50: hsla(0, 68%, 72%, 1);
+    --brick40: hsla(0, 68%, 78%, 1);
+    --brick30: hsla(0, 68%, 84%, 1);
+    --brick20: hsla(0, 68%, 90%, 1);
+    --brick10: hsla(0, 68%, 96%, 1);
+
+    --sienna: hsla(15, 56%, 40%, 1);
+    --sienna90: hsla(15, 56%, 48%, 1);
+    --sienna80: hsla(15, 56%, 54%, 1);
+    --sienna70: hsla(15, 56%, 60%, 1);
+    --sienna60: hsla(15, 56%, 66%, 1);
+    --sienna50: hsla(15, 56%, 72%, 1);
+    --sienna40: hsla(15, 56%, 78%, 1);
+    --sienna30: hsla(15, 56%, 84%, 1);
+    --sienna20: hsla(15, 56%, 90%, 1);
+    --sienna10: hsla(15, 56%, 96%, 1);
+
+    --brown: hsla(24, 34%, 42%, 1);
+    --brown90: hsla(24, 27%, 48%, 1);
+    --brown80: hsla(24, 25%, 54%, 1);
+    --brown70: hsla(24, 25%, 60%, 1);
+    --brown60: hsla(24, 25%, 65%, 1);
+    --brown50: hsla(24, 25%, 71%, 1);
+    --brown40: hsla(24, 25%, 77%, 1);
+    --brown30: hsla(23, 26%, 83%, 1);
+    --brown20: hsla(24, 25%, 88%, 1);
+    --brown10: hsla(22, 27%, 94%, 1);
+
+    --slate: hsla(209, 12%, 50%, 1);
+    --slate90: hsla(210, 12%, 55%, 1);
+    --slate80: hsla(209, 12%, 60%, 1);
+    --slate70: hsla(207, 12%, 65%, 1);
+    --slate60: hsla(210, 12%, 70%, 1);
+    --slate50: hsla(210, 12%, 75%, 1);
+    --slate40: hsla(208, 13%, 80%, 1);
+    --slate30: hsla(213, 12%, 85%, 1);
+    --slate20: hsla(210, 12%, 90%, 1);
+    --slate10: hsla(200, 11%, 95%, 1);
+
+    --grey: hsla(0, 0%, 34%, 1);
+    --grey90: hsla(0, 0%, 41%, 1);
+    --grey80: hsla(0, 0%, 48%, 1);
+    --grey70: hsla(0, 0%, 55%, 1);
+    --grey60: hsla(0, 0%, 62%, 1);
+    --grey50: hsla(0, 0%, 69%, 1);
+    --grey40: hsla(0, 0%, 76%, 1);
+    --grey30: hsla(0, 0%, 83%, 1);
+    --grey20: hsla(0, 0%, 90%, 1);
+    --grey10: hsla(0, 0%, 97%, 1);
+}

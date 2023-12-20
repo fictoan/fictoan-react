@@ -1,0 +1,24 @@
+[data-card] {
+    position : relative;
+    width    : 100%;
+}
+
+[data-card][class*="border-"] { border-width : var(--card-border-width); }
+
+[data-card]:not([class*="border-"]) { border : 1px solid var(--card-border-width) }
+
+[data-card]:not([class*="bg-"]) { background-color : var(--card-border-width) }
+
+[data-card].shape-rounded { border-radius : var(--card-border-width) }
+
+[data-card].padding-all-tiny   { padding : 8px; }
+[data-card].padding-all-small  { padding : 16px; }
+[data-card].padding-all-medium { padding : 32px; }
+[data-card].padding-all-large  { padding : 48px; }
+[data-card].padding-all-huge   { padding : 64px; }
+
+@media all and (max-width : 600px) {
+    [data-card][class*="padding"] { padding : 4vmin; }
+
+    .padding-none { padding : 0 !important; }
+}
