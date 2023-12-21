@@ -15,6 +15,9 @@ export * from "./components/Card/Card";
 export * from "./components/Element/Element";
 // export { ElementProps } from "./components/Element/constants";
 
+// H-RULE //////////////////////////////////////////////////////////////////////
+export * from "./components/HRule/HRule";
+
 // PORTION /////////////////////////////////////////////////////////////////////
 export * from "./components/Portion/Portion";
 
