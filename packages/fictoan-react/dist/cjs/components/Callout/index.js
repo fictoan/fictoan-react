@@ -1,2 +1,0 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("./Callout.js"),r=require("./Callout.styled.js");require("../../external/Element.js"),require("react"),require("../Typography/Text.js"),require("../../external/theme.js"),require("../../external/DefaultColours.js"),require("styled-components"),exports.Callout=e.Callout,exports.CalloutStyled=r.CalloutStyled;
-//# sourceMappingURL=index.js.map

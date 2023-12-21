@@ -1,2 +1,0 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("../../../external/Element.js"),r=require("react"),t=require("./BreadcrumbItem.styled.js");function a(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}require("styled-components");var u=/*#__PURE__*/a(r);const n=u.default.forwardRef(((r,a)=>{var n=e.__rest(r,[]);return u.default.createElement(e.Element,Object.assign({as:t.BreadcrumbItemStyled,ref:a,marginRight:"micro"},n))}));exports.BreadcrumbItem=n;
-//# sourceMappingURL=BreadcrumbItem.js.map

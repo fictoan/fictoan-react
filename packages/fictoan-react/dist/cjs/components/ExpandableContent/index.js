@@ -1,2 +1,0 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("./ExpandableContent.js"),t=require("./ExpandableContent.styled.js");require("../../external/Element.js"),require("react"),require("../Typography/Text.js"),require("styled-components"),exports.ExpandableContent=e.ExpandableContent,exports.ExpandableContentStyled=t.ExpandableContentStyled;
-//# sourceMappingURL=index.js.map

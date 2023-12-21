@@ -1,2 +1,0 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("./ProgressBar.js"),r=require("./ProgressBar.styled.js");require("../../external/Element.js"),require("react"),require("../Typography/Text.js"),require("styled-components"),require("../../external/helpers.js"),require("../../external/DefaultColours.js"),exports.ProgressBar=e.ProgressBar,exports.ProgressBarStyled=r.ProgressBarStyled;
-//# sourceMappingURL=index.js.map

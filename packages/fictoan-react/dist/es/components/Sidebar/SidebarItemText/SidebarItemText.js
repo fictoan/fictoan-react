@@ -1,2 +1,0 @@
-import{_ as e,E as t}from"../../../external/Element.js";import r from"react";import{SidebarItemTextStyled as s}from"./SidebarItemText.styled.js";import"styled-components";const i=/*#__PURE__*/r.forwardRef(((i,a)=>{var{linkText:m,weight:o,size:n}=i,l=e(i,["linkText","weight","size"]);let p=[];return o&&p.push(`weight-${o}`),n&&p.push(`text-${n}`),/*#__PURE__*/r.createElement(t,Object.assign({as:s,ref:a,classNames:p},l),m)}));export{i as SidebarItemText};
-//# sourceMappingURL=SidebarItemText.js.map

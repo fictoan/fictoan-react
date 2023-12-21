@@ -1,2 +1,0 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("../../../external/Element.js"),r=require("react"),t=require("./BreadcrumbsWrapper.styled.js");function a(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}require("styled-components");var n=/*#__PURE__*/a(r);const s=n.default.forwardRef(((r,a)=>{var s=e.__rest(r,[]);return n.default.createElement(e.Element,Object.assign({as:t.BreadcrumbsWrapperStyled,ref:a},s,{paddingTop:"nano",paddingBottom:"nano"}))}));exports.BreadcrumbsWrapper=s;
-//# sourceMappingURL=BreadcrumbsWrapper.js.map

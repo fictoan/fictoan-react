@@ -1,2 +1,0 @@
-"use strict";function e(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}Object.defineProperty(exports,"__esModule",{value:!0});const o=/*#__PURE__*/e(require("styled-components")).default.footer.withConfig({displayName:"SidebarFooterStyled",componentId:"-f0mqyg"})`display:grid;width:100%;align-self:end;order:1;position:sticky;bottom:0;left:0;margin:0;margin-top:auto;background-color:${e=>e.theme.sidebar.footer.bg};border-top:1px solid ${e=>e.theme.sidebar.footer.borderTop};`;exports.SidebarFooterStyled=o;
-//# sourceMappingURL=SidebarFooter.styled.js.map

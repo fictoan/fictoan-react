@@ -1,2 +1,0 @@
-import{_ as e,E as t}from"../../../external/Element.js";import r from"react";import{SidebarItemStyled as s}from"./SidebarItem.styled.js";import"styled-components";import"../SidebarItemText/SidebarItemText.styled.js";const a=/*#__PURE__*/r.forwardRef(((a,m)=>{var{hasAlert:o}=a,l=e(a,["hasAlert"]);let i=[];return o&&i.push("has-alert"),/*#__PURE__*/r.createElement(t,Object.assign({as:s,ref:m,classNames:i},l))}));export{a as SidebarItem};
-//# sourceMappingURL=SidebarItem.js.map
