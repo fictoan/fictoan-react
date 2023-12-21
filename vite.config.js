@@ -1,18 +1,23 @@
-//vite.config.js
 import { resolve } from "path";
 import { defineConfig } from "vite";
+import pkg from "./package.json";
 
+/** @type {import('vite').UserConfig} */
 export default defineConfig({
+    esbuild: {
+        minifyIdentifiers: false,
+    },
     build: {
         lib: {
-            entry: resolve(__dirname, "src/index.jsx"),
-            name: "fictoan-react",
+            entry: resolve(__dirname, "src/index.tsx"),
             formats: ["es", "cjs"],
-
-            fileName: "index",
+            fileName: "index"
         },
         rollupOptions: {
-            external: ["react"],
+            external: [...Object.keys(pkg.peerDependencies)],
+            output: {
+                intro: 'import "./style.css";',
+            },
         },
     },
 });

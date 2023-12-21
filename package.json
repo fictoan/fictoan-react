@@ -1,8 +1,20 @@
 {
-    "name": "fictoan-experiment",
+    "name": "fictoan-react",
     "version": "1.0.0",
+    "private": false,
     "description": "",
-    "main": "index.js",
+    "type": "module",
+    "files": [
+        "dist"
+    ],
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs"
+        }
+    },
     "scripts": {
         "preinstall": "npx only-allow pnpm",
         "build": "vite build && tsc",
@@ -10,7 +22,7 @@
     },
     "keywords": [],
     "author": "",
-    "license": "ISC",
+    "license": "MIT",
     "devDependencies": {
         "@types/react": "^18.2.45",
         "react": "^18.2.0",
