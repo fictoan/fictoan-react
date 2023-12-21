@@ -15,6 +15,11 @@
 /*To make sure a button’s children don’t style themselves like a d-bag*/
 > * { all : unset; }
 
+:root {
+    --opacity: 0.4;
+    --bg-color: rgba(hsla(0, 84%, 60%, 1), var(--opacity, 1));
+}
+
 [data-button]:active {
     box-shadow : none;
     opacity    : 0.72;
@@ -258,7 +263,6 @@
     border-radius      : 50%;
     content            : "";
     border             : 3px solid;
-    /*border-color       : ${(props : ButtonProps) => convertToFictoanColor((props.textColor ?? props.textColour) as ColourPropTypes)};*/
     border-color       : var(--button-primary-loading-spinner-colour);
     border-top-color   : transparent;
     border-right-color : transparent;

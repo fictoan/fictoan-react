@@ -4,6 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "preinstall": "npx only-allow pnpm",
         "build": "vite build && tsc",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
