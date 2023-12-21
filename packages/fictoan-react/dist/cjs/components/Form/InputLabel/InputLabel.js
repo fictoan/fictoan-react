@@ -1,2 +1,0 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("../../../external/Element.js");function t(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}var r=/*#__PURE__*/t(require("react"));const a=r.default.forwardRef(((t,a)=>{var{label:l}=t,n=e.__rest(t,["label"]);return r.default.createElement(e.Element,Object.assign({as:"label",ref:a},n),l)}));exports.InputLabel=a;
-//# sourceMappingURL=InputLabel.js.map

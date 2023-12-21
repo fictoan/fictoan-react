@@ -1,3 +1,0 @@
-import{_ as e}from"../../../external/Element.js";import t from"react";import{InputField as r}from"./InputField.js";import"../BaseInputComponent/BaseInputComponent.js";import"../InputLabel/InputLabel.js";import"../FormItem/FormItem.js";import"../FormItem/FormItem.styled.js";import"styled-components";import"./InputField.styled.js";import"../Select/Select.styled.js";import"../TextArea/TextArea.styled.js";import"../../../external/theme.js";import"../../../external/DefaultColours.js";const o=/*#__PURE__*/t.forwardRef(((o,m)=>{var p=e(o,[]);/*#__PURE__*/
-return t.createElement(r,Object.assign({type:"file",ref:m},p))}));export{o as FileUpload};
-//# sourceMappingURL=FileUpload.js.map

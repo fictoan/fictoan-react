@@ -1,2 +1,0 @@
-import o from"styled-components";const e=o.footer.withConfig({displayName:"SidebarFooterStyled",componentId:"-f0mqyg"})`display:grid;width:100%;align-self:end;order:1;position:sticky;bottom:0;left:0;margin:0;margin-top:auto;background-color:${o=>o.theme.sidebar.footer.bg};border-top:1px solid ${o=>o.theme.sidebar.footer.borderTop};`;export{e as SidebarFooterStyled};
-//# sourceMappingURL=SidebarFooter.styled.js.map

@@ -1,2 +1,0 @@
-import{_ as e,E as t}from"../../external/Element.js";import s from"react";const r=/*#__PURE__*/s.forwardRef(((r,a)=>{var{weight:i,size:n,style:l="sans-serif",align:p,isSubtext:u}=r,h=e(r,["weight","size","style","align","isSubtext"]);let o=[];return i&&o.push(`weight-${i}`),n&&o.push(`text-${n}`),l&&o.push(`font-${l}`),u&&o.push("sub-text"),p&&o.push(`text-${p}`),/*#__PURE__*/s.createElement(t,Object.assign({as:"p",ref:a,classNames:o},h))}));export{r as Text};
-//# sourceMappingURL=Text.js.map

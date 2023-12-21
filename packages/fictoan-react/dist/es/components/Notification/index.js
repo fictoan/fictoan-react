@@ -1,2 +1,0 @@
-export{NotificationsWrapper}from"./NotificationsWrapper/NotificationsWrapper.js";export{NotificationsWrapperStyled}from"./NotificationsWrapper/NotificationsWrapper.styled.js";export{NotificationItem}from"./NotificationItem/NotificationItem.js";export{NotificationItemStyled}from"./NotificationItem/NotificationItem.styled.js";import"../../external/Element.js";import"react";import"styled-components";
-//# sourceMappingURL=index.js.map

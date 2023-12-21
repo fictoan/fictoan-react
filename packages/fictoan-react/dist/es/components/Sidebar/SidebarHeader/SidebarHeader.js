@@ -1,2 +1,0 @@
-import{_ as e,E as t}from"../../../external/Element.js";import r from"react";import{SidebarHeaderStyled as s}from"./SidebarHeader.styled.js";import"styled-components";const a=/*#__PURE__*/r.forwardRef(((a,i)=>{var{isSticky:o}=a,m=e(a,["isSticky"]);let c=[];return o&&c.push("is-sticky"),/*#__PURE__*/r.createElement(t,Object.assign({as:s,ref:i,classNames:c},m))}));export{a as SidebarHeader};
-//# sourceMappingURL=SidebarHeader.js.map

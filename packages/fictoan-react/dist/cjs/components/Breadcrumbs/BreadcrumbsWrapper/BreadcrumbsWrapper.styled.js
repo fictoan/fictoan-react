@@ -1,2 +1,0 @@
-"use strict";function e(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}Object.defineProperty(exports,"__esModule",{value:!0});const r=/*#__PURE__*/e(require("styled-components")).default.nav.withConfig({displayName:"BreadcrumbsWrapperStyled",componentId:"-1qqb7td"})`display:flex;flex-wrap:wrap;align-items:flex-start;box-shadow:0 1px 1px -1px rgba(0, 0, 0, 0.08);&:not([class*="bg-"]){background-color:${e=>e.theme.breadcrumbs.wrapper.bg};}`;exports.BreadcrumbsWrapperStyled=r;
-//# sourceMappingURL=BreadcrumbsWrapper.styled.js.map

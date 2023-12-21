@@ -1,2 +1,0 @@
-import{_ as e,E as r}from"../../external/Element.js";import t from"react";import{CardStyled as s}from"./Card.styled.js";import"styled-components";import"../../external/theme.js";import"../../external/DefaultColours.js";const a=/*#__PURE__*/t.forwardRef(((a,o)=>{var{shape:m}=a,p=e(a,["shape"]);let l=[];return m&&l.push(`shape-${m}`),/*#__PURE__*/t.createElement(r,Object.assign({as:s,ref:o,classNames:l},p))}));export{a as Card};
-//# sourceMappingURL=Card.js.map
