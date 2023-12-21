@@ -1,3 +1,18 @@
+
+/* BOTTOM DRAWER //////////////////////////////////////////////////////////// */
+:root {
+    --bottom-drawer-bg              : var(--white);
+    --bottom-drawer-border          : var(--slate20);
+    --bottom-drawer-border-radius    : var(--global-border-radius);
+
+    --bottom-drawer-overlay-bg      : var(--black);
+    --bottom-drawer-overlay-opacity : 0.4;
+    --bottom-drawer-overlay-blur    : "4px";
+
+    --bottom-drawer-dismiss-button  : var(--slate90);
+}
+
+
 /* BUTTON /////////////////////////////////////////////////////////////////// */
 /* PRIMARY BUTTON =========================================================== */
 :root {
@@ -85,7 +100,6 @@
     --button-round-size-large  : 80px;
     --button-round-size-huge   : 128px;
 }
-
 
 /* TEXT ///////////////////////////////////////////////////////////////////// */
 :root {
