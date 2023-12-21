@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("react"),r=require("../../../external/Element.js"),t=require("./SidebarFooter.styled.js");function o(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}require("styled-components");var a=/*#__PURE__*/o(e);const s=a.default.forwardRef(((e,o)=>a.default.createElement(r.Element,Object.assign({as:t.SidebarFooterStyled,ref:o},e))));exports.SidebarFooter=s;
+//# sourceMappingURL=SidebarFooter.js.map

@@ -1,9 +1,0 @@
-:root {
-    --global-border-radius: 4px;
-}
-:root {
-    --card-bg: #fff;
-    --card-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    --card-border: 1px solid #eaeaea;
-    --card-border-width: var(--global-border-radius);
-}

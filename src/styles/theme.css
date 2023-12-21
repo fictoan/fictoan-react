@@ -1,0 +1,191 @@
+/* BUTTON /////////////////////////////////////////////////////////////////// */
+/* PRIMARY BUTTON =========================================================== */
+:root {
+    --button-primary-default-bg             : var(--blue);
+    --button-primary-default-text           : var(--white);
+    --button-primary-default-border-colour  : var(--blue);
+    --button-primary-default-border-width   : var(--global-border-width);
+    --button-primary-default-border-radius  : var(--global-border-radius);
+
+    --button-primary-hover-bg               : var(--blue80);
+    --button-primary-hover-text             : var(--white);
+    --button-primary-hover-border-colour    : var(--blue80);
+    --button-primary-hover-border-width     : var(--global-border-width);
+    --button-primary-hover-border-radius    : var(--global-border-radius);
+
+    --button-primary-loading-spinner-colour : var(--blue);
+
+    --button-primary-disabled-bg            : var(--blue10);
+    --button-primary-disabled-text          : var(--white);
+    --button-primary-disabled-border-colour : var(--blue10);
+    --button-primary-disabled-border-width  : var(--global-border-width);
+    --button-primary-disabled-border-radius : var(--global-border-radius);
+}
+
+/* SECONDARY BUTTON ========================================================= */
+:root {
+    --button-secondary-default-bg             : var(--blue);
+    --button-secondary-default-text           : var(--white);
+    --button-secondary-default-border-colour  : var(--blue);
+    --button-secondary-default-border-width   : var(--global-border-width);
+    --button-secondary-default-border-radius  : var(--global-border-radius);
+
+    --button-secondary-hover-bg               : var(--blue80);
+    --button-secondary-hover-text             : var(--white);
+    --button-secondary-hover-border-colour    : var(--blue80);
+    --button-secondary-hover-border-width     : var(--global-border-width);
+    --button-secondary-hover-border-radius    : var(--global-border-radius);
+
+    --button-secondary-loading-spinner-colour : var(--blue);
+
+    --button-secondary-disabled-bg            : var(--blue10);
+    --button-secondary-disabled-text          : var(--white);
+    --button-secondary-disabled-border-colour : var(--blue10);
+    --button-secondary-disabled-border-width  : var(--global-border-width);
+    --button-secondary-disabled-border-radius : var(--global-border-radius);
+}
+
+/* TERTIARY BUTTON ========================================================== */
+:root {
+    --button-tertiary-default-bg             : var(--blue);
+    --button-tertiary-default-text           : var(--white);
+    --button-tertiary-default-border-colour  : var(--blue);
+    --button-tertiary-default-border-width   : var(--global-border-width);
+    --button-tertiary-default-border-radius  : var(--global-border-radius);
+
+    --button-tertiary-hover-bg               : var(--blue80);
+    --button-tertiary-hover-text             : var(--white);
+    --button-tertiary-hover-border-colour    : var(--blue80);
+    --button-tertiary-hover-border-width     : var(--global-border-width);
+    --button-tertiary-hover-border-radius    : var(--global-border-radius);
+
+    --button-tertiary-loading-spinner-colour : var(--blue);
+
+    --button-tertiary-disabled-bg            : var(--blue10);
+    --button-tertiary-disabled-text          : var(--white);
+    --button-tertiary-disabled-border-colour : var(--blue10);
+    --button-tertiary-disabled-border-width  : var(--global-border-width);
+    --button-tertiary-disabled-border-radius : var(--global-border-radius);
+}
+
+/* ROUND BUTTON ============================================================= */
+:root {
+    --button-round-size-tiny   : 24px;
+    --button-round-size-small  : 32px;
+    --button-round-size-medium : 64px;
+    --button-round-size-large  : 80px;
+    --button-round-size-huge   : 128px;
+}
+
+/* GENERIC LOADING BUTTON =================================================== */
+:root {
+    --button-round-size-tiny   : 24px;
+    --button-round-size-small  : 32px;
+    --button-round-size-medium : 64px;
+    --button-round-size-large  : 80px;
+    --button-round-size-huge   : 128px;
+}
+
+
+/* TEXT ///////////////////////////////////////////////////////////////////// */
+:root {
+    /* GENERICS ============================================================= */
+    --font-family-sans-serif   : sans-serif;
+    --font-family-serif        : serif;
+    --font-family-mono         : monospace;
+
+    /* PARAGRAPHS =========================================================== */
+    --paragraph-font-family    : var(--font-family-sans-serif);
+    --paragraph-font-size      : 1rem;
+    --paragraph-line-height    : 1.64;
+    --paragraph-font-weight    : 400;
+    --paragraph-font-colour    : var(--grey);
+
+    --paragraph-subtext-colour : var(--slate80);
+    --paragraph-subtext-size   : 0.8rem;
+
+    /* HEADINGS ============================================================= */
+    --heading-font-family      : var(--font-family-sans-serif);
+    --heading-font-size        : 1.5rem;
+    --heading-line-height      : 1.64;
+    --heading-font-weight      : 600;
+    --heading-font-colour      : var(--slate);
+
+    /* LINKS ================================================================ */
+    --link-font-family         : var(--font-family-sans-serif);
+    --link-default-text        : var(--blue);
+    --link-default-hover-text  : var(--blue60);
+
+    /* SELECTION ============================================================ */
+    --selected-bg              : var(--hue);
+    --selected-text            : var(--white);
+
+    /* CODE ================================================================= */
+    --code-font-family         : var(--font-family-mono);
+    --code-font-size           : 0.92rem;
+    --code-inline-bg           : var(--blue10);
+    --code-inline-text         : var(--blue90);
+    --code-block-bg            : var(--blue10);
+    --code-block-text          : var(--blue90);
+    --code-block-line-height   : 1.8;
+    --code-block-border-radius : var(--global-border-radius);
+
+    /*  KBD ================================================================= */
+    --kbd-bg                   : var(--grey10);
+    --kbd-text                 : var(--grey);
+    --kbd-border-radius        : var(--global-border-radius);
+
+    /* TOKENS =============================================================== */
+    --token-tag                : var(--violet);
+    --token-atrule             : var(--teal90);
+    --token-attrName           : var(--orange);
+    --token-attrValue          : var(--green80);
+    --token-boolean            : var(--green80);
+    --token-cdata              : var(--grey70);
+    --token-className          : var(--red);
+    --token-comment            : var(--grey70);
+    --token-constant           : var(--green80);
+    --token-deleted            : var(--slate80);
+    --token-delimiter          : var(--grey90);
+    --token-doctype            : var(--grey90);
+    --token-entity             : var(--green80);
+    --token-function           : var(--orange);
+    --token-hexcode            : var(--green);
+    --token-inserted           : var(--green80);
+    --token-italic             : var(--green80);
+    --token-keyword            : var(--orange90);
+    --token-namespace          : var(--green80);
+    --token-number             : var(--green80);
+    --token-operator           : var(--pistachio);
+    --token-plain              : var(--grey);
+    --token-prolog             : var(--grey90);
+    --token-property           : var(--red90);
+    --token-punctuation        : var(--grey60);
+    --token-regex              : var(--green80);
+    --token-selector           : var(--violet);
+    --token-string             : var(--crimson60);
+    --token-symbol             : var(--green80);
+    --token-url                : var(--green80);
+    --token-variable           : var(--orange80);
+}
+
+
+/*prism : {*/
+/*    languages : {*/
+/*    css       : {*/
+/*    fallback  : String(defaultColours.orange90)*/
+/*},*/
+/*html: {*/
+/*    fallback  : String(defaultColours.grey)*/
+/*},*/
+/*js: {*/
+/*    fallback  : String(defaultColours.violet90)*/
+/*},*/
+/*json: {*/
+/*    fallback  : String(defaultColours.teal),*/
+/*    tokens    : {*/
+/*    string    : String(defaultColours.teal)*/
+/*}*/
+/*}*/
+/*}*/
+/*}*/

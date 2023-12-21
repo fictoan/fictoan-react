@@ -1,0 +1,1 @@
+export declare const CodeStyled: import("styled-components").StyledComponent<"div", any, Omit<import("../Element/constants").CommonAndHTMLProps<HTMLPreElement>, keyof import("./CodeBlock").CodeBlockCustomProps> & import("./CodeBlock").CodeBlockCustomProps, never>;

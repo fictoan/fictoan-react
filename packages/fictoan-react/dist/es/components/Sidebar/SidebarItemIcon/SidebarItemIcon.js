@@ -1,0 +1,2 @@
+import{_ as e,E as r}from"../../../external/Element.js";import t from"react";import{SidebarItemIconStyled as o}from"./SidebarItemIcon.styled.js";import"styled-components";const s=/*#__PURE__*/t.forwardRef(((s,a)=>{var{iconType:m}=s,n=e(s,["iconType"]);let c=[];return m&&c.push(`icon-${m}`),/*#__PURE__*/t.createElement(r,Object.assign({as:o,ref:a,classNames:c},n))}));export{s as SidebarItemIcon};
+//# sourceMappingURL=SidebarItemIcon.js.map

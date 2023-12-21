@@ -1,0 +1,1 @@
+export declare const NotificationItemStyled: import("styled-components").StyledComponent<"div", any, Omit<import("../../Element/constants").CommonAndHTMLProps<HTMLDivElement>, keyof import("./NotificationItem").NotificationItemCustomProps> & import("./NotificationItem").NotificationItemCustomProps, never>;

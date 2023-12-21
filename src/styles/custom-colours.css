@@ -1,0 +1,7 @@
+:root {
+    --hue     : var(--blue);
+    --tint    : var(--blue40);
+    --shade   : var(--indigo);
+    --analgue : var(--purple);
+    --accent  : var(--amber);
+}

@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("../../external/Element.js");function t(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}var r=/*#__PURE__*/t(require("react"));const s=r.default.forwardRef(((t,s)=>{var{as:a,weight:n,style:l="sans-serif",align:u}=t,i=e.__rest(t,["as","weight","style","align"]);let f=[];return n&&f.push(`weight-${n}`),l&&f.push(`font-${l}`),u&&f.push(`text-${u}`),r.default.createElement(e.Element,Object.assign({as:a,ref:s,classNames:f},i))}));exports.Heading=s;
+//# sourceMappingURL=Heading.js.map

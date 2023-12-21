@@ -1,0 +1,2 @@
+import{_ as e,E as s}from"../../external/Element.js";import t from"react";const a=/*#__PURE__*/t.forwardRef(((a,r)=>{var{as:n,weight:i,style:l="sans-serif",align:o}=a,f=e(a,["as","weight","style","align"]);let m=[];return i&&m.push(`weight-${i}`),l&&m.push(`font-${l}`),o&&m.push(`text-${o}`),/*#__PURE__*/t.createElement(s,Object.assign({as:n,ref:r,classNames:m},f))}));export{a as Heading};
+//# sourceMappingURL=Heading.js.map

@@ -1,4 +1,17 @@
 # CHANGELOG
+### 1.0.0
+
+#### ⚠️ BREAKING CHANGES ⚠️
+- Move to Vite
+- Remove `styled-components` as a dependency
+- Adopt plain CSS for styling
+- Remove `ThemeProvider` and `theme` prop from all components
+
+#### Specifics
+- `para` is now `paragraph`
+- Use `rem` units for font sizes
+
+---
 
 ### 0.42.1
 - Fix styling issues in `Tabs`

@@ -1,0 +1,2 @@
+import{_ as e,E as r}from"../../external/Element.js";import s from"react";import{HRuleStyled as t}from"./HRule.styled.js";import"styled-components";const a=/*#__PURE__*/s.forwardRef(((a,m)=>{var{kind:i,sideMargin:n}=a,o=e(a,["kind","sideMargin"]);let l=[];return i&&l.push(i),n&&l.push(`side-margin-${n}`),/*#__PURE__*/s.createElement(r,Object.assign({as:t,ref:m,classNames:l,marginTop:"small",marginBottom:"small"},o))}));export{a as HRule};
+//# sourceMappingURL=HRule.js.map

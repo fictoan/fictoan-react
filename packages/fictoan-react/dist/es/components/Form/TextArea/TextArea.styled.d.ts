@@ -1,0 +1,1 @@
+export declare const TextAreaStyled: import("styled-components").StyledComponent<"textarea", any, import("../../Element/constants").CommonAndHTMLProps<HTMLInputElement> & import("../InputLabel/InputLabel").InputLabelCustomProps & import("../BaseInputComponent/constants").InputCommonProps & import("../BaseInputComponent/constants").InputIconProps, never>;

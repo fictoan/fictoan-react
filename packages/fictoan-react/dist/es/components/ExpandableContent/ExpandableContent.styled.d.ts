@@ -1,0 +1,1 @@
+export declare const ExpandableContentStyled: import("styled-components").StyledComponent<"details", any, Omit<import("../Element/constants").CommonAndHTMLProps<HTMLDetailsElement>, keyof import("./ExpandableContent").ExpandableContentCustomProps> & import("./ExpandableContent").ExpandableContentCustomProps, never>;

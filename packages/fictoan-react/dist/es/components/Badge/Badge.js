@@ -1,0 +1,2 @@
+import{_ as e,E as s}from"../../external/Element.js";import t from"react";import{BadgeStyled as r}from"./Badge.styled.js";import"styled-components";import"../../external/theme.js";import"../../external/DefaultColours.js";const a=/*#__PURE__*/t.forwardRef(((a,o)=>{var{size:m="tiny",shape:p,kind:i}=a,n=e(a,["size","shape","kind"]);let l=[];return i&&l.push(i),m&&l.push(`size-${m}`),p&&l.push(`shape-${p}`),/*#__PURE__*/t.createElement(s,Object.assign({as:r,ref:o,classNames:l},n))}));export{a as Badge};
+//# sourceMappingURL=Badge.js.map

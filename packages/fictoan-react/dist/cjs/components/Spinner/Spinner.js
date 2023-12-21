@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("../../external/Element.js"),r=require("react"),t=require("./Spinner.styled.js");function s(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}require("styled-components");var n=/*#__PURE__*/s(r);const a=n.default.forwardRef(((r,s)=>{var{size:a="medium"}=r,i=e.__rest(r,["size"]);let u=[];return a&&u.push(`size-${a}`),n.default.createElement(e.Element,Object.assign({as:t.SpinnerStyled,ref:s,classNames:u},i))}));exports.Spinner=a;
+//# sourceMappingURL=Spinner.js.map

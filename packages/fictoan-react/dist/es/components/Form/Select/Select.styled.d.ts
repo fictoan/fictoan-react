@@ -1,0 +1,2 @@
+export declare const SelectWrapperStyled: import("styled-components").StyledComponent<"div", any, Omit<import("../../Element/constants").CommonAndHTMLProps<HTMLSelectElement>, keyof import("./Select").SelectCustomProps> & import("./Select").SelectCustomProps, never>;
+export declare const SelectStyled: import("styled-components").StyledComponent<"select", any, Omit<import("../../Element/constants").CommonAndHTMLProps<HTMLSelectElement>, keyof import("./Select").SelectCustomProps> & import("./Select").SelectCustomProps, never>;
