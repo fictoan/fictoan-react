@@ -26,6 +26,7 @@
     "devDependencies": {
         "@types/react": "^18.2.45",
         "react": "^18.2.0",
+        "sass": "^1.69.5",
         "typescript": "^5.3.3",
         "vite": "^5.0.10"
     },

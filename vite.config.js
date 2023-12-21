@@ -8,6 +8,7 @@ export default defineConfig({
         minifyIdentifiers: false,
     },
     build: {
+        cssMinify: false,
         lib: {
             entry: resolve(__dirname, "src/index.tsx"),
             formats: ["es", "cjs"],

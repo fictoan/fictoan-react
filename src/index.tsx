@@ -1,7 +1,23 @@
+import "./styles/globals.css";
 import "./styles/default-colours.css";
 import "./styles/custom-colours.css";
-import "./styles/globals.css";
 import "./styles/theme.css";
+import "./styles/utilities.css";
 
+
+// BUTTON //////////////////////////////////////////////////////////////////////
 export * from "./components/Button";
-export * from "./components/Card";
+
+// CARD ////////////////////////////////////////////////////////////////////////
+export * from "./components/Card/Card";
+
+// ELEMENT /////////////////////////////////////////////////////////////////////
+export * from "./components/Element/Element";
+// export { ElementProps } from "./components/Element/constants";
+
+// PORTION /////////////////////////////////////////////////////////////////////
+export * from "./components/Portion/Portion";
+
+// ROW /////////////////////////////////////////////////////////////////////////
+export * from "./components/Row/Row";
+

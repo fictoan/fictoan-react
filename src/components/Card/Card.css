@@ -5,11 +5,11 @@
 
 [data-card][class*="border-"] { border-width : var(--global-border-width); }
 
-[data-card]:not([class*="border-"]) { border : var(--global-border-width) solid var(--slate)}
+[data-card]:not([class*="border-"]) { border : var(--global-border-width) solid var(--slate); }
 
-[data-card]:not([class*="bg-"]) { background-color : var(--white) }
+[data-card]:not([class*="bg-"]) { background-color : var(--white); }
 
-[data-card].shape-rounded { border-radius : var(--global-border-radius) }
+[data-card].shape-rounded { border-radius : var(--global-border-radius); }
 
 [data-card].padding-all-tiny   { padding :  8px; }
 [data-card].padding-all-small  { padding : 16px; }

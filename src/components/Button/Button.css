@@ -1,7 +1,7 @@
 [data-button] {
     position            : relative;
     cursor              : pointer;
-    font-family         : ${(props : ButtonProps) => props.theme.button.font};
+    font-family         : var(--font-family-sans-serif);
     font-weight         : bold;
     font-size           : 92%;
     text-align          : center;
@@ -12,13 +12,12 @@
     user-select         : none;
 }
 
+[data-button]:not([class*="padding-"]) {
+    padding : 12px 24px;
+}
+
 /*To make sure a button’s children don’t style themselves like a d-bag*/
 > * { all : unset; }
-
-:root {
-    --opacity: 0.4;
-    --bg-color: rgba(hsla(0, 84%, 60%, 1), var(--opacity, 1));
-}
 
 [data-button]:active {
     box-shadow : none;
@@ -175,22 +174,22 @@
 
 /* DIFFERENT SIZES ////////////////////////////////////////////////////////// */
 /*TODO: Revisit font-size different sizes*/
-&.size-tiny {
+[data-button].size-tiny {
     padding   : 4px 8px;
     font-size : 64%;
 }
 
-&.size-small {
+[data-button].size-small {
     padding   : 6px 12px;
     font-size : 80%;
 }
 
-&.size-large {
+[data-button].size-large {
     padding   : 16px 32px;
     font-size : 128%;
 }
 
-&.size-huge {
+[data-button].size-huge {
     padding   : 24px 40px;
     font-size : 160%;
 }
@@ -243,14 +242,14 @@
 }
 
 /* BUTTON WITH SPINNER ////////////////////////////////////////////////////// */
-&.is-loading {
+[data-button].is-loading {
     color          : transparent !important;
     box-shadow     : none;
     user-select    : none;
     pointer-events : none;
 }
 
-&.is-loading::after {
+[data-button].is-loading::after {
     display            : block;
     position           : absolute;
     margin             : auto;
@@ -270,8 +269,8 @@
     animation          : spinner 0.4s infinite linear;
 }
 
-&.size-tiny.is-loading::after,
-&.size-small.is-loading::after {
+[data-button].size-tiny.is-loading::after,
+[data-button].size-small.is-loading::after {
     height : 8px;
     width  : 8px;
 }
