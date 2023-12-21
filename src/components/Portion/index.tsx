@@ -1,1 +1,1 @@
-export { Portion, PortionProps } from "./Portion";
+export { Portion, type PortionProps } from "./Portion";
