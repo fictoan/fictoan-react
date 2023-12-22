@@ -18,7 +18,7 @@ out/
 # production
 /build
 /app
-/dist
+/dist*
 
 # misc
 .DS_Store
@@ -56,3 +56,6 @@ backend/Cargo.lock
 
 # MSVC Windows builds of rustc generate these, which store debugging information
 *.pdb
+
+# Visualizer
+stats.html
