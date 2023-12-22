@@ -50,15 +50,12 @@ a:not([data-button]):hover { color : var(--link-text-hover); }
 a:active { opacity : 0.72; }
 
 .font-sans { font-family : var(--font-family-sans-serif); }
-
 .font-serif { font-family : var(--font-family-serif); }
-
 .font-monospace { font-family : var(--font-family-mono); }
 
 .sub-text { color : var(--paragraph-subtext-colour); }
 
 .text-left { text-align : left; }
-
 .text-centre,
 .text-center { text-align : center; }
 

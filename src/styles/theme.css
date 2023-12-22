@@ -23,6 +23,17 @@
     --bottom-drawer-dismiss-button  : var(--slate90);
 }
 
+/* BREADCRUMBS ////////////////////////////////////////////////////////////// */
+:root {
+    --breadcrumbs-wrapper-bg : var(--white);
+
+    --breadcrumb-item-separator: "/";
+    --breadcrumb-item-separator-colour: var(--slate40);
+
+    --breadcrumb-item-text-colour: var(--paragraph-text-colour);
+    --breadcrumb-item-text-colour-active: var(--paragraph-text-colour);
+}
+
 /* BUTTON /////////////////////////////////////////////////////////////////// */
 /* PRIMARY BUTTON =========================================================== */
 :root {

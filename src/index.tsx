@@ -16,6 +16,13 @@ export { BottomDrawer, type BottomDrawerProps } from "./components/BottomDrawer"
 // BUTTON //////////////////////////////////////////////////////////////////////
 export { Button, type ButtonProps } from "./components/Button";
 
+
+// BREADCRUMBS  ///////////////////////////////////////////////////////////////
+export {
+    BreadcrumbsWrapper, type BreadcrumbsWrapperProps,
+    BreadcrumbItem, type BreadcrumbItemProps
+} from "./components/Breadcrumbs";
+
 // CARD ////////////////////////////////////////////////////////////////////////
 export { Card, type CardProps } from "./components/Card";
 

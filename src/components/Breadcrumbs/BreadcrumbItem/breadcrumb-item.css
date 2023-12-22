@@ -1,0 +1,26 @@
+li[data-breadcrumb-item] {
+    display   : inline-flex;
+    position  : relative;
+    font-size : 14px;
+
+    &::after {
+        position : absolute;
+        right    : -14px;
+        content  : var(--breadcrumb-item-separator);
+        color    : var(--breadcrumb-item-separator-colour);
+    }
+
+    &:last-child,
+    &:last-child a {
+        color : var(--breadcrumb-item-text-colour-active)
+    }
+
+    &:not(:last-child),
+    &:not(:last-child) a {
+        color : var(--breadcrumb-item-text-colour);
+    }
+
+    &:last-child::after {
+        content : "";
+    }
+}
