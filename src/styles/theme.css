@@ -11,7 +11,6 @@
     --bottom-drawer-dismiss-button  : var(--slate90);
 }
 
-
 /* BUTTON /////////////////////////////////////////////////////////////////// */
 /* PRIMARY BUTTON =========================================================== */
 :root {
@@ -113,6 +112,60 @@
 
     --hr-tertiary-height  : 1px;
     --hr-tertiary-bg      : var(--slate20);
+}
+
+/* SIDEBAR + CONTENT WRAPPER //////////////////////////////////////////////// */
+:root {
+    --sidebar-bg                               : var(--white);
+    --sidebar-width-default                    : 240px;
+    --sidebar-width-collapsed                  : 48px;
+
+    --sidebar-collapsed-item-link-text         : var(--white);
+    --sidebar-collapsed-item-bg                : var(--hue);
+    --sidebar-collapsed-item-border-radius     : var(--global-border-radius);
+
+    --sidebar-header-bg                        : var(--white);
+    --sidebar-header-border-bottom             : var(--slate10);
+    --sidebar-header-logo-width                : 50%;
+    --sidebar-header-icon-width                : 40px;
+
+    --sidebar-item-icon-width                  : 24px;
+    --sidebar-item-icon-default-stroke-colour  : var(--slate40);
+    --sidebar-item-icon-default-stroke-width   : 2px;
+    --sidebar-item-icon-hover-stroke-colour    : var(--slate80);
+    --sidebar-item-icon-active-stroke-colour   : var(--slate);
+    --sidebar-item-icon-default-fill-colour    : var(--slate40);
+    --sidebar-item-icon-hover-fill-colour      : var(--slate80);
+    --sidebar-item-icon-active-fill-colour     : var(--slate);
+
+    --sidebar-item-default-link-bg             : var(--white);
+    --sidebar-item-default-link-text           : var(--shade);
+    --sidebar-item-default-link-scale          : 100%;
+    --sidebar-item-default-link-font-wright    : 600;
+
+    --sidebar-item-hover-link-bg               : var(--slate10);
+    --sidebar-item-hover-link-text             : var(--hue);
+
+    --sidebar-item-active-link-bg              : var(--white);
+    --sidebar-item-active-link-text            : var(--hue);
+    --sidebar-item-active-link-border          : var(--hue);
+    --sidebar-item-active-link-border-width    : 2px;
+
+    --sidebar-item-has-alert-bg                : var(--red70);
+
+    --sidebar-item-icon-size                   : 24px;
+    --sidebar-item-icon-stroke-width           : 2px;
+    --sidebar-item-icon-stroke-colour-default  : var(--slate40);
+    --sidebar-item-icon-stroke-colour-hover    : var(--slate80);
+    --sidebar-item-icon-stroke-colour-selected : var(--slate);
+
+    --sidebar-item-icon-fill-colour-default    : var(--slate40);
+    --sidebar-item-icon-fill-colour-hover      : var(--slate80);
+    --sidebar-item-icon-fill-colour-selected   : var(--slate);
+
+    --sidebar-footer-height                    : 32px;
+    --sidebar-footer-bg                        : var(--white);
+    --sidebar-footer-border-top                : var(--slate10);
 }
 
 /* TEXT ///////////////////////////////////////////////////////////////////// */

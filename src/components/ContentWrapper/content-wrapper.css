@@ -1,0 +1,22 @@
+[data-content-wrapper] {
+    width      : 100%;
+    min-height : 100vh;
+    transition : all 0.4s ease-in-out;
+}
+
+[data-sidebar-wrapper] + [data-content-wrapper] {
+    width       : calc(100% - var(--sidebar-width-default));
+    margin-left : var(--sidebar-width-default);
+}
+
+[data-sidebar-wrapper].collapsed + [data-content-wrapper] {
+    width       : calc(100% - var(--sidebar-width-collapsed));
+    margin-left : var(--sidebar-width-collapsed);
+}
+
+@media (max-width : 900px) {
+    [data-sidebar-wrapper] + [data-content-wrapper] {
+        width       : 100%;
+        margin-left : 0;
+    }
+}

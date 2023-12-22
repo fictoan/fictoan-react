@@ -1,0 +1,100 @@
+[data-sidebar-wrapper] {
+    display          : flex;
+    flex-direction   : column;
+    position         : fixed;
+    top              : 0;
+    left             : 0;
+    bottom           : 0;
+    width            : var(--sidebar-width-default);
+    min-height       : 100vh;
+    overflow-y       : auto;
+    transition       : all 0.4s ease-in-out;
+    background-color : var(--sidebar-bg);
+    box-shadow       : 2px 0 8px -4px rgba(0, 0, 0, 0.16);
+    z-index          : 10000;
+
+    /*  BASICS  ===========================================================  */
+    * { user-select : none; }
+
+    @media (max-width : 900px) {
+        left    : calc(-1 * 100%);
+        z-index : 4000;
+    }
+
+    /*  COLLAPSED  ========================================================  */
+    &.collapsed {
+        width      : var(--sidebar-width-collapsed);
+        overflow-x : hidden;
+
+        [data-sidebar-header] {
+            .header-logo { display : none; }
+
+            .header-icon {
+                display : block;
+                width   : var(--sidebar-header-icon-width);
+                height  : var(--sidebar-header-icon-width);
+            }
+        }
+
+        [data-sidebar-item-text] {
+            display  : none;
+            position : absolute;
+        }
+
+        [data-sidebar-item]:hover [data-sidebar-item-icon] + [data-sidebar-item-text] {
+            display          : flex;
+            position         : fixed;
+            left             : 40px;
+            align-self       : center;
+            border-radius    : var(--sidebar-collapsed-item-border-radius);
+            padding          : 4px 8px;
+            background-color : var(--sidebar-collapsed-item-bg);
+            color            : var(--sidebar-collapsed-item-link-text);
+            font-size        : 88%;
+            box-shadow       : 0 4px 16px -2px rgba(0, 0, 0, 0.24);
+        }
+
+        [data-sidebar-foooter] { padding-left : 0; }
+    }
+
+    a {
+        width : unset;
+        color : var(--sidebar-item-default-link-text);
+    }
+
+    summary ~ a p { color : var(--sidebar-item-default-link-text); }
+
+    a p:hover { color : var(--sidebar-item-hover-link-text); }
+
+    a.active {
+        position         : relative;
+        display          : block;
+        background-color : var(--sidebar-item-active-link-bg);
+
+        &::before {
+            display                    : block;
+            position                   : absolute;
+            width                      : 4px;
+            height                     : 100%;
+            top                        : 0;
+            left                       : 0;
+            content                    : "";
+            border-top-right-radius    : 4px;
+            border-bottom-right-radius : 4px;
+            background-color           : var(--sidebar-item-active-link-border);
+        }
+
+        & .icon-stroked svg {
+            fill         : none;
+            stroke-width : var(--sidebar-item-icon-stroke-width);
+            stroke       : var(--sidebar-item-icon-stroke-colour-default);
+        }
+
+        & .icon-filled svg {
+            stroke : none;
+            fill   : var(--sidebar-item-icon-fill-colour-default);
+        }
+
+        p { color : var(--sidebar-item-active-link-text); }
+    }
+}

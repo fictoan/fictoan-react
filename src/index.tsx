@@ -10,6 +10,9 @@ export { Button, type ButtonProps } from "./components/Button";
 // CARD ////////////////////////////////////////////////////////////////////////
 export { Card, type CardProps } from "./components/Card";
 
+// CONTENT WRAPPER /////////////////////////////////////////////////////////////
+export { ContentWrapper, type ContentWrapperProps } from "./components/ContentWrapper";
+
 // ELEMENT /////////////////////////////////////////////////////////////////////
 export { Element, type ElementProps } from "./components/Element";
 
@@ -21,3 +24,13 @@ export { Portion, type PortionProps } from "./components/Portion";
 
 // ROW /////////////////////////////////////////////////////////////////////////
 export { Row, type RowProps } from "./components/Row";
+
+// SIDEBAR /////////////////////////////////////////////////////////////////////
+export {
+    SidebarWrapper, type SidebarWrapperProps,
+    SidebarHeader, type SidebarHeaderProps,
+    SidebarItem, type SidebarItemProps,
+    SidebarItemIcon, type SidebarItemIconProps,
+    SidebarItemText, type SidebarItemTextProps,
+    SidebarFooter, type SidebarFooterProps
+} from "./components/Sidebar";
