@@ -1,8 +1,17 @@
+import "./styles/Normalize.css";
+import "./styles/reset.css";
 import "./styles/globals.css";
 import "./styles/default-colours.css";
 import "./styles/custom-colours.css";
 import "./styles/theme.css";
 import "./styles/utilities.css";
+import "./components/Typography/typography.css";
+
+// BADGE  /////////////////////////////////////////////////////////////////////
+export { Badge, type BadgeProps } from "./components/Badge";
+
+// BOTTOM DRAWER  /////////////////////////////////////////////////////////////
+export { BottomDrawer, type BottomDrawerProps } from "./components/BottomDrawer";
 
 // BUTTON //////////////////////////////////////////////////////////////////////
 export { Button, type ButtonProps } from "./components/Button";
@@ -34,3 +43,9 @@ export {
     SidebarItemText, type SidebarItemTextProps,
     SidebarFooter, type SidebarFooterProps
 } from "./components/Sidebar";
+
+// TYPOGRAPHY  //////////////////////////////////////////////////////////////////////
+export {
+    Text, type TextProps,
+    Heading, type HeadingProps,
+} from "./components/Typography";

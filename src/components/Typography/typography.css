@@ -1,0 +1,147 @@
+body {
+    background-color : var(--body-bg);
+    font-family      : var(--paragraph-font-family);
+    font-size        : var(--paragraph-font-size);
+    word-wrap        : normal;
+    text-rendering   : optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family : var(--heading-font-family);
+    font-weight : var(--heading-font-weight);
+    color       : var(--heading-text-colour);
+    line-height : var(--heading-line-height);
+    margin      : 0;
+}
+
+h1 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 2.4); }
+h2 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 2); }
+h3 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1.64); }
+h4 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1.48); }
+h5 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1.24); }
+h6 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1.16); }
+
+@media all and (max-width : 720px) {
+    h1, h2, h3, h4, h5, h6 { word-wrap : break-word; }
+}
+
+p {
+    font-family : var(--paragraph-font-family);
+    color       : var(--paragraph-text-colour);
+    font-size   : var(--paragraph-font-size);
+}
+
+p,
+a,
+li,
+span { line-height : var(--paragraph-line-height); }
+
+a {
+    cursor      : pointer;
+    font-family : var(--link-font-family);
+    color       : var(--link-text-default);
+    font-weight : bold;
+    transition  : all 0.2s;
+    width       : fit-content;
+}
+
+a:not([data-button]):hover { color : var(--link-text-hover); }
+
+a:active { opacity : 0.72; }
+
+.font-sans { font-family : var(--font-family-sans-serif); }
+
+.font-serif { font-family : var(--font-family-serif); }
+
+.font-monospace { font-family : var(--font-family-mono); }
+
+.sub-text { color : var(--paragraph-subtext-colour); }
+
+.text-left { text-align : left; }
+
+.text-centre,
+.text-center { text-align : center; }
+
+.text-right { text-align : right; }
+
+/* WEIGHTS */
+.weight-100 { font-weight : 100; }
+.weight-200 { font-weight : 200; }
+.weight-300 { font-weight : 300; }
+.weight-400 { font-weight : 400; }
+.weight-500 { font-weight : 500; }
+.weight-600 { font-weight : 600; }
+.weight-700 { font-weight : 700; }
+.weight-800 { font-weight : 800; }
+.weight-900 { font-weight : 900; }
+
+/* SIZES */
+.text-nano { font-size : 48%; }
+.text-micro { font-size : 64%; }
+.text-tiny { font-size : 80%; }
+.text-small { font-size : 92%; }
+.text-medium { font-size : 100%; }
+.text-large { font-size : 128%; }
+.text-huge { font-size : 160%; }
+
+/* CODE ///////////////////////////////////////////////////////////////////// */
+code { font-family : var(--code-font-family); }
+
+/* Inline code ============================================================= */
+:not(pre) > code {
+    margin           : 8px 0;
+    border-radius    : var(--code-inline-border-radius);
+    padding          : 2px 8px;
+    border           : none;
+    background-color : var(--code-inline-bg);
+    color            : var(--code-inline-text);
+    font-size        : var(--code-inline-font-size);
+    font-weight      : normal;
+    white-space      : pre-wrap;
+}
+
+@media all and (max-width : 720px) {
+    code,
+    :not(pre) > code {
+        word-wrap   : break-word;
+        white-space : normal;
+    }
+
+    pre { padding : 16px; }
+}
+
+/* Keyboard key element ===================================================== */
+kbd {
+    display          : inline-block;
+    font-family      : var(--kbd-font-family);
+    margin           : 0 4px;
+    padding          : 4px 8px;
+    color            : var(--kbd-text);
+    background-color : var(--kbd-bg);;
+    cursor           : pointer;
+    font-size        : 14px;
+    line-height      : 1.4;
+    border-radius    : var(--kbd-bg);;
+    text-shadow      : 0 1px 0 #fff;
+    box-shadow       : 0 3px 0 0 rgba(0, 0, 0, 0.16);
+    user-select      : none;
+
+    &:active {
+        transform  : translateY(3px);
+        box-shadow : none;
+    }
+}
+
+/* TEXT SELECTION /////////////////////////////////////////////////////// */
+/*for Firefox browsers*/
+::-moz-selection {
+    background : var(--text-bg-selected);
+    color      : var(--text-selected);
+}
+
+/*Same thing - for Webkit browsers*/
+::selection {
+    background : var(--text-bg-selected);
+    color      : var(--text-selected);
+}
+

@@ -1,3 +1,15 @@
+/* BADGE //////////////////////////////////////////////////////////////////// */
+:root {
+    --badge-font-family   : var(--paragraph-font-family);
+    --badge-border-radius : var(--global-border-radius);
+    --badge-border-width  : var(--global-border-width);
+}
+
+/* BODY ///////////////////////////////////////////////////////////////////// */
+:root {
+    --body-bg : var(--white);
+}
+
 /* BOTTOM DRAWER //////////////////////////////////////////////////////////// */
 :root {
     --bottom-drawer-bg              : var(--white);
@@ -6,7 +18,7 @@
 
     --bottom-drawer-overlay-bg      : var(--black);
     --bottom-drawer-overlay-opacity : 0.4;
-    --bottom-drawer-overlay-blur    : "4px";
+    --bottom-drawer-overlay-blur    : 4px;
 
     --bottom-drawer-dismiss-button  : var(--slate90);
 }
@@ -171,83 +183,96 @@
 /* TEXT ///////////////////////////////////////////////////////////////////// */
 :root {
     /* GENERICS ============================================================= */
-    --font-family-sans-serif   : sans-serif;
-    --font-family-serif        : serif;
-    --font-family-mono         : monospace;
+    --font-family-sans-serif    : sans-serif;
+    --font-family-serif         : serif;
+    --font-family-mono          : monospace;
 
     /* PARAGRAPHS =========================================================== */
-    --paragraph-font-family    : var(--font-family-sans-serif);
-    --paragraph-font-size      : 1rem;
-    --paragraph-line-height    : 1.64;
-    --paragraph-font-weight    : 400;
-    --paragraph-font-colour    : var(--grey);
+    --paragraph-font-family     : var(--font-family-sans-serif);
+    --paragraph-font-size       : 1rem;
+    --paragraph-line-height     : 1.64;
+    --paragraph-font-weight     : 400;
+    --paragraph-text-colour     : var(--grey);
 
-    --paragraph-subtext-colour : var(--slate80);
-    --paragraph-subtext-size   : 0.8rem;
+    --paragraph-subtext-colour  : var(--slate80);
+    --paragraph-subtext-size    : 0.8rem;
+
+    @media (min-width : 640px) {
+        --paragraph-font-size : 0.72rem;
+    }
+
+    @media (min-width : 1600px) {
+        --paragraph-font-size : 1.3rem;
+    }
 
     /* HEADINGS ============================================================= */
-    --heading-font-family      : var(--font-family-sans-serif);
-    --heading-font-size        : 1.5rem;
-    --heading-line-height      : 1.64;
-    --heading-font-weight      : 600;
-    --heading-font-colour      : var(--slate);
+    --heading-font-family       : var(--font-family-sans-serif);
+    --heading-font-size         : 1.5rem;
+    --heading-line-height       : 1.64;
+    --heading-font-weight       : 600;
+    --heading-text-colour       : var(--slate);
+    --heading-size-multiplier   : 1.2;
 
     /* LINKS ================================================================ */
-    --link-font-family         : var(--font-family-sans-serif);
-    --link-default-text        : var(--blue);
-    --link-default-hover-text  : var(--blue60);
+    --link-font-family          : var(--font-family-sans-serif);
+    --link-text-default         : var(--blue);
+    --link-text-hover           : var(--blue60);
 
     /* SELECTION ============================================================ */
-    --selected-bg              : var(--hue);
-    --selected-text            : var(--white);
+    --text-selected             : var(--white);
+    --text-bg-selected          : var(--hue);
 
     /* CODE ================================================================= */
-    --code-font-family         : var(--font-family-mono);
-    --code-font-size           : 0.92rem;
-    --code-inline-bg           : var(--blue10);
-    --code-inline-text         : var(--blue90);
-    --code-block-bg            : var(--blue10);
-    --code-block-text          : var(--blue90);
-    --code-block-line-height   : 1.8;
-    --code-block-border-radius : var(--global-border-radius);
+    --code-font-family          : var(--font-family-mono);
+    --code-inline-font-size     : 0.92rem;
+    --code-inline-bg            : var(--blue10);
+    --code-inline-text          : var(--blue90);
+    --code-inline-border-radius : var(--global-border-radius);
+
+    --code-block-font-size      : 0.92rem;
+    --code-block-bg             : var(--blue10);
+    --code-block-text           : var(--blue90);
+    --code-block-line-height    : 1.8;
+    --code-block-border-radius  : var(--global-border-radius);
 
     /*  KBD ================================================================= */
-    --kbd-bg                   : var(--grey10);
-    --kbd-text                 : var(--grey);
-    --kbd-border-radius        : var(--global-border-radius);
+    --kbd-font-family           : var(--font-family-mono);
+    --kbd-bg                    : var(--grey10);
+    --kbd-text                  : var(--grey);
+    --kbd-border-radius         : var(--global-border-radius);
 
     /* TOKENS =============================================================== */
-    --token-tag                : var(--violet);
-    --token-atrule             : var(--teal90);
-    --token-attrName           : var(--orange);
-    --token-attrValue          : var(--green80);
-    --token-boolean            : var(--green80);
-    --token-cdata              : var(--grey70);
-    --token-className          : var(--red);
-    --token-comment            : var(--grey70);
-    --token-constant           : var(--green80);
-    --token-deleted            : var(--slate80);
-    --token-delimiter          : var(--grey90);
-    --token-doctype            : var(--grey90);
-    --token-entity             : var(--green80);
-    --token-function           : var(--orange);
-    --token-hexcode            : var(--green);
-    --token-inserted           : var(--green80);
-    --token-italic             : var(--green80);
-    --token-keyword            : var(--orange90);
-    --token-namespace          : var(--green80);
-    --token-number             : var(--green80);
-    --token-operator           : var(--pistachio);
-    --token-plain              : var(--grey);
-    --token-prolog             : var(--grey90);
-    --token-property           : var(--red90);
-    --token-punctuation        : var(--grey60);
-    --token-regex              : var(--green80);
-    --token-selector           : var(--violet);
-    --token-string             : var(--crimson60);
-    --token-symbol             : var(--green80);
-    --token-url                : var(--green80);
-    --token-variable           : var(--orange80);
+    --token-tag                 : var(--violet);
+    --token-atrule              : var(--teal90);
+    --token-attrName            : var(--orange);
+    --token-attrValue           : var(--green80);
+    --token-boolean             : var(--green80);
+    --token-cdata               : var(--grey70);
+    --token-className           : var(--red);
+    --token-comment             : var(--grey70);
+    --token-constant            : var(--green80);
+    --token-deleted             : var(--slate80);
+    --token-delimiter           : var(--grey90);
+    --token-doctype             : var(--grey90);
+    --token-entity              : var(--green80);
+    --token-function            : var(--orange);
+    --token-hexcode             : var(--green);
+    --token-inserted            : var(--green80);
+    --token-italic              : var(--green80);
+    --token-keyword             : var(--orange90);
+    --token-namespace           : var(--green80);
+    --token-number              : var(--green80);
+    --token-operator            : var(--pistachio);
+    --token-plain               : var(--grey);
+    --token-prolog              : var(--grey90);
+    --token-property            : var(--red90);
+    --token-punctuation         : var(--grey60);
+    --token-regex               : var(--green80);
+    --token-selector            : var(--violet);
+    --token-string              : var(--crimson60);
+    --token-symbol              : var(--green80);
+    --token-url                 : var(--green80);
+    --token-variable            : var(--orange80);
 }
 
 
