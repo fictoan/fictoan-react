@@ -54,7 +54,7 @@ export {
 export { Portion, type PortionProps } from "./components/Portion";
 
 // PROGRESS BAR ////////////////////////////////////////////////////////////////
-export { ProgressBar, type ProgressBarProps } from "./components/ProgressBar";
+export { ProgressBar, type ProgressBarProps, type ProgressBarMetaProps } from "./components/ProgressBar";
 
 // ROW /////////////////////////////////////////////////////////////////////////
 export { Row, type RowProps } from "./components/Row";
@@ -71,6 +71,21 @@ export {
 
 // SPINNER /////////////////////////////////////////////////////////////////////
 export { Spinner, type SpinnerProps } from "./components/Spinner";
+
+// TABLE ///////////////////////////////////////////////////////////////////////
+export {
+    Table, type TableProps,
+    TablePagination, type TablePaginationProps
+} from "./components/Table";
+
+// TABS  ///////////////////////////////////////////////////////////////////////
+export { Tabs, type TabsProps } from "./components/Tabs";
+
+// TOAST ///////////////////////////////////////////////////////////////////////
+export {
+    ToastsWrapper, type ToastsWrapperProps,
+    ToastItem, type ToastItemProps
+} from "./components/Toast";
 
 // TYPOGRAPHY //////////////////////////////////////////////////////////////////
 export {

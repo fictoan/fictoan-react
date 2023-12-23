@@ -192,7 +192,7 @@
     --notification-dismiss-button-border-radius : var(--slate90);
 }
 
-/* PROGRESSBAR ////////////////////////////////////////////////////////////// */
+/* PROGRESS BAR ///////////////////////////////////////////////////////////// */
 :root {
     --progress-bar-bg            : var(--slate20);
     --progress-bar-fill          : var(--hue);
@@ -259,6 +259,46 @@
     --sidebar-footer-height                    : 32px;
     --sidebar-footer-bg                        : var(--white);
     --sidebar-footer-border-top                : var(--slate10);
+}
+
+/* TABLE //////////////////////////////////////////////////////////////////// */
+:root {
+    --table-bg                           : var(--white);
+    --table-border                       : var(--slate10);
+    --table-font-family                  : var(--paragraph-font-family);
+    --table-text                         : var(--paragraph-text-colour);
+
+    --table-striped-header-bg            : var(--blue40);
+    --table-striped-cell-bg              : var(--slate20);
+
+    --table-bg-hover                     : var(--amber20);
+    --table-text-hover                   : var(--paragraph-text-colour);
+
+    --table-pagination-bg                : var(--white);
+    --table-pagination-border-radius     : var(--global-border-radius);
+    --table-pagination-text              : var(--paragraph-text-colour);
+    --table-pagination-nav-icon-bg-hover : var(--slate60);
+}
+
+/* TABS ///////////////////////////////////////////////////////////////////// */
+:root {
+    --tabs-bg                     : var(--transparent);
+
+    --tab-default-label           : var(--shade);
+    --tab-hover-label             : var(--blue80);
+    --tab-active-label            : var(--blue);
+    --tab-active-border           : var(--blue);
+    --tab-disabled-label          : var(--slate40);
+
+    --tab-with-alert-badge-bg     : var(--red70);
+    --tab-with-alert-badge-border : var(--red70);
+}
+
+/* TOAST //////////////////////////////////////////////////////////////////// */
+:root {
+    --toast-bg            : var(--slate10);
+    --toast-text          : var(--black);
+    --toast-border-radius : var(--global-border-radius);
 }
 
 /* TEXT ///////////////////////////////////////////////////////////////////// */

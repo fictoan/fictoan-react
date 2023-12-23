@@ -1,0 +1,15 @@
+[data-toasts-wrapper] {
+    position      : fixed;
+    display       : grid;
+    z-index       : 5000000;
+    width         : 100%;
+    justify-items : center;
+
+    [data-sidebar-wrapper] + [data-content-wrapper] & {
+        width : calc(100% - 240px);
+    }
+
+    &.top { top : -4vh; }
+
+    &.bottom { bottom : -4vh; }
+}
