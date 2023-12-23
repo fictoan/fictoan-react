@@ -35,6 +35,9 @@ export { ContentWrapper, type ContentWrapperProps } from "./components/ContentWr
 // ELEMENT /////////////////////////////////////////////////////////////////////
 export { Element, type ElementProps } from "./components/Element";
 
+// EXPANDABLE CONTENT //////////////////////////////////////////////////////////
+export { ExpandableContent, type ExpandableContentProps } from "./components/ExpandableContent";
+
 // H-RULE //////////////////////////////////////////////////////////////////////
 export { HRule, type HRProps } from "./components/HRule";
 
@@ -50,6 +53,9 @@ export {
 // PORTION /////////////////////////////////////////////////////////////////////
 export { Portion, type PortionProps } from "./components/Portion";
 
+// PROGRESS BAR ////////////////////////////////////////////////////////////////
+export { ProgressBar, type ProgressBarProps } from "./components/ProgressBar";
+
 // ROW /////////////////////////////////////////////////////////////////////////
 export { Row, type RowProps } from "./components/Row";
 
@@ -62,6 +68,9 @@ export {
     SidebarItemText, type SidebarItemTextProps,
     SidebarFooter, type SidebarFooterProps
 } from "./components/Sidebar";
+
+// SPINNER /////////////////////////////////////////////////////////////////////
+export { Spinner, type SpinnerProps } from "./components/Spinner";
 
 // TYPOGRAPHY //////////////////////////////////////////////////////////////////
 export {

@@ -2,7 +2,7 @@ import React from "react";
 
 import { Element } from "../Element";
 import { CommonAndHTMLProps } from "../Element/constants";
-import { useClickOutside } from "@/hooks/UseClickOutside";
+import { useClickOutside } from "../../hooks/UseClickOutside";
 
 import "./info-panel.css";
 
