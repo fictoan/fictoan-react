@@ -1,0 +1,28 @@
+[data-callout] {
+    display       : block;
+    border-width  : 0 0 0 5px;
+    word-break    : break-word;
+    border-style  : solid;
+    padding       : 16px;
+    border-radius : var(--callout-border-radius);
+
+    &.info {
+        background-color : var(--callout-info-bg);
+        border-color     : var(--callout-info-border);
+    }
+
+    &.success {
+        background-color : var(--callout-success-bg);
+        border-color     : var(--callout-success-border);
+    }
+
+    &.warning {
+        background-color : var(--callout-warning-bg);
+        border-color     : var(--callout-warning-border);
+    }
+
+    &.error {
+        background-color : var(--callout-error-bg);
+        border-color     : var(--callout-error-border);
+    }
+}

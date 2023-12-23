@@ -122,6 +122,28 @@
     --button-round-size-huge   : 128px;
 }
 
+/* CALLOUT ////////////////////////////////////////////////////////////////// */
+:root {
+    --callout-border-radius : var(--global-border-radius);
+
+    --callout-info-bg     : var(--blue10);
+    --callout-info-border : var(--blue);
+
+    --callout-success-bg     : var(--green10);
+    --callout-success-border : var(--green);
+
+    --callout-warning-bg     : var(--amber10);
+    --callout-warning-border : var(--amber);
+
+    --callout-error-bg     : var(--red10);
+    --callout-error-border : var(--red);
+}
+
+/* EXPANDABLE CONTENT /////////////////////////////////////////////////////// */
+:root {
+    --expandable-content-chevron : var(--slate);
+}
+
 /* H-RULE /////////////////////////////////////////////////////////////////// */
 :root {
     --hr-default-height   : 1px;
@@ -135,6 +157,15 @@
 
     --hr-tertiary-height  : 1px;
     --hr-tertiary-bg      : var(--slate20);
+}
+
+/* INFO PANEL /////////////////////////////////////////////////////////////// */
+:root {
+    --info-panel-bg : var(--white);
+    --info-panel-border : var(--slate10);
+
+    --info-panel-dismiss-button : var(--slate90);
+    --info-panel-dismiss-button-border-radius : var(--slate90);
 }
 
 /* SIDEBAR + CONTENT WRAPPER //////////////////////////////////////////////// */
