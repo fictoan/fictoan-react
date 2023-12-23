@@ -2,9 +2,9 @@ import React from "react";
 
 import { Element } from "../Element";
 import { CommonAndHTMLProps } from "../Element/constants";
-import { useClickOutside } from "../../hooks/UseClickOutside";
+import { useClickOutside } from "@/hooks/UseClickOutside";
 
-import { InfoPanelStyled } from "./info-panel.css";
+import "./info-panel.css";
 
 // prettier-ignore
 export interface InfoPanelCustomProps {
@@ -24,6 +24,7 @@ export const InfoPanel = React.forwardRef(
         ref: React.Ref<InfoPanelElementType>
     ) => {
         let classNames = [];
+
         const infoPanelRef = React.useRef<InfoPanelElementType>(null);
 
         if (width) {
@@ -46,7 +47,8 @@ export const InfoPanel = React.forwardRef(
         return (
             !!isOpen && (
                 <Element<InfoPanelElementType>
-                    as={InfoPanelStyled}
+                    as="aside"
+                    data-info-panel
                     ref={ref ?? infoPanelRef}
                     classNames={classNames}
                     padding={padding ?? "tiny"}

@@ -168,6 +168,30 @@
     --info-panel-dismiss-button-border-radius : var(--slate90);
 }
 
+/* NOTIFICATIONS //////////////////////////////////////////////////////////// */
+:root {
+    --notification-item-border-radius : var(--global-border-radius);
+
+    --notification-item-generic-bg : var(--white);
+    --notification-item-generic-border : var(--slate40);
+    --notification-item-generic-text : var(--shade);
+
+    --notification-item-info-bg : var(--blue40);
+    --notification-item-info-border : var(--blue);
+
+    --notification-item-error-bg : var(--red40);
+    --notification-item-error-border : var(--red);
+
+    --notification-item-success-bg : var(--green40);
+    --notification-item-success-border : var(--green);
+
+    --notification-item-warning-bg : var(--amber40);
+    --notification-item-warning-border : var(--amber);
+
+    --notification-dismiss-button : var(--slate90);
+    --notification-dismiss-button-border-radius : var(--slate90);
+}
+
 /* SIDEBAR + CONTENT WRAPPER //////////////////////////////////////////////// */
 :root {
     --sidebar-bg                               : var(--white);
@@ -316,24 +340,3 @@
     --token-url                 : var(--green80);
     --token-variable            : var(--orange80);
 }
-
-
-/*prism : {*/
-/*    languages : {*/
-/*    css       : {*/
-/*    fallback  : String(defaultColours.orange90)*/
-/*},*/
-/*html: {*/
-/*    fallback  : String(defaultColours.grey)*/
-/*},*/
-/*js: {*/
-/*    fallback  : String(defaultColours.violet90)*/
-/*},*/
-/*json: {*/
-/*    fallback  : String(defaultColours.teal),*/
-/*    tokens    : {*/
-/*    string    : String(defaultColours.teal)*/
-/*}*/
-/*}*/
-/*}*/
-/*}*/

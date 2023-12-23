@@ -13,7 +13,7 @@
     &.open { transform : translateX(0); }
 
     &:not([class*="bg-"]) {
-        background-color : var(--info-panel-bg)
+        background-color : var(--info-panel-bg);
     }
 
     &.tiny   { width : 12vw; }

@@ -41,6 +41,12 @@ export { HRule, type HRProps } from "./components/HRule";
 // INFO PANEL //////////////////////////////////////////////////////////////////
 export { InfoPanel, type InfoPanelProps } from "./components/InfoPanel";
 
+// NOTIFICATIONS  /////////////////////////////////////////////////////////////
+export {
+    NotificationsWrapper, type NotificationsWrapperProps,
+    NotificationItem, type NotificationItemProps
+} from "./components/Notification";
+
 // PORTION /////////////////////////////////////////////////////////////////////
 export { Portion, type PortionProps } from "./components/Portion";
 
