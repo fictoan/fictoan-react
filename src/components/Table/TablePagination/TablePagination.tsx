@@ -8,6 +8,7 @@ import { CommonAndHTMLProps } from "../../Element/constants";
 import { Element } from "../../Element";
 import { Heading } from "../../Typography";
 import { Text } from "../../Typography";
+
 import "./table-pagination.css";
 
 import { Spinner } from "../../Spinner";
