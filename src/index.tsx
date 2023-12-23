@@ -87,6 +87,9 @@ export {
     ToastItem, type ToastItemProps
 } from "./components/Toast";
 
+// TOOLTIP  ///////////////////////////////////////////////////////////////////
+export { Tooltip, type TooltipProps } from "./components/Tooltip";
+
 // TYPOGRAPHY //////////////////////////////////////////////////////////////////
 export {
     Text, type TextProps,
