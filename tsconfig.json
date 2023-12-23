@@ -14,6 +14,7 @@
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
         "emitDeclarationOnly": true,
+        "types": ["vite-plugin-svgr/client"],
         "paths": {
             "@/*": ["./src/*"]
         }

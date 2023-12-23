@@ -5,6 +5,7 @@ import { glob } from "glob";
 import { visualizer } from "rollup-plugin-visualizer";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
 import dts from "vite-plugin-dts";
+import svgr from "vite-plugin-svgr";
 import react from "@vitejs/plugin-react";
 import postcssNesting from "postcss-nesting";
 import autoprefixer from "autoprefixer";
@@ -26,6 +27,7 @@ export default defineConfig({
         },
     },
     plugins: [
+        svgr(),
         react({
             babel: {
                 presets: [["@babel/preset-env", { modules: false }], ["@babel/preset-react"]],

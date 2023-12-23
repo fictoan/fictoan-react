@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import svgr from "vite-plugin-svgr";
 import react from "@vitejs/plugin-react";
 import postcssNesting from "postcss-nesting";
 import autoprefixer from "autoprefixer";
@@ -30,6 +31,7 @@ export default defineConfig({
         },
     },
     plugins: [
+        svgr(),
         react({
             babel: {
                 presets: [["@babel/preset-env", { modules: false }], ["@babel/preset-react"]],

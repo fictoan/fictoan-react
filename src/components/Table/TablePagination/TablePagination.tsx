@@ -1,8 +1,8 @@
 import React from "react";
 
-import { ReactComponent as PreviousButton } from "../../../assets/icons/left.svg";
-import { ReactComponent as NextButton } from "../../../assets/icons/right.svg";
-import { ReactComponent as FirstPageButton } from "../../../assets/icons/left.svg";
+import PreviousButton from "../../../assets/icons/left.svg?react";
+import NextButton from "../../../assets/icons/right.svg?react";
+import FirstPageButton from "../../../assets/icons/left.svg?react";
 
 import { CommonAndHTMLProps } from "../../Element/constants";
 import { Element } from "../../Element";
