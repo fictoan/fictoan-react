@@ -59,3 +59,6 @@ backend/Cargo.lock
 
 # Visualizer
 stats.html
+
+# storybook
+storybook-static

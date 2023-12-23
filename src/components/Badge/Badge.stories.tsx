@@ -1,0 +1,36 @@
+import type { Meta, StoryObj } from "@storybook/react";
+
+import { Badge } from "./Badge";
+
+const meta: Meta<typeof Badge> = {
+    component: Badge,
+    tags: ["autodocs"],
+    args: {
+        children: "Badge",
+    },
+    parameters: {
+        docs: {
+            description: {
+                component: "This is a Badge.",
+            },
+        },
+    },
+};
+
+export default meta;
+type Story = StoryObj<typeof Badge>;
+
+export const Custom: Story = {
+    args: {
+        bgColour: "green-10",
+        textColour: "green",
+        shape: "curved",
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: "This is the custom badge.",
+            },
+        },
+    },
+};
