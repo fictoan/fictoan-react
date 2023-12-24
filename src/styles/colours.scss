@@ -10,6 +10,7 @@ $colors : (
     "teal"      : "174, 62%",
     "cyan"      : "176, 78%",
     "sky"       : "194, 97%",
+    "blue"     : "212, 100%",
     "indigo"    : "237, 66%",
     "violet"    : "258, 55%",
     "purple"    : "311, 47%",
@@ -23,13 +24,12 @@ $colors : (
 );
 
 $class-prefixes : (
-    "bg": "background-color", 
-    "text": "color", 
-    "stroke": "stroke", 
+    "bg": "background-color",
+    "text": "color",
+    "stroke": "stroke",
     "fill": "fill",
     "border": "border-color"
 );
-
 
 :root {
     @each $color, $value in $colors {
@@ -43,7 +43,7 @@ $class-prefixes : (
             @if $i < 5 {
                 --palette-#{$color}-dark-#{5 - $i}0: #{$value}, #{$i}0%;
             } @else if $i > 5 {
-                --palette-#{$color}-light-#{$i - 5}0: #{$value}, #{$i}0%;    
+                --palette-#{$color}-light-#{$i - 5}0: #{$value}, #{$i}0%;
             } @else if $i == 5 {
                 --palette-#{$color}: #{$value}, #{$i}0%;
             }
@@ -57,7 +57,7 @@ $class-prefixes : (
             @if $i < 5 {
                 --#{$color}-dark-#{5 - $i}0: hsl(var(--palette-#{$color}-dark-#{5 - $i}0));
             } @else if $i > 5 {
-                --#{$color}-light-#{$i - 5}0: hsl(var(--palette-#{$color}-light-#{$i - 5}0));    
+                --#{$color}-light-#{$i - 5}0: hsl(var(--palette-#{$color}-light-#{$i - 5}0));
             } @else if $i == 5 {
                 --#{$color}: hsl(var(--palette-#{$color}));
             }
@@ -84,3 +84,27 @@ $class-prefixes : (
         }
     }
 }
+
+:root {
+    --black       : hsla(0, 0%, 0%, 1);
+    --white       : hsla(0, 0%, 100%, 1);
+    --transparent : hsla(0, 0%, 100%, 0);
+}
+
+.bg-white { background-color : hsla(0, 0%, 100%, 1); }
+.text-white { color : hsla(0, 0%, 100%, 1); }
+.border-white { border : 2px solid hsla(0, 0%, 100%, 1); }
+.fill-white { fill : hsla(0, 0%, 100%, 1); }
+.stroke-white { stroke : hsla(0, 0%, 100%, 1); }
+
+.bg-black { background-color : hsla(0, 0%, 0%, 1); }
+.text-black { color : hsla(0, 0%, 0%, 1); }
+.border-black { border : 2px solid hsla(0, 0%, 0%, 1); }
+.fill-black { fill : hsla(0, 0%, 0%, 1); }
+.stroke-black { stroke : hsla(0, 0%, 0%, 1); }
+
+.bg-transparent { background-color : transparent; }
+.text-transparent { color : transparent; }
+.border-transparent { border : 2px solid transparent; }
+.fill-transparent { fill : transparent; }
+.stroke-transparent { stroke : transparent; }

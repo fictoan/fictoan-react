@@ -13,14 +13,14 @@
 /* BOTTOM DRAWER //////////////////////////////////////////////////////////// */
 :root {
     --bottom-drawer-bg              : var(--white);
-    --bottom-drawer-border          : var(--slate20);
+    --bottom-drawer-border          : var(--slate-light-20);
     --bottom-drawer-border-radius   : var(--global-border-radius);
 
     --bottom-drawer-overlay-bg      : var(--black);
     --bottom-drawer-overlay-opacity : 0.4;
     --bottom-drawer-overlay-blur    : 4px;
 
-    --bottom-drawer-dismiss-button  : var(--slate90);
+    --bottom-drawer-dismiss-button  : var(--slate-light-40);
 }
 
 /* BREADCRUMBS ////////////////////////////////////////////////////////////// */
@@ -28,7 +28,7 @@
     --breadcrumbs-wrapper-bg             : var(--white);
 
     --breadcrumb-item-separator          : "/";
-    --breadcrumb-item-separator-colour   : var(--slate40);
+    --breadcrumb-item-separator-colour   : var(--slate-light-10);
 
     --breadcrumb-item-text-colour        : var(--paragraph-text-colour);
     --breadcrumb-item-text-colour-active : var(--paragraph-text-colour);
@@ -43,17 +43,17 @@
     --button-primary-default-border-width   : var(--global-border-width);
     --button-primary-default-border-radius  : var(--global-border-radius);
 
-    --button-primary-hover-bg               : var(--blue80);
+    --button-primary-hover-bg               : var(--blue-light-10);
     --button-primary-hover-text             : var(--white);
-    --button-primary-hover-border-colour    : var(--blue80);
+    --button-primary-hover-border-colour    : var(--blue-dark-30);
     --button-primary-hover-border-width     : var(--global-border-width);
     --button-primary-hover-border-radius    : var(--global-border-radius);
 
     --button-primary-loading-spinner-colour : var(--blue);
 
-    --button-primary-disabled-bg            : var(--blue10);
+    --button-primary-disabled-bg            : var(--blue-light-10);
     --button-primary-disabled-text          : var(--white);
-    --button-primary-disabled-border-colour : var(--blue10);
+    --button-primary-disabled-border-colour : var(--blue-light-10);
     --button-primary-disabled-border-width  : var(--global-border-width);
     --button-primary-disabled-border-radius : var(--global-border-radius);
 
@@ -73,9 +73,9 @@
 
     --button-secondary-loading-spinner-colour : var(--blue);
 
-    --button-secondary-disabled-bg            : var(--blue10);
+    --button-secondary-disabled-bg            : var(--blue-light-10);
     --button-secondary-disabled-text          : var(--white);
-    --button-secondary-disabled-border-colour : var(--blue10);
+    --button-secondary-disabled-border-colour : var(--blue-light-10);
     --button-secondary-disabled-border-width  : var(--global-border-width);
     --button-secondary-disabled-border-radius : var(--global-border-radius);
 
@@ -95,9 +95,9 @@
 
     --button-tertiary-loading-spinner-colour : var(--blue);
 
-    --button-tertiary-disabled-bg            : var(--blue10);
+    --button-tertiary-disabled-bg            : var(--blue-light-10);
     --button-tertiary-disabled-text          : var(--white);
-    --button-tertiary-disabled-border-colour : var(--blue10);
+    --button-tertiary-disabled-border-colour : var(--blue-light-10);
     --button-tertiary-disabled-border-width  : var(--global-border-width);
     --button-tertiary-disabled-border-radius : var(--global-border-radius);
 
@@ -114,7 +114,7 @@
 :root {
     --callout-border-radius  : var(--global-border-radius);
 
-    --callout-info-bg        : var(--blue10);
+    --callout-info-bg        : var(--blue-light-10);
     --callout-info-border    : var(--blue);
 
     --callout-success-bg     : var(--green10);
@@ -152,7 +152,7 @@
     --hr-secondary-bg     : var(--slate60);
 
     --hr-tertiary-height  : 1px;
-    --hr-tertiary-bg      : var(--slate20);
+    --hr-tertiary-bg      : var(--slate-light-20);
 }
 
 /* INFO PANEL /////////////////////////////////////////////////////////////// */
@@ -190,7 +190,7 @@
 
 /* PROGRESS BAR ///////////////////////////////////////////////////////////// */
 :root {
-    --progress-bar-bg            : var(--slate20);
+    --progress-bar-bg            : var(--slate-light-20);
     --progress-bar-fill          : var(--hue);
     --progress-bar-label         : var(--shade);
     --progress-bar-value         : var(--shade);
@@ -265,7 +265,7 @@
     --table-text                         : var(--paragraph-text-colour);
 
     --table-striped-header-bg            : var(--blue40);
-    --table-striped-cell-bg              : var(--slate20);
+    --table-striped-cell-bg              : var(--slate-light-20);
 
     --table-bg-hover                     : var(--amber20);
     --table-text-hover                   : var(--paragraph-text-colour);
@@ -333,7 +333,7 @@
     /* LINKS ================================================================ */
     --link-font-family          : var(--font-family-sans-serif);
     --link-text-default         : var(--blue);
-    --link-text-hover           : var(--blue60);
+    --link-text-hover           : var(--blue);
 
     /* SELECTION ============================================================ */
     --text-selected             : var(--white);
@@ -342,52 +342,52 @@
     /* CODE ================================================================= */
     --code-font-family          : var(--font-family-mono);
     --code-inline-font-size     : 0.92rem;
-    --code-inline-bg            : var(--blue10);
-    --code-inline-text          : var(--blue90);
+    --code-inline-bg            : var(--blue-light-10);
+    --code-inline-text          : var(--blue-dark-40);
     --code-inline-border-radius : var(--global-border-radius);
 
     --code-block-font-size      : 0.92rem;
-    --code-block-bg             : var(--blue10);
-    --code-block-text           : var(--blue90);
+    --code-block-bg             : var(--blue-light-10);
+    --code-block-text           : var(--blue-dark-40);
     --code-block-line-height    : 1.8;
     --code-block-border-radius  : var(--global-border-radius);
 
     /*  KBD ================================================================= */
     --kbd-font-family           : var(--font-family-mono);
-    --kbd-bg                    : var(--grey10);
+    --kbd-bg                    : var(--grey-light-10);
     --kbd-text                  : var(--grey);
     --kbd-border-radius         : var(--global-border-radius);
 
     /* TOKENS =============================================================== */
     --token-tag                 : var(--violet);
-    --token-atrule              : var(--teal90);
+    --token-atrule              : var(--teal);
     --token-attrName            : var(--orange);
-    --token-attrValue           : var(--green80);
-    --token-boolean             : var(--green80);
-    --token-cdata               : var(--grey70);
+    --token-attrValue           : var(--green);
+    --token-boolean             : var(--green);
+    --token-cdata               : var(--grey);
     --token-className           : var(--red);
-    --token-comment             : var(--grey70);
-    --token-constant            : var(--green80);
-    --token-deleted             : var(--slate80);
-    --token-delimiter           : var(--grey90);
-    --token-doctype             : var(--grey90);
-    --token-entity              : var(--green80);
+    --token-comment             : var(--grey);
+    --token-constant            : var(--green);
+    --token-deleted             : var(--slate);
+    --token-delimiter           : var(--grey);
+    --token-doctype             : var(--grey);
+    --token-entity              : var(--green);
     --token-function            : var(--orange);
     --token-hexcode             : var(--green);
-    --token-inserted            : var(--green80);
-    --token-italic              : var(--green80);
-    --token-keyword             : var(--orange90);
-    --token-namespace           : var(--green80);
-    --token-number              : var(--green80);
+    --token-inserted            : var(--green);
+    --token-italic              : var(--green);
+    --token-keyword             : var(--orange);
+    --token-namespace           : var(--green);
+    --token-number              : var(--green);
     --token-operator            : var(--pistachio);
     --token-plain               : var(--grey);
-    --token-prolog              : var(--grey90);
-    --token-property            : var(--red90);
-    --token-punctuation         : var(--grey60);
-    --token-regex               : var(--green80);
+    --token-prolog              : var(--grey);
+    --token-property            : var(--red);
+    --token-punctuation         : var(--grey);
+    --token-regex               : var(--green);
     --token-selector            : var(--violet);
-    --token-string              : var(--crimson60);
-    --token-symbol              : var(--green80);
-    --token-url                 : var(--green80);
-    --token-variable            : var(--orange80);
+    --token-string              : var(--crimson);
+    --token-symbol              : var(--green);
+    --token-url                 : var(--green);
+    --token-variable            : var(--orange);
 }
