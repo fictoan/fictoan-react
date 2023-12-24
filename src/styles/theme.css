@@ -139,6 +139,14 @@
     --callout-error-border   : var(--red);
 }
 
+/* CARD ///////////////////////////////////////////////////////////////////// */
+:root {
+    --card-bg            : var(--white);
+    --card-border        : var(--slate);
+    --card-border-radius : var(--global-border-radius);
+    --card-border-width  : var(--global-border-width);
+}
+
 /* EXPANDABLE CONTENT /////////////////////////////////////////////////////// */
 :root {
     --expandable-content-chevron : var(--slate);
