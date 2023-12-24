@@ -21,6 +21,7 @@
     "scripts": {
         "preinstall": "npx only-allow pnpm",
         "storybook": "storybook dev -p 6006",
+        "watch": "vite build --watch",
         "build": "tsc && vite build",
         "build:umd": "tsc && vite build -c vite.config.umd.js",
         "build:storybook": "storybook build",
