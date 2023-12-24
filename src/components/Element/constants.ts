@@ -34,7 +34,7 @@ export type ShadowTypes = "none" | "mild" | "hard" | "soft";
 export type ShapeTypes = "rounded" | "curved";
 export type OpacityTypes = "00" | "10" | "20" | "30" | "40" | "50" | "60" | "70" | "80" | "90" | "100";
 export type WeightTypes = "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
-export type ColourPropTypes = `${ColorWithShade}-${Shade}-${ShadeLevel}` | FixedColor | CustomColor | "";
+export type ColourPropTypes = `${ColorWithShade}-${Shade}-${ShadeLevel}` | ColorWithShade | FixedColor | CustomColor | "";
 
 // prettier-ignore
 export interface CommonProps {
