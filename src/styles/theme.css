@@ -35,8 +35,8 @@
 }
 
 /* BUTTON /////////////////////////////////////////////////////////////////// */
-/* PRIMARY BUTTON =========================================================== */
 :root {
+    /* PRIMARY BUTTON ======================================================= */
     --button-primary-default-bg             : var(--blue);
     --button-primary-default-text           : var(--white);
     --button-primary-default-border-colour  : var(--blue);
@@ -56,10 +56,9 @@
     --button-primary-disabled-border-colour : var(--blue10);
     --button-primary-disabled-border-width  : var(--global-border-width);
     --button-primary-disabled-border-radius : var(--global-border-radius);
-}
 
-/* SECONDARY BUTTON ========================================================= */
-:root {
+
+    /* SECONDARY BUTTON ===================================================== */
     --button-secondary-default-bg             : var(--blue);
     --button-secondary-default-text           : var(--white);
     --button-secondary-default-border-colour  : var(--blue);
@@ -79,10 +78,9 @@
     --button-secondary-disabled-border-colour : var(--blue10);
     --button-secondary-disabled-border-width  : var(--global-border-width);
     --button-secondary-disabled-border-radius : var(--global-border-radius);
-}
 
-/* TERTIARY BUTTON ========================================================== */
-:root {
+
+    /* TERTIARY BUTTON ====================================================== */
     --button-tertiary-default-bg             : var(--blue);
     --button-tertiary-default-text           : var(--white);
     --button-tertiary-default-border-colour  : var(--blue);
@@ -102,19 +100,9 @@
     --button-tertiary-disabled-border-colour : var(--blue10);
     --button-tertiary-disabled-border-width  : var(--global-border-width);
     --button-tertiary-disabled-border-radius : var(--global-border-radius);
-}
 
-/* ROUND BUTTON ============================================================= */
-:root {
-    --button-round-size-tiny   : 24px;
-    --button-round-size-small  : 32px;
-    --button-round-size-medium : 64px;
-    --button-round-size-large  : 80px;
-    --button-round-size-huge   : 128px;
-}
 
-/* GENERIC LOADING BUTTON =================================================== */
-:root {
+    /* ROUND BUTTON ========================================================= */
     --button-round-size-tiny   : 24px;
     --button-round-size-small  : 32px;
     --button-round-size-medium : 64px;
@@ -319,7 +307,7 @@
     /* PARAGRAPHS =========================================================== */
     --paragraph-font-family     : var(--font-family-sans-serif);
     --paragraph-font-size       : 1rem;
-    --paragraph-line-height     : 1.64;
+    --paragraph-line-height     : 1.2;
     --paragraph-font-weight     : 400;
     --paragraph-text-colour     : var(--grey);
 

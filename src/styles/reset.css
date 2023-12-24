@@ -28,6 +28,10 @@ body, button, input, select, textarea {
     font-family : BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
+p {
+    margin : 0;
+}
+
 img {
     display : block;
     width   : auto;
