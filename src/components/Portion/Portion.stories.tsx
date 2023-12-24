@@ -26,7 +26,7 @@ export const InsideRow: Story = {
     render: (args) => (
         <Row>
             <Portion {...args}>
-                <Element as="div" bgColour="slate-20" padding="micro" />
+                <Element as="div" bgColour="slate-light-20" padding="micro" />
             </Portion>
         </Row>
     ),

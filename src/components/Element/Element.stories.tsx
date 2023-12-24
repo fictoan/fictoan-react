@@ -19,7 +19,7 @@ type Story = StoryObj<typeof Element>;
 export const Default: Story = {
     args: {
         as: "div",
-        borderColor: "slate-20",
+        borderColor: "slate-light-20",
         padding: "micro",
         children: "This is a div",
     },

@@ -23,28 +23,28 @@ export const WithPortions: Story = {
     render: (args) => (
         <Row {...args}>
             <Portion desktopSpan="8">
-                <Element as="div" bgColour="slate-20" padding="micro" />
+                <Element as="div" bgColour="slate-light-20" padding="micro" />
             </Portion>
             <Portion desktopSpan="16">
-                <Element as="div" bgColour="slate-20" padding="micro" />
+                <Element as="div" bgColour="slate-light-20" padding="micro" />
             </Portion>
             <Portion desktopSpan="16">
-                <Element as="div" bgColour="slate-20" padding="micro" />
+                <Element as="div" bgColour="slate-light-20" padding="micro" />
             </Portion>
             <Portion desktopSpan="8">
-                <Element as="div" bgColour="slate-20" padding="micro" />
+                <Element as="div" bgColour="slate-light-20" padding="micro" />
             </Portion>
             <Portion desktopSpan="4">
-                <Element as="div" bgColour="slate-20" padding="micro" />
+                <Element as="div" bgColour="slate-light-20" padding="micro" />
             </Portion>
             <Portion desktopSpan="4">
-                <Element as="div" bgColour="slate-20" padding="micro" />
+                <Element as="div" bgColour="slate-light-20" padding="micro" />
             </Portion>
             <Portion desktopSpan="12">
-                <Element as="div" bgColour="slate-20" padding="micro" />
+                <Element as="div" bgColour="slate-light-20" padding="micro" />
             </Portion>
             <Portion desktopSpan="4">
-                <Element as="div" bgColour="slate-20" padding="micro" />
+                <Element as="div" bgColour="slate-light-20" padding="micro" />
             </Portion>
         </Row>
     ),
