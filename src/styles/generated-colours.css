@@ -1,0 +1,4189 @@
+:root {
+  --base-red: 0, 84%;
+  --base-salmon: 9, 100%;
+  --base-orange: 30, 92%;
+  --base-amber: 40, 97%;
+  --base-yellow: 50, 100%;
+  --base-spring: 65, 80%;
+  --base-pistachio: 78, 54%;
+  --base-green: 148, 50%;
+  --base-teal: 174, 62%;
+  --base-cyan: 176, 78%;
+  --base-sky: 194, 97%;
+  --base-indigo: 237, 66%;
+  --base-violet: 258, 55%;
+  --base-purple: 311, 47%;
+  --base-pink: 336, 96%;
+  --base-crimson: 340, 64%;
+  --base-brick: 0, 68%;
+  --base-sienna: 15, 56%;
+  --base-brown: 24, 34%;
+  --base-slate: 209, 12%;
+  --base-grey: 0, 0%;
+}
+
+:root {
+  --palette-red-dark-40: 0, 84%, 10%;
+  --palette-red-dark-30: 0, 84%, 20%;
+  --palette-red-dark-20: 0, 84%, 30%;
+  --palette-red-dark-10: 0, 84%, 40%;
+  --palette-red: 0, 84%, 50%;
+  --palette-red-light-10: 0, 84%, 60%;
+  --palette-red-light-20: 0, 84%, 70%;
+  --palette-red-light-30: 0, 84%, 80%;
+  --palette-red-light-40: 0, 84%, 90%;
+  --palette-salmon-dark-40: 9, 100%, 10%;
+  --palette-salmon-dark-30: 9, 100%, 20%;
+  --palette-salmon-dark-20: 9, 100%, 30%;
+  --palette-salmon-dark-10: 9, 100%, 40%;
+  --palette-salmon: 9, 100%, 50%;
+  --palette-salmon-light-10: 9, 100%, 60%;
+  --palette-salmon-light-20: 9, 100%, 70%;
+  --palette-salmon-light-30: 9, 100%, 80%;
+  --palette-salmon-light-40: 9, 100%, 90%;
+  --palette-orange-dark-40: 30, 92%, 10%;
+  --palette-orange-dark-30: 30, 92%, 20%;
+  --palette-orange-dark-20: 30, 92%, 30%;
+  --palette-orange-dark-10: 30, 92%, 40%;
+  --palette-orange: 30, 92%, 50%;
+  --palette-orange-light-10: 30, 92%, 60%;
+  --palette-orange-light-20: 30, 92%, 70%;
+  --palette-orange-light-30: 30, 92%, 80%;
+  --palette-orange-light-40: 30, 92%, 90%;
+  --palette-amber-dark-40: 40, 97%, 10%;
+  --palette-amber-dark-30: 40, 97%, 20%;
+  --palette-amber-dark-20: 40, 97%, 30%;
+  --palette-amber-dark-10: 40, 97%, 40%;
+  --palette-amber: 40, 97%, 50%;
+  --palette-amber-light-10: 40, 97%, 60%;
+  --palette-amber-light-20: 40, 97%, 70%;
+  --palette-amber-light-30: 40, 97%, 80%;
+  --palette-amber-light-40: 40, 97%, 90%;
+  --palette-yellow-dark-40: 50, 100%, 10%;
+  --palette-yellow-dark-30: 50, 100%, 20%;
+  --palette-yellow-dark-20: 50, 100%, 30%;
+  --palette-yellow-dark-10: 50, 100%, 40%;
+  --palette-yellow: 50, 100%, 50%;
+  --palette-yellow-light-10: 50, 100%, 60%;
+  --palette-yellow-light-20: 50, 100%, 70%;
+  --palette-yellow-light-30: 50, 100%, 80%;
+  --palette-yellow-light-40: 50, 100%, 90%;
+  --palette-spring-dark-40: 65, 80%, 10%;
+  --palette-spring-dark-30: 65, 80%, 20%;
+  --palette-spring-dark-20: 65, 80%, 30%;
+  --palette-spring-dark-10: 65, 80%, 40%;
+  --palette-spring: 65, 80%, 50%;
+  --palette-spring-light-10: 65, 80%, 60%;
+  --palette-spring-light-20: 65, 80%, 70%;
+  --palette-spring-light-30: 65, 80%, 80%;
+  --palette-spring-light-40: 65, 80%, 90%;
+  --palette-pistachio-dark-40: 78, 54%, 10%;
+  --palette-pistachio-dark-30: 78, 54%, 20%;
+  --palette-pistachio-dark-20: 78, 54%, 30%;
+  --palette-pistachio-dark-10: 78, 54%, 40%;
+  --palette-pistachio: 78, 54%, 50%;
+  --palette-pistachio-light-10: 78, 54%, 60%;
+  --palette-pistachio-light-20: 78, 54%, 70%;
+  --palette-pistachio-light-30: 78, 54%, 80%;
+  --palette-pistachio-light-40: 78, 54%, 90%;
+  --palette-green-dark-40: 148, 50%, 10%;
+  --palette-green-dark-30: 148, 50%, 20%;
+  --palette-green-dark-20: 148, 50%, 30%;
+  --palette-green-dark-10: 148, 50%, 40%;
+  --palette-green: 148, 50%, 50%;
+  --palette-green-light-10: 148, 50%, 60%;
+  --palette-green-light-20: 148, 50%, 70%;
+  --palette-green-light-30: 148, 50%, 80%;
+  --palette-green-light-40: 148, 50%, 90%;
+  --palette-teal-dark-40: 174, 62%, 10%;
+  --palette-teal-dark-30: 174, 62%, 20%;
+  --palette-teal-dark-20: 174, 62%, 30%;
+  --palette-teal-dark-10: 174, 62%, 40%;
+  --palette-teal: 174, 62%, 50%;
+  --palette-teal-light-10: 174, 62%, 60%;
+  --palette-teal-light-20: 174, 62%, 70%;
+  --palette-teal-light-30: 174, 62%, 80%;
+  --palette-teal-light-40: 174, 62%, 90%;
+  --palette-cyan-dark-40: 176, 78%, 10%;
+  --palette-cyan-dark-30: 176, 78%, 20%;
+  --palette-cyan-dark-20: 176, 78%, 30%;
+  --palette-cyan-dark-10: 176, 78%, 40%;
+  --palette-cyan: 176, 78%, 50%;
+  --palette-cyan-light-10: 176, 78%, 60%;
+  --palette-cyan-light-20: 176, 78%, 70%;
+  --palette-cyan-light-30: 176, 78%, 80%;
+  --palette-cyan-light-40: 176, 78%, 90%;
+  --palette-sky-dark-40: 194, 97%, 10%;
+  --palette-sky-dark-30: 194, 97%, 20%;
+  --palette-sky-dark-20: 194, 97%, 30%;
+  --palette-sky-dark-10: 194, 97%, 40%;
+  --palette-sky: 194, 97%, 50%;
+  --palette-sky-light-10: 194, 97%, 60%;
+  --palette-sky-light-20: 194, 97%, 70%;
+  --palette-sky-light-30: 194, 97%, 80%;
+  --palette-sky-light-40: 194, 97%, 90%;
+  --palette-indigo-dark-40: 237, 66%, 10%;
+  --palette-indigo-dark-30: 237, 66%, 20%;
+  --palette-indigo-dark-20: 237, 66%, 30%;
+  --palette-indigo-dark-10: 237, 66%, 40%;
+  --palette-indigo: 237, 66%, 50%;
+  --palette-indigo-light-10: 237, 66%, 60%;
+  --palette-indigo-light-20: 237, 66%, 70%;
+  --palette-indigo-light-30: 237, 66%, 80%;
+  --palette-indigo-light-40: 237, 66%, 90%;
+  --palette-violet-dark-40: 258, 55%, 10%;
+  --palette-violet-dark-30: 258, 55%, 20%;
+  --palette-violet-dark-20: 258, 55%, 30%;
+  --palette-violet-dark-10: 258, 55%, 40%;
+  --palette-violet: 258, 55%, 50%;
+  --palette-violet-light-10: 258, 55%, 60%;
+  --palette-violet-light-20: 258, 55%, 70%;
+  --palette-violet-light-30: 258, 55%, 80%;
+  --palette-violet-light-40: 258, 55%, 90%;
+  --palette-purple-dark-40: 311, 47%, 10%;
+  --palette-purple-dark-30: 311, 47%, 20%;
+  --palette-purple-dark-20: 311, 47%, 30%;
+  --palette-purple-dark-10: 311, 47%, 40%;
+  --palette-purple: 311, 47%, 50%;
+  --palette-purple-light-10: 311, 47%, 60%;
+  --palette-purple-light-20: 311, 47%, 70%;
+  --palette-purple-light-30: 311, 47%, 80%;
+  --palette-purple-light-40: 311, 47%, 90%;
+  --palette-pink-dark-40: 336, 96%, 10%;
+  --palette-pink-dark-30: 336, 96%, 20%;
+  --palette-pink-dark-20: 336, 96%, 30%;
+  --palette-pink-dark-10: 336, 96%, 40%;
+  --palette-pink: 336, 96%, 50%;
+  --palette-pink-light-10: 336, 96%, 60%;
+  --palette-pink-light-20: 336, 96%, 70%;
+  --palette-pink-light-30: 336, 96%, 80%;
+  --palette-pink-light-40: 336, 96%, 90%;
+  --palette-crimson-dark-40: 340, 64%, 10%;
+  --palette-crimson-dark-30: 340, 64%, 20%;
+  --palette-crimson-dark-20: 340, 64%, 30%;
+  --palette-crimson-dark-10: 340, 64%, 40%;
+  --palette-crimson: 340, 64%, 50%;
+  --palette-crimson-light-10: 340, 64%, 60%;
+  --palette-crimson-light-20: 340, 64%, 70%;
+  --palette-crimson-light-30: 340, 64%, 80%;
+  --palette-crimson-light-40: 340, 64%, 90%;
+  --palette-brick-dark-40: 0, 68%, 10%;
+  --palette-brick-dark-30: 0, 68%, 20%;
+  --palette-brick-dark-20: 0, 68%, 30%;
+  --palette-brick-dark-10: 0, 68%, 40%;
+  --palette-brick: 0, 68%, 50%;
+  --palette-brick-light-10: 0, 68%, 60%;
+  --palette-brick-light-20: 0, 68%, 70%;
+  --palette-brick-light-30: 0, 68%, 80%;
+  --palette-brick-light-40: 0, 68%, 90%;
+  --palette-sienna-dark-40: 15, 56%, 10%;
+  --palette-sienna-dark-30: 15, 56%, 20%;
+  --palette-sienna-dark-20: 15, 56%, 30%;
+  --palette-sienna-dark-10: 15, 56%, 40%;
+  --palette-sienna: 15, 56%, 50%;
+  --palette-sienna-light-10: 15, 56%, 60%;
+  --palette-sienna-light-20: 15, 56%, 70%;
+  --palette-sienna-light-30: 15, 56%, 80%;
+  --palette-sienna-light-40: 15, 56%, 90%;
+  --palette-brown-dark-40: 24, 34%, 10%;
+  --palette-brown-dark-30: 24, 34%, 20%;
+  --palette-brown-dark-20: 24, 34%, 30%;
+  --palette-brown-dark-10: 24, 34%, 40%;
+  --palette-brown: 24, 34%, 50%;
+  --palette-brown-light-10: 24, 34%, 60%;
+  --palette-brown-light-20: 24, 34%, 70%;
+  --palette-brown-light-30: 24, 34%, 80%;
+  --palette-brown-light-40: 24, 34%, 90%;
+  --palette-slate-dark-40: 209, 12%, 10%;
+  --palette-slate-dark-30: 209, 12%, 20%;
+  --palette-slate-dark-20: 209, 12%, 30%;
+  --palette-slate-dark-10: 209, 12%, 40%;
+  --palette-slate: 209, 12%, 50%;
+  --palette-slate-light-10: 209, 12%, 60%;
+  --palette-slate-light-20: 209, 12%, 70%;
+  --palette-slate-light-30: 209, 12%, 80%;
+  --palette-slate-light-40: 209, 12%, 90%;
+  --palette-grey-dark-40: 0, 0%, 10%;
+  --palette-grey-dark-30: 0, 0%, 20%;
+  --palette-grey-dark-20: 0, 0%, 30%;
+  --palette-grey-dark-10: 0, 0%, 40%;
+  --palette-grey: 0, 0%, 50%;
+  --palette-grey-light-10: 0, 0%, 60%;
+  --palette-grey-light-20: 0, 0%, 70%;
+  --palette-grey-light-30: 0, 0%, 80%;
+  --palette-grey-light-40: 0, 0%, 90%;
+}
+
+:root {
+  --red-dark-40: hsl(var(--palette-red-dark-40));
+  --red-dark-30: hsl(var(--palette-red-dark-30));
+  --red-dark-20: hsl(var(--palette-red-dark-20));
+  --red-dark-10: hsl(var(--palette-red-dark-10));
+  --red: hsl(var(--palette-red));
+  --red-light-10: hsl(var(--palette-red-light-10));
+  --red-light-20: hsl(var(--palette-red-light-20));
+  --red-light-30: hsl(var(--palette-red-light-30));
+  --red-light-40: hsl(var(--palette-red-light-40));
+  --salmon-dark-40: hsl(var(--palette-salmon-dark-40));
+  --salmon-dark-30: hsl(var(--palette-salmon-dark-30));
+  --salmon-dark-20: hsl(var(--palette-salmon-dark-20));
+  --salmon-dark-10: hsl(var(--palette-salmon-dark-10));
+  --salmon: hsl(var(--palette-salmon));
+  --salmon-light-10: hsl(var(--palette-salmon-light-10));
+  --salmon-light-20: hsl(var(--palette-salmon-light-20));
+  --salmon-light-30: hsl(var(--palette-salmon-light-30));
+  --salmon-light-40: hsl(var(--palette-salmon-light-40));
+  --orange-dark-40: hsl(var(--palette-orange-dark-40));
+  --orange-dark-30: hsl(var(--palette-orange-dark-30));
+  --orange-dark-20: hsl(var(--palette-orange-dark-20));
+  --orange-dark-10: hsl(var(--palette-orange-dark-10));
+  --orange: hsl(var(--palette-orange));
+  --orange-light-10: hsl(var(--palette-orange-light-10));
+  --orange-light-20: hsl(var(--palette-orange-light-20));
+  --orange-light-30: hsl(var(--palette-orange-light-30));
+  --orange-light-40: hsl(var(--palette-orange-light-40));
+  --amber-dark-40: hsl(var(--palette-amber-dark-40));
+  --amber-dark-30: hsl(var(--palette-amber-dark-30));
+  --amber-dark-20: hsl(var(--palette-amber-dark-20));
+  --amber-dark-10: hsl(var(--palette-amber-dark-10));
+  --amber: hsl(var(--palette-amber));
+  --amber-light-10: hsl(var(--palette-amber-light-10));
+  --amber-light-20: hsl(var(--palette-amber-light-20));
+  --amber-light-30: hsl(var(--palette-amber-light-30));
+  --amber-light-40: hsl(var(--palette-amber-light-40));
+  --yellow-dark-40: hsl(var(--palette-yellow-dark-40));
+  --yellow-dark-30: hsl(var(--palette-yellow-dark-30));
+  --yellow-dark-20: hsl(var(--palette-yellow-dark-20));
+  --yellow-dark-10: hsl(var(--palette-yellow-dark-10));
+  --yellow: hsl(var(--palette-yellow));
+  --yellow-light-10: hsl(var(--palette-yellow-light-10));
+  --yellow-light-20: hsl(var(--palette-yellow-light-20));
+  --yellow-light-30: hsl(var(--palette-yellow-light-30));
+  --yellow-light-40: hsl(var(--palette-yellow-light-40));
+  --spring-dark-40: hsl(var(--palette-spring-dark-40));
+  --spring-dark-30: hsl(var(--palette-spring-dark-30));
+  --spring-dark-20: hsl(var(--palette-spring-dark-20));
+  --spring-dark-10: hsl(var(--palette-spring-dark-10));
+  --spring: hsl(var(--palette-spring));
+  --spring-light-10: hsl(var(--palette-spring-light-10));
+  --spring-light-20: hsl(var(--palette-spring-light-20));
+  --spring-light-30: hsl(var(--palette-spring-light-30));
+  --spring-light-40: hsl(var(--palette-spring-light-40));
+  --pistachio-dark-40: hsl(var(--palette-pistachio-dark-40));
+  --pistachio-dark-30: hsl(var(--palette-pistachio-dark-30));
+  --pistachio-dark-20: hsl(var(--palette-pistachio-dark-20));
+  --pistachio-dark-10: hsl(var(--palette-pistachio-dark-10));
+  --pistachio: hsl(var(--palette-pistachio));
+  --pistachio-light-10: hsl(var(--palette-pistachio-light-10));
+  --pistachio-light-20: hsl(var(--palette-pistachio-light-20));
+  --pistachio-light-30: hsl(var(--palette-pistachio-light-30));
+  --pistachio-light-40: hsl(var(--palette-pistachio-light-40));
+  --green-dark-40: hsl(var(--palette-green-dark-40));
+  --green-dark-30: hsl(var(--palette-green-dark-30));
+  --green-dark-20: hsl(var(--palette-green-dark-20));
+  --green-dark-10: hsl(var(--palette-green-dark-10));
+  --green: hsl(var(--palette-green));
+  --green-light-10: hsl(var(--palette-green-light-10));
+  --green-light-20: hsl(var(--palette-green-light-20));
+  --green-light-30: hsl(var(--palette-green-light-30));
+  --green-light-40: hsl(var(--palette-green-light-40));
+  --teal-dark-40: hsl(var(--palette-teal-dark-40));
+  --teal-dark-30: hsl(var(--palette-teal-dark-30));
+  --teal-dark-20: hsl(var(--palette-teal-dark-20));
+  --teal-dark-10: hsl(var(--palette-teal-dark-10));
+  --teal: hsl(var(--palette-teal));
+  --teal-light-10: hsl(var(--palette-teal-light-10));
+  --teal-light-20: hsl(var(--palette-teal-light-20));
+  --teal-light-30: hsl(var(--palette-teal-light-30));
+  --teal-light-40: hsl(var(--palette-teal-light-40));
+  --cyan-dark-40: hsl(var(--palette-cyan-dark-40));
+  --cyan-dark-30: hsl(var(--palette-cyan-dark-30));
+  --cyan-dark-20: hsl(var(--palette-cyan-dark-20));
+  --cyan-dark-10: hsl(var(--palette-cyan-dark-10));
+  --cyan: hsl(var(--palette-cyan));
+  --cyan-light-10: hsl(var(--palette-cyan-light-10));
+  --cyan-light-20: hsl(var(--palette-cyan-light-20));
+  --cyan-light-30: hsl(var(--palette-cyan-light-30));
+  --cyan-light-40: hsl(var(--palette-cyan-light-40));
+  --sky-dark-40: hsl(var(--palette-sky-dark-40));
+  --sky-dark-30: hsl(var(--palette-sky-dark-30));
+  --sky-dark-20: hsl(var(--palette-sky-dark-20));
+  --sky-dark-10: hsl(var(--palette-sky-dark-10));
+  --sky: hsl(var(--palette-sky));
+  --sky-light-10: hsl(var(--palette-sky-light-10));
+  --sky-light-20: hsl(var(--palette-sky-light-20));
+  --sky-light-30: hsl(var(--palette-sky-light-30));
+  --sky-light-40: hsl(var(--palette-sky-light-40));
+  --indigo-dark-40: hsl(var(--palette-indigo-dark-40));
+  --indigo-dark-30: hsl(var(--palette-indigo-dark-30));
+  --indigo-dark-20: hsl(var(--palette-indigo-dark-20));
+  --indigo-dark-10: hsl(var(--palette-indigo-dark-10));
+  --indigo: hsl(var(--palette-indigo));
+  --indigo-light-10: hsl(var(--palette-indigo-light-10));
+  --indigo-light-20: hsl(var(--palette-indigo-light-20));
+  --indigo-light-30: hsl(var(--palette-indigo-light-30));
+  --indigo-light-40: hsl(var(--palette-indigo-light-40));
+  --violet-dark-40: hsl(var(--palette-violet-dark-40));
+  --violet-dark-30: hsl(var(--palette-violet-dark-30));
+  --violet-dark-20: hsl(var(--palette-violet-dark-20));
+  --violet-dark-10: hsl(var(--palette-violet-dark-10));
+  --violet: hsl(var(--palette-violet));
+  --violet-light-10: hsl(var(--palette-violet-light-10));
+  --violet-light-20: hsl(var(--palette-violet-light-20));
+  --violet-light-30: hsl(var(--palette-violet-light-30));
+  --violet-light-40: hsl(var(--palette-violet-light-40));
+  --purple-dark-40: hsl(var(--palette-purple-dark-40));
+  --purple-dark-30: hsl(var(--palette-purple-dark-30));
+  --purple-dark-20: hsl(var(--palette-purple-dark-20));
+  --purple-dark-10: hsl(var(--palette-purple-dark-10));
+  --purple: hsl(var(--palette-purple));
+  --purple-light-10: hsl(var(--palette-purple-light-10));
+  --purple-light-20: hsl(var(--palette-purple-light-20));
+  --purple-light-30: hsl(var(--palette-purple-light-30));
+  --purple-light-40: hsl(var(--palette-purple-light-40));
+  --pink-dark-40: hsl(var(--palette-pink-dark-40));
+  --pink-dark-30: hsl(var(--palette-pink-dark-30));
+  --pink-dark-20: hsl(var(--palette-pink-dark-20));
+  --pink-dark-10: hsl(var(--palette-pink-dark-10));
+  --pink: hsl(var(--palette-pink));
+  --pink-light-10: hsl(var(--palette-pink-light-10));
+  --pink-light-20: hsl(var(--palette-pink-light-20));
+  --pink-light-30: hsl(var(--palette-pink-light-30));
+  --pink-light-40: hsl(var(--palette-pink-light-40));
+  --crimson-dark-40: hsl(var(--palette-crimson-dark-40));
+  --crimson-dark-30: hsl(var(--palette-crimson-dark-30));
+  --crimson-dark-20: hsl(var(--palette-crimson-dark-20));
+  --crimson-dark-10: hsl(var(--palette-crimson-dark-10));
+  --crimson: hsl(var(--palette-crimson));
+  --crimson-light-10: hsl(var(--palette-crimson-light-10));
+  --crimson-light-20: hsl(var(--palette-crimson-light-20));
+  --crimson-light-30: hsl(var(--palette-crimson-light-30));
+  --crimson-light-40: hsl(var(--palette-crimson-light-40));
+  --brick-dark-40: hsl(var(--palette-brick-dark-40));
+  --brick-dark-30: hsl(var(--palette-brick-dark-30));
+  --brick-dark-20: hsl(var(--palette-brick-dark-20));
+  --brick-dark-10: hsl(var(--palette-brick-dark-10));
+  --brick: hsl(var(--palette-brick));
+  --brick-light-10: hsl(var(--palette-brick-light-10));
+  --brick-light-20: hsl(var(--palette-brick-light-20));
+  --brick-light-30: hsl(var(--palette-brick-light-30));
+  --brick-light-40: hsl(var(--palette-brick-light-40));
+  --sienna-dark-40: hsl(var(--palette-sienna-dark-40));
+  --sienna-dark-30: hsl(var(--palette-sienna-dark-30));
+  --sienna-dark-20: hsl(var(--palette-sienna-dark-20));
+  --sienna-dark-10: hsl(var(--palette-sienna-dark-10));
+  --sienna: hsl(var(--palette-sienna));
+  --sienna-light-10: hsl(var(--palette-sienna-light-10));
+  --sienna-light-20: hsl(var(--palette-sienna-light-20));
+  --sienna-light-30: hsl(var(--palette-sienna-light-30));
+  --sienna-light-40: hsl(var(--palette-sienna-light-40));
+  --brown-dark-40: hsl(var(--palette-brown-dark-40));
+  --brown-dark-30: hsl(var(--palette-brown-dark-30));
+  --brown-dark-20: hsl(var(--palette-brown-dark-20));
+  --brown-dark-10: hsl(var(--palette-brown-dark-10));
+  --brown: hsl(var(--palette-brown));
+  --brown-light-10: hsl(var(--palette-brown-light-10));
+  --brown-light-20: hsl(var(--palette-brown-light-20));
+  --brown-light-30: hsl(var(--palette-brown-light-30));
+  --brown-light-40: hsl(var(--palette-brown-light-40));
+  --slate-dark-40: hsl(var(--palette-slate-dark-40));
+  --slate-dark-30: hsl(var(--palette-slate-dark-30));
+  --slate-dark-20: hsl(var(--palette-slate-dark-20));
+  --slate-dark-10: hsl(var(--palette-slate-dark-10));
+  --slate: hsl(var(--palette-slate));
+  --slate-light-10: hsl(var(--palette-slate-light-10));
+  --slate-light-20: hsl(var(--palette-slate-light-20));
+  --slate-light-30: hsl(var(--palette-slate-light-30));
+  --slate-light-40: hsl(var(--palette-slate-light-40));
+  --grey-dark-40: hsl(var(--palette-grey-dark-40));
+  --grey-dark-30: hsl(var(--palette-grey-dark-30));
+  --grey-dark-20: hsl(var(--palette-grey-dark-20));
+  --grey-dark-10: hsl(var(--palette-grey-dark-10));
+  --grey: hsl(var(--palette-grey));
+  --grey-light-10: hsl(var(--palette-grey-light-10));
+  --grey-light-20: hsl(var(--palette-grey-light-20));
+  --grey-light-30: hsl(var(--palette-grey-light-30));
+  --grey-light-40: hsl(var(--palette-grey-light-40));
+}
+
+.bg-red-dark-40 {
+  background-color: var(--red-dark-40);
+}
+
+.bg-red-dark-30 {
+  background-color: var(--red-dark-30);
+}
+
+.bg-red-dark-20 {
+  background-color: var(--red-dark-20);
+}
+
+.bg-red-dark-10 {
+  background-color: var(--red-dark-10);
+}
+
+.bg-red {
+  background-color: var(--red);
+}
+
+.bg-red-light-10 {
+  background-color: var(--red-light-10);
+}
+
+.bg-red-light-20 {
+  background-color: var(--red-light-20);
+}
+
+.bg-red-light-30 {
+  background-color: var(--red-light-30);
+}
+
+.bg-red-light-40 {
+  background-color: var(--red-light-40);
+}
+
+.bg-salmon-dark-40 {
+  background-color: var(--salmon-dark-40);
+}
+
+.bg-salmon-dark-30 {
+  background-color: var(--salmon-dark-30);
+}
+
+.bg-salmon-dark-20 {
+  background-color: var(--salmon-dark-20);
+}
+
+.bg-salmon-dark-10 {
+  background-color: var(--salmon-dark-10);
+}
+
+.bg-salmon {
+  background-color: var(--salmon);
+}
+
+.bg-salmon-light-10 {
+  background-color: var(--salmon-light-10);
+}
+
+.bg-salmon-light-20 {
+  background-color: var(--salmon-light-20);
+}
+
+.bg-salmon-light-30 {
+  background-color: var(--salmon-light-30);
+}
+
+.bg-salmon-light-40 {
+  background-color: var(--salmon-light-40);
+}
+
+.bg-orange-dark-40 {
+  background-color: var(--orange-dark-40);
+}
+
+.bg-orange-dark-30 {
+  background-color: var(--orange-dark-30);
+}
+
+.bg-orange-dark-20 {
+  background-color: var(--orange-dark-20);
+}
+
+.bg-orange-dark-10 {
+  background-color: var(--orange-dark-10);
+}
+
+.bg-orange {
+  background-color: var(--orange);
+}
+
+.bg-orange-light-10 {
+  background-color: var(--orange-light-10);
+}
+
+.bg-orange-light-20 {
+  background-color: var(--orange-light-20);
+}
+
+.bg-orange-light-30 {
+  background-color: var(--orange-light-30);
+}
+
+.bg-orange-light-40 {
+  background-color: var(--orange-light-40);
+}
+
+.bg-amber-dark-40 {
+  background-color: var(--amber-dark-40);
+}
+
+.bg-amber-dark-30 {
+  background-color: var(--amber-dark-30);
+}
+
+.bg-amber-dark-20 {
+  background-color: var(--amber-dark-20);
+}
+
+.bg-amber-dark-10 {
+  background-color: var(--amber-dark-10);
+}
+
+.bg-amber {
+  background-color: var(--amber);
+}
+
+.bg-amber-light-10 {
+  background-color: var(--amber-light-10);
+}
+
+.bg-amber-light-20 {
+  background-color: var(--amber-light-20);
+}
+
+.bg-amber-light-30 {
+  background-color: var(--amber-light-30);
+}
+
+.bg-amber-light-40 {
+  background-color: var(--amber-light-40);
+}
+
+.bg-yellow-dark-40 {
+  background-color: var(--yellow-dark-40);
+}
+
+.bg-yellow-dark-30 {
+  background-color: var(--yellow-dark-30);
+}
+
+.bg-yellow-dark-20 {
+  background-color: var(--yellow-dark-20);
+}
+
+.bg-yellow-dark-10 {
+  background-color: var(--yellow-dark-10);
+}
+
+.bg-yellow {
+  background-color: var(--yellow);
+}
+
+.bg-yellow-light-10 {
+  background-color: var(--yellow-light-10);
+}
+
+.bg-yellow-light-20 {
+  background-color: var(--yellow-light-20);
+}
+
+.bg-yellow-light-30 {
+  background-color: var(--yellow-light-30);
+}
+
+.bg-yellow-light-40 {
+  background-color: var(--yellow-light-40);
+}
+
+.bg-spring-dark-40 {
+  background-color: var(--spring-dark-40);
+}
+
+.bg-spring-dark-30 {
+  background-color: var(--spring-dark-30);
+}
+
+.bg-spring-dark-20 {
+  background-color: var(--spring-dark-20);
+}
+
+.bg-spring-dark-10 {
+  background-color: var(--spring-dark-10);
+}
+
+.bg-spring {
+  background-color: var(--spring);
+}
+
+.bg-spring-light-10 {
+  background-color: var(--spring-light-10);
+}
+
+.bg-spring-light-20 {
+  background-color: var(--spring-light-20);
+}
+
+.bg-spring-light-30 {
+  background-color: var(--spring-light-30);
+}
+
+.bg-spring-light-40 {
+  background-color: var(--spring-light-40);
+}
+
+.bg-pistachio-dark-40 {
+  background-color: var(--pistachio-dark-40);
+}
+
+.bg-pistachio-dark-30 {
+  background-color: var(--pistachio-dark-30);
+}
+
+.bg-pistachio-dark-20 {
+  background-color: var(--pistachio-dark-20);
+}
+
+.bg-pistachio-dark-10 {
+  background-color: var(--pistachio-dark-10);
+}
+
+.bg-pistachio {
+  background-color: var(--pistachio);
+}
+
+.bg-pistachio-light-10 {
+  background-color: var(--pistachio-light-10);
+}
+
+.bg-pistachio-light-20 {
+  background-color: var(--pistachio-light-20);
+}
+
+.bg-pistachio-light-30 {
+  background-color: var(--pistachio-light-30);
+}
+
+.bg-pistachio-light-40 {
+  background-color: var(--pistachio-light-40);
+}
+
+.bg-green-dark-40 {
+  background-color: var(--green-dark-40);
+}
+
+.bg-green-dark-30 {
+  background-color: var(--green-dark-30);
+}
+
+.bg-green-dark-20 {
+  background-color: var(--green-dark-20);
+}
+
+.bg-green-dark-10 {
+  background-color: var(--green-dark-10);
+}
+
+.bg-green {
+  background-color: var(--green);
+}
+
+.bg-green-light-10 {
+  background-color: var(--green-light-10);
+}
+
+.bg-green-light-20 {
+  background-color: var(--green-light-20);
+}
+
+.bg-green-light-30 {
+  background-color: var(--green-light-30);
+}
+
+.bg-green-light-40 {
+  background-color: var(--green-light-40);
+}
+
+.bg-teal-dark-40 {
+  background-color: var(--teal-dark-40);
+}
+
+.bg-teal-dark-30 {
+  background-color: var(--teal-dark-30);
+}
+
+.bg-teal-dark-20 {
+  background-color: var(--teal-dark-20);
+}
+
+.bg-teal-dark-10 {
+  background-color: var(--teal-dark-10);
+}
+
+.bg-teal {
+  background-color: var(--teal);
+}
+
+.bg-teal-light-10 {
+  background-color: var(--teal-light-10);
+}
+
+.bg-teal-light-20 {
+  background-color: var(--teal-light-20);
+}
+
+.bg-teal-light-30 {
+  background-color: var(--teal-light-30);
+}
+
+.bg-teal-light-40 {
+  background-color: var(--teal-light-40);
+}
+
+.bg-cyan-dark-40 {
+  background-color: var(--cyan-dark-40);
+}
+
+.bg-cyan-dark-30 {
+  background-color: var(--cyan-dark-30);
+}
+
+.bg-cyan-dark-20 {
+  background-color: var(--cyan-dark-20);
+}
+
+.bg-cyan-dark-10 {
+  background-color: var(--cyan-dark-10);
+}
+
+.bg-cyan {
+  background-color: var(--cyan);
+}
+
+.bg-cyan-light-10 {
+  background-color: var(--cyan-light-10);
+}
+
+.bg-cyan-light-20 {
+  background-color: var(--cyan-light-20);
+}
+
+.bg-cyan-light-30 {
+  background-color: var(--cyan-light-30);
+}
+
+.bg-cyan-light-40 {
+  background-color: var(--cyan-light-40);
+}
+
+.bg-sky-dark-40 {
+  background-color: var(--sky-dark-40);
+}
+
+.bg-sky-dark-30 {
+  background-color: var(--sky-dark-30);
+}
+
+.bg-sky-dark-20 {
+  background-color: var(--sky-dark-20);
+}
+
+.bg-sky-dark-10 {
+  background-color: var(--sky-dark-10);
+}
+
+.bg-sky {
+  background-color: var(--sky);
+}
+
+.bg-sky-light-10 {
+  background-color: var(--sky-light-10);
+}
+
+.bg-sky-light-20 {
+  background-color: var(--sky-light-20);
+}
+
+.bg-sky-light-30 {
+  background-color: var(--sky-light-30);
+}
+
+.bg-sky-light-40 {
+  background-color: var(--sky-light-40);
+}
+
+.bg-indigo-dark-40 {
+  background-color: var(--indigo-dark-40);
+}
+
+.bg-indigo-dark-30 {
+  background-color: var(--indigo-dark-30);
+}
+
+.bg-indigo-dark-20 {
+  background-color: var(--indigo-dark-20);
+}
+
+.bg-indigo-dark-10 {
+  background-color: var(--indigo-dark-10);
+}
+
+.bg-indigo {
+  background-color: var(--indigo);
+}
+
+.bg-indigo-light-10 {
+  background-color: var(--indigo-light-10);
+}
+
+.bg-indigo-light-20 {
+  background-color: var(--indigo-light-20);
+}
+
+.bg-indigo-light-30 {
+  background-color: var(--indigo-light-30);
+}
+
+.bg-indigo-light-40 {
+  background-color: var(--indigo-light-40);
+}
+
+.bg-violet-dark-40 {
+  background-color: var(--violet-dark-40);
+}
+
+.bg-violet-dark-30 {
+  background-color: var(--violet-dark-30);
+}
+
+.bg-violet-dark-20 {
+  background-color: var(--violet-dark-20);
+}
+
+.bg-violet-dark-10 {
+  background-color: var(--violet-dark-10);
+}
+
+.bg-violet {
+  background-color: var(--violet);
+}
+
+.bg-violet-light-10 {
+  background-color: var(--violet-light-10);
+}
+
+.bg-violet-light-20 {
+  background-color: var(--violet-light-20);
+}
+
+.bg-violet-light-30 {
+  background-color: var(--violet-light-30);
+}
+
+.bg-violet-light-40 {
+  background-color: var(--violet-light-40);
+}
+
+.bg-purple-dark-40 {
+  background-color: var(--purple-dark-40);
+}
+
+.bg-purple-dark-30 {
+  background-color: var(--purple-dark-30);
+}
+
+.bg-purple-dark-20 {
+  background-color: var(--purple-dark-20);
+}
+
+.bg-purple-dark-10 {
+  background-color: var(--purple-dark-10);
+}
+
+.bg-purple {
+  background-color: var(--purple);
+}
+
+.bg-purple-light-10 {
+  background-color: var(--purple-light-10);
+}
+
+.bg-purple-light-20 {
+  background-color: var(--purple-light-20);
+}
+
+.bg-purple-light-30 {
+  background-color: var(--purple-light-30);
+}
+
+.bg-purple-light-40 {
+  background-color: var(--purple-light-40);
+}
+
+.bg-pink-dark-40 {
+  background-color: var(--pink-dark-40);
+}
+
+.bg-pink-dark-30 {
+  background-color: var(--pink-dark-30);
+}
+
+.bg-pink-dark-20 {
+  background-color: var(--pink-dark-20);
+}
+
+.bg-pink-dark-10 {
+  background-color: var(--pink-dark-10);
+}
+
+.bg-pink {
+  background-color: var(--pink);
+}
+
+.bg-pink-light-10 {
+  background-color: var(--pink-light-10);
+}
+
+.bg-pink-light-20 {
+  background-color: var(--pink-light-20);
+}
+
+.bg-pink-light-30 {
+  background-color: var(--pink-light-30);
+}
+
+.bg-pink-light-40 {
+  background-color: var(--pink-light-40);
+}
+
+.bg-crimson-dark-40 {
+  background-color: var(--crimson-dark-40);
+}
+
+.bg-crimson-dark-30 {
+  background-color: var(--crimson-dark-30);
+}
+
+.bg-crimson-dark-20 {
+  background-color: var(--crimson-dark-20);
+}
+
+.bg-crimson-dark-10 {
+  background-color: var(--crimson-dark-10);
+}
+
+.bg-crimson {
+  background-color: var(--crimson);
+}
+
+.bg-crimson-light-10 {
+  background-color: var(--crimson-light-10);
+}
+
+.bg-crimson-light-20 {
+  background-color: var(--crimson-light-20);
+}
+
+.bg-crimson-light-30 {
+  background-color: var(--crimson-light-30);
+}
+
+.bg-crimson-light-40 {
+  background-color: var(--crimson-light-40);
+}
+
+.bg-brick-dark-40 {
+  background-color: var(--brick-dark-40);
+}
+
+.bg-brick-dark-30 {
+  background-color: var(--brick-dark-30);
+}
+
+.bg-brick-dark-20 {
+  background-color: var(--brick-dark-20);
+}
+
+.bg-brick-dark-10 {
+  background-color: var(--brick-dark-10);
+}
+
+.bg-brick {
+  background-color: var(--brick);
+}
+
+.bg-brick-light-10 {
+  background-color: var(--brick-light-10);
+}
+
+.bg-brick-light-20 {
+  background-color: var(--brick-light-20);
+}
+
+.bg-brick-light-30 {
+  background-color: var(--brick-light-30);
+}
+
+.bg-brick-light-40 {
+  background-color: var(--brick-light-40);
+}
+
+.bg-sienna-dark-40 {
+  background-color: var(--sienna-dark-40);
+}
+
+.bg-sienna-dark-30 {
+  background-color: var(--sienna-dark-30);
+}
+
+.bg-sienna-dark-20 {
+  background-color: var(--sienna-dark-20);
+}
+
+.bg-sienna-dark-10 {
+  background-color: var(--sienna-dark-10);
+}
+
+.bg-sienna {
+  background-color: var(--sienna);
+}
+
+.bg-sienna-light-10 {
+  background-color: var(--sienna-light-10);
+}
+
+.bg-sienna-light-20 {
+  background-color: var(--sienna-light-20);
+}
+
+.bg-sienna-light-30 {
+  background-color: var(--sienna-light-30);
+}
+
+.bg-sienna-light-40 {
+  background-color: var(--sienna-light-40);
+}
+
+.bg-brown-dark-40 {
+  background-color: var(--brown-dark-40);
+}
+
+.bg-brown-dark-30 {
+  background-color: var(--brown-dark-30);
+}
+
+.bg-brown-dark-20 {
+  background-color: var(--brown-dark-20);
+}
+
+.bg-brown-dark-10 {
+  background-color: var(--brown-dark-10);
+}
+
+.bg-brown {
+  background-color: var(--brown);
+}
+
+.bg-brown-light-10 {
+  background-color: var(--brown-light-10);
+}
+
+.bg-brown-light-20 {
+  background-color: var(--brown-light-20);
+}
+
+.bg-brown-light-30 {
+  background-color: var(--brown-light-30);
+}
+
+.bg-brown-light-40 {
+  background-color: var(--brown-light-40);
+}
+
+.bg-slate-dark-40 {
+  background-color: var(--slate-dark-40);
+}
+
+.bg-slate-dark-30 {
+  background-color: var(--slate-dark-30);
+}
+
+.bg-slate-dark-20 {
+  background-color: var(--slate-dark-20);
+}
+
+.bg-slate-dark-10 {
+  background-color: var(--slate-dark-10);
+}
+
+.bg-slate {
+  background-color: var(--slate);
+}
+
+.bg-slate-light-10 {
+  background-color: var(--slate-light-10);
+}
+
+.bg-slate-light-20 {
+  background-color: var(--slate-light-20);
+}
+
+.bg-slate-light-30 {
+  background-color: var(--slate-light-30);
+}
+
+.bg-slate-light-40 {
+  background-color: var(--slate-light-40);
+}
+
+.bg-grey-dark-40 {
+  background-color: var(--grey-dark-40);
+}
+
+.bg-grey-dark-30 {
+  background-color: var(--grey-dark-30);
+}
+
+.bg-grey-dark-20 {
+  background-color: var(--grey-dark-20);
+}
+
+.bg-grey-dark-10 {
+  background-color: var(--grey-dark-10);
+}
+
+.bg-grey {
+  background-color: var(--grey);
+}
+
+.bg-grey-light-10 {
+  background-color: var(--grey-light-10);
+}
+
+.bg-grey-light-20 {
+  background-color: var(--grey-light-20);
+}
+
+.bg-grey-light-30 {
+  background-color: var(--grey-light-30);
+}
+
+.bg-grey-light-40 {
+  background-color: var(--grey-light-40);
+}
+
+.text-red-dark-40 {
+  color: var(--red-dark-40);
+}
+
+.text-red-dark-30 {
+  color: var(--red-dark-30);
+}
+
+.text-red-dark-20 {
+  color: var(--red-dark-20);
+}
+
+.text-red-dark-10 {
+  color: var(--red-dark-10);
+}
+
+.text-red {
+  color: var(--red);
+}
+
+.text-red-light-10 {
+  color: var(--red-light-10);
+}
+
+.text-red-light-20 {
+  color: var(--red-light-20);
+}
+
+.text-red-light-30 {
+  color: var(--red-light-30);
+}
+
+.text-red-light-40 {
+  color: var(--red-light-40);
+}
+
+.text-salmon-dark-40 {
+  color: var(--salmon-dark-40);
+}
+
+.text-salmon-dark-30 {
+  color: var(--salmon-dark-30);
+}
+
+.text-salmon-dark-20 {
+  color: var(--salmon-dark-20);
+}
+
+.text-salmon-dark-10 {
+  color: var(--salmon-dark-10);
+}
+
+.text-salmon {
+  color: var(--salmon);
+}
+
+.text-salmon-light-10 {
+  color: var(--salmon-light-10);
+}
+
+.text-salmon-light-20 {
+  color: var(--salmon-light-20);
+}
+
+.text-salmon-light-30 {
+  color: var(--salmon-light-30);
+}
+
+.text-salmon-light-40 {
+  color: var(--salmon-light-40);
+}
+
+.text-orange-dark-40 {
+  color: var(--orange-dark-40);
+}
+
+.text-orange-dark-30 {
+  color: var(--orange-dark-30);
+}
+
+.text-orange-dark-20 {
+  color: var(--orange-dark-20);
+}
+
+.text-orange-dark-10 {
+  color: var(--orange-dark-10);
+}
+
+.text-orange {
+  color: var(--orange);
+}
+
+.text-orange-light-10 {
+  color: var(--orange-light-10);
+}
+
+.text-orange-light-20 {
+  color: var(--orange-light-20);
+}
+
+.text-orange-light-30 {
+  color: var(--orange-light-30);
+}
+
+.text-orange-light-40 {
+  color: var(--orange-light-40);
+}
+
+.text-amber-dark-40 {
+  color: var(--amber-dark-40);
+}
+
+.text-amber-dark-30 {
+  color: var(--amber-dark-30);
+}
+
+.text-amber-dark-20 {
+  color: var(--amber-dark-20);
+}
+
+.text-amber-dark-10 {
+  color: var(--amber-dark-10);
+}
+
+.text-amber {
+  color: var(--amber);
+}
+
+.text-amber-light-10 {
+  color: var(--amber-light-10);
+}
+
+.text-amber-light-20 {
+  color: var(--amber-light-20);
+}
+
+.text-amber-light-30 {
+  color: var(--amber-light-30);
+}
+
+.text-amber-light-40 {
+  color: var(--amber-light-40);
+}
+
+.text-yellow-dark-40 {
+  color: var(--yellow-dark-40);
+}
+
+.text-yellow-dark-30 {
+  color: var(--yellow-dark-30);
+}
+
+.text-yellow-dark-20 {
+  color: var(--yellow-dark-20);
+}
+
+.text-yellow-dark-10 {
+  color: var(--yellow-dark-10);
+}
+
+.text-yellow {
+  color: var(--yellow);
+}
+
+.text-yellow-light-10 {
+  color: var(--yellow-light-10);
+}
+
+.text-yellow-light-20 {
+  color: var(--yellow-light-20);
+}
+
+.text-yellow-light-30 {
+  color: var(--yellow-light-30);
+}
+
+.text-yellow-light-40 {
+  color: var(--yellow-light-40);
+}
+
+.text-spring-dark-40 {
+  color: var(--spring-dark-40);
+}
+
+.text-spring-dark-30 {
+  color: var(--spring-dark-30);
+}
+
+.text-spring-dark-20 {
+  color: var(--spring-dark-20);
+}
+
+.text-spring-dark-10 {
+  color: var(--spring-dark-10);
+}
+
+.text-spring {
+  color: var(--spring);
+}
+
+.text-spring-light-10 {
+  color: var(--spring-light-10);
+}
+
+.text-spring-light-20 {
+  color: var(--spring-light-20);
+}
+
+.text-spring-light-30 {
+  color: var(--spring-light-30);
+}
+
+.text-spring-light-40 {
+  color: var(--spring-light-40);
+}
+
+.text-pistachio-dark-40 {
+  color: var(--pistachio-dark-40);
+}
+
+.text-pistachio-dark-30 {
+  color: var(--pistachio-dark-30);
+}
+
+.text-pistachio-dark-20 {
+  color: var(--pistachio-dark-20);
+}
+
+.text-pistachio-dark-10 {
+  color: var(--pistachio-dark-10);
+}
+
+.text-pistachio {
+  color: var(--pistachio);
+}
+
+.text-pistachio-light-10 {
+  color: var(--pistachio-light-10);
+}
+
+.text-pistachio-light-20 {
+  color: var(--pistachio-light-20);
+}
+
+.text-pistachio-light-30 {
+  color: var(--pistachio-light-30);
+}
+
+.text-pistachio-light-40 {
+  color: var(--pistachio-light-40);
+}
+
+.text-green-dark-40 {
+  color: var(--green-dark-40);
+}
+
+.text-green-dark-30 {
+  color: var(--green-dark-30);
+}
+
+.text-green-dark-20 {
+  color: var(--green-dark-20);
+}
+
+.text-green-dark-10 {
+  color: var(--green-dark-10);
+}
+
+.text-green {
+  color: var(--green);
+}
+
+.text-green-light-10 {
+  color: var(--green-light-10);
+}
+
+.text-green-light-20 {
+  color: var(--green-light-20);
+}
+
+.text-green-light-30 {
+  color: var(--green-light-30);
+}
+
+.text-green-light-40 {
+  color: var(--green-light-40);
+}
+
+.text-teal-dark-40 {
+  color: var(--teal-dark-40);
+}
+
+.text-teal-dark-30 {
+  color: var(--teal-dark-30);
+}
+
+.text-teal-dark-20 {
+  color: var(--teal-dark-20);
+}
+
+.text-teal-dark-10 {
+  color: var(--teal-dark-10);
+}
+
+.text-teal {
+  color: var(--teal);
+}
+
+.text-teal-light-10 {
+  color: var(--teal-light-10);
+}
+
+.text-teal-light-20 {
+  color: var(--teal-light-20);
+}
+
+.text-teal-light-30 {
+  color: var(--teal-light-30);
+}
+
+.text-teal-light-40 {
+  color: var(--teal-light-40);
+}
+
+.text-cyan-dark-40 {
+  color: var(--cyan-dark-40);
+}
+
+.text-cyan-dark-30 {
+  color: var(--cyan-dark-30);
+}
+
+.text-cyan-dark-20 {
+  color: var(--cyan-dark-20);
+}
+
+.text-cyan-dark-10 {
+  color: var(--cyan-dark-10);
+}
+
+.text-cyan {
+  color: var(--cyan);
+}
+
+.text-cyan-light-10 {
+  color: var(--cyan-light-10);
+}
+
+.text-cyan-light-20 {
+  color: var(--cyan-light-20);
+}
+
+.text-cyan-light-30 {
+  color: var(--cyan-light-30);
+}
+
+.text-cyan-light-40 {
+  color: var(--cyan-light-40);
+}
+
+.text-sky-dark-40 {
+  color: var(--sky-dark-40);
+}
+
+.text-sky-dark-30 {
+  color: var(--sky-dark-30);
+}
+
+.text-sky-dark-20 {
+  color: var(--sky-dark-20);
+}
+
+.text-sky-dark-10 {
+  color: var(--sky-dark-10);
+}
+
+.text-sky {
+  color: var(--sky);
+}
+
+.text-sky-light-10 {
+  color: var(--sky-light-10);
+}
+
+.text-sky-light-20 {
+  color: var(--sky-light-20);
+}
+
+.text-sky-light-30 {
+  color: var(--sky-light-30);
+}
+
+.text-sky-light-40 {
+  color: var(--sky-light-40);
+}
+
+.text-indigo-dark-40 {
+  color: var(--indigo-dark-40);
+}
+
+.text-indigo-dark-30 {
+  color: var(--indigo-dark-30);
+}
+
+.text-indigo-dark-20 {
+  color: var(--indigo-dark-20);
+}
+
+.text-indigo-dark-10 {
+  color: var(--indigo-dark-10);
+}
+
+.text-indigo {
+  color: var(--indigo);
+}
+
+.text-indigo-light-10 {
+  color: var(--indigo-light-10);
+}
+
+.text-indigo-light-20 {
+  color: var(--indigo-light-20);
+}
+
+.text-indigo-light-30 {
+  color: var(--indigo-light-30);
+}
+
+.text-indigo-light-40 {
+  color: var(--indigo-light-40);
+}
+
+.text-violet-dark-40 {
+  color: var(--violet-dark-40);
+}
+
+.text-violet-dark-30 {
+  color: var(--violet-dark-30);
+}
+
+.text-violet-dark-20 {
+  color: var(--violet-dark-20);
+}
+
+.text-violet-dark-10 {
+  color: var(--violet-dark-10);
+}
+
+.text-violet {
+  color: var(--violet);
+}
+
+.text-violet-light-10 {
+  color: var(--violet-light-10);
+}
+
+.text-violet-light-20 {
+  color: var(--violet-light-20);
+}
+
+.text-violet-light-30 {
+  color: var(--violet-light-30);
+}
+
+.text-violet-light-40 {
+  color: var(--violet-light-40);
+}
+
+.text-purple-dark-40 {
+  color: var(--purple-dark-40);
+}
+
+.text-purple-dark-30 {
+  color: var(--purple-dark-30);
+}
+
+.text-purple-dark-20 {
+  color: var(--purple-dark-20);
+}
+
+.text-purple-dark-10 {
+  color: var(--purple-dark-10);
+}
+
+.text-purple {
+  color: var(--purple);
+}
+
+.text-purple-light-10 {
+  color: var(--purple-light-10);
+}
+
+.text-purple-light-20 {
+  color: var(--purple-light-20);
+}
+
+.text-purple-light-30 {
+  color: var(--purple-light-30);
+}
+
+.text-purple-light-40 {
+  color: var(--purple-light-40);
+}
+
+.text-pink-dark-40 {
+  color: var(--pink-dark-40);
+}
+
+.text-pink-dark-30 {
+  color: var(--pink-dark-30);
+}
+
+.text-pink-dark-20 {
+  color: var(--pink-dark-20);
+}
+
+.text-pink-dark-10 {
+  color: var(--pink-dark-10);
+}
+
+.text-pink {
+  color: var(--pink);
+}
+
+.text-pink-light-10 {
+  color: var(--pink-light-10);
+}
+
+.text-pink-light-20 {
+  color: var(--pink-light-20);
+}
+
+.text-pink-light-30 {
+  color: var(--pink-light-30);
+}
+
+.text-pink-light-40 {
+  color: var(--pink-light-40);
+}
+
+.text-crimson-dark-40 {
+  color: var(--crimson-dark-40);
+}
+
+.text-crimson-dark-30 {
+  color: var(--crimson-dark-30);
+}
+
+.text-crimson-dark-20 {
+  color: var(--crimson-dark-20);
+}
+
+.text-crimson-dark-10 {
+  color: var(--crimson-dark-10);
+}
+
+.text-crimson {
+  color: var(--crimson);
+}
+
+.text-crimson-light-10 {
+  color: var(--crimson-light-10);
+}
+
+.text-crimson-light-20 {
+  color: var(--crimson-light-20);
+}
+
+.text-crimson-light-30 {
+  color: var(--crimson-light-30);
+}
+
+.text-crimson-light-40 {
+  color: var(--crimson-light-40);
+}
+
+.text-brick-dark-40 {
+  color: var(--brick-dark-40);
+}
+
+.text-brick-dark-30 {
+  color: var(--brick-dark-30);
+}
+
+.text-brick-dark-20 {
+  color: var(--brick-dark-20);
+}
+
+.text-brick-dark-10 {
+  color: var(--brick-dark-10);
+}
+
+.text-brick {
+  color: var(--brick);
+}
+
+.text-brick-light-10 {
+  color: var(--brick-light-10);
+}
+
+.text-brick-light-20 {
+  color: var(--brick-light-20);
+}
+
+.text-brick-light-30 {
+  color: var(--brick-light-30);
+}
+
+.text-brick-light-40 {
+  color: var(--brick-light-40);
+}
+
+.text-sienna-dark-40 {
+  color: var(--sienna-dark-40);
+}
+
+.text-sienna-dark-30 {
+  color: var(--sienna-dark-30);
+}
+
+.text-sienna-dark-20 {
+  color: var(--sienna-dark-20);
+}
+
+.text-sienna-dark-10 {
+  color: var(--sienna-dark-10);
+}
+
+.text-sienna {
+  color: var(--sienna);
+}
+
+.text-sienna-light-10 {
+  color: var(--sienna-light-10);
+}
+
+.text-sienna-light-20 {
+  color: var(--sienna-light-20);
+}
+
+.text-sienna-light-30 {
+  color: var(--sienna-light-30);
+}
+
+.text-sienna-light-40 {
+  color: var(--sienna-light-40);
+}
+
+.text-brown-dark-40 {
+  color: var(--brown-dark-40);
+}
+
+.text-brown-dark-30 {
+  color: var(--brown-dark-30);
+}
+
+.text-brown-dark-20 {
+  color: var(--brown-dark-20);
+}
+
+.text-brown-dark-10 {
+  color: var(--brown-dark-10);
+}
+
+.text-brown {
+  color: var(--brown);
+}
+
+.text-brown-light-10 {
+  color: var(--brown-light-10);
+}
+
+.text-brown-light-20 {
+  color: var(--brown-light-20);
+}
+
+.text-brown-light-30 {
+  color: var(--brown-light-30);
+}
+
+.text-brown-light-40 {
+  color: var(--brown-light-40);
+}
+
+.text-slate-dark-40 {
+  color: var(--slate-dark-40);
+}
+
+.text-slate-dark-30 {
+  color: var(--slate-dark-30);
+}
+
+.text-slate-dark-20 {
+  color: var(--slate-dark-20);
+}
+
+.text-slate-dark-10 {
+  color: var(--slate-dark-10);
+}
+
+.text-slate {
+  color: var(--slate);
+}
+
+.text-slate-light-10 {
+  color: var(--slate-light-10);
+}
+
+.text-slate-light-20 {
+  color: var(--slate-light-20);
+}
+
+.text-slate-light-30 {
+  color: var(--slate-light-30);
+}
+
+.text-slate-light-40 {
+  color: var(--slate-light-40);
+}
+
+.text-grey-dark-40 {
+  color: var(--grey-dark-40);
+}
+
+.text-grey-dark-30 {
+  color: var(--grey-dark-30);
+}
+
+.text-grey-dark-20 {
+  color: var(--grey-dark-20);
+}
+
+.text-grey-dark-10 {
+  color: var(--grey-dark-10);
+}
+
+.text-grey {
+  color: var(--grey);
+}
+
+.text-grey-light-10 {
+  color: var(--grey-light-10);
+}
+
+.text-grey-light-20 {
+  color: var(--grey-light-20);
+}
+
+.text-grey-light-30 {
+  color: var(--grey-light-30);
+}
+
+.text-grey-light-40 {
+  color: var(--grey-light-40);
+}
+
+.stroke-red-dark-40 {
+  stroke: var(--red-dark-40);
+}
+
+.stroke-red-dark-30 {
+  stroke: var(--red-dark-30);
+}
+
+.stroke-red-dark-20 {
+  stroke: var(--red-dark-20);
+}
+
+.stroke-red-dark-10 {
+  stroke: var(--red-dark-10);
+}
+
+.stroke-red {
+  stroke: var(--red);
+}
+
+.stroke-red-light-10 {
+  stroke: var(--red-light-10);
+}
+
+.stroke-red-light-20 {
+  stroke: var(--red-light-20);
+}
+
+.stroke-red-light-30 {
+  stroke: var(--red-light-30);
+}
+
+.stroke-red-light-40 {
+  stroke: var(--red-light-40);
+}
+
+.stroke-salmon-dark-40 {
+  stroke: var(--salmon-dark-40);
+}
+
+.stroke-salmon-dark-30 {
+  stroke: var(--salmon-dark-30);
+}
+
+.stroke-salmon-dark-20 {
+  stroke: var(--salmon-dark-20);
+}
+
+.stroke-salmon-dark-10 {
+  stroke: var(--salmon-dark-10);
+}
+
+.stroke-salmon {
+  stroke: var(--salmon);
+}
+
+.stroke-salmon-light-10 {
+  stroke: var(--salmon-light-10);
+}
+
+.stroke-salmon-light-20 {
+  stroke: var(--salmon-light-20);
+}
+
+.stroke-salmon-light-30 {
+  stroke: var(--salmon-light-30);
+}
+
+.stroke-salmon-light-40 {
+  stroke: var(--salmon-light-40);
+}
+
+.stroke-orange-dark-40 {
+  stroke: var(--orange-dark-40);
+}
+
+.stroke-orange-dark-30 {
+  stroke: var(--orange-dark-30);
+}
+
+.stroke-orange-dark-20 {
+  stroke: var(--orange-dark-20);
+}
+
+.stroke-orange-dark-10 {
+  stroke: var(--orange-dark-10);
+}
+
+.stroke-orange {
+  stroke: var(--orange);
+}
+
+.stroke-orange-light-10 {
+  stroke: var(--orange-light-10);
+}
+
+.stroke-orange-light-20 {
+  stroke: var(--orange-light-20);
+}
+
+.stroke-orange-light-30 {
+  stroke: var(--orange-light-30);
+}
+
+.stroke-orange-light-40 {
+  stroke: var(--orange-light-40);
+}
+
+.stroke-amber-dark-40 {
+  stroke: var(--amber-dark-40);
+}
+
+.stroke-amber-dark-30 {
+  stroke: var(--amber-dark-30);
+}
+
+.stroke-amber-dark-20 {
+  stroke: var(--amber-dark-20);
+}
+
+.stroke-amber-dark-10 {
+  stroke: var(--amber-dark-10);
+}
+
+.stroke-amber {
+  stroke: var(--amber);
+}
+
+.stroke-amber-light-10 {
+  stroke: var(--amber-light-10);
+}
+
+.stroke-amber-light-20 {
+  stroke: var(--amber-light-20);
+}
+
+.stroke-amber-light-30 {
+  stroke: var(--amber-light-30);
+}
+
+.stroke-amber-light-40 {
+  stroke: var(--amber-light-40);
+}
+
+.stroke-yellow-dark-40 {
+  stroke: var(--yellow-dark-40);
+}
+
+.stroke-yellow-dark-30 {
+  stroke: var(--yellow-dark-30);
+}
+
+.stroke-yellow-dark-20 {
+  stroke: var(--yellow-dark-20);
+}
+
+.stroke-yellow-dark-10 {
+  stroke: var(--yellow-dark-10);
+}
+
+.stroke-yellow {
+  stroke: var(--yellow);
+}
+
+.stroke-yellow-light-10 {
+  stroke: var(--yellow-light-10);
+}
+
+.stroke-yellow-light-20 {
+  stroke: var(--yellow-light-20);
+}
+
+.stroke-yellow-light-30 {
+  stroke: var(--yellow-light-30);
+}
+
+.stroke-yellow-light-40 {
+  stroke: var(--yellow-light-40);
+}
+
+.stroke-spring-dark-40 {
+  stroke: var(--spring-dark-40);
+}
+
+.stroke-spring-dark-30 {
+  stroke: var(--spring-dark-30);
+}
+
+.stroke-spring-dark-20 {
+  stroke: var(--spring-dark-20);
+}
+
+.stroke-spring-dark-10 {
+  stroke: var(--spring-dark-10);
+}
+
+.stroke-spring {
+  stroke: var(--spring);
+}
+
+.stroke-spring-light-10 {
+  stroke: var(--spring-light-10);
+}
+
+.stroke-spring-light-20 {
+  stroke: var(--spring-light-20);
+}
+
+.stroke-spring-light-30 {
+  stroke: var(--spring-light-30);
+}
+
+.stroke-spring-light-40 {
+  stroke: var(--spring-light-40);
+}
+
+.stroke-pistachio-dark-40 {
+  stroke: var(--pistachio-dark-40);
+}
+
+.stroke-pistachio-dark-30 {
+  stroke: var(--pistachio-dark-30);
+}
+
+.stroke-pistachio-dark-20 {
+  stroke: var(--pistachio-dark-20);
+}
+
+.stroke-pistachio-dark-10 {
+  stroke: var(--pistachio-dark-10);
+}
+
+.stroke-pistachio {
+  stroke: var(--pistachio);
+}
+
+.stroke-pistachio-light-10 {
+  stroke: var(--pistachio-light-10);
+}
+
+.stroke-pistachio-light-20 {
+  stroke: var(--pistachio-light-20);
+}
+
+.stroke-pistachio-light-30 {
+  stroke: var(--pistachio-light-30);
+}
+
+.stroke-pistachio-light-40 {
+  stroke: var(--pistachio-light-40);
+}
+
+.stroke-green-dark-40 {
+  stroke: var(--green-dark-40);
+}
+
+.stroke-green-dark-30 {
+  stroke: var(--green-dark-30);
+}
+
+.stroke-green-dark-20 {
+  stroke: var(--green-dark-20);
+}
+
+.stroke-green-dark-10 {
+  stroke: var(--green-dark-10);
+}
+
+.stroke-green {
+  stroke: var(--green);
+}
+
+.stroke-green-light-10 {
+  stroke: var(--green-light-10);
+}
+
+.stroke-green-light-20 {
+  stroke: var(--green-light-20);
+}
+
+.stroke-green-light-30 {
+  stroke: var(--green-light-30);
+}
+
+.stroke-green-light-40 {
+  stroke: var(--green-light-40);
+}
+
+.stroke-teal-dark-40 {
+  stroke: var(--teal-dark-40);
+}
+
+.stroke-teal-dark-30 {
+  stroke: var(--teal-dark-30);
+}
+
+.stroke-teal-dark-20 {
+  stroke: var(--teal-dark-20);
+}
+
+.stroke-teal-dark-10 {
+  stroke: var(--teal-dark-10);
+}
+
+.stroke-teal {
+  stroke: var(--teal);
+}
+
+.stroke-teal-light-10 {
+  stroke: var(--teal-light-10);
+}
+
+.stroke-teal-light-20 {
+  stroke: var(--teal-light-20);
+}
+
+.stroke-teal-light-30 {
+  stroke: var(--teal-light-30);
+}
+
+.stroke-teal-light-40 {
+  stroke: var(--teal-light-40);
+}
+
+.stroke-cyan-dark-40 {
+  stroke: var(--cyan-dark-40);
+}
+
+.stroke-cyan-dark-30 {
+  stroke: var(--cyan-dark-30);
+}
+
+.stroke-cyan-dark-20 {
+  stroke: var(--cyan-dark-20);
+}
+
+.stroke-cyan-dark-10 {
+  stroke: var(--cyan-dark-10);
+}
+
+.stroke-cyan {
+  stroke: var(--cyan);
+}
+
+.stroke-cyan-light-10 {
+  stroke: var(--cyan-light-10);
+}
+
+.stroke-cyan-light-20 {
+  stroke: var(--cyan-light-20);
+}
+
+.stroke-cyan-light-30 {
+  stroke: var(--cyan-light-30);
+}
+
+.stroke-cyan-light-40 {
+  stroke: var(--cyan-light-40);
+}
+
+.stroke-sky-dark-40 {
+  stroke: var(--sky-dark-40);
+}
+
+.stroke-sky-dark-30 {
+  stroke: var(--sky-dark-30);
+}
+
+.stroke-sky-dark-20 {
+  stroke: var(--sky-dark-20);
+}
+
+.stroke-sky-dark-10 {
+  stroke: var(--sky-dark-10);
+}
+
+.stroke-sky {
+  stroke: var(--sky);
+}
+
+.stroke-sky-light-10 {
+  stroke: var(--sky-light-10);
+}
+
+.stroke-sky-light-20 {
+  stroke: var(--sky-light-20);
+}
+
+.stroke-sky-light-30 {
+  stroke: var(--sky-light-30);
+}
+
+.stroke-sky-light-40 {
+  stroke: var(--sky-light-40);
+}
+
+.stroke-indigo-dark-40 {
+  stroke: var(--indigo-dark-40);
+}
+
+.stroke-indigo-dark-30 {
+  stroke: var(--indigo-dark-30);
+}
+
+.stroke-indigo-dark-20 {
+  stroke: var(--indigo-dark-20);
+}
+
+.stroke-indigo-dark-10 {
+  stroke: var(--indigo-dark-10);
+}
+
+.stroke-indigo {
+  stroke: var(--indigo);
+}
+
+.stroke-indigo-light-10 {
+  stroke: var(--indigo-light-10);
+}
+
+.stroke-indigo-light-20 {
+  stroke: var(--indigo-light-20);
+}
+
+.stroke-indigo-light-30 {
+  stroke: var(--indigo-light-30);
+}
+
+.stroke-indigo-light-40 {
+  stroke: var(--indigo-light-40);
+}
+
+.stroke-violet-dark-40 {
+  stroke: var(--violet-dark-40);
+}
+
+.stroke-violet-dark-30 {
+  stroke: var(--violet-dark-30);
+}
+
+.stroke-violet-dark-20 {
+  stroke: var(--violet-dark-20);
+}
+
+.stroke-violet-dark-10 {
+  stroke: var(--violet-dark-10);
+}
+
+.stroke-violet {
+  stroke: var(--violet);
+}
+
+.stroke-violet-light-10 {
+  stroke: var(--violet-light-10);
+}
+
+.stroke-violet-light-20 {
+  stroke: var(--violet-light-20);
+}
+
+.stroke-violet-light-30 {
+  stroke: var(--violet-light-30);
+}
+
+.stroke-violet-light-40 {
+  stroke: var(--violet-light-40);
+}
+
+.stroke-purple-dark-40 {
+  stroke: var(--purple-dark-40);
+}
+
+.stroke-purple-dark-30 {
+  stroke: var(--purple-dark-30);
+}
+
+.stroke-purple-dark-20 {
+  stroke: var(--purple-dark-20);
+}
+
+.stroke-purple-dark-10 {
+  stroke: var(--purple-dark-10);
+}
+
+.stroke-purple {
+  stroke: var(--purple);
+}
+
+.stroke-purple-light-10 {
+  stroke: var(--purple-light-10);
+}
+
+.stroke-purple-light-20 {
+  stroke: var(--purple-light-20);
+}
+
+.stroke-purple-light-30 {
+  stroke: var(--purple-light-30);
+}
+
+.stroke-purple-light-40 {
+  stroke: var(--purple-light-40);
+}
+
+.stroke-pink-dark-40 {
+  stroke: var(--pink-dark-40);
+}
+
+.stroke-pink-dark-30 {
+  stroke: var(--pink-dark-30);
+}
+
+.stroke-pink-dark-20 {
+  stroke: var(--pink-dark-20);
+}
+
+.stroke-pink-dark-10 {
+  stroke: var(--pink-dark-10);
+}
+
+.stroke-pink {
+  stroke: var(--pink);
+}
+
+.stroke-pink-light-10 {
+  stroke: var(--pink-light-10);
+}
+
+.stroke-pink-light-20 {
+  stroke: var(--pink-light-20);
+}
+
+.stroke-pink-light-30 {
+  stroke: var(--pink-light-30);
+}
+
+.stroke-pink-light-40 {
+  stroke: var(--pink-light-40);
+}
+
+.stroke-crimson-dark-40 {
+  stroke: var(--crimson-dark-40);
+}
+
+.stroke-crimson-dark-30 {
+  stroke: var(--crimson-dark-30);
+}
+
+.stroke-crimson-dark-20 {
+  stroke: var(--crimson-dark-20);
+}
+
+.stroke-crimson-dark-10 {
+  stroke: var(--crimson-dark-10);
+}
+
+.stroke-crimson {
+  stroke: var(--crimson);
+}
+
+.stroke-crimson-light-10 {
+  stroke: var(--crimson-light-10);
+}
+
+.stroke-crimson-light-20 {
+  stroke: var(--crimson-light-20);
+}
+
+.stroke-crimson-light-30 {
+  stroke: var(--crimson-light-30);
+}
+
+.stroke-crimson-light-40 {
+  stroke: var(--crimson-light-40);
+}
+
+.stroke-brick-dark-40 {
+  stroke: var(--brick-dark-40);
+}
+
+.stroke-brick-dark-30 {
+  stroke: var(--brick-dark-30);
+}
+
+.stroke-brick-dark-20 {
+  stroke: var(--brick-dark-20);
+}
+
+.stroke-brick-dark-10 {
+  stroke: var(--brick-dark-10);
+}
+
+.stroke-brick {
+  stroke: var(--brick);
+}
+
+.stroke-brick-light-10 {
+  stroke: var(--brick-light-10);
+}
+
+.stroke-brick-light-20 {
+  stroke: var(--brick-light-20);
+}
+
+.stroke-brick-light-30 {
+  stroke: var(--brick-light-30);
+}
+
+.stroke-brick-light-40 {
+  stroke: var(--brick-light-40);
+}
+
+.stroke-sienna-dark-40 {
+  stroke: var(--sienna-dark-40);
+}
+
+.stroke-sienna-dark-30 {
+  stroke: var(--sienna-dark-30);
+}
+
+.stroke-sienna-dark-20 {
+  stroke: var(--sienna-dark-20);
+}
+
+.stroke-sienna-dark-10 {
+  stroke: var(--sienna-dark-10);
+}
+
+.stroke-sienna {
+  stroke: var(--sienna);
+}
+
+.stroke-sienna-light-10 {
+  stroke: var(--sienna-light-10);
+}
+
+.stroke-sienna-light-20 {
+  stroke: var(--sienna-light-20);
+}
+
+.stroke-sienna-light-30 {
+  stroke: var(--sienna-light-30);
+}
+
+.stroke-sienna-light-40 {
+  stroke: var(--sienna-light-40);
+}
+
+.stroke-brown-dark-40 {
+  stroke: var(--brown-dark-40);
+}
+
+.stroke-brown-dark-30 {
+  stroke: var(--brown-dark-30);
+}
+
+.stroke-brown-dark-20 {
+  stroke: var(--brown-dark-20);
+}
+
+.stroke-brown-dark-10 {
+  stroke: var(--brown-dark-10);
+}
+
+.stroke-brown {
+  stroke: var(--brown);
+}
+
+.stroke-brown-light-10 {
+  stroke: var(--brown-light-10);
+}
+
+.stroke-brown-light-20 {
+  stroke: var(--brown-light-20);
+}
+
+.stroke-brown-light-30 {
+  stroke: var(--brown-light-30);
+}
+
+.stroke-brown-light-40 {
+  stroke: var(--brown-light-40);
+}
+
+.stroke-slate-dark-40 {
+  stroke: var(--slate-dark-40);
+}
+
+.stroke-slate-dark-30 {
+  stroke: var(--slate-dark-30);
+}
+
+.stroke-slate-dark-20 {
+  stroke: var(--slate-dark-20);
+}
+
+.stroke-slate-dark-10 {
+  stroke: var(--slate-dark-10);
+}
+
+.stroke-slate {
+  stroke: var(--slate);
+}
+
+.stroke-slate-light-10 {
+  stroke: var(--slate-light-10);
+}
+
+.stroke-slate-light-20 {
+  stroke: var(--slate-light-20);
+}
+
+.stroke-slate-light-30 {
+  stroke: var(--slate-light-30);
+}
+
+.stroke-slate-light-40 {
+  stroke: var(--slate-light-40);
+}
+
+.stroke-grey-dark-40 {
+  stroke: var(--grey-dark-40);
+}
+
+.stroke-grey-dark-30 {
+  stroke: var(--grey-dark-30);
+}
+
+.stroke-grey-dark-20 {
+  stroke: var(--grey-dark-20);
+}
+
+.stroke-grey-dark-10 {
+  stroke: var(--grey-dark-10);
+}
+
+.stroke-grey {
+  stroke: var(--grey);
+}
+
+.stroke-grey-light-10 {
+  stroke: var(--grey-light-10);
+}
+
+.stroke-grey-light-20 {
+  stroke: var(--grey-light-20);
+}
+
+.stroke-grey-light-30 {
+  stroke: var(--grey-light-30);
+}
+
+.stroke-grey-light-40 {
+  stroke: var(--grey-light-40);
+}
+
+.fill-red-dark-40 {
+  fill: var(--red-dark-40);
+}
+
+.fill-red-dark-30 {
+  fill: var(--red-dark-30);
+}
+
+.fill-red-dark-20 {
+  fill: var(--red-dark-20);
+}
+
+.fill-red-dark-10 {
+  fill: var(--red-dark-10);
+}
+
+.fill-red {
+  fill: var(--red);
+}
+
+.fill-red-light-10 {
+  fill: var(--red-light-10);
+}
+
+.fill-red-light-20 {
+  fill: var(--red-light-20);
+}
+
+.fill-red-light-30 {
+  fill: var(--red-light-30);
+}
+
+.fill-red-light-40 {
+  fill: var(--red-light-40);
+}
+
+.fill-salmon-dark-40 {
+  fill: var(--salmon-dark-40);
+}
+
+.fill-salmon-dark-30 {
+  fill: var(--salmon-dark-30);
+}
+
+.fill-salmon-dark-20 {
+  fill: var(--salmon-dark-20);
+}
+
+.fill-salmon-dark-10 {
+  fill: var(--salmon-dark-10);
+}
+
+.fill-salmon {
+  fill: var(--salmon);
+}
+
+.fill-salmon-light-10 {
+  fill: var(--salmon-light-10);
+}
+
+.fill-salmon-light-20 {
+  fill: var(--salmon-light-20);
+}
+
+.fill-salmon-light-30 {
+  fill: var(--salmon-light-30);
+}
+
+.fill-salmon-light-40 {
+  fill: var(--salmon-light-40);
+}
+
+.fill-orange-dark-40 {
+  fill: var(--orange-dark-40);
+}
+
+.fill-orange-dark-30 {
+  fill: var(--orange-dark-30);
+}
+
+.fill-orange-dark-20 {
+  fill: var(--orange-dark-20);
+}
+
+.fill-orange-dark-10 {
+  fill: var(--orange-dark-10);
+}
+
+.fill-orange {
+  fill: var(--orange);
+}
+
+.fill-orange-light-10 {
+  fill: var(--orange-light-10);
+}
+
+.fill-orange-light-20 {
+  fill: var(--orange-light-20);
+}
+
+.fill-orange-light-30 {
+  fill: var(--orange-light-30);
+}
+
+.fill-orange-light-40 {
+  fill: var(--orange-light-40);
+}
+
+.fill-amber-dark-40 {
+  fill: var(--amber-dark-40);
+}
+
+.fill-amber-dark-30 {
+  fill: var(--amber-dark-30);
+}
+
+.fill-amber-dark-20 {
+  fill: var(--amber-dark-20);
+}
+
+.fill-amber-dark-10 {
+  fill: var(--amber-dark-10);
+}
+
+.fill-amber {
+  fill: var(--amber);
+}
+
+.fill-amber-light-10 {
+  fill: var(--amber-light-10);
+}
+
+.fill-amber-light-20 {
+  fill: var(--amber-light-20);
+}
+
+.fill-amber-light-30 {
+  fill: var(--amber-light-30);
+}
+
+.fill-amber-light-40 {
+  fill: var(--amber-light-40);
+}
+
+.fill-yellow-dark-40 {
+  fill: var(--yellow-dark-40);
+}
+
+.fill-yellow-dark-30 {
+  fill: var(--yellow-dark-30);
+}
+
+.fill-yellow-dark-20 {
+  fill: var(--yellow-dark-20);
+}
+
+.fill-yellow-dark-10 {
+  fill: var(--yellow-dark-10);
+}
+
+.fill-yellow {
+  fill: var(--yellow);
+}
+
+.fill-yellow-light-10 {
+  fill: var(--yellow-light-10);
+}
+
+.fill-yellow-light-20 {
+  fill: var(--yellow-light-20);
+}
+
+.fill-yellow-light-30 {
+  fill: var(--yellow-light-30);
+}
+
+.fill-yellow-light-40 {
+  fill: var(--yellow-light-40);
+}
+
+.fill-spring-dark-40 {
+  fill: var(--spring-dark-40);
+}
+
+.fill-spring-dark-30 {
+  fill: var(--spring-dark-30);
+}
+
+.fill-spring-dark-20 {
+  fill: var(--spring-dark-20);
+}
+
+.fill-spring-dark-10 {
+  fill: var(--spring-dark-10);
+}
+
+.fill-spring {
+  fill: var(--spring);
+}
+
+.fill-spring-light-10 {
+  fill: var(--spring-light-10);
+}
+
+.fill-spring-light-20 {
+  fill: var(--spring-light-20);
+}
+
+.fill-spring-light-30 {
+  fill: var(--spring-light-30);
+}
+
+.fill-spring-light-40 {
+  fill: var(--spring-light-40);
+}
+
+.fill-pistachio-dark-40 {
+  fill: var(--pistachio-dark-40);
+}
+
+.fill-pistachio-dark-30 {
+  fill: var(--pistachio-dark-30);
+}
+
+.fill-pistachio-dark-20 {
+  fill: var(--pistachio-dark-20);
+}
+
+.fill-pistachio-dark-10 {
+  fill: var(--pistachio-dark-10);
+}
+
+.fill-pistachio {
+  fill: var(--pistachio);
+}
+
+.fill-pistachio-light-10 {
+  fill: var(--pistachio-light-10);
+}
+
+.fill-pistachio-light-20 {
+  fill: var(--pistachio-light-20);
+}
+
+.fill-pistachio-light-30 {
+  fill: var(--pistachio-light-30);
+}
+
+.fill-pistachio-light-40 {
+  fill: var(--pistachio-light-40);
+}
+
+.fill-green-dark-40 {
+  fill: var(--green-dark-40);
+}
+
+.fill-green-dark-30 {
+  fill: var(--green-dark-30);
+}
+
+.fill-green-dark-20 {
+  fill: var(--green-dark-20);
+}
+
+.fill-green-dark-10 {
+  fill: var(--green-dark-10);
+}
+
+.fill-green {
+  fill: var(--green);
+}
+
+.fill-green-light-10 {
+  fill: var(--green-light-10);
+}
+
+.fill-green-light-20 {
+  fill: var(--green-light-20);
+}
+
+.fill-green-light-30 {
+  fill: var(--green-light-30);
+}
+
+.fill-green-light-40 {
+  fill: var(--green-light-40);
+}
+
+.fill-teal-dark-40 {
+  fill: var(--teal-dark-40);
+}
+
+.fill-teal-dark-30 {
+  fill: var(--teal-dark-30);
+}
+
+.fill-teal-dark-20 {
+  fill: var(--teal-dark-20);
+}
+
+.fill-teal-dark-10 {
+  fill: var(--teal-dark-10);
+}
+
+.fill-teal {
+  fill: var(--teal);
+}
+
+.fill-teal-light-10 {
+  fill: var(--teal-light-10);
+}
+
+.fill-teal-light-20 {
+  fill: var(--teal-light-20);
+}
+
+.fill-teal-light-30 {
+  fill: var(--teal-light-30);
+}
+
+.fill-teal-light-40 {
+  fill: var(--teal-light-40);
+}
+
+.fill-cyan-dark-40 {
+  fill: var(--cyan-dark-40);
+}
+
+.fill-cyan-dark-30 {
+  fill: var(--cyan-dark-30);
+}
+
+.fill-cyan-dark-20 {
+  fill: var(--cyan-dark-20);
+}
+
+.fill-cyan-dark-10 {
+  fill: var(--cyan-dark-10);
+}
+
+.fill-cyan {
+  fill: var(--cyan);
+}
+
+.fill-cyan-light-10 {
+  fill: var(--cyan-light-10);
+}
+
+.fill-cyan-light-20 {
+  fill: var(--cyan-light-20);
+}
+
+.fill-cyan-light-30 {
+  fill: var(--cyan-light-30);
+}
+
+.fill-cyan-light-40 {
+  fill: var(--cyan-light-40);
+}
+
+.fill-sky-dark-40 {
+  fill: var(--sky-dark-40);
+}
+
+.fill-sky-dark-30 {
+  fill: var(--sky-dark-30);
+}
+
+.fill-sky-dark-20 {
+  fill: var(--sky-dark-20);
+}
+
+.fill-sky-dark-10 {
+  fill: var(--sky-dark-10);
+}
+
+.fill-sky {
+  fill: var(--sky);
+}
+
+.fill-sky-light-10 {
+  fill: var(--sky-light-10);
+}
+
+.fill-sky-light-20 {
+  fill: var(--sky-light-20);
+}
+
+.fill-sky-light-30 {
+  fill: var(--sky-light-30);
+}
+
+.fill-sky-light-40 {
+  fill: var(--sky-light-40);
+}
+
+.fill-indigo-dark-40 {
+  fill: var(--indigo-dark-40);
+}
+
+.fill-indigo-dark-30 {
+  fill: var(--indigo-dark-30);
+}
+
+.fill-indigo-dark-20 {
+  fill: var(--indigo-dark-20);
+}
+
+.fill-indigo-dark-10 {
+  fill: var(--indigo-dark-10);
+}
+
+.fill-indigo {
+  fill: var(--indigo);
+}
+
+.fill-indigo-light-10 {
+  fill: var(--indigo-light-10);
+}
+
+.fill-indigo-light-20 {
+  fill: var(--indigo-light-20);
+}
+
+.fill-indigo-light-30 {
+  fill: var(--indigo-light-30);
+}
+
+.fill-indigo-light-40 {
+  fill: var(--indigo-light-40);
+}
+
+.fill-violet-dark-40 {
+  fill: var(--violet-dark-40);
+}
+
+.fill-violet-dark-30 {
+  fill: var(--violet-dark-30);
+}
+
+.fill-violet-dark-20 {
+  fill: var(--violet-dark-20);
+}
+
+.fill-violet-dark-10 {
+  fill: var(--violet-dark-10);
+}
+
+.fill-violet {
+  fill: var(--violet);
+}
+
+.fill-violet-light-10 {
+  fill: var(--violet-light-10);
+}
+
+.fill-violet-light-20 {
+  fill: var(--violet-light-20);
+}
+
+.fill-violet-light-30 {
+  fill: var(--violet-light-30);
+}
+
+.fill-violet-light-40 {
+  fill: var(--violet-light-40);
+}
+
+.fill-purple-dark-40 {
+  fill: var(--purple-dark-40);
+}
+
+.fill-purple-dark-30 {
+  fill: var(--purple-dark-30);
+}
+
+.fill-purple-dark-20 {
+  fill: var(--purple-dark-20);
+}
+
+.fill-purple-dark-10 {
+  fill: var(--purple-dark-10);
+}
+
+.fill-purple {
+  fill: var(--purple);
+}
+
+.fill-purple-light-10 {
+  fill: var(--purple-light-10);
+}
+
+.fill-purple-light-20 {
+  fill: var(--purple-light-20);
+}
+
+.fill-purple-light-30 {
+  fill: var(--purple-light-30);
+}
+
+.fill-purple-light-40 {
+  fill: var(--purple-light-40);
+}
+
+.fill-pink-dark-40 {
+  fill: var(--pink-dark-40);
+}
+
+.fill-pink-dark-30 {
+  fill: var(--pink-dark-30);
+}
+
+.fill-pink-dark-20 {
+  fill: var(--pink-dark-20);
+}
+
+.fill-pink-dark-10 {
+  fill: var(--pink-dark-10);
+}
+
+.fill-pink {
+  fill: var(--pink);
+}
+
+.fill-pink-light-10 {
+  fill: var(--pink-light-10);
+}
+
+.fill-pink-light-20 {
+  fill: var(--pink-light-20);
+}
+
+.fill-pink-light-30 {
+  fill: var(--pink-light-30);
+}
+
+.fill-pink-light-40 {
+  fill: var(--pink-light-40);
+}
+
+.fill-crimson-dark-40 {
+  fill: var(--crimson-dark-40);
+}
+
+.fill-crimson-dark-30 {
+  fill: var(--crimson-dark-30);
+}
+
+.fill-crimson-dark-20 {
+  fill: var(--crimson-dark-20);
+}
+
+.fill-crimson-dark-10 {
+  fill: var(--crimson-dark-10);
+}
+
+.fill-crimson {
+  fill: var(--crimson);
+}
+
+.fill-crimson-light-10 {
+  fill: var(--crimson-light-10);
+}
+
+.fill-crimson-light-20 {
+  fill: var(--crimson-light-20);
+}
+
+.fill-crimson-light-30 {
+  fill: var(--crimson-light-30);
+}
+
+.fill-crimson-light-40 {
+  fill: var(--crimson-light-40);
+}
+
+.fill-brick-dark-40 {
+  fill: var(--brick-dark-40);
+}
+
+.fill-brick-dark-30 {
+  fill: var(--brick-dark-30);
+}
+
+.fill-brick-dark-20 {
+  fill: var(--brick-dark-20);
+}
+
+.fill-brick-dark-10 {
+  fill: var(--brick-dark-10);
+}
+
+.fill-brick {
+  fill: var(--brick);
+}
+
+.fill-brick-light-10 {
+  fill: var(--brick-light-10);
+}
+
+.fill-brick-light-20 {
+  fill: var(--brick-light-20);
+}
+
+.fill-brick-light-30 {
+  fill: var(--brick-light-30);
+}
+
+.fill-brick-light-40 {
+  fill: var(--brick-light-40);
+}
+
+.fill-sienna-dark-40 {
+  fill: var(--sienna-dark-40);
+}
+
+.fill-sienna-dark-30 {
+  fill: var(--sienna-dark-30);
+}
+
+.fill-sienna-dark-20 {
+  fill: var(--sienna-dark-20);
+}
+
+.fill-sienna-dark-10 {
+  fill: var(--sienna-dark-10);
+}
+
+.fill-sienna {
+  fill: var(--sienna);
+}
+
+.fill-sienna-light-10 {
+  fill: var(--sienna-light-10);
+}
+
+.fill-sienna-light-20 {
+  fill: var(--sienna-light-20);
+}
+
+.fill-sienna-light-30 {
+  fill: var(--sienna-light-30);
+}
+
+.fill-sienna-light-40 {
+  fill: var(--sienna-light-40);
+}
+
+.fill-brown-dark-40 {
+  fill: var(--brown-dark-40);
+}
+
+.fill-brown-dark-30 {
+  fill: var(--brown-dark-30);
+}
+
+.fill-brown-dark-20 {
+  fill: var(--brown-dark-20);
+}
+
+.fill-brown-dark-10 {
+  fill: var(--brown-dark-10);
+}
+
+.fill-brown {
+  fill: var(--brown);
+}
+
+.fill-brown-light-10 {
+  fill: var(--brown-light-10);
+}
+
+.fill-brown-light-20 {
+  fill: var(--brown-light-20);
+}
+
+.fill-brown-light-30 {
+  fill: var(--brown-light-30);
+}
+
+.fill-brown-light-40 {
+  fill: var(--brown-light-40);
+}
+
+.fill-slate-dark-40 {
+  fill: var(--slate-dark-40);
+}
+
+.fill-slate-dark-30 {
+  fill: var(--slate-dark-30);
+}
+
+.fill-slate-dark-20 {
+  fill: var(--slate-dark-20);
+}
+
+.fill-slate-dark-10 {
+  fill: var(--slate-dark-10);
+}
+
+.fill-slate {
+  fill: var(--slate);
+}
+
+.fill-slate-light-10 {
+  fill: var(--slate-light-10);
+}
+
+.fill-slate-light-20 {
+  fill: var(--slate-light-20);
+}
+
+.fill-slate-light-30 {
+  fill: var(--slate-light-30);
+}
+
+.fill-slate-light-40 {
+  fill: var(--slate-light-40);
+}
+
+.fill-grey-dark-40 {
+  fill: var(--grey-dark-40);
+}
+
+.fill-grey-dark-30 {
+  fill: var(--grey-dark-30);
+}
+
+.fill-grey-dark-20 {
+  fill: var(--grey-dark-20);
+}
+
+.fill-grey-dark-10 {
+  fill: var(--grey-dark-10);
+}
+
+.fill-grey {
+  fill: var(--grey);
+}
+
+.fill-grey-light-10 {
+  fill: var(--grey-light-10);
+}
+
+.fill-grey-light-20 {
+  fill: var(--grey-light-20);
+}
+
+.fill-grey-light-30 {
+  fill: var(--grey-light-30);
+}
+
+.fill-grey-light-40 {
+  fill: var(--grey-light-40);
+}
+
+.border-red-dark-40 {
+  border-color: var(--red-dark-40);
+}
+
+.border-red-dark-30 {
+  border-color: var(--red-dark-30);
+}
+
+.border-red-dark-20 {
+  border-color: var(--red-dark-20);
+}
+
+.border-red-dark-10 {
+  border-color: var(--red-dark-10);
+}
+
+.border-red {
+  border-color: var(--red);
+}
+
+.border-red-light-10 {
+  border-color: var(--red-light-10);
+}
+
+.border-red-light-20 {
+  border-color: var(--red-light-20);
+}
+
+.border-red-light-30 {
+  border-color: var(--red-light-30);
+}
+
+.border-red-light-40 {
+  border-color: var(--red-light-40);
+}
+
+.border-salmon-dark-40 {
+  border-color: var(--salmon-dark-40);
+}
+
+.border-salmon-dark-30 {
+  border-color: var(--salmon-dark-30);
+}
+
+.border-salmon-dark-20 {
+  border-color: var(--salmon-dark-20);
+}
+
+.border-salmon-dark-10 {
+  border-color: var(--salmon-dark-10);
+}
+
+.border-salmon {
+  border-color: var(--salmon);
+}
+
+.border-salmon-light-10 {
+  border-color: var(--salmon-light-10);
+}
+
+.border-salmon-light-20 {
+  border-color: var(--salmon-light-20);
+}
+
+.border-salmon-light-30 {
+  border-color: var(--salmon-light-30);
+}
+
+.border-salmon-light-40 {
+  border-color: var(--salmon-light-40);
+}
+
+.border-orange-dark-40 {
+  border-color: var(--orange-dark-40);
+}
+
+.border-orange-dark-30 {
+  border-color: var(--orange-dark-30);
+}
+
+.border-orange-dark-20 {
+  border-color: var(--orange-dark-20);
+}
+
+.border-orange-dark-10 {
+  border-color: var(--orange-dark-10);
+}
+
+.border-orange {
+  border-color: var(--orange);
+}
+
+.border-orange-light-10 {
+  border-color: var(--orange-light-10);
+}
+
+.border-orange-light-20 {
+  border-color: var(--orange-light-20);
+}
+
+.border-orange-light-30 {
+  border-color: var(--orange-light-30);
+}
+
+.border-orange-light-40 {
+  border-color: var(--orange-light-40);
+}
+
+.border-amber-dark-40 {
+  border-color: var(--amber-dark-40);
+}
+
+.border-amber-dark-30 {
+  border-color: var(--amber-dark-30);
+}
+
+.border-amber-dark-20 {
+  border-color: var(--amber-dark-20);
+}
+
+.border-amber-dark-10 {
+  border-color: var(--amber-dark-10);
+}
+
+.border-amber {
+  border-color: var(--amber);
+}
+
+.border-amber-light-10 {
+  border-color: var(--amber-light-10);
+}
+
+.border-amber-light-20 {
+  border-color: var(--amber-light-20);
+}
+
+.border-amber-light-30 {
+  border-color: var(--amber-light-30);
+}
+
+.border-amber-light-40 {
+  border-color: var(--amber-light-40);
+}
+
+.border-yellow-dark-40 {
+  border-color: var(--yellow-dark-40);
+}
+
+.border-yellow-dark-30 {
+  border-color: var(--yellow-dark-30);
+}
+
+.border-yellow-dark-20 {
+  border-color: var(--yellow-dark-20);
+}
+
+.border-yellow-dark-10 {
+  border-color: var(--yellow-dark-10);
+}
+
+.border-yellow {
+  border-color: var(--yellow);
+}
+
+.border-yellow-light-10 {
+  border-color: var(--yellow-light-10);
+}
+
+.border-yellow-light-20 {
+  border-color: var(--yellow-light-20);
+}
+
+.border-yellow-light-30 {
+  border-color: var(--yellow-light-30);
+}
+
+.border-yellow-light-40 {
+  border-color: var(--yellow-light-40);
+}
+
+.border-spring-dark-40 {
+  border-color: var(--spring-dark-40);
+}
+
+.border-spring-dark-30 {
+  border-color: var(--spring-dark-30);
+}
+
+.border-spring-dark-20 {
+  border-color: var(--spring-dark-20);
+}
+
+.border-spring-dark-10 {
+  border-color: var(--spring-dark-10);
+}
+
+.border-spring {
+  border-color: var(--spring);
+}
+
+.border-spring-light-10 {
+  border-color: var(--spring-light-10);
+}
+
+.border-spring-light-20 {
+  border-color: var(--spring-light-20);
+}
+
+.border-spring-light-30 {
+  border-color: var(--spring-light-30);
+}
+
+.border-spring-light-40 {
+  border-color: var(--spring-light-40);
+}
+
+.border-pistachio-dark-40 {
+  border-color: var(--pistachio-dark-40);
+}
+
+.border-pistachio-dark-30 {
+  border-color: var(--pistachio-dark-30);
+}
+
+.border-pistachio-dark-20 {
+  border-color: var(--pistachio-dark-20);
+}
+
+.border-pistachio-dark-10 {
+  border-color: var(--pistachio-dark-10);
+}
+
+.border-pistachio {
+  border-color: var(--pistachio);
+}
+
+.border-pistachio-light-10 {
+  border-color: var(--pistachio-light-10);
+}
+
+.border-pistachio-light-20 {
+  border-color: var(--pistachio-light-20);
+}
+
+.border-pistachio-light-30 {
+  border-color: var(--pistachio-light-30);
+}
+
+.border-pistachio-light-40 {
+  border-color: var(--pistachio-light-40);
+}
+
+.border-green-dark-40 {
+  border-color: var(--green-dark-40);
+}
+
+.border-green-dark-30 {
+  border-color: var(--green-dark-30);
+}
+
+.border-green-dark-20 {
+  border-color: var(--green-dark-20);
+}
+
+.border-green-dark-10 {
+  border-color: var(--green-dark-10);
+}
+
+.border-green {
+  border-color: var(--green);
+}
+
+.border-green-light-10 {
+  border-color: var(--green-light-10);
+}
+
+.border-green-light-20 {
+  border-color: var(--green-light-20);
+}
+
+.border-green-light-30 {
+  border-color: var(--green-light-30);
+}
+
+.border-green-light-40 {
+  border-color: var(--green-light-40);
+}
+
+.border-teal-dark-40 {
+  border-color: var(--teal-dark-40);
+}
+
+.border-teal-dark-30 {
+  border-color: var(--teal-dark-30);
+}
+
+.border-teal-dark-20 {
+  border-color: var(--teal-dark-20);
+}
+
+.border-teal-dark-10 {
+  border-color: var(--teal-dark-10);
+}
+
+.border-teal {
+  border-color: var(--teal);
+}
+
+.border-teal-light-10 {
+  border-color: var(--teal-light-10);
+}
+
+.border-teal-light-20 {
+  border-color: var(--teal-light-20);
+}
+
+.border-teal-light-30 {
+  border-color: var(--teal-light-30);
+}
+
+.border-teal-light-40 {
+  border-color: var(--teal-light-40);
+}
+
+.border-cyan-dark-40 {
+  border-color: var(--cyan-dark-40);
+}
+
+.border-cyan-dark-30 {
+  border-color: var(--cyan-dark-30);
+}
+
+.border-cyan-dark-20 {
+  border-color: var(--cyan-dark-20);
+}
+
+.border-cyan-dark-10 {
+  border-color: var(--cyan-dark-10);
+}
+
+.border-cyan {
+  border-color: var(--cyan);
+}
+
+.border-cyan-light-10 {
+  border-color: var(--cyan-light-10);
+}
+
+.border-cyan-light-20 {
+  border-color: var(--cyan-light-20);
+}
+
+.border-cyan-light-30 {
+  border-color: var(--cyan-light-30);
+}
+
+.border-cyan-light-40 {
+  border-color: var(--cyan-light-40);
+}
+
+.border-sky-dark-40 {
+  border-color: var(--sky-dark-40);
+}
+
+.border-sky-dark-30 {
+  border-color: var(--sky-dark-30);
+}
+
+.border-sky-dark-20 {
+  border-color: var(--sky-dark-20);
+}
+
+.border-sky-dark-10 {
+  border-color: var(--sky-dark-10);
+}
+
+.border-sky {
+  border-color: var(--sky);
+}
+
+.border-sky-light-10 {
+  border-color: var(--sky-light-10);
+}
+
+.border-sky-light-20 {
+  border-color: var(--sky-light-20);
+}
+
+.border-sky-light-30 {
+  border-color: var(--sky-light-30);
+}
+
+.border-sky-light-40 {
+  border-color: var(--sky-light-40);
+}
+
+.border-indigo-dark-40 {
+  border-color: var(--indigo-dark-40);
+}
+
+.border-indigo-dark-30 {
+  border-color: var(--indigo-dark-30);
+}
+
+.border-indigo-dark-20 {
+  border-color: var(--indigo-dark-20);
+}
+
+.border-indigo-dark-10 {
+  border-color: var(--indigo-dark-10);
+}
+
+.border-indigo {
+  border-color: var(--indigo);
+}
+
+.border-indigo-light-10 {
+  border-color: var(--indigo-light-10);
+}
+
+.border-indigo-light-20 {
+  border-color: var(--indigo-light-20);
+}
+
+.border-indigo-light-30 {
+  border-color: var(--indigo-light-30);
+}
+
+.border-indigo-light-40 {
+  border-color: var(--indigo-light-40);
+}
+
+.border-violet-dark-40 {
+  border-color: var(--violet-dark-40);
+}
+
+.border-violet-dark-30 {
+  border-color: var(--violet-dark-30);
+}
+
+.border-violet-dark-20 {
+  border-color: var(--violet-dark-20);
+}
+
+.border-violet-dark-10 {
+  border-color: var(--violet-dark-10);
+}
+
+.border-violet {
+  border-color: var(--violet);
+}
+
+.border-violet-light-10 {
+  border-color: var(--violet-light-10);
+}
+
+.border-violet-light-20 {
+  border-color: var(--violet-light-20);
+}
+
+.border-violet-light-30 {
+  border-color: var(--violet-light-30);
+}
+
+.border-violet-light-40 {
+  border-color: var(--violet-light-40);
+}
+
+.border-purple-dark-40 {
+  border-color: var(--purple-dark-40);
+}
+
+.border-purple-dark-30 {
+  border-color: var(--purple-dark-30);
+}
+
+.border-purple-dark-20 {
+  border-color: var(--purple-dark-20);
+}
+
+.border-purple-dark-10 {
+  border-color: var(--purple-dark-10);
+}
+
+.border-purple {
+  border-color: var(--purple);
+}
+
+.border-purple-light-10 {
+  border-color: var(--purple-light-10);
+}
+
+.border-purple-light-20 {
+  border-color: var(--purple-light-20);
+}
+
+.border-purple-light-30 {
+  border-color: var(--purple-light-30);
+}
+
+.border-purple-light-40 {
+  border-color: var(--purple-light-40);
+}
+
+.border-pink-dark-40 {
+  border-color: var(--pink-dark-40);
+}
+
+.border-pink-dark-30 {
+  border-color: var(--pink-dark-30);
+}
+
+.border-pink-dark-20 {
+  border-color: var(--pink-dark-20);
+}
+
+.border-pink-dark-10 {
+  border-color: var(--pink-dark-10);
+}
+
+.border-pink {
+  border-color: var(--pink);
+}
+
+.border-pink-light-10 {
+  border-color: var(--pink-light-10);
+}
+
+.border-pink-light-20 {
+  border-color: var(--pink-light-20);
+}
+
+.border-pink-light-30 {
+  border-color: var(--pink-light-30);
+}
+
+.border-pink-light-40 {
+  border-color: var(--pink-light-40);
+}
+
+.border-crimson-dark-40 {
+  border-color: var(--crimson-dark-40);
+}
+
+.border-crimson-dark-30 {
+  border-color: var(--crimson-dark-30);
+}
+
+.border-crimson-dark-20 {
+  border-color: var(--crimson-dark-20);
+}
+
+.border-crimson-dark-10 {
+  border-color: var(--crimson-dark-10);
+}
+
+.border-crimson {
+  border-color: var(--crimson);
+}
+
+.border-crimson-light-10 {
+  border-color: var(--crimson-light-10);
+}
+
+.border-crimson-light-20 {
+  border-color: var(--crimson-light-20);
+}
+
+.border-crimson-light-30 {
+  border-color: var(--crimson-light-30);
+}
+
+.border-crimson-light-40 {
+  border-color: var(--crimson-light-40);
+}
+
+.border-brick-dark-40 {
+  border-color: var(--brick-dark-40);
+}
+
+.border-brick-dark-30 {
+  border-color: var(--brick-dark-30);
+}
+
+.border-brick-dark-20 {
+  border-color: var(--brick-dark-20);
+}
+
+.border-brick-dark-10 {
+  border-color: var(--brick-dark-10);
+}
+
+.border-brick {
+  border-color: var(--brick);
+}
+
+.border-brick-light-10 {
+  border-color: var(--brick-light-10);
+}
+
+.border-brick-light-20 {
+  border-color: var(--brick-light-20);
+}
+
+.border-brick-light-30 {
+  border-color: var(--brick-light-30);
+}
+
+.border-brick-light-40 {
+  border-color: var(--brick-light-40);
+}
+
+.border-sienna-dark-40 {
+  border-color: var(--sienna-dark-40);
+}
+
+.border-sienna-dark-30 {
+  border-color: var(--sienna-dark-30);
+}
+
+.border-sienna-dark-20 {
+  border-color: var(--sienna-dark-20);
+}
+
+.border-sienna-dark-10 {
+  border-color: var(--sienna-dark-10);
+}
+
+.border-sienna {
+  border-color: var(--sienna);
+}
+
+.border-sienna-light-10 {
+  border-color: var(--sienna-light-10);
+}
+
+.border-sienna-light-20 {
+  border-color: var(--sienna-light-20);
+}
+
+.border-sienna-light-30 {
+  border-color: var(--sienna-light-30);
+}
+
+.border-sienna-light-40 {
+  border-color: var(--sienna-light-40);
+}
+
+.border-brown-dark-40 {
+  border-color: var(--brown-dark-40);
+}
+
+.border-brown-dark-30 {
+  border-color: var(--brown-dark-30);
+}
+
+.border-brown-dark-20 {
+  border-color: var(--brown-dark-20);
+}
+
+.border-brown-dark-10 {
+  border-color: var(--brown-dark-10);
+}
+
+.border-brown {
+  border-color: var(--brown);
+}
+
+.border-brown-light-10 {
+  border-color: var(--brown-light-10);
+}
+
+.border-brown-light-20 {
+  border-color: var(--brown-light-20);
+}
+
+.border-brown-light-30 {
+  border-color: var(--brown-light-30);
+}
+
+.border-brown-light-40 {
+  border-color: var(--brown-light-40);
+}
+
+.border-slate-dark-40 {
+  border-color: var(--slate-dark-40);
+}
+
+.border-slate-dark-30 {
+  border-color: var(--slate-dark-30);
+}
+
+.border-slate-dark-20 {
+  border-color: var(--slate-dark-20);
+}
+
+.border-slate-dark-10 {
+  border-color: var(--slate-dark-10);
+}
+
+.border-slate {
+  border-color: var(--slate);
+}
+
+.border-slate-light-10 {
+  border-color: var(--slate-light-10);
+}
+
+.border-slate-light-20 {
+  border-color: var(--slate-light-20);
+}
+
+.border-slate-light-30 {
+  border-color: var(--slate-light-30);
+}
+
+.border-slate-light-40 {
+  border-color: var(--slate-light-40);
+}
+
+.border-grey-dark-40 {
+  border-color: var(--grey-dark-40);
+}
+
+.border-grey-dark-30 {
+  border-color: var(--grey-dark-30);
+}
+
+.border-grey-dark-20 {
+  border-color: var(--grey-dark-20);
+}
+
+.border-grey-dark-10 {
+  border-color: var(--grey-dark-10);
+}
+
+.border-grey {
+  border-color: var(--grey);
+}
+
+.border-grey-light-10 {
+  border-color: var(--grey-light-10);
+}
+
+.border-grey-light-20 {
+  border-color: var(--grey-light-20);
+}
+
+.border-grey-light-30 {
+  border-color: var(--grey-light-30);
+}
+
+.border-grey-light-40 {
+  border-color: var(--grey-light-40);
+}
+
+/*# sourceMappingURL=output.css.map */

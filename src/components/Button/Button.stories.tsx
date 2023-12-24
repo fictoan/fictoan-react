@@ -7,6 +7,7 @@ const meta: Meta<typeof Button> = {
     tags: ["autodocs"],
     args: {
         children: "Button",
+        shadow: "soft",
     },
     parameters: {
         docs: {

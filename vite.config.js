@@ -40,7 +40,7 @@ export default defineConfig({
             rollupOptions: {
                 input: Object.fromEntries(
                     glob
-                        .sync("src/**/*.{js,jsx,ts,tsx}")
+                        .sync("src/**/*.{js,jsx,ts,tsx}", { ignore: "src/**/*.stories.{js,jsx,ts,tsx}" })
                         .map((file) => [
                             relative("src", file.slice(0, file.length - extname(file).length)),
                             fileURLToPath(new URL(file, import.meta.url)),

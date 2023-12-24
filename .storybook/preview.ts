@@ -5,6 +5,7 @@ import "../src/styles/reset.css";
 import "../src/styles/globals.css";
 import "../src/styles/default-colours.css";
 import "../src/styles/custom-colours.css";
+import "../src/styles/generated-colours.css";
 import "../src/styles/theme.css";
 import "../src/styles/utilities.css";
 import "../src/components/Typography/typography.css";
