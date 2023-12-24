@@ -1,6 +1,6 @@
 [data-callout] {
     display       : block;
-    border-width  : 0 0 0 5px;
+    border-width  : 0 0 0 var(--callout-border-width);
     word-break    : break-word;
     border-style  : solid;
     padding       : 16px;

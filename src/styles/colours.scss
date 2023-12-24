@@ -31,6 +31,12 @@ $class-prefixes : (
     "border": "border-color"
 );
 
+//:root {
+//    @each $color, $value in $colors {
+//        --base-#{$color}: #{$value};
+//    }
+//}
+
 :root {
     @each $color, $value in $colors {
         --base-#{$color}: #{$value};
@@ -84,6 +90,12 @@ $class-prefixes : (
         }
     }
 }
+
+
+
+
+
+
 
 :root {
     --black       : hsla(0, 0%, 0%, 1);

@@ -1,5 +1,5 @@
 :root {
-    --hue     : var(--base-blue);
+    --hue     : var(--blue);
     --tint    : var(--blue-light-40);
     --shade   : var(--indigo);
     --analgue : var(--purple);

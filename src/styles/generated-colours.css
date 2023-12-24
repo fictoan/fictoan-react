@@ -10,6 +10,7 @@
   --base-teal: 174, 62%;
   --base-cyan: 176, 78%;
   --base-sky: 194, 97%;
+  --base-blue: 212, 100%;
   --base-indigo: 237, 66%;
   --base-violet: 258, 55%;
   --base-purple: 311, 47%;
@@ -122,6 +123,15 @@
   --palette-sky-light-20: 194, 97%, 70%;
   --palette-sky-light-30: 194, 97%, 80%;
   --palette-sky-light-40: 194, 97%, 90%;
+  --palette-blue-dark-40: 212, 100%, 10%;
+  --palette-blue-dark-30: 212, 100%, 20%;
+  --palette-blue-dark-20: 212, 100%, 30%;
+  --palette-blue-dark-10: 212, 100%, 40%;
+  --palette-blue: 212, 100%, 50%;
+  --palette-blue-light-10: 212, 100%, 60%;
+  --palette-blue-light-20: 212, 100%, 70%;
+  --palette-blue-light-30: 212, 100%, 80%;
+  --palette-blue-light-40: 212, 100%, 90%;
   --palette-indigo-dark-40: 237, 66%, 10%;
   --palette-indigo-dark-30: 237, 66%, 20%;
   --palette-indigo-dark-20: 237, 66%, 30%;
@@ -314,6 +324,15 @@
   --sky-light-20: hsl(var(--palette-sky-light-20));
   --sky-light-30: hsl(var(--palette-sky-light-30));
   --sky-light-40: hsl(var(--palette-sky-light-40));
+  --blue-dark-40: hsl(var(--palette-blue-dark-40));
+  --blue-dark-30: hsl(var(--palette-blue-dark-30));
+  --blue-dark-20: hsl(var(--palette-blue-dark-20));
+  --blue-dark-10: hsl(var(--palette-blue-dark-10));
+  --blue: hsl(var(--palette-blue));
+  --blue-light-10: hsl(var(--palette-blue-light-10));
+  --blue-light-20: hsl(var(--palette-blue-light-20));
+  --blue-light-30: hsl(var(--palette-blue-light-30));
+  --blue-light-40: hsl(var(--palette-blue-light-40));
   --indigo-dark-40: hsl(var(--palette-indigo-dark-40));
   --indigo-dark-30: hsl(var(--palette-indigo-dark-30));
   --indigo-dark-20: hsl(var(--palette-indigo-dark-20));
@@ -800,6 +819,42 @@
 
 .bg-sky-light-40 {
   background-color: var(--sky-light-40);
+}
+
+.bg-blue-dark-40 {
+  background-color: var(--blue-dark-40);
+}
+
+.bg-blue-dark-30 {
+  background-color: var(--blue-dark-30);
+}
+
+.bg-blue-dark-20 {
+  background-color: var(--blue-dark-20);
+}
+
+.bg-blue-dark-10 {
+  background-color: var(--blue-dark-10);
+}
+
+.bg-blue {
+  background-color: var(--blue);
+}
+
+.bg-blue-light-10 {
+  background-color: var(--blue-light-10);
+}
+
+.bg-blue-light-20 {
+  background-color: var(--blue-light-20);
+}
+
+.bg-blue-light-30 {
+  background-color: var(--blue-light-30);
+}
+
+.bg-blue-light-40 {
+  background-color: var(--blue-light-40);
 }
 
 .bg-indigo-dark-40 {
@@ -1558,6 +1613,42 @@
   color: var(--sky-light-40);
 }
 
+.text-blue-dark-40 {
+  color: var(--blue-dark-40);
+}
+
+.text-blue-dark-30 {
+  color: var(--blue-dark-30);
+}
+
+.text-blue-dark-20 {
+  color: var(--blue-dark-20);
+}
+
+.text-blue-dark-10 {
+  color: var(--blue-dark-10);
+}
+
+.text-blue {
+  color: var(--blue);
+}
+
+.text-blue-light-10 {
+  color: var(--blue-light-10);
+}
+
+.text-blue-light-20 {
+  color: var(--blue-light-20);
+}
+
+.text-blue-light-30 {
+  color: var(--blue-light-30);
+}
+
+.text-blue-light-40 {
+  color: var(--blue-light-40);
+}
+
 .text-indigo-dark-40 {
   color: var(--indigo-dark-40);
 }
@@ -2312,6 +2403,42 @@
 
 .stroke-sky-light-40 {
   stroke: var(--sky-light-40);
+}
+
+.stroke-blue-dark-40 {
+  stroke: var(--blue-dark-40);
+}
+
+.stroke-blue-dark-30 {
+  stroke: var(--blue-dark-30);
+}
+
+.stroke-blue-dark-20 {
+  stroke: var(--blue-dark-20);
+}
+
+.stroke-blue-dark-10 {
+  stroke: var(--blue-dark-10);
+}
+
+.stroke-blue {
+  stroke: var(--blue);
+}
+
+.stroke-blue-light-10 {
+  stroke: var(--blue-light-10);
+}
+
+.stroke-blue-light-20 {
+  stroke: var(--blue-light-20);
+}
+
+.stroke-blue-light-30 {
+  stroke: var(--blue-light-30);
+}
+
+.stroke-blue-light-40 {
+  stroke: var(--blue-light-40);
 }
 
 .stroke-indigo-dark-40 {
@@ -3070,6 +3197,42 @@
   fill: var(--sky-light-40);
 }
 
+.fill-blue-dark-40 {
+  fill: var(--blue-dark-40);
+}
+
+.fill-blue-dark-30 {
+  fill: var(--blue-dark-30);
+}
+
+.fill-blue-dark-20 {
+  fill: var(--blue-dark-20);
+}
+
+.fill-blue-dark-10 {
+  fill: var(--blue-dark-10);
+}
+
+.fill-blue {
+  fill: var(--blue);
+}
+
+.fill-blue-light-10 {
+  fill: var(--blue-light-10);
+}
+
+.fill-blue-light-20 {
+  fill: var(--blue-light-20);
+}
+
+.fill-blue-light-30 {
+  fill: var(--blue-light-30);
+}
+
+.fill-blue-light-40 {
+  fill: var(--blue-light-40);
+}
+
 .fill-indigo-dark-40 {
   fill: var(--indigo-dark-40);
 }
@@ -3826,6 +3989,42 @@
   border-color: var(--sky-light-40);
 }
 
+.border-blue-dark-40 {
+  border-color: var(--blue-dark-40);
+}
+
+.border-blue-dark-30 {
+  border-color: var(--blue-dark-30);
+}
+
+.border-blue-dark-20 {
+  border-color: var(--blue-dark-20);
+}
+
+.border-blue-dark-10 {
+  border-color: var(--blue-dark-10);
+}
+
+.border-blue {
+  border-color: var(--blue);
+}
+
+.border-blue-light-10 {
+  border-color: var(--blue-light-10);
+}
+
+.border-blue-light-20 {
+  border-color: var(--blue-light-20);
+}
+
+.border-blue-light-30 {
+  border-color: var(--blue-light-30);
+}
+
+.border-blue-light-40 {
+  border-color: var(--blue-light-40);
+}
+
 .border-indigo-dark-40 {
   border-color: var(--indigo-dark-40);
 }
@@ -4186,4 +4385,70 @@
   border-color: var(--grey-light-40);
 }
 
-/*# sourceMappingURL=output.css.map */
+:root {
+  --black: hsla(0, 0%, 0%, 1);
+  --white: hsla(0, 0%, 100%, 1);
+  --transparent: hsla(0, 0%, 100%, 0);
+}
+
+.bg-white {
+  background-color: hsl(0, 0%, 100%);
+}
+
+.text-white {
+  color: hsl(0, 0%, 100%);
+}
+
+.border-white {
+  border: 2px solid hsl(0, 0%, 100%);
+}
+
+.fill-white {
+  fill: hsl(0, 0%, 100%);
+}
+
+.stroke-white {
+  stroke: hsl(0, 0%, 100%);
+}
+
+.bg-black {
+  background-color: hsl(0, 0%, 0%);
+}
+
+.text-black {
+  color: hsl(0, 0%, 0%);
+}
+
+.border-black {
+  border: 2px solid hsl(0, 0%, 0%);
+}
+
+.fill-black {
+  fill: hsl(0, 0%, 0%);
+}
+
+.stroke-black {
+  stroke: hsl(0, 0%, 0%);
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.text-transparent {
+  color: transparent;
+}
+
+.border-transparent {
+  border: 2px solid transparent;
+}
+
+.fill-transparent {
+  fill: transparent;
+}
+
+.stroke-transparent {
+  stroke: transparent;
+}
+
+/*# sourceMappingURL=generated-colours.css.map */

@@ -113,17 +113,18 @@
 /* CALLOUT ////////////////////////////////////////////////////////////////// */
 :root {
     --callout-border-radius  : var(--global-border-radius);
+    --callout-border-width   : var(--nano);
 
     --callout-info-bg        : var(--blue-light-10);
     --callout-info-border    : var(--blue);
 
-    --callout-success-bg     : var(--green10);
-    --callout-success-border : var(--green);
+    --callout-success-bg     : var(--green-light-10);
+    --callout-success-border : var(--green-dark-20);
 
-    --callout-warning-bg     : var(--amber10);
+    --callout-warning-bg     : var(--amber-light-10);
     --callout-warning-border : var(--amber);
 
-    --callout-error-bg       : var(--red10);
+    --callout-error-bg       : var(--red-light-10);
     --callout-error-border   : var(--red);
 }
 
