@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $colors : (
     "red"       : "0, 84%",
     "salmon"    : "9, 100%",
@@ -31,11 +33,7 @@ $class-prefixes : (
     "border": "border-color"
 );
 
-//:root {
-//    @each $color, $value in $colors {
-//        --base-#{$color}: #{$value};
-//    }
-//}
+$levels: 10;
 
 :root {
     @each $color, $value in $colors {
@@ -45,78 +43,98 @@ $class-prefixes : (
 
 :root {
     @each $color, $value in $colors {
-        @for $i from 1 through 9 {
-            @if $i < 5 {
-                --palette-#{$color}-dark-#{5 - $i}0: #{$value}, #{$i}0%;
-            } @else if $i > 5 {
-                --palette-#{$color}-light-#{$i - 5}0: #{$value}, #{$i}0%;
-            } @else if $i == 5 {
-                --palette-#{$color}: #{$value}, #{$i}0%;
+        @for $i from 1 through (2 * $levels - 1) {
+            $level: "";
+            $palette-variable-name: "";
+            $lightness: #{$i * math.div(100, ($levels * 2)) + '%'};
+            
+            @if $i < $levels {
+                $level: ($levels - $i) * 10;
+                $palette-variable-name: palette-#{$color}-dark-#{$level};
+            } @else if $i > $levels {
+                $level: ($i - $levels) * 10;
+                $palette-variable-name: palette-#{$color}-light-#{$level};
+            } @else if $i == $levels {
+                $palette-variable-name: palette-#{$color};
             }
+
+            --#{$palette-variable-name}: #{$value}, #{$lightness};
         }
     }
 }
 
 :root {
+    --black       : hsla(0, 0%, 0%, 1);
+    --white       : hsla(0, 0%, 100%, 1);
+    --transparent : hsla(0, 0%, 100%, 0);
+
     @each $color, $value in $colors {
-        @for $i from 1 through 9 {
-            @if $i < 5 {
-                --#{$color}-dark-#{5 - $i}0: hsl(var(--palette-#{$color}-dark-#{5 - $i}0));
-            } @else if $i > 5 {
-                --#{$color}-light-#{$i - 5}0: hsl(var(--palette-#{$color}-light-#{$i - 5}0));
-            } @else if $i == 5 {
-                --#{$color}: hsl(var(--palette-#{$color}));
+        @for $i from 1 through (2 * $levels - 1) {
+            $level: "";
+            $color-variable-name: "";
+            $palette-variable-name: "";
+
+            @if $i < $levels {
+                $level: ($levels - $i) * 10;
+                $color-variable-name: #{$color}-dark-#{$level};
+                $palette-variable-name: var(--palette-#{$color-variable-name});
+            } @else if $i > $levels {
+                $level: ($i - $levels) * 10;
+                $color-variable-name: #{$color}-light-#{$level};
+                $palette-variable-name: var(--palette-#{$color-variable-name});
+            } @else if $i == $levels {
+                $color-variable-name: #{$color};
+                $palette-variable-name: var(--palette-#{$color-variable-name});
             }
+
+            --#{$color-variable-name}: hsl(#{$palette-variable-name});
         }
     }
 }
 
 @each $prefix, $css-property in $class-prefixes {
     @each $color, $value in $colors {
-        @for $i from 1 through 9 {
-            @if $i < 5 {
-                .#{$prefix}-#{$color}-dark-#{5 - $i}0 {
-                    #{$css-property}: var(--#{$color}-dark-#{5 - $i}0);
-                }
-            } @else if $i > 5 {
-                .#{$prefix}-#{$color}-light-#{$i - 5}0 {
-                    #{$css-property}: var(--#{$color}-light-#{$i - 5}0);
-                }
-            } @else if $i == 5 {
-                .#{$prefix}-#{$color} {
-                    #{$css-property}: var(--#{$color});
-                }
+        @for $i from 1 through (2 * $levels - 1) {
+            $level: "";
+            $class-name: "";
+            $css-property-value: "";
+
+            @if $i < $levels {
+                $level: ($levels - $i) * 10;
+                $class-name: #{$prefix}-#{$color}-dark-#{$level};
+                $css-property-value: var(--#{$color}-dark-#{$level});
+            } @else if $i > $levels {
+                $level: ($i - $levels) * 10;
+                $class-name: #{$prefix}-#{$color}-light-#{$level};
+                $css-property-value: var(--#{$color}-light-#{$level});
+            } @else if $i == $levels {
+                $class-name: #{$prefix}-#{$color};
+                $css-property-value: var(--#{$color});
+            }
+
+            .#{$class-name} {
+                #{$css-property}: #{$css-property-value};
             }
         }
     }
 }
 
+.bg-white { background-color : var(--white); }
+.bg-black { background-color : var(--black); }
+.bg-transparent { background-color : var(--transparent); }
 
+.text-white { color : var(--white); }
+.text-black { color : var(--black); }
+.text-transparent { color : var(--transparent); }
 
+.border-white { border-color : var(--white); }
+.border-black { border-color : var(--black); }
+.border-transparent { border-color : var(--transparent); }
 
+.fill-white { fill : var(--white); }
+.fill-black { fill : var(--black); }
+.fill-transparent { fill : var(--transparent); }
 
-
-
-:root {
-    --black       : hsla(0, 0%, 0%, 1);
-    --white       : hsla(0, 0%, 100%, 1);
-    --transparent : hsla(0, 0%, 100%, 0);
-}
-
-.bg-white { background-color : hsla(0, 0%, 100%, 1); }
-.text-white { color : hsla(0, 0%, 100%, 1); }
-.border-white { border : 2px solid hsla(0, 0%, 100%, 1); }
-.fill-white { fill : hsla(0, 0%, 100%, 1); }
-.stroke-white { stroke : hsla(0, 0%, 100%, 1); }
-
-.bg-black { background-color : hsla(0, 0%, 0%, 1); }
-.text-black { color : hsla(0, 0%, 0%, 1); }
-.border-black { border : 2px solid hsla(0, 0%, 0%, 1); }
-.fill-black { fill : hsla(0, 0%, 0%, 1); }
-.stroke-black { stroke : hsla(0, 0%, 0%, 1); }
-
-.bg-transparent { background-color : transparent; }
-.text-transparent { color : transparent; }
-.border-transparent { border : 2px solid transparent; }
-.fill-transparent { fill : transparent; }
-.stroke-transparent { stroke : transparent; }
+.stroke-white { stroke : var(--white); }
+.stroke-black { stroke : var(--black); }
+.stroke-transparent { stroke : var(--transparent); }
