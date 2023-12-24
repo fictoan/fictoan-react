@@ -11,7 +11,7 @@ const meta: Meta<typeof Badge> = {
     parameters: {
         docs: {
             description: {
-                component: "This is a Badge.",
+                component: "This is a Badge component.",
             },
         },
     },

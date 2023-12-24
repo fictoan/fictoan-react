@@ -1,8 +1,8 @@
-/*  ///////////////////////////////////////////////////////////////////////  */
+/* ////////////////////////////////////////////////////////////////////////// */
 /*  FICTOAN OPINIONATED RESET  */
-/*  ///////////////////////////////////////////////////////////////////////  */
-/*  Consider removing this if you have
-a zillion elements in your page  */
+/* ////////////////////////////////////////////////////////////////////////// */
+
+/*  Consider removing this if you havea zillion elements in your page  */
 *,
 *:before,
 *:after {
@@ -30,7 +30,7 @@ body, button, input, select, textarea {
 
 img {
     display : block;
-    width   : 100%;
+    width   : auto;
 }
 
 picture { line-height : 1; }
