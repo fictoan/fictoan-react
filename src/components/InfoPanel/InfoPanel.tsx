@@ -23,7 +23,7 @@ export const InfoPanel = React.forwardRef(
         { width = "medium", isOpen, children, onCloseCallback, closeOnClickOutside, padding, ...props }: InfoPanelProps,
         ref: React.Ref<InfoPanelElementType>
     ) => {
-        let classNames = [];
+        let classNames: string[] = [];
 
         const infoPanelRef = React.useRef<InfoPanelElementType>(null);
 
