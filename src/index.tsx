@@ -29,6 +29,9 @@ export { Callout, type CalloutProps } from "./components/Callout";
 // CARD ////////////////////////////////////////////////////////////////////////
 export { Card, type CardProps } from "./components/Card";
 
+// CODE BLCOK //////////////////////////////////////////////////////////////////
+export { CodeBlock, type CodeBlockProps } from "./components/CodeBlock";
+
 // CONTENT WRAPPER /////////////////////////////////////////////////////////////
 export { ContentWrapper, type ContentWrapperProps } from "./components/ContentWrapper";
 

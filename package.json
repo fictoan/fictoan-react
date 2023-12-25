@@ -32,6 +32,9 @@
     "keywords": [],
     "author": "",
     "license": "MIT",
+    "dependencies": {
+        "prism-react-renderer": "^2.3.1"
+    },
     "devDependencies": {
         "@babel/preset-env": "^7.23.6",
         "@babel/preset-react": "^7.23.3",
