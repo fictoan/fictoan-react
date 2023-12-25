@@ -2,7 +2,7 @@
 
 $colors : (
     "red"       : "0, 84%",
-    "salmon"    : "9, 100%",
+    "salmon"    : "16, 100%",
     "orange"    : "30, 92%",
     "amber"     : "40, 97%",
     "yellow"    : "50, 100%",
@@ -47,7 +47,7 @@ $levels: 10;
             $level: "";
             $palette-variable-name: "";
             $lightness: #{$i * math.div(100, ($levels * 2)) + '%'};
-            
+
             @if $i < $levels {
                 $level: ($levels - $i) * 10;
                 $palette-variable-name: palette-#{$color}-dark-#{$level};

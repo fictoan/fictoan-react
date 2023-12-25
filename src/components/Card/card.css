@@ -5,7 +5,10 @@
 
 [data-card]:not([class*="bg-"]) { background-color : var(--card-bg); }
 
-[data-card][class*="border-"] { border-width : var(--card-border-width); }
+[data-card][class*="border-"] {
+    border-width : var(--card-border-width);
+    border-style : solid;
+}
 
 [data-card]:not([class*="border-"]) { border : var(--card-border-width) solid var(--card-border); }
 
