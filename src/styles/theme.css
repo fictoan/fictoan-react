@@ -443,6 +443,10 @@
     --token-symbol              : var(--green);
     --token-url                 : var(--green);
     --token-variable            : var(--orange);
+    --token-css-fallback        : var(--red);
+    --token-html-fallback       : var(--red);
+    --token-js-fallback         : var(--red);
+    --token-json-token-string   : var(--red);
 }
 
 /* SWITCH /////////////////////////////////////////////////////////////////// */

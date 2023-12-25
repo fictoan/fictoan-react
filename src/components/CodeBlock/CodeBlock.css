@@ -86,14 +86,14 @@
     & code[class*=language-less],
     & code[class*=language-sass],
     & code[class*=language-scss] {
-        color : var(--code-block-prism-css-fallback);
+        color : var(--token-css-fallback);
     }
     
-    & code[class*=language-html] { color : var(--code-block-prism-html-fallback); }
+    & code[class*=language-html] { color : var(--token-html-fallback); }
     
-    & code[class*=language-js]   { color : var(--code-block-prism-js-fallback); }
+    & code[class*=language-js]   { color : var(--token-js-fallback); }
     
     & code[class*=language-json] .token.string {
-        color : var(--code-block-prism-json-token-string);
+        color : var(--token-json-token-string);
     }
 }

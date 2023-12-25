@@ -15,6 +15,7 @@ registerHttp(Prism);
 
 import { CommonAndHTMLProps } from "../Element/constants";
 import { Element } from "../Element/Element";
+
 import "./CodeBlock.css";
 
 // prettier-ignore
@@ -38,8 +39,8 @@ export const CodeBlock = React.forwardRef(
                     prism={Prism}
                     theme={undefined}
                 >
-                    {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                        <pre ref={ref} className={className} style={style}>
+                    {({ className, tokens, getLineProps, getTokenProps }) => (
+                        <pre ref={ref} className={className}>
                             {tokens.map((line, i) => (
                                 <div {...getLineProps({ line, key: i })}>
                                     {line.map((token, key) => (
