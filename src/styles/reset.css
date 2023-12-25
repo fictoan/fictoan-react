@@ -48,6 +48,10 @@ button {
     outline : 0;
 }
 
+hr {
+    height : 1px;
+}
+
 /* Input fields */
 ::-webkit-input-placeholder {
     opacity : 0.5;

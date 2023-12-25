@@ -3,7 +3,6 @@ import { extname, relative } from "path";
 import { fileURLToPath } from "node:url";
 import { glob } from "glob";
 import { visualizer } from "rollup-plugin-visualizer";
-import { libInjectCss } from "vite-plugin-lib-inject-css";
 import dts from "vite-plugin-dts";
 import svgr from "vite-plugin-svgr";
 import react from "@vitejs/plugin-react";

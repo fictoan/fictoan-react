@@ -1,0 +1,86 @@
+[data-checkbox] {
+    display        : inline-flex;
+    flex-direction : row;
+    align-items    : center;
+    margin-right   : 24px;
+
+    &:only-of-type {
+        margin-right : 0;
+    }
+
+    input[type="checkbox"] {
+        position : absolute;
+        height   : 1px;
+        width    : 1px;
+        overflow : hidden;
+        clip     : rect(1px 1px 1px 1px); /* IE6, IE7 */
+        clip     : rect(1px, 1px, 1px, 1px);
+    }
+
+    label {
+        display     : inline-flex;
+        position    : relative;
+        font-family : var(--paragraph-font-family);
+        color       : var(--paragraph-text-colour);
+        cursor      : pointer;
+        line-height : 1;
+        user-select : none;
+
+        &::before,
+        &::after {
+            display    : inline-flex;
+            content    : "";
+            transition : all 0.1s ease-out;
+        }
+    }
+
+    /*  The grey square */
+    label::before,
+    input[type="checkbox"]:disabled + label::before {
+        user-select    : none;
+        pointer-events : none;
+        background     : var(--checkbox-square-bg-default);
+        box-shadow     : 0 2px 4px -2px hsla(0, 0%, 0%, 0.24) inset;
+    }
+
+    &:hover label::before { background : var(--checkbox-square-bg-hover); }
+    input[type="checkbox"]:checked + label::before { background : var(--checkbox-square-bg-checked); }
+    input[type="checkbox"]:focus + label::before { outline : solid 2px var(--checkbox-square-bg-disabled); }
+
+    label::after { opacity : 0; }
+
+    /*  The square */
+    label::before {
+        position      : absolute;
+        height        : 16px;
+        width         : 16px;
+        top           : 0;
+        left          : 0;
+        border-radius : var(--checkbox-square-border-radius);
+    }
+
+    /*  The white tick inside */
+    label::after {
+        position      : absolute;
+        height        : 6px;
+        width         : 12px;
+        left          : 2px;
+        top           : 4px;
+        border-left   : 2px solid var(--checkbox-tick);
+        border-bottom : 2px solid var(--checkbox-tick);
+        transform     : rotate(-45deg);
+    }
+
+    label { padding-left : 24px; }
+
+    input[type="checkbox"]:checked + label::after { opacity : 1; }
+
+    [data-form-wrapper].spacing-none   & { margin-bottom :    0; }
+    [data-form-wrapper].spacing-nano   & { margin-bottom :  8px; }
+    [data-form-wrapper].spacing-micro  & { margin-bottom : 12px; }
+    [data-form-wrapper].spacing-tiny   & { margin-bottom : 16px; }
+    [data-form-wrapper].spacing-small  & { margin-bottom : 24px; }
+    [data-form-wrapper].spacing-medium & { margin-bottom : 32px; }
+    [data-form-wrapper].spacing-large  & { margin-bottom : 40px; }
+    [data-form-wrapper].spacing-huge   & { margin-bottom : 48px; }
+}

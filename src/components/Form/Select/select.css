@@ -1,0 +1,45 @@
+[data-select] {
+    position         : relative;
+    width            : max-content;
+    align-self       : flex-start;
+    border-radius    : var(--input-border-radius-default);
+
+    &::after {
+        content        : "";
+        display        : inline-block;
+        position       : absolute;
+        top            : 50%;
+        right          : 12px;
+        width          : 10px;
+        height         : 10px;
+        border-style   : solid;
+        border-width   : 0 2px 2px 0;
+        transform      : translateY(-50%) rotate(45deg);
+        color          : var(--dropdown-chevron);
+        transition     : transform 0.2s linear;
+        z-index        : 500;
+        pointer-events : none;
+    }
+
+    &[disabled]::after {
+        color : var(--input-text-read-only);
+    }
+
+    select {
+        display          : flex;
+        height           : 100%;
+        padding          : 12px 36px 12px 8px;
+        font-family      : var(--paragraph-font-family);
+        background-color : var(--input-bg-default);
+        border-radius    : var(--input-border-radius-default);
+        align-items      : center;
+        border           : 1px solid var(--input-border-default);
+        width            : 100%;
+
+        &:focus {
+            background-color : var(--input-bg-focus);
+            border           : 2px solid var(--input-border-focus);
+            padding          : 11px 35px 11px 7px;
+        }
+    }
+}

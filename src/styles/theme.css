@@ -37,25 +37,25 @@
 /* BUTTON /////////////////////////////////////////////////////////////////// */
 :root {
     /* PRIMARY BUTTON ======================================================= */
-    --button-primary-default-bg             : var(--blue);
-    --button-primary-default-text           : var(--white);
-    --button-primary-default-border-colour  : var(--blue);
-    --button-primary-default-border-width   : var(--global-border-width);
-    --button-primary-default-border-radius  : var(--global-border-radius);
+    --button-primary-default-bg               : var(--blue);
+    --button-primary-default-text             : var(--white);
+    --button-primary-default-border-colour    : var(--blue);
+    --button-primary-default-border-width     : var(--global-border-width);
+    --button-primary-default-border-radius    : var(--global-border-radius);
 
-    --button-primary-hover-bg               : var(--blue-light-10);
-    --button-primary-hover-text             : var(--white);
-    --button-primary-hover-border-colour    : var(--blue-dark-30);
-    --button-primary-hover-border-width     : var(--global-border-width);
-    --button-primary-hover-border-radius    : var(--global-border-radius);
+    --button-primary-hover-bg                 : var(--blue-light-10);
+    --button-primary-hover-text               : var(--white);
+    --button-primary-hover-border-colour      : var(--blue-dark-30);
+    --button-primary-hover-border-width       : var(--global-border-width);
+    --button-primary-hover-border-radius      : var(--global-border-radius);
 
-    --button-primary-loading-spinner-colour : var(--blue);
+    --button-primary-loading-spinner-colour   : var(--blue);
 
-    --button-primary-disabled-bg            : var(--blue-light-10);
-    --button-primary-disabled-text          : var(--white);
-    --button-primary-disabled-border-colour : var(--blue-light-10);
-    --button-primary-disabled-border-width  : var(--global-border-width);
-    --button-primary-disabled-border-radius : var(--global-border-radius);
+    --button-primary-disabled-bg              : var(--blue-light-10);
+    --button-primary-disabled-text            : var(--white);
+    --button-primary-disabled-border-colour   : var(--blue-light-10);
+    --button-primary-disabled-border-width    : var(--global-border-width);
+    --button-primary-disabled-border-radius   : var(--global-border-radius);
 
 
     /* SECONDARY BUTTON ===================================================== */
@@ -65,9 +65,9 @@
     --button-secondary-default-border-width   : var(--global-border-width);
     --button-secondary-default-border-radius  : var(--global-border-radius);
 
-    --button-secondary-hover-bg               : var(--blue80);
+    --button-secondary-hover-bg               : var(--blue-light-40);
     --button-secondary-hover-text             : var(--white);
-    --button-secondary-hover-border-colour    : var(--blue80);
+    --button-secondary-hover-border-colour    : var(--blue-light-40);
     --button-secondary-hover-border-width     : var(--global-border-width);
     --button-secondary-hover-border-radius    : var(--global-border-radius);
 
@@ -81,33 +81,33 @@
 
 
     /* TERTIARY BUTTON ====================================================== */
-    --button-tertiary-default-bg             : var(--blue);
-    --button-tertiary-default-text           : var(--white);
-    --button-tertiary-default-border-colour  : var(--blue);
-    --button-tertiary-default-border-width   : var(--global-border-width);
-    --button-tertiary-default-border-radius  : var(--global-border-radius);
+    --button-tertiary-default-bg              : var(--blue);
+    --button-tertiary-default-text            : var(--white);
+    --button-tertiary-default-border-colour   : var(--blue);
+    --button-tertiary-default-border-width    : var(--global-border-width);
+    --button-tertiary-default-border-radius   : var(--global-border-radius);
 
-    --button-tertiary-hover-bg               : var(--blue80);
-    --button-tertiary-hover-text             : var(--white);
-    --button-tertiary-hover-border-colour    : var(--blue80);
-    --button-tertiary-hover-border-width     : var(--global-border-width);
-    --button-tertiary-hover-border-radius    : var(--global-border-radius);
+    --button-tertiary-hover-bg                : var(--blue-light-40);
+    --button-tertiary-hover-text              : var(--white);
+    --button-tertiary-hover-border-colour     : var(--blue-light-40);
+    --button-tertiary-hover-border-width      : var(--global-border-width);
+    --button-tertiary-hover-border-radius     : var(--global-border-radius);
 
-    --button-tertiary-loading-spinner-colour : var(--blue);
+    --button-tertiary-loading-spinner-colour  : var(--blue);
 
-    --button-tertiary-disabled-bg            : var(--blue-light-10);
-    --button-tertiary-disabled-text          : var(--white);
-    --button-tertiary-disabled-border-colour : var(--blue-light-10);
-    --button-tertiary-disabled-border-width  : var(--global-border-width);
-    --button-tertiary-disabled-border-radius : var(--global-border-radius);
+    --button-tertiary-disabled-bg             : var(--blue-light-10);
+    --button-tertiary-disabled-text           : var(--white);
+    --button-tertiary-disabled-border-colour  : var(--blue-light-10);
+    --button-tertiary-disabled-border-width   : var(--global-border-width);
+    --button-tertiary-disabled-border-radius  : var(--global-border-radius);
 
 
     /* ROUND BUTTON ========================================================= */
-    --button-round-size-tiny   : 24px;
-    --button-round-size-small  : 32px;
-    --button-round-size-medium : 64px;
-    --button-round-size-large  : 80px;
-    --button-round-size-huge   : 128px;
+    --button-round-size-tiny                  : 24px;
+    --button-round-size-small                 : 32px;
+    --button-round-size-medium                : 64px;
+    --button-round-size-large                 : 80px;
+    --button-round-size-huge                  : 128px;
 }
 
 /* CALLOUT ////////////////////////////////////////////////////////////////// */
@@ -115,17 +115,17 @@
     --callout-border-radius  : var(--global-border-radius);
     --callout-border-width   : var(--nano);
 
-    --callout-info-bg        : var(--blue-light-10);
-    --callout-info-border    : var(--blue);
+    --callout-info-bg        : var(--blue-light-40);
+    --callout-info-border    : var(--blue-dark-40);
 
-    --callout-success-bg     : var(--green-light-10);
-    --callout-success-border : var(--green-dark-20);
+    --callout-success-bg     : var(--green-light-40);
+    --callout-success-border : var(--green-dark-40);
 
-    --callout-warning-bg     : var(--amber-light-10);
-    --callout-warning-border : var(--amber);
+    --callout-warning-bg     : var(--amber-light-40);
+    --callout-warning-border : var(--amber-dark-40);
 
-    --callout-error-bg       : var(--red-light-10);
-    --callout-error-border   : var(--red);
+    --callout-error-bg       : var(--red-light-40);
+    --callout-error-border   : var(--red-dark-40);
 }
 
 /* CARD ///////////////////////////////////////////////////////////////////// */
@@ -134,6 +134,18 @@
     --card-border        : var(--slate);
     --card-border-radius : var(--global-border-radius);
     --card-border-width  : var(--global-border-width);
+}
+
+/* CHECKBOX //////////////////////////////////////////////////////////////// */
+:root {
+    --checkbox-square-border-radius : var(--global-border-radius);
+
+    --checkbox-square-bg-default    : var(--slate-light-60);
+    --checkbox-square-bg-hover      : var(--slate-light-40);
+    --checkbox-square-bg-checked    : var(--hue);
+    --checkbox-square-bg-disabled   : var(--slate-light-90);
+
+    --checkbox-tick                 : var(--white);
 }
 
 /* EXPANDABLE CONTENT /////////////////////////////////////////////////////// */
@@ -150,7 +162,7 @@
     --hr-primary-bg       : var(--slate);
 
     --hr-secondary-height : 2px;
-    --hr-secondary-bg     : var(--slate60);
+    --hr-secondary-bg     : var(--slate-light-60);
 
     --hr-tertiary-height  : 1px;
     --hr-tertiary-bg      : var(--slate-light-20);
@@ -159,10 +171,53 @@
 /* INFO PANEL /////////////////////////////////////////////////////////////// */
 :root {
     --info-panel-bg                           : var(--white);
-    --info-panel-border                       : var(--slate10);
+    --info-panel-border                       : var(--slate-light-10);
 
-    --info-panel-dismiss-button               : var(--slate90);
-    --info-panel-dismiss-button-border-radius : var(--slate90);
+    --info-panel-dismiss-button               : var(--slate-dark-90);
+    --info-panel-dismiss-button-border-radius : var(--slate-dark-90);
+}
+
+/* INPUT FIELD ////////////////////////////////////////////////////////////// */
+:root {
+    --input-bg-default            : var(--white);
+    --input-border-default        : var(--slate-light-40);
+    --input-border-radius-default : var(--global-border-radius);
+    --input-label-default         : var(--paragraph-text-colour);
+    --input-placeholder-default   : var(--slate-light-40);
+    --input-text-default          : var(--shade);
+
+    --input-bg-focus              : var(--white);
+    --input-border-focus          : var(--slate-light-40);
+    --input-text-focus            : var(--shade);
+
+    --input-bg-valid              : var(--white);
+    --input-border-valid          : var(--green-dark-30);
+    --input-label-valid           : var(--shade);
+
+    --input-bg-invalid            : var(--red-light-60);
+    --input-border-invalid        : var(--red-dark-30);
+    --input-label-invalid         : var(--red);
+    --input-text-invalid          : var(--red);
+    --input-error-text-invalid    : var(--red);
+
+    --input-bg-disabled           : var(--slate-light-40);
+    --input-border-disabled       : var(--slate-light-40);
+    --input-label-disabled        : var(--slate-dark-40);
+    --input-text-disabled         : var(--slate-dark-60);
+
+    --input-bg-read-only          : var(--slate-light-40);
+    --input-border-read-only      : var(--slate-light-40);
+    --input-label-read-only       : var(--slate-dark-40);
+    --input-text-read-only        : var(--slate-dark-60);
+
+    --input-required-indicator    : var(--red);
+
+    --input-helptext              : var(--slate-dark-40);
+    --input-helptext-scale        : 92%;
+
+    --input-icon-default          : var(--slate-light-40);
+    --input-icon-focus            : var(--hue);
+    --input-icon-valid            : var(--green-dark-30);
 }
 
 /* NOTIFICATIONS //////////////////////////////////////////////////////////// */
@@ -170,23 +225,23 @@
     --notification-item-border-radius           : var(--global-border-radius);
 
     --notification-item-generic-bg              : var(--white);
-    --notification-item-generic-border          : var(--slate40);
+    --notification-item-generic-border          : var(--slate-light-40);
     --notification-item-generic-text            : var(--shade);
 
-    --notification-item-info-bg                 : var(--blue40);
+    --notification-item-info-bg                 : var(--blue-light-40);
     --notification-item-info-border             : var(--blue);
 
-    --notification-item-error-bg                : var(--red40);
+    --notification-item-error-bg                : var(--red-light-40);
     --notification-item-error-border            : var(--red);
 
-    --notification-item-success-bg              : var(--green40);
+    --notification-item-success-bg              : var(--green-light-40);
     --notification-item-success-border          : var(--green);
 
-    --notification-item-warning-bg              : var(--amber40);
+    --notification-item-warning-bg              : var(--amber-light-40);
     --notification-item-warning-border          : var(--amber);
 
-    --notification-dismiss-button               : var(--slate90);
-    --notification-dismiss-button-border-radius : var(--slate90);
+    --notification-dismiss-button               : var(--slate-dark-90);
+    --notification-dismiss-button-border-radius : var(--slate-dark-90);
 }
 
 /* PROGRESS BAR ///////////////////////////////////////////////////////////// */
@@ -199,9 +254,14 @@
     --progress-bar-height        : 8px;
 }
 
-/* SPINNER ////////////////////////////////////////////////////////////////// */
+/* RADIO BUTTON ///////////////////////////////////////////////////////////// */
 :root {
-    --spinner-border : var(--hue);
+    --radio-button-circle-bg-default  : var(--slate-light-60);
+    --radio-button-circle-bg-hover    : var(--slate-light-40);
+    --radio-button-circle-bg-checked  : var(--hue);
+    --radio-button-circle-bg-disabled : var(--slate-light-90);
+
+    --radio-button-dot                : var(--white);
 }
 
 /* SIDEBAR + CONTENT WRAPPER //////////////////////////////////////////////// */
@@ -215,17 +275,17 @@
     --sidebar-collapsed-item-border-radius     : var(--global-border-radius);
 
     --sidebar-header-bg                        : var(--white);
-    --sidebar-header-border-bottom             : var(--slate10);
+    --sidebar-header-border-bottom             : var(--slate-dark-80);
     --sidebar-header-logo-width                : 50%;
     --sidebar-header-icon-width                : 40px;
 
     --sidebar-item-icon-width                  : 24px;
-    --sidebar-item-icon-default-stroke-colour  : var(--slate40);
+    --sidebar-item-icon-default-stroke-colour  : var(--slate-light-40);
     --sidebar-item-icon-default-stroke-width   : 2px;
-    --sidebar-item-icon-hover-stroke-colour    : var(--slate80);
+    --sidebar-item-icon-hover-stroke-colour    : var(--slate-dark-30);
     --sidebar-item-icon-active-stroke-colour   : var(--slate);
-    --sidebar-item-icon-default-fill-colour    : var(--slate40);
-    --sidebar-item-icon-hover-fill-colour      : var(--slate80);
+    --sidebar-item-icon-default-fill-colour    : var(--slate-light-40);
+    --sidebar-item-icon-hover-fill-colour      : var(--slate-dark-30);
     --sidebar-item-icon-active-fill-colour     : var(--slate);
 
     --sidebar-item-default-link-bg             : var(--white);
@@ -233,48 +293,58 @@
     --sidebar-item-default-link-scale          : 100%;
     --sidebar-item-default-link-font-wright    : 600;
 
-    --sidebar-item-hover-link-bg               : var(--slate10);
+    --sidebar-item-hover-link-bg               : var(--slate-light-10);
     --sidebar-item-hover-link-text             : var(--hue);
 
-    --sidebar-item-active-link-bg              : var(--white);
-    --sidebar-item-active-link-text            : var(--hue);
-    --sidebar-item-active-link-border          : var(--hue);
+    --sidebar-item-active-link-bg              : var(--slate-dark-10);
+    --sidebar-item-active-link-text            : var(--blue);
+    --sidebar-item-active-link-border          : var(--blue);
     --sidebar-item-active-link-border-width    : 2px;
 
-    --sidebar-item-has-alert-bg                : var(--red70);
+    --sidebar-item-has-alert-bg                : var(--red-dark-70);
 
     --sidebar-item-icon-size                   : 24px;
     --sidebar-item-icon-stroke-width           : 2px;
-    --sidebar-item-icon-stroke-colour-default  : var(--slate40);
-    --sidebar-item-icon-stroke-colour-hover    : var(--slate80);
+    --sidebar-item-icon-stroke-colour-default  : var(--slate-dark-40);
+    --sidebar-item-icon-stroke-colour-hover    : var(--slate-dark-30);
     --sidebar-item-icon-stroke-colour-selected : var(--slate);
 
-    --sidebar-item-icon-fill-colour-default    : var(--slate40);
-    --sidebar-item-icon-fill-colour-hover      : var(--slate80);
+    --sidebar-item-icon-fill-colour-default    : var(--slate-light-40);
+    --sidebar-item-icon-fill-colour-hover      : var(--slate-dark-30);
     --sidebar-item-icon-fill-colour-selected   : var(--slate);
 
     --sidebar-footer-height                    : 32px;
     --sidebar-footer-bg                        : var(--white);
-    --sidebar-footer-border-top                : var(--slate10);
+    --sidebar-footer-border-top                : var(--slate-light-10);
+}
+
+/* SELECT DROPDOWN ////////////////////////////////////////////////////////// */
+:root {
+    --dropdown-chevron : var(--slate-light-40);
+}
+
+/* SPINNER ////////////////////////////////////////////////////////////////// */
+:root {
+    --spinner-border : var(--hue);
 }
 
 /* TABLE //////////////////////////////////////////////////////////////////// */
 :root {
     --table-bg                           : var(--white);
-    --table-border                       : var(--slate10);
+    --table-border                       : var(--slate-light-10);
     --table-font-family                  : var(--paragraph-font-family);
     --table-text                         : var(--paragraph-text-colour);
 
-    --table-striped-header-bg            : var(--blue40);
+    --table-striped-header-bg            : var(--blue-light-40);
     --table-striped-cell-bg              : var(--slate-light-20);
 
-    --table-bg-hover                     : var(--amber20);
+    --table-bg-hover                     : var(--amber-light-20);
     --table-text-hover                   : var(--paragraph-text-colour);
 
     --table-pagination-bg                : var(--white);
     --table-pagination-border-radius     : var(--global-border-radius);
     --table-pagination-text              : var(--paragraph-text-colour);
-    --table-pagination-nav-icon-bg-hover : var(--slate60);
+    --table-pagination-nav-icon-bg-hover : var(--slate-dark-60);
 }
 
 /* TABS ///////////////////////////////////////////////////////////////////// */
@@ -282,18 +352,18 @@
     --tabs-bg                     : var(--transparent);
 
     --tab-default-label           : var(--shade);
-    --tab-hover-label             : var(--blue80);
+    --tab-hover-label             : var(--blue-light-40);
     --tab-active-label            : var(--blue);
     --tab-active-border           : var(--blue);
-    --tab-disabled-label          : var(--slate40);
+    --tab-disabled-label          : var(--slate-light-40);
 
-    --tab-with-alert-badge-bg     : var(--red70);
-    --tab-with-alert-badge-border : var(--red70);
+    --tab-with-alert-badge-bg     : var(--red-dark-70);
+    --tab-with-alert-badge-border : var(--red-dark-70);
 }
 
 /* TOAST //////////////////////////////////////////////////////////////////// */
 :root {
-    --toast-bg            : var(--slate10);
+    --toast-bg            : var(--slate-light-10);
     --toast-text          : var(--black);
     --toast-border-radius : var(--global-border-radius);
 }
@@ -312,24 +382,16 @@
     --paragraph-font-weight     : 400;
     --paragraph-text-colour     : var(--grey);
 
-    --paragraph-subtext-colour  : var(--slate80);
+    --paragraph-subtext-colour  : var(--slate-dark-30);
     --paragraph-subtext-size    : 0.8rem;
-
-    @media (min-width : 640px) {
-        --paragraph-font-size : 0.72rem;
-    }
-
-    @media (min-width : 1600px) {
-        --paragraph-font-size : 1.3rem;
-    }
 
     /* HEADINGS ============================================================= */
     --heading-font-family       : var(--font-family-sans-serif);
     --heading-font-size         : 1.5rem;
-    --heading-line-height       : 1.64;
-    --heading-font-weight       : 600;
+    --heading-size-multiplier   : 1.6;
+    --heading-line-height       : 1;
+    --heading-font-weight       : 700;
     --heading-text-colour       : var(--slate);
-    --heading-size-multiplier   : 1.2;
 
     /* LINKS ================================================================ */
     --link-font-family          : var(--font-family-sans-serif);
@@ -342,8 +404,8 @@
 
     /* CODE ================================================================= */
     --code-font-family          : var(--font-family-mono);
-    --code-inline-font-size     : 0.92rem;
-    --code-inline-bg            : var(--blue-light-10);
+    --code-inline-font-size     : 0.8rem;
+    --code-inline-bg            : var(--blue-light-80);
     --code-inline-text          : var(--blue-dark-40);
     --code-inline-border-radius : var(--global-border-radius);
 
@@ -391,4 +453,17 @@
     --token-symbol              : var(--green);
     --token-url                 : var(--green);
     --token-variable            : var(--orange);
+}
+
+/* SWITCH /////////////////////////////////////////////////////////////////// */
+:root {
+    --switch-bg-default         : var(--slate-light-60);
+    --switch-bg-hover           : var(--slate-light-40);
+    --switch-bg-checked         : var(--hue);
+    --switch-bg-disabled        : var(--slate-light-90);
+
+    --switch-slider-bg-default     : var(--white);
+    --switch-slider-bg-hover       : var(--white);
+    --switch-slider-bg-checked     : var(--white);
+    --switch-slider-bg-disabled    : var(--slate-light-40);
 }
