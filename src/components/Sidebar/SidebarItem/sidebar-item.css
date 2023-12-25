@@ -7,12 +7,12 @@
     & > a { width : unset; }
 
     &:hover {
-        color            : var(--sidebar-item-hover-link-text);
-        background-color : var(--sidebar-item-hover-link-bg);
+        color            : var(--sidebar-item-text-hover);
+        background-color : var(--sidebar-item-bg-hover);
     }
 
     &:hover a [data-sidebar-item-text] {
-        color : var(--sidebar-item-hover-link-text);
+        color : var(--sidebar-item-text-hover);
     }
 
     &.has-alert {

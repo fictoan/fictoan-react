@@ -64,12 +64,12 @@
 
     summary ~ a p { color : var(--sidebar-item-default-link-text); }
 
-    a p:hover { color : var(--sidebar-item-hover-link-text); }
+    a p:hover { color : var(--sidebar-item-text-hover); }
 
     a.active {
         position         : relative;
         display          : block;
-        background-color : var(--sidebar-item-active-link-bg);
+        background-color : var(--sidebar-item-bg-active);
 
         &::before {
             display                    : block;
@@ -81,20 +81,20 @@
             content                    : "";
             border-top-right-radius    : 4px;
             border-bottom-right-radius : 4px;
-            background-color           : var(--sidebar-item-active-link-border);
+            background-color           : var(--sidebar-item-border-active);
         }
 
         & .icon-stroked svg {
             fill         : none;
-            stroke-width : var(--sidebar-item-icon-stroke-width);
-            stroke       : var(--sidebar-item-icon-stroke-colour-default);
+            stroke-width : var(--sidebar-item-icon-stroke-width-default);
+            stroke       : var(--sidebar-item-icon-stroke-active);
         }
 
         & .icon-filled svg {
             stroke : none;
-            fill   : var(--sidebar-item-icon-fill-colour-default);
+            fill   : var(--sidebar-item-icon-fill-active);
         }
 
-        p { color : var(--sidebar-item-active-link-text); }
+        p { color : var(--sidebar-item-text-active); }
     }
 }

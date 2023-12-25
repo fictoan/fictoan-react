@@ -8,23 +8,23 @@
     /* LINE ICON ============================================================ */
     &.icon-stroked svg {
         fill         : none;
-        stroke       : var(--sidebar-item-icon-default-stroke-colour);
-        stroke-width : var(--sidebar-item-icon-default-stroke-width);
+        stroke       : var(--sidebar-item-icon-stroke-default);
+        stroke-width : var(--sidebar-item-icon-stroke-width-default);
     }
 
     &:hover.icon-stroked svg {
         fill   : none;
-        stroke : var(--sidebar-item-icon-hover-stroke-colour);
+        stroke : var(--sidebar-item-icon-stroke-hover);
     }
 
     /* FILL ICON ============================================================ */
     &.icon-filled svg {
         stroke : none;
-        fill   : var(--sidebar-item-icon-default-fill-colour);
+        fill   : var(--sidebar-item-icon-fill-default);
     }
 
     &:hover.icon-filled svg {
         stroke : none;
-        fill   : var(--sidebar-item-icon-hover-fill-colour);
+        fill   : var(--sidebar-item-icon-fill-hover);
     }
 }

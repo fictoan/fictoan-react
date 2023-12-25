@@ -266,56 +266,46 @@
 
 /* SIDEBAR + CONTENT WRAPPER //////////////////////////////////////////////// */
 :root {
-    --sidebar-bg                               : var(--white);
-    --sidebar-width-default                    : 240px;
-    --sidebar-width-collapsed                  : 48px;
+    --sidebar-bg                             : var(--white);
+    --sidebar-width-default                  : 240px;
+    --sidebar-width-collapsed                : 48px;
 
-    --sidebar-collapsed-item-link-text         : var(--white);
-    --sidebar-collapsed-item-bg                : var(--hue);
-    --sidebar-collapsed-item-border-radius     : var(--global-border-radius);
+    --sidebar-header-bg                      : var(--white);
+    --sidebar-header-border-bottom           : var(--slate-dark-80);
+    --sidebar-header-logo-width              : 50%;
+    --sidebar-header-icon-width              : 40px;
 
-    --sidebar-header-bg                        : var(--white);
-    --sidebar-header-border-bottom             : var(--slate-dark-80);
-    --sidebar-header-logo-width                : 50%;
-    --sidebar-header-icon-width                : 40px;
+    --sidebar-item-icon-width                : 24px;
+    --sidebar-item-icon-stroke-default       : var(--slate-dark-40);
+    --sidebar-item-icon-stroke-width-default : 2px;
+    --sidebar-item-icon-fill-default         : var(--slate-light-40);
 
-    --sidebar-item-icon-width                  : 24px;
-    --sidebar-item-icon-default-stroke-colour  : var(--slate-light-40);
-    --sidebar-item-icon-default-stroke-width   : 2px;
-    --sidebar-item-icon-hover-stroke-colour    : var(--slate-dark-30);
-    --sidebar-item-icon-active-stroke-colour   : var(--slate);
-    --sidebar-item-icon-default-fill-colour    : var(--slate-light-40);
-    --sidebar-item-icon-hover-fill-colour      : var(--slate-dark-30);
-    --sidebar-item-icon-active-fill-colour     : var(--slate);
+    --sidebar-item-bg-hover                  : var(--grey-dark-70);
+    --sidebar-item-text-hover                : var(--hue);
+    --sidebar-item-icon-stroke-hover         : var(--slate-dark-30);
+    --sidebar-item-icon-fill-hover           : var(--slate-dark-30);
 
-    --sidebar-item-default-link-bg             : var(--white);
-    --sidebar-item-default-link-text           : var(--shade);
-    --sidebar-item-default-link-scale          : 100%;
-    --sidebar-item-default-link-font-wright    : 600;
+    --sidebar-item-bg-active                 : var(--grey-dark-60);
+    --sidebar-item-text-active               : var(--grey-light-40);
+    --sidebar-item-border-active             : var(--blue);
+    --sidebar-item-icon-fill-active          : var(--slate);
+    --sidebar-item-icon-stroke-active        : var(--slate);
+    --sidebar-item-active-indicator-width    : 2px;
 
-    --sidebar-item-hover-link-bg               : var(--slate-light-10);
-    --sidebar-item-hover-link-text             : var(--hue);
+    --sidebar-item-default-link-bg           : var(--white);
+    --sidebar-item-default-link-text         : var(--shade);
+    --sidebar-item-text-scale                : 100%;
+    --sidebar-item-text-weight               : 600;
 
-    --sidebar-item-active-link-bg              : var(--slate-dark-10);
-    --sidebar-item-active-link-text            : var(--blue);
-    --sidebar-item-active-link-border          : var(--blue);
-    --sidebar-item-active-link-border-width    : 2px;
+    --sidebar-item-has-alert-bg              : var(--red-dark-70);
 
-    --sidebar-item-has-alert-bg                : var(--red-dark-70);
+    --sidebar-footer-height                  : 32px;
+    --sidebar-footer-bg                      : var(--white);
+    --sidebar-footer-border-top              : var(--slate-light-10);
 
-    --sidebar-item-icon-size                   : 24px;
-    --sidebar-item-icon-stroke-width           : 2px;
-    --sidebar-item-icon-stroke-colour-default  : var(--slate-dark-40);
-    --sidebar-item-icon-stroke-colour-hover    : var(--slate-dark-30);
-    --sidebar-item-icon-stroke-colour-selected : var(--slate);
-
-    --sidebar-item-icon-fill-colour-default    : var(--slate-light-40);
-    --sidebar-item-icon-fill-colour-hover      : var(--slate-dark-30);
-    --sidebar-item-icon-fill-colour-selected   : var(--slate);
-
-    --sidebar-footer-height                    : 32px;
-    --sidebar-footer-bg                        : var(--white);
-    --sidebar-footer-border-top                : var(--slate-light-10);
+    --sidebar-collapsed-item-link-text       : var(--white);
+    --sidebar-collapsed-item-bg              : var(--hue);
+    --sidebar-collapsed-item-border-radius   : var(--global-border-radius);
 }
 
 /* SELECT DROPDOWN ////////////////////////////////////////////////////////// */
@@ -462,8 +452,8 @@
     --switch-bg-checked         : var(--hue);
     --switch-bg-disabled        : var(--slate-light-90);
 
-    --switch-slider-bg-default     : var(--white);
-    --switch-slider-bg-hover       : var(--white);
-    --switch-slider-bg-checked     : var(--white);
-    --switch-slider-bg-disabled    : var(--slate-light-40);
+    --switch-slider-bg-default  : var(--white);
+    --switch-slider-bg-hover    : var(--white);
+    --switch-slider-bg-checked  : var(--white);
+    --switch-slider-bg-disabled : var(--slate-light-40);
 }
