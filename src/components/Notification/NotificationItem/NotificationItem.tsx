@@ -42,7 +42,7 @@ export const NotificationItem = React.forwardRef(
                 : undefined;
 
             return () => {
-                clearTimeout(timer);
+                timer && clearTimeout(timer);
             };
         }, [show]);
 
