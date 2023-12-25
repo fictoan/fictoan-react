@@ -33,7 +33,7 @@
     "author": "",
     "license": "MIT",
     "dependencies": {
-        "prism-react-renderer": "^2.3.1"
+        "prism-react-renderer": "^1.3.5"
     },
     "devDependencies": {
         "@babel/preset-env": "^7.23.6",

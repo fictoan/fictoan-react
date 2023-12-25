@@ -1,5 +1,5 @@
 import React from "react";
-import { Highlight, Prism, Language } from "prism-react-renderer";
+import PrismReactRenderer, { Prism, Language } from "prism-react-renderer";
 
 import { registerLanguage as registerJava } from "./prismjs-components/prism-java";
 import { registerLanguage as registerCSharp } from "./prismjs-components/prism-csharp";
@@ -21,7 +21,7 @@ import "./CodeBlock.css";
 // prettier-ignore
 export interface CodeBlockCustomProps {
     source   ? : object | string;
-    language ? : Language;
+    language ? : Language | "csharp" | "java" | "scala" | "ruby" | "http";
 }
 
 export type CodeBlockElementType = HTMLPreElement;
@@ -29,14 +29,14 @@ export type CodeBlockProps = Omit<CommonAndHTMLProps<CodeBlockElementType>, keyo
     CodeBlockCustomProps;
 
 export const CodeBlock = React.forwardRef(
-    ({ source, ...props }: CodeBlockProps, ref: React.Ref<CodeBlockElementType>) => {
+    ({ source, language = "json", ...props }: CodeBlockProps, ref: React.Ref<CodeBlockElementType>) => {
         return (
             <Element<CodeBlockElementType> data-code-block as="div" ref={ref} {...props}>
-                <Highlight
+                <PrismReactRenderer
                     code={typeof source === "object" ? JSON.stringify(source, null, 2) : source ?? ""}
-                    language="json"
+                    language={language as Language}
                     {...props}
-                    prism={Prism}
+                    Prism={Prism}
                     theme={undefined}
                 >
                     {({ className, tokens, getLineProps, getTokenProps }) => (
@@ -50,7 +50,7 @@ export const CodeBlock = React.forwardRef(
                             ))}
                         </pre>
                     )}
-                </Highlight>
+                </PrismReactRenderer>
             </Element>
         );
     }
