@@ -25,7 +25,7 @@
 
 /* BREADCRUMBS ////////////////////////////////////////////////////////////// */
 :root {
-    --breadcrumbs-wrapper-bg             : var(--white);
+    --breadcrumbs-wrapper-bg             : var(--transparent);
 
     --breadcrumb-item-separator          : "/";
     --breadcrumb-item-separator-colour   : var(--slate-light-10);
