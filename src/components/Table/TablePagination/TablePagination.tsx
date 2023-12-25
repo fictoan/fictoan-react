@@ -1,3 +1,4 @@
+/// <reference types="vite-plugin-svgr/client" />
 import React from "react";
 
 import PreviousButton from "../../../assets/icons/left.svg?react";
