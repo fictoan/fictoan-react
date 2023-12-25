@@ -33,7 +33,7 @@ export const ToastItem = React.forwardRef(
                 : undefined;
 
             return () => {
-                clearTimeout(timer);
+                timer && clearTimeout(timer);
             };
         }, [show]);
 
