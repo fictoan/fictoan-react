@@ -17,7 +17,6 @@ export { BottomDrawer, type BottomDrawerProps } from "./components/BottomDrawer"
 // BUTTON //////////////////////////////////////////////////////////////////////
 export { Button, type ButtonProps } from "./components/Button";
 
-
 // BREADCRUMBS /////////////////////////////////////////////////////////////////
 export {
     BreadcrumbsWrapper, type BreadcrumbsWrapperProps,
@@ -38,6 +37,22 @@ export { Element, type ElementProps } from "./components/Element";
 
 // EXPANDABLE CONTENT //////////////////////////////////////////////////////////
 export { ExpandableContent, type ExpandableContentProps } from "./components/ExpandableContent";
+
+// FORM ////////////////////////////////////////////////////////////////////////
+export {
+    FormWrapper, type FormWrapperProps,
+    FormItem, type FormItemProps,
+    FormItemGroup, type FormItemGroupProps,
+    InputField, type InputFieldProps,
+    TextArea, type TextareaProps,
+    InputLabel,type InputLabelProps,
+    Select, type SelectProps,
+    FileUpload,type FileUploadProps,
+    RadioGroup,type RadioGroupProps,
+    RadioButton, type RadioButtonProps,
+    CheckBox, type CheckboxProps,
+    Switch, type SwitchProps
+} from "./components/Form";
 
 // H-RULE //////////////////////////////////////////////////////////////////////
 export { HRule, type HRProps } from "./components/HRule";
