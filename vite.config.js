@@ -10,15 +10,14 @@ import postcssNesting from "postcss-nesting";
 import autoprefixer from "autoprefixer";
 import pkg from "./package.json";
 
-
 const input = Object.fromEntries(
     glob
-        .sync("src/**/*.{js,jsx,ts,tsx}", { ignore: "src/**/*.stories.{js,jsx,ts,tsx}" })
+        .sync("src/**/*.{ts,tsx}", { ignore: ["src/**/*.stories.{js,jsx,ts,tsx}", "src/utils/**"] })
         .map((file) => [
             relative("src", file.slice(0, file.length - extname(file).length)),
             fileURLToPath(new URL(file, import.meta.url)),
         ])
-)
+);
 
 /** @type {import('vite').UserConfig} */
 export default defineConfig({
@@ -27,24 +26,26 @@ export default defineConfig({
             plugins: [postcssNesting, autoprefixer],
         },
     },
+    esbuild: {
+        legalComments: "none",
+    },
     build: {
-        minify: "terser",
         lib: {
             entry: input,
             name: pkg.name,
-            fileName: "index"
+            fileName: "index",
         },
         rollupOptions: {
             output: [
                 {
                     format: "es",
                     entryFileNames: "[name].js",
-                    assetFileNames: "index.[ext]"
+                    assetFileNames: "index.[ext]",
                 },
                 {
                     format: "cjs",
                     entryFileNames: "[name].cjs",
-                    assetFileNames: "index.[ext]"
+                    assetFileNames: "index.[ext]",
                 },
             ],
             external: [...Object.keys(pkg.peerDependencies)],
@@ -60,7 +61,7 @@ export default defineConfig({
         }),
         dts(),
         {
-            ...visualizer(),
+            ...visualizer({ gzipSize: true }),
             apply: "build",
         },
     ],

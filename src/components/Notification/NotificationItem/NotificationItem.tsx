@@ -26,7 +26,7 @@ export const NotificationItem = React.forwardRef(
         { show, onCloseCallback, kind, children, isDismissible, showFor, ...props }: NotificationItemProps,
         ref: React.Ref<NotificationItemElementType>
     ) => {
-        let classNames = [];
+        let classNames: string[] = [];
 
         const [isVisible, setIsVisible] = useState<boolean>(show);
 
