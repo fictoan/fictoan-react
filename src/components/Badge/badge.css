@@ -23,26 +23,26 @@ mark[data-badge] {
     /* DIFFERENT SIZES ////////////////////////////////////////////////////// */
     &.size-tiny {
         padding   : 2px 8px;
-        font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 0.72)em;
+        font-size : 0.64rem;
     }
 
     &.size-small {
         padding   : 3px 10px;
-        font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 0.8)em;
+        font-size : 0.72rem;
     }
 
     &.size-medium {
         padding   : 4px 12px;
-        font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1)em;
+        font-size : 1rem;
     }
 
     &.size-large {
         padding   : 6px 16px;
-        font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1.16)em;
+        font-size : 1.16rem;
     }
 
     &.size-huge {
         padding   : 8px 20px;
-        font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1.24)em;
+        font-size : 1.24rem;
     }
 }
