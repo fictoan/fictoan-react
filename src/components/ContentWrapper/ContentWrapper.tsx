@@ -10,6 +10,6 @@ export type ContentWrapperProps = CommonAndHTMLProps<ContentWrapperElementType>;
 
 export const ContentWrapper = React.forwardRef(
     ({ ...props }: ContentWrapperProps, ref: React.Ref<ContentWrapperElementType>) => {
-        return <Element<ContentWrapperElementType> as="main" data-content-wrapper ref={ref} {...props} />;
+        return <Element<ContentWrapperElementType> as="div" data-content-wrapper ref={ref} {...props} />;
     }
 );
