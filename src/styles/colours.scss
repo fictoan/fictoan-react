@@ -58,7 +58,7 @@ $levels: 10;
                 $palette-variable-name: palette-#{$color};
             }
 
-            --#{$palette-variable-name}: #{$value}, #{$lightness};
+            --#{$palette-variable-name}: var(--base-#{$color}), #{$lightness};
         }
     }
 }
