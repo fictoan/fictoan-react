@@ -40,11 +40,11 @@ export const CodeBlock = React.forwardRef(
                     theme={undefined}
                 >
                     {({ className, tokens, getLineProps, getTokenProps }) => (
-                        <pre ref={ref} className={className}>
+                        <pre ref={ref} className={className} style={{}}>
                             {tokens.map((line, i) => (
                                 <div {...getLineProps({ line, key: i })}>
                                     {line.map((token, key) => (
-                                        <span {...getTokenProps({ token, key })} />
+                                        <span {...getTokenProps({ token, key })} style={{}} />
                                     ))}
                                 </div>
                             ))}
