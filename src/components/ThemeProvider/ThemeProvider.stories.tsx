@@ -26,12 +26,15 @@ export const Default: Story = {
             "card-bg": "var(--sky-light-80)",
             "global-border-radius": "16px",
         },
+        customColors: {
+            "peach": "#ff9e9e",
+        },
         currentTheme: "light",
     },
     render: (args) => (
         <ThemeProvider {...args}>
             <Card shape="rounded">
-                <Text>Change the theme!</Text>
+                <Text className="text-peach">Change the theme!</Text>
             </Card>
         </ThemeProvider>
     )
