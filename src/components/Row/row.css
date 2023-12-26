@@ -149,11 +149,11 @@
             padding-right : 6vw;
         }
 
-        &:not(.retain-layout-on-mobile) > .portion:not([class*="on-mobile"]) { grid-column : span 24; }
+        &:not(.retain-layout-on-mobile) > [data-portion]:not([class*="on-mobile"]) { grid-column : span 24; }
     }
 
     @media all and (min-width : 601px) and (max-width : 900px) {
-        &:not(.retain-layout-on-tablet-portrait) > .portion:not([class*="on-tablet-portrait"]) { grid-column : span 24; }
+        &:not(.retain-layout-on-tablet-portrait) > [data-portion]:not([class*="on-tablet-portrait"]) { grid-column : span 24; }
     }
 }
 
