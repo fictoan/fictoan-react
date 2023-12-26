@@ -2,11 +2,11 @@ import "./styles/Normalize.css";
 import "./styles/reset.css";
 import "./styles/globals.css";
 import "./styles/custom-colours.css";
-import "./styles/theme.css";
-import "./styles/utilities.css";
 import "./styles/colours.scss";
-
+import "./styles/utilities.css";
 import "./components/Typography/typography.css";
+
+import "./styles/theme.css";
 
 // BADGE ///////////////////////////////////////////////////////////////////////
 export { Badge, type BadgeProps } from "./components/Badge";

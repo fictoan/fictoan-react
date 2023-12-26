@@ -3,6 +3,7 @@ import { extname, relative } from "path";
 import { fileURLToPath } from "node:url";
 import { glob } from "glob";
 import { visualizer } from "rollup-plugin-visualizer";
+import { terser } from "rollup-plugin-terser";
 import dts from "vite-plugin-dts";
 import svgr from "vite-plugin-svgr";
 import react from "@vitejs/plugin-react";
@@ -12,7 +13,7 @@ import pkg from "./package.json";
 
 const input = Object.fromEntries(
     glob
-        .sync("src/**/*.{ts,tsx}", { ignore: ["src/**/*.stories.{js,jsx,ts,tsx}", "src/utils/**"] })
+        .sync(["src/index.tsx", "src/components/**/*.{ts,tsx}"], { ignore: "src/**/*.stories.{js,jsx,ts,tsx}" })
         .map((file) => [
             relative("src", file.slice(0, file.length - extname(file).length)),
             fileURLToPath(new URL(file, import.meta.url)),
@@ -26,10 +27,8 @@ export default defineConfig({
             plugins: [postcssNesting, autoprefixer],
         },
     },
-    esbuild: {
-        legalComments: "none",
-    },
     build: {
+        minify: "terser",
         lib: {
             entry: input,
             name: pkg.name,
@@ -49,6 +48,15 @@ export default defineConfig({
                 },
             ],
             external: [...Object.keys(pkg.peerDependencies)],
+            plugins: [
+                // 👇 This because for some reason the Vite terserOptions don't work
+                terser({
+                    format: {
+                        comments: false,
+                        preserve_annotations: true,
+                    }
+                }),
+            ],
         },
     },
     plugins: [

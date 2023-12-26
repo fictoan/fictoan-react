@@ -22,7 +22,7 @@ type Story = StoryObj<typeof Badge>;
 
 export const Custom: Story = {
     args: {
-        bgColour: "green-light-10",
+        bgColour: "green-light-80",
         textColour: "green",
         shape: "curved",
     },

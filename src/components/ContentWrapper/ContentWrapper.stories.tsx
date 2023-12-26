@@ -31,7 +31,7 @@ export const Default: Story = {
                         praesentium nesciunt nobis optio error amet nulla! Doloremque, vitae?
                     </Text>
                 </Card>
-                <Text>
+                <Text marginTop="tiny">
                     This is another paragraph. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt
                     perspiciatis culpa beatae placeat ratione laborum nam voluptatibus ex eius, temporibus rem numquam
                     illum corrupti modi minus aliquid, molestiae a sunt ducimus cumque quasi nulla? Labore pariatur

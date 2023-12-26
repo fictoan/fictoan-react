@@ -5,9 +5,10 @@ import "../src/styles/reset.css";
 import "../src/styles/globals.css";
 import "../src/styles/custom-colours.css";
 import "../src/styles/colours.scss";
-import "../src/styles/theme.css";
 import "../src/styles/utilities.css";
-import "../src/components/Typography/typography.css";
+import "../src//components/Typography/typography.css";
+
+import "../src/styles/theme.css";
 
 const preview: Preview = {
     parameters: {
