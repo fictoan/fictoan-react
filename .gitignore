@@ -58,7 +58,7 @@ backend/Cargo.lock
 *.pdb
 
 # Visualizer
-stats.html
+stats*.html
 
 # storybook
 storybook-static
