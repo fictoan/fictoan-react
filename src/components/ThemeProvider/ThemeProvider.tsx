@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Element } from "../Element/Element";
 import { CommonAndHTMLProps } from "../Element/constants";
@@ -14,19 +14,22 @@ export interface ThemeProviderProps extends CommonAndHTMLProps<ThemeProviderElem
         [key: string]: string;
     };
     currentTheme?: string;
-    onThemeInjection?: () => void;
 }
 
 export const ThemeProvider = React.forwardRef(
     (
-        { theme, customColors, currentTheme, onThemeInjection, children, ...props }: ThemeProviderProps,
+        { theme, customColors, currentTheme, children, ...props }: ThemeProviderProps,
         ref: React.Ref<ThemeProviderElementType>
     ) => {
+        const [shouldRender, setShouldRender] = useState<boolean>(false);
+
         useEffect(() => {
             if (theme) {
                 const styleTag = getStyleTag("fictoan-theme");
                 addCssVariables(styleTag, theme);
-                onThemeInjection && onThemeInjection();
+                if (!shouldRender) {
+                    setShouldRender(true);
+                }
             }
 
             return () => {
@@ -48,8 +51,9 @@ export const ThemeProvider = React.forwardRef(
 .border-${colorName} {border-color: var(--${colorName});}`
                 );
                 styleTag.appendChild(document.createTextNode(styles.join("\n")));
-                onThemeInjection && onThemeInjection();
-                console.log(styleTag);
+                if (!shouldRender) {
+                    setShouldRender(true);
+                }
             }
 
             return () => {
@@ -57,6 +61,19 @@ export const ThemeProvider = React.forwardRef(
                 styleTag.innerHTML = "";
             };
         }, [customColors]);
+
+        useEffect(() => {
+            if (currentTheme) {
+                document.documentElement.classList.add(currentTheme);
+                if (!shouldRender) {
+                    setShouldRender(true);
+                }
+            }
+
+            return () => {
+                document.documentElement.className = "";
+            };
+        }, [currentTheme]);
 
         const getStyleTag = (id: string): HTMLElement => {
             let styleTag = document.getElementById(id);
@@ -77,8 +94,8 @@ export const ThemeProvider = React.forwardRef(
         };
 
         return (
-            <Element<ThemeProviderElementType> as="div" className={currentTheme} ref={ref} {...props}>
-                {children}
+            <Element<ThemeProviderElementType> as="div" data-theme-provider ref={ref} {...props}>
+                {shouldRender && children}
             </Element>
         );
     }
