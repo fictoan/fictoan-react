@@ -75,7 +75,7 @@
     & .dismiss-button:hover { opacity : 1; }
 
     & .dismiss-button:before {
-        content     : "\\d7";
+        content     : "\00D7";
         font-size   : 24px;
         line-height : 0;
     }

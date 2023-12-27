@@ -40,6 +40,7 @@ export const InfoPanel = React.forwardRef(
                 onCloseCallback();
             }
         };
+
         useClickOutside(ref ?? infoPanelRef, () => {
             if (closeOnClickOutside) closeInfoPanel();
         });

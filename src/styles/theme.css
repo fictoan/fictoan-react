@@ -49,7 +49,7 @@
     --button-primary-hover-border-width       : var(--global-border-width);
     --button-primary-hover-border-radius      : var(--global-border-radius);
 
-    --button-primary-loading-spinner-colour   : var(--blue);
+    --button-primary-loading-spinner-colour   : var(--white);
 
     --button-primary-disabled-bg              : var(--blue-light-10);
     --button-primary-disabled-text            : var(--white);
@@ -59,14 +59,14 @@
 
 
     /* SECONDARY BUTTON ===================================================== */
-    --button-secondary-default-bg             : var(--blue);
-    --button-secondary-default-text           : var(--white);
-    --button-secondary-default-border-colour  : var(--blue);
+    --button-secondary-default-bg             : var(--blue-light-50);
+    --button-secondary-default-text           : var(--blue);
+    --button-secondary-default-border-colour  : var(--blue-light-50);
     --button-secondary-default-border-width   : var(--global-border-width);
     --button-secondary-default-border-radius  : var(--global-border-radius);
 
     --button-secondary-hover-bg               : var(--blue-light-40);
-    --button-secondary-hover-text             : var(--white);
+    --button-secondary-hover-text             : var(--blue);
     --button-secondary-hover-border-colour    : var(--blue-light-40);
     --button-secondary-hover-border-width     : var(--global-border-width);
     --button-secondary-hover-border-radius    : var(--global-border-radius);
@@ -81,15 +81,15 @@
 
 
     /* TERTIARY BUTTON ====================================================== */
-    --button-tertiary-default-bg              : var(--blue);
-    --button-tertiary-default-text            : var(--white);
+    --button-tertiary-default-bg              : var(--transparent);
+    --button-tertiary-default-text            : var(--blue);
     --button-tertiary-default-border-colour   : var(--blue);
     --button-tertiary-default-border-width    : var(--global-border-width);
     --button-tertiary-default-border-radius   : var(--global-border-radius);
 
-    --button-tertiary-hover-bg                : var(--blue-light-40);
-    --button-tertiary-hover-text              : var(--white);
-    --button-tertiary-hover-border-colour     : var(--blue-light-40);
+    --button-tertiary-hover-bg                : var(--blue-light-70);
+    --button-tertiary-hover-text              : var(--blue);
+    --button-tertiary-hover-border-colour     : var(--blue-light-20);
     --button-tertiary-hover-border-width      : var(--global-border-width);
     --button-tertiary-hover-border-radius     : var(--global-border-radius);
 
