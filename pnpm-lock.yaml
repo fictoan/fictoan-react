@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  prism-react-renderer:
-    specifier: ^1.2.1
-    version: 1.2.1(react@18.2.0)
-
 devDependencies:
   '@babel/preset-env':
     specifier: ^7.23.6
@@ -16,6 +11,9 @@ devDependencies:
   '@babel/preset-react':
     specifier: ^7.23.3
     version: 7.23.3(@babel/core@7.23.6)
+  '@rollup/plugin-terser':
+    specifier: ^0.4.4
+    version: 0.4.4
   '@storybook/addon-essentials':
     specifier: ^7.6.6
     version: 7.6.6(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)
@@ -36,7 +34,7 @@ devDependencies:
     version: 7.6.6(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)
   '@storybook/react-vite':
     specifier: ^7.6.6
-    version: 7.6.6(react-dom@18.2.0)(react@18.2.0)(rollup@2.79.1)(typescript@5.3.3)(vite@5.0.10)
+    version: 7.6.6(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)(vite@5.0.10)
   '@storybook/test':
     specifier: ^7.6.6
     version: 7.6.6
@@ -61,18 +59,18 @@ devDependencies:
   postcss-nesting:
     specifier: ^12.0.2
     version: 12.0.2(postcss@8.4.32)
+  prism-react-renderer:
+    specifier: 2.3.1
+    version: 2.3.1(react@18.2.0)
   react:
     specifier: ^18.2.0
     version: 18.2.0
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
-  rollup-plugin-terser:
-    specifier: ^7.0.2
-    version: 7.0.2(rollup@2.79.1)
   rollup-plugin-visualizer:
     specifier: ^5.11.0
-    version: 5.11.0(rollup@2.79.1)
+    version: 5.11.0
   sass:
     specifier: ^1.69.5
     version: 1.69.5
@@ -87,13 +85,13 @@ devDependencies:
     version: 5.0.10(sass@1.69.5)
   vite-plugin-dts:
     specifier: ^3.6.4
-    version: 3.6.4(rollup@2.79.1)(typescript@5.3.3)(vite@5.0.10)
+    version: 3.6.4(typescript@5.3.3)(vite@5.0.10)
   vite-plugin-lib-inject-css:
     specifier: ^1.3.0
     version: 1.3.0(vite@5.0.10)
   vite-plugin-svgr:
     specifier: ^4.2.0
-    version: 4.2.0(rollup@2.79.1)(typescript@5.3.3)(vite@5.0.10)
+    version: 4.2.0(typescript@5.3.3)(vite@5.0.10)
 
 packages:
 
@@ -2691,6 +2689,20 @@ packages:
       '@babel/runtime': 7.23.6
     dev: true
 
+  /@rollup/plugin-terser@0.4.4:
+    resolution: {integrity: sha512-XHeJC5Bgvs8LfukDwWZp7yeqin6ns8RTl2B9avbejt6tZqsqvVoWI7ZTQrcNsfKEDWBTnTxM8nMDkO2IFFbd0A==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^2.0.0||^3.0.0||^4.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      serialize-javascript: 6.0.1
+      smob: 1.4.1
+      terser: 5.26.0
+    dev: true
+
   /@rollup/plugin-virtual@3.0.2(rollup@3.29.4):
     resolution: {integrity: sha512-10monEYsBp3scM4/ND4LNH5Rxvh3e/cVeL3jWTgZ2SrQ+BmUoQcopVQvnaMcOnykb1VkxUFuDAN+0FnpTFRy2A==}
     engines: {node: '>=14.0.0'}
@@ -2703,7 +2715,7 @@ packages:
       rollup: 3.29.4
     dev: true
 
-  /@rollup/pluginutils@5.1.0(rollup@2.79.1):
+  /@rollup/pluginutils@5.1.0:
     resolution: {integrity: sha512-XTIWOPPcpvyKI6L1NHo0lFlCyznUEyPmPY1mc3KpPVDYulHSTvyeLNVW00QTLIAFNhR3kYnJTQHeGqU4M3n09g==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -2715,7 +2727,6 @@ packages:
       '@types/estree': 1.0.5
       estree-walker: 2.0.2
       picomatch: 2.3.1
-      rollup: 2.79.1
     dev: true
 
   /@rollup/rollup-android-arm-eabi@4.9.1:
@@ -3471,7 +3482,7 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: true
 
-  /@storybook/react-vite@7.6.6(react-dom@18.2.0)(react@18.2.0)(rollup@2.79.1)(typescript@5.3.3)(vite@5.0.10):
+  /@storybook/react-vite@7.6.6(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)(vite@5.0.10):
     resolution: {integrity: sha512-76jH+rX0OhEwGraA2BphSu+19nKaSUnNw1Gp1zQ/UUX2FefZuI+6DI34LEzJNfq7T2kbGFzZgf1xDkL6RSwrXA==}
     engines: {node: '>=16'}
     peerDependencies:
@@ -3480,7 +3491,7 @@ packages:
       vite: ^3.0.0 || ^4.0.0 || ^5.0.0
     dependencies:
       '@joshwooding/vite-plugin-react-docgen-typescript': 0.3.0(typescript@5.3.3)(vite@5.0.10)
-      '@rollup/pluginutils': 5.1.0(rollup@2.79.1)
+      '@rollup/pluginutils': 5.1.0
       '@storybook/builder-vite': 7.6.6(typescript@5.3.3)(vite@5.0.10)
       '@storybook/react': 7.6.6(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)
       '@vitejs/plugin-react': 3.1.0(vite@5.0.10)
@@ -3980,6 +3991,10 @@ packages:
 
   /@types/pretty-hrtime@1.0.3:
     resolution: {integrity: sha512-nj39q0wAIdhwn7DGUyT9irmsKK1tV0bd5WFEhgpqNTMFZ8cE+jieuTphCW0tfdm47S2zVT5mr09B28b1chmQMA==}
+    dev: true
+
+  /@types/prismjs@1.26.3:
+    resolution: {integrity: sha512-A0D0aTXvjlqJ5ZILMz3rNfDBOx9hHxLZYv2by47Sm/pqW35zzjusrZTryatjN/Rf8Us2gZrJD+KeHbUSTux1Cw==}
     dev: true
 
   /@types/prop-types@15.7.11:
@@ -4755,6 +4770,11 @@ packages:
   /clone@1.0.4:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
+    dev: true
+
+  /clsx@2.0.0:
+    resolution: {integrity: sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==}
+    engines: {node: '>=6'}
     dev: true
 
   /color-convert@1.9.3:
@@ -6283,15 +6303,6 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /jest-worker@26.6.2:
-    resolution: {integrity: sha512-KWYVV1c4i+jbMpaBC+U++4Va0cp8OisU185o73T1vo99hqi7w8tSJfUXYswwqqrjzwxa6KpRK54WhPvwf5w6PQ==}
-    engines: {node: '>= 10.13.0'}
-    dependencies:
-      '@types/node': 20.10.5
-      merge-stream: 2.0.0
-      supports-color: 7.2.0
-    dev: true
-
   /jest-worker@29.7.0:
     resolution: {integrity: sha512-eIz2msL/EzL9UFTFFx7jBTkeZfku0yUAyZZZmJ93H2TYEiroIx2PQjEXcwYtYl8zXCxb+PAmA2hLIt/6ZEkPHw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -6308,6 +6319,7 @@ packages:
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
+    dev: true
 
   /js-yaml@3.14.1:
     resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==}
@@ -6480,6 +6492,7 @@ packages:
     hasBin: true
     dependencies:
       js-tokens: 4.0.0
+    dev: true
 
   /loupe@2.3.7:
     resolution: {integrity: sha512-zSMINGVYkdpYSOBmLi0D1Uo7JU9nVdQKrHxC8eYlV+9YKK9WePqAlL7lSlorG/U2Fw1w0hTBmaa/jrQ3UbPHtA==}
@@ -7138,13 +7151,15 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /prism-react-renderer@1.2.1(react@18.2.0):
-    resolution: {integrity: sha512-w23ch4f75V1Tnz8DajsYKvY5lF7H1+WvzvLUcF0paFxkTHSp42RS0H5CttdN2Q8RR3DRGZ9v5xD/h3n8C8kGmg==}
+  /prism-react-renderer@2.3.1(react@18.2.0):
+    resolution: {integrity: sha512-Rdf+HzBLR7KYjzpJ1rSoxT9ioO85nZngQEoFIhL07XhtJHlCU3SOz0GJ6+qvMyQe0Se+BV3qpe6Yd/NmQF5Juw==}
     peerDependencies:
-      react: '>=0.14.9'
+      react: '>=16.0.0'
     dependencies:
+      '@types/prismjs': 1.26.3
+      clsx: 2.0.0
       react: 18.2.0
-    dev: false
+    dev: true
 
   /process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
@@ -7425,6 +7440,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
+    dev: true
 
   /read-pkg-up@7.0.1:
     resolution: {integrity: sha512-zK0TB7Xd6JpCLmlLmufqykGE+/TlOePD6qKClNW7hHDKFh/J7/7gCWGR7joEQEW1bKq3a3yUZSObOoWLFQ4ohg==}
@@ -7624,20 +7640,7 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup-plugin-terser@7.0.2(rollup@2.79.1):
-    resolution: {integrity: sha512-w3iIaU4OxcF52UUXiZNsNeuXIMDvFrr+ZXK6bFZ0Q60qyVfq4uLptoS4bbq3paG3x216eQllFZX7zt6TIImguQ==}
-    deprecated: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-terser
-    peerDependencies:
-      rollup: ^2.0.0
-    dependencies:
-      '@babel/code-frame': 7.23.5
-      jest-worker: 26.6.2
-      rollup: 2.79.1
-      serialize-javascript: 4.0.0
-      terser: 5.26.0
-    dev: true
-
-  /rollup-plugin-visualizer@5.11.0(rollup@2.79.1):
+  /rollup-plugin-visualizer@5.11.0:
     resolution: {integrity: sha512-exM0Ms2SN3AgTzMeW7y46neZQcyLY7eKwWAop1ZoRTCZwyrIRdMMJ6JjToAJbML77X/9N8ZEpmXG4Z/Clb9k8g==}
     engines: {node: '>=14'}
     hasBin: true
@@ -7649,17 +7652,8 @@ packages:
     dependencies:
       open: 8.4.2
       picomatch: 2.3.1
-      rollup: 2.79.1
       source-map: 0.7.4
       yargs: 17.7.2
-    dev: true
-
-  /rollup@2.79.1:
-    resolution: {integrity: sha512-uKxbd0IhMZOhjAiD5oAFp7BqvkA4Dv47qpOCtaNvng4HBwdbWtdOh8f5nZNuk2rp51PMGk3bzfWu5oayNEuYnw==}
-    engines: {node: '>=10.0.0'}
-    hasBin: true
-    optionalDependencies:
-      fsevents: 2.3.3
     dev: true
 
   /rollup@3.29.4:
@@ -7764,8 +7758,8 @@ packages:
       - supports-color
     dev: true
 
-  /serialize-javascript@4.0.0:
-    resolution: {integrity: sha512-GaNA54380uFefWghODBWEGisLZFj00nS5ACs6yHa9nLqlLpVLO8ChDGeKRjZnV4Nh4n0Qi7nhYZD/9fCPzEqkw==}
+  /serialize-javascript@6.0.1:
+    resolution: {integrity: sha512-owoXEFjWRllis8/M1Q+Cw5k8ZH40e3zhp/ovX+Xr/vi1qj6QesbyXXViFbpNvWvPNAD62SutwEXavefrLJWj7w==}
     dependencies:
       randombytes: 2.1.0
     dev: true
@@ -7855,6 +7849,10 @@ packages:
   /slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
+    dev: true
+
+  /smob@1.4.1:
+    resolution: {integrity: sha512-9LK+E7Hv5R9u4g4C3p+jjLstaLe11MDsL21UpYaCNmapvMkYhqCV4A/f/3gyH8QjMyh6l68q9xC85vihY9ahMQ==}
     dev: true
 
   /snake-case@3.0.4:
@@ -8431,7 +8429,7 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vite-plugin-dts@3.6.4(rollup@2.79.1)(typescript@5.3.3)(vite@5.0.10):
+  /vite-plugin-dts@3.6.4(typescript@5.3.3)(vite@5.0.10):
     resolution: {integrity: sha512-yOVhUI/kQhtS6lCXRYYLv2UUf9bftcwQK9ROxCX2ul17poLQs02ctWX7+vXB8GPRzH8VCK3jebEFtPqqijXx6w==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -8442,7 +8440,7 @@ packages:
         optional: true
     dependencies:
       '@microsoft/api-extractor': 7.39.0
-      '@rollup/pluginutils': 5.1.0(rollup@2.79.1)
+      '@rollup/pluginutils': 5.1.0
       '@vue/language-core': 1.8.26(typescript@5.3.3)
       debug: 4.3.4
       kolorist: 1.8.0
@@ -8465,12 +8463,12 @@ packages:
       vite: 5.0.10(sass@1.69.5)
     dev: true
 
-  /vite-plugin-svgr@4.2.0(rollup@2.79.1)(typescript@5.3.3)(vite@5.0.10):
+  /vite-plugin-svgr@4.2.0(typescript@5.3.3)(vite@5.0.10):
     resolution: {integrity: sha512-SC7+FfVtNQk7So0XMjrrtLAbEC8qjFPifyD7+fs/E6aaNdVde6umlVVh0QuwDLdOMu7vp5RiGFsB70nj5yo0XA==}
     peerDependencies:
       vite: ^2.6.0 || 3 || 4 || 5
     dependencies:
-      '@rollup/pluginutils': 5.1.0(rollup@2.79.1)
+      '@rollup/pluginutils': 5.1.0
       '@svgr/core': 8.1.0(typescript@5.3.3)
       '@svgr/plugin-jsx': 8.1.0(@svgr/core@8.1.0)
       vite: 5.0.10(sass@1.69.5)
