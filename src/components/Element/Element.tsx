@@ -56,6 +56,15 @@ export const Element = React.forwardRef(<K extends {}>(props: ElementProps<K>, r
 
     const { as, className: _, classNames: __, ...sanitizedProps } = props;
 
+    // To support deprecated colours
+    const getNewColour = (colour: string): string => {
+        const colourSegments = colour.split("-");
+        if (colourSegments.length === 2) {
+            return `${colourSegments[0]}-light-${100 - Number(colourSegments[1])}`;
+        }
+        return colour;
+    };
+
     return (
         <Component
             ref={ref}
@@ -66,16 +75,16 @@ export const Element = React.forwardRef(<K extends {}>(props: ElementProps<K>, r
                     size && `size-${size}`,
                     isFullWidth && "full-width",
                     isFullHeight && "full-height",
-                    bgColor && `bg-${String(bgColor)}`,
-                    bgColour && `bg-${String(bgColour)}`,
-                    textColor && `text-${String(textColor)}`,
-                    textColour && `text-${String(textColour)}`,
-                    borderColor && `border-${String(borderColor)}`,
-                    borderColour && `border-${String(borderColour)}`,
-                    fillColor && `fill-${String(fillColor)}`,
-                    fillColour && `fill-${String(fillColour)}`,
-                    strokeColor && `stroke-${String(strokeColor)}`,
-                    strokeColour && `stroke-${String(strokeColour)}`,
+                    bgColor && `bg-${getNewColour(bgColor)}`,
+                    bgColour && `bg-${getNewColour(bgColour)}`,
+                    textColor && `text-${getNewColour(textColor)}`,
+                    textColour && `text-${getNewColour(textColour)}`,
+                    borderColor && `border-${getNewColour(borderColor)}`,
+                    borderColour && `border-${getNewColour(borderColour)}`,
+                    fillColor && `fill-${getNewColour(fillColor)}`,
+                    fillColour && `fill-${getNewColour(fillColour)}`,
+                    strokeColor && `stroke-${getNewColour(strokeColor)}`,
+                    strokeColour && `stroke-${getNewColour(strokeColour)}`,
                     hideOnMobile && "hide-on-mobile",
                     showOnlyOnMobile && "show-only-on-mobile",
                     hideOnTabletPortrait && "hide-on-tablet-portrait",
