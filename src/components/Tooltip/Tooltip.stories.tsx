@@ -1,33 +1,40 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 
-import { Tooltip } from "./Tooltip";
+import { Tooltip, TooltipProps } from "./Tooltip";
 import { Button } from "../Button/Button";
 
 const meta: Meta<typeof Tooltip> = {
-    component: Tooltip,
-    tags: ["autodocs"],
-    parameters: {
-        docs: {
-            description: {
-                component: "This is a Tooltip.",
+    component  : Tooltip,
+    tags       : [ "autodocs" ],
+    argTypes   : {
+        position : {
+            control : { type : "select", options : [ "top", "bottom", "left", "right" ] },
+        },
+        label    : {
+            control : "text",
+        },
+    },
+    parameters : {
+        docs : {
+            description : {
+                component : "Tooltip component that shows text on hover.",
             },
         },
     },
 };
 
 export default meta;
-type Story = StoryObj<typeof Tooltip>;
-
-export const Default: Story = {
-    args: {
-        label: "Testing this really really long description",
-        position: "right",
-        bgColor: "grey",
-        textColor: "white",
-        borderColor: "transparent",
-        shape: "rounded",
-        shadow: "mild",
-        children: <Button kind="primary">Test</Button>,
+export const Default: StoryObj = {
+    args   : {
+        label    : "Testing this really really long description",
+        labelFor : "storybook-button",
+        position : "right",
     },
+    render : (args: TooltipProps) => (
+        <div>
+            <Button id="storybook-button">Hover Over Me</Button>
+            <Tooltip {...args} />
+        </div>
+    ),
 };

@@ -32,9 +32,9 @@ p {
     margin : 0;
 }
 
-img {
+img, video {
     display : block;
-    width   : auto;
+    width   : 100%;
 }
 
 picture { line-height : 1; }

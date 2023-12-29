@@ -87,7 +87,7 @@
     --button-tertiary-default-border-width    : var(--global-border-width);
     --button-tertiary-default-border-radius   : var(--global-border-radius);
 
-    --button-tertiary-hover-bg                : var(--blue-light-70);
+    --button-tertiary-hover-bg                : var(--blue-light-80);
     --button-tertiary-hover-text              : var(--blue);
     --button-tertiary-hover-border-colour     : var(--blue-light-20);
     --button-tertiary-hover-border-width      : var(--global-border-width);
