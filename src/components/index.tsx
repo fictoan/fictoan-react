@@ -1,42 +1,35 @@
-import "./styles/Normalize.css";
-import "./styles/reset.css";
-import "./styles/globals.css";
-import "./styles/custom-colours.css";
-import "./styles/colours.scss";
-import "./styles/utilities.css";
-import "./components/Typography/typography.css";
-
-import "./styles/theme.css";
-
 // BADGE ///////////////////////////////////////////////////////////////////////
-export { Badge, type BadgeProps } from "./components/Badge";
+export { Badge, type BadgeProps } from "./Badge";
 
 // BOTTOM DRAWER ///////////////////////////////////////////////////////////////
-export { BottomDrawer, type BottomDrawerProps } from "./components/BottomDrawer";
+export { BottomDrawer, type BottomDrawerProps } from "./BottomDrawer";
 
 // BUTTON //////////////////////////////////////////////////////////////////////
-export { Button, type ButtonProps } from "./components/Button";
+export { Button, type ButtonProps } from "./Button";
 
 // BREADCRUMBS /////////////////////////////////////////////////////////////////
 export {
     BreadcrumbsWrapper, type BreadcrumbsWrapperProps,
     BreadcrumbItem, type BreadcrumbItemProps
-} from "./components/Breadcrumbs";
+} from "./Breadcrumbs";
 
 // CALLOUT /////////////////////////////////////////////////////////////////////
-export { Callout, type CalloutProps } from "./components/Callout";
+export { Callout, type CalloutProps } from "./Callout";
 
 // CARD ////////////////////////////////////////////////////////////////////////
-export { Card, type CardProps } from "./components/Card";
+export { Card, type CardProps } from "./Card";
+
+// CODE BLCOK //////////////////////////////////////////////////////////////////
+export { CodeBlock, type CodeBlockProps } from "./CodeBlock";
 
 // CONTENT WRAPPER /////////////////////////////////////////////////////////////
-export { ContentWrapper, type ContentWrapperProps } from "./components/ContentWrapper";
+export { ContentWrapper, type ContentWrapperProps } from "./ContentWrapper";
 
 // ELEMENT /////////////////////////////////////////////////////////////////////
-export { Element, type ElementProps } from "./components/Element";
+export { Element, type ElementProps } from "./Element";
 
 // EXPANDABLE CONTENT //////////////////////////////////////////////////////////
-export { ExpandableContent, type ExpandableContentProps } from "./components/ExpandableContent";
+export { ExpandableContent, type ExpandableContentProps } from "./ExpandableContent";
 
 // FORM ////////////////////////////////////////////////////////////////////////
 export {
@@ -52,28 +45,28 @@ export {
     RadioButton, type RadioButtonProps,
     CheckBox, type CheckboxProps,
     Switch, type SwitchProps
-} from "./components/Form";
+} from "./Form";
 
 // H-RULE //////////////////////////////////////////////////////////////////////
-export { HRule, type HRProps } from "./components/HRule";
+export { HRule, type HRProps } from "./HRule";
 
 // INFO PANEL //////////////////////////////////////////////////////////////////
-export { InfoPanel, type InfoPanelProps } from "./components/InfoPanel";
+export { InfoPanel, type InfoPanelProps } from "./InfoPanel";
 
 // NOTIFICATIONS  /////////////////////////////////////////////////////////////
 export {
     NotificationsWrapper, type NotificationsWrapperProps,
     NotificationItem, type NotificationItemProps
-} from "./components/Notification";
+} from "./Notification";
 
 // PORTION /////////////////////////////////////////////////////////////////////
-export { Portion, type PortionProps } from "./components/Portion";
+export { Portion, type PortionProps } from "./Portion";
 
 // PROGRESS BAR ////////////////////////////////////////////////////////////////
-export { ProgressBar, type ProgressBarProps, type ProgressBarMetaProps } from "./components/ProgressBar";
+export { ProgressBar, type ProgressBarProps, type ProgressBarMetaProps } from "./ProgressBar";
 
 // ROW /////////////////////////////////////////////////////////////////////////
-export { Row, type RowProps } from "./components/Row";
+export { Row, type RowProps } from "./Row";
 
 // SIDEBAR /////////////////////////////////////////////////////////////////////
 export {
@@ -83,34 +76,34 @@ export {
     SidebarItemIcon, type SidebarItemIconProps,
     SidebarItemText, type SidebarItemTextProps,
     SidebarFooter, type SidebarFooterProps
-} from "./components/Sidebar";
+} from "./Sidebar";
 
 // SPINNER /////////////////////////////////////////////////////////////////////
-export { Spinner, type SpinnerProps } from "./components/Spinner";
+export { Spinner, type SpinnerProps } from "./Spinner";
 
 // TABLE ///////////////////////////////////////////////////////////////////////
 export {
     Table, type TableProps,
     TablePagination, type TablePaginationProps
-} from "./components/Table";
+} from "./Table";
 
 // TABS  ///////////////////////////////////////////////////////////////////////
-export { Tabs, type TabsProps } from "./components/Tabs";
+export { Tabs, type TabsProps } from "./Tabs";
 
 // THEME PROVIDER  /////////////////////////////////////////////////////////////
-export { ThemeProvider, type ThemeProviderProps } from "./components/ThemeProvider";
+export { ThemeProvider, type ThemeProviderProps } from "./ThemeProvider";
 
 // TOAST ///////////////////////////////////////////////////////////////////////
 export {
     ToastsWrapper, type ToastsWrapperProps,
     ToastItem, type ToastItemProps
-} from "./components/Toast";
+} from "./Toast";
 
 // TOOLTIP  ///////////////////////////////////////////////////////////////////
-export { Tooltip, type TooltipProps } from "./components/Tooltip";
+export { Tooltip, type TooltipProps } from "./Tooltip";
 
 // TYPOGRAPHY //////////////////////////////////////////////////////////////////
 export {
     Text, type TextProps,
     Heading, type HeadingProps,
-} from "./components/Typography";
+} from "./Typography";

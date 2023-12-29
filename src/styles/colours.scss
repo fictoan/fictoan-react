@@ -30,7 +30,7 @@ $class-prefixes : (
     "text": "color",
     "stroke": "stroke",
     "fill": "fill",
-    "border": "border-color"
+    "border": "border"
 );
 
 $levels: 10;
@@ -110,6 +110,10 @@ $levels: 10;
             } @else if $i == $levels {
                 $class-name: #{$prefix}-#{$color};
                 $css-property-value: var(--#{$color});
+            }
+
+            @if $prefix == "border" {
+                $css-property-value:  "solid var(--global-border-width) " + $css-property-value;
             }
 
             .#{$class-name} {
