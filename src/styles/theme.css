@@ -385,7 +385,7 @@
     /* HEADINGS ============================================================= */
     --heading-font-family       : var(--font-family-sans-serif);
     --heading-font-size         : 1.5rem;
-    --heading-size-multiplier   : 1.6;
+    --heading-size-multiplier   : 1.2;
     --heading-line-height       : 1;
     --heading-font-weight       : 700;
     --heading-text-colour       : var(--slate);

@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 
 import { Element } from "../Element/Element";
-import { CommonAndHTMLProps } from "../Element/constants";
 import { HRule } from "../HRule/HRule";
 import { Text } from "../Typography/Text";
+
+import { CommonAndHTMLProps } from "../Element/constants";
 
 import "./tabs.css";
 
@@ -16,17 +17,18 @@ interface TabType {
 
 // prettier-ignore
 export interface TabsCustomProps {
-    tabs : TabType[];
+    tabs                          : TabType[];
     /** wrapper to render additional content inside the nav along with tab labels */
-    additionalNavContentWrapper?: React.ReactNode; 
-    defaultActiveTab?: React.ReactNode;
+    additionalNavContentWrapper ? : React.ReactNode;
+    defaultActiveTab            ? : React.ReactNode;
+    align                       ? : "left" | "centre" | "center" | "right";
 }
 
 export type TabsElementType = HTMLDivElement;
 export type TabsProps = Omit<CommonAndHTMLProps<TabsElementType>, keyof TabsCustomProps> & TabsCustomProps;
 
 export const Tabs = React.forwardRef(
-    ({ tabs, additionalNavContentWrapper, defaultActiveTab, ...props }: TabsProps, ref: React.Ref<TabsElementType>) => {
+    ({ tabs, additionalNavContentWrapper, defaultActiveTab, align = "left", ...props }: TabsProps, ref: React.Ref<TabsElementType>) => {
         const index = tabs.findIndex((tab) => tab.key === defaultActiveTab);
         const defaultTabIndex = index > -1 ? index : 0;
         const [activeTab, setActiveTab] = React.useState<TabType | undefined>(
@@ -59,12 +61,12 @@ export const Tabs = React.forwardRef(
             <Element<TabsElementType> as="div" data-tabs ref={ref} {...props}>
                 {tabs.length > 0 && activeTab ? (
                     <>
-                        <nav>
+                        <nav className={`align-${align}`}>
                             <ul className="tab-labels-list">
                                 {tabs.map((tab) => (
                                     <li key={tab.key}>
                                         <Text
-                                            className={`is-clickable ${tab.key === activeTab.key ? "is-active" : ""} }`}
+                                            className={`is-clickable ${tab.key === activeTab.key ? "is-active" : ""}`}
                                             onClick={() => handleTabChange(tab)}
                                             marginBottom="none"
                                         >
