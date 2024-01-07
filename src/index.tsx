@@ -12,7 +12,7 @@ import "./styles/theme.css";
 export { Badge, type BadgeProps } from "./components/Badge";
 
 // BOTTOM DRAWER ///////////////////////////////////////////////////////////////
-export { BottomDrawer, type BottomDrawerProps } from "./components/BottomDrawer";
+export { Drawer, type DrawerProps } from "./components/Drawer";
 
 // BUTTON //////////////////////////////////////////////////////////////////////
 export { Button, type ButtonProps } from "./components/Button";
@@ -57,9 +57,6 @@ export {
 
 // H-RULE //////////////////////////////////////////////////////////////////////
 export { HRule, type HRProps } from "./components/HRule";
-
-// INFO PANEL //////////////////////////////////////////////////////////////////
-export { InfoPanel, type InfoPanelProps } from "./components/InfoPanel";
 
 // NOTIFICATIONS  /////////////////////////////////////////////////////////////
 export {

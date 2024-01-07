@@ -1,0 +1,131 @@
+[data-drawer] {
+    /* OVERLAY ============================================================== */
+    .rest-of-page-overlay {
+        position         : fixed;
+        top              : 0;
+        left             : 0;
+        width            : 100vw;
+        height           : 100vh;
+        z-index          : 50000;
+        backdrop-filter  : blur(var(--bottom-drawer-overlay-blur));
+        background-color : rgba(var(--bottom-drawer-overlay-bg), 0.32);
+    }
+
+    /* MAIN CONTENT ========================================================= */
+    .drawer-content-wrapper {
+        position         : fixed;
+        transition       : all 0.4s ease-in-out;
+        transition-delay : 0.2s;
+        box-shadow       : 4px 0 24px -16px rgba(0, 0, 0, 0.92);
+        z-index          : 100000;
+        width            : 100%;
+        border-radius    : var(--bottom-drawer-border-radius);
+
+        &.padding-all-nano { padding : 8px; }
+        &.padding-all-micro { padding : 24px; }
+        &.padding-all-tiny { padding : 02vw; }
+        &.padding-all-small { padding : 04vw; }
+        &.padding-all-medium { padding : 06vw; }
+        &.padding-all-large { padding : 08vw; }
+        &.padding-all-huge { padding : 12vw; }
+
+        &:not([class*="bg-"]) {
+            background-color : var(--bottom-drawer-bg);
+        }
+    }
+
+    /* POSITIONS ============================================================ */
+    &.top .drawer-content-wrapper {
+        top        : 0;
+        left       : 0;
+        transform  : translateY(-120%);
+        max-height : 92vh;
+        width      : 100%;
+    }
+
+    &.bottom .drawer-content-wrapper {
+        bottom     : 0;
+        left       : 0;
+        transform  : translateY(120%);
+        max-height : 92vh;
+        width      : 100%;
+    }
+
+    &.left .drawer-content-wrapper {
+        left      : 0;
+        top       : 0;
+        transform : translateX(-120%);
+        max-width : 92vw;
+        height    : 100%;
+        width     : fit-content;
+    }
+
+    &.right .drawer-content-wrapper {
+        right     : 0;
+        top       : 0;
+        transform : translateX(120%);
+        max-width : 92vw;
+        height    : 100%;
+        width     : fit-content;
+    }
+
+    /* OPEN STATE =========================================================== */
+    &.open.left .drawer-content-wrapper,
+    &.open.right .drawer-content-wrapper { transform : translateY(0); }
+
+    &.open.top .drawer-content-wrapper,
+    &.open.bottom .drawer-content-wrapper { transform : translateX(0); }
+
+    /* DISMISS BUTTON ======================================================= */
+    & .dismiss-button {
+        position         : absolute;
+        display          : flex;
+        width            : 32px;
+        height           : 32px;
+        background-color : var(--bottom-drawer-bg);
+        z-index          : 100001;
+        color            : var(--bottom-drawer-dismiss-button);
+        cursor           : pointer;
+        place-content    : center;
+        backdrop-filter  : blur(2px);
+        border           : solid var(--bottom-drawer-border);
+        border-width     : 1px 0 1px 1px;
+        border-radius    : 50%;
+        box-shadow       : -4px 0 4px -1px rgba(0, 0, 0, 8%);
+
+        &::before {
+            display            : grid;
+            content            : "\00D7";
+            place-self         : center;
+            color              : var(--bottom-drawer-dismiss-button);
+            -webkit-transition : all 0.2s;
+            transition         : all 0.2s;
+            cursor             : pointer;
+            align-self         : center;
+            text-align         : center;
+            margin-bottom      : 5px;
+            line-height        : 1;
+            font-size          : 24px;
+        }
+    }
+
+    &.top .dismiss-button {
+        bottom : -36px;
+        right  : 24px;
+    }
+
+    &.bottom .dismiss-button {
+        top   : -36px;
+        right : 24px;
+    }
+
+    &.left .dismiss-button {
+        top   : 24px;
+        right : -36px;
+    }
+
+    &.right .dismiss-button {
+        top  : 24px;
+        left : -36px;
+    }
+}

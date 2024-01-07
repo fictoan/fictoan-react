@@ -3,24 +3,23 @@ import React from "react";
 import { Element } from "../Element/Element";
 import { ColourPropTypes, CommonAndHTMLProps } from "../Element/constants";
 
-import "./bottom-drawer.css";
+import "./drawer.css";
 
 // prettier-ignore
-export interface BottomDrawerCustomProps {
+export interface DrawerCustomProps {
+    position              : "top" | "right" | "bottom" | "left";
+    width               ? : "tiny" | "small" | "medium" | "large" | "huge";
     isOpen              ? : boolean;
     onCloseCallback     ? : () => void;
-    overlayOpacity      ? : number;
-    overlayColour       ? : ColourPropTypes;
-    overlayColor        ? : ColourPropTypes;
     closeOnClickOutside ? : boolean;
     isDismissable       ? : boolean;
 }
 
-export type BottomDrawerElementType = HTMLDivElement;
-export type BottomDrawerProps = Omit<CommonAndHTMLProps<BottomDrawerElementType>, keyof BottomDrawerCustomProps> &
-    BottomDrawerCustomProps;
+export type DrawerElementType = HTMLDivElement;
+export type DrawerProps = Omit<CommonAndHTMLProps<DrawerElementType>, keyof DrawerCustomProps> &
+    DrawerCustomProps;
 
-export const BottomDrawer = React.forwardRef(
+export const Drawer = React.forwardRef(
     (
         {
             isOpen,
@@ -28,17 +27,22 @@ export const BottomDrawer = React.forwardRef(
             onCloseCallback,
             closeOnClickOutside,
             padding,
+            position,
             bgColor,
             bgColour,
             isDismissable = true,
             ...props
-        }: BottomDrawerProps,
-        ref: React.Ref<BottomDrawerElementType>
+        }: DrawerProps,
+        ref: React.Ref<DrawerElementType>
     ) => {
-        let classNames = [];
+        let classNames: string[] = [];
 
         if (isOpen) {
             classNames.push("open");
+        }
+
+        if (position) {
+            classNames.push(position);
         }
 
         const closeBottomDrawer = () => {
@@ -50,8 +54,9 @@ export const BottomDrawer = React.forwardRef(
         return (
             !!isOpen && (
                 <>
-                    <Element<BottomDrawerElementType>
+                    <Element<DrawerElementType>
                         as="div"
+                        data-drawer
                         ref={ref}
                         classNames={classNames}
                         {...props}
@@ -66,7 +71,7 @@ export const BottomDrawer = React.forwardRef(
 
                         <Element
                             as="div"
-                            className="bottom-drawer-content-wrapper"
+                            className="drawer-content-wrapper"
                             padding={padding}
                             bgColor={bgColor}
                             bgColour={bgColour}

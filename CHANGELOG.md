@@ -13,7 +13,7 @@
 - `para` is now `paragraph`
 - Use `rem` units for font sizes
 - Ability to set `Element` as a flexbox/grid div using `layoutAsFlexbox` and `layoutAsGrid`
-- 
+- Remove `InfoPanel` and extend `Drawer` with `position` prop
 
 ---
 
@@ -34,7 +34,7 @@
 - Fix PinInputField behaviour on paste or replace at position
 
 ### 0.45.3
-- Add optional `isDismissable` prop for showing a close button for `BottomDrawer` *(true by default)*
+- Add optional `isDismissable` prop for showing a close button for `Drawer` *(true by default)*
 
 ### 0.45.2
 - Fix prop name for disable copy/paste to pasteFromClipboard which takes either enabled or disabled as parameters for `PinInput Field`
@@ -107,16 +107,16 @@
 - Remove style overrides in Tabs component
 
 ### 0.41.17
-- Add `closeOnClickOutside` prop for `InfoPanel` & `BottomDrawer`
+- Add `closeOnClickOutside` prop for `InfoPanel` & `Drawer`
 
 ### 0.41.16
 - Fix wrong font value for links in theme file
 
 ### 0.41.15
-- `BottomDrawer` overlay is now theme-able and style-able with props
+- `Drawer` overlay is now theme-able and style-able with props
 
 ### 0.41.14
-- Overhaul `BottomDrawer` to now come with a page overlay
+- Overhaul `Drawer` to now come with a page overlay
 
 ### 0.41.13
 - Add span types for `Portion`
@@ -125,7 +125,7 @@
 - Add `spacing` prop for `PinInputField`
 
 ### 0.41.10
-- Add separate theme object for `BottomDrawer`
+- Add separate theme object for `Drawer`
 
 ### 0.41.9
 - Allow controlling auto-focus behaviour for `PinInputField`
@@ -155,10 +155,10 @@
 - Add `PinInputField` component
 
 ### 0.40.0
-- Add `BottomDrawer` component
+- Add `Drawer` component
 
 ### 0.39.3
-- Rename `timeout` prop for `BottomDrawer` and `NotificationItem` to `showFor`
+- Rename `timeout` prop for `Drawer` and `NotificationItem` to `showFor`
 - Fix `Select` border-radius bug
 
 ### 0.39.2
@@ -184,7 +184,7 @@
 - Add `Badge` component
 
 ### 0.37.1
-- Rename `Toast` to `BottomDrawer` for better consistency
+- Rename `Toast` to `Drawer` for better consistency
 
 ### 0.37.0
 - Add `Toast` component
@@ -443,7 +443,7 @@
 - Switch to useState & useEffect for merging theme
 
 ### 0.31.7
-- Fix BottomDrawer theme issue for setting `borderRadius`
+- Fix Drawer theme issue for setting `borderRadius`
 
 ### 0.31.6
 - Fix broken builds (0.31.2 - 0.31.5)

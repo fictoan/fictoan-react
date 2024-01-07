@@ -1,19 +1,19 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { BottomDrawer } from "./BottomDrawer";
+import { Drawer } from "./Drawer";
 import { Heading } from "../Typography/Heading";
 
-const meta: Meta<typeof BottomDrawer> = {
-    component: BottomDrawer,
+const meta: Meta<typeof Drawer> = {
+    component: Drawer,
     tags: ["autodocs"],
     args: {
         isOpen: true,
     },
     render: (args) => (
-        <BottomDrawer {...args}>
+        <Drawer {...args}>
             <Heading as="h1">Some heading</Heading>
-        </BottomDrawer>
+        </Drawer>
     ),
     parameters: {
         docs: {
@@ -25,7 +25,7 @@ const meta: Meta<typeof BottomDrawer> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof BottomDrawer>;
+type Story = StoryObj<typeof Drawer>;
 
 export const Default: Story = {
     args: {
