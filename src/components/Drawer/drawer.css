@@ -7,8 +7,8 @@
         width            : 100vw;
         height           : 100vh;
         z-index          : 50000;
-        backdrop-filter  : blur(var(--bottom-drawer-overlay-blur));
-        background-color : rgba(var(--bottom-drawer-overlay-bg), 0.32);
+        backdrop-filter  : blur(var(--drawer-overlay-blur));
+        background-color : rgba(var(--drawer-overlay-bg), 0.32);
     }
 
     /* MAIN CONTENT ========================================================= */
@@ -19,7 +19,7 @@
         box-shadow       : 4px 0 24px -16px rgba(0, 0, 0, 0.92);
         z-index          : 100000;
         width            : 100%;
-        border-radius    : var(--bottom-drawer-border-radius);
+        border-radius    : var(--drawer-border-radius);
 
         &.padding-all-nano { padding : 8px; }
         &.padding-all-micro { padding : 24px; }
@@ -30,7 +30,7 @@
         &.padding-all-huge { padding : 12vw; }
 
         &:not([class*="bg-"]) {
-            background-color : var(--bottom-drawer-bg);
+            background-color : var(--drawer-bg);
         }
     }
 
@@ -82,13 +82,13 @@
         display          : flex;
         width            : 32px;
         height           : 32px;
-        background-color : var(--bottom-drawer-bg);
+        background-color : var(--drawer-bg);
         z-index          : 100001;
-        color            : var(--bottom-drawer-dismiss-button);
+        color            : var(--drawer-dismiss-button);
         cursor           : pointer;
         place-content    : center;
         backdrop-filter  : blur(2px);
-        border           : solid var(--bottom-drawer-border);
+        border           : solid var(--drawer-border);
         border-width     : 1px 0 1px 1px;
         border-radius    : 50%;
         box-shadow       : -4px 0 4px -1px rgba(0, 0, 0, 8%);
@@ -97,7 +97,7 @@
             display            : grid;
             content            : "\00D7";
             place-self         : center;
-            color              : var(--bottom-drawer-dismiss-button);
+            color              : var(--drawer-dismiss-button);
             -webkit-transition : all 0.2s;
             transition         : all 0.2s;
             cursor             : pointer;

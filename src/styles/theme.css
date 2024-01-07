@@ -12,15 +12,15 @@
 
 /* BOTTOM DRAWER //////////////////////////////////////////////////////////// */
 :root {
-    --bottom-drawer-bg              : var(--white);
-    --bottom-drawer-border          : var(--slate-light-20);
-    --bottom-drawer-border-radius   : var(--global-border-radius);
+    --drawer-bg              : var(--white);
+    --drawer-border          : var(--slate-light-20);
+    --drawer-border-radius   : var(--global-border-radius);
 
-    --bottom-drawer-overlay-bg      : var(--black);
-    --bottom-drawer-overlay-opacity : 0.4;
-    --bottom-drawer-overlay-blur    : 4px;
+    --drawer-overlay-bg      : var(--black);
+    --drawer-overlay-opacity : 0.4;
+    --drawer-overlay-blur    : 4px;
 
-    --bottom-drawer-dismiss-button  : var(--slate-light-40);
+    --drawer-dismiss-button  : var(--slate-light-40);
 }
 
 /* BREADCRUMBS ////////////////////////////////////////////////////////////// */
@@ -166,15 +166,6 @@
 
     --hr-tertiary-height  : 1px;
     --hr-tertiary-bg      : var(--slate-light-20);
-}
-
-/* INFO PANEL /////////////////////////////////////////////////////////////// */
-:root {
-    --info-panel-bg                           : var(--white);
-    --info-panel-border                       : var(--slate-light-10);
-
-    --info-panel-dismiss-button               : var(--slate-dark-90);
-    --info-panel-dismiss-button-border-radius : var(--slate-dark-90);
 }
 
 /* INPUT FIELD ////////////////////////////////////////////////////////////// */
