@@ -8,7 +8,6 @@ import "./drawer.css";
 // prettier-ignore
 export interface DrawerCustomProps {
     position              : "top" | "right" | "bottom" | "left";
-    width               ? : "tiny" | "small" | "medium" | "large" | "huge";
     isOpen              ? : boolean;
     onCloseCallback     ? : () => void;
     closeOnClickOutside ? : boolean;
