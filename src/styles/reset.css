@@ -33,8 +33,15 @@ p {
 }
 
 img, video {
-    display : block;
-    width   : 100%;
+    display           : block;
+    width             : 100%;
+    max-width         : 100%;
+    height            : auto;
+    vertical-align    : middle;
+    font-style        : italic;
+    background-repeat : no-repeat;
+    background-size   : cover;
+    shape-margin      : 0.75rem;
 }
 
 picture { line-height : 1; }

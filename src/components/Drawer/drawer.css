@@ -1,6 +1,10 @@
 [data-drawer] {
+    transition: all 0.4s ease-in-out;
+
     /* OVERLAY ============================================================== */
     .rest-of-page-overlay {
+        visibility       : hidden;
+        opacity          : 0;
         position         : fixed;
         top              : 0;
         left             : 0;
@@ -9,6 +13,12 @@
         z-index          : 50000;
         backdrop-filter  : blur(var(--drawer-overlay-blur));
         background-color : rgba(var(--drawer-overlay-bg), 0.32);
+        transition       : all 0.4s ease-in-out;
+    }
+
+    .rest-of-page-overlay.visible {
+        opacity    : 1;
+        visibility : visible;
     }
 
     /* MAIN CONTENT ========================================================= */
@@ -38,7 +48,7 @@
     &.top .drawer-content-wrapper {
         top        : 0;
         left       : 0;
-        transform  : translateY(-120%);
+        transform  : translateY(-200%);
         max-height : 92vh;
         width      : 100%;
     }
@@ -46,7 +56,7 @@
     &.bottom .drawer-content-wrapper {
         bottom     : 0;
         left       : 0;
-        transform  : translateY(120%);
+        transform  : translateY(200%);
         max-height : 92vh;
         width      : 100%;
     }
@@ -54,7 +64,7 @@
     &.left .drawer-content-wrapper {
         left      : 0;
         top       : 0;
-        transform : translateX(-120%);
+        transform : translateX(-200%);
         max-width : 92vw;
         height    : 100%;
         width     : fit-content;
@@ -63,7 +73,7 @@
     &.right .drawer-content-wrapper {
         right     : 0;
         top       : 0;
-        transform : translateX(120%);
+        transform : translateX(200%);
         max-width : 92vw;
         height    : 100%;
         width     : fit-content;

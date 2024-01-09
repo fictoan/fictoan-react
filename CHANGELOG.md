@@ -3,13 +3,12 @@
 
 #### ⚠️ BREAKING CHANGES ⚠️
 - Move to Vite
+- Move to `pnpm` for package management
 - Remove `styled-components` as a dependency
 - Adopt plain CSS for styling
 - Remove `ThemeProvider` and `theme` prop from all components
 - Refactor `Row` and `Portion` to use CSS Grid and Flexbox both
 - Support twice as many `defaultColours`
-
-#### Specifics
 - `para` is now `paragraph`
 - Use `rem` units for font sizes
 - Ability to set `Element` as a flexbox/grid div using `layoutAsFlexbox` and `layoutAsGrid`
