@@ -7,22 +7,22 @@ hr {
         background-color : var(--hr-default-bg);
     }
 
-    &.side-margin-nano { width : calc(100% - var(--nano)); }
-    &.side-margin-micro { width : calc(100% - var(--micro)); }
-    &.side-margin-tiny { width : calc(100% - var(--tiny)); }
-    &.side-margin-small { width : calc(100% - var(--small)); }
-    &.side-margin-medium { width : calc(100% - var(--medium)); }
-    &.side-margin-large { width : calc(100% - var(--large)); }
-    &.side-margin-huge { width : calc(100% - var(--huge)); }
+    &.side-margin-nano { width : calc(100% - (var(--nano) * 2)); }
+    &.side-margin-micro { width : calc(100% - (var(--micro) * 2)); }
+    &.side-margin-tiny { width : calc(100% - (var(--tiny) * 2)); }
+    &.side-margin-small { width : calc(100% - (var(--small) * 2)); }
+    &.side-margin-medium { width : calc(100% - (var(--medium) * 2)); }
+    &.side-margin-large { width : calc(100% - (var(--large) * 2)); }
+    &.side-margin-huge { width : calc(100% - (var(--huge) * 2)); }
 
     @media all and (min-width : 2400px) {
-        &.side-margin-nano { width : calc(100% - (var(--nano) * 2)); }
-        &.side-margin-micro { width : calc(100% - (var(--micro) * 2)); }
-        &.side-margin-tiny { width : calc(100% - (var(--tiny) * 2)); }
-        &.side-margin-small { width : calc(100% - (var(--small) * 2)); }
-        &.side-margin-medium { width : calc(100% - (var(--medium) * 2)); }
-        &.side-margin-large { width : calc(100% - (var(--large) * 1.2)); }
-        &.side-margin-huge { width : calc(100% - (var(--huge) * 1.2)); }
+        &.side-margin-nano { width : calc(100% - (var(--nano) * 4)); }
+        &.side-margin-micro { width : calc(100% - (var(--micro) * 4)); }
+        &.side-margin-tiny { width : calc(100% - (var(--tiny) * 4)); }
+        &.side-margin-small { width : calc(100% - (var(--small) * 4)); }
+        &.side-margin-medium { width : calc(100% - (var(--medium) * 4)); }
+        &.side-margin-large { width : calc(100% - (var(--large) * 2.4)); }
+        &.side-margin-huge { width : calc(100% - (var(--huge) * 2.4)); }
     }
 
     @media all and (max-width : 1600px) {
