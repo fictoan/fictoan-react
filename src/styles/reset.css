@@ -34,7 +34,7 @@ p {
 
 img, video {
     display           : block;
-    width             : 100%;
+    width             : auto;
     max-width         : 100%;
     height            : auto;
     vertical-align    : middle;

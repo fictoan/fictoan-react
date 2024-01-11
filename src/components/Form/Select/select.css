@@ -29,7 +29,7 @@
         display          : flex;
         height           : 100%;
         padding          : 12px 36px 12px 8px;
-        font-family      : var(--paragraph-font-family);
+        font-family      : var(--paragraph-font);
         color            : var(--input-text-default);
         background-color : var(--input-bg-default);
         border-radius    : var(--input-border-radius-default);

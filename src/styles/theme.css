@@ -1,6 +1,6 @@
 /* BADGE //////////////////////////////////////////////////////////////////// */
 :root {
-    --badge-font-family   : var(--paragraph-font-family);
+    --badge-font          : var(--paragraph-font);
     --badge-border-radius : var(--global-border-radius);
     --badge-border-width  : var(--global-border-width);
 }
@@ -257,9 +257,9 @@
 
 /* RANGE //////////////////////////////////////////////////////////////// */
 :root {
-    --range-slider-bg: var(--blue-light-20);
-    --range-slider-border-focus: var(--blue);
-    --range-slider-outline-focus: var(--blue);
+    --range-slider-bg            : var(--blue-light-20);
+    --range-slider-border-focus  : var(--blue);
+    --range-slider-outline-focus : var(--blue);
 }
 
 /* SIDEBAR + CONTENT WRAPPER //////////////////////////////////////////////// */
@@ -320,7 +320,7 @@
 :root {
     --table-bg                           : var(--white);
     --table-border                       : var(--slate-light-10);
-    --table-font-family                  : var(--paragraph-font-family);
+    --table-font                         : var(--paragraph-font);
     --table-text                         : var(--paragraph-text-colour);
 
     --table-striped-header-bg            : var(--blue-light-40);
@@ -359,12 +359,12 @@
 /* TEXT ///////////////////////////////////////////////////////////////////// */
 :root {
     /* GENERICS ============================================================= */
-    --font-family-sans-serif    : sans-serif;
-    --font-family-serif         : serif;
-    --font-family-mono          : monospace;
+    --font-sans-serif           : sans-serif;
+    --font-serif                : serif;
+    --font-mono                 : monospace;
 
     /* PARAGRAPHS =========================================================== */
-    --paragraph-font-family     : var(--font-family-sans-serif);
+    --paragraph-font            : var(--font-sans-serif);
     --paragraph-font-size       : 1rem;
     --paragraph-line-height     : 1.2;
     --paragraph-font-weight     : 400;
@@ -374,7 +374,7 @@
     --paragraph-subtext-size    : 0.8rem;
 
     /* HEADINGS ============================================================= */
-    --heading-font-family       : var(--font-family-sans-serif);
+    --heading-font              : var(--font-sans-serif);
     --heading-font-size         : 1.5rem;
     --heading-size-multiplier   : 1.2;
     --heading-line-height       : 1;
@@ -382,7 +382,7 @@
     --heading-text-colour       : var(--slate);
 
     /* LINKS ================================================================ */
-    --link-font-family          : var(--font-family-sans-serif);
+    --link-font                 : var(--paragraph-font);
     --link-text-default         : var(--blue);
     --link-text-hover           : var(--blue);
 
@@ -391,7 +391,7 @@
     --text-bg-selected          : var(--hue);
 
     /* CODE ================================================================= */
-    --code-font-family          : var(--font-family-mono);
+    --code-font                 : var(--font-mono);
     --code-inline-font-size     : 0.8rem;
     --code-inline-bg            : var(--blue-light-80);
     --code-inline-text          : var(--blue-dark-40);
@@ -404,7 +404,7 @@
     --code-block-border-radius  : var(--global-border-radius);
 
     /*  KBD ================================================================= */
-    --kbd-font-family           : var(--font-family-mono);
+    --kbd-font                  : var(--font-mono);
     --kbd-bg                    : var(--grey-light-10);
     --kbd-text                  : var(--grey);
     --kbd-border-radius         : var(--global-border-radius);

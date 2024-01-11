@@ -3,7 +3,7 @@
         display                : block;
         width                  : 100%;
         max-width              : 100%;
-        font-family            : var(--code-font-family);
+        font-family            : var(--code-font);
         color                  : var(--code-block-text);
         font-size              : var(--code-block-font-size);
         line-height            : var(--code-block-line-height);

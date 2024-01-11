@@ -1,7 +1,7 @@
 [data-button] {
     position            : relative;
     cursor              : pointer;
-    font-family         : var(--font-family-sans-serif);
+    font-family         : var(--font-sans-serif);
     font-weight         : bold;
     font-size           : 92%;
     text-align          : center;

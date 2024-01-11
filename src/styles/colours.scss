@@ -131,9 +131,9 @@ $levels: 10;
 .text-black { color : var(--black); }
 .text-transparent { color : var(--transparent); }
 
-.border-white { border-color : var(--white); }
-.border-black { border-color : var(--black); }
-.border-transparent { border-color : var(--transparent); }
+.border-white { border : solid var(--global-border-width) var(--white); }
+.border-black { border : solid var(--global-border-width) var(--black); }
+.border-transparent { border : solid var(--global-border-width) var(--transparent); }
 
 .fill-white { fill : var(--white); }
 .fill-black { fill : var(--black); }

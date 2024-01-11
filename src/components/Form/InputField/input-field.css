@@ -2,7 +2,7 @@ input {
     position         : relative;
     width            : 100%;
     flex             : 1 1 auto;
-    font-family      : var(--paragraph-font-family);
+    font-family      : var(--paragraph-font);
     color            : var(--input-text-default);
     background-color : var(--input-bg-default);
     border           : 1px solid var(--input-border-default);

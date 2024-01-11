@@ -1,6 +1,6 @@
 table {
     color       : var(--table-text);
-    font-family : var(--table-font-family);
+    font-family : var(--table-font);
 
     &:not([class*="bg-"]) {
         background-color : var(--table-bg);

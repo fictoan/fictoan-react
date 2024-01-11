@@ -30,10 +30,10 @@ type CustomColor = "hue" | "tint" | "shade" | "analogue" | "accent";
 
 // prettier-ignore
 export type SpacingTypes = "none" | "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
-export type ShadowTypes = "none" | "mild" | "hard" | "soft";
-export type ShapeTypes = "rounded" | "curved";
+export type ShadowTypes  = "none" | "mild" | "hard" | "soft";
+export type ShapeTypes   = "rounded" | "curved";
 export type OpacityTypes = "00" | "10" | "20" | "30" | "40" | "50" | "60" | "70" | "80" | "90" | "100";
-export type WeightTypes = "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
+export type WeightTypes  = "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
 // @deprecated
 export type OldColourPropTypes = `${ColorWithShade}-${ShadeLevel}`;
 
@@ -74,16 +74,27 @@ export interface CommonProps {
     gap             ? : string;
 
     // SPACING =================================================================
+    // Margin ------------------------------------------------------------------
+    margin                 ? : SpacingTypes;
+    horizontalMargin       ? : SpacingTypes;
+    verticalMargin         ? : SpacingTypes;
+
     marginTop              ? : SpacingTypes;
     marginRight            ? : SpacingTypes;
     marginBottom           ? : SpacingTypes;
     marginLeft             ? : SpacingTypes;
-    margin                 ? : SpacingTypes;
+
+    // Padding -----------------------------------------------------------------
+    padding                ? : SpacingTypes;
+    horizontalPadding      ? : SpacingTypes;
+    verticalPadding        ? : SpacingTypes;
+
     paddingTop             ? : SpacingTypes;
     paddingRight           ? : SpacingTypes;
     paddingBottom          ? : SpacingTypes;
     paddingLeft            ? : SpacingTypes;
-    padding                ? : SpacingTypes;
+
+    // ALIGNMENT ===============================================================
     horizontallyCentreThis ? : boolean;
     horizontallyCenterThis ? : boolean;
     verticallyCentreItems  ? : boolean;

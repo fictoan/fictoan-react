@@ -58,7 +58,7 @@
     & label {
         display        : inline-block;
         position       : relative;
-        font-family    : var(--paragraph-font-family);
+        font-family    : var(--paragraph-font);
         color          : var(--paragraph-text-colour);
         cursor         : pointer;
         vertical-align : middle;

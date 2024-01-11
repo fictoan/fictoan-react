@@ -1,6 +1,6 @@
 mark[data-badge] {
     position            : relative;
-    font-family         : var(--badge-font-family);
+    font-family         : var(--badge-font);
     font-weight         : bold;
     font-size           : 92%;
     text-align          : center;

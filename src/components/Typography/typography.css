@@ -1,13 +1,13 @@
 body {
     background-color : var(--body-bg);
-    font-family      : var(--paragraph-font-family);
+    font-family      : var(--paragraph-font);
     font-size        : var(--paragraph-font-size);
     word-wrap        : normal;
     text-rendering   : optimizeLegibility;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family : var(--heading-font-family);
+    font-family : var(--heading-font);
     font-weight : var(--heading-font-weight);
     color       : var(--heading-text-colour);
     line-height : var(--heading-line-height);
@@ -26,7 +26,7 @@ h6 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier
 }
 
 p {
-    font-family : var(--paragraph-font-family);
+    font-family : var(--paragraph-font);
     color       : var(--paragraph-text-colour);
     font-size   : var(--paragraph-font-size);
 }
@@ -38,7 +38,7 @@ span { line-height : var(--paragraph-line-height); }
 
 a {
     cursor      : pointer;
-    font-family : var(--link-font-family);
+    font-family : var(--link-font);
     color       : var(--link-text-default);
     font-weight : bold;
     transition  : all 0.2s;
@@ -49,9 +49,9 @@ a:not([data-button]):hover { color : var(--link-text-hover); }
 
 a:active { opacity : 0.72; }
 
-.font-sans { font-family : var(--font-family-sans-serif); }
-.font-serif { font-family : var(--font-family-serif); }
-.font-monospace { font-family : var(--font-family-mono); }
+.font-sans { font-family : var(--font-sans-serif); }
+.font-serif { font-family : var(--font-serif); }
+.font-monospace { font-family : var(--font-mono); }
 
 .sub-text { color : var(--paragraph-subtext-colour); }
 
@@ -82,7 +82,7 @@ a:active { opacity : 0.72; }
 .text-huge { font-size : 160%; }
 
 /* CODE ///////////////////////////////////////////////////////////////////// */
-code { font-family : var(--code-font-family); }
+code { font-family : var(--code-font); }
 
 /* Inline code ============================================================= */
 :not(pre) > code {
@@ -110,7 +110,7 @@ code { font-family : var(--code-font-family); }
 /* Keyboard key element ===================================================== */
 kbd {
     display          : inline-block;
-    font-family      : var(--kbd-font-family);
+    font-family      : var(--kbd-font);
     margin           : 0 4px;
     padding          : 4px 8px;
     color            : var(--kbd-text);

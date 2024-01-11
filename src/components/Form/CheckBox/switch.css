@@ -20,7 +20,7 @@
     label {
         display     : inline-flex;
         position    : relative;
-        font-family : var(--paragraph-font-family);
+        font-family : var(--paragraph-font);
         color       : var(--paragraph-text-colour);
         cursor      : pointer;
         line-height : 1;

@@ -13,6 +13,7 @@
 - Use `rem` units for font sizes
 - Ability to set `Element` as a flexbox/grid div using `layoutAsFlexbox` and `layoutAsGrid`
 - Remove `InfoPanel` and extend `Drawer` with `position` prop
+- Add `horizontalPadding`, `verticalPadding`, `horizontalMargin`, and `verticalMargin`
 
 ---
 

@@ -12,7 +12,7 @@
         align-self    : flex-start;
         margin-bottom : 4px;
         color         : var(--input-label-default);
-        font-family   : var(--paragraph-font-family);
+        font-family   : var(--paragraph-font);
         order         : -1;
         flex-wrap     : wrap;
     }
@@ -23,7 +23,7 @@
         span.help-text,
         span.error-text {
             font-size   : var(--input-helptext-scale);
-            font-family : var(--paragraph-font-family);
+            font-family : var(--paragraph-font);
         }
 
         span.help-text {
