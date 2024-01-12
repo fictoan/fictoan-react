@@ -116,16 +116,17 @@ export interface CommonProps {
     // TEXT ====================================================================
     weight ? : WeightTypes;
 
-    // MISC ====================================================================
-    classNames ? : string[];
+    // GENERAL =================================================================
+    classNames ? : string[]; // For React
+    class      ? : string; // For plain HTML
 }
 
 export interface CommonAndHTMLProps<T extends {}>
-    extends CommonProps,
-        Omit<HTMLProps<T>, "as" | "size" | "ref" | "shape"> {}
+    extends CommonProps, Omit<HTMLProps<T>, "as" | "size" | "ref" | "shape"> {}
 
 // prettier-ignore
 export interface ElementProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as" | "ref" | "shape"> {
     as          : ElementType;
     className ? : string;
+    class     ? : string;
 }
