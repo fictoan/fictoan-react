@@ -43,134 +43,134 @@
     }
 
     /* SIDE PADDING ========================================================= */
-    &.side-padding-nano {
+    &.padding-left-nano.padding-right-nano {
         padding-left  : var(--nano);
         padding-right : var(--nano);
     }
 
-    &.side-padding-micro {
+    &.padding-left-micro.padding-right-micro {
         padding-left  : var(--micro);
         padding-right : var(--micro);
     }
 
-    &.side-padding-tiny {
+    &.padding-left-tiny.padding-right-tiny {
         padding-left  : var(--tiny);
         padding-right : var(--tiny);
     }
 
-    &.side-padding-small {
+    &.padding-left-small.padding-right-small {
         padding-left  : var(--small);
         padding-right : var(--small);
     }
 
-    &.side-padding-medium {
+    &.padding-left-medium.padding-right-medium {
         padding-left  : var(--medium);
         padding-right : var(--medium);
     }
 
-    &.side-padding-large {
+    &.padding-left-large.padding-right-large {
         padding-left  : var(--large);
         padding-right : var(--large);
     }
 
-    &.side-padding-huge {
+    &.padding-left-huge.padding-right-huge {
         padding-left  : var(--huge);
         padding-right : var(--huge);
     }
 
     @media all and (min-width : 2400px) {
-        &.side-padding-nano {
+        &.padding-left-nano.padding-right-nano {
             padding-left  : calc(var(--nano) * 2);
             padding-right : calc(var(--nano) * 2);
         }
 
-        &.side-padding-micro {
+        &.padding-left-micro.padding-right-micro {
             padding-left  : calc(var(--micro) * 2);
             padding-right : calc(var(--micro) * 2);
         }
 
-        &.side-padding-tiny {
+        &.padding-left-tiny.padding-right-tiny {
             padding-left  : calc(var(--tiny) * 2);
             padding-right : calc(var(--tiny) * 2);
         }
 
-        &.side-padding-small {
+        &.padding-left-small.padding-right-small {
             padding-left  : calc(var(--small) * 2);
             padding-right : calc(var(--small) * 2);
         }
 
-        &.side-padding-medium {
+        &.padding-left-medium.padding-right-medium {
             padding-left  : calc(var(--medium) * 2);
             padding-right : calc(var(--medium) * 2);
         }
 
-        &.side-padding-large {
+        &.padding-left-large.padding-right-large {
             padding-left  : calc(var(--large) * 1.2);
             padding-right : calc(var(--large) * 1.2);
         }
 
-        &.side-padding-huge {
+        &.padding-left-huge.padding-right-huge {
             padding-left  : calc(var(--huge) * 1.2);
             padding-right : calc(var(--huge) * 1.2);
         }
     }
 
     @media all and (max-width : 1600px) {
-        &.side-padding-tiny {
+        &.padding-left-tiny.padding-right-tiny {
             padding-left  : 2vw;
             padding-right : 2vw;
         }
 
-        &.side-padding-small {
+        &.padding-left-small.padding-right-small {
             padding-left  : 4vw;
             padding-right : 4vw;
         }
 
-        &.side-padding-medium {
+        &.padding-left-medium.padding-right-medium {
             padding-left  : 8vw;
             padding-right : 8vw;
         }
 
-        &.side-padding-large {
+        &.padding-left-large.padding-right-large {
             padding-left  : 12vw;
             padding-right : 12vw;
         }
 
-        &.side-padding-huge {
+        &.padding-left-huge.padding-right-huge {
             padding-left  : 16vw;
             padding-right : 16vw;
         }
     }
 
     @media all and (max-width : 1200px) {
-        &.side-padding-tiny {
+        &.padding-left-tiny.padding-right-tiny {
             padding-left  : 2vw;
             padding-right : 2vw;
         }
 
-        &.side-padding-small {
+        &.padding-left-small.padding-right-small {
             padding-left  : 4vw;
             padding-right : 4vw;
         }
 
-        &.side-padding-medium {
+        &.padding-left-medium.padding-right-medium {
             padding-left  : 6vw;
             padding-right : 6vw;
         }
 
-        &.side-padding-large {
+        &.padding-left-large.padding-right-large {
             padding-left  : 8vw;
             padding-right : 8vw;
         }
 
-        &.side-padding-huge {
+        &.padding-left-huge.padding-right-huge {
             padding-left  : 10vw;
             padding-right : 10vw;
         }
     }
 
     @media all and (max-width : 600px) {
-        &[class*="side-padding-"] {
+        &[class*="padding-left"][class*="padding-right"] {
             padding-left  : 6vw;
             padding-right : 6vw;
         }

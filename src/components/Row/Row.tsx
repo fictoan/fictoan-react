@@ -33,7 +33,6 @@ export const Row = React.forwardRef(
     (
         {
             layout = "grid",
-            sidePadding,
             gutters,
             retainLayoutOnTabletLandscape,
             retainLayoutOnTabletPortrait,
@@ -66,10 +65,6 @@ export const Row = React.forwardRef(
         }
 
         // COMMON CLASSNAMES ===================================================
-        if (sidePadding) {
-            classNames.push(`side-padding-${sidePadding}`);
-        }
-
         if (retainLayoutOnTabletLandscape) {
             classNames.push("retain-layout-on-tablet-landscape");
         }

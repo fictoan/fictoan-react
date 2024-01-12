@@ -2,51 +2,9 @@ hr {
     border : 0;
     width  : 100%;
     height : var(--hr-default-height);
+    background-color : var(--hr-default-bg);
 
-    &:not([class*="bg-"]) {
-        background-color : var(--hr-default-bg);
-    }
-
-    &.side-margin-nano { width : calc(100% - (var(--nano) * 2)); }
-    &.side-margin-micro { width : calc(100% - (var(--micro) * 2)); }
-    &.side-margin-tiny { width : calc(100% - (var(--tiny) * 2)); }
-    &.side-margin-small { width : calc(100% - (var(--small) * 2)); }
-    &.side-margin-medium { width : calc(100% - (var(--medium) * 2)); }
-    &.side-margin-large { width : calc(100% - (var(--large) * 2)); }
-    &.side-margin-huge { width : calc(100% - (var(--huge) * 2)); }
-
-    @media all and (min-width : 2400px) {
-        &.side-margin-nano { width : calc(100% - (var(--nano) * 4)); }
-        &.side-margin-micro { width : calc(100% - (var(--micro) * 4)); }
-        &.side-margin-tiny { width : calc(100% - (var(--tiny) * 4)); }
-        &.side-margin-small { width : calc(100% - (var(--small) * 4)); }
-        &.side-margin-medium { width : calc(100% - (var(--medium) * 4)); }
-        &.side-margin-large { width : calc(100% - (var(--large) * 2.4)); }
-        &.side-margin-huge { width : calc(100% - (var(--huge) * 2.4)); }
-    }
-
-    @media all and (max-width : 1600px) {
-        &.side-margin-tiny { width : calc(100% - 4vw); }
-        &.side-margin-small { width : calc(100% - 8vw); }
-        &.side-margin-medium { width : calc(100% - 16vw); }
-        &.side-margin-large { width : calc(100% - 24vw); }
-        &.side-margin-huge { width : calc(100% - 32vw); }
-    }
-
-    @media all and (max-width : 1200px) {
-        &.side-margin-tiny { width : calc(100% - 4vw); }
-        &.side-margin-small { width : calc(100% - 8vw); }
-        &.side-margin-medium { width : calc(100% - 12vw); }
-        &.side-margin-large { width : calc(100% - 16vw); }
-        &.side-margin-huge { width : calc(100% - 20vw); }
-    }
-
-    @media all and (max-width : 600px) {
-        &[class*="side-margin-"] {
-            width : calc(100% - 12vw);
-        }
-    }
-
+    /* KINDS ================================================================ */
     &.primary {
         background-color : var(--hr-primary-bg);
         height           : var(--hr-primary-height);
@@ -61,4 +19,170 @@ hr {
         background-color : var(--hr-tertiary-bg);
         height           : var(--hr-tertiary-height);
     }
+
+    /* WIDTHS =============================================================== */
+    &.margin-left-nano.margin-right-nano {
+        width        : calc(100% - (var(--nano) * 2));
+        margin-left  : var(--nano);
+        margin-right : var(--nano);
+    }
+
+    &.margin-left-micro.margin-right-micro {
+        width        : calc(100% - (var(--micro) * 2));
+        margin-left  : var(--micro);
+        margin-right : var(--micro);
+    }
+
+    &.margin-left-tiny.margin-right-tiny {
+        width        : calc(100% - (var(--tiny) * 2));
+        margin-left  : var(--tiny);
+        margin-right : var(--tiny);
+    }
+
+    &.margin-left-small.margin-right-small {
+        width        : calc(100% - (var(--small) * 2));
+        margin-left  : var(--small);
+        margin-right : var(--small);
+    }
+
+    &.margin-left-medium.margin-right-medium {
+        width        : calc(100% - (var(--medium) * 2));
+        margin-left  : var(--medium);
+        margin-right : var(--medium);
+    }
+
+    &.margin-left-large.margin-right-large {
+        width        : calc(100% - (var(--large) * 2));
+        margin-left  : var(--large);
+        margin-right : var(--large);
+    }
+
+    &.margin-left-huge.margin-right-huge {
+        width        : calc(100% - (var(--huge) * 2));
+        margin-left  : var(--huge);
+        margin-right : var(--huge);
+    }
+
+    @media all and (min-width : 2400px) {
+        &.margin-left-nano.margin-right-nano {
+            width        : calc(100% - (var(--nano) * 4));
+            margin-left  : calc(var(--nano) * 2);
+            margin-right : calc(var(--nano) * 2);
+        }
+
+        &.margin-left-micro.margin-right-micro {
+            width        : calc(100% - (var(--micro) * 4));
+            margin-left  : calc(var(--micro) * 2);
+            margin-right : calc(var(--micro) * 2);
+        }
+
+        &.margin-left-tiny.margin-right-tiny {
+            width        : calc(100% - (var(--tiny) * 4));
+            margin-left  : calc(var(--tiny) * 2);
+            margin-right : calc(var(--tiny) * 2);
+        }
+
+        &.margin-left-small.margin-right-small {
+            width        : calc(100% - (var(--small) * 4));
+            margin-left  : calc(var(--small) * 2);
+            margin-right : calc(var(--small) * 2);
+        }
+
+        &.margin-left-medium.margin-right-medium {
+            width        : calc(100% - (var(--medium) * 4));
+            margin-left  : calc(var(--medium) * 2);
+            margin-right : calc(var(--medium) * 2);
+        }
+
+        &.margin-left-large.margin-right-large {
+            width        : calc(100% - (var(--large) * 2.4));
+            margin-left  : calc(var(--large) * 1.2);
+            margin-right : calc(var(--large) * 1.2);
+        }
+
+        &.margin-left-huge.margin-right-huge {
+            width        : calc(100% - (var(--huge) * 2.4));
+            margin-left  : calc(var(--huge) * 1.2);
+            margin-right : calc(var(--huge) * 1.2);
+        }
+    }
+
+    @media all and (max-width : 1600px) {
+        &.margin-left-tiny.margin-right-tiny {
+            width        : calc(100% - 4vw);
+            margin-left  : 2vw;
+            margin-right : 2vw;
+        }
+
+        &.margin-left-small.margin-right-small {
+            width        : calc(100% - 8vw);
+            margin-left  : 4vw;
+            margin-right : 4vw;
+        }
+
+        &.margin-left-medium.margin-right-medium {
+            width        : calc(100% - 16vw);
+            margin-left  : 8vw;
+            margin-right : 8vw;
+        }
+
+        &.margin-left-large.margin-right-large {
+            width        : calc(100% - 24vw);
+            margin-left  : 12vw;
+            margin-right : 12vw;
+        }
+
+        &.margin-left-huge.margin-right-huge {
+            width        : calc(100% - 32vw);
+            margin-left  : 16vw;
+            margin-right : 16vw;
+        }
+    }
+
+    @media all and (max-width : 1200px) {
+        &.margin-left-tiny.margin-right-tiny {
+            width        : calc(100% - 4vw);
+            margin-left  : 2vw;
+            margin-right : 2vw;
+        }
+
+        &.margin-left-small.margin-right-small {
+            width        : calc(100% - 8vw);
+            margin-left  : 4vw;
+            margin-right : 4vw;
+        }
+
+        &.margin-left-medium.margin-right-medium {
+            width        : calc(100% - 12vw);
+            margin-left  : 6vw;
+            margin-right : 6vw;
+        }
+
+        &.margin-left-large.margin-right-large {
+            width        : calc(100% - 16vw);
+            margin-left  : 8vw;
+            margin-right : 8vw;
+        }
+
+        &.margin-left-huge.margin-right-huge {
+            width        : calc(100% - 20vw);
+            margin-left  : 10vw;
+            margin-right : 10vw;
+        }
+    }
+
+    @media all and (max-width : 600px) {
+        &[class*="side-margin-"] {
+            width        : calc(100% - 12vw);
+            margin-left  : 6vw;
+            margin-right : 6vw;
+        }
+    }
+
+    /* CUSTOM BG ============================================================ */
+    /* Commenting this out for now because no idea why this approach */
+    /* doesn’t work *!*/
+    /*hr:not([class*="bg-"]):not(.primary):not(.secondary):not(.tertiary) {*/
+    /*    background-color : var(--hr-default-bg);*/
+    /*}*/
 }

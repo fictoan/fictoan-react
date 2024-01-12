@@ -156,7 +156,7 @@
 /* H-RULE /////////////////////////////////////////////////////////////////// */
 :root {
     --hr-default-height   : 1px;
-    --hr-default-bg       : var(--hue);
+    --hr-default-bg       : var(--slate);
 
     --hr-primary-height   : 4px;
     --hr-primary-bg       : var(--slate);

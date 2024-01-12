@@ -14,6 +14,7 @@
 - Ability to set `Element` as a flexbox/grid div using `layoutAsFlexbox` and `layoutAsGrid`
 - Remove `InfoPanel` and extend `Drawer` with `position` prop
 - Add `horizontalPadding`, `verticalPadding`, `horizontalMargin`, and `verticalMargin`
+- Remove `sidePadding` for `Row` and `sideMargin` for `HRule`
 
 ---
 
