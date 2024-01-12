@@ -117,8 +117,7 @@ export interface CommonProps {
     weight ? : WeightTypes;
 
     // GENERAL =================================================================
-    classNames ? : string[]; // For React
-    class      ? : string; // For plain HTML
+    classNames ? : string[];
 }
 
 export interface CommonAndHTMLProps<T extends {}>
@@ -128,5 +127,4 @@ export interface CommonAndHTMLProps<T extends {}>
 export interface ElementProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as" | "ref" | "shape"> {
     as          : ElementType;
     className ? : string;
-    class     ? : string;
 }
