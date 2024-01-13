@@ -39,8 +39,12 @@ const PrismReactRenderer = React.lazy(() =>
 );
 
 export const CodeBlock = React.forwardRef(
-    ({ source, language = "json", ...props }: CodeBlockProps, ref: React.Ref<CodeBlockElementType>) => {
-        const code = typeof source === "object" ? JSON.stringify(source, null, 2) : source ?? "";
+    ({ children, source, language = "json", ...props }: CodeBlockProps, ref: React.Ref<CodeBlockElementType>) => {
+        // Use children if provided, else use source
+        let code = typeof children === "string" ? children : React.Children.toArray(children).join("");
+        if (!children) {
+            code = typeof source === "object" ? JSON.stringify(source, null, 2) : source ?? "";
+        }
 
         return (
             <Element<CodeBlockElementType> data-code-block as="div" {...props}>
