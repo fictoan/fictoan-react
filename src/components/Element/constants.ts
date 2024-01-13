@@ -125,6 +125,6 @@ export interface CommonAndHTMLProps<T extends {}>
 
 // prettier-ignore
 export interface ElementProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as" | "ref" | "shape"> {
-    as          : ElementType;
+    as        ? : ElementType;
     className ? : string;
 }

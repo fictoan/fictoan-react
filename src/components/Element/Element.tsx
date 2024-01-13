@@ -6,9 +6,8 @@ import { createClassName } from "../../utils/classNames";
 
 import { ElementProps } from "./constants";
 
-export const Element = React.forwardRef(<K extends {}>(props: ElementProps<K>, ref: React.LegacyRef<HTMLElement>) => {
+export const Element = React.forwardRef(<K extends {}>({ as: Component = "div", ...props }: ElementProps<K>, ref: React.LegacyRef<HTMLElement>) => {
     const {
-              as : Component,
               classNames = [],
               bgColor,
               bgColour,
@@ -62,7 +61,7 @@ export const Element = React.forwardRef(<K extends {}>(props: ElementProps<K>, r
               ...minimalProps
           } = props;
 
-    const { as, className : _, classNames : __, ...sanitizedProps } = props;
+    const { className : _, classNames : __, ...sanitizedProps } = props;
 
     // To support deprecated colours
     const getNewColour = (colour: string): string => {
