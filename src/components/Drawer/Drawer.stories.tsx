@@ -8,7 +8,7 @@ const meta: Meta<typeof Drawer> = {
     component: Drawer,
     tags: ["autodocs"],
     args: {
-        isOpen: true,
+        openWhen : true,
     },
     render: (args) => (
         <Drawer {...args}>
@@ -29,7 +29,7 @@ type Story = StoryObj<typeof Drawer>;
 
 export const Default: Story = {
     args: {
-        isOpen: true,
+        openWhen : true,
     },
     parameters: {
         docs: {

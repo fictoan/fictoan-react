@@ -7,8 +7,8 @@ import "./drawer.css";
 
 export interface DrawerCustomProps {
     position              : "top" | "right" | "bottom" | "left";
-    isOpen              ? : boolean;
-    onCloseCallback     ? : () => void;
+    openWhen            ? : boolean;
+    closeWhen           ? : () => void;
     closeOnClickOutside ? : boolean;
     isDismissable       ? : boolean;
 }
@@ -20,9 +20,9 @@ export type DrawerProps = Omit<CommonAndHTMLProps<DrawerElementType>, keyof Draw
 export const Drawer = React.forwardRef(
     (
         {
-            isOpen,
+            openWhen,
             children,
-            onCloseCallback,
+            closeWhen,
             closeOnClickOutside,
             padding,
             position,
@@ -33,16 +33,16 @@ export const Drawer = React.forwardRef(
         }: DrawerProps,
         ref: React.Ref<DrawerElementType>
     ) => {
-        const [shouldRender, setShouldRender] = useState(isOpen);
+        const [shouldRender, setShouldRender] = useState(openWhen);
 
         useEffect(() => {
-            if (isOpen) {
+            if (openWhen) {
                 setShouldRender(true);
             }
-        }, [isOpen]);
+        }, [openWhen]);
 
         const onAnimationEnd = () => {
-            if (!isOpen) {
+            if (!openWhen) {
                 setShouldRender(false);
             }
         };
@@ -51,15 +51,16 @@ export const Drawer = React.forwardRef(
         if (position) {
             classNames.push(position);
         }
-        if (isOpen) {
+
+        if (openWhen) {
             classNames.push("open");
         } else if (shouldRender) {
             classNames.push("close");
         }
 
         const closeDrawer = () => {
-            if (onCloseCallback) {
-                onCloseCallback();
+            if (closeWhen) {
+                closeWhen();
             }
         };
 
@@ -73,10 +74,10 @@ export const Drawer = React.forwardRef(
                     onAnimationEnd={onAnimationEnd}
                     {...props}
                 >
-                    {isOpen && closeOnClickOutside && (
+                    {openWhen && closeOnClickOutside && (
                         <Element
                             as="div"
-                            className={`rest-of-page-overlay ${isOpen ? "visible" : ""}`}
+                            className={`rest-of-page-overlay ${openWhen ? "visible" : ""}`}
                             onClick={closeDrawer}
                         />
                     )}
