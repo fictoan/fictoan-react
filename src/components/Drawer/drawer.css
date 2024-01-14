@@ -79,6 +79,13 @@
         width     : fit-content;
     }
 
+    /* WIDTHS =============================================================== */
+    &.tiny .drawer-content-wrapper { width: 8vw ; }
+    &.small .drawer-content-wrapper { width: 12vw; }
+    &.medium .drawer-content-wrapper { width: 24vw; }
+    &.large .drawer-content-wrapper { width: 32vw; }
+    &.huge .drawer-content-wrapper { width: 48vw; }
+
     /* OPEN STATE =========================================================== */
     &.open.left .drawer-content-wrapper,
     &.open.right .drawer-content-wrapper { transform : translateY(0); }

@@ -20,7 +20,8 @@ const PrismReactRenderer = React.lazy(() =>
             return { default : prismModule.Highlight };
         }
 
-        // DON’T REMOVE THE WEIRD SPACING, ITS FOR THE ASCII BOX
+        // DON’T REMOVE THE WEIRD SPACING, IT’S FOR THE ASCII BOX
+        // TO ACCOUNT FOR THE ESCAPE CHARACTERS
         console.log(
             `FICTOAN : \x1B[35mLooking\x1B[33m for\x1B[32m syntax\x1B[34m highlighting\x1B[36m?\x1B[31m
 ╭──────────────────────────────────────────────────────────────────────────────────────────────────╮

@@ -1,16 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import { Element } from "../Element/Element";
-import { CommonAndHTMLProps } from "../Element/constants";
+import { CommonAndHTMLProps, SpacingTypes } from "../Element/constants";
+
+import { useClickOutside } from "../../hooks/UseClickOutside";
 
 import "./drawer.css";
 
 export interface DrawerCustomProps {
     position              : "top" | "right" | "bottom" | "left";
+    width               ? : SpacingTypes;
     openWhen            ? : boolean;
     closeWhen           ? : () => void;
     closeOnClickOutside ? : boolean;
     isDismissable       ? : boolean;
+    showOverlay         ? : boolean;
 }
 
 export type DrawerElementType = HTMLDivElement;
@@ -20,20 +24,27 @@ export type DrawerProps = Omit<CommonAndHTMLProps<DrawerElementType>, keyof Draw
 export const Drawer = React.forwardRef(
     (
         {
-            openWhen,
             children,
+            openWhen,
             closeWhen,
             closeOnClickOutside,
             padding,
             position,
+            width,
             bgColor,
             bgColour,
             isDismissable = true,
+            showOverlay = false,
             ...props
         }: DrawerProps,
         ref: React.Ref<DrawerElementType>
     ) => {
         const [shouldRender, setShouldRender] = useState(openWhen);
+
+        const drawerRef = useRef(null);
+        // Fallback to external ref if provided, otherwise use local ref
+        const effectiveRef = ref || drawerRef;
+
 
         useEffect(() => {
             if (openWhen) {
@@ -64,21 +75,27 @@ export const Drawer = React.forwardRef(
             }
         };
 
+        useClickOutside(effectiveRef, closeOnClickOutside ? closeDrawer : () => {});
+
+        if (width) {
+            classNames.push(`${width}`);
+        }
+
         return shouldRender ? (
             <>
                 <Element<DrawerElementType>
                     as="div"
                     data-drawer
-                    ref={ref}
+                    ref={effectiveRef}
                     classNames={classNames}
                     onAnimationEnd={onAnimationEnd}
                     {...props}
                 >
-                    {openWhen && closeOnClickOutside && (
+                    {openWhen && showOverlay && (
                         <Element
                             as="div"
                             className={`rest-of-page-overlay ${openWhen ? "visible" : ""}`}
-                            onClick={closeDrawer}
+                            {...(closeOnClickOutside ? { onClick: closeDrawer } : {})}
                         />
                     )}
 
@@ -99,5 +116,3 @@ export const Drawer = React.forwardRef(
         ) : null;
     }
 );
-
-export default Drawer;

@@ -65,13 +65,13 @@ export const Tabs = React.forwardRef(
                             <ul className="tab-labels-list">
                                 {tabs.map((tab) => (
                                     <li key={tab.key}>
-                                        <Text
-                                            className={`is-clickable ${tab.key === activeTab.key ? "is-active" : ""}`}
+                                        <Element
+                                            className={`tab-label is-clickable ${tab.key === activeTab.key ? "is-active" : ""}`}
                                             onClick={() => handleTabChange(tab)}
                                             marginBottom="none"
                                         >
                                             {tab.label}
-                                        </Text>
+                                        </Element>
                                     </li>
                                 ))}
                             </ul>

@@ -17,28 +17,28 @@
 
             li { list-style-type : none; }
 
-            p {
+            .tab-label {
                 padding       : 16px 0;
                 border-bottom : 2px solid transparent;
                 position      : relative;
+                color         : var(--tab-default-label);
             }
 
-            li:not(:last-child) > p {
+            li:not(:last-child) > .tab-label {
                 margin-right : 24px;
-                color        : var(--tab-default-label);
                 font-weight  : 400;
             }
 
-            p:hover { color : var(--tab-hover-label); }
+            .tab-label:hover { color : var(--tab-hover-label); }
 
-            p.is-active { color : var(--tab-active-label); }
+            .tab-label.is-active { color : var(--tab-active-label); }
 
-            p.is-right-aligned {
+            .tab-label.is-right-aligned {
                 margin-left  : auto;
                 margin-right : 0;
             }
 
-            p.is-active::after {
+            .tab-label.is-active::after {
                 display                 : block;
                 position                : absolute;
                 width                   : 100%;
@@ -51,7 +51,7 @@
                 background-color        : var(--tab-active-border);
             }
 
-            p.has-alert::after {
+            .tab-label.has-alert::after {
                 position         : absolute;
                 top              : 12px;
                 left             : 94%;
