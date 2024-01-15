@@ -1,9 +1,10 @@
 import React from "react";
 
 import { RadioButton } from "./RadioButton";
-import { RadioGroupProps } from "./constants";
 import { Element } from "../../Element/Element";
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
+
+import { RadioGroupProps } from "./constants";
 
 const RadioGroupOptions = ({ options, defaultValue, required, ...props }: RadioGroupProps) => {
     return (

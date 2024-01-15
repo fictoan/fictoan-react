@@ -46,6 +46,7 @@ export {
     CheckBox, type CheckboxProps,
     Switch, type SwitchProps,
     Range, type RangeProps,
+    SlidingSelector, type SlidingSelectorProps
 } from "./Form";
 
 // H-RULE //////////////////////////////////////////////////////////////////////

@@ -24,3 +24,5 @@ export { RadioButton } from "./RadioButton/RadioButton";
 export { CheckBox, type CheckboxProps } from "./CheckBox/CheckBox";
 
 export { Switch, type SwitchProps } from "./CheckBox/Switch";
+
+export { SlidingSelector, type SlidingSelectorProps } from "./RadioButton/SlidingSelector";
