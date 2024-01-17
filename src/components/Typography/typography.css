@@ -14,12 +14,12 @@ h1, h2, h3, h4, h5, h6 {
     margin      : 0;
 }
 
-h1 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 2.4); }
-h2 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 2); }
-h3 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1.64); }
-h4 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1.48); }
-h5 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1.24); }
-h6 { font-size : calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1.16); }
+h1 { font-size: calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 2.886) ; }
+h2 { font-size: calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 2.405) ; }
+h3 { font-size: calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 2.004) ; }
+h4 { font-size: calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1.67) ; }
+h5 { font-size: calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1.392) ; }
+h6 { font-size: calc(var(--paragraph-font-size) * var(--heading-size-multiplier) * 1.16) ; }
 
 @media all and (max-width : 720px) {
     h1, h2, h3, h4, h5, h6 { word-wrap : break-word; }
@@ -73,13 +73,13 @@ a:active { opacity : 0.72; }
 .weight-900 { font-weight : 900; }
 
 /* SIZES */
-.text-nano { font-size : 48%; }
-.text-micro { font-size : 64%; }
-.text-tiny { font-size : 80%; }
-.text-small { font-size : 92%; }
+.text-nano   { font-size : 48.23%; }
+.text-micro  { font-size : 57.87%; }
+.text-tiny   { font-size : 69.44%; }
+.text-small  { font-size : 83.33%; }
 .text-medium { font-size : 100%; }
-.text-large { font-size : 128%; }
-.text-huge { font-size : 160%; }
+.text-large  { font-size : 120%; }
+.text-huge   { font-size : 144%; }
 
 /* CODE ///////////////////////////////////////////////////////////////////// */
 code { font-family : var(--code-font); }
@@ -94,7 +94,7 @@ code { font-family : var(--code-font); }
     color            : var(--code-inline-text);
     font-size        : var(--code-inline-font-size);
     font-weight      : normal;
-    white-space      : pre-wrap;
+    white-space      : pre;
 }
 
 @media all and (max-width : 720px) {

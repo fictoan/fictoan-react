@@ -23,7 +23,10 @@ export const BaseInputComponent = React.forwardRef(
         }: BaseInputComponentWithIconProps<K>,
         ref: React.LegacyRef<InputElementType>
     ) => (
-        <FormItem required={inputProps.required}>
+        <FormItem
+            data-form-item
+            required={inputProps.required}
+        >
             <Element<K>
                 as={Component}
                 ref={ref}

@@ -23,7 +23,7 @@ export const Default: Story = {
         name: "radio-input-group-demo",
         options: [
             {
-                label: "0",
+                label: "Hello",
                 value: "0",
                 id: "option0",
             },
@@ -48,7 +48,7 @@ export const Default: Story = {
                 id: "option4",
             },
             {
-                label: "5",
+                label: "Hjhsdfkjsdfkskfsd",
                 value: "5",
                 id: "option5",
             },
@@ -56,21 +56,6 @@ export const Default: Story = {
                 label: "6",
                 value: "6",
                 id: "option6",
-            },
-            {
-                label: "7",
-                value: "7",
-                id: "option7",
-            },
-            {
-                label: "8",
-                value: "8",
-                id: "option8",
-            },
-            {
-                label: "9",
-                value: "9",
-                id: "option9",
             },
             {
                 label: "10",

@@ -1,19 +1,28 @@
-input {
+input[data-input-field] {
     position         : relative;
     width            : 100%;
     flex             : 1 1 auto;
     font-family      : var(--paragraph-font);
     color            : var(--input-text-default);
     background-color : var(--input-bg-default);
-    border           : 1px solid var(--input-border-default);
+    border           : var(--input-border-width-default) solid var(--input-border-default);
     border-radius    : var(--input-border-radius-default);
     padding          : 12px;
     line-height      : 1;
 
+    ::placeholder {
+        color   : var(--input-placeholder-default);
+        opacity : 1; /* For Firefox */
+    }
+
+    ::-ms-input-placeholder {
+        color : var(--input-placeholder-default);
+    }
+
     &:active,
     &:focus {
         background-color : var(--input-bg-focus);
-        border           : 2px solid var(--input-border-focus);
+        border           : var(--input-border-width-focus) solid var(--input-border-focus);
         color            : var(--input-text-focus);
         padding          : 11px;
     }
@@ -76,7 +85,7 @@ input {
     /*  Red cross  */
     &:invalid:not(:focus):not(:placeholder-shown) {
         color               : var(--input-text-invalid);
-        border              : 1px solid var(--input-border-invalid);
+        border              : var(--global-border-width) solid var(--input-border-invalid);
         background-color    : var(--input-bg-invalid);
         background-image    : url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+ICA8bGluZSB4MT0iNi41IiB5MT0iMTcuNSIgeDI9IjE4LjUiIHkyPSI1LjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2VmNDM0MyIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjIiLz4gIDxsaW5lIHgxPSI2LjUiIHkxPSI1LjUiIHgyPSIxOC41IiB5Mj0iMTcuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZWY0MzQzIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==);
         background-repeat   : no-repeat;

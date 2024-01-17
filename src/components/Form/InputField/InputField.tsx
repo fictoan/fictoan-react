@@ -15,5 +15,5 @@ export type InputFieldProps = CommonAndHTMLProps<InputFieldElementType> &
     InputIconProps;
 
 export const InputField = React.forwardRef(({ ...props }: InputFieldProps, ref: React.Ref<InputFieldElementType>) => {
-    return <BaseInputComponent<InputFieldElementType> as="input" data-input ref={ref} placeholder=" " {...props} />;
+    return <BaseInputComponent<InputFieldElementType> as="input" data-input-field ref={ref} placeholder=" " {...props} />;
 });

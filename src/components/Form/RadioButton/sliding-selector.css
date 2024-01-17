@@ -1,34 +1,27 @@
 :root {
     --radius : 8px;
     --border : 4px;
-    --height : 48px;
     --speed  : 0.25s;
+    --count  : 24;
 }
 
 [data-sliding-selector] {
-    height            : var(--height);
-    display           : grid;
-    grid-auto-flow    : column;
-    background        : hsl(0 0% 0%);
-    border-radius     : var(--radius);
-    grid-auto-columns : 1fr;
-    position          : relative;
-    border            : var(--border) solid hsl(0 0% 0%);
+    position              : relative;
+    display               : grid;
+    grid-auto-flow        : column;
+    grid-auto-columns     : 1fr;
+    height                : 48px;
+    background            : hsl(0 0% 0%);
+    border-radius         : var(--radius);
+    grid-template-columns : repeat(var(--count), 1fr);
+    border                : var(--border) solid hsl(0 0% 0%);
 
-    & {
-        --ease : linear(
-                0, 0.1641 3.52%, 0.311 7.18%,
-                0.4413 10.99%, 0.5553 14.96%,
-                0.6539 19.12%, 0.738 23.5%,
-                0.8086 28.15%, 0.8662 33.12%,
-                0.9078 37.92%, 0.9405 43.12%,
-                0.965 48.84%, 0.9821 55.28%,
-                0.992 61.97%, 0.9976 70.09%, 1
-        );
+    & > div {
+        flex : 1;
     }
 
-    & > input,
-    .sr-only {
+    /* RESET THE DEFAULT RADIO BUTTON STYLES */
+    input {
         position     : absolute;
         width        : 1px;
         height       : 1px;
@@ -40,58 +33,7 @@
         border-width : 0;
     }
 
-    &:has(:checked:nth-of-type(1)) { --active : 0; }
-    &:has(:checked:nth-of-type(2)) { --active : 1; }
-    &:has(:checked:nth-of-type(3)) { --active : 2; }
-    &:has(:checked:nth-of-type(4)) { --active : 3; }
-    &:has(:checked:nth-of-type(5)) { --active : 4; }
-    &:has(:checked:nth-of-type(6)) { --active : 5; }
-    &:has(:checked:nth-of-type(7)) { --active : 6; }
-    &:has(:checked:nth-of-type(8)) { --active : 7; }
-    &:has(:checked:nth-of-type(9)) { --active : 8; }
-    &:has(:checked:nth-of-type(10)) { --active : 9; }
-    &:has(:checked:nth-of-type(11)) { --active : 10; }
-    &:has(:checked:nth-of-type(12)) { --active : 11; }
-    &:has(:checked:nth-of-type(13)) { --active : 12; }
-    &:has(:checked:nth-of-type(14)) { --active : 13; }
-    &:has(:checked:nth-of-type(15)) { --active : 14; }
-    &:has(:checked:nth-of-type(16)) { --active : 15; }
-    &:has(:checked:nth-of-type(17)) { --active : 16; }
-    &:has(:checked:nth-of-type(18)) { --active : 17; }
-    &:has(:checked:nth-of-type(19)) { --active : 18; }
-    &:has(:checked:nth-of-type(20)) { --active : 19; }
-    &:has(:checked:nth-of-type(21)) { --active : 20; }
-    &:has(:checked:nth-of-type(22)) { --active : 21; }
-    &:has(:checked:nth-of-type(23)) { --active : 22; }
-    &:has(:checked:nth-of-type(24)) { --active : 23; }
-    
-    & :checked + label { --highlight : 1; }
-
-    &:has(input:nth-of-type(2)) { --count : 2; }
-    &:has(input:nth-of-type(3)) { --count : 3; }
-    &:has(input:nth-of-type(4)) { --count : 4; }
-    &:has(input:nth-of-type(5)) { --count : 5; }
-    &:has(input:nth-of-type(6)) { --count : 6; }
-    &:has(input:nth-of-type(7)) { --count : 7; }
-    &:has(input:nth-of-type(8)) { --count : 8; }
-    &:has(input:nth-of-type(9)) { --count : 9; }
-    &:has(input:nth-of-type(10)) { --count : 10; }
-    &:has(input:nth-of-type(11)) { --count : 11; }
-    &:has(input:nth-of-type(12)) { --count : 12; }
-    &:has(input:nth-of-type(13)) { --count : 13; }
-    &:has(input:nth-of-type(14)) { --count : 14; }
-    &:has(input:nth-of-type(15)) { --count : 15; }
-    &:has(input:nth-of-type(16)) { --count : 16; }
-    &:has(input:nth-of-type(17)) { --count : 17; }
-    &:has(input:nth-of-type(18)) { --count : 18; }
-    &:has(input:nth-of-type(19)) { --count : 19; }
-    &:has(input:nth-of-type(20)) { --count : 20; }
-    &:has(input:nth-of-type(21)) { --count : 21; }
-    &:has(input:nth-of-type(22)) { --count : 22; }
-    &:has(input:nth-of-type(23)) { --count : 23; }
-    &:has(input:nth-of-type(24)) { --count : 24; }
-
-    & label {
+    label {
         padding                    : 0 clamp(0.5rem, 2vw + 0.25rem, 2rem);
         cursor                     : pointer;
         text-align                 : center;
@@ -105,24 +47,75 @@
         transition-timing-function : var(--ease, ease);
     }
 
+    input:checked + label { --highlight : 1; }
+
     input:not(:checked) + label:hover {
         --highlight : 0.35;
         background  : hsl(0 0% 20%);
     }
 
-    &::after {
+    & > div:has(:checked:nth-of-type(1)) { --active : 0; }
+    & > div:has(:checked:nth-of-type(2)) { --active : 1; }
+    & > div:has(:checked:nth-of-type(3)) { --active : 2; }
+    & > div:has(:checked:nth-of-type(4)) { --active : 3; }
+    & > div:has(:checked:nth-of-type(5)) { --active : 4; }
+    & > div:has(:checked:nth-of-type(6)) { --active : 5; }
+    & > div:has(:checked:nth-of-type(7)) { --active : 6; }
+    & > div:has(:checked:nth-of-type(8)) { --active : 7; }
+    & > div:has(:checked:nth-of-type(9)) { --active : 8; }
+    & > div:has(:checked:nth-of-type(10)) { --active : 9; }
+    & > div:has(:checked:nth-of-type(11)) { --active : 10; }
+    & > div:has(:checked:nth-of-type(12)) { --active : 11; }
+    & > div:has(:checked:nth-of-type(13)) { --active : 12; }
+    & > div:has(:checked:nth-of-type(14)) { --active : 13; }
+    & > div:has(:checked:nth-of-type(15)) { --active : 14; }
+    & > div:has(:checked:nth-of-type(16)) { --active : 15; }
+    & > div:has(:checked:nth-of-type(17)) { --active : 16; }
+    & > div:has(:checked:nth-of-type(18)) { --active : 17; }
+    & > div:has(:checked:nth-of-type(19)) { --active : 18; }
+    & > div:has(:checked:nth-of-type(20)) { --active : 19; }
+    & > div:has(:checked:nth-of-type(21)) { --active : 20; }
+    & > div:has(:checked:nth-of-type(22)) { --active : 21; }
+    & > div:has(:checked:nth-of-type(23)) { --active : 22; }
+    & > div:has(:checked:nth-of-type(24)) { --active : 23; }
+
+    & > div:has(input:nth-of-type(2)) { --count : 2; }
+    & > div:has(input:nth-of-type(3)) { --count : 3; }
+    & > div:has(input:nth-of-type(4)) { --count : 4; }
+    & > div:has(input:nth-of-type(5)) { --count : 5; }
+    & > div:has(input:nth-of-type(6)) { --count : 6; }
+    & > div:has(input:nth-of-type(7)) { --count : 7; }
+    & > div:has(input:nth-of-type(8)) { --count : 8; }
+    & > div:has(input:nth-of-type(9)) { --count : 9; }
+    & > div:has(input:nth-of-type(10)) { --count : 10; }
+    & > div:has(input:nth-of-type(11)) { --count : 11; }
+    & > div:has(input:nth-of-type(12)) { --count : 12; }
+    & > div:has(input:nth-of-type(13)) { --count : 13; }
+    & > div:has(input:nth-of-type(14)) { --count : 14; }
+    & > div:has(input:nth-of-type(15)) { --count : 15; }
+    & > div:has(input:nth-of-type(16)) { --count : 16; }
+    & > div:has(input:nth-of-type(17)) { --count : 17; }
+    & > div:has(input:nth-of-type(18)) { --count : 18; }
+    & > div:has(input:nth-of-type(19)) { --count : 19; }
+    & > div:has(input:nth-of-type(20)) { --count : 20; }
+    & > div:has(input:nth-of-type(21)) { --count : 21; }
+    & > div:has(input:nth-of-type(22)) { --count : 22; }
+    & > div:has(input:nth-of-type(23)) { --count : 23; }
+    & > div:has(input:nth-of-type(24)) { --count : 24; }
+
+    & > div::after {
+        position                   : absolute;
         pointer-events             : none;
         content                    : "";
         width                      : calc(100% / var(--count));
         height                     : 100%;
         background                 : hsl(0 0% 100%);
-        position                   : absolute;
         border-radius              : calc(var(--radius) - var(--border));
         mix-blend-mode             : difference;
         translate                  : calc(var(--active, 0) * 100%) 0;
         transition                 : translate, outline-color;
         transition-duration        : var(--speed);
-        transition-timing-function : var(--ease, ease);
+        transition-timing-function : ease-in-out;
         outline                    : 2px solid transparent;
     }
 

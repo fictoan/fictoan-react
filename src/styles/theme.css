@@ -171,14 +171,18 @@
 /* INPUT FIELD ////////////////////////////////////////////////////////////// */
 :root {
     --input-bg-default            : var(--white);
+
     --input-border-default        : var(--slate-light-40);
     --input-border-radius-default : var(--global-border-radius);
+    --input-border-width-default  : var(--global-border-width);
+
     --input-label-default         : var(--paragraph-text-colour);
     --input-placeholder-default   : var(--slate-light-40);
     --input-text-default          : var(--shade);
 
     --input-bg-focus              : var(--white);
     --input-border-focus          : var(--slate-light-40);
+    --input-border-width-focus    : var(--global-border-width);
     --input-text-focus            : var(--shade);
 
     --input-bg-valid              : var(--white);
