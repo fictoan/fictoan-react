@@ -1,4 +1,4 @@
-export { Checkbox, type CheckboxProps } from "@/components/Form/Checkbox/Checkbox";
+export { Checkbox, type CheckboxProps } from "./Checkbox/Checkbox";
 
 export { FileUpload, type FileUploadProps } from "./InputField/FileUpload";
 
@@ -23,6 +23,6 @@ export { Select, type SelectProps, type OptionProps } from "./Select/Select";
 
 export { SlidingSelector, type SlidingSelectorProps } from "./RadioButton/SlidingSelector";
 
-export { Switch, type SwitchProps } from "@/components/Form/Checkbox/Switch";
+export { Switch, type SwitchProps } from "./Checkbox/Switch";
 
 export { TextArea, type TextareaProps } from "./TextArea/TextArea";
