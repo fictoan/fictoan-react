@@ -50,7 +50,7 @@ export {
     FileUpload,type FileUploadProps,
     RadioGroup,type RadioGroupProps,
     RadioButton, type RadioButtonProps,
-    CheckBox, type CheckboxProps,
+    Checkbox, type CheckboxProps,
     Switch, type SwitchProps,
     Range, type RangeProps,
 } from "./components/Form";

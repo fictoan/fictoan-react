@@ -5,8 +5,8 @@ import { InputField } from "../InputField/InputField";
 import { FormItemGroup } from "../FormItemGroup/FormItemGroup";
 import { FormItem } from "../FormItem/FormItem";
 import { RadioGroup } from "../RadioButton/RadioGroup";
-import { CheckBox } from "../CheckBox/CheckBox";
-import { Switch } from "../CheckBox/Switch";
+import { Checkbox } from "@/components/Form/Checkbox/Checkbox";
+import { Switch } from "@/components/Form/Checkbox/Switch";
 import { Select } from "../Select/Select";
 import { TextArea } from "../TextArea/TextArea";
 import { Button } from "../../Button/Button";
@@ -124,13 +124,13 @@ export const Default: Story = {
                 ></RadioGroup>
             </FormItem>,
             <FormItem>
-                <CheckBox
+                <Checkbox
                     label="Accept terms & conditions"
                     id="accept-checkbox"
                     name="accept-terms"
                     required
                     helpText="Hope you read them as well"
-                ></CheckBox>
+                ></Checkbox>
             </FormItem>,
             <FormItem>
                 <Switch label="Turn On" id="turn-on-switch"></Switch>
@@ -149,7 +149,7 @@ export const UsingFieldsProp: Story = {
         fields: [
             {
                 // @ts-ignore
-                as: "CheckBox",
+                as: "Checkbox",
                 id: "accept",
                 name: "accept",
                 label: "Accept",

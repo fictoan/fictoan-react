@@ -9,7 +9,7 @@ import "./checkbox.css";
 export type CheckboxElementType = HTMLInputElement;
 export type CheckboxProps = Omit<BaseInputComponentProps<CheckboxElementType>, "as">;
 
-export const CheckBox = React.forwardRef(({ ...props }: CheckboxProps, ref: React.Ref<CheckboxElementType>) => {
+export const Checkbox = React.forwardRef(({ ...props }: CheckboxProps, ref: React.Ref<CheckboxElementType>) => {
     return (
         <Element<CheckboxElementType> as="div" data-checkbox ref={ref}>
             <BaseInputComponent as="input" type="checkbox" {...props} />

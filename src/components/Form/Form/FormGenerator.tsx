@@ -9,8 +9,8 @@ import { InputLabel, InputLabelCustomProps } from "../InputLabel/InputLabel";
 import { InputCommonProps } from "../BaseInputComponent/constants";
 import { InputField } from "../InputField/InputField";
 import { FileUpload } from "../InputField/FileUpload";
-import { CheckBox } from "../CheckBox/CheckBox";
-import { Switch } from "../CheckBox/Switch";
+import { Checkbox } from "@/components/Form/Checkbox/Checkbox";
+import { Switch } from "@/components/Form/Checkbox/Switch";
 import { RadioButton } from "../RadioButton/RadioButton";
 import { RadioGroup } from "../RadioButton/RadioGroup";
 import { Select } from "../Select/Select";
@@ -38,7 +38,7 @@ export interface FormFieldsConfig extends FormFieldsConfigBase {
 
 // Supported Form elements for "as" prop in config
 const FormElements: Record<string, ElementType> = {
-    CheckBox: CheckBox,
+    Checkbox: Checkbox,
     Switch: Switch,
     InputField: InputField,
     FileUpload: FileUpload,

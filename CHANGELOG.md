@@ -90,7 +90,7 @@
 - Fix `isSubtext` prop for text elements
 - Fix cursor-pointer on hover for `ExpandableGroup`
 - Add back the right margin bottoms for `FormItem` elements inside `FormItemGroup`
-- Fix margin bottom for `CheckBox` and `Switch` inside a `Form`
+- Fix margin bottom for `Checkbox` and `Switch` inside a `Form`
 
 ### 0.41.23
 - Remove `line-height` property from `body` and apply it more specifically to text elements only
@@ -228,7 +228,7 @@
     - Each component folder now contains a `<component_name>.stories.tsx` (to create stories) and `<component_name>.stories.mdx` (to write docs) file
 - Add make commands for easy creation of components
 - Remove `name` props from RadioGroup `options` type; Add `label` and `id`
-- Remove `as` from RadioButton and CheckBox props
+- Remove `as` from RadioButton and Checkbox props
 - Make `shadow` a global prop
 - Make `shape` a global prop
 - Add `ExpandableContent` component which implements details and summary tags
@@ -334,7 +334,7 @@
 
 - Form elements
     - `input` theme object is now `inputField`
-    - `CheckBox`, `RadioButton`, `Select` etc have been moved out from inside `input`
+    - `Checkbox`, `RadioButton`, `Select` etc have been moved out from inside `input`
 
 - InfoPanel
     - Dismiss button now styled differently, and does not interfere with the content
@@ -413,7 +413,7 @@
 - Remove Normalize.css
 
 ### 0.31.19
-- Add theme variables for `RadioButton`, `CheckBox` and `ToggleSwitch`
+- Add theme variables for `RadioButton`, `Checkbox` and `ToggleSwitch`
 
 ### 0.31.18
 - Upgrade to React 17.0.1
