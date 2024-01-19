@@ -33,7 +33,7 @@ export { ExpandableContent, type ExpandableContentProps } from "./ExpandableCont
 
 // FORM ////////////////////////////////////////////////////////////////////////
 export {
-    FormWrapper, type FormWrapperProps,
+    Form, type FormProps,
     FormItem, type FormItemProps,
     FormItemGroup, type FormItemGroupProps,
     InputField, type InputFieldProps,

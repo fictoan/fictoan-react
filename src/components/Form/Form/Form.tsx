@@ -1,28 +1,29 @@
 import React from "react";
 
 import { Element } from "../../Element/Element";
-import { CommonAndHTMLProps, SpacingTypes } from "../../Element/constants";
 import { Callout } from "../../Callout/Callout";
+
+import { CommonAndHTMLProps, SpacingTypes } from "../../Element/constants";
 import { FormFieldsConfig, generateFormThroughConfig } from "./FormGenerator";
 
-import "./form-wrapper.css";
+import "./form.css";
 
 // prettier-ignore
-export interface FormWrapperCustomProps {
+export interface FormCustomProps {
     spacing        ? : SpacingTypes;
     fields         ? : FormFieldsConfig[];
     onFieldsChange ? : React.FormEventHandler;
     errorText      ? : string;
 }
 
-export type FormWrapperElementType = HTMLFormElement;
-export type FormWrapperProps = Omit<CommonAndHTMLProps<FormWrapperElementType>, keyof FormWrapperCustomProps> &
-    FormWrapperCustomProps;
+export type FormElementType = HTMLFormElement;
+export type FormProps = Omit<CommonAndHTMLProps<FormElementType>, keyof FormCustomProps> &
+    FormCustomProps;
 
-export const FormWrapper = React.forwardRef(
+export const Form = React.forwardRef(
     (
-        { spacing = "small", fields, onFieldsChange, children, errorText, ...props }: FormWrapperProps,
-        ref: React.Ref<FormWrapperElementType>
+        { spacing = "small", fields, onFieldsChange, children, errorText, ...props }: FormProps,
+        ref: React.Ref<FormElementType>
     ) => {
         let classNames = [];
 
@@ -35,7 +36,7 @@ export const FormWrapper = React.forwardRef(
         }
 
         return (
-            <Element<FormWrapperElementType> as="form" data-form-wrapper ref={ref} classNames={classNames} {...props}>
+            <Element<FormElementType> as="form" data-form ref={ref} classNames={classNames} {...props}>
                 {children}
 
                 {errorText && <Callout kind="error">{errorText}</Callout>}

@@ -15,6 +15,7 @@
 - Remove `InfoPanel` and extend `Drawer` with `position` prop
 - Add `horizontalPadding`, `verticalPadding`, `horizontalMargin`, and `verticalMargin`
 - Remove `sidePadding` for `Row` and `sideMargin` for `HRule`
+- Rename `FormWrapper` to `Form`
 
 ---
 
@@ -89,7 +90,7 @@
 - Fix `isSubtext` prop for text elements
 - Fix cursor-pointer on hover for `ExpandableGroup`
 - Add back the right margin bottoms for `FormItem` elements inside `FormItemGroup`
-- Fix margin bottom for `CheckBox` and `Switch` inside a `FormWrapper`
+- Fix margin bottom for `CheckBox` and `Switch` inside a `Form`
 
 ### 0.41.23
 - Remove `line-height` property from `body` and apply it more specifically to text elements only
@@ -243,11 +244,11 @@
 - Remove FormItemJointGroup component
     - Add `isJoint` prop to FormItemGroup
 - Remove Extra spacing after FormItemGroup
-- Add `fields` and `onFieldsChange` prop to FormWrapper to allow form creation using an array of config 🎉
+- Add `fields` and `onFieldsChange` prop to Form to allow form creation using an array of config 🎉
 - RadioGroup and Select now use BaseInputComponent
 - Add better and consistent help & error text for each form field
     - Make InputLabel atomic
-- Add error text for FormWrapper which uses Callout component
+- Add error text for Form which uses Callout component
 - Add sizes to Switch component
 - Make Select chevron consistent with ExpandableContent
 - Make required and disabled states consistent in form fields

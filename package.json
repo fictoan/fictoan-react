@@ -75,8 +75,5 @@
         "prism-react-renderer": {
             "optional": true
         }
-    },
-    "dependencies": {
-        "fictoan-react": "file:.yalc/fictoan-react"
     }
 }

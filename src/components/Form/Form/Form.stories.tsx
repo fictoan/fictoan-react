@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { FormWrapper } from "./FormWrapper";
+import { Form } from "./Form";
 import { InputField } from "../InputField/InputField";
 import { FormItemGroup } from "../FormItemGroup/FormItemGroup";
 import { FormItem } from "../FormItem/FormItem";
@@ -11,20 +11,20 @@ import { Select } from "../Select/Select";
 import { TextArea } from "../TextArea/TextArea";
 import { Button } from "../../Button/Button";
 
-const meta: Meta<typeof FormWrapper> = {
-    component: FormWrapper,
+const meta: Meta<typeof Form> = {
+    component: Form,
     tags: ["autodocs"],
     parameters: {
         docs: {
             description: {
-                component: "This is a FormWrapper.",
+                component: "This is a Form.",
             },
         },
     },
 };
 
 export default meta;
-type Story = StoryObj<typeof FormWrapper>;
+type Story = StoryObj<typeof Form>;
 
 export const Default: Story = {
     args: {

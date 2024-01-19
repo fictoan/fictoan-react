@@ -1,8 +1,9 @@
-form[data-form-wrapper] {
-    display        : flex;
+form[data-form] {
     position       : relative;
     width          : 100%;
+    display        : flex;
     flex-direction : column;
+
     &.spacing-none   [data-form-item]:not(:last-child) { margin-bottom :    0; }
     &.spacing-nano   [data-form-item]:not(:last-child) { margin-bottom :  8px; }
     &.spacing-micro  [data-form-item]:not(:last-child) { margin-bottom : 12px; }

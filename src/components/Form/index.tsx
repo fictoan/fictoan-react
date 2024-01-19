@@ -1,4 +1,4 @@
-export { FormWrapper, type FormWrapperProps } from "./FormWrapper/FormWrapper";
+export { Form, type FormProps } from "./Form/Form";
 
 export { FormItem, type FormItemProps } from "./FormItem/FormItem";
 
@@ -10,7 +10,7 @@ export { TextArea, type TextareaProps } from "./TextArea/TextArea";
 
 export { InputLabel, type InputLabelProps } from "./InputLabel/InputLabel";
 
-export { Select, type SelectProps } from "./Select/Select";
+export { Select, type SelectProps, type OptionProps } from "./Select/Select";
 
 export { FileUpload, type FileUploadProps } from "./InputField/FileUpload";
 

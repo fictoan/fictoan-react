@@ -24,7 +24,6 @@ input[data-input-field] {
         background-color : var(--input-bg-focus);
         border           : var(--input-border-width-focus) solid var(--input-border-focus);
         color            : var(--input-text-focus);
-        padding          : 11px;
     }
 
     &[type=password] { letter-spacing : 4px; }
@@ -65,7 +64,7 @@ input[data-input-field] {
     /*  Grey check mark  */
     &.validate-this {
         padding-right       : 40px;
-        background-image    : url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+ICA8cG9seWxpbmUgcG9pbnRzPSIzLjUgMTIuNSA4LjUgMTcuNSAyMC41IDUuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZTJlMmUyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==);
+        background-image    : url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+ICA8cG9seWxpbmUgcG9pbnRzPSIzLjUgMTIuNSA4LjUgMTcuNSAyMC41IDUuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZTJlMmUyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIgb3BhY2l0eT0iMC40Ii8+PC9zdmc+");
         background-repeat   : no-repeat;
         background-position : right 12px top 56%;
         background-size     : 24px;

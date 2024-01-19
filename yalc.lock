@@ -1,9 +1,0 @@
-{
-  "version": "v1",
-  "packages": {
-    "fictoan-react": {
-      "signature": "c2e529c16939437569f5229a5c5033a6",
-      "file": true
-    }
-  }
-}

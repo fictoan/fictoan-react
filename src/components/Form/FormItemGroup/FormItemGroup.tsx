@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Element } from "../../Element/Element";
-import { CommonAndHTMLProps } from "../../Element/constants";
+import { CommonAndHTMLProps, SpacingTypes } from "../../Element/constants";
 
 import "./form-item-group.css";
 
@@ -9,7 +9,7 @@ import "./form-item-group.css";
 export interface FormItemGroupCustomProps {
     isJoint      ? : boolean;
     retainLayout ? : boolean;
-    spacing      ? : string;
+    spacing      ? : SpacingTypes;
 }
 
 export type FormItemGroupElementType = HTMLDivElement;
