@@ -1,21 +1,25 @@
 # CHANGELOG
-### 1.0.0
 
-#### ⚠️ BREAKING CHANGES ⚠️
+### 1.0.0
+#### GENERIC CHANGES
 - Move to Vite
 - Move to `pnpm` for package management
 - Remove `styled-components` as a dependency
 - Adopt plain CSS for styling
-- Remove `ThemeProvider` and `theme` prop from all components
-- Refactor `Row` and `Portion` to use CSS Grid and Flexbox both
 - Support twice as many `defaultColours`
-- `para` is now `paragraph`
 - Use `rem` units for font sizes
 - Ability to set `Element` as a flexbox/grid div using `layoutAsFlexbox` and `layoutAsGrid`
-- Remove `InfoPanel` and extend `Drawer` with `position` prop
 - Add `horizontalPadding`, `verticalPadding`, `horizontalMargin`, and `verticalMargin`
+
+#### ⚠️ BREAKING CHANGES ⚠️
+- Remove `ThemeProvider` and `theme` prop from all components
+- Refactor `Row` and `Portion` to use CSS Grid and Flexbox both
+- `para` is now `paragraph`
+- Remove `defaultColours` object as exported
+- Remove `InfoPanel` and extend `Drawer` with `position` prop
 - Remove `sidePadding` for `Row` and `sideMargin` for `HRule`
 - Rename `FormWrapper` to `Form`
+- Import, usage and extension of `CodeBlock`
 
 ---
 
