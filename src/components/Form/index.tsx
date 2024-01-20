@@ -12,6 +12,8 @@ export { InputField, type InputFieldProps } from "./InputField/InputField";
 
 export { InputLabel, type InputLabelProps } from "./InputLabel/InputLabel";
 
+export { PinInputField, type PinInputFieldProps } from "./PinInputField/PinInputField";
+
 export { RadioButton } from "./RadioButton/RadioButton";
 
 export { RadioGroup } from "./RadioButton/RadioGroup";
