@@ -34,13 +34,12 @@
         background-color : var(--input-bg-default);
         border-radius    : var(--input-border-radius-default);
         align-items      : center;
-        border           : 1px solid var(--input-border-default);
+        border           : var(--global-border-width) solid var(--input-border-default);
         width            : 100%;
 
         &:focus {
             background-color : var(--input-bg-focus);
-            border           : 2px solid var(--input-border-focus);
-            padding          : 11px 35px 11px 7px;
+            border           : var(--global-border-width) solid var(--input-border-focus);
         }
     }
 }

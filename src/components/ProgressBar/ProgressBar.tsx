@@ -8,14 +8,14 @@ import "./progress-bar.css";
 
 // prettier-ignore
 export interface ProgressBarLabelCustomProps {
-    unit ? : string;
+    suffix ? : string;
 }
 
 // prettier-ignore
 export interface ProgressBarCustomProps {
     barBg   ? : string;
     barFill ? : string;
-    unit    ? : string;
+    suffix  ? : string;
     height  ? : string;
 }
 
@@ -30,15 +30,25 @@ export const ProgressBar = React.forwardRef(
         return (
             <>
                 {label && (
-                    <Element<HTMLDivElement> as="div" data-progress-bar-meta>
+                    <Element<HTMLDivElement>
+                        as="div"
+                        data-progress-bar-meta
+                    >
                         <Text>{label}</Text>
                         <Text>
                             {value}
-                            {props.unit && props.unit}
+                            {props.suffix && props.suffix}
                         </Text>
                     </Element>
                 )}
-                <Element<ProgressBarElementType> as="progress" data-progress-bar ref={ref} value={value} {...props} style={{ height : height }} />
+                <Element<ProgressBarElementType>
+                    as="progress"
+                    data-progress-bar
+                    ref={ref}
+                    value={value}
+                    {...props}
+                    style={{ height : height }}
+                />
             </>
         );
     }

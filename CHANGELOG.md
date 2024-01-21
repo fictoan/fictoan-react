@@ -1,6 +1,6 @@
 # CHANGELOG
 
-### 1.0.0
+## 1.0.0
 #### GENERIC CHANGES
 - Move to Vite
 - Move to `pnpm` for package management
@@ -14,12 +14,17 @@
 #### ⚠️ BREAKING CHANGES ⚠️
 - Remove `ThemeProvider` and `theme` prop from all components
 - Refactor `Row` and `Portion` to use CSS Grid and Flexbox both
-- `para` is now `paragraph`
+- Import, usage and extension of `CodeBlock`
 - Remove `defaultColours` object as exported
 - Remove `InfoPanel` and extend `Drawer` with `position` prop
-- Remove `sidePadding` for `Row` and `sideMargin` for `HRule`
+- Rename `sidePadding` and `sideMargin` to `horizontalPadding` and `horizontalMargin`
+- Rename `para` to `paragraph` in CSS variables
 - Rename `FormWrapper` to `Form`
-- Import, usage and extension of `CodeBlock`
+- Rename `CheckBox` to `Checkbox`
+
+[//]: # (TODO: Fix Sidebar scrolling issue)
+[//]: # (TODO: Fix ProgressBar height issue)
+[//]: # (TODO: Revamp BreadCrumbs)
 
 ---
 
