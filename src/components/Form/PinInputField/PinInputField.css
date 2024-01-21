@@ -1,0 +1,10 @@
+[data-pin-input-field] {
+    &.layout-flexbox {
+        flex-wrap : nowrap;
+    }
+
+    & input { 
+        font-weight : bold; 
+        text-align : center; 
+    }
+}

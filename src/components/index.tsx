@@ -46,7 +46,8 @@ export {
     Checkbox, type CheckboxProps,
     Switch, type SwitchProps,
     Range, type RangeProps,
-    SlidingSelector, type SlidingSelectorProps
+    SlidingSelector, type SlidingSelectorProps,
+    PinInputField, type PinInputFieldProps,
 } from "./Form";
 
 // H-RULE //////////////////////////////////////////////////////////////////////
