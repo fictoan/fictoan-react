@@ -27,28 +27,28 @@
         background-color : var(--notification-item-info-bg);
         border           : 1px solid var(--notification-item-info-border);
 
-        ::before { background-color : var(--notification-item-info-border); }
+        ::before { color : var(--notification-item-info-border); }
     }
 
     &.error {
         background-color : var(--notification-item-error-bg);
         border           : 1px solid var(--notification-item-error-border);
 
-        ::before { background-color : var(--notification-item-error-border); }
+        ::before { color : var(--notification-item-error-border); }
     }
 
     &.success {
         background-color : var(--notification-item-success-bg);
         border           : 1px solid var(--notification-item-success-border);
 
-        ::before { background-color : var(--notification-item-success-border); }
+        ::before { color : var(--notification-item-success-border); }
     }
 
     &.warning {
         background-color : var(--notification-item-warning-bg);
         border           : 1px solid var(--notification-item-warning-border);
 
-        ::before { background-color : var(--notification-item-warning-border); }
+        ::before { color : var(--notification-item-warning-border); }
     }
 
 
@@ -68,17 +68,17 @@
         right    : 8px;
         width    : 16px;
         height   : 16px;
-        opacity  : 0.24;
         cursor   : pointer;
     }
 
-    & .dismiss-button:hover { opacity : 1; }
-
-    & .dismiss-button:before {
+    & .dismiss-button::before {
         content     : "\00D7";
         font-size   : 24px;
         line-height : 0;
     }
 
-    &.dismissed { transform : translateX(560px); }
+    &.dismissed {
+        transform : translateX(100%);
+        opacity   : 0;
+    }
 }

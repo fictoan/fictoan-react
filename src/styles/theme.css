@@ -115,16 +115,16 @@
     --callout-border-radius  : var(--global-border-radius);
     --callout-border-width   : var(--nano);
 
-    --callout-info-bg        : var(--blue-light-40);
+    --callout-info-bg        : var(--blue-light-60);
     --callout-info-border    : var(--blue-dark-40);
 
-    --callout-success-bg     : var(--green-light-40);
+    --callout-success-bg     : var(--green-light-60);
     --callout-success-border : var(--green-dark-40);
 
-    --callout-warning-bg     : var(--amber-light-40);
+    --callout-warning-bg     : var(--amber-light-60);
     --callout-warning-border : var(--amber-dark-40);
 
-    --callout-error-bg       : var(--red-light-40);
+    --callout-error-bg       : var(--red-light-60);
     --callout-error-border   : var(--red-dark-40);
 }
 
@@ -220,23 +220,20 @@
     --notification-item-border-radius           : var(--global-border-radius);
 
     --notification-item-generic-bg              : var(--white);
-    --notification-item-generic-border          : var(--slate-light-40);
+    --notification-item-generic-border          : var(--slate-light-60);
     --notification-item-generic-text            : var(--shade);
 
-    --notification-item-info-bg                 : var(--blue-light-40);
+    --notification-item-info-bg                 : var(--blue-light-60);
     --notification-item-info-border             : var(--blue);
 
-    --notification-item-error-bg                : var(--red-light-40);
+    --notification-item-error-bg                : var(--red-light-60);
     --notification-item-error-border            : var(--red);
 
-    --notification-item-success-bg              : var(--green-light-40);
+    --notification-item-success-bg              : var(--green-light-60);
     --notification-item-success-border          : var(--green);
 
-    --notification-item-warning-bg              : var(--amber-light-40);
+    --notification-item-warning-bg              : var(--amber-light-60);
     --notification-item-warning-border          : var(--amber);
-
-    --notification-dismiss-button               : var(--slate-dark-90);
-    --notification-dismiss-button-border-radius : var(--slate-dark-90);
 }
 
 /* PROGRESS BAR ///////////////////////////////////////////////////////////// */
