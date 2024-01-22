@@ -135,7 +135,7 @@
 
     @media all and (max-width : 600px) {
 
-        &.\000031 -on-mobile {
+        &.\000031-on-mobile {
             grid-column : span 1;
             flex        : 0 0 4.1667%
         }
@@ -273,7 +273,7 @@
 
     @media all and (min-width : 601px) and (max-width : 900px) {
 
-        &.\000031 -on-tablet-portrait {
+        &.\000031-on-tablet-portrait {
             grid-column : span 1;
             flex        : 0 0 4.1667%
         }
@@ -411,7 +411,7 @@
 
     @media all and (min-width : 901px) and (max-width : 1200px) {
         /* .row:not(.retain-layout-on-tablet-landscape) > &:not([class*='on-tablet-landscape']) { grid-column : span 24; } */
-        &.\000031 -on-tablet-landscape {
+        &.\000031-on-tablet-landscape {
             grid-column : span 1;
             flex        : 0 0 4.1667%
         }

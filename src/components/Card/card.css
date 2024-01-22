@@ -14,6 +14,8 @@
 
 [data-card].shape-rounded { border-radius : var(--card-border-radius); }
 
+[data-card].padding-all-nano   { padding :  8px; }
+[data-card].padding-all-micro  { padding : 24px; }
 [data-card].padding-all-tiny   { padding :  8px; }
 [data-card].padding-all-small  { padding : 16px; }
 [data-card].padding-all-medium { padding : 32px; }

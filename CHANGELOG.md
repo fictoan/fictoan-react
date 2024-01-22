@@ -10,6 +10,7 @@
 - Use `rem` units for font sizes
 - Ability to set `Element` as a flexbox/grid div using `layoutAsFlexbox` and `layoutAsGrid`
 - Add `horizontalPadding`, `verticalPadding`, `horizontalMargin`, and `verticalMargin`
+- Add generic block-level sectioning elements as custom components. Eg `<Div>`, `<Section>`, `<Article>` etc
 
 #### ⚠️ BREAKING CHANGES ⚠️
 - Remove `ThemeProvider` and `theme` prop from all components
@@ -25,6 +26,8 @@
 [//]: # (TODO: Fix Sidebar scrolling issue)
 [//]: # (TODO: Fix ProgressBar height issue)
 [//]: # (TODO: Revamp BreadCrumbs)
+[//]: # (TODO: Fix Dismiss Button in NotifcationItem)
+[//]: # (TODO: Add mask design to PinInputField)
 
 ---
 

@@ -33,7 +33,17 @@ export { Card, type CardProps } from "./components/Card";
 export { ContentWrapper, type ContentWrapperProps } from "./components/ContentWrapper";
 
 // ELEMENT /////////////////////////////////////////////////////////////////////
-export { Element, type ElementProps } from "./components/Element";
+export {
+    Element, type ElementProps,
+    Div,
+    Article,
+    Body,
+    Footer,
+    Header,
+    Main,
+    Nav,
+    Section
+} from "./components/Element";
 
 // EXPANDABLE CONTENT //////////////////////////////////////////////////////////
 export { ExpandableContent, type ExpandableContentProps } from "./components/ExpandableContent";
