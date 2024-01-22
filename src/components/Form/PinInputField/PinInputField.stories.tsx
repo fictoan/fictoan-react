@@ -23,9 +23,9 @@ type Story = StoryObj<typeof PinInputField>;
 
 export const Default: Story = {
     args: {
-        numberOfFields: 4,
-        type: "number",
-        otp: true,
+        numberOfFields : 4,
+        type           : "number",
+        isOTP          : true,
     },
     render: (args) => {
         const [buttonEnabled, setButtonEnabled] = useState<boolean>(false);
