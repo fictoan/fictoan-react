@@ -3,6 +3,7 @@ export { Element } from "./Element";
 export {
     Div,
     Article,
+    Aside,
     Body,
     Footer,
     Header,

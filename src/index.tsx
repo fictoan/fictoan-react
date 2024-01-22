@@ -37,6 +37,7 @@ export {
     Element, type ElementProps,
     Div,
     Article,
+    Aside,
     Body,
     Footer,
     Header,

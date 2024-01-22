@@ -10,6 +10,7 @@ const createComponentWithElement = <T extends React.ElementType>(tagName: T) => 
 
 export const Div = createComponentWithElement("div");
 export const Article = createComponentWithElement("article");
+export const Aside = createComponentWithElement("aside");
 export const Body = createComponentWithElement("body");
 export const Footer = createComponentWithElement("footer");
 export const Header = createComponentWithElement("header");
