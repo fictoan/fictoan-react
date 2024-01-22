@@ -26,7 +26,18 @@ export { CodeBlock, type CodeBlockProps } from "./CodeBlock";
 export { ContentWrapper, type ContentWrapperProps } from "./ContentWrapper";
 
 // ELEMENT /////////////////////////////////////////////////////////////////////
-export { Element, type ElementProps } from "./Element";
+export {
+    Element, type ElementProps,
+    Div,
+    Article,
+    Aside,
+    Body,
+    Footer,
+    Header,
+    Main,
+    Nav,
+    Section
+} from "./Element";
 
 // EXPANDABLE CONTENT //////////////////////////////////////////////////////////
 export { ExpandableContent, type ExpandableContentProps } from "./ExpandableContent";

@@ -1,38 +1,53 @@
+// CSS /////////////////////////////////////////////////////////////////////////
+// EXTERNAL ====================================================================
 import "./styles/Normalize.css";
+
+// RESET =======================================================================
 import "./styles/reset.css";
+
+// GLOBAL ======================================================================
 import "./styles/globals.css";
+
+// COLOURS =====================================================================
 import "./styles/custom-colours.css";
 import "./styles/colours.scss";
+
+// UTILITIES ===================================================================
 import "./styles/utilities.css";
+
+// TYPOGRAPHY ==================================================================
 import "./components/Typography/typography.css";
 
+// THEME =======================================================================
 import "./styles/theme.css";
 
-// BADGE ///////////////////////////////////////////////////////////////////////
+
+// COMPONENTS //////////////////////////////////////////////////////////////////
+// BADGE =======================================================================
 export { Badge, type BadgeProps } from "./components/Badge";
 
-// BOTTOM DRAWER ///////////////////////////////////////////////////////////////
+// BOTTOM DRAWER ===============================================================
 export { Drawer, type DrawerProps } from "./components/Drawer";
 
-// BUTTON //////////////////////////////////////////////////////////////////////
+// BUTTON ======================================================================
 export { Button, type ButtonProps } from "./components/Button";
 
-// BREADCRUMBS /////////////////////////////////////////////////////////////////
+// BREADCRUMBS =================================================================
 export {
     BreadcrumbsWrapper, type BreadcrumbsWrapperProps,
     BreadcrumbItem, type BreadcrumbItemProps
 } from "./components/Breadcrumbs";
 
-// CALLOUT /////////////////////////////////////////////////////////////////////
+// CALLOUT =====================================================================
 export { Callout, type CalloutProps } from "./components/Callout";
 
-// CARD ////////////////////////////////////////////////////////////////////////
+// CARD ========================================================================
 export { Card, type CardProps } from "./components/Card";
 
-// CONTENT WRAPPER /////////////////////////////////////////////////////////////
+// CONTENT WRAPPER =============================================================
 export { ContentWrapper, type ContentWrapperProps } from "./components/ContentWrapper";
 
-// ELEMENT /////////////////////////////////////////////////////////////////////
+// ELEMENT =====================================================================
 export {
     Element, type ElementProps,
     Div,
@@ -46,10 +61,10 @@ export {
     Section
 } from "./components/Element";
 
-// EXPANDABLE CONTENT //////////////////////////////////////////////////////////
+// EXPANDABLE CONTENT ==========================================================
 export { ExpandableContent, type ExpandableContentProps } from "./components/ExpandableContent";
 
-// FORM ////////////////////////////////////////////////////////////////////////
+// FORM ========================================================================
 export {
     Form, type FormProps,
     FormItem, type FormItemProps,
@@ -68,25 +83,25 @@ export {
     PinInputField, type PinInputFieldProps,
 } from "./components/Form";
 
-// H-RULE //////////////////////////////////////////////////////////////////////
+// H-RULE ======================================================================
 export { HRule, type HRProps } from "./components/HRule";
 
-// NOTIFICATIONS  /////////////////////////////////////////////////////////////
+// NOTIFICATIONS  ==============================================================
 export {
     NotificationsWrapper, type NotificationsWrapperProps,
     NotificationItem, type NotificationItemProps
 } from "./components/Notification";
 
-// PORTION /////////////////////////////////////////////////////////////////////
+// PORTION =====================================================================
 export { Portion, type PortionProps } from "./components/Portion";
 
-// PROGRESS BAR ////////////////////////////////////////////////////////////////
+// PROGRESS BAR ================================================================
 export { ProgressBar, type ProgressBarProps, type ProgressBarMetaProps } from "./components/ProgressBar";
 
-// ROW /////////////////////////////////////////////////////////////////////////
+// ROW =========================================================================
 export { Row, type RowProps } from "./components/Row";
 
-// SIDEBAR /////////////////////////////////////////////////////////////////////
+// SIDEBAR =====================================================================
 export {
     SidebarWrapper, type SidebarWrapperProps,
     SidebarHeader, type SidebarHeaderProps,
@@ -96,28 +111,28 @@ export {
     SidebarFooter, type SidebarFooterProps
 } from "./components/Sidebar";
 
-// SPINNER /////////////////////////////////////////////////////////////////////
+// SPINNER =====================================================================
 export { Spinner, type SpinnerProps } from "./components/Spinner";
 
-// TABLE ///////////////////////////////////////////////////////////////////////
+// TABLE =======================================================================
 export {
     Table, type TableProps,
     TablePagination, type TablePaginationProps
 } from "./components/Table";
 
-// TABS  ///////////////////////////////////////////////////////////////////////
+// TABS  =======================================================================
 export { Tabs, type TabsProps } from "./components/Tabs";
 
-// THEME PROVIDER  /////////////////////////////////////////////////////////////
+// THEME PROVIDER  =============================================================
 export { ThemeProvider, type ThemeProviderProps } from "./components/ThemeProvider";
 
-// TOAST ///////////////////////////////////////////////////////////////////////
+// TOAST =======================================================================
 export {
     ToastsWrapper, type ToastsWrapperProps,
     ToastItem, type ToastItemProps
 } from "./components/Toast";
 
-// TYPOGRAPHY //////////////////////////////////////////////////////////////////
+// TYPOGRAPHY ==================================================================
 export {
     Text, type TextProps,
     Heading, type HeadingProps,
