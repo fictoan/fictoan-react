@@ -1,13 +1,15 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 
 import { CommonAndHTMLProps } from "../Element/constants";
 import { Element } from "../Element/Element";
+import { Button } from "../Button/Button";
 
 import "./CodeBlock.css";
 
 export interface CodeBlockCustomProps {
-    source   ? : object | string;
-    language ? : string;
+    source         ? : object | string;
+    language       ? : string;
+    showCopyButton ? : boolean;
 }
 
 export type CodeBlockElementType = HTMLPreElement;
@@ -40,7 +42,18 @@ const PrismReactRenderer = React.lazy(() =>
 );
 
 export const CodeBlock = React.forwardRef(
-    ({ children, source, language = "json", ...props }: CodeBlockProps, ref: React.Ref<CodeBlockElementType>) => {
+    ({ children, source, language = "json", showCopyButton, ...props }: CodeBlockProps, ref: React.Ref<CodeBlockElementType>) => {
+        const [ isCodeCopied, setIsCodeCopied ] = useState(false);
+
+        const copyToClipboard = () => {
+            navigator.clipboard.writeText(code).then(() => {
+                setIsCodeCopied(true);
+                setTimeout(() => setIsCodeCopied(false), 3000); // Revert back after 3 seconds
+            }).catch(err => {
+                console.error("Could not copy text: ", err);
+            });
+        };
+
         // Use children if provided, else use source
         let code = typeof children === "string" ? children : React.Children.toArray(children).join("");
         if (!children) {
@@ -49,6 +62,27 @@ export const CodeBlock = React.forwardRef(
 
         return (
             <Element<CodeBlockElementType> data-code-block as="div" {...props}>
+                {showCopyButton ? (
+                    isCodeCopied ? (
+                        <Button
+                            className="code-block-copy-button"
+                            size="tiny" shape="rounded"
+                            bgColor="green-light-80" borderColour="green-dark-20" textColour="green-dark-20"
+                        >
+                            COPIED!
+                        </Button>
+                    ) : (
+                        <Button
+                            className="code-block-copy-button"
+                            size="tiny" shape="rounded"
+                            bgColor="transparent" borderColour="blue-light-40" textColour="blue"
+                            onClick={copyToClipboard}
+                        >
+                            Copy
+                        </Button>
+                    )
+                ) : null}
+
                 <Suspense
                     fallback={
                         <pre data-code-block className="suspense-fallback">

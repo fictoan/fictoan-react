@@ -1,4 +1,6 @@
 [data-code-block] {
+    position : relative;
+
     & pre {
         display                : block;
         width                  : 100%;
@@ -26,49 +28,47 @@
         -moz-tab-size          : 4;
         tab-size               : 4;
     }
-    
+
     @media print {
         & pre[class*="language-"],
         & code[class*="language-"] {
-            text-shadow: none;
+            text-shadow : none;
         }
     }
-    /*********************************************************
-    * Tokens
-    */
-    & .token.tag         { color : var(--token-tag) }
-    & .token.atrule      { color : var(--token-atrule) }
-    & .token.attr-name   { color : var(--token-attrName) }
-    & .token.attr-value  { color : var(--token-attrValue) }
-    & .token.boolean     { color : var(--token-boolean) }
-    & .token.cdata       { color : var(--token-cdata) }
-    & .token.class-name  { color : var(--token-className) }
-    & .token.comment     { color : var(--token-comment) }
-    & .token.constant    { color : var(--token-constant) }
-    & .token.deleted     { color : var(--token-deleted) }
-    & .token.delimiter   { color : var(--token-delimiter) }
-    & .token.doctype     { color : var(--token-doctype) }
-    & .token.entity      { color : var(--token-entity) }
-    & .token.function    { color : var(--token-function) }
-    & .token.hexcode     { color : var(--token-hexcode) }
-    & .token.inserted    { color : var(--token-inserted) }
-    & .token.keyword     { color : var(--token-keyword) }
-    & .token.number      { color : var(--token-number) }
-    & .token.operator    { color : var(--token-operator) }
-    & .token.plain       { color : var(--token-plain) }
-    & .token.prolog      { color : var(--token-prolog) }
-    & .token.property    { color : var(--token-property) }
+
+    /* Tokens =============================================================== */
+    & .token.tag { color : var(--token-tag) }
+    & .token.atrule { color : var(--token-atrule) }
+    & .token.attr-name { color : var(--token-attrName) }
+    & .token.attr-value { color : var(--token-attrValue) }
+    & .token.boolean { color : var(--token-boolean) }
+    & .token.cdata { color : var(--token-cdata) }
+    & .token.class-name { color : var(--token-className) }
+    & .token.comment { color : var(--token-comment) }
+    & .token.constant { color : var(--token-constant) }
+    & .token.deleted { color : var(--token-deleted) }
+    & .token.delimiter { color : var(--token-delimiter) }
+    & .token.doctype { color : var(--token-doctype) }
+    & .token.entity { color : var(--token-entity) }
+    & .token.function { color : var(--token-function) }
+    & .token.hexcode { color : var(--token-hexcode) }
+    & .token.inserted { color : var(--token-inserted) }
+    & .token.keyword { color : var(--token-keyword) }
+    & .token.number { color : var(--token-number) }
+    & .token.operator { color : var(--token-operator) }
+    & .token.plain { color : var(--token-plain) }
+    & .token.prolog { color : var(--token-prolog) }
+    & .token.property { color : var(--token-property) }
     & .token.punctuation { color : var(--token-punctuation) }
-    & .token.regex       { color : var(--token-regex) }
-    & .token.selector    { color : var(--token-selector) }
-    & .token.string      { color : var(--token-string) }
-    & .token.symbol      { color : var(--token-symbol) }
-    & .token.url         { color : var(--token-url) }
-    & .token.variable    { color : var(--token-variable) }
-    
+    & .token.regex { color : var(--token-regex) }
+    & .token.selector { color : var(--token-selector) }
+    & .token.string { color : var(--token-string) }
+    & .token.symbol { color : var(--token-symbol) }
+    & .token.url { color : var(--token-url) }
+    & .token.variable { color : var(--token-variable) }
     & .token.namespace { opacity : 0.72; }
     & .token.italic { font-style : italic; }
-    
+
     & pre::selection,
     & code::selection,
     & pre::-moz-selection,
@@ -81,19 +81,29 @@
         color       : var(--text-selected);
         background  : var(--text-bg-selected) !important;
     }
-    
+
     & code[class*=language-css],
     & code[class*=language-less],
     & code[class*=language-sass],
     & code[class*=language-scss] {
         color : var(--token-css-fallback);
     }
-    
+
     & code[class*=language-html] { color : var(--token-html-fallback); }
-    
-    & code[class*=language-js]   { color : var(--token-js-fallback); }
-    
+
+    & code[class*=language-js] { color : var(--token-js-fallback); }
+
     & code[class*=language-json] .token.string {
         color : var(--token-json-token-string);
     }
+
+    /* COPY CODE BUTTON ===================================================== */
+    .code-block-copy-button {
+        display  : none;
+        position : absolute;
+        top      : 8px;
+        right    : 8px;
+    }
+
+    &:hover .code-block-copy-button { display : block; }
 }

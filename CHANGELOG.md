@@ -11,6 +11,7 @@
 - Ability to set `Element` as a flexbox/grid div using `layoutAsFlexbox` and `layoutAsGrid`
 - Add `horizontalPadding`, `verticalPadding`, `horizontalMargin`, and `verticalMargin`
 - Add generic block-level sectioning elements as custom components. Eg `<Div>`, `<Section>`, `<Article>` etc
+- `CodeBlock` now has the ability to copy code to clipboard
 
 #### ⚠️ BREAKING CHANGES ⚠️
 - Remove `ThemeProvider` and `theme` prop from all components
