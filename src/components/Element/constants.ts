@@ -32,7 +32,7 @@ type CustomColor = "hue" | "tint" | "shade" | "analogue" | "accent";
 export type SpacingTypes = "none" | "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
 export type ShadowTypes  = "none" | "mild" | "hard" | "soft";
 export type ShapeTypes   = "rounded" | "curved";
-export type OpacityTypes = "00" | "10" | "20" | "30" | "40" | "50" | "60" | "70" | "80" | "90" | "100";
+export type OpacityTypes = "transparent" | "translucent" | "opaque" | "0" | "00" | "10" | "20" | "30" | "40" | "50" | "60" | "70" | "80" | "90" | "100";
 export type WeightTypes  = "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
 // @deprecated
 export type OldColourPropTypes = `${ColorWithShade}-${ShadeLevel}`;

@@ -275,9 +275,11 @@
     --sidebar-header-icon-width              : 40px;
 
     --sidebar-item-icon-width                : 24px;
+
     --sidebar-item-icon-stroke-default       : var(--slate-dark-40);
     --sidebar-item-icon-stroke-width-default : 2px;
     --sidebar-item-icon-fill-default         : var(--slate-light-40);
+    --sidebar-item-text-colour-default       : var(--slate-light-40);
 
     --sidebar-item-bg-hover                  : var(--grey-dark-70);
     --sidebar-item-text-hover                : var(--hue);

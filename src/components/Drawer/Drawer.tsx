@@ -42,9 +42,7 @@ export const Drawer = React.forwardRef(
         const [shouldRender, setShouldRender] = useState(openWhen);
 
         const drawerRef = useRef(null);
-        // Fallback to external ref if provided, otherwise use local ref
-        const effectiveRef = ref || drawerRef;
-
+        const effectiveRef = ref || drawerRef; // Fallback to external ref if provided, otherwise use local ref
 
         useEffect(() => {
             if (openWhen) {
@@ -78,7 +76,7 @@ export const Drawer = React.forwardRef(
         useClickOutside(effectiveRef, closeOnClickOutside ? closeDrawer : () => {});
 
         if (width) {
-            classNames.push(`${width}`);
+            classNames.push(width);
         }
 
         return shouldRender ? (

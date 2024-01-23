@@ -3,4 +3,5 @@
     overflow           : hidden;
     -webkit-line-clamp : 1;
     font-size          : var(--sidebar-item-text-scale);
+    color              : var(--sidebar-item-text-colour-default);
 }

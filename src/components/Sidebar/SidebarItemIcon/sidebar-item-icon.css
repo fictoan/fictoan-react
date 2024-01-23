@@ -12,7 +12,7 @@
         stroke-width : var(--sidebar-item-icon-stroke-width-default);
     }
 
-    &:hover.icon-stroked svg {
+    [data-sidebar-item]:hover &.icon-stroked svg {
         fill   : none;
         stroke : var(--sidebar-item-icon-stroke-hover);
     }
