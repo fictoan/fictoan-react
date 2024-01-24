@@ -22,7 +22,7 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
         const [ selectedOption, setSelectedOption ] = useState<OptionProps | OptGroupProps | null>(null);
         const [ searchValue, setSearchValue ]       = useState("");
 
-        const dropdownRef = useRef<HTMLElement | null>(null);
+        const dropdownRef = useRef(null);
 
         const filteredOptions = options.filter((option: { label: string; }) =>
             option.label.toLowerCase().includes(searchValue.toLowerCase()),
@@ -35,6 +35,7 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
 
         useEffect(() => {
             const handleClickOutside = (event: { target: any; }) => {
+                // @ts-ignore
                 if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
                     setIsOpen(false);
                 }
@@ -51,7 +52,7 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
             <BaseInputComponent<SelectElementType>
                 data-select-with-search
                 className="sws-wrapper"
-                ref={ref}
+                ref={dropdownRef}
                 {...props}
             >
                 <Div className="sws-display" onClick={() => setIsOpen(!isOpen)}>
