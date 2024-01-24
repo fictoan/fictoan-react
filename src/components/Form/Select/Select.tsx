@@ -1,33 +1,18 @@
 import React from "react";
 
 import { Element } from "../../Element/Element";
-import { CommonAndHTMLProps } from "../../Element/constants";
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
+import { Div } from "../../Element/Tags";
 
 import "./select.css";
 
-export type SelectElementType = HTMLSelectElement;
-export type OptionElementType = HTMLOptionElement;
-
-export interface OptionProps {
-    value      : string;
-    label      : string;
-    disabled ? : boolean;
-}
-
-export interface OptGroupProps {
-    label   : string;
-    options : OptionProps[];
-}
-
-export interface SelectCustomProps {
-    options     : (OptionProps | OptGroupProps)[];
-    label     ? : string;
-    helpText  ? : string;
-    errorText ? : string;
-}
-
-export type SelectProps = Omit<CommonAndHTMLProps<SelectElementType>, keyof SelectCustomProps> & SelectCustomProps;
+import {
+    OptionProps,
+    OptGroupProps,
+    SelectProps,
+    OptionElementType,
+    SelectElementType,
+} from "./constants";
 
 const SelectWithOptions = ({ options, className, ...props }: SelectProps) => {
     const renderOption = (option: OptionProps) => (
@@ -43,13 +28,13 @@ const SelectWithOptions = ({ options, className, ...props }: SelectProps) => {
     );
 
     return (
-        <Element<HTMLDivElement> as="div" data-select className={className} disabled={props.disabled}>
+        <Div data-select className={className} disabled={props.disabled}>
             <Element<SelectElementType> as="select" {...props}>
                 {options.map((option) =>
                     "options" in option ? renderOptGroup(option) : renderOption(option)
                 )}
             </Element>
-        </Element>
+        </Div>
     );
 };
 

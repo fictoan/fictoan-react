@@ -21,7 +21,9 @@ export { type RadioButtonProps, type RadioGroupProps } from "./RadioButton/const
 
 export { Range, type RangeProps } from "./Range";
 
-export { Select, type SelectProps, type OptionProps } from "./Select/Select";
+export { Select } from "./Select/Select";
+export { SelectWithSearch } from "./Select/SelectWithSearch";
+export { type SelectProps, type SelectWithSearchProps } from "./Select/constants";
 
 export { SlidingSelector, type SlidingSelectorProps } from "./RadioButton/SlidingSelector";
 

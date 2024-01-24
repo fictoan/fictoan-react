@@ -178,7 +178,7 @@
 
     --input-label-default         : var(--paragraph-text-colour);
     --input-placeholder-default   : var(--slate-light-40);
-    --input-text-default          : var(--shade);
+    --input-text-default          : var(--paragraph-text-colour);
 
     --input-bg-focus              : var(--white);
     --input-border-focus          : var(--slate-light-40);
@@ -312,6 +312,14 @@
 /* SELECT DROPDOWN ////////////////////////////////////////////////////////// */
 :root {
     --dropdown-chevron : var(--slate-light-40);
+}
+
+/* SELECT EXTENDED DROPDOWN ///////////////////////////////////////////////// */
+:root {
+    --dropdown-bg-default : var(--input-bg-default);
+    --dropdown-bg-hover : var(--input-bg-focus);
+    --dropdown-bg-disabled : var(--input-bg-disabled);
+    --dropdown-text-disabled : var(--input-text-disabled);
 }
 
 /* SPINNER ////////////////////////////////////////////////////////////////// */

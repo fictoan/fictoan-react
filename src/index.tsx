@@ -73,6 +73,7 @@ export {
     TextArea, type TextareaProps,
     InputLabel,type InputLabelProps,
     Select, type SelectProps,
+    SelectWithSearch,
     FileUpload,type FileUploadProps,
     RadioGroup,type RadioGroupProps,
     RadioButton, type RadioButtonProps,
