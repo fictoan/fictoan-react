@@ -41,11 +41,11 @@ export default defineConfig({
                     entryFileNames: "[name].js",
                     assetFileNames: "index.[ext]",
                 },
-                // {
-                //     format: "cjs",
-                //     entryFileNames: "[name].cjs",
-                //     assetFileNames: "index.[ext]",
-                // },
+                {
+                    format: "cjs",
+                    entryFileNames: "[name].cjs",
+                    assetFileNames: "index.[ext]",
+                },
             ],
             external: [...Object.keys(pkg.peerDependencies)],
             plugins: [
