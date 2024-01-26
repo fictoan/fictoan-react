@@ -15,7 +15,7 @@ import { RadioButton } from "../RadioButton/RadioButton";
 import { RadioGroup } from "../RadioButton/RadioGroup";
 import { Select } from "../Select/Select";
 import { TextArea } from "../TextArea/TextArea";
-import { RadioGroupOption } from "../RadioButton/constants";
+import { RadioGroupOptionProps } from "../RadioButton/constants";
 
 // Types
 export type FormFieldsType = ElementProps<HTMLInputElement> &
@@ -25,7 +25,7 @@ export type FormFieldsType = ElementProps<HTMLInputElement> &
     InputCommonProps;
 export type FormFieldsConfigBase = PortionProps & FormFieldsType;
 
-interface FormFieldOptionsType extends RadioGroupOption {
+interface FormFieldOptionsType extends RadioGroupOptionProps {
     id: string;
     label: string;
     value: string;

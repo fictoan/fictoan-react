@@ -17,7 +17,7 @@ export { PinInputField, type PinInputFieldProps } from "./PinInputField/PinInput
 export { RadioButton } from "./RadioButton/RadioButton";
 
 export { RadioGroup } from "./RadioButton/RadioGroup";
-export { type RadioButtonProps, type RadioGroupProps } from "./RadioButton/constants";
+export { type RadioButtonProps, type RadioGroupProps, type RadioTabGroupProps } from "./RadioButton/constants";
 
 export { Range, type RangeProps } from "./Range";
 
@@ -25,7 +25,7 @@ export { Select } from "./Select/Select";
 export { SelectWithSearch } from "./Select/SelectWithSearch";
 export { type SelectProps, type SelectWithSearchProps } from "./Select/constants";
 
-export { RadioTabGroup, type RadioTabGroupProps } from "./RadioButton/RadioTabGroup";
+export { RadioTabGroup } from "./RadioButton/RadioTabGroup";
 
 export { Switch, type SwitchProps } from "./Checkbox/Switch";
 

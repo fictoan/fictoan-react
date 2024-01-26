@@ -2,21 +2,21 @@ import React from "react";
 
 import { Div } from "../../Element/Tags";
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
-import { SpacingTypes } from "@/components/Element/constants";
-import { RadioGroupCustomProps, RadioGroupProps } from "./constants";
+import { RadioTabGroupProps, RadioGroupProps } from "./constants";
 
 import "./radio-tab-group.css";
-
-export interface RadioTabGroupProps extends RadioGroupCustomProps {
-    size ? : SpacingTypes;
-}
 
 const RadioTabGroupOptions = ({ options, defaultValue, required, ...props }: RadioGroupProps) => {
     return (
         <Div data-radio-tab-group name={props.name} required={required}>
             {options.map((option) => (
                 <React.Fragment key={option.id}>
-                    <input type="radio" {...props} {...option} />
+                    <input
+                        type="radio"
+                        checked={defaultValue === option.value}
+                        {...props}
+                        {...option}
+                    />
                     <label htmlFor={option.id}>{option.label}</label>
                 </React.Fragment>
             ))}

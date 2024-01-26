@@ -121,7 +121,7 @@ export const Default: Story = {
                     ]}
                     helpText="Select an option"
                     required
-                ></RadioGroup>
+                />
             </FormItem>,
             <FormItem>
                 <Checkbox
