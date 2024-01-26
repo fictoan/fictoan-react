@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, RefObject } from "react";
 
 import { Element } from "../Element/Element";
 import { CommonAndHTMLProps, SpacingTypes } from "../Element/constants";
@@ -42,7 +42,7 @@ export const Drawer = React.forwardRef(
         const [shouldRender, setShouldRender] = useState(openWhen);
 
         const drawerRef = useRef(null);
-        const effectiveRef = ref || drawerRef; // Fallback to external ref if provided, otherwise use local ref
+        const effectiveRef  = (ref || drawerRef) as RefObject<HTMLDivElement>; // Fallback to external ref if provided, otherwise use local ref
 
         useEffect(() => {
             if (openWhen) {
