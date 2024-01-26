@@ -19,7 +19,7 @@ import "./select-with-search.css";
 export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, SelectWithSearchProps>(
     ({ options, ...props }, ref) => {
         const [ isOpen, setIsOpen ]                 = useState(false);
-        const [ selectedOption, setSelectedOption ] = useState<OptionProps | OptGroupProps | null>(null);
+        const [ selectedOption, setSelectedOption ] = useState<OptionProps | OptGroupProps | string | null>("");
         const [ searchValue, setSearchValue ]       = useState("");
 
         const dropdownRef = useRef(null);

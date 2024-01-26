@@ -1,0 +1,95 @@
+[data-radio-tab-group] {
+    position          : relative;
+    display           : grid;
+    grid-auto-flow    : column;
+    background        : var(--radio-tabs-bg);
+    border-radius     : var(--global-border-radius);
+    height            : var(--radio-tabs-height);
+    grid-auto-columns : 1fr;
+    border            : var(--radio-tabs-vertical-gap) solid var(--radio-tabs-border);
+
+    & input[type="radio"] {
+        position     : absolute;
+        width        : 1px;
+        height       : 1px;
+        padding      : 0;
+        margin       : -1px;
+        overflow     : hidden;
+        clip         : rect(0, 0, 0, 0);
+        white-space  : nowrap;
+        border-width : 0;
+    }
+
+    &:has(input:nth-of-type(2)) { --count : 2; }
+    &:has(input:nth-of-type(3)) { --count : 3; }
+    &:has(input:nth-of-type(4)) { --count : 4; }
+    &:has(input:nth-of-type(5)) { --count : 5; }
+    &:has(input:nth-of-type(6)) { --count : 6; }
+    &:has(input:nth-of-type(7)) { --count : 7; }
+    &:has(input:nth-of-type(8)) { --count : 8; }
+    &:has(input:nth-of-type(9)) { --count : 9; }
+    &:has(input:nth-of-type(10)) { --count : 10; }
+    &:has(input:nth-of-type(11)) { --count : 11; }
+    &:has(input:nth-of-type(12)) { --count : 12; }
+
+    &:has(:checked:nth-of-type(1)) { --active : 0; }
+    &:has(:checked:nth-of-type(2)) { --active : 1; }
+    &:has(:checked:nth-of-type(3)) { --active : 2; }
+    &:has(:checked:nth-of-type(4)) { --active : 3; }
+    &:has(:checked:nth-of-type(5)) { --active : 4; }
+    &:has(:checked:nth-of-type(6)) { --active : 5; }
+    &:has(:checked:nth-of-type(7)) { --active : 6; }
+    &:has(:checked:nth-of-type(8)) { --active : 7; }
+    &:has(:checked:nth-of-type(9)) { --active : 8; }
+    &:has(:checked:nth-of-type(10)) { --active : 9; }
+    &:has(:checked:nth-of-type(11)) { --active : 10; }
+    &:has(:checked:nth-of-type(12)) { --active : 11; }
+    &:has(:checked:nth-of-type(13)) { --active : 12; }
+
+    & input:checked + label {
+        color : var(--radio-tabs-label-text-active);
+    }
+
+    & label {
+        display                    : grid;
+        height                     : 100%;
+        padding                    : 0 clamp(0.5rem, 2vw + 0.25rem, 2rem);
+        cursor                     : pointer;
+        text-align                 : center;
+        border-radius              : var(--global-border-radius);
+        place-items                : center;
+        color                      : var(--radio-tabs-label-text-default);
+        transition                 : background, color;
+        transition-timing-function : ease-in-out;
+        z-index                    : 5;
+    }
+
+    &.size-nano label {
+        padding : 0 4px;
+    }
+
+    & input:not(:checked) + label:hover {
+        background : var(--radio-tabs-label-bg-hover);
+        color      : var(--radio-tabs-label-text-hover);
+    }
+
+    &::after {
+        position                   : absolute;
+        width                      : calc(100% / var(--count));
+        height                     : 100%;
+        pointer-events             : none;
+        content                    : "";
+        background                 : var(--radio-tabs-label-bg-active);
+        border-radius              : calc(var(--global-border-radius) - var(--radio-tabs-vertical-gap));
+        translate                  : calc(var(--active, 0) * 100%) 0;
+        transition                 : translate, outline-color;
+        transition-duration        : 0.2s;
+        transition-timing-function : ease-in-out;
+        outline                    : 2px solid transparent;
+    }
+
+    &:has(:focus-visible)::after {
+        outline-color : var(--radio-tabs-label-focus-border);
+    }
+}
+
