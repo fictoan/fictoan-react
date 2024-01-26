@@ -23,5 +23,9 @@ export interface SelectCustomProps {
     errorText ? : string;
 }
 
+export interface SelectWithSearchCustomProps extends SelectCustomProps {
+    onChange ? : (value: string) => void;
+}
+
 export type SelectProps = Omit<CommonAndHTMLProps<SelectElementType>, keyof SelectCustomProps> & SelectCustomProps;
-export type SelectWithSearchProps = Omit<CommonAndHTMLProps<SelectWithSearchElementType>, keyof SelectCustomProps> & SelectCustomProps;
+export type SelectWithSearchProps = Omit<CommonAndHTMLProps<SelectWithSearchElementType>, keyof SelectCustomProps> & SelectWithSearchCustomProps;

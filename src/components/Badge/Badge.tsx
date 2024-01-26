@@ -1,14 +1,14 @@
 import React from "react";
 
 import { Element } from "../Element/Element";
-import { CommonAndHTMLProps } from "../Element/constants";
+import { CommonAndHTMLProps, ShapeTypes, SpacingTypes } from "../Element/constants";
 
 import "./badge.css";
 
 // prettier-ignore
 export interface BadgeCustomProps {
-    size  ? : "tiny" | "small" | "medium" | "large" | "huge";
-    shape ? : "rounded" | "curved";
+    size  ? : SpacingTypes;
+    shape ? : ShapeTypes;
 }
 
 export type BadgeElementType = HTMLDivElement;

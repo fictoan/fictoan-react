@@ -58,7 +58,7 @@ export {
     Checkbox, type CheckboxProps,
     Switch, type SwitchProps,
     Range, type RangeProps,
-    SlidingSelector, type SlidingSelectorProps,
+    RadioTabGroup, type RadioTabGroupProps,
     PinInputField, type PinInputFieldProps,
 } from "./Form";
 

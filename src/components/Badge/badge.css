@@ -21,28 +21,38 @@ mark[data-badge] {
     &.border-none { border-width : 0 !important; }
 
     /* DIFFERENT SIZES ////////////////////////////////////////////////////// */
+    &.size-nano {
+        padding   : 1px 2px;
+        font-size : 0.48rem;
+    }
+
+    &.size-micro {
+        padding   : 2px 4px;
+        font-size : 0.56rem;
+    }
+
     &.size-tiny {
         padding   : 2px 8px;
         font-size : 0.64rem;
     }
 
     &.size-small {
-        padding   : 3px 10px;
+        padding   : 4px 10px;
         font-size : 0.72rem;
     }
 
     &.size-medium {
-        padding   : 4px 12px;
-        font-size : 1rem;
+        padding   : 6px 12px;
+        font-size : 0.88rem;
     }
 
     &.size-large {
-        padding   : 6px 16px;
+        padding   : 8px 16px;
         font-size : 1.16rem;
     }
 
     &.size-huge {
-        padding   : 8px 20px;
+        padding   : 12px 24px;
         font-size : 1.24rem;
     }
 }

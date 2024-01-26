@@ -25,7 +25,7 @@ export { Select } from "./Select/Select";
 export { SelectWithSearch } from "./Select/SelectWithSearch";
 export { type SelectProps, type SelectWithSearchProps } from "./Select/constants";
 
-export { SlidingSelector, type SlidingSelectorProps } from "./RadioButton/SlidingSelector";
+export { RadioTabGroup, type RadioTabGroupProps } from "./RadioButton/RadioTabGroup";
 
 export { Switch, type SwitchProps } from "./Checkbox/Switch";
 

@@ -10,6 +10,7 @@ export interface RadioGroupOption extends RadioButtonProps {
 }
 
 export interface RadioGroupCustomProps {
+    name    : string;
     options : RadioGroupOption[];
 }
 

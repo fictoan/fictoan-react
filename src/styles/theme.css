@@ -10,19 +10,6 @@
     --body-bg : var(--white);
 }
 
-/* BOTTOM DRAWER //////////////////////////////////////////////////////////// */
-:root {
-    --drawer-bg              : var(--white);
-    --drawer-border          : var(--slate-light-20);
-    --drawer-border-radius   : var(--global-border-radius);
-
-    --drawer-overlay-bg      : var(--black);
-    --drawer-overlay-opacity : 0.4;
-    --drawer-overlay-blur    : 4px;
-
-    --drawer-dismiss-button  : var(--slate-light-40);
-}
-
 /* BREADCRUMBS ////////////////////////////////////////////////////////////// */
 :root {
     --breadcrumbs-wrapper-bg             : var(--transparent);
@@ -148,6 +135,32 @@
     --checkbox-tick                 : var(--white);
 }
 
+/* DRAWER /////////////////////////////////////////////////////////////////// */
+:root {
+    --drawer-bg              : var(--white);
+    --drawer-border          : var(--slate-light-20);
+    --drawer-border-radius   : var(--global-border-radius);
+
+    --drawer-overlay-bg      : var(--black);
+    --drawer-overlay-opacity : 0.4;
+    --drawer-overlay-blur    : 4px;
+
+    --drawer-dismiss-button  : var(--slate-light-40);
+}
+
+/* DROPDOWN ///////////////////////////////////////////////////////////////// */
+:root {
+    --dropdown-chevron : var(--slate-light-40);
+}
+
+/* SELECT WITH SEARCH /////////////////////////////////////////////////////// */
+:root {
+    --dropdown-bg-default    : var(--input-bg-default);
+    --dropdown-bg-hover      : var(--input-bg-focus);
+    --dropdown-bg-disabled   : var(--input-bg-disabled);
+    --dropdown-text-disabled : var(--input-text-disabled);
+}
+
 /* EXPANDABLE CONTENT /////////////////////////////////////////////////////// */
 :root {
     --expandable-content-chevron : var(--slate);
@@ -217,23 +230,23 @@
 
 /* NOTIFICATIONS //////////////////////////////////////////////////////////// */
 :root {
-    --notification-item-border-radius           : var(--global-border-radius);
+    --notification-item-border-radius  : var(--global-border-radius);
 
-    --notification-item-generic-bg              : var(--white);
-    --notification-item-generic-border          : var(--slate-light-60);
-    --notification-item-generic-text            : var(--shade);
+    --notification-item-generic-bg     : var(--white);
+    --notification-item-generic-border : var(--slate-light-60);
+    --notification-item-generic-text   : var(--shade);
 
-    --notification-item-info-bg                 : var(--blue-light-60);
-    --notification-item-info-border             : var(--blue);
+    --notification-item-info-bg        : var(--blue-light-60);
+    --notification-item-info-border    : var(--blue);
 
-    --notification-item-error-bg                : var(--red-light-60);
-    --notification-item-error-border            : var(--red);
+    --notification-item-error-bg       : var(--red-light-60);
+    --notification-item-error-border   : var(--red);
 
-    --notification-item-success-bg              : var(--green-light-60);
-    --notification-item-success-border          : var(--green);
+    --notification-item-success-bg     : var(--green-light-60);
+    --notification-item-success-border : var(--green);
 
-    --notification-item-warning-bg              : var(--amber-light-60);
-    --notification-item-warning-border          : var(--amber);
+    --notification-item-warning-bg     : var(--amber-light-60);
+    --notification-item-warning-border : var(--amber);
 }
 
 /* PROGRESS BAR ///////////////////////////////////////////////////////////// */
@@ -248,12 +261,29 @@
 
 /* RADIO BUTTON ///////////////////////////////////////////////////////////// */
 :root {
-    --radio-button-circle-bg-default  : var(--slate-light-60);
-    --radio-button-circle-bg-hover    : var(--slate-light-40);
-    --radio-button-circle-bg-checked  : var(--hue);
-    --radio-button-circle-bg-disabled : var(--slate-light-90);
+    /* GENERIC RADIO BUTTON ================================================= */
+    --radio-circle-bg-default       : var(--slate-light-60);
+    --radio-circle-bg-hover         : var(--slate-light-40);
+    --radio-circle-bg-checked       : var(--hue);
+    --radio-circle-bg-disabled      : var(--slate-light-90);
 
-    --radio-button-dot                : var(--white);
+    --radio-button-dot              : var(--white);
+
+    /* RADIO GROUP TABS ===================================================== */
+    --radio-tabs-height             : 48px;
+    --radio-tabs-vertical-gap       : 4px;
+    --radio-tabs-bg                 : var(--slate-light-70);
+    --radio-tabs-border             : var(--slate-light-70);
+
+    --radio-tabs-label-text-default : var(--slate-dark-60);
+
+    --radio-tabs-label-text-hover   : var(--slate-dark-80);
+    --radio-tabs-label-bg-hover     : var(--slate-light-90);
+
+    --radio-tabs-label-bg-active    : var(--white);
+    --radio-tabs-label-text-active  : var(--black);
+
+    --radio-tabs-label-focus-border : var(--blue);
 }
 
 /* RANGE //////////////////////////////////////////////////////////////// */
@@ -307,19 +337,6 @@
     --sidebar-collapsed-item-link-text       : var(--white);
     --sidebar-collapsed-item-bg              : var(--hue);
     --sidebar-collapsed-item-border-radius   : var(--global-border-radius);
-}
-
-/* SELECT DROPDOWN ////////////////////////////////////////////////////////// */
-:root {
-    --dropdown-chevron : var(--slate-light-40);
-}
-
-/* SELECT EXTENDED DROPDOWN ///////////////////////////////////////////////// */
-:root {
-    --dropdown-bg-default : var(--input-bg-default);
-    --dropdown-bg-hover : var(--input-bg-focus);
-    --dropdown-bg-disabled : var(--input-bg-disabled);
-    --dropdown-text-disabled : var(--input-text-disabled);
 }
 
 /* SPINNER ////////////////////////////////////////////////////////////////// */
@@ -414,7 +431,7 @@
     --code-block-line-height    : 1.8;
     --code-block-border-radius  : var(--global-border-radius);
 
-    /*  KBD ================================================================= */
+    /* KBD ================================================================== */
     --kbd-font                  : var(--font-mono);
     --kbd-bg                    : var(--grey-light-10);
     --kbd-text                  : var(--grey);
