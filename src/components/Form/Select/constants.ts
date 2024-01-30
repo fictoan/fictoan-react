@@ -14,18 +14,25 @@ export interface OptionProps {
 
 export interface OptionForSearchWithSelectProps {
     value      : string;
-    label      : React.ReactNode;
-    searchKey  : string;
+    label      : string;
+    customLabel  ? : React.ReactNode;
     disabled ? : boolean;
 }
 
 export interface OptGroupProps {
     label   : string;
-    options : OptionProps[] | OptionForSearchWithSelectProps[];
+    options : OptionProps[]; 
 }
 
 export interface SelectCustomProps {
-    options     : (OptionProps | OptionForSearchWithSelectProps | OptGroupProps)[];
+    options     : OptionProps[];
+    label     ? : string;
+    helpText  ? : string;
+    errorText ? : string;
+}
+
+export interface SelectWithSearchCustomProps {
+    options     : OptionForSearchWithSelectProps[];
     label     ? : string;
     helpText  ? : string;
     errorText ? : string;
@@ -36,4 +43,4 @@ export interface SelectWithSearchCustomProps extends SelectCustomProps {
 }
 
 export type SelectProps = Omit<CommonAndHTMLProps<SelectElementType>, keyof SelectCustomProps> & SelectCustomProps;
-export type SelectWithSearchProps = Omit<CommonAndHTMLProps<SelectWithSearchElementType>, keyof SelectCustomProps> & SelectWithSearchCustomProps;
+export type SelectWithSearchProps = CommonAndHTMLProps<SelectWithSearchElementType> & SelectWithSearchCustomProps;

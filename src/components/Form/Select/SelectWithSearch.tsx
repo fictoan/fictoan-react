@@ -1,44 +1,42 @@
 import React, { useState, useRef, useEffect } from "react";
 
-import { Element } from "../../Element/Element";
 import { Div } from "../../Element/Tags";
 import { InputField } from "../InputField/InputField";
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 
-import {
-    SelectWithSearchProps,
-    OptGroupProps,
-    OptionElementType,
-    OptionProps,
-    SelectElementType,
-    SelectWithSearchElementType,
-    OptionForSearchWithSelectProps,
-} from "./constants";
+import { SelectWithSearchProps, OptionProps, SelectElementType, SelectWithSearchElementType } from "./constants";
 
 import "./select-with-search.css";
 
 export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, SelectWithSearchProps>(
     ({ options, ...props }, ref) => {
-        const [ isOpen, setIsOpen ]                 = useState(false);
-        const [ selectedOption, setSelectedOption ] = useState<OptionProps | OptionForSearchWithSelectProps | OptGroupProps | string | null>("");
-        const [ searchValue, setSearchValue ]       = useState("");
+        const [isOpen, setIsOpen] = useState(false);
+        const [selectedOption, setSelectedOption] = useState<OptionProps | null>(null);
+        const [searchValue, setSearchValue] = useState("");
 
         const dropdownRef = useRef(null);
+        const effectiveRef = (ref || dropdownRef) as React.RefObject<HTMLDivElement>; // Fallback to external ref if provided, otherwise use local ref
 
-        const filteredOptions = options.filter((option) =>
-            // @ts-ignore
-            option.searchKey.toLowerCase().includes(searchValue.toLowerCase()),
+        const optionsWithSearchKey = options.map((option) => ({
+            ...option,
+            searchKey: option.label.toLowerCase(),
+        }));
+
+        const filteredOptions = optionsWithSearchKey.filter((option) =>
+            option.searchKey.toLowerCase().includes(searchValue.toLowerCase())
         );
 
-        const handleSelectOption = (value: OptionProps | OptionForSearchWithSelectProps | OptGroupProps) => {
+        const handleSelectOption = (value: OptionProps) => {
             setSelectedOption(value);
             setIsOpen(false);
+            const event = new CustomEvent("formEvent", { bubbles: true, detail: { value: value } });
+            console.log(event)
+            effectiveRef.current?.dispatchEvent(event);
         };
 
         useEffect(() => {
-            const handleClickOutside = (event: { target: any; }) => {
-                // @ts-ignore
-                if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            const handleClickOutside = (event: { target: any }) => {
+                if (effectiveRef.current && !effectiveRef.current.contains(event.target)) {
                     setIsOpen(false);
                 }
             };
@@ -54,11 +52,10 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
             <BaseInputComponent<SelectElementType>
                 data-select-with-search
                 className="sws-wrapper"
-                ref={dropdownRef}
+                ref={effectiveRef}
                 {...props}
             >
                 <Div className="sws-display" onClick={() => setIsOpen(!isOpen)}>
-                    {/* @ts-ignore */}
                     {selectedOption ? selectedOption.label : "Select an option"}
                 </Div>
                 {isOpen && (
@@ -82,20 +79,18 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
                                                 className={`sws-option ${option.disabled ? "disabled" : ""}`}
                                                 onClick={() => !option.disabled && handleSelectOption(option)}
                                             >
-                                                {option.label}
+                                                {option.customLabel ? option.customLabel : option.label}
                                             </Div>
                                         );
                                     }
                                 })
                             ) : (
-                                <li className="sws-option disabled">
-                                    No matches found
-                                </li>
+                                <li className="sws-option disabled">No matches found</li>
                             )}
                         </Div>
                     </Div>
                 )}
             </BaseInputComponent>
         );
-    },
+    }
 );
