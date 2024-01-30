@@ -1,8 +1,8 @@
 import React from "react";
 
 import { Element } from "../Element/Element";
-import { CommonAndHTMLProps } from "../Element/constants";
 import { Text } from "../Typography/Text";
+import { CommonAndHTMLProps } from "../Element/constants";
 
 import "./progress-bar.css";
 
@@ -41,6 +41,7 @@ export const ProgressBar = React.forwardRef(
                         </Text>
                     </Element>
                 )}
+
                 <Element<ProgressBarElementType>
                     as="progress"
                     data-progress-bar

@@ -22,6 +22,7 @@ export const Default: Story = {
         id: "volume-range",
         name: "volume",
         required: true,
+        suffix: "%",
         min: 0,
         max: 100,
         step: 10,

@@ -1,15 +1,15 @@
 import React from "react";
 
 import { Element } from "../Element/Element";
-import { CommonAndHTMLProps } from "../Element/constants";
+import { CommonAndHTMLProps, EmphasisTypes, ShapeTypes, SpacingTypes } from "../Element/constants";
 
 import "./Button.css";
 
 // prettier-ignore
 export interface ButtonCustomProps {
-    kind      ? : "primary" | "secondary" | "tertiary" | "custom";
-    size      ? : "tiny" | "small" | "medium" | "large" | "huge";
-    shape     ? : "rounded" | "curved" | "circular";
+    kind      ? : EmphasisTypes;
+    size      ? : SpacingTypes;
+    shape     ? : ShapeTypes;
     isLoading ? : boolean;
     hasDelete ? : boolean;
 }

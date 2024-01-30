@@ -173,7 +173,16 @@
 }
 
 /* DIFFERENT SIZES ////////////////////////////////////////////////////////// */
-/*TODO: Revisit font-size different sizes*/
+[data-button].size-nano {
+    padding   : 1px 2px;
+    font-size : 48%;
+}
+
+[data-button].size-micro {
+    padding   : 2px 4px;
+    font-size : 56%;
+}
+
 [data-button].size-tiny {
     padding   : 4px 8px;
     font-size : 64%;
@@ -194,6 +203,14 @@
     font-size : 160%;
 }
 
+/* DIFFERENT SHAPES ///////////////////////////////////////////////////////// */
+[data-button].shape-rounded {
+    border-radius : var(--global-border-radius);
+}
+
+[data-button].shape-curved {
+    border-radius : 50000px;
+}
 
 /* ROUND BUTTON ///////////////////////////////////////////////////////////// */
 [data-button].shape-circular {

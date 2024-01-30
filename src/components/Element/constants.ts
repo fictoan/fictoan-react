@@ -29,6 +29,7 @@ type FixedColor = "transparent" | "black" | "white";
 type CustomColor = "hue" | "tint" | "shade" | "analogue" | "accent";
 
 // prettier-ignore
+export type EmphasisTypes = "primary" | "secondary" | "tertiary" | "custom";
 export type SpacingTypes = "none" | "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
 export type ShadowTypes  = "none" | "mild" | "hard" | "soft";
 export type ShapeTypes   = "rounded" | "curved";

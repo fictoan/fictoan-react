@@ -25,12 +25,15 @@
 - Rename `FormWrapper` to `Form`
 - Rename `CheckBox` to `Checkbox`
 
-[//]: # (TODO: Fix Sidebar scrolling issue)
-[//]: # (TODO: Fix ProgressBar height issue)
-[//]: # (TODO: Revamp BreadCrumbs)
-[//]: # (TODO: Fix Dismiss Button in NotifcationItem)
-[//]: # (TODO: Add mask design to PinInputField) 
 [//]: # (TODO: Make Fictoan more accessible)
+[//]: # (TODO: ⚠️ Fix ProgressBar height issue)
+[//]: # (TODO: ⚠️ Remove style tag in CodeBlock)
+[//]: # (TODO: ⚠️ Fix TS issue in Select and SWS)
+[//]: # (TODO: Fix Dismiss Button in NotifcationItem)
+[//]: # (TODO: Revamp BreadCrumbs?)
+[//]: # (TODO: Add mask design to PinInputField) 
+[//]: # (TODO: Fix Sidebar scrolling issue)
+
 
 ---
 

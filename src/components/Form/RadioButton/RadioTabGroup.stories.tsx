@@ -21,6 +21,7 @@ export const Default: Story = {
         label: "Options",
         id: "radio-buttons",
         name: "radio-input-group-demo",
+
         options: [
             {
                 label: "Hello",
@@ -58,6 +59,6 @@ export const Default: Story = {
                 id: "option10",
             },
         ],
-        helpText: "Select an option",
+        // helpText: "Select an option",
     },
 };

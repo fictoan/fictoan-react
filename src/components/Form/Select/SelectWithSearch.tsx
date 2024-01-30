@@ -12,6 +12,7 @@ import {
     OptionProps,
     SelectElementType,
     SelectWithSearchElementType,
+    OptionForSearchWithSelectProps,
 } from "./constants";
 
 import "./select-with-search.css";
@@ -19,16 +20,17 @@ import "./select-with-search.css";
 export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, SelectWithSearchProps>(
     ({ options, ...props }, ref) => {
         const [ isOpen, setIsOpen ]                 = useState(false);
-        const [ selectedOption, setSelectedOption ] = useState<OptionProps | OptGroupProps | string | null>("");
+        const [ selectedOption, setSelectedOption ] = useState<OptionProps | OptionForSearchWithSelectProps | OptGroupProps | string | null>("");
         const [ searchValue, setSearchValue ]       = useState("");
 
         const dropdownRef = useRef(null);
 
-        const filteredOptions = options.filter((option: { label: string; }) =>
-            option.label.toLowerCase().includes(searchValue.toLowerCase()),
+        const filteredOptions = options.filter((option) =>
+            // @ts-ignore
+            option.searchKey.toLowerCase().includes(searchValue.toLowerCase()),
         );
 
-        const handleSelectOption = (value: OptionProps | OptGroupProps) => {
+        const handleSelectOption = (value: OptionProps | OptionForSearchWithSelectProps | OptGroupProps) => {
             setSelectedOption(value);
             setIsOpen(false);
         };
@@ -73,8 +75,7 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
                                 filteredOptions.map((option) => {
                                     if ("value" in option && "label" in option) {
                                         return (
-                                            <Element<OptionElementType>
-                                                as="option"
+                                            <Div
                                                 key={option.value}
                                                 value={option.value}
                                                 disabled={option.disabled}
@@ -82,7 +83,7 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
                                                 onClick={() => !option.disabled && handleSelectOption(option)}
                                             >
                                                 {option.label}
-                                            </Element>
+                                            </Div>
                                         );
                                     }
                                 })

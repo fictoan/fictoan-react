@@ -288,9 +288,15 @@
 
 /* RANGE //////////////////////////////////////////////////////////////// */
 :root {
-    --range-slider-bg            : var(--blue-light-20);
-    --range-slider-border-focus  : var(--blue);
-    --range-slider-outline-focus : var(--blue);
+    --range-label         : var(--input-label-default);
+    --range-value         : var(--input-label-default);
+
+    --range-track-bg      : var(--slate-light-70);
+    --range-thumb-bg         : var(--blue-light-20);
+    --range-thumb-border     : var(--blue-light-20);
+
+    --range-border-focus  : var(--blue);
+    --range-outline-focus : var(--blue);
 }
 
 /* SIDEBAR + CONTENT WRAPPER //////////////////////////////////////////////// */
@@ -438,7 +444,6 @@
     --kbd-border-radius         : var(--global-border-radius);
 
     /* TOKENS =============================================================== */
-    --token-tag                 : var(--violet);
     --token-atrule              : var(--teal);
     --token-attrName            : var(--orange);
     --token-attrValue           : var(--green);
@@ -467,12 +472,9 @@
     --token-selector            : var(--violet);
     --token-string              : var(--crimson);
     --token-symbol              : var(--green);
+    --token-tag                 : var(--violet);
     --token-url                 : var(--green);
     --token-variable            : var(--orange);
-    --token-css-fallback        : var(--red);
-    --token-html-fallback       : var(--red);
-    --token-js-fallback         : var(--red);
-    --token-json-token-string   : var(--red);
 }
 
 /* SWITCH /////////////////////////////////////////////////////////////////// */

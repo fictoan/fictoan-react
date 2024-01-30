@@ -1,5 +1,5 @@
 import { BaseInputComponentProps } from "../BaseInputComponent/constants";
-import { SpacingTypes } from "@/components/Element/constants";
+import { CommonAndHTMLProps, SpacingTypes } from "@/components/Element/constants";
 
 export type RadioButtonElementType = HTMLDivElement;
 export type RadioButtonProps = Omit<BaseInputComponentProps<RadioButtonElementType>, "as">;
@@ -14,8 +14,10 @@ export interface RadioGroupCustomProps {
     options : RadioGroupOptionProps[];
 }
 
-export type RadioGroupProps = RadioGroupOptionProps & RadioGroupCustomProps;
 
-export interface RadioTabGroupProps extends Omit<RadioGroupProps, "size"> {
+export interface RadioTabGroupCustomProps extends RadioGroupCustomProps {
     size ? : SpacingTypes;
 }
+
+export type RadioGroupProps = RadioGroupOptionProps & RadioGroupCustomProps;
+export type RadioTabGroupProps = Omit<CommonAndHTMLProps<RadioButtonElementType>, keyof RadioGroupCustomProps> & RadioTabGroupCustomProps;

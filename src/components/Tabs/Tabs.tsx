@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 
 import { Element } from "../Element/Element";
+import { Div } from "../Element/Tags";
 import { HRule } from "../HRule/HRule";
 import { Text } from "../Typography/Text";
 
@@ -65,13 +66,13 @@ export const Tabs = React.forwardRef(
                             <ul className="tab-labels-list">
                                 {tabs.map((tab) => (
                                     <li key={tab.key}>
-                                        <Element
+                                        <Text
                                             className={`tab-label is-clickable ${tab.key === activeTab.key ? "is-active" : ""}`}
                                             onClick={() => handleTabChange(tab)}
                                             marginBottom="none"
                                         >
                                             {tab.label}
-                                        </Element>
+                                        </Text>
                                     </li>
                                 ))}
                             </ul>
@@ -80,9 +81,9 @@ export const Tabs = React.forwardRef(
 
                         <HRule kind="secondary" marginTop="none" marginBottom="micro" />
 
-                        <Element as="div" className={`tabs-content ${isExiting ? "exiting" : ""}`}>
+                        <Div className={`tabs-content ${isExiting ? "exiting" : ""}`}>
                             {activeTab.content}
-                        </Element>
+                        </Div>
                     </>
                 ) : (
                     <></>

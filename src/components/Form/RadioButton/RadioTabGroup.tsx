@@ -2,10 +2,11 @@ import React from "react";
 
 import { Div } from "../../Element/Tags";
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
-import { RadioTabGroupProps, RadioGroupProps } from "./constants";
+import { RadioTabGroupProps, RadioGroupProps, RadioButtonElementType } from "./constants";
 
 import "./radio-tab-group.css";
 
+// TODO: Add size prop to RadioTabGroupProps
 const RadioTabGroupOptions = ({ options, defaultValue, required, ...props }: RadioGroupProps) => {
     return (
         <Div data-radio-tab-group name={props.name} required={required}>
@@ -13,7 +14,6 @@ const RadioTabGroupOptions = ({ options, defaultValue, required, ...props }: Rad
                 <React.Fragment key={option.id}>
                     <input
                         type="radio"
-                        checked={defaultValue === option.value}
                         {...props}
                         {...option}
                     />
@@ -24,7 +24,7 @@ const RadioTabGroupOptions = ({ options, defaultValue, required, ...props }: Rad
     );
 };
 
-export const RadioTabGroup = React.forwardRef(({ size = "medium", ...props }: RadioTabGroupProps, ref: React.Ref<HTMLDivElement>) => {
+export const RadioTabGroup = React.forwardRef(({ size="medium", ...props }: RadioTabGroupProps, ref: React.Ref<HTMLDivElement>) => {
     let classNames = [];
 
     if (size) {
@@ -32,6 +32,11 @@ export const RadioTabGroup = React.forwardRef(({ size = "medium", ...props }: Ra
     }
 
     return (
-        <BaseInputComponent<HTMLDivElement> as={RadioTabGroupOptions} ref={ref} classNames={classNames} {...props} />
+        <BaseInputComponent<RadioButtonElementType>
+            as={RadioTabGroupOptions}
+            ref={ref}
+            classNames={classNames}
+            {...props}
+        />
     );
 });

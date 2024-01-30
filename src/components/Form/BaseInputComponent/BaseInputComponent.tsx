@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Element } from "../../Element/Element";
-
+import { Div } from "../../Element/Tags";
 import { InputLabel } from "../InputLabel/InputLabel";
 import { FormItem } from "../FormItem/FormItem";
 import { BaseInputComponentWithIconProps } from "./constants";
@@ -53,7 +53,7 @@ export const BaseInputComponent = React.forwardRef(
             {label && <InputLabel label={label} htmlFor={inputProps.id} />}
 
             {(helpText || errorText) && (
-                <Element as="div" className="info-section vertically-center-items" marginTop="nano">
+                <Div className="info-section vertically-center-items" marginTop="nano">
                     {helpText && (
                         <Element as="span" className="help-text">
                             {helpText}
@@ -64,7 +64,7 @@ export const BaseInputComponent = React.forwardRef(
                             {errorText}
                         </Element>
                     )}
-                </Element>
+                </Div>
             )}
         </FormItem>
     )
