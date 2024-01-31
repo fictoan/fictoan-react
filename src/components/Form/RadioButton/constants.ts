@@ -15,7 +15,7 @@ export interface RadioGroupCustomProps {
 }
 
 
-export interface RadioTabGroupCustomProps extends RadioGroupCustomProps {
+export interface RadioTabGroupCustomProps {
     size ? : SpacingTypes;
 }
 
