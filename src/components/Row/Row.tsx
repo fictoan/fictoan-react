@@ -6,8 +6,7 @@ import { CommonAndHTMLProps, SpacingTypes } from "../Element/constants";
 import "./row.css";
 
 // prettier-ignore
-interface RowCommonProps {
-    sidePadding                   ? : "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
+interface RowCustomProps {
     gutters                       ? : SpacingTypes;
     retainLayoutOnTabletLandscape ? : boolean;
     retainLayoutOnTabletPortrait  ? : boolean;
@@ -15,54 +14,44 @@ interface RowCommonProps {
     retainLayoutAlways            ? : boolean;
 }
 
-type ConditionalLayoutProps = | {
-    layout             : "grid";
-    equaliseChildren ? : never;
-    equalizeChildren ? : never;
-} | {
-    layout             : "flexbox";
-    equaliseChildren ? : boolean;
-    equalizeChildren ? : boolean;
-};
-
 export type RowElementType = HTMLDivElement;
-export type RowCustomProps = RowCommonProps & ConditionalLayoutProps;
-export type RowProps       = Omit<CommonAndHTMLProps<RowElementType>, keyof RowCustomProps> & RowCustomProps;
+export type RowProps = Omit<CommonAndHTMLProps<RowElementType>, keyof RowCustomProps> & RowCustomProps;
 
 export const Row = React.forwardRef(
     (
         {
-            layout = "grid",
-            gutters,
+            gutters = "medium",
             retainLayoutOnTabletLandscape,
             retainLayoutOnTabletPortrait,
             retainLayoutOnMobile,
             retainLayoutAlways,
-            equaliseChildren,
-            equalizeChildren,
             ...props
         }: RowProps,
         ref: React.Ref<RowElementType>
     ) => {
         let classNames = [];
 
-        // TOP LEVEL CHECK =====================================================
-        if (layout) {
-            classNames.push(`layout-${layout}`);
+        if (gutters) {
+            classNames.push(gutters === "none" ? "no-gutters" : `${gutters}-gutters`);
         }
+
+        // TOP LEVEL CHECK =====================================================
+        // if (layout) {
+        //     classNames.push(`layout-${layout}`);
+        // }
 
         // CONDITIONAL GUTTERS =================================================
         // Add medium gutters by default for grid layouts only, remove them for flexbox layouts
-        const conditionalGutters = gutters ?? (layout === "grid" ? "medium" : "none");
-
-        if (conditionalGutters) {
-            classNames.push(conditionalGutters === "none" ? "no-gutters" : `${conditionalGutters}-gutters`);
-        }
+        // const conditionalGutters = gutters ?? (layout === "grid" ? "medium" : "none");
+        //
+        // if (conditionalGutters) {
+        //     classNames.push(conditionalGutters === "none" ? "no-gutters" : `${conditionalGutters}-gutters`);
+        // }
 
         // FLEXBOX-SPECIFIC CLASSNAMES =========================================
-        if (equaliseChildren || equalizeChildren) {
-            classNames.push("equalise-children");
-        }
+        // if (equaliseChildren || equalizeChildren) {
+        //     classNames.push("equalise-children");
+        // }
 
         // COMMON CLASSNAMES ===================================================
         if (retainLayoutOnTabletLandscape) {

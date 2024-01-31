@@ -24,7 +24,7 @@ export const InsideRow: Story = {
         desktopSpan: "8",   
     },
     render: (args) => (
-        <Row layout="grid">
+        <Row>
             <Portion {...args}>
                 <Element as="div" bgColour="slate-light-20" padding="micro" />
             </Portion>

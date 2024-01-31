@@ -30,7 +30,6 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
             setSelectedOption(value);
             setIsOpen(false);
             const event = new CustomEvent("formEvent", { bubbles: true, detail: { value: value } });
-            console.log(event)
             effectiveRef.current?.dispatchEvent(event);
         };
 

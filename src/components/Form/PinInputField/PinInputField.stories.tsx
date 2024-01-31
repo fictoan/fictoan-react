@@ -39,7 +39,7 @@ export const Default: Story = {
         };
 
         return (
-            <Row layout="flexbox">
+            <Row>
                 <Portion>
                     <PinInputField {...args} onChange={handleInputChange} />
                 </Portion>

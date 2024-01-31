@@ -13,15 +13,15 @@ export interface OptionProps {
 }
 
 export interface OptionForSearchWithSelectProps {
-    value      : string;
-    label      : string;
-    customLabel  ? : React.ReactNode;
-    disabled ? : boolean;
+    value         : string;
+    label         : string;
+    customLabel ? : React.ReactNode;
+    disabled    ? : boolean;
 }
 
 export interface OptGroupProps {
     label   : string;
-    options : OptionProps[]; 
+    options : OptionProps[];
 }
 
 export interface SelectCustomProps {

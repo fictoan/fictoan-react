@@ -1,9 +1,7 @@
 [data-row] {
     /* GRID ///////////////////////////////////////////////////////////////// */
-    &.layout-grid {
-        display               : grid;
-        grid-template-columns : repeat(24, 1fr);
-    }
+    display               : grid;
+    grid-template-columns : repeat(24, 1fr);
 
     /* FLEXBOX ////////////////////////////////////////////////////////////// */
     &.layout-flexbox {

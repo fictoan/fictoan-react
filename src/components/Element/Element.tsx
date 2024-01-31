@@ -127,14 +127,6 @@ export const Element = React.forwardRef(<K extends {}>({ as: Component = "div", 
                     weight && `weight-${weight}`,
                 ].concat(classNames),
             )}
-            // style={
-            //     layoutAsGrid ? {
-            //         gridTemplateColumns : `repeat(${columns}, 1fr)`,
-            //         gap                 : gap,
-            //     } : {
-            //         gap : gap,
-            //     }
-            // }
         />
     );
 }) as <K extends {}>(props: ElementProps<K> & { ref?: React.LegacyRef<HTMLElement> }) => React.ReactElement;
