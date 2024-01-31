@@ -20,4 +20,4 @@ export interface RadioTabGroupCustomProps extends RadioGroupCustomProps {
 }
 
 export type RadioGroupProps = RadioGroupOptionProps & RadioGroupCustomProps;
-export type RadioTabGroupProps = Omit<CommonAndHTMLProps<RadioButtonElementType>, keyof RadioGroupCustomProps> & RadioTabGroupCustomProps;
+export type RadioTabGroupProps = CommonAndHTMLProps<RadioButtonElementType> & RadioTabGroupCustomProps;

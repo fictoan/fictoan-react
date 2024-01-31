@@ -234,7 +234,7 @@ export const PinInputField = React.forwardRef(
         };
 
         return (
-            <Row layout="flexbox" data-pin-input-field gutters={spacing} ref={pinInputFieldRef} {...props}>
+            <Row data-pin-input-field gutters={spacing} ref={pinInputFieldRef} {...props}>
                 {[...Array(length)].map((_, i) => (
                     <InputField
                         key={i}

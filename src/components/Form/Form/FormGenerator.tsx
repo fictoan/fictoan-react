@@ -89,5 +89,5 @@ export const generateFormThroughConfig = (
             </Portion>
         );
     }
-    return <Row layout="grid" gutters={spacing}>{formChildren}</Row>;
+    return <Row gutters={spacing}>{formChildren}</Row>;
 };

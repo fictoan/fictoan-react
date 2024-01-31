@@ -21,7 +21,6 @@ export const Default: Story = {
         label: "Options",
         id: "radio-buttons",
         name: "radio-input-group-demo",
-
         options: [
             {
                 label: "Hello",

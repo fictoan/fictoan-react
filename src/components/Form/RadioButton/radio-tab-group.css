@@ -80,7 +80,7 @@
         pointer-events             : none;
         content                    : "";
         background                 : var(--radio-tabs-label-bg-active);
-        border-radius              : calc(var(--global-border-radius) - var(--radio-tabs-vertical-gap));
+        border-radius              : var(--global-border-radius);
         translate                  : calc(var(--active, 0) * 100%) 0;
         transition                 : translate, outline-color;
         transition-duration        : 0.2s;

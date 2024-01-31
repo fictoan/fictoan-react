@@ -19,26 +19,24 @@ type Story = StoryObj<typeof SelectWithSearch>;
 export const Default: Story = {
     args : {
         label : "Hi",
-        // id: "select",
-        // name: "select-demo",
+        id: "select",
+        name: "select-demo",
         options : [
             {
                 label     : "Hello",
-                searchKey : "Hello",
                 value     : "hello",
             },
             {
                 label     : "Option A",
-                searchKey : "Option A",
                 value     : "option-A",
             },
             {
                 label     : "Option B",
-                searchKey : "Option B",
                 value     : "Option B",
             },
         ],
-        // required: true,
-        // helpText: "Select an option from the list",
+        onChange: (e) => console.log(e),
+        required: true,
+        helpText: "Select an option from the list",
     },
 };
