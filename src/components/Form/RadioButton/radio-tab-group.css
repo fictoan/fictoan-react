@@ -64,7 +64,7 @@
         z-index                    : 5;
     }
 
-    &.size-nano label {
+    & input.size-nano + label {
         padding : 0 4px;
     }
 
