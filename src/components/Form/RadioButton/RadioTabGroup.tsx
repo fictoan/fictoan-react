@@ -12,11 +12,7 @@ const RadioTabGroupOptions = ({ options, defaultValue, required, ...props }: Rad
         <Div data-radio-tab-group name={props.name} required={required}>
             {options.map((option) => (
                 <React.Fragment key={option.id}>
-                    <input
-                        type="radio"
-                        {...props}
-                        {...option}
-                    />
+                    <input type="radio" {...props} {...option} />
                     <label htmlFor={option.id}>{option.label}</label>
                 </React.Fragment>
             ))}
@@ -24,19 +20,21 @@ const RadioTabGroupOptions = ({ options, defaultValue, required, ...props }: Rad
     );
 };
 
-export const RadioTabGroup = React.forwardRef(({ size="medium", ...props }: RadioTabGroupProps, ref: React.Ref<HTMLDivElement>) => {
-    let classNames = [];
+export const RadioTabGroup = React.forwardRef(
+    ({ size = "medium", ...props }: RadioTabGroupProps, ref: React.Ref<HTMLDivElement>) => {
+        let classNames = [];
 
-    if (size) {
-        classNames.push(`size-${size}`);
+        if (size) {
+            classNames.push(`size-${size}`);
+        }
+
+        return (
+            <BaseInputComponent<RadioButtonElementType>
+                as={RadioTabGroupOptions}
+                ref={ref}
+                classNames={classNames}
+                {...props}
+            />
+        );
     }
-
-    return (
-        <BaseInputComponent<RadioButtonElementType>
-            as={RadioTabGroupOptions}
-            ref={ref}
-            classNames={classNames}
-            {...props}
-        />
-    );
-});
+);

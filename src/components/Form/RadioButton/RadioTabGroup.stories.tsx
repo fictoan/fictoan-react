@@ -58,6 +58,6 @@ export const Default: Story = {
                 id: "option10",
             },
         ],
-        // helpText: "Select an option",
+        helpText: "Select an option",
     },
 };
