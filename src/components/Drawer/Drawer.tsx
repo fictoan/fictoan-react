@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, RefObject } from "react";
 
 import { Element } from "../Element/Element";
+import { Div } from "../Element/Tags";
 import { CommonAndHTMLProps, SpacingTypes } from "../Element/constants";
 
 import { useClickOutside } from "../../hooks/UseClickOutside";
@@ -9,11 +10,11 @@ import "./drawer.css";
 
 export interface DrawerCustomProps {
     position              : "top" | "right" | "bottom" | "left";
-    width               ? : SpacingTypes;
+    size                ? : SpacingTypes;
     openWhen            ? : boolean;
     closeWhen           ? : () => void;
     closeOnClickOutside ? : boolean;
-    isDismissable       ? : boolean;
+    isDismissible       ? : boolean;
     showOverlay         ? : boolean;
 }
 
@@ -30,10 +31,10 @@ export const Drawer = React.forwardRef(
             closeOnClickOutside,
             padding,
             position,
-            width,
+            size,
             bgColor,
             bgColour,
-            isDismissable = true,
+            isDismissible = true,
             showOverlay = false,
             ...props
         }: DrawerProps,
@@ -75,8 +76,8 @@ export const Drawer = React.forwardRef(
 
         useClickOutside(effectiveRef, closeOnClickOutside ? closeDrawer : () => {});
 
-        if (width) {
-            classNames.push(width);
+        if (size) {
+            classNames.push(size);
         }
 
         return shouldRender ? (
@@ -87,14 +88,11 @@ export const Drawer = React.forwardRef(
                     ref={effectiveRef}
                     classNames={classNames}
                     onAnimationEnd={onAnimationEnd}
+                    {...(closeOnClickOutside ? { onClick: closeDrawer } : {})}
                     {...props}
                 >
                     {openWhen && showOverlay && (
-                        <Element
-                            as="div"
-                            className={`rest-of-page-overlay ${openWhen ? "visible" : ""}`}
-                            {...(closeOnClickOutside ? { onClick: closeDrawer } : {})}
-                        />
+                        <Div className={`rest-of-page-overlay ${openWhen ? "visible" : ""}`} />
                     )}
 
                     <Element
@@ -104,7 +102,7 @@ export const Drawer = React.forwardRef(
                         bgColor={bgColor}
                         bgColour={bgColour}
                     >
-                        {isDismissable && (
+                        {isDismissible && (
                             <button className="dismiss-button" onClick={closeDrawer} />
                         )}
                         {children}

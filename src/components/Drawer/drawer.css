@@ -12,7 +12,7 @@
         height           : 100vh;
         z-index          : 50000;
         backdrop-filter  : blur(var(--drawer-overlay-blur));
-        background-color : rgba(var(--drawer-overlay-bg), 0.32);
+        background-color : rgba(var(--drawer-overlay-bg), var(--drawer-overlay-opacity));
         transition       : all 0.4s ease-in-out;
     }
 
@@ -30,6 +30,8 @@
         z-index          : 100000;
         width            : 100%;
         border-radius    : var(--drawer-border-radius);
+        border           : solid var(--drawer-border);
+        border-width     : 1px;
 
         &.padding-all-nano { padding : 8px; }
         &.padding-all-micro { padding : 24px; }
@@ -79,12 +81,33 @@
         width     : fit-content;
     }
 
-    /* WIDTHS =============================================================== */
-    &.tiny .drawer-content-wrapper { width: 8vw ; }
-    &.small .drawer-content-wrapper { width: 12vw; }
-    &.medium .drawer-content-wrapper { width: 24vw; }
-    &.large .drawer-content-wrapper { width: 32vw; }
-    &.huge .drawer-content-wrapper { width: 48vw; }
+    /* SIZES ================================================================ */
+    &.tiny.right .drawer-content-wrapper,
+    &.tiny.left .drawer-content-wrapper { width: 8vw ; }
+    &.tiny.top .drawer-content-wrapper,
+    &.tiny.bottom .drawer-content-wrapper { height: 8vw ; }
+
+    &.small.right .drawer-content-wrapper,
+    &.small.left .drawer-content-wrapper { width: 12vw; }
+    &.small.top .drawer-content-wrapper,
+    &.small.bottom .drawer-content-wrapper { height: 12vw; }
+
+    &.medium.right .drawer-content-wrapper,
+    &.medium.left .drawer-content-wrapper { width: 24vw; }
+    &.medium.top .drawer-content-wrapper,
+    &.medium.bottom .drawer-content-wrapper { height: 24vw; }
+
+
+    &.large.right .drawer-content-wrapper,
+    &.large.left .drawer-content-wrapper { width: 32vw; }
+    &.large.top .drawer-content-wrapper,
+    &.large.bottom .drawer-content-wrapper { height: 32vw; }
+
+
+    &.huge.right .drawer-content-wrapper,
+    &.huge.left .drawer-content-wrapper { width: 48vw; }
+    &.huge.top .drawer-content-wrapper,
+    &.huge.bottom .drawer-content-wrapper { height: 48vw; }
 
     /* OPEN STATE =========================================================== */
     &.open.left .drawer-content-wrapper,

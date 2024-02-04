@@ -128,7 +128,7 @@
 
 /* CHECKBOX //////////////////////////////////////////////////////////////// */
 :root {
-    --checkbox-square-border-radius : var(--global-border-radius);
+    --checkbox-square-border-radius : 4px;
 
     --checkbox-square-bg-default    : var(--slate-light-60);
     --checkbox-square-bg-hover      : var(--slate-light-40);
