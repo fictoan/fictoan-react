@@ -3,6 +3,9 @@
     --badge-font          : var(--paragraph-font);
     --badge-border-radius : var(--global-border-radius);
     --badge-border-width  : var(--global-border-width);
+
+    --badge-bg-default    : var(--blue-light-60);
+    --badge-text-default  : var(--blue-dark-20);
 }
 
 /* BODY ///////////////////////////////////////////////////////////////////// */
@@ -12,81 +15,81 @@
 
 /* BREADCRUMBS ////////////////////////////////////////////////////////////// */
 :root {
-    --breadcrumbs-wrapper-bg             : var(--transparent);
+    --breadcrumbs-wrapper-bg           : var(--transparent);
 
-    --breadcrumb-item-separator          : "/";
-    --breadcrumb-item-separator-colour   : var(--slate-light-10);
+    --breadcrumb-item-separator        : "/";
+    --breadcrumb-item-separator-colour : var(--slate-light-10);
 
-    --breadcrumb-item-text-colour        : var(--paragraph-text-colour);
-    --breadcrumb-item-text-colour-active : var(--paragraph-text-colour);
+    --breadcrumb-item-text             : var(--paragraph-text-colour);
+    --breadcrumb-item-text-active      : var(--paragraph-text-colour);
 }
 
 /* BUTTON /////////////////////////////////////////////////////////////////// */
 :root {
     /* PRIMARY BUTTON ======================================================= */
-    --button-primary-default-bg               : var(--blue);
-    --button-primary-default-text             : var(--white);
-    --button-primary-default-border-colour    : var(--blue);
-    --button-primary-default-border-width     : var(--global-border-width);
-    --button-primary-default-border-radius    : var(--global-border-radius);
+    --button-primary-bg-default               : var(--blue);
+    --button-primary-text-default             : var(--white);
+    --button-primary-border-default           : var(--blue);
+    --button-primary-border-width-default     : var(--global-border-width);
+    --button-primary-border-radius-default    : var(--global-border-radius);
 
-    --button-primary-hover-bg                 : var(--blue-light-10);
-    --button-primary-hover-text               : var(--white);
-    --button-primary-hover-border-colour      : var(--blue-dark-30);
-    --button-primary-hover-border-width       : var(--global-border-width);
-    --button-primary-hover-border-radius      : var(--global-border-radius);
+    --button-primary-bg-hover                 : var(--blue-light-10);
+    --button-primary-text-hover               : var(--white);
+    --button-primary-border-hover             : var(--blue-dark-30);
+    --button-primary-border-width-hover       : var(--global-border-width);
+    --button-primary-border-radius-hover      : var(--global-border-radius);
 
-    --button-primary-loading-spinner-colour   : var(--white);
+    --button-primary-spinner-loading          : var(--white);
 
-    --button-primary-disabled-bg              : var(--blue-light-10);
-    --button-primary-disabled-text            : var(--white);
-    --button-primary-disabled-border-colour   : var(--blue-light-10);
-    --button-primary-disabled-border-width    : var(--global-border-width);
-    --button-primary-disabled-border-radius   : var(--global-border-radius);
+    --button-primary-bg-disabled              : var(--blue-light-10);
+    --button-primary-text-disabled            : var(--white);
+    --button-primary-border-disabled          : var(--blue-light-10);
+    --button-primary-border-width-disabled    : var(--global-border-width);
+    --button-primary-border-radius-disabled   : var(--global-border-radius);
 
 
     /* SECONDARY BUTTON ===================================================== */
-    --button-secondary-default-bg             : var(--blue-light-50);
-    --button-secondary-default-text           : var(--blue);
-    --button-secondary-default-border-colour  : var(--blue-light-50);
-    --button-secondary-default-border-width   : var(--global-border-width);
-    --button-secondary-default-border-radius  : var(--global-border-radius);
+    --button-secondary-bg-default             : var(--blue-light-50);
+    --button-secondary-text-default           : var(--blue);
+    --button-secondary-border-default         : var(--blue-light-50);
+    --button-secondary-border-width-default   : var(--global-border-width);
+    --button-secondary-border-radius-default  : var(--global-border-radius);
 
-    --button-secondary-hover-bg               : var(--blue-light-40);
-    --button-secondary-hover-text             : var(--blue);
-    --button-secondary-hover-border-colour    : var(--blue-light-40);
-    --button-secondary-hover-border-width     : var(--global-border-width);
-    --button-secondary-hover-border-radius    : var(--global-border-radius);
+    --button-secondary-bg-hover               : var(--blue-light-40);
+    --button-secondary-text-hover             : var(--blue);
+    --button-secondary-border-hover           : var(--blue-light-40);
+    --button-secondary-border-width-hover     : var(--global-border-width);
+    --button-secondary-border-radius-hover    : var(--global-border-radius);
 
-    --button-secondary-loading-spinner-colour : var(--blue);
+    --button-secondary-spinner-loading        : var(--blue);
 
-    --button-secondary-disabled-bg            : var(--blue-light-10);
-    --button-secondary-disabled-text          : var(--white);
-    --button-secondary-disabled-border-colour : var(--blue-light-10);
-    --button-secondary-disabled-border-width  : var(--global-border-width);
-    --button-secondary-disabled-border-radius : var(--global-border-radius);
+    --button-secondary-bg-disabled            : var(--blue-light-10);
+    --button-secondary-text-disabled          : var(--white);
+    --button-secondary-border-disabled        : var(--blue-light-10);
+    --button-secondary-border-width-disabled  : var(--global-border-width);
+    --button-secondary-border-radius-disabled : var(--global-border-radius);
 
 
     /* TERTIARY BUTTON ====================================================== */
-    --button-tertiary-default-bg              : var(--transparent);
-    --button-tertiary-default-text            : var(--blue);
-    --button-tertiary-default-border-colour   : var(--blue);
-    --button-tertiary-default-border-width    : var(--global-border-width);
-    --button-tertiary-default-border-radius   : var(--global-border-radius);
+    --button-tertiary-bg-default              : var(--transparent);
+    --button-tertiary-text-default            : var(--blue);
+    --button-tertiary-border-default          : var(--blue);
+    --button-tertiary-border-width-default    : var(--global-border-width);
+    --button-tertiary-border-radius-default   : var(--global-border-radius);
 
-    --button-tertiary-hover-bg                : var(--blue-light-80);
-    --button-tertiary-hover-text              : var(--blue);
-    --button-tertiary-hover-border-colour     : var(--blue-light-20);
-    --button-tertiary-hover-border-width      : var(--global-border-width);
-    --button-tertiary-hover-border-radius     : var(--global-border-radius);
+    --button-tertiary-bg-hover                : var(--blue-light-80);
+    --button-tertiary-text-hover              : var(--blue);
+    --button-tertiary-border-hover            : var(--blue-light-20);
+    --button-tertiary-border-width-hover      : var(--global-border-width);
+    --button-tertiary-border-radius-hover     : var(--global-border-radius);
 
-    --button-tertiary-loading-spinner-colour  : var(--blue);
+    --button-tertiary-spinner-loading         : var(--blue);
 
-    --button-tertiary-disabled-bg             : var(--blue-light-10);
-    --button-tertiary-disabled-text           : var(--white);
-    --button-tertiary-disabled-border-colour  : var(--blue-light-10);
-    --button-tertiary-disabled-border-width   : var(--global-border-width);
-    --button-tertiary-disabled-border-radius  : var(--global-border-radius);
+    --button-tertiary-bg-disabled             : var(--blue-light-10);
+    --button-tertiary-text-disabled           : var(--white);
+    --button-tertiary-border-disabled         : var(--blue-light-10);
+    --button-tertiary-border-width-disabled   : var(--global-border-width);
+    --button-tertiary-border-radius-disabled  : var(--global-border-radius);
 
 
     /* ROUND BUTTON ========================================================= */
@@ -102,14 +105,14 @@
     --callout-border-radius  : var(--global-border-radius);
     --callout-border-width   : var(--nano);
 
-    --callout-info-bg        : var(--blue-light-60);
-    --callout-info-border    : var(--blue-dark-40);
+    --callout-info-bg        : var(--sky-light-60);
+    --callout-info-border    : var(--sky-dark-30);
 
     --callout-success-bg     : var(--green-light-60);
     --callout-success-border : var(--green-dark-40);
 
     --callout-warning-bg     : var(--amber-light-60);
-    --callout-warning-border : var(--amber-dark-40);
+    --callout-warning-border : var(--amber);
 
     --callout-error-bg       : var(--red-light-60);
     --callout-error-border   : var(--red-dark-40);
@@ -292,8 +295,8 @@
     --range-value         : var(--input-label-default);
 
     --range-track-bg      : var(--slate-light-70);
-    --range-thumb-bg         : var(--blue-light-20);
-    --range-thumb-border     : var(--blue-light-20);
+    --range-thumb-bg      : var(--blue-light-20);
+    --range-thumb-border  : var(--blue-light-20);
 
     --range-border-focus  : var(--blue);
     --range-outline-focus : var(--blue);

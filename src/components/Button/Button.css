@@ -43,132 +43,132 @@
 /* PRIMARY BUTTON /////////////////////////////////////////////////////////// */
 [data-button].primary {
     /* DEFAULT STATE ======================================================== */
-    background-color : var(--button-primary-default-bg);
-    color            : var(--button-primary-default-text);
-    border           : solid var(--button-primary-default-border-colour);
-    border-width     : var(--button-primary-default-border-width);
-    border-radius    : var(--button-primary-default-border-radius);
+    background-color : var(--button-primary-bg-default);
+    color            : var(--button-primary-text-default);
+    border           : solid var(--button-primary-border-default);
+    border-width     : var(--button-primary-border-width-default);
+    border-radius    : var(--button-primary-border-radius-default);
 
     /* HOVER STATE ========================================================== */
     &:hover {
-        background-color : var(--button-primary-hover-bg);
-        color            : var(--button-primary-hover-text);
-        border           : solid var(--button-primary-hover-border-colour);
-        border-width     : var(--button-primary-hover-border-width);
-        border-radius    : var(--button-primary-hover-border-radius);
+        background-color : var(--button-primary-bg-hover);
+        color            : var(--button-primary-text-hover);
+        border           : solid var(--button-primary-border-hover);
+        border-width     : var(--button-primary-border-width-hover);
+        border-radius    : var(--button-primary-border-radius-hover);
     }
 
     /* CLICKED STATE ======================================================== */
     &:active {
-        background-color : var(--button-primary-hover-bg);
-        color            : var(--button-primary-hover-text);
-        border           : solid var(--button-primary-hover-border-colour);
-        border-width     : var(--button-primary-hover-border-width);
-        border-radius    : var(--button-primary-hover-border-radius);
+        background-color : var(--button-primary-bg-hover);
+        color            : var(--button-primary-text-hover);
+        border           : solid var(--button-primary-border-hover);
+        border-width     : var(--button-primary-border-width-hover);
+        border-radius    : var(--button-primary-border-radius-hover);
     }
 
     /* LOADING STATE ======================================================== */
     &.is-loading::after {
-        border             : 3px solid var(--button-primary-loading-spinner-colour);
+        border             : 3px solid var(--button-primary-spinner-loading);
         border-top-color   : transparent;
         border-right-color : transparent;
     }
 
     /* DISABLED STATE ======================================================= */
     &[disabled] {
-        background-color : var(--button-primary-disabled-bg);
-        color            : var(--button-primary-disabled-text);
-        border           : solid var(--button-primary-disabled-border-colour);
-        border-width     : var(--button-primary-disabled-border-width);
-        border-radius    : var(--button-primary-disabled-border-radius);
+        background-color : var(--button-primary-bg-disabled);
+        color            : var(--button-primary-text-disabled);
+        border           : solid var(--button-primary-border-disabled);
+        border-width     : var(--button-primary-border-width-disabled);
+        border-radius    : var(--button-primary-border-radius-disabled);
     }
 }
 
 /* SECONDARY BUTTON ///////////////////////////////////////////////////////// */
 [data-button].secondary {
     /* DEFAULT STATE ======================================================== */
-    background-color : var(--button-secondary-default-bg);
-    color            : var(--button-secondary-default-text);
-    border           : solid var(--button-secondary-default-border-colour);
-    border-width     : var(--button-secondary-default-border-width);
-    border-radius    : var(--button-secondary-default-border-radius);
+    background-color : var(--button-secondary-bg-default);
+    color            : var(--button-secondary-text-default);
+    border           : solid var(--button-secondary-border-default);
+    border-width     : var(--button-secondary-border-width-default);
+    border-radius    : var(--button-secondary-border-radius-default);
 
     /* HOVER STATE ========================================================== */
     &:hover {
-        background-color : var(--button-secondary-hover-bg);
-        color            : var(--button-secondary-hover-text);
-        border           : solid var(--button-secondary-hover-border-colour);
-        border-width     : var(--button-secondary-hover-border-width);
-        border-radius    : var(--button-secondary-hover-border-radius);
+        background-color : var(--button-secondary-bg-hover);
+        color            : var(--button-secondary-text-hover);
+        border           : solid var(--button-secondary-border-hover);
+        border-width     : var(--button-secondary-border-width-hover);
+        border-radius    : var(--button-secondary-border-radius-hover);
     }
 
     /* CLICKED STATE ======================================================== */
     &:active {
-        background-color : var(--button-secondary-hover-bg);
-        color            : var(--button-secondary-hover-text);
-        border           : solid var(--button-secondary-hover-border-colour);
-        border-width     : var(--button-secondary-hover-border-width);
-        border-radius    : var(--button-secondary-hover-border-radius);
+        background-color : var(--button-secondary-bg-hover);
+        color            : var(--button-secondary-text-hover);
+        border           : solid var(--button-secondary-border-hover);
+        border-width     : var(--button-secondary-border-width-hover);
+        border-radius    : var(--button-secondary-border-radius-hover);
     }
 
     /* LOADING STATE ======================================================== */
     &.is-loading::after {
-        border             : 3px solid var(--button-secondary-loading-spinner-colour);
+        border             : 3px solid var(--button-secondary-spinner-loading);
         border-top-color   : transparent;
         border-right-color : transparent;
     }
 
     /* DISABLED STATE ======================================================= */
     &[disabled] {
-        background-color : var(--button-secondary-disabled-bg);
-        color            : var(--button-secondary-disabled-text);
-        border           : solid var(--button-secondary-disabled-border-colour);
-        border-width     : var(--button-secondary-disabled-border-width);
-        border-radius    : var(--button-secondary-disabled-border-radius);
+        background-color : var(--button-secondary-bg-disabled);
+        color            : var(--button-secondary-text-disabled);
+        border           : solid var(--button-secondary-border-disabled);
+        border-width     : var(--button-secondary-border-width-disabled);
+        border-radius    : var(--button-secondary-border-radius-disabled);
     }
 }
 
 /* TERTIARY BUTTON ////////////////////////////////////////////////////////// */
 [data-button].tertiary {
     /* DEFAULT STATE ======================================================== */
-    background-color : var(--button-tertiary-default-bg);
-    color            : var(--button-tertiary-default-text);
-    border           : solid var(--button-tertiary-default-border-colour);
-    border-width     : var(--button-tertiary-default-border-width);
-    border-radius    : var(--button-tertiary-default-border-radius);
+    background-color : var(--button-tertiary-bg-default);
+    color            : var(--button-tertiary-text-default);
+    border           : solid var(--button-tertiary-border-default);
+    border-width     : var(--button-tertiary-border-width-default);
+    border-radius    : var(--button-tertiary-border-radius-default);
 
     /* HOVER STATE ========================================================== */
     &:hover {
-        background-color : var(--button-tertiary-hover-bg);
-        color            : var(--button-tertiary-hover-text);
-        border           : solid var(--button-tertiary-hover-border-colour);
-        border-width     : var(--button-tertiary-hover-border-width);
-        border-radius    : var(--button-tertiary-hover-border-radius);
+        background-color : var(--button-tertiary-bg-hover);
+        color            : var(--button-tertiary-text-hover);
+        border           : solid var(--button-tertiary-border-hover);
+        border-width     : var(--button-tertiary-border-width-hover);
+        border-radius    : var(--button-tertiary-border-radius-hover);
     }
 
     /* CLICKED STATE ======================================================== */
     &:active {
-        background-color : var(--button-tertiary-hover-bg);
-        color            : var(--button-tertiary-hover-text);
-        border           : solid var(--button-tertiary-hover-border-colour);
-        border-width     : var(--button-tertiary-hover-border-width);
-        border-radius    : var(--button-tertiary-hover-border-radius);
+        background-color : var(--button-tertiary-bg-hover);
+        color            : var(--button-tertiary-text-hover);
+        border           : solid var(--button-tertiary-border-hover);
+        border-width     : var(--button-tertiary-border-width-hover);
+        border-radius    : var(--button-tertiary-border-radius-hover);
     }
 
     /* LOADING STATE ======================================================== */
     &.is-loading::after {
-        border             : 3px solid var(--button-tertiary-loading-spinner-colour);
+        border             : 3px solid var(--button-tertiary-spinner-loading);
         border-top-color   : transparent;
         border-right-color : transparent;
     }
 
     /* DISABLED STATE ======================================================= */
     &[disabled] {
-        background-color : var(--button-tertiary-disabled-bg);
-        color            : var(--button-tertiary-disabled-text);
-        border           : solid var(--button-tertiary-disabled-border-colour);
-        border-width     : var(--button-tertiary-disabled-border-width);
-        border-radius    : var(--button-tertiary-disabled-border-radius);
+        background-color : var(--button-tertiary-bg-disabled);
+        color            : var(--button-tertiary-text-disabled);
+        border           : solid var(--button-tertiary-border-disabled);
+        border-width     : var(--button-tertiary-border-width-disabled);
+        border-radius    : var(--button-tertiary-border-radius-disabled);
     }
 }
 
@@ -279,11 +279,17 @@
     border-radius      : 50%;
     content            : "";
     border             : 3px solid;
-    border-color       : var(--button-primary-loading-spinner-colour);
+    border-color       : var(--button-primary-spinner-loading);
     border-top-color   : transparent;
     border-right-color : transparent;
     -webkit-animation  : spinner 0.4s infinite linear;
     animation          : spinner 0.4s infinite linear;
+}
+
+[data-button].size-nano.is-loading::after,
+[data-button].size-micro.is-loading::after {
+    height             : 6px;
+    width              : 6px;
 }
 
 [data-button].size-tiny.is-loading::after,
