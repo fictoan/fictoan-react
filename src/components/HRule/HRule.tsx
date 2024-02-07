@@ -23,6 +23,7 @@ export const HRule = React.forwardRef(({ kind, ...props }: HRProps, ref: React.R
         return (
             <Element<HRElementType>
                 as="hr"
+                data-hrule
                 ref={ref}
                 classNames={classNames}
                 {...props}

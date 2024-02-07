@@ -10,36 +10,37 @@ import "./select-with-search.css";
 
 export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, SelectWithSearchProps>(
     ({ options, ...props }, ref) => {
-        const [isOpen, setIsOpen] = useState(false);
-        const [selectedOption, setSelectedOption] = useState<OptionProps | null>(null);
-        const [searchValue, setSearchValue] = useState("");
+        const [ isOpen, setIsOpen ]                 = useState(false);
+        const [ selectedOption, setSelectedOption ] = useState<OptionProps | null>(null);
+        const [ searchValue, setSearchValue ]       = useState("");
 
-        const dropdownRef = useRef() as MutableRefObject<HTMLSelectElement>;
+        const dropdownRef  = useRef() as MutableRefObject<HTMLSelectElement>;
         const effectiveRef = (ref || dropdownRef) as React.RefObject<HTMLSelectElement>; // Fallback to external ref if provided, otherwise use local ref
 
         const optionsWithSearchKey = options.map((option) => ({
             ...option,
-            searchKey: option.label.toLowerCase(),
+            searchKey : option.label.toLowerCase(),
         }));
 
         const filteredOptions = optionsWithSearchKey.filter((option) =>
-            option.searchKey.toLowerCase().includes(searchValue.toLowerCase())
+            option.searchKey.toLowerCase().includes(searchValue.toLowerCase()),
         );
 
         const handleSelectOption = (value: OptionProps) => {
             setSelectedOption(value);
-            
+
             // Hacky input change simulation
-            const input = document.getElementById(value.value) as HTMLInputElement;
-            input.type = "text";
+            const input  = document.getElementById(value.value) as HTMLInputElement;
+            input.type   = "text";
             input.hidden = true;
+
             // Override React's input onChange event
             const desc = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value");
             desc?.set?.call(input, value.value);
 
-            const event = new Event("input", { bubbles: true });
+            const event = new Event("input", { bubbles : true });
             input.dispatchEvent(event);
-            input.type = "hidden";
+            input.type   = "hidden";
             input.hidden = false;
 
             setIsOpen(false);
@@ -69,6 +70,7 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
                 <Div className="sws-display" onClick={() => setIsOpen(!isOpen)}>
                     {selectedOption ? selectedOption.label : "Select an option"}
                 </Div>
+
                 {isOpen && (
                     <Div className="sws-dropdown">
                         <InputField
@@ -106,5 +108,5 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
                 )}
             </BaseInputComponent>
         );
-    }
+    },
 );

@@ -20,8 +20,8 @@ type Story = StoryObj<typeof Table>;
 
 export const Default: Story = {
     args: {
-        isStriped: false,
-        isHoverable: false,
+        isStriped           : false,
+        highlightRowOnHover : false,
     },
     render: (args) => (
         <Table {...args}>

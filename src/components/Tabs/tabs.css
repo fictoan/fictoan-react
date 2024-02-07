@@ -21,7 +21,7 @@
                 padding       : 16px 0;
                 border-bottom : 2px solid transparent;
                 position      : relative;
-                color         : var(--tab-default-label);
+                color         : var(--tab-label-default);
             }
 
             li:not(:last-child) > .tab-label {
@@ -29,15 +29,16 @@
                 font-weight  : 400;
             }
 
-            .tab-label:hover { color : var(--tab-hover-label); }
+            .tab-label:hover { color : var(--tab-label-hover); }
 
-            .tab-label.is-active { color : var(--tab-active-label); }
+            .tab-label.is-active { color : var(--tab-label-active); }
 
             .tab-label.is-right-aligned {
                 margin-left  : auto;
                 margin-right : 0;
             }
 
+            /* ACTIVE TAB INDICATOR ========================================= */
             .tab-label.is-active::after {
                 display                 : block;
                 position                : absolute;
@@ -48,22 +49,24 @@
                 content                 : "";
                 border-top-left-radius  : 3px;
                 border-top-right-radius : 3px;
-                background-color        : var(--tab-active-border);
+                background-color        : var(--tab-border-active);
             }
 
-            .tab-label.has-alert::after {
+            /* HAS ALERT BADGE ============================================== */
+            .tab-label.has-alert::before {
                 position         : absolute;
                 top              : 12px;
                 left             : 94%;
-                border           : 3px solid var(--tab-with-alert-badge-border);
+                border           : 3px solid var(--tab-alert-badge-border);
                 width            : 14px;
                 height           : 14px;
-                background-color : var(--tab-with-alert-badge-bg);
+                background-color : var(--tab-alert-badge-bg);
                 border-radius    : 50%;
+                content          : "";
             }
 
             p.disabled-navlink {
-                color  : var(--tab-disabled-label);
+                color  : var(--tab-label-disabled);
                 cursor : not-allowed;
             }
         }

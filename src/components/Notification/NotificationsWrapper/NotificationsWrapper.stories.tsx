@@ -21,10 +21,10 @@ type Story = StoryObj<typeof NotificationsWrapper>;
 export const Default: Story = {
     render: (args) => (
         <NotificationsWrapper {...args}>
-            <NotificationItem kind="info" show onCloseCallback={() => null}>
+            <NotificationItem kind="info" showWhen closeWhen={() => null}>
                 This is a notification!
             </NotificationItem>
-            <NotificationItem kind="error" show onCloseCallback={() => null}>
+            <NotificationItem kind="error" showWhen closeWhen={() => null}>
                 This is another notification!
             </NotificationItem>
         </NotificationsWrapper>

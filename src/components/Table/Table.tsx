@@ -7,11 +7,11 @@ import "./table.css";
 
 // prettier-ignore
 export interface TableCustomProps {
-    bordersFor  ? : "rows" | "columns" | "both";
-    isStriped   ? : boolean;
-    isHoverable ? : boolean;
-    isFullWidth ? : boolean;
-    alignText   ? : "left" | "right" | "centre" | "center";
+    bordersFor          ? : "rows" | "columns" | "both";
+    alignText           ? : "left" | "right" | "centre" | "center";
+    isStriped           ? : boolean;
+    highlightRowOnHover ? : boolean;
+    isFullWidth         ? : boolean;
 }
 
 export type TableElementType = HTMLTableElement;
@@ -19,7 +19,7 @@ export type TableProps = Omit<CommonAndHTMLProps<TableElementType>, keyof TableC
 
 export const Table = React.forwardRef(
     (
-        { bordersFor, isStriped, isHoverable, isFullWidth, alignText, ...props }: TableProps,
+        { bordersFor, isStriped, highlightRowOnHover, isFullWidth, alignText, ...props }: TableProps,
         ref: React.Ref<TableElementType>
     ) => {
         let classNames = [];
@@ -32,7 +32,7 @@ export const Table = React.forwardRef(
             classNames.push("striped");
         }
 
-        if (isHoverable) {
+        if (highlightRowOnHover) {
             classNames.push("hoverable");
         }
 

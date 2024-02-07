@@ -97,3 +97,7 @@
     color  : var(--dropdown-text-disabled);
     cursor : not-allowed;
 }
+
+/* This is to negate the default form item spacing */
+.sws-dropdown > [data-form-item] { margin-bottom : 8px !important; }
+.sws-options > [data-form-item] { margin-bottom : 0 !important; }

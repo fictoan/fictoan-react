@@ -7,9 +7,9 @@ import "./toast-item.css";
 
 // prettier-ignore
 export interface ToastItemCustomProps {
-    show            ? : boolean;
-    showFor         ? : number;
-    onCloseCallback ? : () => void;
+    showWhen         ? : boolean;
+    secondsToShowFor ? : number;
+    closeWhen        ? : () => void;
 }
 
 export type ToastItemElementType = HTMLDivElement;
@@ -17,28 +17,28 @@ export type ToastItemProps = Omit<CommonAndHTMLProps<ToastItemElementType>, keyo
     ToastItemCustomProps;
 
 export const ToastItem = React.forwardRef(
-    ({ show, children, showFor, onCloseCallback, ...props }: ToastItemProps, ref: React.Ref<ToastItemElementType>) => {
-        let classNames: string[] = [];
-        const [isVisible, setIsVisible] = useState<boolean>(show ?? false);
+    ({ showWhen, children, secondsToShowFor, closeWhen, ...props }: ToastItemProps, ref: React.Ref<ToastItemElementType>) => {
+        let classNames: string[]          = [];
+        const [ isVisible, setIsVisible ] = useState<boolean>(showWhen ?? false);
 
         useEffect(() => {
-            if (show) {
+            if (showWhen) {
                 setIsVisible(true);
             }
 
-            const timer = show
+            const timer = showWhen
                 ? setTimeout(() => {
-                    onCloseCallback?.();
-                }, showFor ?? 4000)
+                    closeWhen?.();
+                }, (secondsToShowFor ?? 4) * 1000) // Default value is 4 seconds
                 : undefined;
 
             return () => {
                 timer && clearTimeout(timer);
             };
-        }, [show]);
+        }, [showWhen, secondsToShowFor, closeWhen]);
 
         const onTransitionEnd = () => {
-            if (!show) setIsVisible(false);
+            if (!showWhen) setIsVisible(false);
         };
 
         return (
@@ -46,14 +46,14 @@ export const ToastItem = React.forwardRef(
                 <Element<ToastItemElementType>
                     as="div"
                     data-toast-item
-                    classNames={[...classNames, show ? "visible" : ""]}
+                    classNames={[ ...classNames, showWhen ? "visible" : "" ]}
                     onTransitionEnd={onTransitionEnd}
-                    padding="nano"
+                    shadow="soft"
                     {...props}
                 >
                     {children}
                 </Element>
             )
         );
-    }
+    },
 );

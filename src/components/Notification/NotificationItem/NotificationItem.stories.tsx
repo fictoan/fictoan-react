@@ -18,8 +18,8 @@ type Story = StoryObj<typeof NotificationItem>;
 
 export const Default: Story = {
     args: {
-        show: true,
-        kind: "info",
-        children: "This is a notification",
+        showWhen : true,
+        kind     : "info",
+        children : "This is a notification",
     },
 };

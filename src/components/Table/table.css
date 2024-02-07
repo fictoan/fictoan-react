@@ -50,8 +50,8 @@ table {
 
     /* HOVERABLE ============================================================ */
     &.hoverable tbody tr:hover {
-        background-color : var(--table-bg-hover) !important;
-        color            : var(--table-text-hover);
+        background-color : var(--table-highlight-bg) !important;
+        color            : var(--table-highlight-text);
         transition       : all 0.2s;
         cursor           : pointer;
     }

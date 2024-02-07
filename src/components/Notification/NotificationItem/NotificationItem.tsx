@@ -7,44 +7,40 @@ import "./notification-item.css";
 
 // prettier-ignore
 export interface NotificationItemCustomProps {
-    kind            ? : "info" | "warning" | "error" | "success";
-    show              : boolean;
-    isDismissible   ? : boolean;
-    onCloseCallback   : () => void;
-    showFor         ? : number;
+    kind             ? : "info" | "warning" | "error" | "success";
+    showWhen           : boolean;
+    isDismissible    ? : boolean;
+    closeWhen          : () => void;
+    secondsToShowFor ? : number;
 }
 
 export type NotificationItemElementType = HTMLDivElement;
-export type NotificationItemProps = Omit<
-    CommonAndHTMLProps<NotificationItemElementType>,
-    keyof NotificationItemCustomProps
-> &
-    NotificationItemCustomProps;
+export type NotificationItemProps = Omit<CommonAndHTMLProps<NotificationItemElementType>, keyof NotificationItemCustomProps> & NotificationItemCustomProps;
 
 export const NotificationItem = React.forwardRef(
     (
-        { show, onCloseCallback, kind, children, isDismissible, showFor, ...props }: NotificationItemProps,
+        { showWhen, closeWhen, kind, children, isDismissible, secondsToShowFor, ...props }: NotificationItemProps,
         ref: React.Ref<NotificationItemElementType>
     ) => {
         let classNames: string[] = [];
 
-        const [isVisible, setIsVisible] = useState<boolean>(show);
+        const [isVisible, setIsVisible] = useState<boolean>(showWhen);
 
         useEffect(() => {
-            if (show) {
+            if (showWhen) {
                 setIsVisible(true);
             }
 
-            const timer = show
+            const timer = showWhen
                 ? setTimeout(() => {
-                      onCloseCallback();
-                  }, showFor ?? 8000)
+                      closeWhen();
+                  }, (secondsToShowFor ?? 8) * 1000) // Default value is 8 seconds
                 : undefined;
 
             return () => {
                 timer && clearTimeout(timer);
             };
-        }, [show]);
+        }, [showWhen]);
 
         if (kind) {
             classNames.push(kind);
@@ -56,11 +52,11 @@ export const NotificationItem = React.forwardRef(
 
         const onDismissClick = (event: SyntheticEvent<HTMLDivElement>) => {
             event.preventDefault();
-            onCloseCallback();
+            closeWhen();
         };
 
         const onTransitionEnd = () => {
-            if (!show) setIsVisible(false);
+            if (!showWhen) setIsVisible(false);
         };
 
         return (
@@ -69,7 +65,7 @@ export const NotificationItem = React.forwardRef(
                     as="div"
                     data-notification-item
                     ref={ref}
-                    classNames={[...classNames, !show ? "dismissed" : ""]}
+                    classNames={[...classNames, !showWhen ? "dismissed" : ""]}
                     onTransitionEnd={onTransitionEnd}
                     padding="nano"
                     marginTop="nano"

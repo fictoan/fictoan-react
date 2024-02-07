@@ -1,8 +1,8 @@
-hr {
-    border : 0;
-    width  : 100%;
-    height : var(--hr-default-height);
-    background-color : var(--hr-default-bg);
+hr[data-hrule] {
+    border           : 0;
+    width            : 100%;
+    height           : var(--hr-height);
+    background-color : var(--hr-bg);
 
     /* KINDS ================================================================ */
     &.primary {
@@ -180,8 +180,7 @@ hr {
     }
 
     /* CUSTOM BG ============================================================ */
-    /* Commenting this out for now because no idea why this approach */
-    /* doesn’t work *!*/
+    /* Commenting this out for now because no idea why this approach doesn’t work *! */
     /*hr:not([class*="bg-"]):not(.primary):not(.secondary):not(.tertiary) {*/
     /*    background-color : var(--hr-default-bg);*/
     /*}*/

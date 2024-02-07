@@ -13,6 +13,7 @@
 - Add generic block-level sectioning elements as custom components. Eg `<Div>`, `<Section>`, `<Article>` etc
 - Add copy code to clipboard for `CodeBlock` 
 - Add `RadioTabGroup` component
+- Convert all millisecond values to seconds 
 
 #### ⚠️ BREAKING CHANGES ⚠️
 - Remove `ThemeProvider` and `theme` prop from all components
@@ -24,15 +25,16 @@
 - Rename `para` to `paragraph` in CSS variables
 - Rename `FormWrapper` to `Form`
 - Rename `CheckBox` to `Checkbox`
+- Add consistent `showWhen`, `closeWhen` and `secondsToShowFor` props for transitory components
 
 [//]: # (TODO: Make Fictoan more accessible)
-[//]: # (TODO: ⚠️ Fix ProgressBar height issue)
 [//]: # (TODO: ⚠️ Remove style tag in CodeBlock)
 [//]: # (TODO: ⚠️ Fix TS issue in Select and SWS)
 [//]: # (TODO: Fix Dismiss Button in NotifcationItem)
 [//]: # (TODO: Revamp BreadCrumbs?)
 [//]: # (TODO: Add mask design to PinInputField) 
 [//]: # (TODO: Fix Sidebar scrolling issue)
+~~[//]: # (TODO: ⚠️ Fix ProgressBar height issue)~~
 
 
 ---

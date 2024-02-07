@@ -18,7 +18,7 @@ export type NotificationsWrapperProps = CommonAndHTMLProps<NotificationsWrapperE
 
 export const NotificationsWrapper = React.forwardRef(
     (
-        { position = "right", anchor = "top", order = "new-on-top", ...props }: NotificationsWrapperProps,
+        { position = "right", anchor = "top", order = "new-on-top", children, ...props }: NotificationsWrapperProps,
         ref: React.Ref<NotificationsWrapperElementType>
     ) => {
         let classNames = [];
@@ -35,6 +35,12 @@ export const NotificationsWrapper = React.forwardRef(
             classNames.push(order);
         }
 
+        // Doing this because this component has a very high z-index
+        const childrenCount = React.Children.count(children);
+        if (childrenCount === 0) {
+            return null;
+        }
+
         return (
             <Element<NotificationsWrapperElementType>
                 as="div"
@@ -42,7 +48,9 @@ export const NotificationsWrapper = React.forwardRef(
                 ref={ref}
                 classNames={classNames}
                 {...props}
-            />
+            >
+                {children}
+            </Element>
         );
     }
 );

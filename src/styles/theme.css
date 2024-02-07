@@ -171,8 +171,8 @@
 
 /* H-RULE /////////////////////////////////////////////////////////////////// */
 :root {
-    --hr-default-height   : 1px;
-    --hr-default-bg       : var(--slate);
+    --hr-height           : 1px;
+    --hr-bg               : var(--slate);
 
     --hr-primary-height   : 4px;
     --hr-primary-bg       : var(--slate);
@@ -254,10 +254,10 @@
 
 /* PROGRESS BAR ///////////////////////////////////////////////////////////// */
 :root {
-    --progress-bar-bg            : var(--slate-light-20);
+    --progress-bar-bg            : var(--slate-light-60);
     --progress-bar-fill          : var(--hue);
-    --progress-bar-label         : var(--shade);
-    --progress-bar-value         : var(--shade);
+    --progress-bar-label         : var(--paragraph-text-colour);
+    --progress-bar-value         : var(--paragraph-text-colour);
     --progress-bar-border-radius : var(--global-border-radius);
     --progress-bar-height        : 8px;
 }
@@ -361,10 +361,10 @@
     --table-text                         : var(--paragraph-text-colour);
 
     --table-striped-header-bg            : var(--blue-light-40);
-    --table-striped-cell-bg              : var(--slate-light-20);
+    --table-striped-cell-bg              : var(--slate-light-70);
 
-    --table-bg-hover                     : var(--amber-light-20);
-    --table-text-hover                   : var(--paragraph-text-colour);
+    --table-highlight-bg                 : var(--amber-light-20);
+    --table-highlight-text               : var(--paragraph-text-colour);
 
     --table-pagination-bg                : var(--white);
     --table-pagination-border-radius     : var(--global-border-radius);
@@ -374,16 +374,17 @@
 
 /* TABS ///////////////////////////////////////////////////////////////////// */
 :root {
-    --tabs-bg                     : var(--transparent);
+    --tabs-bg                : var(--transparent);
 
-    --tab-default-label           : var(--shade);
-    --tab-hover-label             : var(--blue-light-40);
-    --tab-active-label            : var(--blue);
-    --tab-active-border           : var(--blue);
-    --tab-disabled-label          : var(--slate-light-40);
+    --tab-label-default      : var(--paragraph-text-colour);
+    --tab-label-hover        : var(--blue-light-40);
+    --tab-label-active       : var(--blue);
+    --tab-label-disabled     : var(--slate-light-40);
 
-    --tab-with-alert-badge-bg     : var(--red-dark-70);
-    --tab-with-alert-badge-border : var(--red-dark-70);
+    --tab-border-active      : var(--blue);
+
+    --tab-alert-badge-bg     : var(--red);
+    --tab-alert-badge-border : var(--red);
 }
 
 /* TOAST //////////////////////////////////////////////////////////////////// */

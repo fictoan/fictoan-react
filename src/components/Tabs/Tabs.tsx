@@ -11,9 +11,10 @@ import "./tabs.css";
 
 // prettier-ignore
 interface TabType {
-    key     : string;
-    label   : React.ReactNode;
-    content : React.ReactNode;
+    key        : string;
+    label      : React.ReactNode;
+    content    : React.ReactNode;
+    hasAlert ? : boolean;
 }
 
 // prettier-ignore
@@ -67,7 +68,7 @@ export const Tabs = React.forwardRef(
                                 {tabs.map((tab) => (
                                     <li key={tab.key}>
                                         <Text
-                                            className={`tab-label is-clickable ${tab.key === activeTab.key ? "is-active" : ""}`}
+                                            className={`tab-label is-clickable ${tab.key === activeTab.key ? "is-active" : ""} ${tab.hasAlert ? "has-alert" : ""}`}
                                             onClick={() => handleTabChange(tab)}
                                             marginBottom="none"
                                         >

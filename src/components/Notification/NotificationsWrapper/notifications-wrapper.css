@@ -2,8 +2,9 @@
     position   : fixed;
     display    : flex;
     width      : 400px;
+    height     : 100vh;
     z-index    : 5000000;
-    padding    : 2vw;
+    padding    : 3vh;
     overflow-y : auto;
     overflow-x : hidden;
 
@@ -11,9 +12,15 @@
 
     &.right { right : 0; }
 
-    &.top { top : 0; }
+    &.top {
+        top             : 0;
+        justify-content : flex-start;
+    }
 
-    &.bottom { bottom : 0; }
+    &.bottom {
+        bottom          : 0;
+        justify-content : flex-end;
+    }
 
     &.top.new-on-top {
         flex-direction : column-reverse;
@@ -42,4 +49,12 @@
         [data-notification-item]:first-of-type { margin-top : 0; }
         [data-notification-item]:last-of-type { margin-bottom : 0; }
     }
+}
+
+[data-notifications-wrapper]::-webkit-scrollbar {
+    display : none; /* Webkit */
+}
+
+[data-notifications-wrapper] {
+    scrollbar-width : none; /* Firefox */
 }

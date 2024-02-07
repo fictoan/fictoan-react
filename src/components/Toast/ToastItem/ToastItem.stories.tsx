@@ -19,8 +19,8 @@ type Story = StoryObj<typeof ToastItem>;
 
 export const Default: Story = {
     args: {
-        show: true,
-        showFor: 4000,
-        children: "This is a Toast item.",
+        showWhen         : true,
+        secondsToShowFor : 4000,
+        children         : "This is a Toast item.",
     },
 };

@@ -1,16 +1,16 @@
 /// <reference types="vite-plugin-svgr/client" />
 import React from "react";
 
-import PreviousButton from "../../../assets/icons/left.svg?react";
-import NextButton from "../../../assets/icons/right.svg?react";
-import FirstPageButton from "../../../assets/icons/left.svg?react";
-
 import { CommonAndHTMLProps } from "../../Element/constants";
-import { Element } from "../../Element";
+import { Div, Element } from "../../Element";
 import { Heading } from "../../Typography";
 import { Text } from "../../Typography";
 
 import "./table-pagination.css";
+
+import PreviousButton from "../../../assets/icons/left.svg?react";
+import NextButton from "../../../assets/icons/right.svg?react";
+import FirstPageButton from "../../../assets/icons/left.svg?react";
 
 import { Spinner } from "../../Spinner";
 
@@ -29,11 +29,9 @@ export interface TablePaginationCustomProps {
 }
 
 export type TablePaginationElementType = HTMLElement;
-export type TablePaginationProps = Omit<
-    CommonAndHTMLProps<TablePaginationElementType>,
-    keyof TablePaginationCustomProps
-> &
-    TablePaginationCustomProps;
+export type TablePaginationProps =
+    Omit<CommonAndHTMLProps<TablePaginationElementType>, keyof TablePaginationCustomProps>
+    & TablePaginationCustomProps;
 
 export const TablePagination = React.forwardRef(
     (
@@ -47,14 +45,14 @@ export const TablePagination = React.forwardRef(
             isLoading,
             loadingText,
             emptyText,
-            onPageChange: handlePageChange,
+            onPageChange : handlePageChange,
             ...props
         }: TablePaginationProps,
-        ref: React.Ref<TablePaginationElementType>
+        ref: React.Ref<TablePaginationElementType>,
     ) => {
         return (
             <Element<TablePaginationElementType> as="div" data-table-pagination ref={ref} {...props}>
-                <Element as="div" className="vertically-centre-items" marginBottom="none">
+                <Div className="vertically-centre-items" marginBottom="none">
                     {totalRecords === 0 ? (
                         <Heading as="h6" marginRight="nano">
                             {emptyText ? emptyText : "No records"}
@@ -66,37 +64,37 @@ export const TablePagination = React.forwardRef(
                         </Heading>
                     )}
 
-                    <Element as="div" classNames={["nav-icon", `${pageIndex === 0 && `is-inactive`}`]}>
+                    <Div classNames={[ "nav-icon", `${pageIndex === 0 && `is-inactive`}` ]}>
                         <FirstPageButton onClick={() => pageIndex !== 0 && handlePageChange(0)} />
                         <span>First page</span>
-                    </Element>
+                    </Div>
 
-                    <Element as="div" classNames={["nav-icon", `${!hasPreviousPage && `is-inactive`}`]}>
+                    <Div classNames={[ "nav-icon", `${!hasPreviousPage && `is-inactive`}` ]}>
                         <PreviousButton onClick={() => hasPreviousPage && handlePageChange(pageIndex - 1)} />
                         <span>Previous</span>
-                    </Element>
+                    </Div>
 
                     <Text marginLeft="nano" marginRight="nano">
                         {pageIndex + 1}
                     </Text>
 
-                    <Element as="div" classNames={["nav-icon", `${!hasNextPage && `is-inactive`}`]}>
+                    <Div classNames={[ "nav-icon", `${!hasNextPage && `is-inactive`}` ]}>
                         <NextButton onClick={() => hasNextPage && handlePageChange(pageIndex + 1)} />
                         <span>Next</span>
-                    </Element>
+                    </Div>
 
                     {isLoading && (
-                        <Element as="div" marginLeft="nano" className="vertically-centre-items">
+                        <Div marginLeft="nano" className="vertically-centre-items">
                             <Spinner />
                             {loadingText && (
                                 <Text size="small" marginLeft="nano">
                                     {loadingText}
                                 </Text>
                             )}
-                        </Element>
+                        </Div>
                     )}
-                </Element>
+                </Div>
             </Element>
         );
-    }
+    },
 );

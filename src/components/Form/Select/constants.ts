@@ -39,7 +39,8 @@ export interface SelectWithSearchCustomProps {
 }
 
 export interface SelectWithSearchCustomProps extends SelectCustomProps {
-    onChange ? : (value: string) => void;
+    onChange     ? : (value: string) => void;
+    defaultValue ? : string;
 }
 
 export type SelectProps = Omit<CommonAndHTMLProps<SelectElementType>, keyof SelectCustomProps> & SelectCustomProps;
