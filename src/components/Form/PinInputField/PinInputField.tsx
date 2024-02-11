@@ -1,8 +1,10 @@
 import React, { createRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from "react";
 
-import { Row } from "../../Row/Row";
-import { CommonAndHTMLProps, SpacingTypes } from "../../Element/constants";
 import { InputField } from "../InputField/InputField";
+import { Div } from "../../Element/Tags";
+
+import { CommonAndHTMLProps } from "../../Element/constants";
+
 import "./PinInputField.css";
 
 // prettier-ignore
@@ -14,8 +16,8 @@ type PinInputFieldCustomProps = {
     isOTP                  ? : boolean;
     autoFocus              ? : boolean;
     pasteFromClipboard     ? : "enabled" | "disabled";
-    spacing                ? : SpacingTypes;
     focusFirstInputOnReset ? : boolean;
+    isFullWidth            ? : boolean;
 };
 
 export type PinInputFieldElementType = HTMLDivElement & { reset: () => void };
@@ -39,8 +41,8 @@ export const PinInputField = React.forwardRef(
             isOTP = false,
             autoFocus = false,
             pasteFromClipboard = "enabled",
-            spacing = "small",
             focusFirstInputOnReset = true,
+            isFullWidth,
             ...props
         }: PinInputFieldProps,
         ref: React.Ref<PinInputFieldElementType>
@@ -233,8 +235,14 @@ export const PinInputField = React.forwardRef(
             setFocusedIndex(-1);
         };
 
+        let classNames: string[] | undefined = [];
+
+        if (isFullWidth) {
+            classNames.push("full-width");
+        }
+
         return (
-            <Row data-pin-input-field gutters={spacing} ref={pinInputFieldRef} {...props}>
+            <Div data-pin-input-field ref={pinInputFieldRef} {...props} classNames={classNames}>
                 {[...Array(length)].map((_, i) => (
                     <InputField
                         key={i}
@@ -254,7 +262,7 @@ export const PinInputField = React.forwardRef(
                         onPaste={(e) => pasteFromClipboard === "disabled" && e.preventDefault()}
                     />
                 ))}
-            </Row>
+            </Div>
         );
     }
 );

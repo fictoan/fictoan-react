@@ -34,9 +34,8 @@
         }
     }
 
-    /*  The grey square */
-    label::before,
-    input[type="checkbox"]:disabled + label::before {
+    /* The grey square ====================================================== */
+    label::before {
         user-select    : none;
         pointer-events : none;
         background     : var(--checkbox-square-bg-default);
@@ -49,7 +48,7 @@
 
     label::after { opacity : 0; }
 
-    /*  The square */
+    /* The square =========================================================== */
     label::before {
         position      : absolute;
         height        : 16px;
@@ -59,7 +58,7 @@
         border-radius : var(--checkbox-square-border-radius);
     }
 
-    /*  The white tick inside */
+    /* The white tick inside ================================================ */
     label::after {
         position      : absolute;
         height        : 6px;
@@ -74,6 +73,16 @@
     label { padding-left : 24px; }
 
     input[type="checkbox"]:checked + label::after { opacity : 1; }
+
+    /* DISABLED ============================================================= */
+    input[type="checkbox"]:disabled + label,
+    input[type="checkbox"]:disabled + label::before,
+    input[type="checkbox"]:disabled + label::after {
+        filter         : grayscale(24%);
+        user-select    : none;
+        pointer-events : none;
+        cursor         : not-allowed;
+    }
 
     [data-form-wrapper].spacing-none   & { margin-bottom :    0; }
     [data-form-wrapper].spacing-nano   & { margin-bottom :  8px; }

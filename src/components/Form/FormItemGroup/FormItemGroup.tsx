@@ -9,7 +9,7 @@ import "./form-item-group.css";
 export interface FormItemGroupCustomProps {
     isJoint      ? : boolean;
     retainLayout ? : boolean;
-    spacing      ? : SpacingTypes;
+    // spacing      ? : SpacingTypes;
 }
 
 export type FormItemGroupElementType = HTMLDivElement;
@@ -18,7 +18,7 @@ export type FormItemGroupProps = Omit<CommonAndHTMLProps<FormItemGroupElementTyp
 
 export const FormItemGroup = React.forwardRef(
     (
-        { isJoint, retainLayout, spacing = "medium", children, ...props }: FormItemGroupProps,
+        { isJoint, retainLayout, children, ...props }: FormItemGroupProps,
         ref: React.Ref<FormItemGroupElementType>
     ) => {
         let classNames = [];
@@ -31,9 +31,9 @@ export const FormItemGroup = React.forwardRef(
             classNames.push("retain-layout");
         }
 
-        if (spacing) {
-            classNames.push(`spacing-${spacing}`);
-        }
+        // if (spacing) {
+        //     classNames.push(`spacing-${spacing}`);
+        // }
 
         return (
             <Element<FormItemGroupElementType> as="div" data-form-item-group ref={ref} classNames={classNames} {...props}>

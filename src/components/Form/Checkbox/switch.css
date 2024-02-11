@@ -34,7 +34,7 @@
         }
     }
 
-    /*  The grey square */
+    /* The grey square ====================================================== */
     label::before,
     input[type="checkbox"]:disabled + label::before {
         user-select    : none;
@@ -52,7 +52,7 @@
     label {
         position : relative;
 
-        /*  The grey stadium shape for the case */
+        /* The grey stadium shape for the case ============================== */
         &::before {
             position      : absolute;
             top           : 50%;
@@ -63,7 +63,7 @@
             background    : var(--switch-bg-default);
         }
 
-        /*  The white inner circle actuator */
+        /* The white inner circle actuator ================================== */
         &::after {
             content       : "";
             position      : absolute;
@@ -87,10 +87,6 @@
         background : var(--switch-bg-checked);
     }
 
-    input[type="checkbox"]:disabled + label::before {
-        background : var(--switch-bg-disabled);
-    }
-
     /* States for the circle */
     input[type="checkbox"]:hover + label::after {
         background : var(--switch-slider-bg-hover);
@@ -100,11 +96,17 @@
         background : var(--switch-slider-bg-checked);
     }
 
+    /* DISABLED ============================================================= */
+    input[type="checkbox"]:disabled + label,
+    input[type="checkbox"]:disabled + label::before,
     input[type="checkbox"]:disabled + label::after {
-        background : var(--switch-slider-bg-disabled);
+        filter         : grayscale(24%);
+        user-select    : none;
+        pointer-events : none;
+        cursor         : not-allowed;
     }
 
-    /* Sizes */
+    /* SIZES ================================================================ */
     &.size-small {
         label {
             padding-left : 32px;
@@ -168,12 +170,13 @@
         }
     }
 
-    [data-form-wrapper].spacing-none   & { margin-bottom :    0; }
-    [data-form-wrapper].spacing-nano   & { margin-bottom :  8px; }
-    [data-form-wrapper].spacing-micro  & { margin-bottom : 12px; }
-    [data-form-wrapper].spacing-tiny   & { margin-bottom : 16px; }
-    [data-form-wrapper].spacing-small  & { margin-bottom : 24px; }
+    /* MARGINS ============================================================== */
+    [data-form-wrapper].spacing-none & { margin-bottom : 0; }
+    [data-form-wrapper].spacing-nano & { margin-bottom : 8px; }
+    [data-form-wrapper].spacing-micro & { margin-bottom : 12px; }
+    [data-form-wrapper].spacing-tiny & { margin-bottom : 16px; }
+    [data-form-wrapper].spacing-small & { margin-bottom : 24px; }
     [data-form-wrapper].spacing-medium & { margin-bottom : 32px; }
-    [data-form-wrapper].spacing-large  & { margin-bottom : 40px; }
-    [data-form-wrapper].spacing-huge   & { margin-bottom : 48px; }
+    [data-form-wrapper].spacing-large & { margin-bottom : 40px; }
+    [data-form-wrapper].spacing-huge & { margin-bottom : 48px; }
 }

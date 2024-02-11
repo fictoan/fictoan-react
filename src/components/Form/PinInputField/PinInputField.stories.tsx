@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 
 import { Meta, StoryObj } from "@storybook/react";
-import { Button } from "../../Button/Button";
-import { Portion } from "../../Portion/Portion";
-import { Row } from "../../Row/Row";
 import { PinInputField } from "./PinInputField";
 
 const meta: Meta<typeof PinInputField> = {
@@ -39,14 +36,7 @@ export const Default: Story = {
         };
 
         return (
-            <Row>
-                <Portion>
-                    <PinInputField {...args} onChange={handleInputChange} />
-                </Portion>
-                <Portion>
-                    <Button kind="primary" isFullWidth disabled={!buttonEnabled}>Submit</Button>
-                </Portion>
-            </Row>
+            <PinInputField {...args} onChange={handleInputChange} />
         );
     },
 };

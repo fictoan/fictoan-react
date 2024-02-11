@@ -10,6 +10,7 @@ export interface OptionProps {
     value      : string;
     label      : string;
     disabled ? : boolean;
+    selected ? : boolean;
 }
 
 export interface OptionForSearchWithSelectProps {
