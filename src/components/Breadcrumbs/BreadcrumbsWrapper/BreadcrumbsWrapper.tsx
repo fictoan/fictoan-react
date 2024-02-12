@@ -12,7 +12,7 @@ export const BreadcrumbsWrapper = React.forwardRef(
     ({ ...props }: BreadcrumbsWrapperProps, ref: React.Ref<BreadcrumbsWrapperElementType>) => {
         return (
             <Element<BreadcrumbsWrapperElementType>
-                as="nav"
+                as="ul"
                 data-breadcrumbs-wrapper
                 ref={ref}
                 {...props}
