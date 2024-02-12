@@ -13,7 +13,7 @@
 - Add generic block-level sectioning elements as custom components. Eg `<Div>`, `<Section>`, `<Article>` etc
 - Add copy code to clipboard for `CodeBlock` 
 - Add `RadioTabGroup` component
-- Convert all millisecond values to seconds 
+- Convert all millisecond values to seconds
 
 #### ⚠️ BREAKING CHANGES ⚠️
 - Remove `ThemeProvider` and `theme` prop from all components

@@ -46,18 +46,22 @@
             position : absolute;
         }
 
-        [data-sidebar-item]:hover [data-sidebar-item-icon] + [data-sidebar-item-text] {
-            display          : flex;
-            position         : fixed;
-            left             : 40px;
-            align-self       : center;
-            border-radius    : var(--sidebar-collapsed-item-border-radius);
-            padding          : 4px 8px;
-            background-color : var(--sidebar-collapsed-item-bg);
-            color            : var(--sidebar-collapsed-item-link-text);
-            font-size        : 88%;
-            box-shadow       : 0 4px 16px -2px rgba(0, 0, 0, 0.24);
-        }
+        /* TEMPORARY FIX */
+        /* Impossible to fix this using the current implementation, and need */
+        /* to find a better solution. Temporarily removing this feature. */
+        /* ================================================================== */
+        /*[data-sidebar-item]:hover [data-sidebar-item-icon] + [data-sidebar-item-text] {*/
+        /*    display          : flex;*/
+        /*    position         : fixed;*/
+        /*    left             : 40px;*/
+        /*    align-self       : center;*/
+        /*    border-radius    : var(--sidebar-collapsed-item-border-radius);*/
+        /*    padding          : 4px 8px;*/
+        /*    background-color : var(--sidebar-collapsed-item-bg);*/
+        /*    color            : var(--sidebar-collapsed-item-link-text);*/
+        /*    font-size        : 88%;*/
+        /*    box-shadow       : 0 4px 16px -2px rgba(0, 0, 0, 0.24);*/
+        /*}*/
 
         [data-sidebar-foooter] { padding-left : 0; }
     }
