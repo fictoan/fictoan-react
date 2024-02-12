@@ -23,6 +23,9 @@ import "./styles/theme.css";
 
 
 // COMPONENTS //////////////////////////////////////////////////////////////////
+// ACCORDION ===================================================================
+export { Accordion, type AccordionProps } from "./components/Accordion";
+
 // BADGE =======================================================================
 export { Badge, type BadgeProps } from "./components/Badge";
 
@@ -60,9 +63,6 @@ export {
     Nav,
     Section
 } from "./components/Element";
-
-// EXPANDABLE CONTENT ==========================================================
-export { ExpandableContent, type ExpandableContentProps } from "./components/ExpandableContent";
 
 // FORM ========================================================================
 export {

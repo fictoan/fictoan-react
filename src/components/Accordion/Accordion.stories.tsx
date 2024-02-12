@@ -1,20 +1,20 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { ExpandableContent } from "./ExpandableContent";
+import { Accordion } from "./Accordion";
 
-const meta: Meta<typeof ExpandableContent> = {
-    component: ExpandableContent,
+const meta: Meta<typeof Accordion> = {
+    component: Accordion,
     tags: ["autodocs"],
     parameters: {
         docs: {
             description: {
-                component: "This is an ExpandableContent.",
+                component: "This is an Accordion.",
             },
         },
     },
 };
 
 export default meta;
-type Story = StoryObj<typeof ExpandableContent>;
+type Story = StoryObj<typeof Accordion>;
 
 export const Default: Story = {
     args: {

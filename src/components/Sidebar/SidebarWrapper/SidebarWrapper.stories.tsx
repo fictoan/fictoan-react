@@ -7,7 +7,7 @@ import { SidebarHeader } from "../SidebarHeader/SidebarHeader";
 import { SidebarItem } from "../SidebarItem/SidebarItem";
 import { SidebarItemIcon } from "../SidebarItemIcon/SidebarItemIcon";
 import { SidebarItemText } from "../SidebarItemText/SidebarItemText";
-import { ExpandableContent } from "../../ExpandableContent/ExpandableContent";
+import { Accordion } from "@/components/Accordion/Accordion";
 
 const meta: Meta<typeof SidebarWrapper> = {
     component: SidebarWrapper,
@@ -42,7 +42,7 @@ export const Default: Story = {
                 <SidebarItemText linkText="Item 3"></SidebarItemText>
             </SidebarItem>
 
-            <ExpandableContent
+            <Accordion
                 summary={
                     <SidebarItem>
                         <SidebarItemIcon></SidebarItemIcon>
@@ -58,7 +58,7 @@ export const Default: Story = {
                     <SidebarItemIcon></SidebarItemIcon>
                     <SidebarItemText linkText="Nested Item 2"></SidebarItemText>
                 </SidebarItem>
-            </ExpandableContent>
+            </Accordion>
 
             <SidebarFooter padding="micro">Sidebar footer</SidebarFooter>
         </SidebarWrapper>

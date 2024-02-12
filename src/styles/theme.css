@@ -1,3 +1,8 @@
+/* ACCORDION //////////////////////////////////////////////////////////////// */
+:root {
+    --accordion-chevron : var(--slate);
+}
+
 /* BADGE //////////////////////////////////////////////////////////////////// */
 :root {
     --badge-font          : var(--paragraph-font);
@@ -162,11 +167,6 @@
     --dropdown-bg-hover      : var(--input-bg-focus);
     --dropdown-bg-disabled   : var(--input-bg-disabled);
     --dropdown-text-disabled : var(--input-text-disabled);
-}
-
-/* EXPANDABLE CONTENT /////////////////////////////////////////////////////// */
-:root {
-    --expandable-content-chevron : var(--slate);
 }
 
 /* H-RULE /////////////////////////////////////////////////////////////////// */

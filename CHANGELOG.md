@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 1.0.2
+- Rename `ExpandableContent` to `Accordion`
+
+## 1.0.1
+- Fix `BreadcrumbsWrapper` element type
+
 ## 1.0.0
 #### GENERIC CHANGES
 - Move to Vite
@@ -11,7 +17,7 @@
 - Ability to set `Element` as a flexbox/grid div using `layoutAsFlexbox` and `layoutAsGrid`
 - Add `horizontalPadding`, `verticalPadding`, `horizontalMargin`, and `verticalMargin`
 - Add generic block-level sectioning elements as custom components. Eg `<Div>`, `<Section>`, `<Article>` etc
-- Add copy code to clipboard for `CodeBlock` 
+- Add copy code to clipboard for `CodeBlock`
 - Add `RadioTabGroup` component
 - Convert all millisecond values to seconds
 
