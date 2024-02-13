@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import { Element } from "../Element/Element";
 import { Div } from "../Element/Tags";
-import { HRule } from "../HRule/HRule";
+import { Divider } from "../HRule/Divider";
 import { Text } from "../Typography/Text";
 
 import { CommonAndHTMLProps } from "../Element/constants";
@@ -80,7 +80,7 @@ export const Tabs = React.forwardRef(
                             {additionalNavContentWrapper && <>{additionalNavContentWrapper}</>}
                         </nav>
 
-                        <HRule kind="secondary" marginTop="none" marginBottom="micro" />
+                        <Divider kind="secondary" marginTop="none" marginBottom="micro" />
 
                         <Div className={`tabs-content ${isExiting ? "exiting" : ""}`}>
                             {activeTab.content}

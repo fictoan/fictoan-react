@@ -1,1 +1,1 @@
-export { HRule, type HRProps } from "./HRule";
+export { Divider, type DividerProps } from "./Divider";

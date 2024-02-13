@@ -169,19 +169,19 @@
     --dropdown-text-disabled : var(--input-text-disabled);
 }
 
-/* H-RULE /////////////////////////////////////////////////////////////////// */
+/* DIVIDER ////////////////////////////////////////////////////////////////// */
 :root {
-    --hr-height           : 1px;
-    --hr-bg               : var(--slate);
+    --divider-height           : 1px;
+    --divider-bg               : var(--slate);
 
-    --hr-primary-height   : 4px;
-    --hr-primary-bg       : var(--slate);
+    --divider-primary-height   : 4px;
+    --divider-primary-bg       : var(--slate);
 
-    --hr-secondary-height : 2px;
-    --hr-secondary-bg     : var(--slate-light-60);
+    --divider-secondary-height : 2px;
+    --divider-secondary-bg     : var(--slate-light-60);
 
-    --hr-tertiary-height  : 1px;
-    --hr-tertiary-bg      : var(--slate-light-20);
+    --divider-tertiary-height  : 1px;
+    --divider-tertiary-bg      : var(--slate-light-20);
 }
 
 /* INPUT FIELD ////////////////////////////////////////////////////////////// */

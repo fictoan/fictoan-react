@@ -1,21 +1,21 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { HRule } from "./HRule";
+import { Divider } from "./Divider";
 
-const meta: Meta<typeof HRule> = {
-    component: HRule,
+const meta: Meta<typeof Divider> = {
+    component: Divider,
     tags: ["autodocs"],
     parameters: {
         docs: {
             description: {
-                component: "This is an HRule, plain and simple.",
+                component: "This is an Divider, plain and simple.",
             },
         },
     },
 };
 
 export default meta;
-type Story = StoryObj<typeof HRule>;
+type Story = StoryObj<typeof Divider>;
 
 export const Primary: Story = {
     args: {
@@ -24,7 +24,7 @@ export const Primary: Story = {
     parameters: {
         docs: {
             description: {
-                story: "This is the primary HRule.",
+                story: "This is the primary Divider.",
             },
         },
     },
@@ -37,7 +37,7 @@ export const Secondary: Story = {
     parameters: {
         docs: {
             description: {
-                story: "This is the secondary HRule.",
+                story: "This is the secondary Divider.",
             },
         },
     },
@@ -50,7 +50,7 @@ export const Tertiary: Story = {
     parameters: {
         docs: {
             description: {
-                story: "This is the tertiary HRule.",
+                story: "This is the tertiary Divider.",
             },
         },
     },

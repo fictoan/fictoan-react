@@ -85,7 +85,7 @@ export {
 } from "./components/Form";
 
 // H-RULE ======================================================================
-export { HRule, type HRProps } from "./components/HRule";
+export { Divider, type DividerProps } from "./components/HRule";
 
 // NOTIFICATIONS  ==============================================================
 export {

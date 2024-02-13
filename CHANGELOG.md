@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.0.3
+- Rename `HRule` to `Divider`
+
 ## 1.0.2
 - Rename `ExpandableContent` to `Accordion`
 
@@ -260,7 +263,7 @@
 - Add `ExpandableContent` component which implements details and summary tags
 - Add `Tag` component
 - Add `opacity` as a global prop
-- HRule now supports custom background colors
+- Divider now supports custom background colors
     - Add `hr.default` to theme
 - All colour props are now typed
     - Add command (`make color-props`) to generate colour props from default colors
@@ -418,7 +421,7 @@
 - Fix `InfoPanel` close button fixed position bug
 
 ### 0.32.7
-- Cap `sidePadding` and `sideMargin` for `Row` and `HRule` in ultra-wide res displays above 2400px
+- Cap `sidePadding` and `sideMargin` for `Row` and `Divider` in ultra-wide res displays above 2400px
 
 ### 0.32.5
 - Add @emotion/is-prop-valid as an optional dependency
@@ -531,7 +534,7 @@
 - Add media queries for `InfoPanel` below `1200px` to handle `width` prop
 
 ### v0.29.1
-- Add `primary`, `secondary`, and `tertiary` props for the `HRule` element
+- Add `primary`, `secondary`, and `tertiary` props for the `Divider` element
 
 ### v0.29.0
 - Add `bgColour`, `textColour`, `borderColour`, `strokeColour` and `fillColour` props with British English

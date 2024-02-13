@@ -3,17 +3,17 @@ import React from "react";
 import { Element } from "../Element/Element";
 import { CommonAndHTMLProps } from "../Element/constants";
 
-import "./h-rule.css";
+import "./divider.css";
 
 // prettier-ignore
-export interface HRCustomProps {
+export interface DividerCustomProps {
     kind ? : "primary" | "secondary" | "tertiary";
 }
 
-export type HRElementType = HTMLHRElement;
-export type HRProps = Omit<CommonAndHTMLProps<HRElementType>, keyof HRCustomProps> & HRCustomProps;
+export type DividerElementType = HTMLHRElement;
+export type DividerProps = Omit<CommonAndHTMLProps<DividerElementType>, keyof DividerCustomProps> & DividerCustomProps;
 
-export const HRule = React.forwardRef(({ kind, ...props }: HRProps, ref: React.Ref<HRElementType>) => {
+export const Divider = React.forwardRef(({ kind, ...props }: DividerProps, ref: React.Ref<DividerElementType>) => {
         let classNames = [];
 
         if (kind) {
@@ -21,7 +21,7 @@ export const HRule = React.forwardRef(({ kind, ...props }: HRProps, ref: React.R
         }
 
         return (
-            <Element<HRElementType>
+            <Element<DividerElementType>
                 as="hr"
                 data-hrule
                 ref={ref}

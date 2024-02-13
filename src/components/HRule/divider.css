@@ -1,23 +1,23 @@
 hr[data-hrule] {
     border           : 0;
     width            : 100%;
-    height           : var(--hr-height);
-    background-color : var(--hr-bg);
+    height           : var(--divider-height);
+    background-color : var(--divider-bg);
 
     /* KINDS ================================================================ */
     &.primary {
-        background-color : var(--hr-primary-bg);
-        height           : var(--hr-primary-height);
+        background-color : var(--divider-primary-bg);
+        height           : var(--divider-primary-height);
     }
 
     &.secondary {
-        background-color : var(--hr-secondary-bg);
-        height           : var(--hr-secondary-height);
+        background-color : var(--divider-secondary-bg);
+        height           : var(--divider-secondary-height);
     }
 
     &.tertiary {
-        background-color : var(--hr-tertiary-bg);
-        height           : var(--hr-tertiary-height);
+        background-color : var(--divider-tertiary-bg);
+        height           : var(--divider-tertiary-height);
     }
 
     /* WIDTHS =============================================================== */
@@ -182,6 +182,6 @@ hr[data-hrule] {
     /* CUSTOM BG ============================================================ */
     /* Commenting this out for now because no idea why this approach doesn’t work *! */
     /*hr:not([class*="bg-"]):not(.primary):not(.secondary):not(.tertiary) {*/
-    /*    background-color : var(--hr-default-bg);*/
+    /*    background-color : var(--divider-default-bg);*/
     /*}*/
 }
