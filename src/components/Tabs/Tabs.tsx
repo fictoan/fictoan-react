@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import { Element } from "../Element/Element";
 import { Div } from "../Element/Tags";
-import { Divider } from "../HRule/Divider";
+import { Divider } from "../Divider/Divider";
 import { Text } from "../Typography/Text";
 
 import { CommonAndHTMLProps } from "../Element/constants";

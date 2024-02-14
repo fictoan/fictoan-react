@@ -1,10 +1,13 @@
 # CHANGELOG
 
+## 1.1.0
+- Add `OptionCard` component
+
 ## 1.0.3
 - Rename `HRule` to `Divider`
 
 ## 1.0.2
-- Rename `ExpandableContent` to `Accordion`
+- Rename `ExpandableContent` to `OptionCard`
 
 ## 1.0.1
 - Fix `BreadcrumbsWrapper` element type

@@ -302,6 +302,23 @@
     --range-outline-focus : var(--blue);
 }
 
+/* OPTION CARDS ///////////////////////////////////////////////////////////// */
+:root {
+    --option-card-border-width       : var(--global-border-width);
+
+    --option-card-focus              : var(--global-focus-colour);
+
+    --option-card-bg-hover           : var(--green-light-70);
+    --option-card-border-hover       : var(--green-light-40);
+    --option-card-tick-bg-hover      : var(--green-light-60);
+    --option-card-tick-line-hover    : var(--green);
+
+    --option-card-bg-selected        : var(--green-light-60);
+    --option-card-border-selected    : var(--green);
+    --option-card-tick-bg-selected   : var(--green-dark-10);
+    --option-card-tick-line-selected : var(--white);
+}
+
 /* SIDEBAR + CONTENT WRAPPER //////////////////////////////////////////////// */
 :root {
     --sidebar-bg                             : var(--white);
@@ -351,6 +368,19 @@
 /* SPINNER ////////////////////////////////////////////////////////////////// */
 :root {
     --spinner-border : var(--hue);
+}
+
+/* SWITCH /////////////////////////////////////////////////////////////////// */
+:root {
+    --switch-bg-default         : var(--slate-light-60);
+    --switch-bg-hover           : var(--slate-light-40);
+    --switch-bg-checked         : var(--hue);
+    --switch-bg-disabled        : var(--slate-light-40);
+
+    --switch-slider-bg-default  : var(--white);
+    --switch-slider-bg-hover    : var(--white);
+    --switch-slider-bg-checked  : var(--white);
+    --switch-slider-bg-disabled : var(--slate-light-40);
 }
 
 /* TABLE //////////////////////////////////////////////////////////////////// */
@@ -479,17 +509,4 @@
     --token-tag                 : var(--violet);
     --token-url                 : var(--green);
     --token-variable            : var(--orange);
-}
-
-/* SWITCH /////////////////////////////////////////////////////////////////// */
-:root {
-    --switch-bg-default         : var(--slate-light-60);
-    --switch-bg-hover           : var(--slate-light-40);
-    --switch-bg-checked         : var(--hue);
-    --switch-bg-disabled        : var(--slate-light-40);
-
-    --switch-slider-bg-default  : var(--white);
-    --switch-slider-bg-hover    : var(--white);
-    --switch-slider-bg-checked  : var(--white);
-    --switch-slider-bg-disabled : var(--slate-light-40);
 }

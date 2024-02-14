@@ -3,8 +3,9 @@ import React from "react";
 import { Element } from "../../Element/Element";
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 
-import "./radio-button.css";
 import { RadioButtonProps, RadioButtonElementType } from "./constants";
+
+import "./radio-button.css";
 
 export const RadioButton = React.forwardRef(
     ({ onClick, ...props }: RadioButtonProps, ref: React.Ref<RadioButtonElementType>) => {

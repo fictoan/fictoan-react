@@ -4,7 +4,7 @@ import { CommonAndHTMLProps } from "../Element/constants";
 import { Element } from "../Element/Element";
 import { Text } from "../Typography/Text";
 
-import "./Accordion.css";
+import "./accordion.css";
 
 // prettier-ignore
 export interface AccordionCustomProps {

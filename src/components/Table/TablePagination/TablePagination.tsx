@@ -1,10 +1,12 @@
 /// <reference types="vite-plugin-svgr/client" />
 import React from "react";
 
-import { CommonAndHTMLProps } from "../../Element/constants";
 import { Div, Element } from "../../Element";
 import { Heading } from "../../Typography";
 import { Text } from "../../Typography";
+import { Spinner } from "../../Spinner";
+
+import { CommonAndHTMLProps } from "../../Element/constants";
 
 import "./table-pagination.css";
 
@@ -12,7 +14,6 @@ import PreviousButton from "../../../assets/icons/left.svg?react";
 import NextButton from "../../../assets/icons/right.svg?react";
 import FirstPageButton from "../../../assets/icons/left.svg?react";
 
-import { Spinner } from "../../Spinner";
 
 // prettier-ignore
 export interface TablePaginationCustomProps {

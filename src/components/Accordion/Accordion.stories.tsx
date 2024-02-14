@@ -7,7 +7,7 @@ const meta: Meta<typeof Accordion> = {
     parameters: {
         docs: {
             description: {
-                component: "This is an Accordion.",
+                component: "This is an OptionCard.",
             },
         },
     },

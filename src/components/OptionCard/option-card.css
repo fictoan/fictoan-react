@@ -1,0 +1,72 @@
+[data-option-cards-group] {
+    width : 100%;
+}
+
+[data-option-card] {
+    user-select : none;
+    transition  : all 0.2s;
+
+    &.disabled {
+        filter  : grayscale(24%);
+        opacity : 0.6;
+        cursor  : not-allowed;
+    }
+
+    &:not(.disabled) { cursor : pointer; }
+
+    &:hover {
+        z-index    : 500;
+        border     : var(--option-card-border-width) solid var(--option-card-border-hover);
+        background : var(--option-card-bg-hover);
+        box-shadow : 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 24px rgba(0, 0, 0, 0.08);
+
+        .tick-icon {
+            display : block;
+
+            circle { fill : var(--option-card-tick-bg-hover); }
+            path { stroke : var(--option-card-tick-line-hover); }
+        }
+    }
+
+    &:active { box-shadow : none; }
+
+    &.selected {
+        background-color : var(--option-card-bg-selected);
+        border           : var(--option-card-border-width) solid var(--option-card-border-selected);
+
+        .tick-icon {
+            display : block;
+        }
+    }
+
+    /* Here’s a clever bit of UX */
+    &.selected:hover {
+        .tick-icon circle { fill : var(--option-card-tick-bg-selected); }
+        .tick-icon path {stroke : var(--option-card-tick-line-selected); }
+    }
+
+    &:focus {
+        outline       : 2px solid var(--option-card-border-hover);
+        outline-color : var(--radio-tabs-label-focus-border);
+    }
+
+    /* THE TICK ============================================================= */
+    .tick-icon {
+        display    : none;
+        position   : absolute;
+        top        : 8px;
+        right      : 8px;
+        width      : 24px;
+        height     : 24px;
+        transition : all 0.2s;
+    }
+
+    .tick-icon circle { fill : var(--option-card-tick-bg-selected); }
+
+    .tick-icon path {
+        stroke         : var(--option-card-tick-line-selected);
+        stroke-width   : 2px;
+        fill           : none;
+        stroke-linecap : round;
+    }
+}

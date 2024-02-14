@@ -1,5 +1,5 @@
 <p align="center" style="color: #343a40">
-    <a href="https://fictoan.io"><img src="fictoan-icon.svg" alt="emotion" height="150" width="150"></a>
+    <a href="https://fictoan.io"><img src="fictoan-icon.svg" alt="Fictoan Framework" height="150" width="150"></a>
 </p>
 
 <h1 align="center">Fictoan-React</h1>
