@@ -1,10 +1,10 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { BreadcrumbsWrapper } from "./BreadcrumbsWrapper";
+import { Breadcrumbs } from "./Breadcrumbs";
 import { BreadcrumbItem } from "../BreadcrumbItem/BreadcrumbItem";
 
-const meta: Meta<typeof BreadcrumbsWrapper> = {
-    component: BreadcrumbsWrapper,
+const meta: Meta<typeof Breadcrumbs> = {
+    component: Breadcrumbs,
     tags: ["autodocs"],
     parameters: {
         docs: {
@@ -16,14 +16,14 @@ const meta: Meta<typeof BreadcrumbsWrapper> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof BreadcrumbsWrapper>;
+type Story = StoryObj<typeof Breadcrumbs>;
 
 export const Default: Story = {
     render: (args) => (
-        <BreadcrumbsWrapper {...args}>
+        <Breadcrumbs {...args}>
             <BreadcrumbItem>Item 1</BreadcrumbItem>
             <BreadcrumbItem>Item 2</BreadcrumbItem>
             <BreadcrumbItem>Item 3</BreadcrumbItem>
-        </BreadcrumbsWrapper>
+        </Breadcrumbs>
     ),
 };

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.1
+- Fix `Breadcrumbs` style not loading
+- Add resets for `Breadcrumbs` element
+
 ## 1.1.0
 - Add `OptionCard` component
 
@@ -10,7 +14,7 @@
 - Rename `ExpandableContent` to `OptionCard`
 
 ## 1.0.1
-- Fix `BreadcrumbsWrapper` element type
+- Fix `Breadcrumbs` element type
 
 ## 1.0.0
 #### GENERIC CHANGES
@@ -43,9 +47,9 @@
 [//]: # (TODO: ⚠️ Remove style tag in CodeBlock)
 [//]: # (TODO: ⚠️ Fix TS issue in Select and SWS)
 [//]: # (TODO: Fix Dismiss Button in NotifcationItem)
-[//]: # (TODO: Revamp BreadCrumbs?)
 [//]: # (TODO: Add mask design to PinInputField) 
 [//]: # (TODO: Fix Sidebar scrolling issue)
+[//]: # (TODO: Revamp BreadCrumbs?)
 ~~[//]: # (TODO: ⚠️ Fix ProgressBar height issue)~~
 
 
@@ -356,7 +360,7 @@
 ## BREAKING CHANGES ⚠️
 
 - Breadcrumbs
-    - `BreadcrumbWrapper` renamed to `BreadcrumbsWrapper`
+    - `BreadcrumbWrapper` renamed to `Breadcrumbs`
     - The `separator` is now configurable in the theme file
 
 - Badge

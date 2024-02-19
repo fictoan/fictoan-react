@@ -12,7 +12,7 @@ export { Button, type ButtonProps } from "./Button";
 
 // BREADCRUMBS =========================================================================================================
 export {
-    BreadcrumbsWrapper, type BreadcrumbsWrapperProps,
+    Breadcrumbs, type BreadcrumbsWrapperProps,
     BreadcrumbItem, type BreadcrumbItemProps
 } from "./Breadcrumbs";
 

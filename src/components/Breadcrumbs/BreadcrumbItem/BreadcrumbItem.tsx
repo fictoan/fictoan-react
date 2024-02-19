@@ -11,7 +11,7 @@ export type BreadcrumbItemProps = CommonAndHTMLProps<BreadcrumbItemElementType>;
 export const BreadcrumbItem = React.forwardRef(
     ({ ...props }: BreadcrumbItemProps, ref: React.Ref<BreadcrumbItemElementType>) => {
         return (
-            <Element<BreadcrumbItemElementType> as="li" data-breadcrumb-item ref={ref} marginRight="micro" {...props} />
+            <Element<BreadcrumbItemElementType> as="li" data-breadcrumb-item ref={ref} {...props} />
         );
     }
 );

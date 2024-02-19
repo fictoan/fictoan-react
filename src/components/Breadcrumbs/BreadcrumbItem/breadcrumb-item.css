@@ -1,11 +1,10 @@
 li[data-breadcrumb-item] {
     display   : inline-flex;
     position  : relative;
-    font-size : 14px;
 
     &::after {
         position : absolute;
-        right    : -14px;
+        right    : -16px;
         content  : var(--breadcrumb-item-separator);
         color    : var(--breadcrumb-item-separator-colour);
     }
@@ -13,6 +12,10 @@ li[data-breadcrumb-item] {
     &:last-child,
     &:last-child a {
         color : var(--breadcrumb-item-text-active)
+    }
+
+    &:not(:last-child) {
+        margin-right : 32px;
     }
 
     &:not(:last-child),

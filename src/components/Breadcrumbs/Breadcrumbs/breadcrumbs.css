@@ -1,4 +1,6 @@
-nav[data-breadcrumbs-wrapper] {
+[data-breadcrumbs-wrapper] {
+    margin      : 0; /* Reset */
+    padding     : 0; /* Reset */
     display     : flex;
     flex-wrap   : wrap;
     align-items : flex-start;
