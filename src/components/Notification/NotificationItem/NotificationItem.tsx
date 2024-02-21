@@ -67,14 +67,9 @@ export const NotificationItem = React.forwardRef(
                     ref={ref}
                     classNames={[...classNames, !showWhen ? "dismissed" : ""]}
                     onTransitionEnd={onTransitionEnd}
-                    padding="nano"
-                    marginTop="nano"
-                    marginBottom="nano"
                     {...props}
                 >
-                    <Element as="div" padding="nano" className="notification-content">
-                        {children}
-                    </Element>
+                    {children}
 
                     {isDismissible && (
                         <div

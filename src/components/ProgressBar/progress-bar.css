@@ -46,7 +46,9 @@ progress[data-progress-bar] {
         background : var(--progress-bar-fill);
     }
 
-    &.shape-rounded::-webkit-progress-value, &.shape-rounded, &.shape-rounded::-webkit-progress-bar {
+    &.shape-rounded,
+    &.shape-rounded::-webkit-progress-value,
+    &.shape-rounded::-webkit-progress-bar {
         border-radius : var(--progress-bar-border-radius);
     }
 

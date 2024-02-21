@@ -1,0 +1,64 @@
+[data-meter-meta] {
+    display         : flex;
+    align-items     : baseline;
+    justify-content : space-between;
+    margin-bottom   : 8px;
+
+    p:first-of-type {
+        display     : inline-flex;
+        font-weight : bold;
+        margin      : 0;
+        color       : var(--meter-label);
+    }
+
+    p:last-of-type {
+        display    : inline-flex;
+        text-align : right;
+        margin     : 0;
+        color      : var(--meter-value);
+    }
+}
+
+meter[data-meter] {
+    display        : flex;
+    flex-wrap      : wrap;
+    flex-direction : row;
+    width          : 100%;
+    height         : var(--meter-height);
+}
+
+meter::-webkit-meter-bar {
+    background       : none;
+    background-color : var(--meter-bg);
+    border           : var(--meter-border-width) solid var(--meter-border);
+    border-radius  : var(--meter-border-radius);
+}
+
+/* SUPER LOW VALUES ========================================================= */
+meter:-moz-meter-sub-sub-optimum::-moz-meter-bar,
+meter::-webkit-meter-even-less-good-value {
+    background-color : var(--meter-danger);
+}
+
+/* LOW VALUES =============================================================== */
+meter:-moz-meter-sub-optimum::-moz-meter-bar,
+meter::-webkit-meter-suboptimum-value {
+    background-color : var(--meter-low);
+}
+
+/* HIGH VALUES ============================================================== */
+meter:-moz-meter-optimum::-moz-meter-bar,
+meter::-webkit-meter-optimum-value {
+    background-color : var(--meter-optimum);
+}
+
+meter.shape-rounded::-webkit-meter-bar,
+meter.shape-rounded::-moz-meter-bar {
+    border-radius : var(--meter-border-radius);
+}
+
+meter.shape-curved::-webkit-meter-bar,
+meter.shape-curved::-moz-meter-bar {
+    border-radius : 8000px;
+}
+

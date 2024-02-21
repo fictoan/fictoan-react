@@ -4,8 +4,9 @@
     width            : 100%;
     background-color : var(--notification-item-generic-bg);
     border-radius    : var(--notification-item-border-radius);
-    border           : 1px solid hsla(0, 0%, 0%, 0.04);
+    border           : var(--global-border-width) solid hsla(0, 0%, 0%, 0.04);
     transition       : all 0.4s;
+    padding          : 16px;
     box-shadow       : 0 2px 0.2px rgba(0, 0, 0, 0.016),
     0 4px 0.8px rgba(0, 0, 0, 0.024),
     0 6px 2.4px rgba(0, 0, 0, 0.032),
@@ -25,28 +26,28 @@
 
     &.info {
         background-color : var(--notification-item-info-bg);
-        border           : 1px solid var(--notification-item-info-border);
+        border           : var(--global-border-width) solid var(--notification-item-info-border);
 
         ::before { color : var(--notification-item-info-border); }
     }
 
     &.error {
         background-color : var(--notification-item-error-bg);
-        border           : 1px solid var(--notification-item-error-border);
+        border           : var(--global-border-width) solid var(--notification-item-error-border);
 
         ::before { color : var(--notification-item-error-border); }
     }
 
     &.success {
         background-color : var(--notification-item-success-bg);
-        border           : 1px solid var(--notification-item-success-border);
+        border           : var(--global-border-width) solid var(--notification-item-success-border);
 
         ::before { color : var(--notification-item-success-border); }
     }
 
     &.warning {
         background-color : var(--notification-item-warning-bg);
-        border           : 1px solid var(--notification-item-warning-border);
+        border           : var(--global-border-width) solid var(--notification-item-warning-border);
 
         ::before { color : var(--notification-item-warning-border); }
     }

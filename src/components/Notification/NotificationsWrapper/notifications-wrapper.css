@@ -2,11 +2,13 @@
     position   : fixed;
     display    : flex;
     width      : 400px;
-    height     : 100vh;
+    height     : auto;
+    max-height : 100vh;
     z-index    : 5000000;
     padding    : 3vh;
-    overflow-y : auto;
     overflow-x : hidden;
+    overflow-y : auto;
+    gap        : 1rem;
 
     &.left { left : 0; }
 
@@ -22,37 +24,13 @@
         justify-content : flex-end;
     }
 
-    &.top.new-on-top {
-        flex-direction : column-reverse;
+    &.new-on-top { flex-direction : column-reverse; }
 
-        [data-notification-item]:first-of-type { margin-bottom : 0; }
-        [data-notification-item]:last-of-type { margin-top : 0; }
-    }
-
-    &.top.new-on-bottom {
-        flex-direction : column;
-
-        [data-notification-item]:first-of-type { margin-top : 0; }
-        [data-notification-item]:last-of-type { margin-bottom : 0; }
-    }
-
-    &.bottom.new-on-top {
-        flex-direction : column-reverse;
-
-        [data-notification-item]:first-of-type { margin-bottom : 0; }
-        [data-notification-item]:last-of-type { margin-top : 0; }
-    }
-
-    &.bottom.new-on-bottom {
-        flex-direction : column;
-
-        [data-notification-item]:first-of-type { margin-top : 0; }
-        [data-notification-item]:last-of-type { margin-bottom : 0; }
-    }
+    &.new-on-bottom { flex-direction : column; }
 }
 
 [data-notifications-wrapper]::-webkit-scrollbar {
-    display : none; /* Webkit */
+    display : none; /* Webkit browsers */
 }
 
 [data-notifications-wrapper] {

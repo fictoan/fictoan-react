@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.2.0
+- Add new `Meter` component
+
 ## 1.1.1
 - Fix `Breadcrumbs` style not loading
 - Add resets for `Breadcrumbs` element
@@ -50,7 +53,7 @@
 [//]: # (TODO: Add mask design to PinInputField) 
 [//]: # (TODO: Fix Sidebar scrolling issue)
 [//]: # (TODO: Revamp BreadCrumbs?)
-~~[//]: # (TODO: ⚠️ Fix ProgressBar height issue)~~
+~~[//]: # (TODO: ⚠️ Fix Meter height issue)~~
 
 
 ---
@@ -200,7 +203,7 @@
 - Fix `Select` border-radius bug
 
 ### 0.39.2
-- Move `unit` prop in the `ProgressBar` from being displayed via CSS to markup
+- Move `unit` prop in the `Meter` from being displayed via CSS to markup
 
 ### 0.39.1
 - Tweak `Badge` padding values
@@ -380,14 +383,14 @@
     - `onClose` is renamed to `onCloseCallback`
     - `NotificationWrapper` has a `order` prop to set the stacking order of `NotificationItem` children
 
-- ProgressBar
+- Meter
     - `isThin` prop is deprecated in favour of a far more flexible `height` prop
     - `shape` prop is now available just like the `Badge`
 
 - The theme object is now called `FictoanTheme`
 
 ### 0.33.7
-- Fix types for `CodeBlock`, `BaseInputElement`, `ProgressBar`, `TextArea`, and `Select`.
+- Fix types for `CodeBlock`, `BaseInputElement`, `Meter`, `TextArea`, and `Select`.
 
 ### 0.33.6
 - Add autoprefixer to add vendor styles to CSS
@@ -569,7 +572,7 @@
     - `size.multiplier` is now `headings.multiplier`
 
 ### v0.27.0
-- Add props for ProgressBar to display a label and value
+- Add props for Meter to display a label and value
 
 ### v0.23.8
 - Remove all SCSS files

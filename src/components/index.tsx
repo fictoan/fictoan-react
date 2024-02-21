@@ -28,6 +28,9 @@ export { CodeBlock, type CodeBlockProps } from "./CodeBlock";
 // CONTENT WRAPPER =====================================================================================================
 export { ContentWrapper, type ContentWrapperProps } from "./ContentWrapper";
 
+// DIVIDER =============================================================================================================
+export { Divider, type DividerProps } from "./Divider";
+
 // ELEMENT =============================================================================================================
 export {
     Element, type ElementProps,
@@ -62,8 +65,8 @@ export {
     PinInputField, type PinInputFieldProps,
 } from "./Form";
 
-// DIVIDER =============================================================================================================
-export { Divider, type DividerProps } from "./Divider";
+// METER ===============================================================================================================
+export { Meter, type MeterProps, type MeterMetaProps } from "./Meter";
 
 // NOTIFICATIONS =======================================================================================================
 export {

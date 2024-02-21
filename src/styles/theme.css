@@ -161,7 +161,7 @@
     --dropdown-chevron : var(--slate-light-40);
 }
 
-/* SELECT WITH SEARCH /////////////////////////////////////////////////////// */
+/* DROPDOWN WITH SEARCH ///////////////////////////////////////////////////// */
 :root {
     --dropdown-bg-default    : var(--input-bg-default);
     --dropdown-bg-hover      : var(--input-bg-focus);
@@ -231,6 +231,22 @@
     --input-icon-valid            : var(--green-dark-30);
 }
 
+/* METER //////////////////////////////////////////////////////////////////// */
+:root {
+    --meter-bg            : var(--slate-light-70);
+    --meter-border        : var(--slate-light-40);
+    --meter-border-width  : var(--global-border-width);
+    --meter-border-radius : var(--global-border-radius);
+    --meter-height        : 8px;
+
+    --meter-label         : var(--paragraph-text-colour);
+    --meter-value         : var(--paragraph-text-colour);
+
+    --meter-danger        : var(--red-light-10);
+    --meter-low           : var(--amber-light-10);
+    --meter-optimum       : var(--green-dark-10);
+}
+
 /* NOTIFICATIONS //////////////////////////////////////////////////////////// */
 :root {
     --notification-item-border-radius  : var(--global-border-radius);
@@ -252,9 +268,26 @@
     --notification-item-warning-border : var(--amber);
 }
 
+/* OPTION CARDS ///////////////////////////////////////////////////////////// */
+:root {
+    --option-card-border-width       : var(--global-border-width);
+
+    --option-card-focus              : var(--global-focus-colour);
+
+    --option-card-bg-hover           : var(--green-light-70);
+    --option-card-border-hover       : var(--green-light-40);
+    --option-card-tick-bg-hover      : var(--green-light-60);
+    --option-card-tick-line-hover    : var(--green);
+
+    --option-card-bg-selected        : var(--green-light-60);
+    --option-card-border-selected    : var(--green);
+    --option-card-tick-bg-selected   : var(--green-dark-10);
+    --option-card-tick-line-selected : var(--white);
+}
+
 /* PROGRESS BAR ///////////////////////////////////////////////////////////// */
 :root {
-    --progress-bar-bg            : var(--slate-light-60);
+    --progress-bar-bg            : var(--slate-light-70);
     --progress-bar-fill          : var(--hue);
     --progress-bar-label         : var(--paragraph-text-colour);
     --progress-bar-value         : var(--paragraph-text-colour);
@@ -289,7 +322,7 @@
     --radio-tabs-label-focus-border : var(--blue);
 }
 
-/* RANGE //////////////////////////////////////////////////////////////// */
+/* RANGE //////////////////////////////////////////////////////////////////// */
 :root {
     --range-label         : var(--input-label-default);
     --range-value         : var(--input-label-default);
@@ -300,23 +333,6 @@
 
     --range-border-focus  : var(--blue);
     --range-outline-focus : var(--blue);
-}
-
-/* OPTION CARDS ///////////////////////////////////////////////////////////// */
-:root {
-    --option-card-border-width       : var(--global-border-width);
-
-    --option-card-focus              : var(--global-focus-colour);
-
-    --option-card-bg-hover           : var(--green-light-70);
-    --option-card-border-hover       : var(--green-light-40);
-    --option-card-tick-bg-hover      : var(--green-light-60);
-    --option-card-tick-line-hover    : var(--green);
-
-    --option-card-bg-selected        : var(--green-light-60);
-    --option-card-border-selected    : var(--green);
-    --option-card-tick-bg-selected   : var(--green-dark-10);
-    --option-card-tick-line-selected : var(--white);
 }
 
 /* SIDEBAR + CONTENT WRAPPER //////////////////////////////////////////////// */

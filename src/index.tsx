@@ -50,6 +50,9 @@ export { Card, type CardProps } from "./components/Card";
 // CONTENT WRAPPER =====================================================================================================
 export { ContentWrapper, type ContentWrapperProps } from "./components/ContentWrapper";
 
+// DIVIDER =============================================================================================================
+export { Divider, type DividerProps } from "./components/Divider";
+
 // ELEMENT =============================================================================================================
 export {
     Element, type ElementProps,
@@ -84,8 +87,8 @@ export {
     PinInputField, type PinInputFieldProps,
 } from "./components/Form";
 
-// H-RULE ==============================================================================================================
-export { Divider, type DividerProps } from "./components/Divider";
+// METER ===============================================================================================================
+export { Meter, type MeterProps, type MeterMetaProps } from "./components/Meter";
 
 // NOTIFICATIONS  ======================================================================================================
 export {
