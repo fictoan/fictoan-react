@@ -13,15 +13,16 @@ export interface MeterLabelCustomProps {
 
 // prettier-ignore
 export interface MeterCustomProps {
-    min       : number;
-    max       : number;
-    low       : number;
-    high      : number;
-    optimum   : number;
-    barBg   ? : string;
-    barFill ? : string;
-    suffix  ? : string;
-    height  ? : string;
+    min                 : number;
+    max                 : number;
+    low                 : number;
+    high                : number;
+    optimum           ? : number;
+    showOptimumMarker ? : boolean;
+    barBg             ? : string;
+    barFill           ? : string;
+    suffix            ? : string;
+    height            ? : string;
 }
 
 export type MeterElementType = HTMLMeterElement;
@@ -31,7 +32,11 @@ export type MeterMetaProps = Omit<CommonAndHTMLProps<HTMLDivElement>, keyof Mete
     MeterLabelCustomProps;
 
 export const Meter = React.forwardRef(
-    ({ label, value,  height, suffix, ...props }: MeterProps, ref: React.Ref<MeterElementType>) => {
+    ({
+         label, value, height, suffix, showOptimumMarker, ...props
+    }: MeterProps, ref: React.Ref<MeterElementType>) => {
+        const optimumPositionPercent = ((props.optimum ? props.optimum : 0 - props.min) / (props.max - props.min)) * 100;
+
         return (
             <>
                 {label && (
@@ -47,15 +52,24 @@ export const Meter = React.forwardRef(
                     </Element>
                 )}
 
-                <Element<MeterElementType>
-                    as="meter"
-                    data-meter
-                    ref={ref}
-                    value={value}
-                    {...props}
-                    title={suffix}
-                    style={{ height : height }}
-                />
+                <div className="meter-wrapper">
+                    <Element<MeterElementType>
+                        as="meter"
+                        data-meter
+                        ref={ref}
+                        value={value}
+                        {...props}
+                        title={suffix}
+                        style={{ height : height }}
+                    />
+                    {showOptimumMarker && (
+                        <div
+                            className="optimum-marker"
+                            style={{ left: `calc(${optimumPositionPercent}% - var(--meter-border-width))` }}
+                            title={`Optimum: ${props.optimum}`}
+                        />
+                    )}
+                </div>
             </>
         );
     }

@@ -233,18 +233,21 @@
 
 /* METER //////////////////////////////////////////////////////////////////// */
 :root {
-    --meter-bg            : var(--slate-light-70);
-    --meter-border        : var(--slate-light-40);
-    --meter-border-width  : var(--global-border-width);
-    --meter-border-radius : var(--global-border-radius);
-    --meter-height        : 8px;
+    --meter-bg                   : var(--slate-light-70);
+    --meter-border               : var(--slate-light-40);
+    --meter-border-width         : var(--global-border-width);
+    --meter-border-radius        : var(--global-border-radius);
+    --meter-height               : 8px;
 
-    --meter-label         : var(--paragraph-text-colour);
-    --meter-value         : var(--paragraph-text-colour);
+    --meter-label                : var(--paragraph-text-colour);
+    --meter-value                : var(--paragraph-text-colour);
 
-    --meter-danger        : var(--red-light-10);
-    --meter-low           : var(--amber-light-10);
-    --meter-optimum       : var(--green-dark-10);
+    --meter-danger               : var(--red-light-10);
+    --meter-low                  : var(--amber-light-10);
+    --meter-high                 : var(--green-dark-10);
+
+    --meter-optimum-marker-width : 3px;
+    --meter-optimum-marker-bg    : var(--blue);
 }
 
 /* NOTIFICATIONS //////////////////////////////////////////////////////////// */

@@ -1,3 +1,8 @@
+.meter-wrapper {
+    position : relative;
+    width    : 100%;
+}
+
 [data-meter-meta] {
     display         : flex;
     align-items     : baseline;
@@ -25,14 +30,35 @@ meter[data-meter] {
     flex-direction : row;
     width          : 100%;
     height         : var(--meter-height);
+    position       : relative;
 }
 
+.optimum-marker {
+    position   : absolute;
+    top        : -2px;
+    height     : calc(100% + 4px);
+    width      : 2px;
+    background : var(--meter-optimum-marker-bg);
+}
+
+meter::-moz-meter-bar,
 meter::-webkit-meter-bar {
     background       : none;
     background-color : var(--meter-bg);
     border           : var(--meter-border-width) solid var(--meter-border);
-    border-radius  : var(--meter-border-radius);
+    border-radius    : var(--meter-border-radius);
 }
+
+meter.shape-rounded::-webkit-meter-bar,
+meter.shape-rounded::-moz-meter-bar {
+    border-radius : var(--meter-border-radius);
+}
+
+meter.shape-curved::-webkit-meter-bar,
+meter.shape-curved::-moz-meter-bar {
+    border-radius : 8000px;
+}
+
 
 /* SUPER LOW VALUES ========================================================= */
 meter:-moz-meter-sub-sub-optimum::-moz-meter-bar,
@@ -49,16 +75,5 @@ meter::-webkit-meter-suboptimum-value {
 /* HIGH VALUES ============================================================== */
 meter:-moz-meter-optimum::-moz-meter-bar,
 meter::-webkit-meter-optimum-value {
-    background-color : var(--meter-optimum);
+    background-color : var(--meter-high);
 }
-
-meter.shape-rounded::-webkit-meter-bar,
-meter.shape-rounded::-moz-meter-bar {
-    border-radius : var(--meter-border-radius);
-}
-
-meter.shape-curved::-webkit-meter-bar,
-meter.shape-curved::-moz-meter-bar {
-    border-radius : 8000px;
-}
-

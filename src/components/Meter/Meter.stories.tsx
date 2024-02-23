@@ -12,8 +12,9 @@ const meta: Meta<typeof Meter> = {
         max: 10,
         low: 3,
         high: 7,
-        optimum: 5,
+        optimum: 8,
         height: "1.5rem",
+        showOptimumMarker: true,
     },
     parameters: {
         docs: {
@@ -36,7 +37,8 @@ export const Default: Story = {
         max: 10,
         low: 3,
         high: 7,
-        optimum: 5,
+        optimum: 8,
         height: "1.5rem",
+        showOptimumMarker: true,
     },
 };
