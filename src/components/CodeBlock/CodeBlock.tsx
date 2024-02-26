@@ -3,6 +3,7 @@ import React, { Suspense, useState } from "react";
 import { CommonAndHTMLProps } from "../Element/constants";
 import { Element } from "../Element/Element";
 import { Button } from "../Button/Button";
+import { Badge } from "../Badge/Badge";
 
 import "./CodeBlock.css";
 
@@ -64,15 +65,16 @@ export const CodeBlock = React.forwardRef(
             <Element<CodeBlockElementType> data-code-block as="div" {...props}>
                 {showCopyButton ? (
                     isCodeCopied ? (
-                        <Button
+                        <Badge
                             className="code-block-copy-button"
                             size="tiny" shape="rounded"
                             bgColor="green-light-80" borderColour="green-dark-20" textColour="green-dark-20"
                         >
                             COPIED!
-                        </Button>
+                        </Badge>
                     ) : (
                         <Button
+                            type="button"
                             className="code-block-copy-button"
                             size="tiny" shape="rounded"
                             bgColor="transparent" borderColour="blue-light-40" textColour="blue"
