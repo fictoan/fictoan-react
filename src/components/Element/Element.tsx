@@ -6,7 +6,22 @@ import { createClassName } from "../../utils/classNames";
 
 import { ElementProps } from "./constants";
 
-export const Element = React.forwardRef(<K extends {}>({ as: Component = "div", ...props }: ElementProps<K>, ref: React.LegacyRef<HTMLElement>) => {
+export const Element = React.forwardRef(
+        <K extends {}>(
+            {
+                as: Component = "div",
+                role,
+                ariaLabel,
+                tabIndex,
+                onKeyDown,
+                ...props
+            }: ElementProps<K> & {
+                role      ? : string;
+                ariaLabel ? : string;
+                tabIndex  ? : number;
+                onKeyDown ? : (event: React.KeyboardEvent) => void;
+            }, ref: React.LegacyRef<HTMLElement>
+    ) => {
     const {
               classNames = [],
               bgColor,
@@ -75,6 +90,10 @@ export const Element = React.forwardRef(<K extends {}>({ as: Component = "div", 
     return (
         <Component
             ref={ref}
+            role={role}
+            aria-label={ariaLabel}
+            tabIndex={tabIndex}
+            onKeyDown={onKeyDown}
             {...minimalProps}
             className={createClassName(
                 [

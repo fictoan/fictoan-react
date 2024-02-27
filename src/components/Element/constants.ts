@@ -128,4 +128,5 @@ export interface CommonAndHTMLProps<T extends {}>
 export interface ElementProps<T extends {}> extends CommonProps, Omit<HTMLProps<T>, "as" | "ref" | "shape"> {
     as        ? : ElementType;
     className ? : string;
+    ariaLabel ? : string;
 }

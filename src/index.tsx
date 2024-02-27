@@ -37,7 +37,7 @@ export { Button, type ButtonProps } from "./components/Button";
 
 // BREADCRUMBS =========================================================================================================
 export {
-    Breadcrumbs, type BreadcrumbsWrapperProps,
+    Breadcrumbs, type BreadcrumbsProps,
     BreadcrumbItem, type BreadcrumbItemProps
 } from "./components/Breadcrumbs";
 

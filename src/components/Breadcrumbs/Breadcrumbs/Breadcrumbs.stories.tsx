@@ -20,10 +20,22 @@ type Story = StoryObj<typeof Breadcrumbs>;
 
 export const Default: Story = {
     render: (args) => (
-        <Breadcrumbs {...args}>
-            <BreadcrumbItem>Item 1</BreadcrumbItem>
-            <BreadcrumbItem>Item 2</BreadcrumbItem>
-            <BreadcrumbItem>Item 3</BreadcrumbItem>
+        <Breadcrumbs>
+            <BreadcrumbItem>
+                <a href="/">
+                    Home
+                </a>
+            </BreadcrumbItem>
+            <BreadcrumbItem>
+                <a href="/category">
+                    Category
+                </a>
+            </BreadcrumbItem>
+            <BreadcrumbItem current>
+                    <span>
+                        Current Page
+                    </span>
+            </BreadcrumbItem>
         </Breadcrumbs>
     ),
 };
