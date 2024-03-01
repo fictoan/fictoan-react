@@ -120,6 +120,13 @@ export {
 
 // TYPOGRAPHY ==========================================================================================================
 export {
-    Text, type TextProps,
-    Heading, type HeadingProps,
+    Text,
+    Heading1,
+    Heading2,
+    Heading3,
+    Heading4,
+    Heading5,
+    Heading6,
+    type TextProps,
+    type HeadingProps
 } from "./Typography";

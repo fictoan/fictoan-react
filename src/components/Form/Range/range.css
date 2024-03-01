@@ -5,13 +5,13 @@
         justify-content : space-between;
         margin-bottom   : 4px;
 
-        p:first-of-type {
+        .range-label {
             display : inline-flex;
             margin  : 0;
             color   : var(--range-label);
         }
 
-        p:last-of-type {
+        .range-value {
             display    : inline-flex;
             text-align : right;
             margin     : 0;

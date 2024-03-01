@@ -20,6 +20,9 @@ export const BreadcrumbItem = React.forwardRef<HTMLLIElement, BreadcrumbItemProp
                 ref={ref}
                 {...props}
                 aria-current={current ? "page" : undefined}
+                className={current ? "current" : undefined}
+                role="navigation"
+                aria-label="List of breadcrumbs"
             >
                 {children}
             </Element>

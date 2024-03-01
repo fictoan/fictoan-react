@@ -4,18 +4,18 @@ import { Element } from "../Element";
 import { CommonAndHTMLProps, WeightTypes } from "../Element/constants";
 
 // prettier-ignore
-export interface HeadingCustomProps {
-    as          : "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+interface HeadingBaseProps {
+    as        ? : "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
     fontStyle ? : "sans-serif" | "serif" | "monospace";
     weight    ? : WeightTypes;
     align     ? : "left" | "centre" | "center" | "right";
 }
 
 export type HeadingElementType = HTMLHeadingElement;
-export type HeadingProps = Omit<CommonAndHTMLProps<HeadingElementType>, keyof HeadingCustomProps> & HeadingCustomProps;
+export type HeadingProps = Omit<CommonAndHTMLProps<HeadingElementType>, keyof HeadingBaseProps> & HeadingBaseProps;
 
-export const Heading = React.forwardRef(
-    ({ as, weight, fontStyle = "sans-serif", align, ...props }: HeadingProps, ref: React.Ref<HeadingElementType>) => {
+const Heading = React.forwardRef(
+    ({ fontStyle = "sans-serif", weight, align, ...props }: HeadingProps, ref: React.Ref<HeadingElementType>) => {
         let classNames = [];
 
         if (weight) {
@@ -30,6 +30,30 @@ export const Heading = React.forwardRef(
             classNames.push(`text-${align}`);
         }
 
-        return <Element<HeadingElementType> as={as} ref={ref} classNames={classNames} {...props} />;
+        return <Element<HeadingElementType> ref={ref} classNames={classNames} {...props} />;
     }
 );
+
+export const Heading1 = React.forwardRef((props: HeadingProps, ref: React.Ref<HeadingElementType>) => (
+    <Heading as="h1" ref={ref} {...props} />
+));
+
+export const Heading2 = React.forwardRef((props: HeadingProps, ref: React.Ref<HeadingElementType>) => (
+    <Heading as="h2" ref={ref} {...props} />
+));
+
+export const Heading3 = React.forwardRef((props: HeadingProps, ref: React.Ref<HeadingElementType>) => (
+    <Heading as="h3" ref={ref} {...props} />
+));
+
+export const Heading4 = React.forwardRef((props: HeadingProps, ref: React.Ref<HeadingElementType>) => (
+    <Heading as="h4" ref={ref} {...props} />
+));
+
+export const Heading5 = React.forwardRef((props: HeadingProps, ref: React.Ref<HeadingElementType>) => (
+    <Heading as="h5" ref={ref} {...props} />
+));
+
+export const Heading6 = React.forwardRef((props: HeadingProps, ref: React.Ref<HeadingElementType>) => (
+    <Heading as="h6" ref={ref} {...props} />
+));

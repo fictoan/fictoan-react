@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Heading } from "./Heading";
+import { Heading1, Heading2, Heading3, Heading4, Heading5, Heading6 } from "./Heading";
 
-const meta: Meta<typeof Heading> = {
-    component: Heading,
+const meta: Meta<typeof Heading1> = {
+    component: Heading1,
     tags: ["autodocs"],
     parameters: {
         docs: {
@@ -14,46 +14,40 @@ const meta: Meta<typeof Heading> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Heading>;
+type Story = StoryObj<typeof Heading1>;
 
 export const H1: Story = {
     args: {
-        as: "h1",
         children: "This is an H1.",
     }
 };
 
 export const H2: Story = {
     args: {
-        as: "h2",
         children: "This is an H2.",
     }
 };
 
 export const H3: Story = {
     args: {
-        as: "h3",
         children: "This is an H3.",
     }
 };
 
 export const H4: Story = {
     args: {
-        as: "h4",
         children: "This is an H4.",
     }
 };
 
 export const H5: Story = {
     args: {
-        as: "h5",
         children: "This is an H5.",
     }
 };
 
 export const H6: Story = {
     args: {
-        as: "h6",
         children: "This is an H6.",
     }
 };

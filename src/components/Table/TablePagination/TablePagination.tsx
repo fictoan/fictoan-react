@@ -2,7 +2,7 @@
 import React from "react";
 
 import { Div, Element } from "../../Element";
-import { Heading } from "../../Typography";
+import { Heading6 } from "../../Typography";
 import { Text } from "../../Typography";
 import { Spinner } from "../../Spinner";
 
@@ -55,14 +55,14 @@ export const TablePagination = React.forwardRef(
             <Element<TablePaginationElementType> as="div" data-table-pagination ref={ref} {...props}>
                 <Div className="vertically-centre-items" marginBottom="none">
                     {totalRecords === 0 ? (
-                        <Heading as="h6" marginRight="nano">
+                        <Heading6 marginRight="nano">
                             {emptyText ? emptyText : "No records"}
-                        </Heading>
+                        </Heading6>
                     ) : (
-                        <Heading as="h6" marginRight="nano">
+                        <Heading6 marginRight="nano">
                             {rangeStart} &ndash; {rangeEnd}
                             {totalRecords ? ` of ${totalRecords}` : ``}
-                        </Heading>
+                        </Heading6>
                     )}
 
                     <Div classNames={[ "nav-icon", `${pageIndex === 0 && `is-inactive`}` ]}>

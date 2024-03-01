@@ -2,7 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Drawer } from "./Drawer";
-import { Heading } from "../Typography/Heading";
+import { Heading1 } from "../Typography/Heading";
 
 const meta: Meta<typeof Drawer> = {
     component: Drawer,
@@ -12,7 +12,7 @@ const meta: Meta<typeof Drawer> = {
     },
     render: (args) => (
         <Drawer {...args}>
-            <Heading as="h1">Some heading</Heading>
+            <Heading1>Some heading</Heading1>
         </Drawer>
     ),
     parameters: {

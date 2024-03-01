@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 1.2.3
+- Remove `as` prop from `Heading`, so you can now use `Heading1`, `Heading2` etc
+
+## 1.2.2
+- Tweak `Range` styles
+
+## 1.2.1
+- Add accessibility improvements for `Breadcrumbs`, and `Badge`
+
 ## 1.2.0
 - Add new `Meter` component
 
@@ -50,7 +59,7 @@
 [//]: # (TODO: ⚠️ Remove style tag in CodeBlock)
 [//]: # (TODO: ⚠️ Fix TS issue in Select and SWS)
 [//]: # (TODO: Fix Dismiss Button in NotifcationItem)
-[//]: # (TODO: Add mask design to PinInputField) 
+[//]: # (TODO: Add mask design to PinInputField)
 [//]: # (TODO: Fix Sidebar scrolling issue)
 [//]: # (TODO: Revamp BreadCrumbs?)
 ~~[//]: # (TODO: ⚠️ Fix Meter height issue)~~

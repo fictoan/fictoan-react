@@ -25,7 +25,7 @@
     --breadcrumb-item-separator        : "/";
     --breadcrumb-item-separator-colour : var(--slate-light-10);
 
-    --breadcrumb-item-text             : var(--paragraph-text-colour);
+    --breadcrumb-item-text             : var(--link-text-default);
     --breadcrumb-item-text-active      : var(--paragraph-text-colour);
 }
 
