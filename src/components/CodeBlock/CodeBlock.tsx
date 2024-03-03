@@ -8,9 +8,10 @@ import { Badge } from "../Badge/Badge";
 import "./CodeBlock.css";
 
 export interface CodeBlockCustomProps {
-    source         ? : object | string;
-    language       ? : string;
-    showCopyButton ? : boolean;
+    source          ? : object | string;
+    language        ? : string | undefined;
+    showCopyButton  ? : boolean;
+    showLineNumbers ? : boolean;
 }
 
 export type CodeBlockElementType = HTMLPreElement;
@@ -42,8 +43,15 @@ const PrismReactRenderer = React.lazy(() =>
     }),
 );
 
-export const CodeBlock = React.forwardRef(
-    ({ children, source, language = "json", showCopyButton, ...props }: CodeBlockProps, ref: React.Ref<CodeBlockElementType>) => {
+export const CodeBlock = React.forwardRef((
+        {
+            children,
+            source,
+            language = "json",
+            showCopyButton,
+            showLineNumbers,
+            ...props
+        }: CodeBlockProps, ref: React.Ref<CodeBlockElementType>) => {
         const [ isCodeCopied, setIsCodeCopied ] = useState(false);
 
         const copyToClipboard = () => {
@@ -61,45 +69,54 @@ export const CodeBlock = React.forwardRef(
             code = typeof source === "object" ? JSON.stringify(source, null, 2) : source ?? "";
         }
 
+        let classNames = [];
+
+        if (showLineNumbers) {
+            classNames.push("show-line-numbers");
+        }
+
         return (
-            <Element<CodeBlockElementType> data-code-block as="div" {...props}>
+            <Element<CodeBlockElementType> data-code-block as="div" classNames={classNames} {...props}>
                 {showCopyButton ? (
                     isCodeCopied ? (
                         <Badge
-                            className="code-block-copy-button"
+                            className="code-block-copied-badge"
                             size="tiny" shape="rounded"
-                            bgColor="green-light-80" borderColour="green-dark-20" textColour="green-dark-20"
+                            aria-live="polite"
                         >
-                            COPIED!
+                            Copied!
                         </Badge>
                     ) : (
                         <Button
                             type="button"
                             className="code-block-copy-button"
                             size="tiny" shape="rounded"
-                            bgColor="transparent" borderColour="blue-light-40" textColour="blue"
                             onClick={copyToClipboard}
+                            role="button"
+                            aria-label="Copy code to clipboard"
                         >
                             Copy
                         </Button>
                     )
                 ) : null}
 
-                <Suspense
-                    fallback={
-                        <pre data-code-block className="suspense-fallback">
-                            {code}
-                        </pre>
-                    }
-                >
+                <Suspense fallback={<pre data-code-block className="suspense-fallback">{code}</pre>}>
                     <PrismReactRenderer code={code} language={language} theme={undefined}>
                         {({ className, tokens, getLineProps, getTokenProps }) => (
                             <pre ref={ref} className={className}>
                                 {tokens.map((line, i) => (
                                     <div {...getLineProps({ line, key : i })}>
-                                        {line.map((token, key) => (
-                                            <span {...getTokenProps({ token, key })} />
-                                        ))}
+                                        {showLineNumbers && (
+                                            <span className="line-numbers">
+                                                {i + 1}
+                                            </span>
+                                        )}
+
+                                        <span className="l-o-c">
+                                            {line.map((token, key) => (
+                                                <span {...getTokenProps({ token, key })} />
+                                            ))}
+                                        </span>
                                     </div>
                                 ))}
                             </pre>

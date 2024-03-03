@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.2.4
+- Add line numbers to `CodeBlock` component with `showLineNumbers` prop
+- Add better token support
+- Fix style overrides for `CodeBlock` component
+
 ## 1.2.3
 - Remove `as` prop from `Heading`, so you can now use `Heading1`, `Heading2` etc
 
