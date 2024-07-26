@@ -1,7 +1,7 @@
 [data-button] {
     position            : relative;
     cursor              : pointer;
-    font-family         : var(--button-font-family), sans-serif;
+    font-family         : var(--button-font), sans-serif;
     font-weight         : bold;
     font-size           : 92%;
     text-align          : center;
@@ -42,6 +42,7 @@
 
 /* PRIMARY BUTTON /////////////////////////////////////////////////////////// */
 [data-button].primary {
+    font-family      : var(--button-primary-font), sans-serif;
     /* DEFAULT STATE ======================================================== */
     background-color : var(--button-primary-bg-default);
     color            : var(--button-primary-text-default);
@@ -86,6 +87,8 @@
 
 /* SECONDARY BUTTON ///////////////////////////////////////////////////////// */
 [data-button].secondary {
+    font-family      : var(--button-secondary-font), sans-serif;
+
     /* DEFAULT STATE ======================================================== */
     background-color : var(--button-secondary-bg-default);
     color            : var(--button-secondary-text-default);
@@ -130,6 +133,8 @@
 
 /* TERTIARY BUTTON ////////////////////////////////////////////////////////// */
 [data-button].tertiary {
+    font-family      : var(--button-tertiary-font), sans-serif;
+
     /* DEFAULT STATE ======================================================== */
     background-color : var(--button-tertiary-bg-default);
     color            : var(--button-tertiary-text-default);
@@ -288,8 +293,8 @@
 
 [data-button].size-nano.is-loading::after,
 [data-button].size-micro.is-loading::after {
-    height             : 6px;
-    width              : 6px;
+    height : 6px;
+    width  : 6px;
 }
 
 [data-button].size-tiny.is-loading::after,

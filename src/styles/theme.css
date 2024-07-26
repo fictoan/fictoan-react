@@ -31,9 +31,10 @@
 
 /* BUTTON /////////////////////////////////////////////////////////////////// */
 :root {
-    --button-font-family                      : var(--font-sans-serif);
+    --button-font                             : var(--font-sans-serif);
 
     /* PRIMARY BUTTON ======================================================= */
+    --button-primary-font                     : var(--font-sans-serif);
     --button-primary-bg-default               : var(--blue);
     --button-primary-text-default             : var(--white);
     --button-primary-border-default           : var(--blue);
@@ -62,6 +63,7 @@
 
 
     /* SECONDARY BUTTON ===================================================== */
+    --button-secondary-font                   : var(--font-sans-serif);
     --button-secondary-bg-default             : var(--blue-light-50);
     --button-secondary-text-default           : var(--blue);
     --button-secondary-border-default         : var(--blue-light-50);
@@ -90,6 +92,7 @@
 
 
     /* TERTIARY BUTTON ====================================================== */
+    --button-tertiary-font                    : var(--font-sans-serif);
     --button-tertiary-bg-default              : var(--transparent);
     --button-tertiary-text-default            : var(--blue);
     --button-tertiary-border-default          : var(--blue);

@@ -1,8 +1,11 @@
 # CHANGELOG
 
+## 1.2.7
+- Add `button-font` for each `kind` too
+
 ## 1.2.6
 - Fix `Button` active theme bug
-- Add `button-font-family` via theme
+- Add `button-font` via theme
 
 ## 1.2.5
 - Fix text colour for lists
