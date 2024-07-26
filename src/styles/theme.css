@@ -31,6 +31,8 @@
 
 /* BUTTON /////////////////////////////////////////////////////////////////// */
 :root {
+    --button-font-family                      : var(--font-sans-serif);
+
     /* PRIMARY BUTTON ======================================================= */
     --button-primary-bg-default               : var(--blue);
     --button-primary-text-default             : var(--white);
@@ -43,6 +45,12 @@
     --button-primary-border-hover             : var(--blue-dark-30);
     --button-primary-border-width-hover       : var(--global-border-width);
     --button-primary-border-radius-hover      : var(--global-border-radius);
+
+    --button-primary-bg-active                : var(--blue-light-20);
+    --button-primary-text-active              : var(--white);
+    --button-primary-border-active            : var(--blue-dark-40);
+    --button-primary-border-width-active      : var(--global-border-width);
+    --button-primary-border-radius-active     : var(--global-border-radius);
 
     --button-primary-spinner-loading          : var(--white);
 
@@ -66,6 +74,12 @@
     --button-secondary-border-width-hover     : var(--global-border-width);
     --button-secondary-border-radius-hover    : var(--global-border-radius);
 
+    --button-secondary-bg-active              : var(--blue-light-50);
+    --button-secondary-text-active            : var(--blue);
+    --button-secondary-border-active          : var(--blue-light-50);
+    --button-secondary-border-width-active    : var(--global-border-width);
+    --button-secondary-border-radius-active   : var(--global-border-radius);
+
     --button-secondary-spinner-loading        : var(--blue);
 
     --button-secondary-bg-disabled            : var(--blue-light-10);
@@ -87,6 +101,12 @@
     --button-tertiary-border-hover            : var(--blue-light-20);
     --button-tertiary-border-width-hover      : var(--global-border-width);
     --button-tertiary-border-radius-hover     : var(--global-border-radius);
+
+    --button-tertiary-bg-active               : var(--blue-light-70);
+    --button-tertiary-text-active             : var(--blue);
+    --button-tertiary-border-active           : var(--blue-light-30);
+    --button-tertiary-border-width-active     : var(--global-border-width);
+    --button-tertiary-border-radius-active    : var(--global-border-radius);
 
     --button-tertiary-spinner-loading         : var(--blue);
 

@@ -36,6 +36,8 @@ a,
 li,
 span { line-height : var(--paragraph-line-height); }
 
+li { color : var(--paragraph-text-colour); }
+
 a {
     cursor      : pointer;
     font-family : var(--link-font);

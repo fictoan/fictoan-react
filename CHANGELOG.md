@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 1.2.6
+- Fix `Button` active theme bug
+- Add `button-font-family` via theme
+
+## 1.2.5
+- Fix text colour for lists
+- Add `height` prop for `Divider`
+
 ## 1.2.4
 - Add line numbers to `CodeBlock` component with `showLineNumbers` prop
 - Add better token support

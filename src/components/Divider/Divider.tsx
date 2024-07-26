@@ -7,13 +7,15 @@ import "./divider.css";
 
 // prettier-ignore
 export interface DividerCustomProps {
-    kind ? : "primary" | "secondary" | "tertiary";
+    kind   ? : "primary" | "secondary" | "tertiary";
+    height ? : string;
 }
 
 export type DividerElementType = HTMLHRElement;
 export type DividerProps = Omit<CommonAndHTMLProps<DividerElementType>, keyof DividerCustomProps> & DividerCustomProps;
 
-export const Divider = React.forwardRef(({ kind, ...props }: DividerProps, ref: React.Ref<DividerElementType>) => {
+export const Divider = React.forwardRef((
+    { kind, height, ...props }: DividerProps, ref: React.Ref<DividerElementType>) => {
         let classNames = [];
 
         if (kind) {
@@ -27,6 +29,7 @@ export const Divider = React.forwardRef(({ kind, ...props }: DividerProps, ref: 
                 ref={ref}
                 classNames={classNames}
                 {...props}
+                style={{ height : height }}
             />
         );
     },

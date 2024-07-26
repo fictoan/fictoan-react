@@ -1,7 +1,7 @@
 [data-button] {
     position            : relative;
     cursor              : pointer;
-    font-family         : var(--font-sans-serif);
+    font-family         : var(--button-font-family), sans-serif;
     font-weight         : bold;
     font-size           : 92%;
     text-align          : center;
@@ -60,11 +60,11 @@
 
     /* CLICKED STATE ======================================================== */
     &:active {
-        background-color : var(--button-primary-bg-hover);
-        color            : var(--button-primary-text-hover);
-        border           : solid var(--button-primary-border-hover);
-        border-width     : var(--button-primary-border-width-hover);
-        border-radius    : var(--button-primary-border-radius-hover);
+        background-color : var(--button-primary-bg-active);
+        color            : var(--button-primary-text-active);
+        border           : solid var(--button-primary-border-active);
+        border-width     : var(--button-primary-border-width-active);
+        border-radius    : var(--button-primary-border-radius-active);
     }
 
     /* LOADING STATE ======================================================== */
@@ -104,11 +104,11 @@
 
     /* CLICKED STATE ======================================================== */
     &:active {
-        background-color : var(--button-secondary-bg-hover);
-        color            : var(--button-secondary-text-hover);
-        border           : solid var(--button-secondary-border-hover);
-        border-width     : var(--button-secondary-border-width-hover);
-        border-radius    : var(--button-secondary-border-radius-hover);
+        background-color : var(--button-secondary-bg-active);
+        color            : var(--button-secondary-text-active);
+        border           : solid var(--button-secondary-border-active);
+        border-width     : var(--button-secondary-border-width-active);
+        border-radius    : var(--button-secondary-border-radius-active);
     }
 
     /* LOADING STATE ======================================================== */
@@ -148,11 +148,11 @@
 
     /* CLICKED STATE ======================================================== */
     &:active {
-        background-color : var(--button-tertiary-bg-hover);
-        color            : var(--button-tertiary-text-hover);
-        border           : solid var(--button-tertiary-border-hover);
-        border-width     : var(--button-tertiary-border-width-hover);
-        border-radius    : var(--button-tertiary-border-radius-hover);
+        background-color : var(--button-tertiary-bg-active);
+        color            : var(--button-tertiary-text-active);
+        border           : solid var(--button-tertiary-border-active);
+        border-width     : var(--button-tertiary-border-width-active);
+        border-radius    : var(--button-tertiary-border-radius-active);
     }
 
     /* LOADING STATE ======================================================== */
