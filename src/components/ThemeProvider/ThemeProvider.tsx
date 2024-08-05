@@ -1,102 +1,72 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 import { Element } from "../Element/Element";
+import type { UseThemeProps } from "./types";
 import { CommonAndHTMLProps } from "../Element/constants";
 
 export type ThemeProviderElementType = HTMLDivElement;
 export type RenderProps = () => JSX.Element;
 
+const storageKey = "fictoan-theme";
+const themes = ["light", "dark"];
+
+const ThemeContext = React.createContext<UseThemeProps | undefined>(undefined);
+const defaultContext: UseThemeProps = { setTheme: (_) => {} };
+
+export const useTheme = () => React.useContext(ThemeContext) ?? defaultContext;
+
 export interface ThemeProviderProps extends CommonAndHTMLProps<ThemeProviderElementType> {
-    theme?: {
-        [key: string]: string;
-    };
-    customColors?: {
-        [key: string]: string;
-    };
     currentTheme?: string;
 }
 
+const getTheme = (key: string, fallback?: string) => {
+    let theme;
+    try {
+        theme = localStorage.getItem(key) || undefined;
+    } catch (e) {
+        // Unsupported
+    }
+    return theme || fallback;
+};
+
 export const ThemeProvider = React.forwardRef(
-    (
-        { theme, customColors, currentTheme, children, ...props }: ThemeProviderProps,
-        ref: React.Ref<ThemeProviderElementType>
-    ) => {
+    ({ currentTheme, children, ...props }: ThemeProviderProps, ref: React.Ref<ThemeProviderElementType>) => {
         const [shouldRender, setShouldRender] = useState<boolean>(false);
+        const [themeState, setThemeState] = React.useState(() => getTheme(storageKey, "theme-light"));
 
-        useEffect(() => {
-            if (theme) {
-                const styleTag = getStyleTag("fictoan-theme");
-                addCssVariables(styleTag, theme);
+        const setTheme = useCallback(
+            (newTheme: any) => {
+                if (!themes.includes(newTheme)) {
+                    newTheme = "light";
+                }
+                document.documentElement.className = "";
+                setThemeState(`theme-${newTheme}`);
+                document.documentElement.classList.add(`theme-${newTheme}`);
                 if (!shouldRender) {
                     setShouldRender(true);
                 }
-            }
-
-            return () => {
-                const styleTag = getStyleTag("fictoan-theme");
-                styleTag.innerHTML = "";
-            };
-        }, [theme]);
-
-        useEffect(() => {
-            if (customColors) {
-                const styleTag = getStyleTag("fictoan-custom-colors");
-                addCssVariables(styleTag, customColors);
-                const styles = Object.keys(customColors).map(
-                    (colorName) => `
-.bg-${colorName} {background-color: var(--${colorName});}
-.text-${colorName} {color: var(--${colorName}); }
-.fill-${colorName} {fill: var(--${colorName});}
-.stroke-${colorName} {stroke: var(--${colorName});}
-.border-${colorName} {border-color: var(--${colorName});}`
-                );
-                styleTag.appendChild(document.createTextNode(styles.join("\n")));
-                if (!shouldRender) {
-                    setShouldRender(true);
+                // Save to storage
+                try {
+                    localStorage.setItem(storageKey, `theme-${newTheme}`);
+                } catch (e) {
+                    // Unsupported
                 }
-            }
-
-            return () => {
-                const styleTag = getStyleTag("fictoan-custom-colors");
-                styleTag.innerHTML = "";
-            };
-        }, [customColors]);
+            },
+            [themeState]
+        );
 
         useEffect(() => {
             if (currentTheme) {
-                document.documentElement.classList.add(currentTheme);
-                if (!shouldRender) {
-                    setShouldRender(true);
-                }
+                setTheme(currentTheme);
             }
-
-            return () => {
-                document.documentElement.className = "";
-            };
         }, [currentTheme]);
 
-        const getStyleTag = (id: string): HTMLElement => {
-            let styleTag = document.getElementById(id);
-            if (!styleTag) {
-                styleTag = document.createElement("style");
-                styleTag.id = id;
-                document.head.appendChild(styleTag);
-            }
-            return styleTag;
-        };
-
-        const addCssVariables = (element: HTMLElement, variables: { [key: string]: string }) => {
-            let cssVariables: string | string[] = Object.entries(variables).map(
-                ([variableName, variableValue]) => `--${variableName}: ${variableValue};`
-            );
-            cssVariables = ":root {\n" + cssVariables.join("\n") + "\n}";
-            element.appendChild(document.createTextNode(cssVariables));
-        };
-
         return (
-            <Element<ThemeProviderElementType> as="div" data-theme-provider ref={ref} {...props}>
-                {shouldRender && children}
-            </Element>
+            <ThemeContext.Provider value={{ theme: themeState, setTheme }}>
+                <Element<ThemeProviderElementType> as="div" data-theme-provider ref={ref} {...props}>
+                    {shouldRender && children}
+                </Element>
+            </ThemeContext.Provider>
         );
     }
 );

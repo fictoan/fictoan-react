@@ -21,14 +21,6 @@ type Story = StoryObj<typeof ThemeProvider>;
 
 export const Default: Story = {
     args: {
-        theme: {
-            "paragraph-font-size": "4rem",
-            "card-bg": "var(--sky-light-80)",
-            "global-border-radius": "16px",
-        },
-        customColors: {
-            "peach": "#ff9e9e",
-        },
         currentTheme: "light",
     },
     render: (args) => (
@@ -37,5 +29,5 @@ export const Default: Story = {
                 <Text className="text-peach">Change the theme!</Text>
             </Card>
         </ThemeProvider>
-    )
+    ),
 };
