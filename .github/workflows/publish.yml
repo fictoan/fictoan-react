@@ -10,18 +10,18 @@ jobs:
     name: npm-publish
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '12.x'
-    - name: Install deps and build
-      run: yarn install --immutable --immutable-cache --check-cache && yarn run build
-    - name: Publish if version has been updated
-      uses: JS-DevTools/npm-publish@v1
-      with: # Token is a required input
-        token: ${{ secrets.NPM_AUTH_TOKEN }}
-      env: # More info about the environment variables in the README
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this as is, it's automatically generated
-        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # You need to set this in your repo settings
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+            version: 9
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          registry-url: https://registry.npmjs.org/
+      - run: pnpm install
+      - run: pnpm build
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
