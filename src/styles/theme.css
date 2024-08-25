@@ -133,17 +133,17 @@
     --callout-border-radius  : var(--global-border-radius);
     --callout-border-width   : var(--nano);
 
-    --callout-info-bg        : var(--sky-light-60);
-    --callout-info-border    : var(--sky-dark-30);
+    --callout-info-bg: var(--blue-light-60);
+    --callout-info-border: var(--blue-dark-20);
 
-    --callout-success-bg     : var(--green-light-60);
-    --callout-success-border : var(--green-dark-40);
+    --callout-success-bg: var(--green-light-60);
+    --callout-success-border: var(--green-dark-20);
 
-    --callout-warning-bg     : var(--amber-light-60);
-    --callout-warning-border : var(--amber);
+    --callout-warning-bg: var(--amber-light-60);
+    --callout-warning-border: var(--amber-dark-10);
 
-    --callout-error-bg       : var(--red-light-60);
-    --callout-error-border   : var(--red-dark-40);
+    --callout-error-bg: var(--red-light-60);
+    --callout-error-border: var(--red-dark-10);
 }
 
 /* CARD ///////////////////////////////////////////////////////////////////// */
