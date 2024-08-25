@@ -20,6 +20,23 @@ const input = Object.fromEntries(
         ])
 );
 
+function preserveUseClient() {
+    return {
+        name: "preserve-use-client",
+        enforce: "post",
+        generateBundle(options, bundle) {
+            for (const file in bundle) {
+                if (bundle[file].type === "chunk") {
+                    bundle[file].code = bundle[file].code.replace(
+                        /("use client";|('use client';))?/,
+                        '"use client";\n'
+                    );
+                }
+            }
+        },
+    };
+}
+
 /** @type {import('vite').UserConfig} */
 export default defineConfig({
     css: {
@@ -40,11 +57,13 @@ export default defineConfig({
                     format: "es",
                     entryFileNames: "[name].js",
                     assetFileNames: "index.[ext]",
+                    banner: `"use client;"`,
                 },
                 {
                     format: "cjs",
                     entryFileNames: "[name].cjs",
                     assetFileNames: "index.[ext]",
+                    banner: `"use client;"`,
                 },
             ],
             external: [...Object.keys(pkg.peerDependencies)],
@@ -61,6 +80,7 @@ export default defineConfig({
     },
     plugins: [
         svgr(),
+        preserveUseClient(),
         react({
             babel: {
                 presets: [["@babel/preset-env", { modules: false }], ["@babel/preset-react"]],
