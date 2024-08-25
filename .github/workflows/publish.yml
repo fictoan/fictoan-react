@@ -10,7 +10,8 @@ jobs:
     name: npm-publish
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -20,8 +21,11 @@ jobs:
         with:
           node-version: lts/*
           registry-url: https://registry.npmjs.org/
-      - run: pnpm install
-      - run: pnpm build
-      - run: npm publish --access public
+      - name: Install deps
+        run: pnpm install
+      - name: Build package
+        run: pnpm build
+      - name: Publish to npm
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
