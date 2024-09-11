@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 1.3.0
+
+- Remove `prism-react-renderer` dev dependency for CodeBlock
+- Use `prism` with exported themes
+- Fix `Accordion` toggle issue
+- Update `vite.config.umd.js` to build a UMD version
+
 ## 1.2.9
 
 -   Update `ThemeProvider` to expose `setTheme` and `useTheme` functionality in any component via local storage

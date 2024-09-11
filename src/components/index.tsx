@@ -21,6 +21,7 @@ export { Card, type CardProps } from "./Card";
 
 // CODE BLOCK ==========================================================================================================
 export { CodeBlock, type CodeBlockProps } from "./CodeBlock";
+export { codeBlockThemes } from "./CodeBlock";
 
 // CONTENT WRAPPER =====================================================================================================
 export { ContentWrapper, type ContentWrapperProps } from "./ContentWrapper";
