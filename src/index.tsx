@@ -45,6 +45,7 @@ export { Card, type CardProps } from "./components/Card";
 
 // CODE BLOCK ==========================================================================================================
 export { CodeBlock, type CodeBlockProps } from "./components/CodeBlock";
+export { codeBlockThemes } from "./components/CodeBlock";
 
 // CONTENT WRAPPER =====================================================================================================
 export { ContentWrapper, type ContentWrapperProps } from "./components/ContentWrapper";

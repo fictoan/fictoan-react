@@ -16,7 +16,7 @@ export default defineConfig({
         outDir: "dist-umd",
         lib: {
             entry: ["src/index.tsx"],
-            name: "fictoan",
+            name: "fictoanReact",
             formats: ["umd", "iife"],
             fileName: "fictoan",
         },

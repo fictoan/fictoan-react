@@ -20,22 +20,6 @@ export type AccordionProps =
 
 export const Accordion = React.forwardRef(
     ({ summary, children, open = false, ...props }: AccordionProps, ref: React.Ref<AccordionElementType>) => {
-        const [ isOpen, setIsOpen ] = useState(open);
-
-        const toggleOpen = () => setIsOpen(!isOpen);
-
-        useEffect(() => {
-            if (ref && "current" in ref && ref.current) {
-                ref.current.setAttribute("aria-expanded", isOpen.toString());
-            }
-        }, [ isOpen, ref ]);
-
-        const handleKeyDown = (e: { key: string; preventDefault: () => void; }) => {
-            if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                toggleOpen();
-            }
-        };
 
         return (
             <Element
@@ -43,7 +27,7 @@ export const Accordion = React.forwardRef(
                 data-expandable-content
                 ref={ref}
                 {...props}
-                open={isOpen}
+                open={open}
                 role="region"
                 aria-labelledby="accordion-summary"
             >
@@ -51,9 +35,7 @@ export const Accordion = React.forwardRef(
                     role="button"
                     tabIndex={0}
                     aria-controls="accordion-content"
-                    aria-expanded={isOpen}
-                    onClick={toggleOpen}
-                    onKeyDown={handleKeyDown}
+                    aria-expanded={open}
                 >
                     {typeof summary === "string" ? <Text margin="none">{summary}</Text> : summary}
                 </summary>
