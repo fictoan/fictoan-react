@@ -76,6 +76,7 @@
     & .token.function { color : var(--token-function) !important; }
     & .token.hexcode { color : var(--token-hexcode) !important; }
     & .token.important { color : var(--token-important) !important; font-weight : bold; }
+    & .token.imports { color : var(--token-imports) !important; }
     & .token.inserted { color : var(--token-inserted) !important; }
     & .token.keyword { color : var(--token-keyword) !important; font-weight : bold; }
     & .token.name { color : var(--token-name) !important; }
@@ -184,6 +185,9 @@
         margin-right : 32px;
         user-select  : none;
         color        : var(--code-block-line-numbers);
+        float        : left;
+        clear        : left;
+        line-height  : var(--code-block-line-height);
     }
 
     & .l-o-c { flex : 1; }
