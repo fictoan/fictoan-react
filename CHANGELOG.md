@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.3.1
+
+- Removed exported themes to fallback to original CSS styiling
+- Update redering logic for `CodeBlock`
+
 ## 1.3.0
 
 - Remove `prism-react-renderer` dev dependency for CodeBlock

@@ -509,7 +509,7 @@
 
     --code-block-font-size           : 0.92rem;
     --code-block-bg                  : var(--slate-dark-80);
-    --code-block-text                : var(--blue-dark-40);
+    --code-block-text                : var(--sky-light-60);
     --code-block-line-height         : 1.8;
     --code-block-border-radius       : var(--global-border-radius);
 
@@ -546,6 +546,7 @@
     --token-function                 : var(--orange);
     --token-hexcode                  : var(--white);
     --token-important                : var(--red);
+    --token-imports                  : var(--sky-light-60);
     --token-inserted                 : var(--green);
     --token-italic                   : var(--green);
     --token-keyword                  : var(--violet-light-20);
@@ -553,7 +554,7 @@
     --token-namespace                : var(--green);
     --token-number                   : var(--crimson-dark-10);
     --token-operator                 : var(--amber);
-    --token-plain                    : var(--grey);
+    --token-plain                    : var(--slate-light-60);
     --token-plain-html               : var(--slate);
     --token-plain-css                : var(--salmon-light-30);
     --token-prolog                   : var(--grey);
