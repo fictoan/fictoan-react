@@ -51,9 +51,9 @@ a:not([data-button]):hover { color : var(--link-text-hover); }
 
 a:active { opacity : 0.72; }
 
-.font-sans { font-family : var(--font-sans-serif); }
-.font-serif { font-family : var(--font-serif); }
-.font-monospace { font-family : var(--font-mono); }
+.font-sans { font-family : var(--font-sans-serif), sans-serif; }
+.font-serif { font-family : var(--font-serif), serif ; }
+.font-monospace { font-family : var(--font-mono), monospace; }
 
 .sub-text { color : var(--paragraph-subtext-colour); }
 
