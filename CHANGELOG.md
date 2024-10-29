@@ -1,9 +1,13 @@
 # CHANGELOG
 
+## 1.3.2
+
+- Fix wrong theme values for `kbd` 
+
 ## 1.3.1
 
-- Removed exported themes to fallback to original CSS styiling
-- Update redering logic for `CodeBlock`
+- Remove exported themes to fallback to original CSS styling
+- Update rendering logic for `CodeBlock`
 
 ## 1.3.0
 
@@ -16,7 +20,7 @@
 
 -   Update `ThemeProvider` to expose `setTheme` and `useTheme` functionality in any component via local storage
     -   `const { theme, setTheme } = useTheme();`
--   Removes the dependency of creating `RootClientSideLayout`
+-   Remove the dependency of creating `RootClientSideLayout`
 -   Add a default theme for `CodeBlock`
 -   Update `vite.config.js` to retain `use client;` for Next 14+ support
 

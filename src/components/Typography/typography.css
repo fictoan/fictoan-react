@@ -109,18 +109,18 @@ code { font-family : var(--code-font); }
     pre { padding : 16px; }
 }
 
-/* Keyboard key element ===================================================== */
+/* KEYBOARD KEY ELEMENT ///////////////////////////////////////////////////// */
 kbd {
     display          : inline-block;
-    font-family      : var(--kbd-font);
+    font-family      : var(--kbd-font), monospace;
     margin           : 0 4px;
     padding          : 4px 8px;
     color            : var(--kbd-text);
-    background-color : var(--kbd-bg);;
+    background-color : var(--kbd-bg);
     cursor           : pointer;
     font-size        : 14px;
     line-height      : 1.4;
-    border-radius    : var(--kbd-bg);;
+    border-radius    : var(--kbd-border-radius);
     text-shadow      : 0 1px 0 #fff;
     box-shadow       : 0 3px 0 0 rgba(0, 0, 0, 0.16);
     user-select      : none;
@@ -132,13 +132,13 @@ kbd {
 }
 
 /* TEXT SELECTION /////////////////////////////////////////////////////// */
-/*for Firefox browsers*/
+/* For Firefox browsers */
 ::-moz-selection {
     background : var(--text-bg-selected);
     color      : var(--text-selected);
 }
 
-/*Same thing - for Webkit browsers*/
+/* Same thing - for Webkit browsers */
 ::selection {
     background : var(--text-bg-selected);
     color      : var(--text-selected);
