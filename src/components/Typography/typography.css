@@ -84,7 +84,7 @@ a:active { opacity : 0.72; }
 .text-huge   { font-size : 144%; }
 
 /* CODE ///////////////////////////////////////////////////////////////////// */
-code { font-family : var(--code-font); }
+code { font-family : var(--code-font), monospace; }
 
 /* Inline code ============================================================= */
 :not(pre) > code {
