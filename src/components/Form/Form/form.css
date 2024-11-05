@@ -31,16 +31,6 @@ form[data-form] {
     &.spacing-huge   > [data-form-item]:last-child,
     &.spacing-huge   > [data-form-item-group]:last-child { margin-bottom : 0; }
 
-
-    /*&.spacing-none   [data-form-item-group] { margin-bottom :    0; }*/
-    /*&.spacing-nano   [data-form-item-group] { margin-bottom :  8px; }*/
-    /*&.spacing-micro  [data-form-item-group] { margin-bottom : 12px; }*/
-    /*&.spacing-tiny   [data-form-item-group] { margin-bottom : 16px; }*/
-    /*&.spacing-small  [data-form-item-group] { margin-bottom : 24px; }*/
-    /*&.spacing-medium [data-form-item-group] { margin-bottom : 32px; }*/
-    /*&.spacing-large  [data-form-item-group] { margin-bottom : 40px; }*/
-    /*&.spacing-huge   [data-form-item-group] { margin-bottom : 48px; }*/
-
     &.spacing-none   [data-form-item-group] { gap :    0; }
     &.spacing-nano   [data-form-item-group] { gap :  8px; }
     &.spacing-micro  [data-form-item-group] { gap : 12px; }

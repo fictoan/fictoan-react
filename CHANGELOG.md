@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 1.3.2
+## 1.3.3
 
 - Fix wrong theme values for `kbd` 
 

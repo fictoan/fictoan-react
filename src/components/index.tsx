@@ -29,7 +29,20 @@ export { ContentWrapper, type ContentWrapperProps } from "./ContentWrapper";
 export { Divider, type DividerProps } from "./Divider";
 
 // ELEMENT =============================================================================================================
-export { Element, type ElementProps, Div, Article, Aside, Body, Footer, Header, Main, Nav, Section } from "./Element";
+export {
+    Element,
+    type ElementProps,
+    Div,
+    Article,
+    Aside,
+    Body,
+    Footer,
+    Header,
+    Main,
+    Nav,
+    Section,
+    Span
+} from "./Element";
 
 // FORM ================================================================================================================
 export {
@@ -123,13 +136,13 @@ export { ToastsWrapper, type ToastsWrapperProps, ToastItem, type ToastItemProps 
 
 // TYPOGRAPHY ==========================================================================================================
 export {
-    Text,
     Heading1,
     Heading2,
     Heading3,
     Heading4,
     Heading5,
     Heading6,
-    type TextProps,
     type HeadingProps,
+    Text,
+    type TextProps,
 } from "./Typography";

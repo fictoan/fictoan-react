@@ -33,6 +33,7 @@ export const RadioTabGroup = React.forwardRef(
                 as={RadioTabGroupOptions}
                 ref={ref}
                 classNames={classNames}
+                bgColour={props.bgColour}
                 {...props}
             />
         );
