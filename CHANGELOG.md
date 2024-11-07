@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.3.6
+
+- Fix type checks and `useClient` directive for vite build
+
 ## 1.3.3
 
 - Fix wrong theme values for `kbd` 

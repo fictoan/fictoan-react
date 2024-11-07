@@ -8,7 +8,7 @@ export type ThemeProviderElementType = HTMLDivElement;
 export type RenderProps = () => JSX.Element;
 
 const storageKey = "fictoan-theme";
-const themes = ["light", "dark"];
+const themes = ["theme-light", "theme-dark"];
 
 const ThemeContext = React.createContext<UseThemeProps | undefined>(undefined);
 const defaultContext: UseThemeProps = { setTheme: (_) => {} };
@@ -37,17 +37,17 @@ export const ThemeProvider = React.forwardRef(
         const setTheme = useCallback(
             (newTheme: any) => {
                 if (!themes.includes(newTheme)) {
-                    newTheme = "light";
+                    newTheme = "theme-light";
                 }
                 document.documentElement.className = "";
-                setThemeState(`theme-${newTheme}`);
-                document.documentElement.classList.add(`theme-${newTheme}`);
+                setThemeState(`${newTheme}`);
+                document.documentElement.classList.add(`${newTheme}`);
                 if (!shouldRender) {
                     setShouldRender(true);
                 }
                 // Save to storage
                 try {
-                    localStorage.setItem(storageKey, `theme-${newTheme}`);
+                    localStorage.setItem(storageKey, `${newTheme}`);
                 } catch (e) {
                     // Unsupported
                 }
@@ -56,9 +56,8 @@ export const ThemeProvider = React.forwardRef(
         );
 
         useEffect(() => {
-            if (currentTheme) {
-                setTheme(currentTheme);
-            }
+            let theme = getTheme(storageKey, "NA");
+            theme === "NA" ? setTheme(currentTheme) : setTheme(theme);
         }, [currentTheme]);
 
         return (
