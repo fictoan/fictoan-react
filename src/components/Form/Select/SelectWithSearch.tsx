@@ -6,13 +6,71 @@ import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 
 import {
     SelectWithSearchProps,
-    OptionProps,
+    OptionForSearchWithSelectProps,
     SelectElementType,
     SelectWithSearchElementType,
-    OptionForSearchWithSelectProps,
 } from "./constants";
 
 import "./select-with-search.css";
+
+const levenshteinDistance = (a: string, b: string): number => {
+    const matrix = [];
+
+    const aLength = a.length;
+    const bLength = b.length;
+
+    // Early exit if one of the strings is empty
+    if (aLength === 0) return bLength;
+    if (bLength === 0) return aLength;
+
+    // Initialize the first row and column of the matrix
+    for (let i = 0; i <= bLength; i++) {
+        matrix[i] = [ i ];
+    }
+    for (let j = 0; j <= aLength; j++) {
+        matrix[0][j] = j;
+    }
+
+    // Fill in the rest of the matrix
+    for (let i = 1; i <= bLength; i++) {
+        for (let j = 1; j <= aLength; j++) {
+            if (b[i - 1] === a[j - 1]) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+                matrix[i][j] = Math.min(
+                    matrix[i - 1][j] + 1,     // Deletion
+                    matrix[i][j - 1] + 1,     // Insertion
+                    matrix[i - 1][j - 1] + 1,  // Substitution
+                );
+            }
+        }
+    }
+
+    return matrix[bLength][aLength];
+};
+
+const isSubsequence = (search: string, target: string): boolean => {
+    let searchIndex = 0;
+    let targetIndex = 0;
+
+    while (searchIndex < search.length && targetIndex < target.length) {
+        if (search[searchIndex] === target[targetIndex]) {
+            searchIndex++;
+        }
+        targetIndex++;
+    }
+
+    return searchIndex === search.length;
+};
+
+// Function to generate acronym from label
+const generateAcronym = (label: string): string => {
+    return label
+        .split(/[\s\-_]+/)
+        .map(word => word.slice(0, 2)) // Take first two letters
+        .join("")
+        .toLowerCase();
+};
 
 // Custom search function that handles partial matches and common typos
 const searchOptions = (options: OptionForSearchWithSelectProps[], searchTerm: string) => {
@@ -20,34 +78,55 @@ const searchOptions = (options: OptionForSearchWithSelectProps[], searchTerm: st
 
     const normalizedSearch = searchTerm.toLowerCase().trim();
 
-    return options.filter(option => {
-        const normalizedLabel = option.label.toLowerCase();
+    const maxDistance = Math.floor(normalizedSearch.length / 2);
 
-        // Exact match
-        if (normalizedLabel === normalizedSearch) return true;
+    const matchedOptions = options
+        .map(option => {
+            const normalizedLabel = option.label.toLowerCase();
 
-        // Contains search term
-        if (normalizedLabel.includes(normalizedSearch)) return true;
+            const distance = levenshteinDistance(normalizedSearch, normalizedLabel);
 
-        // Word boundary match (e.g., "new y" matches "New York")
-        const words       = normalizedLabel.split(" ");
-        const searchWords = normalizedSearch.split(" ");
-        return searchWords.every(searchWord =>
-            words.some(word => word.startsWith(searchWord)),
-        );
-    });
+            const words       = normalizedLabel.split(/[\s\-_]+/);
+            const searchWords = normalizedSearch.split(/[\s\-_]+/);
+
+            const isPartialMatch =
+                      normalizedLabel.includes(normalizedSearch) ||
+                      searchWords.every(searchWord =>
+                          words.some(word => word.startsWith(searchWord)),
+                      );
+
+            const acronym = generateAcronym(normalizedLabel);
+
+            const isAcronymMatch = isSubsequence(normalizedSearch, acronym);
+
+            return {
+                option,
+                distance,
+                isPartialMatch,
+                isAcronymMatch,
+            };
+        })
+        .filter(({ distance, isPartialMatch, isAcronymMatch }) =>
+            isPartialMatch || isAcronymMatch || distance <= maxDistance,
+        )
+        .sort((a, b) => {
+            if (a.isPartialMatch && !b.isPartialMatch) return -1;
+            if (!a.isPartialMatch && b.isPartialMatch) return 1;
+
+            if (a.isAcronymMatch && !b.isAcronymMatch) return -1;
+            if (!a.isAcronymMatch && b.isAcronymMatch) return 1;
+
+            return a.distance - b.distance;
+        })
+        .map(({ option }) => option);
+
+    return matchedOptions;
 };
 
-export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, SelectWithSearchProps>((
-        {
-            options,
-            label,
-            placeholder = "Select an option",
-            id,
-            ...props
-        }, ref) => {
+export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, SelectWithSearchProps>(
+    ({ options, label, placeholder = "Select an option", id, ...props }, ref) => {
         const [ isOpen, setIsOpen ]                 = useState(false);
-        const [ selectedOption, setSelectedOption ] = useState<OptionProps | null>(null);
+        const [ selectedOption, setSelectedOption ] = useState<OptionForSearchWithSelectProps | null>(null);
         const [ searchValue, setSearchValue ]       = useState("");
         const [ activeIndex, setActiveIndex ]       = useState(-1);
 
@@ -57,7 +136,7 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
 
         const filteredOptions = searchOptions(options, searchValue);
 
-        const handleSelectOption = (option: OptionProps) => {
+        const handleSelectOption = (option: OptionForSearchWithSelectProps) => {
             if (option.disabled) return;
 
             setSelectedOption(option);
@@ -71,7 +150,7 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
             mainButton?.focus();
         };
 
-        const simulateInputChange = (value: OptionProps) => {
+        const simulateInputChange = (value: OptionForSearchWithSelectProps) => {
             const input = document.getElementById(value.value) as HTMLInputElement;
             if (!input) return;
 
@@ -181,15 +260,14 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
                 {label && (
                     <label
                         id={`${id}-label`}
-                        htmlFor={`${id}-button`}
+                        htmlFor={`${id}-listbox`}
                         className="sws-label"
                     >
                         {label}
                     </label>
                 )}
 
-                <button
-                    id={`${id}-button`}
+                <Div
                     className="sws-display"
                     onClick={() => setIsOpen(!isOpen)}
                     onKeyDown={handleKeyDown}
@@ -198,20 +276,17 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
                     aria-labelledby={label ? `${id}-label` : undefined}
                     aria-controls={isOpen ? `${id}-listbox` : undefined}
                 >
-                    {selectedOption ? selectedOption.label : placeholder}
-                    <span className="sws-arrow" aria-hidden="true">
-                        ▼
-                    </span>
-                </button>
+                    {selectedOption ? selectedOption.label : "Select an option"}
+                </Div>
 
                 {isOpen && (
-                    <div
+                    <Div
                         className="sws-dropdown"
                         role="presentation"
                     >
                         <InputField
-                            ref={searchInputRef}
                             type="text"
+                            ref={searchInputRef}
                             className="sws-input"
                             placeholder="Search"
                             value={searchValue}
@@ -235,9 +310,7 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
                                     <li
                                         key={option.value}
                                         id={`${id}-option-${option.value}`}
-                                        className={`sws-option ${
-                                            option.disabled ? "disabled" : ""
-                                        } ${activeIndex === index ? "active" : ""}`}
+                                        className={`sws-option ${option.disabled ? "disabled" : ""} ${activeIndex === index ? "active" : ""}`}
                                         role="option"
                                         aria-selected={selectedOption?.value === option.value}
                                         aria-disabled={option.disabled}
@@ -257,7 +330,7 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
                                 </li>
                             )}
                         </ul>
-                    </div>
+                    </Div>
                 )}
             </BaseInputComponent>
         );

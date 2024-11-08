@@ -4,7 +4,7 @@ import { Element } from "../Element/Element";
 import { Div } from "../Element/Tags";
 import { CommonAndHTMLProps, SpacingTypes } from "../Element/constants";
 
-import { useClickOutside } from "@/hooks/UseClickOutside";
+import { useClickOutside } from "../../hooks/UseClickOutside";
 
 import "./drawer.css";
 
