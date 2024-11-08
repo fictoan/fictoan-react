@@ -65,6 +65,7 @@ export {
     Main,
     Nav,
     Section,
+    Span
 } from "./components/Element";
 
 // FORM ================================================================================================================
@@ -113,6 +114,10 @@ export {
     type NotificationItemProps,
 } from "./components/Notification";
 
+// OPTION CARD =========================================================================================================
+export { OptionCard, OptionCardsGroup, type OptionCardProps } from "./components/OptionCard";
+export { useOptionCard } from "./components/OptionCard";
+
 // PORTION =============================================================================================================
 export { Portion, type PortionProps } from "./components/Portion";
 
@@ -121,10 +126,6 @@ export { ProgressBar, type ProgressBarProps, type ProgressBarMetaProps } from ".
 
 // ROW =================================================================================================================
 export { Row, type RowProps } from "./components/Row";
-
-// OPTION CARD =========================================================================================================
-export { OptionCard, OptionCardsGroup, type OptionCardProps } from "./components/OptionCard";
-export { useOptionCard } from "./components/OptionCard";
 
 // SIDEBAR =============================================================================================================
 export {

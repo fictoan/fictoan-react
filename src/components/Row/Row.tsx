@@ -7,6 +7,7 @@ import "./row.css";
 
 // prettier-ignore
 interface RowCustomProps {
+    layout                        ? : "grid" | "flexbox";
     gutters                       ? : SpacingTypes;
     retainLayoutOnTabletLandscape ? : boolean;
     retainLayoutOnTabletPortrait  ? : boolean;
@@ -20,6 +21,7 @@ export type RowProps = Omit<CommonAndHTMLProps<RowElementType>, keyof RowCustomP
 export const Row = React.forwardRef(
     (
         {
+            layout = "grid",
             gutters = "medium",
             retainLayoutOnTabletLandscape,
             retainLayoutOnTabletPortrait,
@@ -31,16 +33,16 @@ export const Row = React.forwardRef(
     ) => {
         let classNames = [];
 
+        // TOP LEVEL CHECK =============================================================================================
+        if (layout) {
+            classNames.push(`layout-${layout}`);
+        }
+
         if (gutters) {
             classNames.push(gutters === "none" ? "no-gutters" : `${gutters}-gutters`);
         }
 
-        // TOP LEVEL CHECK =====================================================
-        // if (layout) {
-        //     classNames.push(`layout-${layout}`);
-        // }
-
-        // CONDITIONAL GUTTERS =================================================
+        // CONDITIONAL GUTTERS =========================================================================================
         // Add medium gutters by default for grid layouts only, remove them for flexbox layouts
         // const conditionalGutters = gutters ?? (layout === "grid" ? "medium" : "none");
         //
@@ -48,12 +50,12 @@ export const Row = React.forwardRef(
         //     classNames.push(conditionalGutters === "none" ? "no-gutters" : `${conditionalGutters}-gutters`);
         // }
 
-        // FLEXBOX-SPECIFIC CLASSNAMES =========================================
+        // FLEXBOX-SPECIFIC CLASSNAMES =================================================================================
         // if (equaliseChildren || equalizeChildren) {
         //     classNames.push("equalise-children");
         // }
 
-        // COMMON CLASSNAMES ===================================================
+        // COMMON CLASSNAMES ===========================================================================================
         if (retainLayoutOnTabletLandscape) {
             classNames.push("retain-layout-on-tablet-landscape");
         }
