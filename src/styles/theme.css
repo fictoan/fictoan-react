@@ -364,6 +364,7 @@
 /* SIDEBAR + CONTENT WRAPPER //////////////////////////////////////////////// */
 :root {
     --sidebar-bg                             : var(--white);
+    --sidebar-border                         : var(--slate-dark-80);
     --sidebar-width-default                  : 240px;
     --sidebar-width-collapsed                : 48px;
 

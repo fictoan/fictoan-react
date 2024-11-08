@@ -42,7 +42,7 @@
     /* Here’s a clever bit of UX */
     &.selected:hover {
         .tick-icon circle { fill : var(--option-card-tick-bg-selected); }
-        .tick-icon path {stroke : var(--option-card-tick-line-selected); }
+        .tick-icon path { stroke : var(--option-card-tick-line-selected); }
     }
 
     &:focus {
