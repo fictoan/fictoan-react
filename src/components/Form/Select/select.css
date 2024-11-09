@@ -15,7 +15,7 @@
         border-style   : solid;
         border-width   : 0 2px 2px 0;
         transform      : translateY(-50%) rotate(45deg);
-        color          : var(--dropdown-chevron);
+        color          : var(--select-chevron);
         transition     : transform 0.2s linear;
         z-index        : 500;
         pointer-events : none;

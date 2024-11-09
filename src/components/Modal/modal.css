@@ -1,0 +1,40 @@
+[data-modal] {
+    /* Base popover styles */
+    animation : modal-fade-out 0.1s ease-out;
+}
+
+[data-modal]:popover-open {
+    animation : modal-fade-in 0.1s ease-out;
+}
+
+/* Base backdrop styles */
+[data-modal]::backdrop {
+    background-color : transparent;
+    backdrop-filter  : none;
+}
+
+/* Show backdrop when modal is open */
+[data-modal].show-backdrop:popover-open::backdrop {
+    background-color : rgb(0 0 0 / 64%);
+}
+
+/* Add blur when both classes are present */
+[data-modal].show-backdrop.blur-backdrop:popover-open::backdrop {
+    backdrop-filter : blur(var(--modal-backdrop-blur));
+}
+
+/* Animation applies to all backdrops when modal opens */
+[data-modal].show-backdrop:popover-open::backdrop {
+    animation : backdrop-fade-in 0.2s ease-out forwards;
+}
+
+[data-modal] .dismiss-button {
+    position    : absolute;
+    top         : 4px;
+    right       : 8px;
+    line-height : 1;
+    font-weight : 400;
+    cursor      : pointer;
+    font-size   : 24px;
+    z-index     : 5000;
+}

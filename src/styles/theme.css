@@ -179,20 +179,6 @@
     --drawer-dismiss-button  : var(--slate-light-40);
 }
 
-/* DROPDOWN ///////////////////////////////////////////////////////////////// */
-:root {
-    --dropdown-chevron : var(--slate-light-40);
-}
-
-/* DROPDOWN WITH SEARCH ///////////////////////////////////////////////////// */
-:root {
-    --dropdown-bg-default    : var(--input-bg-default);
-    --dropdown-bg-hover      : var(--input-bg-focus);
-    --dropdown-bg-disabled   : var(--input-bg-disabled);
-    --dropdown-text-disabled : var(--input-text-disabled);
-    --select-focus-color     : var(--input-border-focus);
-}
-
 /* DIVIDER ////////////////////////////////////////////////////////////////// */
 :root {
     --divider-height           : 1px;
@@ -272,6 +258,13 @@
 
     --meter-optimum-marker-width : 3px;
     --meter-optimum-marker-bg    : var(--blue);
+}
+
+/* MODAL //////////////////////////////////////////////////////////////////// */
+:root {
+    --modal-backdrop-bg      : var(--black);
+    --modal-backdrop-opacity : 0.4;
+    --modal-backdrop-blur    : 4px;
 }
 
 /* NOTIFICATIONS //////////////////////////////////////////////////////////// */
@@ -360,6 +353,20 @@
 
     --range-border-focus  : var(--blue);
     --range-outline-focus : var(--blue);
+}
+
+/* SELECT /////////////////////////////////////////////////////////////////// */
+:root {
+    --select-chevron : var(--slate-light-40);
+}
+
+/* SELECT WITH SEARCH /////////////////////////////////////////////////////// */
+:root {
+    --select-bg-default    : var(--input-bg-default);
+    --select-bg-hover      : var(--input-bg-focus);
+    --select-bg-disabled   : var(--input-bg-disabled);
+    --select-text-disabled : var(--input-text-disabled);
+    --select-focus-color   : var(--input-border-focus);
 }
 
 /* SIDEBAR + CONTENT WRAPPER //////////////////////////////////////////////// */
