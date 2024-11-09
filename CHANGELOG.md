@@ -1,11 +1,13 @@
 # CHANGELOG
 
+## 1.4.0
+- Add `Modal` with the new Popover API
+
 ## 1.3.12
 - Add fuzzy search to `SelectWithSearch`
 
 ## 1.3.6
 - Fix type checks and `useClient` directive for vite build
-
 
 ## 1.3.5
 - Fix missing `Span` export

@@ -15,7 +15,7 @@
         border-style   : solid;
         border-width   : 2px 0 0 2px;
         transform      : translateY(-50%) rotate(45deg);
-        color          : var(--dropdown-chevron);
+        color          : var(--select-chevron);
         transition     : transform 0.2s linear;
         z-index        : 500;
         pointer-events : none;
@@ -32,7 +32,7 @@
         border-style   : solid;
         border-width   : 0 2px 2px 0;
         transform      : translateY(-50%) rotate(45deg);
-        color          : var(--dropdown-chevron);
+        color          : var(--select-chevron);
         transition     : transform 0.2s linear;
         z-index        : 500;
         pointer-events : none;
@@ -40,15 +40,15 @@
 }
 
 .sws-label {
-    color: var(--input-label-default);
-    font-family: var(--paragraph-font);
+    color       : var(--input-label-default);
+    font-family : var(--paragraph-font);
 }
 
 .sws-display {
     padding          : 12px 36px 12px 8px;
     border-radius    : var(--input-border-radius-default);
     border           : var(--global-border-width) solid var(--input-border-default);
-    background-color : var(--dropdown-bg-default);
+    background-color : var(--select-bg-default);
     cursor           : pointer;
     font-family      : var(--paragraph-font);
     color            : var(--input-text-default);
@@ -96,11 +96,11 @@
 .sws-option.active,
 .sws-option:hover:not(.disabled),
 .sws-option:active:not(.disabled) {
-    background-color : var(--dropdown-bg-hover);
+    background-color : var(--select-bg-hover);
 }
 
 .sws-option.disabled {
-    color  : var(--dropdown-text-disabled);
+    color  : var(--select-text-disabled);
     cursor : not-allowed;
 }
 

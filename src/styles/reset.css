@@ -109,7 +109,7 @@ progress[value]::-webkit-progress-bar {
 }
 
 meter {
-    -moz-appearance    : none;
+    -moz-appearance : none;
     /*-webkit-appearance : none;*/
 }
 
@@ -154,4 +154,9 @@ th {
 mark {
     background-color : lightskyblue;
     color            : blue;
+}
+
+[popover] {
+    padding : 0;
+    border  : 0;
 }

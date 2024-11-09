@@ -58,6 +58,7 @@ export const Drawer = React.forwardRef(
         };
 
         let classNames = ["drawer"];
+
         if (position) {
             classNames.push(position);
         }
