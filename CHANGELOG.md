@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.4.1
+- Add `withDelete` and `onDelete` for the `Badge` component
+
 ## 1.4.0
 - Add `Modal` with the new Popover API
 

@@ -1,4 +1,4 @@
-mark[data-badge] {
+[data-badge] {
     position            : relative;
     font-family         : var(--badge-font);
     font-weight         : bold;
@@ -10,6 +10,8 @@ mark[data-badge] {
     user-select         : none;
     width               : fit-content;
     height              : fit-content;
+    display             : flex;
+    align-items         : center;
 
     /* To make sure a badge’s children don’t style themselves like a d-bag*/
     > * { all : unset; }
@@ -19,6 +21,24 @@ mark[data-badge] {
 
     &[class*="border-"] { border-width : var(--badge-border-width); }
     &.border-none { border-width : 0 !important; }
+
+    & .dismiss-button {
+        margin-left : 8px;
+        font-size   : 18px;
+        cursor      : pointer;
+        line-height : 1;
+        top         : -1px;
+        position    : relative;
+
+        &:hover {
+            transform  : scale(1.1);
+            transition : all 0.1s;
+        }
+
+        &:active {
+            transform  : scale(0.9);
+        }
+    }
 
     /* DIFFERENT SIZES ////////////////////////////////////////////////////// */
     &.size-nano {
