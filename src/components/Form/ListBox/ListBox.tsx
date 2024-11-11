@@ -276,7 +276,7 @@ export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>(
                 {allowMultiSelect ? (
                     // FOR BADGE-ing SELECTED OPTIONS ==================================================================
                     <Div
-                        className="list-box-display"
+                        className="list-box-input-wrapper"
                         onClick={() => !disabled && setIsOpen(!isOpen)}
                         onKeyDown={handleKeyDown}
                         aria-haspopup="listbox"
