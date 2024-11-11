@@ -365,7 +365,8 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
                                 onKeyDown={handleKeyDown}
                                 aria-controls={`${id}-listbox`}
                             />
-                            {allowCustomEntries && searchValue.trim() && (
+                            {allowCustomEntries && searchValue.trim() && !selectedOptions.some(opt =>
+                                opt.label.toLowerCase() === searchValue.trim().toLowerCase()) && (
                                 <kbd className="sws-enter-key">↵</kbd>
                             )}
                         </Div>
