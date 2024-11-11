@@ -55,7 +55,7 @@
 - Remove `as` prop from `Heading`, so you can now use `Heading1`, `Heading2` etc
 
 ## 1.2.2
-- Tweak `Range` styles
+- Tweak `DropdownSelect` styles
 
 ## 1.2.1
 - Add accessibility improvements for `Breadcrumbs`, and `Badge`

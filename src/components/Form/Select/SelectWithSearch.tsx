@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect, MutableRefObject, KeyboardEvent } f
 
 import { Div } from "../../Element/Tags";
 import { InputField } from "../InputField/InputField";
+import { Badge } from "../../Badge/Badge";
+import { Text } from "../../Typography/Text";
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 
 import {
@@ -12,6 +14,8 @@ import {
 } from "./constants";
 
 import "./select-with-search.css";
+
+// TODO: allowCustomEntries, clearSelection
 
 const levenshteinDistance = (a: string, b: string): number => {
     const matrix = [];
@@ -124,11 +128,26 @@ const searchOptions = (options: OptionForSearchWithSelectProps[], searchTerm: st
 };
 
 export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, SelectWithSearchProps>(
-    ({ options, label, placeholder = "Select an option", id, ...props }, ref) => {
-        const [ isOpen, setIsOpen ]                 = useState(false);
-        const [ selectedOption, setSelectedOption ] = useState<OptionForSearchWithSelectProps | null>(null);
-        const [ searchValue, setSearchValue ]       = useState("");
-        const [ activeIndex, setActiveIndex ]       = useState(-1);
+    ({
+         options,
+         label,
+         placeholder = "Select an option",
+         id,
+         allowMultiSelect = false,
+         onChange,
+         disabled,
+         badgeBgColour,
+         badgeBgColor,
+         badgeTextColour,
+         badgeTextColor,
+         selectionLimit,
+         allowCustomEntries = false,
+         ...props }, ref
+    ) => {
+        const [ isOpen, setIsOpen ]                   = useState(false);
+        const [ selectedOptions, setSelectedOptions ] = useState<OptionForSearchWithSelectProps[]>([]);
+        const [ searchValue, setSearchValue ]         = useState("");
+        const [ activeIndex, setActiveIndex ]         = useState(-1);
 
         const dropdownRef    = useRef() as MutableRefObject<HTMLSelectElement>;
         const searchInputRef = useRef<HTMLInputElement>(null);
@@ -139,31 +158,49 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
         const handleSelectOption = (option: OptionForSearchWithSelectProps) => {
             if (option.disabled) return;
 
-            setSelectedOption(option);
-            simulateInputChange(option);
-            setIsOpen(false);
+            let newSelectedOptions: OptionForSearchWithSelectProps[];
+            if (allowMultiSelect) {
+                const isSelected = selectedOptions.some(opt => opt.value === option.value);
+                if (isSelected) {
+                    newSelectedOptions = selectedOptions.filter(opt => opt.value !== option.value);
+                } else {
+                    // Check for selection limit before adding new option
+                    if (selectionLimit && selectedOptions.length >= selectionLimit) {
+                        return; // Don't add more if limit is reached
+                    }
+                    newSelectedOptions = [...selectedOptions, option];
+                }
+                setSelectedOptions(newSelectedOptions);
+                onChange?.(newSelectedOptions.map(opt => opt.value));
+            } else {
+                newSelectedOptions = [option];
+                setSelectedOptions(newSelectedOptions);
+                onChange?.(option.value);
+                setIsOpen(false);
+            }
+
             setSearchValue("");
             setActiveIndex(-1);
-
-            // Focus back on the main button after selection
-            const mainButton = document.getElementById(`${id}-button`);
-            mainButton?.focus();
         };
 
-        const simulateInputChange = (value: OptionForSearchWithSelectProps) => {
-            const input = document.getElementById(value.value) as HTMLInputElement;
-            if (!input) return;
+        const handleDeleteOption = (e: React.MouseEvent<HTMLElement>, valueToRemove: string) => {
+            e.stopPropagation();
+            const newSelectedOptions = selectedOptions.filter(opt => opt.value !== valueToRemove);
+            setSelectedOptions(newSelectedOptions);
+            onChange?.(newSelectedOptions.map(opt => opt.value));
+        };
 
-            input.type   = "text";
-            input.hidden = true;
+        const handleCustomEntry = () => {
+            if (!searchValue.trim() || !allowCustomEntries) return;
 
-            const desc = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value");
-            desc?.set?.call(input, value.value);
+            const customOption: OptionForSearchWithSelectProps = {
+                value: searchValue.trim(),
+                label: searchValue.trim(),
+            };
 
-            const event = new Event("input", { bubbles : true });
-            input.dispatchEvent(event);
-            input.type   = "hidden";
-            input.hidden = false;
+            handleSelectOption(customOption);
+            setSearchValue(""); // Clear search field
+            setActiveIndex(-1); // Reset active index
         };
 
         const handleKeyDown = (event: KeyboardEvent) => {
@@ -187,7 +224,18 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
 
                 case "Enter":
                     event.preventDefault();
-                    if (activeIndex >= 0 && filteredOptions[activeIndex]) {
+                    if (allowCustomEntries && searchValue.trim()) {
+                        // First check if the search value exactly matches any option
+                        const exactMatch = filteredOptions.find(opt =>
+                            opt.label.toLowerCase() === searchValue.trim().toLowerCase()
+                        );
+
+                        if (exactMatch) {
+                            handleSelectOption(exactMatch);
+                        } else {
+                            handleCustomEntry();
+                        }
+                    } else if (activeIndex >= 0 && filteredOptions[activeIndex]) {
                         handleSelectOption(filteredOptions[activeIndex]);
                     }
                     break;
@@ -269,34 +317,58 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
 
                 <Div
                     className="sws-display"
-                    onClick={() => setIsOpen(!isOpen)}
+                    onClick={() => !disabled && setIsOpen(!isOpen)}
                     onKeyDown={handleKeyDown}
                     aria-haspopup="listbox"
                     aria-expanded={isOpen}
                     aria-labelledby={label ? `${id}-label` : undefined}
                     aria-controls={isOpen ? `${id}-listbox` : undefined}
                 >
-                    {selectedOption ? selectedOption.label : "Select an option"}
+                    {selectedOptions.length > 0 ? (
+                        <Div className="badge-container">
+                            {selectedOptions.map(option => (
+                                <Badge
+                                    key={option.value}
+                                    withDelete={allowMultiSelect}
+                                    onDelete={(e) => handleDeleteOption(e, option.value)}
+                                    size="small"
+                                    shape="rounded"
+                                    bgColour={badgeBgColour || badgeBgColor }
+                                    textColour={badgeTextColour || badgeTextColor}
+                                >
+                                    {option.label}
+                                </Badge>
+                            ))}
+                            {selectionLimit && selectedOptions.length >= selectionLimit && (
+                                <Text textColour="red" size="small">
+                                    You can choose only {selectionLimit} options
+                                </Text>
+                            )}
+                        </Div>
+                    ) : (
+                        <span className="placeholder">{placeholder}</span>
+                    )}
                 </Div>
 
-                {isOpen && (
-                    <Div
-                        className="sws-dropdown"
-                        role="presentation"
-                    >
-                        <InputField
-                            type="text"
-                            ref={searchInputRef}
-                            className="sws-input"
-                            placeholder="Search"
-                            value={searchValue}
-                            onChange={(e) => {
-                                setSearchValue((e.target as HTMLInputElement).value);
-                                setActiveIndex(0);
-                            }}
-                            onKeyDown={handleKeyDown}
-                            aria-controls={`${id}-listbox`}
-                        />
+                {isOpen && !disabled && (
+                    <Div className="sws-dropdown" role="presentation">
+                        <Div className="sws-input-wrapper">
+                            <InputField
+                                type="text"
+                                ref={searchInputRef}
+                                className="sws-input"
+                                placeholder="Search"
+                                value={searchValue}
+                                onChange={(e) => {
+                                    setSearchValue((e.target as HTMLInputElement).value);
+                                }}
+                                onKeyDown={handleKeyDown}
+                                aria-controls={`${id}-listbox`}
+                            />
+                            {allowCustomEntries && searchValue.trim() && (
+                                <kbd className="sws-enter-key">↵</kbd>
+                            )}
+                        </Div>
 
                         <ul
                             id={`${id}-listbox`}
@@ -312,20 +384,16 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
                                         id={`${id}-option-${option.value}`}
                                         className={`sws-option ${option.disabled ? "disabled" : ""} ${activeIndex === index ? "active" : ""}`}
                                         role="option"
-                                        aria-selected={selectedOption?.value === option.value}
+                                        aria-selected={selectedOptions.some(opt => opt.value === option.value)}
                                         aria-disabled={option.disabled}
                                         onClick={() => handleSelectOption(option)}
                                         data-index={index}
                                     >
                                         {option.customLabel || option.label}
-                                        <input type="hidden" id={option.value} />
                                     </li>
                                 ))
                             ) : (
-                                <li
-                                    className="sws-option disabled"
-                                    role="alert"
-                                >
+                                <li className="sws-option disabled" role="alert">
                                     No matches found
                                 </li>
                             )}

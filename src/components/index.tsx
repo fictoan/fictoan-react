@@ -61,6 +61,7 @@ export {
     Select,
     type SelectProps,
     SelectWithSearch,
+    type SelectWithSearchProps,
     FileUpload,
     type FileUploadProps,
     RadioGroup,
@@ -77,6 +78,8 @@ export {
     type RadioTabGroupProps,
     PinInputField,
     type PinInputFieldProps,
+    DropdownSelect,
+    type DropdownSelectProps
 } from "./Form";
 
 // METER ===============================================================================================================

@@ -1,5 +1,7 @@
 export { Checkbox, type CheckboxProps } from "./Checkbox/Checkbox";
 
+export { DropdownSelect, type DropdownSelectProps } from "./DropdownSelect/DropdownSelect";
+
 export { FileUpload, type FileUploadProps } from "./InputField/FileUpload";
 
 export { Form, type FormProps } from "./Form/Form";
