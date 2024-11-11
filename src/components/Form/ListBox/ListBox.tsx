@@ -1,83 +1,24 @@
 import React, { useState, useRef, useEffect, MutableRefObject, KeyboardEvent } from "react";
 
-import { Div } from "../../Element/Tags";
+import { Div, Span } from "../../Element/Tags";
 import { InputField } from "../InputField/InputField";
 import { Badge } from "../../Badge/Badge";
 import { Text } from "../../Typography/Text";
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 
 import {
-    SelectWithSearchProps,
-    OptionForSearchWithSelectProps,
+    ListBoxProps,
+    OptionForListBoxProps,
     SelectElementType,
-    SelectWithSearchElementType,
+    ListBoxElementType,
 } from "./constants";
 
-import "./select-with-search.css";
+import { levenshteinDistance, isSubsequence, generateAcronym } from "./listBoxUtils";
 
-// TODO: allowCustomEntries, clearSelection
-
-const levenshteinDistance = (a: string, b: string): number => {
-    const matrix = [];
-
-    const aLength = a.length;
-    const bLength = b.length;
-
-    // Early exit if one of the strings is empty
-    if (aLength === 0) return bLength;
-    if (bLength === 0) return aLength;
-
-    // Initialize the first row and column of the matrix
-    for (let i = 0; i <= bLength; i++) {
-        matrix[i] = [ i ];
-    }
-    for (let j = 0; j <= aLength; j++) {
-        matrix[0][j] = j;
-    }
-
-    // Fill in the rest of the matrix
-    for (let i = 1; i <= bLength; i++) {
-        for (let j = 1; j <= aLength; j++) {
-            if (b[i - 1] === a[j - 1]) {
-                matrix[i][j] = matrix[i - 1][j - 1];
-            } else {
-                matrix[i][j] = Math.min(
-                    matrix[i - 1][j] + 1,     // Deletion
-                    matrix[i][j - 1] + 1,     // Insertion
-                    matrix[i - 1][j - 1] + 1,  // Substitution
-                );
-            }
-        }
-    }
-
-    return matrix[bLength][aLength];
-};
-
-const isSubsequence = (search: string, target: string): boolean => {
-    let searchIndex = 0;
-    let targetIndex = 0;
-
-    while (searchIndex < search.length && targetIndex < target.length) {
-        if (search[searchIndex] === target[targetIndex]) {
-            searchIndex++;
-        }
-        targetIndex++;
-    }
-
-    return searchIndex === search.length;
-};
-
-// Function to generate acronym from label
-const generateAcronym = (label: string): string => {
-    return label
-        .split(/[\s\-_]+/)
-        .map(word => word.slice(0, 2)) // Take first two letters
-        .join("")
-        .toLowerCase();
-};
+import "./list-box.css";
 
 // Custom search function that handles partial matches and common typos
-const searchOptions = (options: OptionForSearchWithSelectProps[], searchTerm: string) => {
+const searchOptions = (options: OptionForListBoxProps[], searchTerm: string) => {
     if (!searchTerm) return options;
 
     const normalizedSearch = searchTerm.toLowerCase().trim();
@@ -127,7 +68,7 @@ const searchOptions = (options: OptionForSearchWithSelectProps[], searchTerm: st
     return matchedOptions;
 };
 
-export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, SelectWithSearchProps>(
+export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>(
     ({
          options,
          label,
@@ -142,10 +83,14 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
          badgeTextColor,
          selectionLimit,
          allowCustomEntries = false,
-         ...props }, ref
+         ...props
+     }, ref,
     ) => {
         const [ isOpen, setIsOpen ]                   = useState(false);
-        const [ selectedOptions, setSelectedOptions ] = useState<OptionForSearchWithSelectProps[]>([]);
+        // FOR NORMAL LISTBOX
+        const [ selectedOption, setSelectedOption ]   = useState<OptionForListBoxProps | null>(null);
+        // FOR MULTI-SELECT LISTBOX, JUST DON’T QUESTION IT PLEASE
+        const [ selectedOptions, setSelectedOptions ] = useState<OptionForListBoxProps[]>([]);
         const [ searchValue, setSearchValue ]         = useState("");
         const [ activeIndex, setActiveIndex ]         = useState(-1);
 
@@ -155,10 +100,10 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
 
         const filteredOptions = searchOptions(options, searchValue);
 
-        const handleSelectOption = (option: OptionForSearchWithSelectProps) => {
+        const handleSelectOption = (option: OptionForListBoxProps) => {
             if (option.disabled) return;
 
-            let newSelectedOptions: OptionForSearchWithSelectProps[];
+            let newSelectedOptions: OptionForListBoxProps[];
             if (allowMultiSelect) {
                 const isSelected = selectedOptions.some(opt => opt.value === option.value);
                 if (isSelected) {
@@ -168,19 +113,21 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
                     if (selectionLimit && selectedOptions.length >= selectionLimit) {
                         return; // Don't add more if limit is reached
                     }
-                    newSelectedOptions = [...selectedOptions, option];
+                    newSelectedOptions = [ ...selectedOptions, option ];
                 }
                 setSelectedOptions(newSelectedOptions);
                 onChange?.(newSelectedOptions.map(opt => opt.value));
+                setSearchValue("");
+                setActiveIndex(-1);
             } else {
-                newSelectedOptions = [option];
+                newSelectedOptions = [ option ];
+                setSelectedOption(option);
                 setSelectedOptions(newSelectedOptions);
                 onChange?.(option.value);
                 setIsOpen(false);
+                setSearchValue("");
+                setActiveIndex(-1);
             }
-
-            setSearchValue("");
-            setActiveIndex(-1);
         };
 
         const handleDeleteOption = (e: React.MouseEvent<HTMLElement>, valueToRemove: string) => {
@@ -190,19 +137,28 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
             onChange?.(newSelectedOptions.map(opt => opt.value));
         };
 
+        // ALLOW USER TO TYPE IN A CUSTOM OPTION =======================================================================
         const handleCustomEntry = () => {
             if (!searchValue.trim() || !allowCustomEntries) return;
 
-            const customOption: OptionForSearchWithSelectProps = {
-                value: searchValue.trim(),
-                label: searchValue.trim(),
+            const customOption: OptionForListBoxProps = {
+                value : searchValue.trim(),
+                label : searchValue.trim(),
             };
 
             handleSelectOption(customOption);
-            setSearchValue(""); // Clear search field
-            setActiveIndex(-1); // Reset active index
+            setSearchValue("");
+            setActiveIndex(-1);
         };
 
+        // REMOVE ALL CURRENTLY SELECTED OPTIONS =======================================================================
+        const handleClearAll = (e: React.MouseEvent<HTMLElement>) => {
+            e.stopPropagation();
+            setSelectedOptions([]);
+            onChange?.([]);
+        };
+
+        // KEYBOARD NAVIGATION OF THE OPTIONS DROPDOWN =================================================================
         const handleKeyDown = (event: KeyboardEvent) => {
             switch (event.key) {
                 case "ArrowDown":
@@ -227,7 +183,7 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
                     if (allowCustomEntries && searchValue.trim()) {
                         // First check if the search value exactly matches any option
                         const exactMatch = filteredOptions.find(opt =>
-                            opt.label.toLowerCase() === searchValue.trim().toLowerCase()
+                            opt.label.toLowerCase() === searchValue.trim().toLowerCase(),
                         );
 
                         if (exactMatch) {
@@ -270,7 +226,7 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
             }
         };
 
-        // Handle outside clicks
+        // HANDLE OUTSIDE CLICKS =======================================================================================
         useEffect(() => {
             const handleClickOutside = (event: MouseEvent) => {
                 if (effectiveRef.current && !effectiveRef.current.contains(event.target as Node)) {
@@ -300,63 +256,89 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
 
         return (
             <BaseInputComponent<SelectElementType>
-                data-select-with-search
-                className="sws-wrapper"
+                data-list-box
+                className="list-box-wrapper"
                 ref={effectiveRef}
                 {...props}
             >
+                {/* TOP LABEL ////////////////////////////////////////////////////////////////////////////////////// */}
                 {label && (
                     <label
                         id={`${id}-label`}
                         htmlFor={`${id}-listbox`}
-                        className="sws-label"
+                        className="list-box-label"
                     >
                         {label}
                     </label>
                 )}
 
-                <Div
-                    className="sws-display"
-                    onClick={() => !disabled && setIsOpen(!isOpen)}
-                    onKeyDown={handleKeyDown}
-                    aria-haspopup="listbox"
-                    aria-expanded={isOpen}
-                    aria-labelledby={label ? `${id}-label` : undefined}
-                    aria-controls={isOpen ? `${id}-listbox` : undefined}
-                >
-                    {selectedOptions.length > 0 ? (
-                        <Div className="badge-container">
-                            {selectedOptions.map(option => (
-                                <Badge
-                                    key={option.value}
-                                    withDelete={allowMultiSelect}
-                                    onDelete={(e) => handleDeleteOption(e, option.value)}
-                                    size="small"
-                                    shape="rounded"
-                                    bgColour={badgeBgColour || badgeBgColor }
-                                    textColour={badgeTextColour || badgeTextColor}
+                {/* MAIN CONTAINER ///////////////////////////////////////////////////////////////////////////////// */}
+                {allowMultiSelect ? (
+                    // FOR BADGE-ing SELECTED OPTIONS ==================================================================
+                    <Div
+                        className="list-box-display"
+                        onClick={() => !disabled && setIsOpen(!isOpen)}
+                        onKeyDown={handleKeyDown}
+                        aria-haspopup="listbox"
+                        aria-expanded={isOpen}
+                        aria-labelledby={label ? `${id}-label` : undefined}
+                        aria-controls={isOpen ? `${id}-listbox` : undefined}
+                    >
+                        {selectedOptions.length > 0 ? (
+                            <Div className="badge-container">
+                                {selectedOptions.map(option => (
+                                    <Badge
+                                        key={option.value}
+                                        withDelete={allowMultiSelect}
+                                        onDelete={(e) => handleDeleteOption(e, option.value)}
+                                        size="small"
+                                        shape="rounded"
+                                        bgColour={badgeBgColour || badgeBgColor}
+                                        textColour={badgeTextColour || badgeTextColor}
+                                    >
+                                        {option.label}
+                                    </Badge>
+                                ))}
+                                <Text
+                                    className="clear-all-button"
+                                    onClick={handleClearAll}
                                 >
-                                    {option.label}
-                                </Badge>
-                            ))}
-                            {selectionLimit && selectedOptions.length >= selectionLimit && (
-                                <Text textColour="red" size="small">
-                                    You can choose only {selectionLimit} options
+                                    &times;
                                 </Text>
-                            )}
-                        </Div>
-                    ) : (
-                        <span className="placeholder">{placeholder}</span>
-                    )}
-                </Div>
 
+                                {selectionLimit && selectedOptions.length >= selectionLimit && (
+                                    <Text textColour="red" size="small">
+                                        You can choose only {selectionLimit} options
+                                    </Text>
+                                )}
+                            </Div>
+                        ) : (
+                            <span className="placeholder">{placeholder}</span>
+                        )}
+                    </Div>
+                ) : (
+                    // FOR PLAIN TEXT SINGLE-SELECT OPTION =============================================================
+                    <Div
+                        className="list-box-input-wrapper"
+                        onClick={() => setIsOpen(!isOpen)}
+                        onKeyDown={handleKeyDown}
+                        aria-haspopup="listbox"
+                        aria-expanded={isOpen}
+                        aria-labelledby={label ? `${id}-label` : undefined}
+                        aria-controls={isOpen ? `${id}-listbox` : undefined}
+                    >
+                        {selectedOption ? selectedOption.label : "Select an option"}
+                    </Div>
+                )}
+
+                {/* DROPDOWN /////////////////////////////////////////////////////////////////////////////////////// */}
                 {isOpen && !disabled && (
-                    <Div className="sws-dropdown" role="presentation">
-                        <Div className="sws-input-wrapper">
+                    <Div className="list-box-dropdown" role="presentation">
+                        <Div className="list-box-input-wrapper">
                             <InputField
                                 type="text"
                                 ref={searchInputRef}
-                                className="sws-input"
+                                className="list-box-input"
                                 placeholder="Search"
                                 value={searchValue}
                                 onChange={(e) => {
@@ -367,13 +349,13 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
                             />
                             {allowCustomEntries && searchValue.trim() && !selectedOptions.some(opt =>
                                 opt.label.toLowerCase() === searchValue.trim().toLowerCase()) && (
-                                <kbd className="sws-enter-key">↵</kbd>
+                                <kbd className="list-box-enter-key">↵</kbd>
                             )}
                         </Div>
 
                         <ul
                             id={`${id}-listbox`}
-                            className="sws-options"
+                            className="list-box-options"
                             role="listbox"
                             aria-label={label || "Select options"}
                             tabIndex={-1}
@@ -383,7 +365,7 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
                                     <li
                                         key={option.value}
                                         id={`${id}-option-${option.value}`}
-                                        className={`sws-option ${option.disabled ? "disabled" : ""} ${activeIndex === index ? "active" : ""}`}
+                                        className={`list-box-option ${option.disabled ? "disabled" : ""} ${activeIndex === index ? "active" : ""}`}
                                         role="option"
                                         aria-selected={selectedOptions.some(opt => opt.value === option.value)}
                                         aria-disabled={option.disabled}
@@ -394,7 +376,7 @@ export const SelectWithSearch = React.forwardRef<SelectWithSearchElementType, Se
                                     </li>
                                 ))
                             ) : (
-                                <li className="sws-option disabled" role="alert">
+                                <li className="list-box-option disabled" role="alert">
                                     No matches found
                                 </li>
                             )}

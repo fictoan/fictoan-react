@@ -1,0 +1,151 @@
+[data-list-box] {
+    position   : relative;
+    min-width  : 200px;
+    width      : max-content;
+    align-self : flex-start;
+}
+
+/* SAME AS .form-item > label /////////////////////////////////////////////// */
+.list-box-label {
+    position      : relative;
+    display       : flex;
+    flex          : 1 0 auto;
+    align-self    : flex-start;
+    margin-bottom : 4px;
+    color         : var(--input-label-default);
+    font-family   : var(--paragraph-font);
+    order         : -1;
+    flex-wrap     : wrap;
+}
+
+.list-box-input-wrapper {
+    padding          : 12px 36px 12px 8px;
+    border-radius    : var(--input-border-radius-default);
+    border           : var(--global-border-width) solid var(--input-border-default);
+    background-color : var(--select-bg-default);
+    cursor           : pointer;
+    font-family      : var(--paragraph-font);
+    color            : var(--input-text-default);
+    position         : relative;
+    width            : 100%;
+
+    &::before,
+    &::after {
+        content        : "";
+        display        : inline-block;
+        position       : absolute;
+        right          : 12px;
+        width          : 6px;
+        height         : 6px;
+        border-style   : solid;
+        color          : var(--select-chevron);
+        transition     : transform 0.2s linear;
+        z-index        : 500;
+        pointer-events : none;
+    }
+
+    /* Position both chevrons relative to center */
+    &::before {
+        border-width : 2px 0 0 2px;
+        transform    : translateY(-2px) rotate(45deg);
+        top          : 56%;
+    }
+
+    &::after {
+        border-width : 0 2px 2px 0;
+        transform    : translateY(2px) rotate(45deg);
+        top          : 56%;
+    }
+
+    span.placeholder {
+        line-height : 1;
+        opacity     : 0.6;
+    }
+}
+
+.list-box-input {
+    width         : calc(100% - 10px);
+    font-size     : 14px;
+    margin-bottom : 12px;
+    border        : var(--global-border-width) solid var(--input-border-default);
+    border-radius : calc((var(--input-border-radius-default)) - 4px) !important;
+    font-family   : var(--paragraph-font);
+    color         : var(--input-text-default);
+    padding       : 2px 32px 2px 2px;
+}
+
+[data-list-box] .badge-container {
+    display       : flex;
+    flex-wrap     : wrap;
+    gap           : 8px;
+    max-width     : 100%;
+    padding-right : 32px;
+    align-items   : center;
+}
+
+.clear-all-button {
+    font-size : 20px;
+    color     : var(--select-chevron);
+    cursor    : pointer;
+}
+
+.list-box-enter-key {
+    position  : absolute;
+    right     : 2px;
+    top       : 40%;
+    transform : translateY(-50%);
+}
+
+.list-box-dropdown {
+    position         : absolute;
+    top              : calc(100% + 12px);
+    left             : 0;
+    right            : 0;
+    background-color : var(--input-bg-default);
+    border           : var(--global-border-width) solid var(--input-border-default);
+    border-radius    : var(--input-border-radius-default);
+    padding          : 4px;
+    z-index          : 1000;
+}
+
+.list-box-options {
+    list-style : none;
+    padding    : 0;
+    margin     : 0;
+    max-height : 240px;
+    overflow-y : auto;
+}
+
+.list-box-option {
+    padding       : 5px 10px;
+    cursor        : pointer;
+    border-radius : calc(var(--input-border-radius-default) - 2px);
+    font-family   : var(--paragraph-font);
+    color         : var(--input-text-default);
+}
+
+.list-box-option.active,
+.list-box-option:hover:not(.disabled),
+.list-box-option:active:not(.disabled) {
+    background-color : var(--select-bg-hover);
+}
+
+.list-box-option.disabled {
+    color  : var(--select-text-disabled);
+    cursor : not-allowed;
+}
+
+/* This is to negate the default form item spacing */
+.list-box-dropdown > [data-form-item] { margin-bottom : 8px !important; }
+
+.list-box-options > [data-form-item] { margin-bottom : 0 !important; }
+
+.list-box-display:focus {
+    outline        : 2px solid var(--select-focus-color);
+    outline-offset : 2px;
+}
+
+.list-box-input:focus {
+    outline        : 2px solid var(--select-focus-color);
+    outline-offset : -2px;
+}

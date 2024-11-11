@@ -1,6 +1,7 @@
 export { Checkbox, type CheckboxProps } from "./Checkbox/Checkbox";
 
-export { DropdownSelect, type DropdownSelectProps } from "./DropdownSelect/DropdownSelect";
+export { ListBox } from "./ListBox/ListBox";
+export { type ListBoxProps } from "./ListBox/constants";
 
 export { FileUpload, type FileUploadProps } from "./InputField/FileUpload";
 
@@ -24,8 +25,7 @@ export { type RadioButtonProps, type RadioGroupProps, type RadioTabGroupProps } 
 export { Range, type RangeProps } from "./Range";
 
 export { Select } from "./Select/Select";
-export { SelectWithSearch } from "./Select/SelectWithSearch";
-export { type SelectProps, type SelectWithSearchProps } from "./Select/constants";
+export { type SelectProps } from "./Select/constants";
 
 export { RadioTabGroup } from "./RadioButton/RadioTabGroup";
 

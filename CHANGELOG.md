@@ -7,7 +7,7 @@
 - Add `Modal` with the new Popover API
 
 ## 1.3.12
-- Add fuzzy search to `SelectWithSearch`
+- Add fuzzy search to `ListBox`
 
 ## 1.3.6
 - Fix type checks and `useClient` directive for vite build
