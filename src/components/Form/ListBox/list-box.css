@@ -3,6 +3,8 @@
     min-width  : 200px;
     width      : max-content;
     align-self : flex-start;
+
+    * { user-select : none; }
 }
 
 /* SAME AS .form-item > label /////////////////////////////////////////////// */
@@ -19,51 +21,52 @@
 }
 
 .list-box-input-wrapper {
-    padding          : 12px 36px 12px 8px;
-    border-radius    : var(--input-border-radius-default);
-    border           : var(--global-border-width) solid var(--input-border-default);
-    background-color : var(--select-bg-default);
-    cursor           : pointer;
-    font-family      : var(--paragraph-font);
-    color            : var(--input-text-default);
-    position         : relative;
-    width            : 100%;
-
-    &::before,
-    &::after {
-        content        : "";
-        display        : inline-block;
-        position       : absolute;
-        right          : 12px;
-        width          : 6px;
-        height         : 6px;
-        border-style   : solid;
-        color          : var(--select-chevron);
-        transition     : transform 0.2s linear;
-        z-index        : 500;
-        pointer-events : none;
-    }
-
-    /* Position both chevrons relative to center */
-    &::before {
-        border-width : 2px 0 0 2px;
-        transform    : translateY(-2px) rotate(45deg);
-        top          : 56%;
-    }
-
-    &::after {
-        border-width : 0 2px 2px 0;
-        transform    : translateY(2px) rotate(45deg);
-        top          : 56%;
-    }
+    padding               : 12px 8px;
+    border-radius         : var(--input-border-radius-default);
+    border                : var(--global-border-width) solid var(--input-border-default);
+    background-color      : var(--select-bg-default);
+    cursor                : pointer;
+    font-family           : var(--paragraph-font);
+    color                 : var(--input-text-default);
+    position              : relative;
+    width                 : 100%;
+    display               : grid;
+    grid-template-columns : 1fr 24px 24px;
+    grid-template-areas   : "badgeWrapper clearAll chevrons";
 
     span.placeholder {
         line-height : 1;
-        opacity     : 0.6;
+        color       : var(--input-placeholder-default);
     }
+
+    .icon-wrapper {
+        display         : flex;
+        align-items     : center;
+        justify-content : center;
+
+        svg {
+            width           : 16px;
+            height          : 16px;
+            fill            : none;
+            stroke          : var(--select-chevron);
+            stroke-width    : 2px;
+            stroke-linecap  : round;
+            stroke-linejoin : round;
+        }
+    }
+
+    .icon-wrapper.clear-all { grid-area : clearAll; }
+    .icon-wrapper.chevrons { grid-area : chevrons; }
 }
 
-.list-box-input {
+.selected-option { line-height : 1; }
+
+.list-box-search-wrapper {
+    position : relative;
+    width    : 100%;
+}
+
+.list-box-search {
     width         : calc(100% - 10px);
     font-size     : 14px;
     margin-bottom : 12px;
@@ -74,13 +77,28 @@
     padding       : 2px 32px 2px 2px;
 }
 
-[data-list-box] .badge-container {
+[data-list-box] .options-wrapper {
+    display         : flex;
+    flex-direction  : column;
+    gap             : 8px;
+    justify-content : space-between;
+
+    .options-limit-warning { margin-bottom : -6px; }
+}
+
+[data-list-box] .options-list {
     display       : flex;
     flex-wrap     : wrap;
     gap           : 8px;
     max-width     : 100%;
-    padding-right : 32px;
     align-items   : center;
+    margin-top    : -4px;
+    margin-bottom : -4px;
+
+    [data-badge] {
+        background-color : var(--list-box-badge-bg);
+        color            : var(--list-box-badge-text);
+    }
 }
 
 .clear-all-button {
@@ -148,4 +166,21 @@
 .list-box-input:focus {
     outline        : 2px solid var(--select-focus-color);
     outline-offset : -2px;
+}
+
+/* DISABLED ///////////////////////////////////////////////////////////////// */
+.list-box-wrapper.disabled {
+    opacity        : 0.6;
+    cursor         : not-allowed;
+    pointer-events : none;
+}
+
+.list-box-wrapper.disabled .list-box-input-wrapper {
+    background-color : var(--input-bg-disabled);
+    border-color     : var(--input-border-disabled);
+    cursor           : not-allowed;
+}
+
+.list-box-wrapper.disabled .icon-wrapper svg {
+    opacity : 0.6;
 }

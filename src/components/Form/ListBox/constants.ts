@@ -1,8 +1,10 @@
 import React from "react";
 import { ColourPropTypes, CommonAndHTMLProps } from "@/components/Element/constants";
 
+type NonZeroNumber = Exclude<number, 0>;
+
 export type SelectElementType = HTMLSelectElement;
-export type ListBoxElementType = HTMLSelectElement;
+export type ListBoxElementType = HTMLDivElement;
 
 export interface OptionForListBoxProps {
     value         : string;
@@ -26,7 +28,7 @@ export interface ListBoxCustomProps {
     badgeBgColor       ? : ColourPropTypes;
     badgeTextColour    ? : ColourPropTypes;
     badgeTextColor     ? : ColourPropTypes;
-    selectionLimit     ? : number;
+    selectionLimit     ? : NonZeroNumber;
     allowCustomEntries ? : boolean;
 }
 

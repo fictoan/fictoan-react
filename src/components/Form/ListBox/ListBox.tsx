@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, MutableRefObject, KeyboardEvent } from "react";
 
-import { Div, Span } from "../../Element/Tags";
+import { Div } from "../../Element/Tags";
 import { InputField } from "../InputField/InputField";
 import { Badge } from "../../Badge/Badge";
 import { Text } from "../../Typography/Text";
@@ -9,64 +9,12 @@ import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 import {
     ListBoxProps,
     OptionForListBoxProps,
-    SelectElementType,
     ListBoxElementType,
 } from "./constants";
 
-import { levenshteinDistance, isSubsequence, generateAcronym } from "./listBoxUtils";
+import { searchOptions } from "./listBoxUtils";
 
 import "./list-box.css";
-
-// Custom search function that handles partial matches and common typos
-const searchOptions = (options: OptionForListBoxProps[], searchTerm: string) => {
-    if (!searchTerm) return options;
-
-    const normalizedSearch = searchTerm.toLowerCase().trim();
-
-    const maxDistance = Math.floor(normalizedSearch.length / 2);
-
-    const matchedOptions = options
-        .map(option => {
-            const normalizedLabel = option.label.toLowerCase();
-
-            const distance = levenshteinDistance(normalizedSearch, normalizedLabel);
-
-            const words       = normalizedLabel.split(/[\s\-_]+/);
-            const searchWords = normalizedSearch.split(/[\s\-_]+/);
-
-            const isPartialMatch =
-                      normalizedLabel.includes(normalizedSearch) ||
-                      searchWords.every(searchWord =>
-                          words.some(word => word.startsWith(searchWord)),
-                      );
-
-            const acronym = generateAcronym(normalizedLabel);
-
-            const isAcronymMatch = isSubsequence(normalizedSearch, acronym);
-
-            return {
-                option,
-                distance,
-                isPartialMatch,
-                isAcronymMatch,
-            };
-        })
-        .filter(({ distance, isPartialMatch, isAcronymMatch }) =>
-            isPartialMatch || isAcronymMatch || distance <= maxDistance,
-        )
-        .sort((a, b) => {
-            if (a.isPartialMatch && !b.isPartialMatch) return -1;
-            if (!a.isPartialMatch && b.isPartialMatch) return 1;
-
-            if (a.isAcronymMatch && !b.isAcronymMatch) return -1;
-            if (!a.isAcronymMatch && b.isAcronymMatch) return 1;
-
-            return a.distance - b.distance;
-        })
-        .map(({ option }) => option);
-
-    return matchedOptions;
-};
 
 export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>(
     ({
@@ -130,6 +78,7 @@ export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>(
             }
         };
 
+        // REMOVE SELECTED ENTRIES =====================================================================================
         const handleDeleteOption = (e: React.MouseEvent<HTMLElement>, valueToRemove: string) => {
             e.stopPropagation();
             const newSelectedOptions = selectedOptions.filter(opt => opt.value !== valueToRemove);
@@ -255,9 +204,10 @@ export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>(
         }, [ activeIndex ]);
 
         return (
-            <BaseInputComponent<SelectElementType>
+            <BaseInputComponent<ListBoxElementType>
                 data-list-box
-                className="list-box-wrapper"
+                className={`list-box-wrapper ${disabled ? "disabled" : ""}`}
+                aria-disabled={disabled}
                 ref={effectiveRef}
                 {...props}
             >
@@ -273,72 +223,83 @@ export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>(
                 )}
 
                 {/* MAIN CONTAINER ///////////////////////////////////////////////////////////////////////////////// */}
-                {allowMultiSelect ? (
-                    // FOR BADGE-ing SELECTED OPTIONS ==================================================================
-                    <Div
-                        className="list-box-input-wrapper"
-                        onClick={() => !disabled && setIsOpen(!isOpen)}
-                        onKeyDown={handleKeyDown}
-                        aria-haspopup="listbox"
-                        aria-expanded={isOpen}
-                        aria-labelledby={label ? `${id}-label` : undefined}
-                        aria-controls={isOpen ? `${id}-listbox` : undefined}
-                    >
-                        {selectedOptions.length > 0 ? (
-                            <Div className="badge-container">
-                                {selectedOptions.map(option => (
-                                    <Badge
-                                        key={option.value}
-                                        withDelete={allowMultiSelect}
-                                        onDelete={(e) => handleDeleteOption(e, option.value)}
-                                        size="small"
-                                        shape="rounded"
-                                        bgColour={badgeBgColour || badgeBgColor}
-                                        textColour={badgeTextColour || badgeTextColor}
-                                    >
-                                        {option.label}
-                                    </Badge>
-                                ))}
-                                <Text
-                                    className="clear-all-button"
+                <Div
+                    className="list-box-input-wrapper"
+                    onClick={() => !disabled && allowMultiSelect ? setIsOpen(!isOpen) : setIsOpen(!isOpen)}
+                    onKeyDown={handleKeyDown}
+                    aria-haspopup="listbox"
+                    aria-expanded={isOpen}
+                    aria-labelledby={label ? `${id}-label` : undefined}
+                    aria-controls={isOpen ? `${id}-listbox` : undefined}
+                >
+                    {allowMultiSelect ? (
+                        <>
+                            {/* FOR BADGE-ing SELECTED OPTIONS ===================================================== */}
+                            {selectedOptions.length > 0 ? (
+                                <Div className="options-wrapper">
+                                    <Div className="options-list">
+                                        {selectedOptions.map(option => (
+                                            <Badge
+                                                key={option.value}
+                                                withDelete={allowMultiSelect}
+                                                onDelete={(e) => handleDeleteOption(e, option.value)}
+                                                size="small"
+                                                shape="rounded"
+                                                bgColour={badgeBgColour || badgeBgColor}
+                                                textColour={badgeTextColour || badgeTextColor}
+                                            >
+                                                {option.label}
+                                            </Badge>
+                                        ))}
+                                    </Div>
+
+                                    {/* LIMIT WARNING */}
+                                    {selectionLimit && selectedOptions.length >= selectionLimit && (
+                                        <Text className="options-limit-warning" textColour="red" size="small">
+                                            You can choose only {selectionLimit} option{selectionLimit === 1 ? "" : "s"}
+                                        </Text>
+                                    )}
+                                </Div>
+                            ) : (
+                                <span className="placeholder">{placeholder}</span>
+                            )}
+
+                            {selectedOptions.length > 0 && (
+                                <Div
+                                    className="icon-wrapper clear-all"
+                                    title="Clear all options"
                                     onClick={handleClearAll}
                                 >
-                                    &times;
-                                </Text>
+                                    <svg viewBox="0 0 24 24">
+                                        <line x1="5" y1="5" x2="19" y2="19" />
+                                        <line x1="5" y1="19" x2="19" y2="5" />
+                                    </svg>
+                                </Div>
+                            )}
+                        </>
+                    ) : (
+                        // FOR PLAIN TEXT SINGLE-SELECT OPTION =========================================================
+                        selectedOption
+                            ? <Text className="selected-option">{selectedOption.label}</Text>
+                            : <span className="placeholder">{placeholder}</span>
+                    )}
 
-                                {selectionLimit && selectedOptions.length >= selectionLimit && (
-                                    <Text textColour="red" size="small">
-                                        You can choose only {selectionLimit} options
-                                    </Text>
-                                )}
-                            </Div>
-                        ) : (
-                            <span className="placeholder">{placeholder}</span>
-                        )}
+                    <Div className="icon-wrapper chevrons">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="6 9 12 4 18 9"></polyline>
+                            <polyline points="6 15 12 20 18 15"></polyline>
+                        </svg>
                     </Div>
-                ) : (
-                    // FOR PLAIN TEXT SINGLE-SELECT OPTION =============================================================
-                    <Div
-                        className="list-box-input-wrapper"
-                        onClick={() => setIsOpen(!isOpen)}
-                        onKeyDown={handleKeyDown}
-                        aria-haspopup="listbox"
-                        aria-expanded={isOpen}
-                        aria-labelledby={label ? `${id}-label` : undefined}
-                        aria-controls={isOpen ? `${id}-listbox` : undefined}
-                    >
-                        {selectedOption ? selectedOption.label : "Select an option"}
-                    </Div>
-                )}
+                </Div>
 
                 {/* DROPDOWN /////////////////////////////////////////////////////////////////////////////////////// */}
                 {isOpen && !disabled && (
                     <Div className="list-box-dropdown" role="presentation">
-                        <Div className="list-box-input-wrapper">
+                        <Div className="list-box-search-wrapper">
                             <InputField
                                 type="text"
                                 ref={searchInputRef}
-                                className="list-box-input"
+                                className="list-box-search"
                                 placeholder="Search"
                                 value={searchValue}
                                 onChange={(e) => {
