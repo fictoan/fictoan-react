@@ -241,6 +241,12 @@
     --input-icon-valid            : var(--green-dark-30);
 }
 
+/* LIST BOX ///////////////////////////////////////////////////////////////// */
+:root {
+    --list-box-badge-bg   : var(--slate-light-20);
+    --list-box-badge-text : var(--paragraph-text-colour);
+}
+
 /* METER //////////////////////////////////////////////////////////////////// */
 :root {
     --meter-bg                   : var(--slate-light-70);

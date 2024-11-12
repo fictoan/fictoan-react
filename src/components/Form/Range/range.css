@@ -64,7 +64,7 @@
         --clip-edges   : 0;
     }
 
-    /* Range common ========================================================= */
+    /* DropdownSelect common ========================================================= */
     input[type="range"] {
         position   : relative;
         background : var(--transparent);

@@ -41,5 +41,7 @@ const SelectWithOptions = ({ options, className, ...props }: SelectProps) => {
 };
 
 export const Select = React.forwardRef((props: SelectProps, ref: React.Ref<SelectElementType>) => {
-    return <BaseInputComponent<SelectElementType> as={SelectWithOptions} ref={ref} {...props} />;
+    return (
+        <BaseInputComponent<SelectElementType> as={SelectWithOptions} ref={ref} {...props} />
+    );
 });

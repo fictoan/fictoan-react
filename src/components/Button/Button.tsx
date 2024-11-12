@@ -41,6 +41,8 @@ export const Button = React.forwardRef(
             classNames.push("has-delete");
         }
 
-        return <Element<ButtonElementType> as="button" data-button ref={ref} classNames={classNames} {...props} />;
+        return (
+            <Element<ButtonElementType> as="button" data-button ref={ref} classNames={classNames} {...props} />
+        );
     }
 );

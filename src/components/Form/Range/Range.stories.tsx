@@ -7,7 +7,7 @@ const meta: Meta<typeof Range> = {
     parameters: {
         docs: {
             description: {
-                component: "This is a Range.",
+                component: "This is a DropdownSelect.",
             },
         },
     },

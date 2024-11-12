@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.5.0
+- Rename `SelectWithSearch` to `ListBox` and add fuzzy search, multi-select, and custom entries capabilities
+
 ## 1.4.1
 - Add `withDelete` and `onDelete` for the `Badge` component
 
@@ -7,7 +10,7 @@
 - Add `Modal` with the new Popover API
 
 ## 1.3.12
-- Add fuzzy search to `SelectWithSearch`
+- Add fuzzy search to `ListBox`
 
 ## 1.3.6
 - Fix type checks and `useClient` directive for vite build
@@ -55,7 +58,7 @@
 - Remove `as` prop from `Heading`, so you can now use `Heading1`, `Heading2` etc
 
 ## 1.2.2
-- Tweak `Range` styles
+- Tweak `DropdownSelect` styles
 
 ## 1.2.1
 - Add accessibility improvements for `Breadcrumbs`, and `Badge`
