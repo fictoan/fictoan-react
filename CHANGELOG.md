@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.5.0
+- Rename `SelectWithSearch` to `ListBox` and add fuzzy search, multi-select, and custom entries capabilities
+
 ## 1.4.1
 - Add `withDelete` and `onDelete` for the `Badge` component
 
