@@ -46,20 +46,20 @@ function generateColors() {
             sequential : true,
             handler() {
                 console.log("Generating color system...");
-                execSync("node src/scripts/generateColourClasses.js", { stdio : "inherit" });
+                execSync("node src/scripts/generateColourClasses.ts", { stdio : "inherit" });
             },
         },
         configureServer(server) {
             // Generate on dev server start
             console.log("Generating color system...");
-            execSync("node src/scripts/generateColourClasses.js", { stdio : "inherit" });
+            execSync("node src/scripts/generateColourClasses.ts", { stdio : "inherit" });
 
             // Watch for changes in the script
-            server.watcher.add("src/scripts/generateColourClasses.js");
+            server.watcher.add("src/scripts/generateColourClasses.ts");
             server.watcher.on("change", (path) => {
-                if (path.endsWith("generateColourClasses.js")) {
+                if (path.endsWith("generateColourClasses.ts")) {
                     console.log("Color generation script changed, regenerating...");
-                    execSync("node scripts/generateColourClasses.js", { stdio : "inherit" });
+                    execSync("node scripts/generateColourClasses.ts", { stdio : "inherit" });
                 }
             });
         },
