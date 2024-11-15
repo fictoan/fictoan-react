@@ -5,12 +5,27 @@ import { Card, CardElementType, CardProps } from "../Card/Card";
 
 import "./option-card.css";
 
-// import TickIcon from "../../assets/icons/tick.svg";
+export type TickPosition =
+    | "top-left"
+    | "top-right"
+    | "bottom-left"
+    | "bottom-right"
+    | "centre-left"
+    | "center-left"
+    | "centre-right"
+    | "center-right"
+    | "centre-top"
+    | "center-top"
+    | "center-bottom"
+    | "centre-bottom"
+    | "centre"
+    | "center"
 
 export interface OptionCardsProviderProps {
     children                  : ReactNode;
     allowMultipleSelections ? : boolean;
     showTickIcon            ? : boolean;
+    tickPosition            ? : TickPosition;
     onSelectionChange       ? : (selectedIds: Set<string>) => void;
 }
 
@@ -24,10 +39,12 @@ const OptionCardsContext = createContext<{
     isSelected        : (id: string) => boolean;
     toggleSelection   : (id: string) => void;
     showTickIcon    ? : boolean;
+    tickPosition    ? : TickPosition;
 }>({
     isSelected      : () => false,
     toggleSelection : () => {},
     showTickIcon    : false,
+    tickPosition    : "top-right",
 });
 
 export const OptionCardsGroup: React.FC<OptionCardsProviderProps> = (
@@ -36,6 +53,7 @@ export const OptionCardsGroup: React.FC<OptionCardsProviderProps> = (
         allowMultipleSelections = false,
         showTickIcon,
         onSelectionChange,
+        tickPosition = "top-right",
         ...props
     },
 ) => {
@@ -68,8 +86,10 @@ export const OptionCardsGroup: React.FC<OptionCardsProviderProps> = (
     }, [ selectedIds ]);
 
     return (
-        <OptionCardsContext.Provider value={{ isSelected, toggleSelection, showTickIcon }}>
-            {children}
+        <OptionCardsContext.Provider value={{ isSelected, toggleSelection, showTickIcon, tickPosition }}>
+            <div data-option-cards-group className={`tick-${tickPosition}`}>
+                {children}
+            </div>
         </OptionCardsContext.Provider>
     );
 };
@@ -85,6 +105,8 @@ export const useOptionCard = (id: string) => {
 
 export const OptionCard: React.FC<OptionCardProps> = ({ id, children, disabled = false, ...props }) => {
     const { isSelected, toggleSelection, showTickIcon } = useOptionCard(id);
+    const [showDeselect, setShowDeselect] = useState(false);
+    const [isInitialHover, setIsInitialHover] = useState(true);
 
     let classNames = [];
 
@@ -96,17 +118,36 @@ export const OptionCard: React.FC<OptionCardProps> = ({ id, children, disabled =
         classNames.push("disabled");
     }
 
-    const handleKeyDown = (e: React.KeyboardEvent) => {
-        if ((e.key === "Enter" || e.key === " ") && !disabled) {
-            e.preventDefault();
-            toggleSelection();
+    if (showDeselect) {
+        classNames.push("show-deselect");
+    }
+
+    const handleMouseEnter = () => {
+        if (isSelected && !isInitialHover) {
+            setShowDeselect(true);
         }
+    };
+
+    const handleMouseLeave = () => {
+        setShowDeselect(false);
+        setIsInitialHover(false);
     };
 
     const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         if (!disabled) {
+            setIsInitialHover(true);
+            setShowDeselect(false);
             toggleSelection();
             props.onClick?.(e);
+        }
+    };
+
+    const handleKeyDown = (e: React.KeyboardEvent) => {
+        if ((e.key === "Enter" || e.key === " ") && !disabled) {
+            e.preventDefault();
+            setIsInitialHover(true);
+            setShowDeselect(false);
+            toggleSelection();
         }
     };
 
@@ -121,15 +162,22 @@ export const OptionCard: React.FC<OptionCardProps> = ({ id, children, disabled =
             classNames={classNames}
             onClick={handleClick}
             onKeyDown={handleKeyDown}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
             {...props}
         >
-            {showTickIcon
-                ? (
+            {showTickIcon && (
+                <>
                     <svg viewBox="0 0 24 24" className="tick-icon">
                         <circle cx="12" cy="12" r="11" />
                         <path d="M8 13 L11 15 L16 9" />
                     </svg>
-                ) : null}
+                    <svg viewBox="0 0 24 24" className="deselect-icon">
+                        <circle cx="12" cy="12" r="11" />
+                        <path d="M8 8 L16 16 M16 8 L8 16" />
+                    </svg>
+                </>
+            )}
             {children}
         </Element>
     );

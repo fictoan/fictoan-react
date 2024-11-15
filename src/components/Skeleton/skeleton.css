@@ -1,0 +1,75 @@
+/* SKELETON ITEM //////////////////////////////////////////////////////////// */
+[data-skeleton] {
+    display          : block;
+    background-color : var(--skeleton-bg);
+    position         : relative;
+    overflow         : hidden;
+}
+
+[data-skeleton].shape-rounded {
+    border-radius : var(--global-border-radius);
+}
+
+[data-skeleton].variant-circle {
+    border-radius : 50%;
+}
+
+/* SKELETON GROUP /////////////////////////////////////////////////////////// */
+[data-skeleton-group] {
+    width   : 100%;
+    display : flex;
+}
+
+/* Direction modifiers */
+[data-skeleton-group].direction-vertical {
+    flex-direction : column;
+}
+
+[data-skeleton-group].direction-horizontal {
+    flex-direction : row;
+}
+
+/* Animations  applied through the group */
+[data-skeleton-group].effect-pulse [data-skeleton] {
+    animation : skeleton-pulse 1.5s ease-in-out 0.5s infinite;
+}
+
+[data-skeleton-group].effect-wave [data-skeleton] {
+    &::after {
+        content    : "";
+        position   : absolute;
+        top        : 0;
+        left       : 0;
+        right      : 0;
+        bottom     : 0;
+        background : linear-gradient(90deg, transparent, var(--skeleton-highlight), transparent);
+        animation  : skeleton-wave 1.6s linear 0.5s infinite;
+    }
+}
+
+/* SPACING CLASSES ////////////////////////////////////////////////////////// */
+[data-skeleton-group].direction-vertical.spacing-nano > [data-skeleton] { margin-bottom : 4px; }
+[data-skeleton-group].direction-vertical.spacing-micro > [data-skeleton] { margin-bottom : 8px; }
+[data-skeleton-group].direction-vertical.spacing-tiny > [data-skeleton] { margin-bottom : 16px; }
+[data-skeleton-group].direction-vertical.spacing-small > [data-skeleton] { margin-bottom : 24px; }
+[data-skeleton-group].direction-vertical.spacing-medium > [data-skeleton] { margin-bottom : 32px; }
+[data-skeleton-group].direction-vertical.spacing-large > [data-skeleton] { margin-bottom : 48px; }
+[data-skeleton-group].direction-vertical.spacing-huge > [data-skeleton] { margin-bottom : 64px; }
+
+/* Adjust margins for horizontal direction */
+[data-skeleton-group].direction-horizontal.spacing-nano > [data-skeleton] { margin-right  : 4px; }
+[data-skeleton-group].direction-horizontal.spacing-micro > [data-skeleton] { margin-right  : 8px; }
+[data-skeleton-group].direction-horizontal.spacing-tiny > [data-skeleton] { margin-right  : 16px; }
+[data-skeleton-group].direction-horizontal.spacing-small > [data-skeleton] { margin-right  : 24px; }
+[data-skeleton-group].direction-horizontal.spacing-medium > [data-skeleton] { margin-right  : 32px; }
+[data-skeleton-group].direction-horizontal.spacing-large > [data-skeleton] { margin-right  : 48px; }
+[data-skeleton-group].direction-horizontal.spacing-huge > [data-skeleton] { margin-right  : 64px; }
+
+/* Remove margin from last child */
+[data-skeleton-group].direction-vertical > [data-skeleton]:last-child {
+    margin-bottom : 0;
+}
+
+[data-skeleton-group].direction-horizontal > [data-skeleton]:last-child {
+    margin-right : 0;
+}
