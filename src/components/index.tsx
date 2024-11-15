@@ -123,6 +123,15 @@ export {
     type SidebarFooterProps,
 } from "./Sidebar";
 
+// SKELETON ============================================================================================================
+export {
+    Skeleton,
+    SkeletonGroup,
+    type SkeletonProps,
+    type SkeletonGroupProps,
+    type SkeletonElementType
+} from "./Skeleton";
+
 // SPINNER =============================================================================================================
 export { Spinner, type SpinnerProps } from "./Spinner";
 

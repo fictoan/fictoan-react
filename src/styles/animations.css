@@ -1,3 +1,8 @@
+/* We have a separate animations file, because——I don’t know. */
+/* They don’t seem to work when imported from the same file, but works when */
+/* added separately and imported globally. */
+
+/* MODAL //////////////////////////////////////////////////////////////////// */
 @keyframes modal-fade-in {
     0% {
         opacity   : 0;
@@ -25,4 +30,23 @@
 @keyframes backdrop-fade-in {
     0% { background-color : rgb(0 0 0 / 0%); }
     100% { background-color : rgb(0 0 0 / 64%); }
+}
+
+/* SKELETON ///////////////////////////////////////////////////////////////// */
+@keyframes skeleton-pulse {
+    0% { opacity : 1; }
+    50% { opacity : 0.4; }
+    100% { opacity : 1; }
+}
+
+@keyframes skeleton-wave {
+    0% { transform : translateX(-100%); }
+    50% { transform : translateX(100%); }
+    100% { transform : translateX(100%); }
+}
+
+/* SIMPLE FADE IN, for OPTION CARD DESELECT ///////////////////////////////// */
+@keyframes fadeIn {
+    from { opacity : 0; }
+    to   { opacity : 1; }
 }

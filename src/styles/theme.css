@@ -9,8 +9,8 @@
     --badge-border-radius : var(--global-border-radius);
     --badge-border-width  : var(--global-border-width);
 
-    --badge-bg-default    : var(--blue-light-60);
-    --badge-text-default  : var(--blue-dark-20);
+    --badge-bg-default    : var(--blue-light60);
+    --badge-text-default  : var(--blue-dark20);
 }
 
 /* BODY ///////////////////////////////////////////////////////////////////// */
@@ -23,7 +23,7 @@
     --breadcrumbs-wrapper-bg           : var(--transparent);
 
     --breadcrumb-item-separator        : "/";
-    --breadcrumb-item-separator-colour : var(--slate-light-10);
+    --breadcrumb-item-separator-colour : var(--slate-light10);
 
     --breadcrumb-item-text             : var(--link-text-default);
     --breadcrumb-item-text-active      : var(--paragraph-text-colour);
@@ -41,52 +41,52 @@
     --button-primary-border-width-default     : var(--global-border-width);
     --button-primary-border-radius-default    : var(--global-border-radius);
 
-    --button-primary-bg-hover                 : var(--blue-light-10);
+    --button-primary-bg-hover                 : var(--blue-light10);
     --button-primary-text-hover               : var(--white);
-    --button-primary-border-hover             : var(--blue-dark-30);
+    --button-primary-border-hover             : var(--blue-dark30);
     --button-primary-border-width-hover       : var(--global-border-width);
     --button-primary-border-radius-hover      : var(--global-border-radius);
 
-    --button-primary-bg-active                : var(--blue-light-20);
+    --button-primary-bg-active                : var(--blue-light20);
     --button-primary-text-active              : var(--white);
-    --button-primary-border-active            : var(--blue-dark-40);
+    --button-primary-border-active            : var(--blue-dark40);
     --button-primary-border-width-active      : var(--global-border-width);
     --button-primary-border-radius-active     : var(--global-border-radius);
 
     --button-primary-spinner-loading          : var(--white);
 
-    --button-primary-bg-disabled              : var(--blue-light-10);
+    --button-primary-bg-disabled              : var(--blue-light10);
     --button-primary-text-disabled            : var(--white);
-    --button-primary-border-disabled          : var(--blue-light-10);
+    --button-primary-border-disabled          : var(--blue-light10);
     --button-primary-border-width-disabled    : var(--global-border-width);
     --button-primary-border-radius-disabled   : var(--global-border-radius);
 
 
     /* SECONDARY BUTTON ===================================================== */
     --button-secondary-font                   : var(--font-sans-serif);
-    --button-secondary-bg-default             : var(--blue-light-50);
+    --button-secondary-bg-default             : var(--blue-light50);
     --button-secondary-text-default           : var(--blue);
-    --button-secondary-border-default         : var(--blue-light-50);
+    --button-secondary-border-default         : var(--blue-light50);
     --button-secondary-border-width-default   : var(--global-border-width);
     --button-secondary-border-radius-default  : var(--global-border-radius);
 
-    --button-secondary-bg-hover               : var(--blue-light-40);
+    --button-secondary-bg-hover               : var(--blue-light40);
     --button-secondary-text-hover             : var(--blue);
-    --button-secondary-border-hover           : var(--blue-light-40);
+    --button-secondary-border-hover           : var(--blue-light40);
     --button-secondary-border-width-hover     : var(--global-border-width);
     --button-secondary-border-radius-hover    : var(--global-border-radius);
 
-    --button-secondary-bg-active              : var(--blue-light-50);
+    --button-secondary-bg-active              : var(--blue-light50);
     --button-secondary-text-active            : var(--blue);
-    --button-secondary-border-active          : var(--blue-light-50);
+    --button-secondary-border-active          : var(--blue-light50);
     --button-secondary-border-width-active    : var(--global-border-width);
     --button-secondary-border-radius-active   : var(--global-border-radius);
 
     --button-secondary-spinner-loading        : var(--blue);
 
-    --button-secondary-bg-disabled            : var(--blue-light-10);
+    --button-secondary-bg-disabled            : var(--blue-light10);
     --button-secondary-text-disabled          : var(--white);
-    --button-secondary-border-disabled        : var(--blue-light-10);
+    --button-secondary-border-disabled        : var(--blue-light10);
     --button-secondary-border-width-disabled  : var(--global-border-width);
     --button-secondary-border-radius-disabled : var(--global-border-radius);
 
@@ -99,23 +99,23 @@
     --button-tertiary-border-width-default    : var(--global-border-width);
     --button-tertiary-border-radius-default   : var(--global-border-radius);
 
-    --button-tertiary-bg-hover                : var(--blue-light-80);
+    --button-tertiary-bg-hover                : var(--blue-light80);
     --button-tertiary-text-hover              : var(--blue);
-    --button-tertiary-border-hover            : var(--blue-light-20);
+    --button-tertiary-border-hover            : var(--blue-light20);
     --button-tertiary-border-width-hover      : var(--global-border-width);
     --button-tertiary-border-radius-hover     : var(--global-border-radius);
 
-    --button-tertiary-bg-active               : var(--blue-light-70);
+    --button-tertiary-bg-active               : var(--blue-light70);
     --button-tertiary-text-active             : var(--blue);
-    --button-tertiary-border-active           : var(--blue-light-30);
+    --button-tertiary-border-active           : var(--blue-light30);
     --button-tertiary-border-width-active     : var(--global-border-width);
     --button-tertiary-border-radius-active    : var(--global-border-radius);
 
     --button-tertiary-spinner-loading         : var(--blue);
 
-    --button-tertiary-bg-disabled             : var(--blue-light-10);
+    --button-tertiary-bg-disabled             : var(--blue-light10);
     --button-tertiary-text-disabled           : var(--white);
-    --button-tertiary-border-disabled         : var(--blue-light-10);
+    --button-tertiary-border-disabled         : var(--blue-light10);
     --button-tertiary-border-width-disabled   : var(--global-border-width);
     --button-tertiary-border-radius-disabled  : var(--global-border-radius);
 
@@ -133,17 +133,17 @@
     --callout-border-radius  : var(--global-border-radius);
     --callout-border-width   : var(--nano);
 
-    --callout-info-bg        : var(--blue-light-60);
-    --callout-info-border    : var(--blue-dark-20);
+    --callout-info-bg        : var(--blue-light60);
+    --callout-info-border    : var(--blue-dark20);
 
-    --callout-success-bg     : var(--green-light-60);
-    --callout-success-border : var(--green-dark-20);
+    --callout-success-bg     : var(--green-light60);
+    --callout-success-border : var(--green-dark20);
 
-    --callout-warning-bg     : var(--amber-light-60);
-    --callout-warning-border : var(--amber-dark-10);
+    --callout-warning-bg     : var(--amber-light60);
+    --callout-warning-border : var(--amber-dark10);
 
-    --callout-error-bg       : var(--red-light-60);
-    --callout-error-border   : var(--red-dark-10);
+    --callout-error-bg       : var(--red-light60);
+    --callout-error-border   : var(--red-dark10);
 }
 
 /* CARD ///////////////////////////////////////////////////////////////////// */
@@ -158,10 +158,10 @@
 :root {
     --checkbox-square-border-radius : 4px;
 
-    --checkbox-square-bg-default    : var(--slate-light-60);
-    --checkbox-square-bg-hover      : var(--slate-light-40);
+    --checkbox-square-bg-default    : var(--slate-light60);
+    --checkbox-square-bg-hover      : var(--slate-light40);
     --checkbox-square-bg-checked    : var(--hue);
-    --checkbox-square-bg-disabled   : var(--slate-light-90);
+    --checkbox-square-bg-disabled   : var(--slate-light90);
 
     --checkbox-tick                 : var(--white);
 }
@@ -169,14 +169,14 @@
 /* DRAWER /////////////////////////////////////////////////////////////////// */
 :root {
     --drawer-bg              : var(--white);
-    --drawer-border          : var(--slate-light-20);
+    --drawer-border          : var(--slate-light20);
     --drawer-border-radius   : var(--global-border-radius);
 
     --drawer-overlay-bg      : var(--black);
     --drawer-overlay-opacity : 0.4;
     --drawer-overlay-blur    : 4px;
 
-    --drawer-dismiss-button  : var(--slate-light-40);
+    --drawer-dismiss-button  : var(--slate-light40);
 }
 
 /* DIVIDER ////////////////////////////////////////////////////////////////// */
@@ -188,69 +188,69 @@
     --divider-primary-bg       : var(--slate);
 
     --divider-secondary-height : 2px;
-    --divider-secondary-bg     : var(--slate-light-60);
+    --divider-secondary-bg     : var(--slate-light60);
 
     --divider-tertiary-height  : 1px;
-    --divider-tertiary-bg      : var(--slate-light-20);
+    --divider-tertiary-bg      : var(--slate-light20);
 }
 
 /* INPUT FIELD ////////////////////////////////////////////////////////////// */
 :root {
     --input-bg-default            : var(--white);
 
-    --input-border-default        : var(--slate-light-40);
+    --input-border-default        : var(--slate-light40);
     --input-border-radius-default : var(--global-border-radius);
     --input-border-width-default  : var(--global-border-width);
 
     --input-label-default         : var(--paragraph-text-colour);
-    --input-placeholder-default   : var(--slate-light-40);
+    --input-placeholder-default   : var(--slate-light40);
     --input-text-default          : var(--paragraph-text-colour);
 
     --input-bg-focus              : var(--white);
-    --input-border-focus          : var(--slate-light-40);
+    --input-border-focus          : var(--slate-light40);
     --input-border-width-focus    : var(--global-border-width);
     --input-text-focus            : var(--shade);
 
     --input-bg-valid              : var(--white);
-    --input-border-valid          : var(--green-dark-30);
+    --input-border-valid          : var(--green-dark30);
     --input-label-valid           : var(--shade);
 
-    --input-bg-invalid            : var(--red-light-60);
-    --input-border-invalid        : var(--red-dark-30);
+    --input-bg-invalid            : var(--red-light60);
+    --input-border-invalid        : var(--red-dark30);
     --input-label-invalid         : var(--red);
     --input-text-invalid          : var(--red);
     --input-error-text-invalid    : var(--red);
 
-    --input-bg-disabled           : var(--slate-light-40);
-    --input-border-disabled       : var(--slate-light-40);
-    --input-label-disabled        : var(--slate-dark-40);
-    --input-text-disabled         : var(--slate-dark-60);
+    --input-bg-disabled           : var(--slate-light40);
+    --input-border-disabled       : var(--slate-light40);
+    --input-label-disabled        : var(--slate-dark40);
+    --input-text-disabled         : var(--slate-dark60);
 
-    --input-bg-read-only          : var(--slate-light-40);
-    --input-border-read-only      : var(--slate-light-40);
-    --input-label-read-only       : var(--slate-dark-40);
-    --input-text-read-only        : var(--slate-dark-60);
+    --input-bg-read-only          : var(--slate-light40);
+    --input-border-read-only      : var(--slate-light40);
+    --input-label-read-only       : var(--slate-dark40);
+    --input-text-read-only        : var(--slate-dark60);
 
     --input-required-indicator    : var(--red);
 
-    --input-helptext              : var(--slate-dark-40);
+    --input-helptext              : var(--slate-dark40);
     --input-helptext-scale        : 92%;
 
-    --input-icon-default          : var(--slate-light-40);
+    --input-icon-default          : var(--slate-light40);
     --input-icon-focus            : var(--hue);
-    --input-icon-valid            : var(--green-dark-30);
+    --input-icon-valid            : var(--green-dark30);
 }
 
 /* LIST BOX ///////////////////////////////////////////////////////////////// */
 :root {
-    --list-box-badge-bg   : var(--slate-light-20);
+    --list-box-badge-bg   : var(--slate-light20);
     --list-box-badge-text : var(--paragraph-text-colour);
 }
 
 /* METER //////////////////////////////////////////////////////////////////// */
 :root {
-    --meter-bg                   : var(--slate-light-70);
-    --meter-border               : var(--slate-light-40);
+    --meter-bg                   : var(--slate-light70);
+    --meter-border               : var(--slate-light40);
     --meter-border-width         : var(--global-border-width);
     --meter-border-radius        : var(--global-border-radius);
     --meter-height               : 8px;
@@ -258,9 +258,9 @@
     --meter-label                : var(--paragraph-text-colour);
     --meter-value                : var(--paragraph-text-colour);
 
-    --meter-danger               : var(--red-light-10);
-    --meter-low                  : var(--amber-light-10);
-    --meter-high                 : var(--green-dark-10);
+    --meter-danger               : var(--red-light10);
+    --meter-low                  : var(--amber-light10);
+    --meter-high                 : var(--green-dark10);
 
     --meter-optimum-marker-width : 3px;
     --meter-optimum-marker-bg    : var(--blue);
@@ -278,19 +278,19 @@
     --notification-item-border-radius  : var(--global-border-radius);
 
     --notification-item-generic-bg     : var(--white);
-    --notification-item-generic-border : var(--slate-light-60);
+    --notification-item-generic-border : var(--slate-light60);
     --notification-item-generic-text   : var(--shade);
 
-    --notification-item-info-bg        : var(--blue-light-60);
+    --notification-item-info-bg        : var(--blue-light60);
     --notification-item-info-border    : var(--blue);
 
-    --notification-item-error-bg       : var(--red-light-60);
+    --notification-item-error-bg       : var(--red-light60);
     --notification-item-error-border   : var(--red);
 
-    --notification-item-success-bg     : var(--green-light-60);
+    --notification-item-success-bg     : var(--green-light60);
     --notification-item-success-border : var(--green);
 
-    --notification-item-warning-bg     : var(--amber-light-60);
+    --notification-item-warning-bg     : var(--amber-light60);
     --notification-item-warning-border : var(--amber);
 }
 
@@ -300,20 +300,23 @@
 
     --option-card-focus              : var(--global-focus-colour);
 
-    --option-card-bg-hover           : var(--green-light-70);
-    --option-card-border-hover       : var(--green-light-40);
-    --option-card-tick-bg-hover      : var(--green-light-60);
+    --option-card-bg-hover           : var(--green-light70-opacity40);
+    --option-card-border-hover       : var(--green-light40);
+    --option-card-tick-bg-hover      : var(--green-light60-opacity30);
     --option-card-tick-line-hover    : var(--green);
 
-    --option-card-bg-selected        : var(--green-light-60);
+    --option-card-bg-selected        : var(--green-light60);
     --option-card-border-selected    : var(--green);
-    --option-card-tick-bg-selected   : var(--green-dark-10);
+    --option-card-tick-bg-selected   : var(--green-dark10);
     --option-card-tick-line-selected : var(--white);
+
+    --option-card-cross-bg           : var(--red-light40);
+    --option-card-cross-line         : var(--white);
 }
 
 /* PROGRESS BAR ///////////////////////////////////////////////////////////// */
 :root {
-    --progress-bar-bg            : var(--slate-light-70);
+    --progress-bar-bg            : var(--slate-light70);
     --progress-bar-fill          : var(--hue);
     --progress-bar-label         : var(--paragraph-text-colour);
     --progress-bar-value         : var(--paragraph-text-colour);
@@ -324,23 +327,23 @@
 /* RADIO BUTTON ///////////////////////////////////////////////////////////// */
 :root {
     /* GENERIC RADIO BUTTON ================================================= */
-    --radio-circle-bg-default       : var(--slate-light-60);
-    --radio-circle-bg-hover         : var(--slate-light-40);
+    --radio-circle-bg-default       : var(--slate-light60);
+    --radio-circle-bg-hover         : var(--slate-light40);
     --radio-circle-bg-checked       : var(--hue);
-    --radio-circle-bg-disabled      : var(--slate-light-90);
+    --radio-circle-bg-disabled      : var(--slate-light90);
 
     --radio-button-dot              : var(--white);
 
     /* RADIO GROUP TABS ===================================================== */
     --radio-tabs-height             : 48px;
     --radio-tabs-vertical-gap       : 4px;
-    --radio-tabs-bg                 : var(--slate-light-70);
-    --radio-tabs-border             : var(--slate-light-70);
+    --radio-tabs-bg                 : var(--slate-light70);
+    --radio-tabs-border             : var(--slate-light70);
 
-    --radio-tabs-label-text-default : var(--slate-dark-60);
+    --radio-tabs-label-text-default : var(--slate-dark60);
 
-    --radio-tabs-label-text-hover   : var(--slate-dark-80);
-    --radio-tabs-label-bg-hover     : var(--slate-light-90);
+    --radio-tabs-label-text-hover   : var(--slate-dark80);
+    --radio-tabs-label-bg-hover     : var(--slate-light90);
 
     --radio-tabs-label-bg-active    : var(--white);
     --radio-tabs-label-text-active  : var(--black);
@@ -353,9 +356,9 @@
     --range-label         : var(--input-label-default);
     --range-value         : var(--input-label-default);
 
-    --range-track-bg      : var(--slate-light-70);
-    --range-thumb-bg      : var(--blue-light-20);
-    --range-thumb-border  : var(--blue-light-20);
+    --range-track-bg      : var(--slate-light70);
+    --range-thumb-bg      : var(--blue-light20);
+    --range-thumb-border  : var(--blue-light20);
 
     --range-border-focus  : var(--blue);
     --range-outline-focus : var(--blue);
@@ -363,7 +366,7 @@
 
 /* SELECT /////////////////////////////////////////////////////////////////// */
 :root {
-    --select-chevron : var(--slate-light-40);
+    --select-chevron : var(--slate-light40);
 }
 
 /* SELECT WITH SEARCH /////////////////////////////////////////////////////// */
@@ -378,29 +381,29 @@
 /* SIDEBAR + CONTENT WRAPPER //////////////////////////////////////////////// */
 :root {
     --sidebar-bg                             : var(--white);
-    --sidebar-border                         : var(--slate-dark-80);
+    --sidebar-border                         : var(--slate-dark80);
     --sidebar-width-default                  : 240px;
     --sidebar-width-collapsed                : 48px;
 
     --sidebar-header-bg                      : var(--white);
-    --sidebar-header-border-bottom           : var(--slate-dark-80);
+    --sidebar-header-border-bottom           : var(--slate-dark80);
     --sidebar-header-logo-width              : 50%;
     --sidebar-header-icon-width              : 40px;
 
     --sidebar-item-icon-width                : 24px;
 
-    --sidebar-item-icon-stroke-default       : var(--slate-dark-40);
+    --sidebar-item-icon-stroke-default       : var(--slate-dark40);
     --sidebar-item-icon-stroke-width-default : 2px;
-    --sidebar-item-icon-fill-default         : var(--slate-light-40);
-    --sidebar-item-text-colour-default       : var(--slate-light-40);
+    --sidebar-item-icon-fill-default         : var(--slate-light40);
+    --sidebar-item-text-colour-default       : var(--slate-light40);
 
-    --sidebar-item-bg-hover                  : var(--grey-dark-70);
+    --sidebar-item-bg-hover                  : var(--grey-dark70);
     --sidebar-item-text-hover                : var(--hue);
-    --sidebar-item-icon-stroke-hover         : var(--slate-dark-30);
-    --sidebar-item-icon-fill-hover           : var(--slate-dark-30);
+    --sidebar-item-icon-stroke-hover         : var(--slate-dark30);
+    --sidebar-item-icon-fill-hover           : var(--slate-dark30);
 
-    --sidebar-item-bg-active                 : var(--grey-dark-60);
-    --sidebar-item-text-active               : var(--grey-light-40);
+    --sidebar-item-bg-active                 : var(--grey-dark60);
+    --sidebar-item-text-active               : var(--grey-light40);
     --sidebar-item-border-active             : var(--blue);
     --sidebar-item-icon-fill-active          : var(--slate);
     --sidebar-item-icon-stroke-active        : var(--slate);
@@ -411,15 +414,21 @@
     --sidebar-item-text-scale                : 100%;
     --sidebar-item-text-weight               : 600;
 
-    --sidebar-item-has-alert-bg              : var(--red-dark-70);
+    --sidebar-item-has-alert-bg              : var(--red-dark70);
 
     --sidebar-footer-height                  : 32px;
     --sidebar-footer-bg                      : var(--white);
-    --sidebar-footer-border-top              : var(--slate-light-10);
+    --sidebar-footer-border-top              : var(--slate-light10);
 
     --sidebar-collapsed-item-link-text       : var(--white);
     --sidebar-collapsed-item-bg              : var(--hue);
     --sidebar-collapsed-item-border-radius   : var(--global-border-radius);
+}
+
+/* SKELETON ///////////////////////////////////////////////////////////////// */
+:root {
+    --skeleton-bg        : var(--slate-light40);
+    --skeleton-highlight : var(--slate-light40-opacity40);
 }
 
 /* SPINNER ////////////////////////////////////////////////////////////////// */
@@ -429,34 +438,34 @@
 
 /* SWITCH /////////////////////////////////////////////////////////////////// */
 :root {
-    --switch-bg-default         : var(--slate-light-60);
-    --switch-bg-hover           : var(--slate-light-40);
+    --switch-bg-default         : var(--slate-light60);
+    --switch-bg-hover           : var(--slate-light40);
     --switch-bg-checked         : var(--hue);
-    --switch-bg-disabled        : var(--slate-light-40);
+    --switch-bg-disabled        : var(--slate-light40);
 
     --switch-slider-bg-default  : var(--white);
     --switch-slider-bg-hover    : var(--white);
     --switch-slider-bg-checked  : var(--white);
-    --switch-slider-bg-disabled : var(--slate-light-40);
+    --switch-slider-bg-disabled : var(--slate-light40);
 }
 
 /* TABLE //////////////////////////////////////////////////////////////////// */
 :root {
     --table-bg                           : var(--white);
-    --table-border                       : var(--slate-light-10);
+    --table-border                       : var(--slate-light10);
     --table-font                         : var(--paragraph-font);
     --table-text                         : var(--paragraph-text-colour);
 
-    --table-striped-header-bg            : var(--blue-light-40);
-    --table-striped-cell-bg              : var(--slate-light-70);
+    --table-striped-header-bg            : var(--blue-light40);
+    --table-striped-cell-bg              : var(--slate-light70);
 
-    --table-highlight-bg                 : var(--amber-light-20);
-    --table-highlight-text               : var(--paragraph-text-colour);
+    --table-highlightbg                  : var(--amber-light20);
+    --table-highlighttext                : var(--paragraph-text-colour);
 
     --table-pagination-bg                : var(--white);
     --table-pagination-border-radius     : var(--global-border-radius);
     --table-pagination-text              : var(--paragraph-text-colour);
-    --table-pagination-nav-icon-bg-hover : var(--slate-dark-60);
+    --table-pagination-nav-icon-bg-hover : var(--slate-dark60);
 }
 
 /* TABS ///////////////////////////////////////////////////////////////////// */
@@ -464,9 +473,9 @@
     --tabs-bg                : var(--transparent);
 
     --tab-label-default      : var(--paragraph-text-colour);
-    --tab-label-hover        : var(--blue-light-40);
+    --tab-label-hover        : var(--blue-light40);
     --tab-label-active       : var(--blue);
-    --tab-label-disabled     : var(--slate-light-40);
+    --tab-label-disabled     : var(--slate-light40);
 
     --tab-border-active      : var(--blue);
 
@@ -476,7 +485,7 @@
 
 /* TOAST //////////////////////////////////////////////////////////////////// */
 :root {
-    --toast-bg            : var(--slate-light-10);
+    --toast-bg            : var(--slate-light10);
     --toast-text          : var(--black);
     --toast-border-radius : var(--global-border-radius);
 }
@@ -495,7 +504,7 @@
     --paragraph-font-weight          : 400;
     --paragraph-text-colour          : var(--grey);
 
-    --paragraph-subtext-colour       : var(--slate-dark-30);
+    --paragraph-subtext-colour       : var(--slate-dark30);
     --paragraph-subtext-size         : 0.8rem;
 
     /* HEADINGS ============================================================= */
@@ -518,29 +527,29 @@
     /* CODE ================================================================= */
     --code-font                      : var(--font-mono);
     --code-inline-font-size          : 0.8rem;
-    --code-inline-bg                 : var(--blue-light-80);
-    --code-inline-text               : var(--blue-dark-40);
+    --code-inline-bg                 : var(--blue-light80);
+    --code-inline-text               : var(--blue-dark40);
     --code-inline-border-radius      : var(--global-border-radius);
 
     --code-block-font-size           : 0.92rem;
-    --code-block-bg                  : var(--slate-dark-80);
-    --code-block-text                : var(--sky-light-60);
+    --code-block-bg                  : var(--slate-dark80);
+    --code-block-text                : var(--sky-light60);
     --code-block-line-height         : 1.8;
     --code-block-border-radius       : var(--global-border-radius);
 
-    --code-block-line-numbers        : var(--slate-dark-30);
+    --code-block-line-numbers        : var(--slate-dark30);
 
     --code-block-copy-button-bg      : var(--transparent);
     --code-block-copy-button-text    : var(--blue);
-    --code-block-copy-button-border  : var(--blue-light-40);
+    --code-block-copy-button-border  : var(--blue-light40);
 
-    --code-block-copied-badge-bg     : var(--green-light-80);
-    --code-block-copied-badge-text   : var(--green-dark-20);
-    --code-block-copied-badge-border : var(--green-dark-20);
+    --code-block-copied-badge-bg     : var(--green-light80);
+    --code-block-copied-badge-text   : var(--green-dark20);
+    --code-block-copied-badge-border : var(--green-dark20);
 
     /* KBD ================================================================== */
     --kbd-font                       : var(--font-mono);
-    --kbd-bg                         : var(--grey-light-10);
+    --kbd-bg                         : var(--grey-light10);
     --kbd-text                       : var(--grey);
     --kbd-border-radius              : var(--global-border-radius);
 
@@ -549,46 +558,46 @@
     --token-attrName                 : var(--orange);
     --token-attrValue                : var(--green);
     --token-boolean                  : var(--green);
-    --token-builtin                  : var(--violet-light-20);
+    --token-builtin                  : var(--violet-light20);
     --token-cdata                    : var(--grey);
     --token-className                : var(--red);
     --token-comment                  : var(--grey);
     --token-constant                 : var(--green);
     --token-deleted                  : var(--slate);
     --token-delimiter                : var(--grey);
-    --token-doctype                  : var(--amber-light-10);
+    --token-doctype                  : var(--amber-light10);
     --token-entity                   : var(--green);
     --token-function                 : var(--orange);
     --token-hexcode                  : var(--white);
     --token-important                : var(--red);
-    --token-imports                  : var(--sky-light-60);
+    --token-imports                  : var(--sky-light60);
     --token-inserted                 : var(--green);
     --token-italic                   : var(--green);
-    --token-keyword                  : var(--violet-light-20);
+    --token-keyword                  : var(--violet-light20);
     --token-name                     : var(--green);
     --token-namespace                : var(--green);
-    --token-number                   : var(--crimson-dark-10);
+    --token-number                   : var(--crimson-dark10);
     --token-operator                 : var(--amber);
-    --token-plain                    : var(--slate-light-60);
+    --token-plain                    : var(--slate-light60);
     --token-plain-html               : var(--slate);
-    --token-plain-css                : var(--salmon-light-30);
+    --token-plain-css                : var(--salmon-light30);
     --token-prolog                   : var(--grey);
-    --token-property                 : var(--pistachio-dark-20);
+    --token-property                 : var(--pistachio-dark20);
     --token-property-css             : var(--slate);
     --token-punctuation              : var(--grey);
     --token-regex                    : var(--green);
-    --token-selector-generic         : var(--green-light-20);
-    --token-selector-class           : var(--violet-light-20);
-    --token-selector-id              : var(--violet-light-40);
-    --token-selector-attrName        : var(--blue-dark-20);
-    --token-selector-attrValue       : var(--blue-light-20);
+    --token-selector-generic         : var(--green-light20);
+    --token-selector-class           : var(--violet-light20);
+    --token-selector-id              : var(--violet-light40);
+    --token-selector-attrName        : var(--blue-dark20);
+    --token-selector-attrValue       : var(--blue-light20);
     --token-selector-operator        : var(--token-operator);
     --token-selector-punctuation     : var(--grey);
-    --token-string                   : var(--grey-light-50);
+    --token-string                   : var(--grey-light50);
     --token-string-json              : var(--slate);
     --token-symbol                   : var(--green);
     --token-tag                      : var(--violet);
-    --token-unit                     : var(--crimson-light-20);
+    --token-unit                     : var(--crimson-light20);
     --token-url                      : var(--green);
     --token-variable                 : var(--orange);
 }

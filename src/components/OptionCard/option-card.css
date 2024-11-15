@@ -20,7 +20,7 @@
         background : var(--option-card-bg-hover);
         box-shadow : 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 24px rgba(0, 0, 0, 0.08);
 
-        .tick-icon {
+        &:not(.selected) .tick-icon {
             display : block;
 
             circle { fill : var(--option-card-tick-bg-hover); }
@@ -39,10 +39,12 @@
         }
     }
 
-    /* Here’s a clever bit of UX */
-    &.selected:hover {
-        .tick-icon circle { fill : var(--option-card-tick-bg-selected); }
-        .tick-icon path { stroke : var(--option-card-tick-line-selected); }
+    &.show-deselect {
+        .tick-icon { display : none; }
+        .deselect-icon {
+            display   : block;
+            animation : fadeIn 0.2s;
+        }
     }
 
     &:focus {
@@ -50,15 +52,15 @@
         outline-color : var(--radio-tabs-label-focus-border);
     }
 
-    /* THE TICK ============================================================= */
-    .tick-icon {
-        display    : none;
-        position   : absolute;
-        top        : 8px;
-        right      : 8px;
-        width      : 24px;
-        height     : 24px;
-        transition : all 0.2s;
+    /* THE ICONS ============================================================ */
+    .tick-icon,
+    .deselect-icon {
+        display        : none;
+        position       : absolute;
+        width          : 24px;
+        height         : 24px;
+        transition     : all 0.2s;
+        pointer-events : none;
     }
 
     .tick-icon circle { fill : var(--option-card-tick-bg-selected); }
@@ -69,4 +71,90 @@
         fill           : none;
         stroke-linecap : round;
     }
+
+    .deselect-icon circle { fill : var(--option-card-cross-bg); }
+
+    .deselect-icon path {
+        stroke         : var(--option-card-cross-line);
+        stroke-width   : 2px;
+        fill           : none;
+        stroke-linecap : round;
+    }
+}
+
+[data-option-cards-group] {
+    /* TICK POSITIONS ======================================================= */
+    &.tick-top-left .tick-icon,
+    &.tick-top-left .deselect-icon {
+        top  : 8px;
+        left : 8px;
+    }
+
+    &.tick-top-right .tick-icon,
+    &.tick-top-right .deselect-icon {
+        top   : 8px;
+        right : 8px;
+    }
+
+    &.tick-bottom-left .tick-icon,
+    &.tick-bottom-left .deselect-icon {
+        bottom : 8px;
+        left   : 8px;
+    }
+
+    &.tick-bottom-right .tick-icon,
+    &.tick-bottom-right .deselect-icon {
+        bottom : 8px;
+        right  : 8px;
+    }
+
+    &.tick-centre-left .tick-icon,
+    &.tick-center-left .tick-icon,
+    &.tick-centre-left .deselect-icon,
+    &.tick-center-left .deselect-icon {
+        top       : 50%;
+        left      : 8px;
+        transform : translateY(-50%);
+    }
+
+    &.tick-centre-right .tick-icon,
+    &.tick-center-right .tick-icon,
+    &.tick-centre-right .deselect-icon,
+    &.tick-center-right .deselect-icon {
+        top       : 50%;
+        right     : 8px;
+        transform : translateY(-50%);
+    }
+
+    &.tick-centre-top .tick-icon,
+    &.tick-center-top .tick-icon,
+    &.tick-centre-top .deselect-icon,
+    &.tick-center-top .deselect-icon {
+        top       : 8px;
+        left      : 50%;
+        transform : translateX(-50%);
+    }
+
+    &.tick-centre-bottom .tick-icon,
+    &.tick-center-bottom .tick-icon,
+    &.tick-centre-bottom .deselect-icon,
+    &.tick-center-bottom .deselect-icon {
+        bottom    : 8px;
+        left      : 50%;
+        transform : translateX(-50%);
+    }
+
+    &.tick-centre .tick-icon,
+    &.tick-center .tick-icon,
+    &.tick-centre .deselect-icon,
+    &.tick-center .deselect-icon {
+        top       : 50%;
+        left      : 50%;
+        transform : translate(-50%, -50%);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity : 0; }
+    to { opacity : 1; }
 }

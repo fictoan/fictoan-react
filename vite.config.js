@@ -3,94 +3,113 @@ import { extname, relative } from "path";
 import { fileURLToPath } from "node:url";
 import { glob } from "glob";
 import { visualizer } from "rollup-plugin-visualizer";
-import terser from "@rollup/plugin-terser";
 import dts from "vite-plugin-dts";
 import svgr from "vite-plugin-svgr";
 import react from "@vitejs/plugin-react";
-import postcssNesting from "postcss-nesting";
-import autoprefixer from "autoprefixer";
-import pkg from "./package.json";
+import { execSync } from "child_process";
+import path from "path";
+import { readFileSync } from "fs";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const pkg = JSON.parse(readFileSync(new URL("./package.json", import.meta.url)));
 
 const input = Object.fromEntries(
     glob
-        .sync(["src/index.tsx", "src/components/**/*.{ts,tsx}"], { ignore: "src/**/*.stories.{js,jsx,ts,tsx}" })
+        .sync(["src/index.tsx", "src/components/**/*.{ts,tsx}"], { ignore : "src/**/*.stories.{js,jsx,ts,tsx}" })
         .map((file) => [
             relative("src", file.slice(0, file.length - extname(file).length)),
             fileURLToPath(new URL(file, import.meta.url)),
-        ])
+        ]),
 );
 
 function preserveUseClient() {
     return {
-        name: "preserve-use-client",
-        enforce: "post",
+        name    : "preserve-use-client",
+        enforce : "post",
         generateBundle(options, bundle) {
-            for (const file in bundle) {
-                if (bundle[file].type === "chunk") {
-                    bundle[file].code = bundle[file].code.replace(
+            Object.entries(bundle).forEach(([_, chunk]) => {
+                if (chunk.type === "chunk") {
+                    chunk.code = chunk.code.replace(
                         /("use client";|('use client';))?/,
-                        '"use client";\n'
+                        "\"use client\";\n",
                     );
                 }
-            }
+            });
         },
     };
 }
 
-/** @type {import('vite').UserConfig} */
+function generateColors() {
+    return {
+        name       : "generate-colors",
+        buildStart : {
+            sequential : true,
+            handler() {
+                console.log("Generating color system...");
+                execSync("node src/scripts/generateColourClasses.js", { stdio : "inherit" });
+            },
+        },
+        configureServer(server) {
+            // Generate on dev server start
+            console.log("Generating color system...");
+            execSync("node src/scripts/generateColourClasses.js", { stdio : "inherit" });
+
+            // Watch for changes in the script
+            server.watcher.add("src/scripts/generateColourClasses.js");
+            server.watcher.on("change", (path) => {
+                if (path.endsWith("generateColourClasses.js")) {
+                    console.log("Color generation script changed, regenerating...");
+                    execSync("node scripts/generateColourClasses.js", { stdio : "inherit" });
+                }
+            });
+        },
+    };
+}
+
+function createVisualizer() {
+    return {
+        ...visualizer({ gzipSize : true }),
+        apply : "build",
+    };
+}
+
 export default defineConfig({
-    css: {
-        postcss: {
-            plugins: [postcssNesting, autoprefixer],
+    build   : {
+        minify        : "terser",
+        terserOptions : {
+            format : {
+                comments             : false,
+                preserve_annotations : true,
+            },
         },
-    },
-    build: {
-        minify: "terser",
-        lib: {
-            entry: input,
-            name: pkg.name,
-            fileName: "index",
+        lib           : {
+            entry    : input,
+            name     : pkg.name,
+            fileName : "index",
         },
-        rollupOptions: {
-            output: [
+        rollupOptions : {
+            output   : [
                 {
-                    format: "es",
-                    entryFileNames: "[name].js",
-                    assetFileNames: "index.[ext]",
-                    banner: `"use client;"`,
-                },
-                {
-                    format: "cjs",
-                    entryFileNames: "[name].cjs",
-                    assetFileNames: "index.[ext]",
-                    banner: `"use client;"`,
+                    format         : "es",
+                    entryFileNames : "[name].js",
+                    assetFileNames : "index.[ext]",
+                    banner         : `"use client;"`,
                 },
             ],
-            external: [...Object.keys(pkg.peerDependencies)],
-            plugins: [
-                // 👇 This because for some reason the Vite terserOptions don't work
-                terser({
-                    format: {
-                        comments: false,
-                        preserve_annotations: true,
-                    },
-                }),
-            ],
+            external : [...Object.keys(pkg.peerDependencies)],
         },
     },
-    plugins: [
+    plugins : [
+        generateColors(),
         svgr(),
         preserveUseClient(),
         react({
-            babel: {
-                presets: [["@babel/preset-env", { modules: false }], ["@babel/preset-react"]],
-                plugins: [["transform-react-remove-prop-types", { removeImport: true }]],
+            babel : {
+                presets : [["@babel/preset-env", { modules : false }], ["@babel/preset-react"]],
+                plugins : [["transform-react-remove-prop-types", { removeImport : true }]],
             },
         }),
         dts(),
-        {
-            ...visualizer({ gzipSize: true }),
-            apply: "build",
-        },
+        createVisualizer(),
     ],
 });

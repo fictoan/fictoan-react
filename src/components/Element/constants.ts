@@ -1,49 +1,62 @@
 import { ElementType, HTMLProps } from "react";
 
-type ColorWithShade =
-    | "red"
-    | "salmon"
-    | "orange"
-    | "amber"
-    | "yellow"
-    | "spring"
-    | "pistachio"
-    | "green"
-    | "teal"
-    | "cyan"
-    | "sky"
-    | "blue"
-    | "indigo"
-    | "violet"
-    | "purple"
-    | "pink"
-    | "crimson"
-    | "brick"
-    | "sienna"
-    | "brown"
-    | "slate"
-    | "grey";
-type Shade = "dark" | "light";
+export const DefaultColours = [
+    "red",
+    "salmon",
+    "orange",
+    "amber",
+    "yellow",
+    "spring",
+    "pistachio",
+    "green",
+    "teal",
+    "cyan",
+    "sky",
+    "blue",
+    "indigo",
+    "violet",
+    "purple",
+    "pink",
+    "crimson",
+    "brick",
+    "sienna",
+    "brown",
+    "slate",
+    "grey"
+] as const;
+
+export const BasicColours = [
+    "transparent",
+    "black",
+    "white"
+] as const;
+
+export const FictoanColours = [...DefaultColours, ...BasicColours] as const;
+
+type DefaultColoursType = typeof DefaultColours[number];
+type BasicColoursType = typeof BasicColours[number];
+
+type Luminance = "dark" | "light";
 type ShadeLevel = 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90;
-type FixedColor = "transparent" | "black" | "white";
-type CustomColor = "hue" | "tint" | "shade" | "analogue" | "accent";
+type OpacityLevel = 0 | 5 | 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90;
+type CustomColours = "hue" | "tint" | "shade" | "analogue" | "accent";
 
 // prettier-ignore
 export type EmphasisTypes = "primary" | "secondary" | "tertiary" | "custom";
 export type SpacingTypes = "none" | "nano" | "micro" | "tiny" | "small" | "medium" | "large" | "huge";
 export type ShadowTypes  = "none" | "mild" | "hard" | "soft";
 export type ShapeTypes   = "rounded" | "curved";
-export type OpacityTypes = "transparent" | "translucent" | "opaque" | "0" | "00" | "10" | "20" | "30" | "40" | "50" | "60" | "70" | "80" | "90" | "100";
+export type OpacityTypes = "0" | "5" | "10" | "20" | "30" | "40" | "50" | "60" | "70" | "80" | "90";
 export type WeightTypes  = "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900";
-// @deprecated
-export type OldColourPropTypes = `${ColorWithShade}-${ShadeLevel}`;
 
 export type ColourPropTypes =
-    | `${ColorWithShade}-${Shade}-${ShadeLevel}`
-    | ColorWithShade
-    | FixedColor
-    | CustomColor
-    | OldColourPropTypes
+    | `${DefaultColoursType}-${Luminance}${ShadeLevel}`
+    | `${DefaultColoursType}-${Luminance}${ShadeLevel}-opacity${OpacityLevel}`
+    | `${DefaultColoursType}-opacity${OpacityLevel}`
+    | `${BasicColoursType}-opacity${OpacityLevel}`
+    | DefaultColoursType
+    | BasicColoursType
+    | CustomColours
     | "";
 
 // prettier-ignore

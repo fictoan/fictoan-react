@@ -15,5 +15,13 @@ export const Card = React.forwardRef(({ shape, ...props }: CardProps, ref: React
         classNames.push(`shape-${shape}`);
     }
 
-    return <Element<CardElementType> as="div" data-card ref={ref} classNames={classNames} {...props} />;
+    return (
+        <Element<CardElementType>
+            as="div"
+            data-card
+            ref={ref}
+            classNames={classNames}
+            {...props}
+        />
+    );
 });

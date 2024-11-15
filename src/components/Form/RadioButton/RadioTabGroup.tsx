@@ -6,13 +6,18 @@ import { RadioTabGroupProps, RadioGroupProps, RadioButtonElementType } from "./c
 
 import "./radio-tab-group.css";
 
-// TODO: Add size prop to RadioTabGroupProps
-const RadioTabGroupOptions = ({ options, defaultValue, required, ...props }: RadioGroupProps) => {
+const RadioTabGroupOptions = ({ options, defaultValue, value, required, ...props }: RadioGroupProps) => {
     return (
         <Div data-radio-tab-group name={props.name} required={required}>
             {options.map((option) => (
                 <React.Fragment key={option.id}>
-                    <input type="radio" {...props} {...option} />
+                    <input
+                        type="radio"
+                        {...props}
+                        {...option}
+                        defaultChecked={defaultValue === option.value}
+                        checked={value === option.value}
+                    />
                     <label htmlFor={option.id}>{option.label}</label>
                 </React.Fragment>
             ))}

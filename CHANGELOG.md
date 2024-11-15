@@ -1,5 +1,22 @@
 # CHANGELOG
 
+## 1.6.0
+#### ⚠️ BREAKING CHANGES ⚠️
+- Colours now support opacity values
+  - | Old               | New                        |
+    |-------------------|----------------------------|
+    | `--slate-dark-40` | `--slate-dark40`           |
+    | `--red-light-20`  | `--red-light20`            |
+    | —                 | `--red-light20-opacity90`  |
+    | —                 | `--amber-dark20-opacity20` |
+    | —                 | `--pistacho-opacity40`     |
+    Basically you just have to remove the hyphen after the `light` and `dark` string for the new format, and it works on all props: `bgColour`, `textColour`, `var()` etc
+  - This colour generation is now more robust, as its generated with TS, instead of SCSS.
+- Removed CJS support, ESM only, because it’s 2024
+- Remove Storybook, because we have configurators for each component that does the same job, but better
+#### GENERIC CHANGES
+- Add `Skeleton` component for loading states
+
 ## 1.5.0
 - Rename `SelectWithSearch` to `ListBox` and add fuzzy search, multi-select, and custom entries capabilities
 
@@ -108,17 +125,6 @@
 - Rename `FormWrapper` to `Form`
 - Rename `CheckBox` to `Checkbox`
 - Add consistent `showWhen`, `closeWhen` and `secondsToShowFor` props for transitory components
-
-[//]: # "TODO: Make Fictoan more accessible"
-[//]: # "TODO: ⚠️ Remove style tag in CodeBlock"
-[//]: # "TODO: ⚠️ Fix TS issue in Select and SWS"
-[//]: # "TODO: Fix Dismiss Button in NotifcationItem"
-[//]: # "TODO: Add mask design to PinInputField"
-[//]: # "TODO: Fix Sidebar scrolling issue"
-[//]: # "TODO: Revamp BreadCrumbs?"
-
-~~[//]: # (TODO: ⚠️ Fix Meter height issue)~~
-
 ---
 
 ### 0.46.8
@@ -664,3 +670,14 @@
 
 ### v0.21.0
 - Code cleanup
+
+
+- TODO: Make Fictoan more accessible
+- TODO: ⚠️ Remove style tag in CodeBlock
+- TODO: Fix Dismiss Button in NotificationItem
+- TODO: Add mask design to PinInputField
+- TODO: Fix Sidebar scrolling issue
+- TODO: Revamp BreadCrumbs?
+
+~~TODO: ⚠️ Fix TS issue in Select and SWS~~
+~~TODO: ⚠️ Fix Meter height issue)~~

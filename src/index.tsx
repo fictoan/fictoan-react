@@ -10,7 +10,7 @@ import "./styles/globals.css";
 
 // COLOURS =============================================================================================================
 import "./styles/custom-colours.css";
-import "./styles/colours.scss";
+import "./styles/colours.css";
 
 // UTILITIES ===========================================================================================================
 import "./styles/utilities.css";
@@ -150,6 +150,15 @@ export {
     type SidebarFooterProps,
 } from "./components/Sidebar";
 
+// SKELETON ============================================================================================================
+export {
+    Skeleton,
+    SkeletonGroup,
+    type SkeletonProps,
+    type SkeletonGroupProps,
+    type SkeletonElementType
+} from "./components/Skeleton";
+
 // SPINNER =============================================================================================================
 export { Spinner, type SpinnerProps } from "./components/Spinner";
 
@@ -177,3 +186,17 @@ export {
     Heading6,
     type HeadingProps,
 } from "./components/Typography";
+
+// CONSTANTS AND TYPES /////////////////////////////////////////////////////////////////////////////////////////////////
+export {
+    DefaultColours,
+    BasicColours,
+    FictoanColours,
+    type ColourPropTypes,
+    type EmphasisTypes,
+    type SpacingTypes,
+    type ShadowTypes,
+    type ShapeTypes,
+    type OpacityTypes,
+    type WeightTypes,
+} from "./components/Element/constants";

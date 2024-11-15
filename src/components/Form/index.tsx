@@ -1,8 +1,5 @@
 export { Checkbox, type CheckboxProps } from "./Checkbox/Checkbox";
 
-export { ListBox } from "./ListBox/ListBox";
-export { type ListBoxProps } from "./ListBox/constants";
-
 export { FileUpload, type FileUploadProps } from "./InputField/FileUpload";
 
 export { Form, type FormProps } from "./Form/Form";
@@ -14,6 +11,9 @@ export { FormItemGroup, type FormItemGroupProps } from "./FormItemGroup/FormItem
 export { InputField, type InputFieldProps } from "./InputField/InputField";
 
 export { InputLabel, type InputLabelProps } from "./InputLabel/InputLabel";
+
+export { ListBox } from "./ListBox/ListBox";
+export { type ListBoxProps } from "./ListBox/constants";
 
 export { PinInputField, type PinInputFieldProps } from "./PinInputField/PinInputField";
 
