@@ -59,15 +59,6 @@
 
 ---
 
-## Storybook
-Start development server for storybook
-
-```sh
-yarn storybook
-```
-
----
-
 ## License
 Licensed under the [MIT License](LICENSE).
 
