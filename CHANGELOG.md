@@ -10,7 +10,8 @@
     | —                 | `--red-light20-opacity90`  |
     | —                 | `--amber-dark20-opacity20` |
     | —                 | `--pistacho-opacity40`     |
-    Basically you just have to remove the hyphen after the `light` and `dark` string for the new format, and it works on all props: `bgColour`, `textColour`, `var()` etc
+
+  - Basically you just have to remove the hyphen after the `light` and `dark` string for the new format, and it works on all props: `bgColour`, `textColour`, `var()` etc
   - This colour generation is now more robust, as its generated with TS, instead of SCSS.
 - Removed CJS support, ESM only, because it’s 2024
 - Remove Storybook, because we have configurators for each component that does the same job, but better
