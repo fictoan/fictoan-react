@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.7.0
+- Add accessibility improvements for most components
+- Extract `Pagination` component from `TablePagination` and make it more generic
+
 ## 1.6.0
 #### ⚠️ BREAKING CHANGES ⚠️
 - Colours now support opacity values
