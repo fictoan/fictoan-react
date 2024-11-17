@@ -1,13 +1,20 @@
+// FRAMEWORK ===========================================================================================================
 import React, { useState, useEffect, useRef, RefObject } from "react";
 
+// FICTOAN =============================================================================================================
 import { Element } from "../Element/Element";
 import { Div } from "../Element/Tags";
-import { CommonAndHTMLProps, SpacingTypes } from "../Element/constants";
 
-import { useClickOutside } from "../../hooks/UseClickOutside";
-
+// STYLES ==============================================================================================================
 import "./drawer.css";
 
+// HOOKS ===============================================================================================================
+import { useClickOutside } from "../../hooks/UseClickOutside";
+
+// TYPES ===============================================================================================================
+import { CommonAndHTMLProps, SpacingTypes } from "../Element/constants";
+
+// prettier-ignore
 export interface DrawerCustomProps {
     position              : "top" | "right" | "bottom" | "left";
     size                ? : SpacingTypes;
@@ -16,12 +23,13 @@ export interface DrawerCustomProps {
     closeOnClickOutside ? : boolean;
     isDismissible       ? : boolean;
     showOverlay         ? : boolean;
+    label               ? : string;
 }
 
-export type DrawerElementType = HTMLDivElement;
-export type DrawerProps = Omit<CommonAndHTMLProps<DrawerElementType>, keyof DrawerCustomProps> &
-    DrawerCustomProps;
+export type DrawerElementType = HTMLDialogElement;
+export type DrawerProps = Omit<CommonAndHTMLProps<DrawerElementType>, keyof DrawerCustomProps> & DrawerCustomProps;
 
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const Drawer = React.forwardRef(
     (
         {
@@ -36,6 +44,7 @@ export const Drawer = React.forwardRef(
             bgColour,
             isDismissible = true,
             showOverlay = false,
+            label,
             ...props
         }: DrawerProps,
         ref: React.Ref<DrawerElementType>
@@ -43,7 +52,7 @@ export const Drawer = React.forwardRef(
         const [shouldRender, setShouldRender] = useState(openWhen);
 
         const drawerRef = useRef(null);
-        const effectiveRef  = (ref || drawerRef) as RefObject<HTMLDivElement>; // Fallback to external ref if provided, otherwise use local ref
+        const effectiveRef = (ref || drawerRef) as RefObject<HTMLDialogElement>;
 
         useEffect(() => {
             if (openWhen) {
@@ -69,31 +78,41 @@ export const Drawer = React.forwardRef(
             classNames.push("close");
         }
 
-        const closeDrawer = () => {
-            if (closeWhen) {
-                closeWhen();
-            }
-        };
-
-        useClickOutside(effectiveRef, closeOnClickOutside ? closeDrawer : () => {});
-
         if (size) {
             classNames.push(size);
         }
 
+        const closeDrawer = () => closeWhen?.();
+
+        useClickOutside(effectiveRef, closeOnClickOutside ? closeDrawer : () => {});
+
+        const handleKeyDown = (e: React.KeyboardEvent) => {
+            if (e.key === 'Escape' && isDismissible) {
+                closeDrawer();
+            }
+        };
+
         return shouldRender ? (
             <>
                 <Element<DrawerElementType>
-                    as="div"
+                    as="dialog"
                     data-drawer
                     ref={effectiveRef}
                     classNames={classNames}
                     onAnimationEnd={onAnimationEnd}
+                    onKeyDown={handleKeyDown}
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label={label || "Drawer"}
+                    tabIndex={-1}
                     {...(closeOnClickOutside ? { onClick: closeDrawer } : {})}
                     {...props}
                 >
                     {openWhen && showOverlay && (
-                        <Div className={`rest-of-page-overlay ${openWhen ? "visible" : ""}`} />
+                        <Div
+                            className={`rest-of-page-overlay ${openWhen ? "visible" : ""}`}
+                            aria-hidden="true"
+                        />
                     )}
 
                     <Element
@@ -102,9 +121,15 @@ export const Drawer = React.forwardRef(
                         padding={padding}
                         bgColor={bgColor}
                         bgColour={bgColour}
+                        role="document"
                     >
                         {isDismissible && (
-                            <button className="dismiss-button" onClick={closeDrawer} />
+                            <button
+                                className="dismiss-button"
+                                onClick={closeDrawer}
+                                aria-label="Close drawer"
+                                tabIndex={0}
+                            />
                         )}
                         {children}
                     </Element>

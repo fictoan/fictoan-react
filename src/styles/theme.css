@@ -1,3 +1,14 @@
+/* CREATING NEW VARIABLES */
+/* Follow the item-name-kind-aspect-state structure of naming things  */
+/* FOR EXAMPLE  */
+/* pagination-item-outlined-border-selected  */
+/* item-name -     kind    -aspect-state  */
+/* [pagination] : item name */
+/* [outlined] : kind */
+/* [border] : aspect */
+/* [selected] : state */
+
+
 /* ACCORDION //////////////////////////////////////////////////////////////// */
 :root {
     --accordion-chevron : var(--slate);
@@ -314,6 +325,71 @@
     --option-card-cross-line         : var(--white);
 }
 
+/* PAGINATION /////////////////////////////////////////////////////////////// */
+:root {
+    --pagination-info-text                     : var(--paragraph-text-colour);
+    --pagination-info-font                     : var(--paragraph-font);
+
+    --pagination-item-height                   : 32px;
+    --pagination-item-min-width                : 32px;
+    --pagination-item-border-width             : var(--global-border-width);
+    --pagination-item-border-radius            : var(--global-border-radius);
+
+    /* PLAIN ================================================================ */
+    --pagination-item-bg-default               : var(--transparent);
+    --pagination-item-border-default           : var(--transparent);
+    --pagination-item-text-default             : var(--paragraph-text-colour);
+
+    --pagination-item-bg-hover                 : var(--transparent);
+    --pagination-item-border-hover             : var(--transparent);
+    --pagination-item-text-hover               : var(--paragraph-text-colour);
+
+    --pagination-item-bg-selected              : var(--transparent);
+    --pagination-item-border-selected          : var(--transparent);
+    --pagination-item-text-selected            : var(--blue);
+
+    --pagination-arrows-stroke                 : var(--slate);
+
+    /* OUTLINED ============================================================= */
+    --pagination-item-outlined-bg-default      : var(--transparent);
+    --pagination-item-outlined-border-default  : var(--blue);
+    --pagination-item-outlined-text-default    : var(--blue);
+
+    --pagination-item-outlined-bg-hover        : var(--transparent);
+    --pagination-item-outlined-border-hover    : var(--blue-light60);
+    --pagination-item-outlined-text-hover      : var(--blue-light60);
+
+    --pagination-item-outlined-bg-selected     : var(--transparent);
+    --pagination-item-outlined-border-selected : var(--blue);
+    --pagination-item-outlined-text-selected   : var(--blue);
+
+    --pagination-arrows-outlined-stroke        : var(--slate);
+
+    /* FILLED =============================================================== */
+    --pagination-item-filled-bg-default        : var(--blue-light80);
+    --pagination-item-filled-border-default    : var(--blue-light80);
+    --pagination-item-filled-text-default      : var(--blue);
+
+    --pagination-item-filled-bg-hover          : var(--blue-light40);
+    --pagination-item-filled-border-hover      : var(--blue-light40);
+    --pagination-item-filled-text-hover        : var(--blue);
+
+    --pagination-item-filled-bg-selected       : var(--blue);
+    --pagination-item-filled-border-selected   : var(--blue);
+    --pagination-item-filled-text-selected     : var(--white);
+
+    --pagination-arrows-filled-stroke          : var(--slate);
+
+    --pagination-item-bg-disabled              : var(--transparent);
+    --pagination-item-text-disabled            : var(--transparent);
+    --pagination-item-border-disabled          : var(--transparent);
+    --pagination-arrows-stroke-disabled        : var(--slate-opacity40);
+
+    --pagination-input-bg                      : var(--input-bg-default);
+    --pagination-input-border                  : var(--input-border-default);
+    --pagination-input-text                    : var(--input-text-default);
+}
+
 /* PROGRESS BAR ///////////////////////////////////////////////////////////// */
 :root {
     --progress-bar-bg            : var(--slate-light70);
@@ -356,8 +432,8 @@
     --range-label         : var(--input-label-default);
     --range-value         : var(--input-label-default);
 
-    --range-track-bg      : var(--slate-light70);
-    --range-thumb-bg      : var(--blue-light20);
+    --range-track-bgs      : var(--slate-light70);
+    --range-thumb-bgs      : var(--blue-light20);
     --range-thumb-border  : var(--blue-light20);
 
     --range-border-focus  : var(--blue);

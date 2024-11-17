@@ -1,9 +1,14 @@
+// FRAMEWORK ============================================================================================================
 import React from "react";
 
+// FICTOAN =============================================================================================================
 import { Element } from "../Element/Element";
-import { CommonAndHTMLProps, SpacingTypes } from "../Element/constants";
 
+// STYLES =============================================================================================================
 import "./row.css";
+
+// TYPES =============================================================================================================
+import { CommonAndHTMLProps, SpacingTypes } from "../Element/constants";
 
 // prettier-ignore
 interface RowCustomProps {
@@ -13,11 +18,13 @@ interface RowCustomProps {
     retainLayoutOnTabletPortrait  ? : boolean;
     retainLayoutOnMobile          ? : boolean;
     retainLayoutAlways            ? : boolean;
+    groupLabel                    ? : string;     // Accessible label for the group
 }
 
 export type RowElementType = HTMLDivElement;
 export type RowProps = Omit<CommonAndHTMLProps<RowElementType>, keyof RowCustomProps> & RowCustomProps;
 
+// COMPONENT //////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const Row = React.forwardRef(
     (
         {
@@ -27,13 +34,14 @@ export const Row = React.forwardRef(
             retainLayoutOnTabletPortrait,
             retainLayoutOnMobile,
             retainLayoutAlways,
+            groupLabel,
             ...props
         }: RowProps,
         ref: React.Ref<RowElementType>
     ) => {
+        // CLASS NAMES -------------------------------------------------------------------------------------------------
         let classNames = [];
 
-        // TOP LEVEL CHECK =============================================================================================
         if (layout) {
             classNames.push(`layout-${layout}`);
         }
@@ -74,6 +82,7 @@ export const Row = React.forwardRef(
             );
         }
 
+        // RENDER -----------------------------------------------------------------------------------------------------
         return (
             <Element<RowElementType>
                 as="div"
@@ -81,6 +90,8 @@ export const Row = React.forwardRef(
                 ref={ref}
                 classNames={[classNames.join(" ")]}
                 marginBottom="tiny"
+                role="grid"
+                aria-label={groupLabel}
                 {...props}
             />
         );

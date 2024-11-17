@@ -1,10 +1,15 @@
-import React, { ReactNode, useEffect, useState } from "react";
+// FRAMEWORK ===========================================================================================================
+import React, { ReactNode } from "react";
 
-import { CommonAndHTMLProps } from "../Element/constants";
+// FICTOAN =============================================================================================================
 import { Element } from "../Element/Element";
 import { Text } from "../Typography/Text";
 
+// STYLES ==============================================================================================================
 import "./accordion.css";
+
+// TYPES ===============================================================================================================
+import { CommonAndHTMLProps } from "../Element/constants";
 
 // prettier-ignore
 export interface AccordionCustomProps {
@@ -18,6 +23,7 @@ export type AccordionProps =
     Omit<CommonAndHTMLProps<AccordionElementType>, keyof AccordionCustomProps>
     & AccordionCustomProps;
 
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const Accordion = React.forwardRef(
     ({ summary, children, open = false, ...props }: AccordionProps, ref: React.Ref<AccordionElementType>) => {
 

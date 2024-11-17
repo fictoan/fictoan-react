@@ -1,21 +1,29 @@
+// FRAMEWORK ===========================================================================================================
 import React from "react";
 
+// FICTOAN =============================================================================================================
 import { Element } from "../Element/Element";
-import { CommonAndHTMLProps } from "../Element/constants";
 
+// STYLES ==============================================================================================================
 import "./divider.css";
+
+// TYPES ===============================================================================================================
+import { CommonAndHTMLProps } from "../Element/constants";
 
 // prettier-ignore
 export interface DividerCustomProps {
     kind   ? : "primary" | "secondary" | "tertiary";
     height ? : string;
+    label  ? : string;
 }
 
 export type DividerElementType = HTMLHRElement;
 export type DividerProps = Omit<CommonAndHTMLProps<DividerElementType>, keyof DividerCustomProps> & DividerCustomProps;
 
-export const Divider = React.forwardRef((
-    { kind, height, ...props }: DividerProps, ref: React.Ref<DividerElementType>) => {
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+export const Divider = React.forwardRef(
+    (
+        { kind, height, label, ...props }: DividerProps, ref: React.Ref<DividerElementType>) => {
         let classNames = [];
 
         if (kind) {
@@ -28,6 +36,9 @@ export const Divider = React.forwardRef((
                 data-hrule
                 ref={ref}
                 classNames={classNames}
+                role="separator"
+                aria-orientation="horizontal"
+                aria-label={label}
                 {...props}
                 style={{ height : height }}
             />

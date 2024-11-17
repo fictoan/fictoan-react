@@ -1,9 +1,14 @@
+// FRAMEWORK ============================================================================================================
 import React from "react";
 
+// FICTOAN =============================================================================================================
 import { Element } from "../Element/Element";
-import { CommonAndHTMLProps } from "../Element/constants";
 
+// STYLES =============================================================================================================
 import "./portion.css";
+
+// TYPES =============================================================================================================
+import { CommonAndHTMLProps } from "../Element/constants";
 import { SpanTypes } from "./types";
 
 // prettier-ignore
@@ -13,16 +18,27 @@ export interface PortionCustomProps {
     tabletPortraitSpan  ? : SpanTypes;
     mobileSpan          ? : SpanTypes;
     isHorizontal        ? : boolean;
+    role                ? : string;
 }
 
 export type PortionElementType = HTMLDivElement;
 export type PortionProps = Omit<CommonAndHTMLProps<PortionElementType>, keyof PortionCustomProps> & PortionCustomProps;
 
+// COMPONENT //////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const Portion = React.forwardRef(
     (
-        { desktopSpan, mobileSpan, tabletLandscapeSpan, tabletPortraitSpan, isHorizontal, ...props }: PortionProps,
+        {
+            desktopSpan,
+            mobileSpan,
+            tabletLandscapeSpan,
+            tabletPortraitSpan,
+            isHorizontal,
+            role,
+            ...props
+        }: PortionProps,
         ref: React.Ref<PortionElementType>
     ) => {
+        // CLASS NAMES -------------------------------------------------------------------------------------------------
         let classNames = [];
 
         if (desktopSpan || tabletLandscapeSpan || tabletPortraitSpan || mobileSpan) {
@@ -49,8 +65,16 @@ export const Portion = React.forwardRef(
             classNames.push("horizontal");
         }
 
+        // RENDER ---------------------------------------------------------------------------------------------------
         return (
-            <Element<PortionElementType> as="div" data-portion ref={ref} classNames={classNames} {...props} />
+            <Element<PortionElementType>
+                as="div"
+                data-portion
+                ref={ref}
+                classNames={classNames}
+                role={role}
+                {...props}
+            />
         );
     }
 );

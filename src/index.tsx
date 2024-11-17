@@ -125,6 +125,9 @@ export {
 export { OptionCard, OptionCardsGroup, type OptionCardProps } from "./components/OptionCard";
 export { useOptionCard } from "./components/OptionCard";
 
+// PAGINATION ==========================================================================================================
+export { Pagination, type PaginationProps } from "./components/Pagination";
+
 // PORTION =============================================================================================================
 export { Portion, type PortionProps } from "./components/Portion";
 

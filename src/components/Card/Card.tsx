@@ -1,14 +1,23 @@
+// FRAMEWORK ===========================================================================================================
 import React from "react";
 
+// FICTOAN =============================================================================================================
 import { Element } from "../Element/Element";
-import { CommonAndHTMLProps } from "../Element/constants";
 
+// STYLES ==============================================================================================================
 import "./card.css";
 
-export type CardElementType = HTMLDivElement;
-export type CardProps = CommonAndHTMLProps<CardElementType>;
+// TYPES ===============================================================================================================
+import { CommonAndHTMLProps } from "../Element/constants";
 
-export const Card = React.forwardRef(({ shape, ...props }: CardProps, ref: React.Ref<CardElementType>) => {
+export type CardElementType = HTMLDivElement;
+export interface CardCustomProps {
+    heading ? : string;
+}
+export type CardProps = CommonAndHTMLProps<CardElementType> & CardCustomProps;
+
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+export const Card = React.forwardRef(({ shape, heading, children, ...props }: CardProps, ref: React.Ref<CardElementType>) => {
     let classNames = [];
 
     if (shape) {
@@ -21,7 +30,12 @@ export const Card = React.forwardRef(({ shape, ...props }: CardProps, ref: React
             data-card
             ref={ref}
             classNames={classNames}
+            role="region"
+            aria-label={heading}
+            tabIndex={0}
             {...props}
-        />
+        >
+            {children}
+        </Element>
     );
 });

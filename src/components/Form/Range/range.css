@@ -56,8 +56,8 @@
     /*  //////////////////////////////////////  */
     input[type="range"] {
         width          : 100%;
-        color          : var(--range-thumb-bg);
-        --track-color  : var(--range-track-bg);
+        color          : var(--range-thumb-bgs);
+        --track-color  : var(--range-track-bgs);
         --thumb-width  : 20px;
         --thumb-height : 20px;
         --track-height : 2px;

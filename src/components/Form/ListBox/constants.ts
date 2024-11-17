@@ -3,7 +3,6 @@ import { ColourPropTypes, CommonAndHTMLProps } from "@/components/Element/consta
 
 type NonZeroNumber = Exclude<number, 0>;
 
-export type SelectElementType = HTMLSelectElement;
 export type ListBoxElementType = HTMLDivElement;
 
 export interface OptionForListBoxProps {
@@ -30,6 +29,7 @@ export interface ListBoxCustomProps {
     badgeTextColor     ? : ColourPropTypes;
     selectionLimit     ? : NonZeroNumber;
     allowCustomEntries ? : boolean;
+    isLoading          ? : boolean;
 }
 
 export type ListBoxProps =

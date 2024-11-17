@@ -94,6 +94,9 @@ export {
     type NotificationItemProps,
 } from "./Notification";
 
+// PAGINATION ==========================================================================================================
+export { Pagination, type PaginationProps } from "./Pagination";
+
 // PORTION =============================================================================================================
 export { Portion, type PortionProps } from "./Portion";
 

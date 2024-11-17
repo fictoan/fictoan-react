@@ -1,12 +1,16 @@
+// FRAMEWORK ===========================================================================================================
 import React from "react";
 
-import { CommonAndHTMLProps } from "../../Element/constants";
-
+// FICTOAN =============================================================================================================
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
+
+// STYLES ==============================================================================================================
+import "./input-field.css";
+
+// TYPES ===============================================================================================================
+import { CommonAndHTMLProps } from "../../Element/constants";
 import { InputCommonProps, InputIconProps } from "../BaseInputComponent/constants";
 import { InputLabelCustomProps } from "../InputLabel/InputLabel";
-
-import "./input-field.css";
 
 export type InputFieldElementType = HTMLInputElement;
 export type InputFieldProps = CommonAndHTMLProps<InputFieldElementType> &
@@ -14,6 +18,25 @@ export type InputFieldProps = CommonAndHTMLProps<InputFieldElementType> &
     InputCommonProps &
     InputIconProps;
 
-export const InputField = React.forwardRef(({ ...props }: InputFieldProps, ref: React.Ref<InputFieldElementType>) => {
-    return <BaseInputComponent<InputFieldElementType> as="input" data-input-field ref={ref} placeholder=" " {...props} />;
-});
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+export const InputField = React.forwardRef(
+    (
+        {
+            "aria-label"   : ariaLabel,
+            "aria-invalid" : ariaInvalid,
+            ...props
+        }: InputFieldProps, ref: React.Ref<InputFieldElementType>) => {
+        return (
+            <BaseInputComponent<InputFieldElementType>
+                as="input"
+                data-input-field
+                ref={ref}
+                aria-label={ariaLabel || props.label}
+                aria-invalid={ariaInvalid || props.invalid || undefined}
+                aria-required={props.required}
+                placeholder=" "
+                {...props}
+            />
+        );
+    }
+);

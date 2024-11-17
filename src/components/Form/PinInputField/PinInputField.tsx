@@ -1,11 +1,19 @@
+// FRAMEWORK ===========================================================================================================
 import React, { createRef, useCallback, useEffect, useImperativeHandle, useRef, useState } from "react";
 
+// FICTOAN =============================================================================================================
 import { InputField } from "../InputField/InputField";
 import { Div } from "../../Element/Tags";
 
+// STYLES ==============================================================================================================
+import "./PinInputField.css";
+
+// TYPES ===============================================================================================================
 import { CommonAndHTMLProps } from "../../Element/constants";
 
-import "./PinInputField.css";
+interface PinInputFieldHandle extends HTMLDivElement {
+    reset: () => void;
+}
 
 // prettier-ignore
 type PinInputFieldCustomProps = {
@@ -18,12 +26,14 @@ type PinInputFieldCustomProps = {
     pasteFromClipboard     ? : "enabled" | "disabled";
     focusFirstInputOnReset ? : boolean;
     isFullWidth            ? : boolean;
+    ariaLabel              ? : string;
 };
 
 export type PinInputFieldElementType = HTMLDivElement & { reset: () => void };
 export type PinInputFieldProps = Omit<CommonAndHTMLProps<PinInputFieldElementType>, keyof PinInputFieldCustomProps> &
     PinInputFieldCustomProps;
 
+// UTILITIES ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 function validate(value: string, type: "alphanumeric" | "number") {
     const NUMERIC_REGEX = /^[0-9]+$/;
     const ALPHA_NUMERIC_REGEX = /^[a-zA-Z0-9]+$/i;
@@ -31,6 +41,7 @@ function validate(value: string, type: "alphanumeric" | "number") {
     return regex.test(value);
 }
 
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const PinInputField = React.forwardRef(
     (
         {
@@ -43,49 +54,29 @@ export const PinInputField = React.forwardRef(
             pasteFromClipboard = "enabled",
             focusFirstInputOnReset = true,
             isFullWidth,
+            ariaLabel,
             ...props
         }: PinInputFieldProps,
         ref: React.Ref<PinInputFieldElementType>
     ) => {
+        // REFS =====================================================================================================
         const pinInputFieldRef = useRef<PinInputFieldElementType>(null);
+
+        // STATES ===================================================================================================
         const [inputRefs, setInputRefs] = useState<React.RefObject<HTMLInputElement>[]>([]);
         const [values, setValues] = useState<string[]>([]);
         const [moveFocus, setMoveFocus] = useState<boolean>(true);
         const [focusedIndex, setFocusedIndex] = useState<number>(-1);
 
+        // CONSTANTS ================================================================================================
+        const inputGroupId = props.id || `pin-input-${Math.random().toString(36).substring(2, 9)}`;
+        const inputDescription = ariaLabel || 'Enter verification code';
+
+        // HANDLERS =================================================================================================
         const focus = useCallback(
             (index: number) => {
                 const ref = inputRefs[index];
                 ref?.current?.focus();
-            },
-            [inputRefs]
-        );
-
-        useEffect(() => {
-            setInputRefs((inputRefs) => {
-                const refs = Array(length)
-                    .fill(0)
-                    .map((_, i) => {
-                        const ref = inputRefs[i] || createRef();
-                        if (autoFocus && i === 0) {
-                            ref.current?.focus();
-                        }
-                        return ref;
-                    });
-                return refs;
-            });
-        }, [length, autoFocus]);
-
-        useImperativeHandle(
-            ref,
-            // @ts-ignore
-            () => {
-                return {
-                    ...pinInputFieldRef.current,
-                    reset() {
-                        handleResetPinInput();
-                    },
-                };
             },
             [inputRefs]
         );
@@ -118,10 +109,10 @@ export const PinInputField = React.forwardRef(
                 onChange?.(nextValues.join(""));
 
                 const isComplete =
-                    value !== "" &&
-                    nextValues.length === length &&
-                    nextValues.every((inputValue) => inputValue != null && inputValue !== "") &&
-                    index == length - 1;
+                          value !== "" &&
+                          nextValues.length === length &&
+                          nextValues.every((inputValue) => inputValue != null && inputValue !== "") &&
+                          index == length - 1;
 
                 if (!isComplete) {
                     setMoveFocus(true);
@@ -210,6 +201,7 @@ export const PinInputField = React.forwardRef(
             }
         };
 
+        // EVENT HANDLERS ==============================================================================================
         const onFocus = (e: React.FocusEvent<HTMLInputElement>, i: number) => {
             setFocusedIndex(i);
         };
@@ -235,17 +227,51 @@ export const PinInputField = React.forwardRef(
             setFocusedIndex(-1);
         };
 
-        let classNames: string[] | undefined = [];
+        // EFFECTS =====================================================================================================
+        useEffect(() => {
+            setInputRefs((inputRefs) => {
+                const refs = Array(length)
+                    .fill(0)
+                    .map((_, i) => {
+                        const ref = inputRefs[i] || createRef();
+                        if (autoFocus && i === 0) {
+                            ref.current?.focus();
+                        }
+                        return ref;
+                    });
+                return refs;
+            });
+        }, [length, autoFocus]);
+
+        useImperativeHandle(
+            ref, () => ({
+                ...(pinInputFieldRef.current as HTMLDivElement),
+                reset: handleResetPinInput
+            }) as PinInputFieldHandle,
+            [handleResetPinInput]
+        );
+
+        // RENDER ==================================================================================================
+        let classNames: string[] = [];
 
         if (isFullWidth) {
             classNames.push("full-width");
         }
 
         return (
-            <Div data-pin-input-field ref={pinInputFieldRef} {...props} classNames={classNames}>
+            <Div
+                data-pin-input-field
+                ref={pinInputFieldRef}
+                classNames={classNames}
+                role="group"
+                aria-label={inputDescription}
+                aria-required={props.required}
+                {...props}
+            >
                 {[...Array(length)].map((_, i) => (
                     <InputField
                         key={i}
+                        id={`${inputGroupId}-${i}`}
                         ref={inputRefs[i]}
                         type={mask ? "password" : type === "number" ? "tel" : "text"}
                         inputMode={type === "number" ? "numeric" : "text"}
@@ -260,6 +286,8 @@ export const PinInputField = React.forwardRef(
                         autoFocus={autoFocus && i === 0}
                         onCopy={(e) => pasteFromClipboard === "disabled" && e.preventDefault()}
                         onPaste={(e) => pasteFromClipboard === "disabled" && e.preventDefault()}
+                        aria-label={`Digit ${i + 1} of ${length}`}
+                        aria-required={props.required}
                     />
                 ))}
             </Div>

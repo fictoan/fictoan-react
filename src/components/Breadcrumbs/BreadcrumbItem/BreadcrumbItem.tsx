@@ -1,16 +1,23 @@
+// FRAMEWORK ===========================================================================================================
 import React from "react";
 
+// FICTOAN =============================================================================================================
 import { Element } from "../../Element";
-import { CommonAndHTMLProps } from "../../Element/constants";
 
+// STYLES ==============================================================================================================
 import "./breadcrumb-item.css";
 
+// TYPES ===============================================================================================================
+import { CommonAndHTMLProps } from "../../Element/constants";
+
+// prettier-ignore
 export type BreadcrumbItemElementType = HTMLLIElement;
 export interface BreadcrumbItemProps extends CommonAndHTMLProps<BreadcrumbItemElementType> {
     children   : React.ReactNode;
     current  ? : boolean;
 }
 
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const BreadcrumbItem = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(
     ({ children, current, ...props }, ref) => {
         return (

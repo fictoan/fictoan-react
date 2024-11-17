@@ -1,9 +1,14 @@
+// FRAMEWORK ===========================================================================================================
 import React from "react";
 
+// FICTOAN =============================================================================================================
 import { Element } from "../Element/Element";
-import { CommonAndHTMLProps, EmphasisTypes, ShapeTypes, SpacingTypes } from "../Element/constants";
 
+// STYLES ==============================================================================================================
 import "./Button.css";
+
+// TYPES ===============================================================================================================
+import { CommonAndHTMLProps, EmphasisTypes, ShapeTypes, SpacingTypes } from "../Element/constants";
 
 // prettier-ignore
 export interface ButtonCustomProps {
@@ -12,13 +17,15 @@ export interface ButtonCustomProps {
     shape     ? : ShapeTypes;
     isLoading ? : boolean;
     hasDelete ? : boolean;
+    label     ? : string; // For aria-label
 }
 
 export type ButtonElementType = HTMLButtonElement;
 export type ButtonProps = Omit<CommonAndHTMLProps<ButtonElementType>, keyof ButtonCustomProps> & ButtonCustomProps;
 
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const Button = React.forwardRef(
-    ({ size="medium", shape, kind, isLoading, hasDelete, ...props }: ButtonProps, ref: React.Ref<ButtonElementType>) => {
+    ({ size="medium", shape, kind, isLoading, hasDelete, label, ...props }: ButtonProps, ref: React.Ref<ButtonElementType>) => {
         let classNames = [];
 
         if (kind) {
@@ -42,7 +49,16 @@ export const Button = React.forwardRef(
         }
 
         return (
-            <Element<ButtonElementType> as="button" data-button ref={ref} classNames={classNames} {...props} />
+            <Element<ButtonElementType>
+                as="button"
+                data-button
+                ref={ref}
+                classNames={classNames}
+                aria-label={label}
+                aria-disabled={props.disabled || isLoading}
+                aria-busy={isLoading}
+                {...props}
+            />
         );
     }
 );

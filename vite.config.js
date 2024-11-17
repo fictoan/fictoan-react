@@ -1,4 +1,3 @@
-// vite.config.js
 import { defineConfig } from "vite";
 import { extname, relative } from "path";
 import { fileURLToPath } from "node:url";
@@ -6,7 +5,7 @@ import { glob } from "glob";
 import { visualizer } from "rollup-plugin-visualizer";
 import dts from "vite-plugin-dts";
 import svgr from "vite-plugin-svgr";
-import react from "@vitejs/plugin-react";
+import { babel } from "@rollup/plugin-babel";
 import { execSync } from "child_process";
 import path from "path";
 import { readFileSync } from "fs";
@@ -32,7 +31,7 @@ function preserveUseClient() {
                 if (chunk.type === "chunk") {
                     chunk.code = chunk.code.replace(
                         /("use client";|('use client';))?/,
-                        "\"use client\";\n",
+                        '"use client";\n'
                     );
                 }
             });
@@ -97,6 +96,22 @@ export default defineConfig({
                     banner: `"use client;"`,
                 },
             ],
+            plugins: [
+                babel({
+                    exclude: "node_modules/**",
+                    babelHelpers: "bundled",
+                    presets: [
+                        ["@babel/preset-env", {
+                            useBuiltIns: "usage",
+                            corejs: 3,
+                            targets: {
+                                esmodules: true,
+                            },
+                        }],
+                        "@babel/preset-react",
+                    ],
+                }),
+            ],
             external: [...Object.keys(pkg.peerDependencies)],
         },
     },
@@ -104,13 +119,6 @@ export default defineConfig({
         generateColors(),
         svgr(),
         preserveUseClient(),
-        react({
-            babel: {
-                presets: [["@babel/preset-env", { modules: false }], ["@babel/preset-react"]],
-                plugins: [["transform-react-remove-prop-types", { removeImport: true }]],
-            },
-        }),
-        dts(),
         createVisualizer(),
     ],
 });
