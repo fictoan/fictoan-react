@@ -1,53 +1,65 @@
+// FRAMEWORK ===========================================================================================================
 import React, { useState, useRef, useEffect, MutableRefObject, KeyboardEvent } from "react";
 
+// FICTOAN =============================================================================================================
 import { Div } from "../../Element/Tags";
 import { InputField } from "../InputField/InputField";
 import { Badge } from "../../Badge/Badge";
 import { Text } from "../../Typography/Text";
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 
+// STYLES ==============================================================================================================
+import "./list-box.css";
+
+// HOOKS ===============================================================================================================
+import { useClickOutside } from "../../../hooks/UseClickOutside";
+
+// UTILS ===============================================================================================================
+import { searchOptions } from "./listBoxUtils";
+
+// TYPES ===============================================================================================================
 import {
     ListBoxProps,
     OptionForListBoxProps,
     ListBoxElementType,
 } from "./constants";
 
-import { searchOptions } from "./listBoxUtils";
-
-import "./list-box.css";
-
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>(
-    ({
-         options,
-         label,
-         placeholder = "Select an option",
-         id,
-         allowMultiSelect = false,
-         onChange,
-         disabled,
-         badgeBgColour,
-         badgeBgColor,
-         badgeTextColour,
-         badgeTextColor,
-         selectionLimit,
-         allowCustomEntries = false,
-         ...props
-     }, ref,
-    ) => {
+    (
+        {
+            options,
+            label,
+            placeholder = "Select an option",
+            id,
+            allowMultiSelect = false,
+            onChange,
+            disabled,
+            badgeBgColour,
+            badgeBgColor,
+            badgeTextColour,
+            badgeTextColor,
+            selectionLimit,
+            allowCustomEntries = false,
+            ...props
+        }, ref) => {
+        // STATES ====================================================================================================
         const [ isOpen, setIsOpen ]                   = useState(false);
-        // FOR NORMAL LISTBOX
         const [ selectedOption, setSelectedOption ]   = useState<OptionForListBoxProps | null>(null);
-        // FOR MULTI-SELECT LISTBOX, JUST DON’T QUESTION IT PLEASE
         const [ selectedOptions, setSelectedOptions ] = useState<OptionForListBoxProps[]>([]);
         const [ searchValue, setSearchValue ]         = useState("");
         const [ activeIndex, setActiveIndex ]         = useState(-1);
 
+        // REFS =====================================================================================================
         const dropdownRef    = useRef() as MutableRefObject<HTMLSelectElement>;
         const searchInputRef = useRef<HTMLInputElement>(null);
         const effectiveRef   = (ref || dropdownRef) as React.RefObject<HTMLSelectElement>;
 
+        // CONSTANTS ================================================================================================
+        const listboxId       = id || `listbox-${Math.random().toString(36).substring(2, 9)}`;
         const filteredOptions = searchOptions(options, searchValue);
 
+        // HANDLERS =================================================================================================
         const handleSelectOption = (option: OptionForListBoxProps) => {
             if (option.disabled) return;
 
@@ -175,18 +187,11 @@ export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>(
             }
         };
 
-        // HANDLE OUTSIDE CLICKS =======================================================================================
-        useEffect(() => {
-            const handleClickOutside = (event: MouseEvent) => {
-                if (effectiveRef.current && !effectiveRef.current.contains(event.target as Node)) {
-                    setIsOpen(false);
-                    setActiveIndex(-1);
-                }
-            };
-
-            document.addEventListener("mousedown", handleClickOutside);
-            return () => document.removeEventListener("mousedown", handleClickOutside);
-        }, []);
+        // EFFECTS ==================================================================================================
+        useClickOutside(effectiveRef, () => {
+            setIsOpen(false);
+            setActiveIndex(-1);
+        });
 
         // Focus management
         useEffect(() => {
@@ -203,6 +208,7 @@ export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>(
             }
         }, [ activeIndex ]);
 
+        // RENDER ===================================================================================================
         return (
             <BaseInputComponent<ListBoxElementType>
                 data-list-box
@@ -214,8 +220,8 @@ export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>(
                 {/* TOP LABEL ////////////////////////////////////////////////////////////////////////////////////// */}
                 {label && (
                     <label
-                        id={`${id}-label`}
-                        htmlFor={`${id}-listbox`}
+                        id={`${listboxId}-label`}
+                        htmlFor={`${listboxId}-listbox`}
                         className="list-box-label"
                     >
                         {label}
@@ -225,16 +231,18 @@ export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>(
                 {/* MAIN CONTAINER ///////////////////////////////////////////////////////////////////////////////// */}
                 <Div
                     className="list-box-input-wrapper"
-                    onClick={() => !disabled && allowMultiSelect ? setIsOpen(!isOpen) : setIsOpen(!isOpen)}
+                    onClick={() => !disabled && setIsOpen(!isOpen)}
                     onKeyDown={handleKeyDown}
+                    role="combobox"
                     aria-haspopup="listbox"
                     aria-expanded={isOpen}
-                    aria-labelledby={label ? `${id}-label` : undefined}
-                    aria-controls={isOpen ? `${id}-listbox` : undefined}
+                    aria-labelledby={`${listboxId}-label`}
+                    aria-controls={`${listboxId}-listbox`}
+                    aria-owns={`${listboxId}-listbox`}
+                    tabIndex={disabled ? -1 : 0}
                 >
                     {allowMultiSelect ? (
                         <>
-                            {/* FOR BADGE-ing SELECTED OPTIONS ===================================================== */}
                             {selectedOptions.length > 0 ? (
                                 <Div className="options-wrapper">
                                     <Div className="options-list">
@@ -255,7 +263,12 @@ export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>(
 
                                     {/* LIMIT WARNING */}
                                     {selectionLimit && selectedOptions.length >= selectionLimit && (
-                                        <Text className="options-limit-warning" textColour="red" size="small">
+                                        <Text
+                                            className="options-limit-warning"
+                                            textColour="red"
+                                            size="small"
+                                            role="alert"
+                                        >
                                             You can choose only {selectionLimit} option{selectionLimit === 1 ? "" : "s"}
                                         </Text>
                                     )}
@@ -269,8 +282,11 @@ export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>(
                                     className="icon-wrapper clear-all"
                                     title="Clear all options"
                                     onClick={handleClearAll}
+                                    role="button"
+                                    tabIndex={0}
+                                    aria-label="Clear all selected options"
                                 >
-                                    <svg viewBox="0 0 24 24">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
                                         <line x1="5" y1="5" x2="19" y2="19" />
                                         <line x1="5" y1="19" x2="19" y2="5" />
                                     </svg>
@@ -285,7 +301,7 @@ export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>(
                     )}
 
                     <Div className="icon-wrapper chevrons">
-                        <svg viewBox="0 0 24 24">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
                             <polyline points="6 9 12 4 18 9"></polyline>
                             <polyline points="6 15 12 20 18 15"></polyline>
                         </svg>
@@ -294,7 +310,11 @@ export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>(
 
                 {/* DROPDOWN /////////////////////////////////////////////////////////////////////////////////////// */}
                 {isOpen && !disabled && (
-                    <Div className="list-box-dropdown" role="presentation">
+                    <Div
+                        className="list-box-dropdown"
+                        role="dialog"
+                        aria-label={`${label || "Options"} dropdown`}
+                    >
                         <Div className="list-box-search-wrapper">
                             <InputField
                                 type="text"
@@ -306,38 +326,51 @@ export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>(
                                     setSearchValue((e.target as HTMLInputElement).value);
                                 }}
                                 onKeyDown={handleKeyDown}
-                                aria-controls={`${id}-listbox`}
+                                aria-controls={`${listboxId}-listbox`}
+                                aria-label="Search options"
                             />
                             {allowCustomEntries && searchValue.trim() && !selectedOptions.some(opt =>
                                 opt.label.toLowerCase() === searchValue.trim().toLowerCase()) && (
-                                <kbd className="list-box-enter-key">↵</kbd>
+                                <kbd
+                                    className="list-box-enter-key"
+                                    aria-label="Press Enter to add custom option"
+                                >
+                                    ↵
+                                </kbd>
                             )}
                         </Div>
 
                         <ul
-                            id={`${id}-listbox`}
+                            id={`${listboxId}-listbox`}
                             className="list-box-options"
                             role="listbox"
                             aria-label={label || "Select options"}
+                            aria-multiselectable={allowMultiSelect}
+                            aria-busy={props.isLoading}
                             tabIndex={-1}
                         >
                             {filteredOptions.length > 0 ? (
                                 filteredOptions.map((option, index) => (
                                     <li
                                         key={option.value}
-                                        id={`${id}-option-${option.value}`}
+                                        id={`${listboxId}-option-${option.value}`}
                                         className={`list-box-option ${option.disabled ? "disabled" : ""} ${activeIndex === index ? "active" : ""}`}
                                         role="option"
                                         aria-selected={selectedOptions.some(opt => opt.value === option.value)}
                                         aria-disabled={option.disabled}
                                         onClick={() => handleSelectOption(option)}
                                         data-index={index}
+                                        tabIndex={-1}
                                     >
                                         {option.customLabel || option.label}
                                     </li>
                                 ))
                             ) : (
-                                <li className="list-box-option disabled" role="alert">
+                                <li
+                                    className="list-box-option disabled"
+                                    role="alert"
+                                    aria-live="polite"
+                                >
                                     No matches found
                                 </li>
                             )}

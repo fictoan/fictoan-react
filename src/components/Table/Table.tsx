@@ -1,9 +1,14 @@
+// FRAMEWORK ===========================================================================================================
 import React from "react";
 
+// FICTOAN =============================================================================================================
 import { Element } from "../Element";
-import { CommonAndHTMLProps } from "../Element/constants";
 
+// STYLES ==============================================================================================================
 import "./table.css";
+
+// TYPES ===============================================================================================================
+import { CommonAndHTMLProps } from "../Element/constants";
 
 // prettier-ignore
 export interface TableCustomProps {
@@ -12,14 +17,29 @@ export interface TableCustomProps {
     isStriped           ? : boolean;
     highlightRowOnHover ? : boolean;
     isFullWidth         ? : boolean;
+    caption             ? : string; // Accessible table caption
+    summary             ? : string; // Description of table structure for complex tables
+    hasColSpan          ? : boolean; // Indicates if table has colspan/rowspan for screen readers
 }
 
 export type TableElementType = HTMLTableElement;
 export type TableProps = Omit<CommonAndHTMLProps<TableElementType>, keyof TableCustomProps> & TableCustomProps;
 
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const Table = React.forwardRef(
     (
-        { bordersFor, isStriped, highlightRowOnHover, isFullWidth, alignText, ...props }: TableProps,
+        {
+            bordersFor,
+            isStriped,
+            highlightRowOnHover,
+            isFullWidth,
+            alignText,
+            caption,
+            summary,
+            hasColSpan,
+            children,
+            ...props
+        }: TableProps,
         ref: React.Ref<TableElementType>
     ) => {
         let classNames = [];
@@ -44,6 +64,34 @@ export const Table = React.forwardRef(
             classNames.push(`align-text-${alignText}`);
         }
 
-        return <Element<TableElementType> as="table" classNames={classNames} {...props} />;
+        // Get row count if children exist
+        const rowCount = React.Children.count(children);
+
+        // Get column count from first row if possible
+        const getColumnCount = () => {
+            if (!children || !React.isValidElement(children)) return undefined;
+
+            const firstRow = React.Children.toArray(children)[0];
+            if (React.isValidElement(firstRow) && firstRow.props.children) {
+                return React.Children.count(firstRow.props.children);
+            }
+            return undefined;
+        };
+
+        return (
+            <Element<TableElementType>
+                as="table"
+                classNames={classNames}
+                ref={ref}
+                role="table"
+                aria-rowcount={rowCount || undefined}
+                aria-colcount={hasColSpan ? undefined : getColumnCount()}
+                summary={summary}
+                {...props}
+            >
+                {caption && <caption>{caption}</caption>}
+                {children}
+            </Element>
+        );
     }
 );

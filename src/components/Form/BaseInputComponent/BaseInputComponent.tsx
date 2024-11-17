@@ -1,12 +1,18 @@
+// FRAMEWORK ===========================================================================================================
 import React from "react";
 
+// FICTOAN =============================================================================================================
 import { Element } from "../../Element/Element";
 import { Div } from "../../Element/Tags";
 import { InputLabel } from "../InputLabel/InputLabel";
 import { FormItem } from "../FormItem/FormItem";
+
+// TYPES ===============================================================================================================
 import { BaseInputComponentWithIconProps } from "./constants";
 
 export type InputElementType = HTMLInputElement | HTMLDivElement | HTMLSelectElement;
+
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const BaseInputComponent = React.forwardRef(
     <K extends InputElementType>(
         {
@@ -15,8 +21,6 @@ export const BaseInputComponent = React.forwardRef(
             label,
             helpText,
             errorText,
-            iconLeft,
-            iconRight,
             validateThis,
             classNames,
             ...inputProps
@@ -32,23 +36,10 @@ export const BaseInputComponent = React.forwardRef(
                 ref={ref}
                 classNames={[
                     className || "",
-                    iconLeft ? "with-icon-left" : "",
-                    iconRight ? "with-icon-right" : "",
                     validateThis ? "validate-this" : "",
                 ].concat(classNames || [])}
                 {...inputProps}
             />
-
-            {iconLeft && (
-                <Element as="span" className="icon-left">
-                    {iconLeft}
-                </Element>
-            )}
-            {iconRight && (
-                <Element as="span" className="icon-right">
-                    {iconRight}
-                </Element>
-            )}
 
             {label && <InputLabel label={label} htmlFor={inputProps.id} />}
 

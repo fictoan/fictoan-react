@@ -1,55 +1,63 @@
+// FRAMEWORK ===========================================================================================================
 import React from "react";
 
+// FICTOAN =============================================================================================================
 import { Element } from "../../Element/Element";
-import { CommonAndHTMLProps } from "../../Element/constants";
 
+// STYLES ==============================================================================================================
 import "./notifications-wrapper.css";
+
+// TYPES ===============================================================================================================
+import { CommonAndHTMLProps } from "../../Element/constants";
 
 // prettier-ignore
 export interface NotificationsWrapperCustomProps {
     position ? : "left" | "right";
     anchor   ? : "top" | "bottom";
     order    ? : "new-on-top" | "new-on-bottom";
+    label    ? : string;
 }
 
 export type NotificationsWrapperElementType = HTMLDivElement;
 export type NotificationsWrapperProps = CommonAndHTMLProps<NotificationsWrapperElementType> &
     NotificationsWrapperCustomProps;
 
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const NotificationsWrapper = React.forwardRef(
     (
-        { position = "right", anchor = "top", order = "new-on-top", children, ...props }: NotificationsWrapperProps,
+        {
+            position = "right",
+            anchor = "top",
+            order = "new-on-top",
+            children,
+            label,
+            ...props
+        }: NotificationsWrapperProps,
         ref: React.Ref<NotificationsWrapperElementType>
     ) => {
         let classNames = [];
 
-        if (position) {
-            classNames.push(position);
-        }
+        if (position) classNames.push(position);
+        if (anchor) classNames.push(anchor);
+        if (order) classNames.push(order);
 
-        if (anchor) {
-            classNames.push(anchor);
-        }
-
-        if (order) {
-            classNames.push(order);
-        }
-
-        // Doing this because this component has a very high z-index
         const childrenCount = React.Children.count(children);
-        if (childrenCount === 0) {
-            return null;
-        }
+        if (childrenCount === 0) return null;
 
         return (
             <Element<NotificationsWrapperElementType>
-                as="div"
+                as="section"
                 data-notifications-wrapper
                 ref={ref}
                 classNames={classNames}
+                aria-label={label || "Notifications"}
+                aria-relevant="additions removals"
+                role="log"
                 {...props}
             >
-                {children}
+                <div role="log">
+                    {children}
+                </div>
             </Element>
         );
     }

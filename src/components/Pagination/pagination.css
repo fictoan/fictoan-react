@@ -1,0 +1,199 @@
+[data-pagination] {
+    display        : flex;
+    flex-direction : column;
+    gap            : 8px;
+}
+
+/* CONTROLS SECTION ///////////////////////////////////////////////////////// */
+.pagination-controls {
+    display     : flex;
+    align-items : center;
+    gap         : var(--nano);
+}
+
+/* ITEMS //////////////////////////////////////////////////////////////////// */
+.pagination-item {
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    min-width       : var(--pagination-item-min-width);
+    height          : var(--pagination-item-height);
+    border-width    : var(--pagination-item-border-width);
+    border-radius   : var(--pagination-item-border-radius);
+    font-size       : 0.875rem;
+    font-weight     : normal;
+}
+
+[data-pagination] .pagination-controls .pagination-item {
+    padding : unset !important;
+}
+
+[data-pagination] .pagination-item.selected {
+    font-weight : bold;
+}
+
+/* PLAIN STYLE ============================================================== */
+[data-pagination].plain .pagination-item {
+    background-color : var(--pagination-item-bg-default);
+    color            : var(--pagination-item-text-default);
+    border-color     : var(--pagination-item-border-default);
+}
+
+[data-pagination].plain .pagination-item:hover:not(:disabled) {
+    background-color : var(--pagination-item-bg-hover);
+    color            : var(--pagination-item-text-hover);
+    border-color     : var(--pagination-item-border-hover);
+}
+
+[data-pagination].plain .pagination-item.selected {
+    background-color : var(--pagination-item-bg-selected);
+    color            : var(--pagination-item-text-selected);
+    border-color     : var(--pagination-item-border-selected);
+}
+
+[data-pagination] .pagination-item svg {
+    stroke : var(--pagination-arrows-stroke);
+}
+
+/* OUTLINED STYLE =========================================================== */
+[data-pagination].outlined .pagination-item {
+    border-style : solid;
+}
+
+[data-pagination].outlined .pagination-item {
+    background-color : var(--pagination-item-outlined-bg-default);
+    color            : var(--pagination-item-outlined-text-default);
+    border-color     : var(--pagination-item-outlined-border-default);
+}
+
+[data-pagination].outlined .pagination-item:hover:not(:disabled) {
+    background-color : var(--pagination-item-outlined-bg-hover);
+    border-color     : var(--pagination-item-outlined-border-hover);
+    color            : var(--pagination-item-outlined-text-hover);
+}
+
+[data-pagination].outlined .pagination-item.selected {
+    background-color : var(--pagination-item-outlined-bg-selected);
+    color            : var(--pagination-item-outlined-text-selected);
+    border-color     : var(--pagination-item-outlined-border-selected);
+}
+
+[data-pagination].outlined .pagination-item svg {
+    stroke : var(--pagination-arrows-outlined-stroke);
+}
+
+/* FILLED STYLE ============================================================= */
+[data-pagination].filled .pagination-item {
+    background-color : var(--pagination-item-filled-bg-default);
+    color            : var(--pagination-item-filled-text-default);
+    border-color     : var(--pagination-item-filled-border-default);
+}
+
+[data-pagination].filled .pagination-item:hover:not(:disabled) {
+    background-color : var(--pagination-item-filled-bg-hover);
+    color            : var(--pagination-item-filled-text-hover);
+    border-color     : var(--pagination-item-filled-border-hover);
+}
+
+[data-pagination].filled .pagination-item.selected {
+    background-color : var(--pagination-item-filled-bg-selected);
+    color            : var(--pagination-item-filled-text-selected);
+    border-color     : var(--pagination-item-filled-border-selected);
+}
+
+[data-pagination].filled .pagination-item svg {
+    stroke : var(--pagination-arrows-filled-stroke);
+}
+
+/* DISABLED STATES ========================================================== */
+.pagination-item:disabled,
+[data-pagination] .pagination-item.disabled {
+    background-color : var(--pagination-item-bg-disabled);
+    color            : var(--pagination-item-text-disabled);
+    border-color     : var(--pagination-item-border-disabled);
+    cursor           : not-allowed;
+    opacity          : 0.6;
+}
+
+[data-pagination].disabled {
+    opacity        : 0.6;
+    pointer-events : none;
+}
+
+/* ELLIPSIS ///////////////////////////////////////////////////////////////// */
+[data-pagination] .pagination-item svg {
+    width           : 16px;
+    height          : 16px;
+    fill            : none;
+    stroke          : var(--pagination-arrows-stroke);
+    stroke-width    : 2px;
+    stroke-linecap  : round;
+    stroke-linejoin : round;
+}
+
+[data-pagination] .pagination-item:disabled svg {
+    stroke : var(--pagination-arrows-stroke-disabled);
+}
+
+/* ELLIPSIS ///////////////////////////////////////////////////////////////// */
+.pagination-ellipsis {
+    display     : inline-flex;
+    align-items : center;
+    padding     : 0 var(--nano);
+    color       : var(--pagination-item-text-default);
+}
+
+/* GO TO PAGE INPUT ///////////////////////////////////////////////////////// */
+.pagination-go-to {
+    position : relative;
+}
+
+.pagination-go-to input {
+    width         : 120px;
+    height        : var(--pagination-item-height);
+    padding       : 0 var(--nano);
+    border        : var(--pagination-item-border-width) solid var(--pagination-input-border);
+    border-radius : var(--pagination-item-border-radius);
+    background    : var(--pagination-input-bg);
+    color         : var(--pagination-input-text);
+    font-size     : 83.33%;
+}
+
+.pagination-go-to input:disabled {
+    background-color : var(--pagination-item-bg-disabled);
+    color            : var(--pagination-item-text-disabled);
+    border-color     : var(--pagination-item-border-disabled);
+    cursor           : not-allowed;
+}
+
+/* LOADING STATE //////////////////////////////////////////////////////////// */
+.pagination-loading {
+    display     : inline-flex;
+    align-items : center;
+    gap         : var(--nano);
+}
+
+
+/* INFO SECTION ///////////////////////////////////////////////////////////// */
+.pagination-info {
+    display         : flex;
+    flex-direction  : row;
+    justify-content : space-between;
+    align-items     : center;
+    font-family     : var(--pagination-info-font);
+    color           : var(--pagination-info-text);
+}
+
+/* EMPTY STATE ////////////////////////////////////////////////////////////// */
+.pagination-empty {
+    text-align : center;
+    color      : var(--pagination-info-text);
+    padding    : var(--micro);
+}
+
+/* RESPONSIVE /////////////////////////////////////////////////////////////// */
+@media (max-width : 600px) {
+    .pagination-controls {
+        flex-wrap : wrap;
+    }
+}

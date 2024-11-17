@@ -1,15 +1,17 @@
-// This is a generic component used for creating native HTML elements, while
-// still being able to style them with Fictoan props.
+// FRAMEWORK ===========================================================================================================
 import React from "react";
 
+// UTILS ===============================================================================================================
 import { createClassName } from "../../utils/classNames";
 
+// TYPES ===============================================================================================================
 import { ElementProps } from "./constants";
 
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const Element = React.forwardRef(
     <K extends {}>(
         {
-            as: Component = "div",
+            as : Component = "div",
             role,
             ariaLabel,
             tabIndex,
@@ -139,4 +141,5 @@ export const Element = React.forwardRef(
                 )}
             />
         );
-    }) as <K extends {}>(props: ElementProps<K> & { ref?: React.LegacyRef<HTMLElement> }) => React.ReactElement;
+    },
+) as <K extends {}>(props: ElementProps<K> & { ref?: React.LegacyRef<HTMLElement> }) => React.ReactElement;
