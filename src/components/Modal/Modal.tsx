@@ -39,7 +39,7 @@ export const Modal = React.forwardRef(
             ...props
         }: ModalProps, ref: React.Ref<ModalElementType>,
     ) => {
-        const modalId       = `modal-${id}`;
+        const modalId       = `${id}`;
         const descriptionId = description ? `${modalId}-description` : undefined;
 
         if (showBackdrop) {

@@ -682,7 +682,6 @@
 - TODO: Fix Dismiss Button in NotificationItem
 - TODO: Add mask design to PinInputField
 - TODO: Fix Sidebar scrolling issue
-- TODO: Revamp BreadCrumbs?
 - TODO: Add Tooltip component
 - TODO: Drag and drop file upload component
 - TODO: Date picker

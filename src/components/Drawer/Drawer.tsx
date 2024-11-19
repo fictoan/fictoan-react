@@ -26,7 +26,7 @@ export interface DrawerCustomProps {
     label               ? : string;
 }
 
-export type DrawerElementType = HTMLDialogElement;
+export type DrawerElementType = HTMLDivElement;
 export type DrawerProps = Omit<CommonAndHTMLProps<DrawerElementType>, keyof DrawerCustomProps> & DrawerCustomProps;
 
 // COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -52,7 +52,7 @@ export const Drawer = React.forwardRef(
         const [shouldRender, setShouldRender] = useState(openWhen);
 
         const drawerRef = useRef(null);
-        const effectiveRef = (ref || drawerRef) as RefObject<HTMLDialogElement>;
+        const effectiveRef = (ref || drawerRef) as RefObject<HTMLDivElement>;
 
         useEffect(() => {
             if (openWhen) {
@@ -95,7 +95,7 @@ export const Drawer = React.forwardRef(
         return shouldRender ? (
             <>
                 <Element<DrawerElementType>
-                    as="dialog"
+                    as="div"
                     data-drawer
                     ref={effectiveRef}
                     classNames={classNames}
