@@ -55,9 +55,7 @@ export const NotificationsWrapper = React.forwardRef(
                 role="log"
                 {...props}
             >
-                <div role="log">
-                    {children}
-                </div>
+                {children}
             </Element>
         );
     }

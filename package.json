@@ -1,6 +1,6 @@
 {
     "name": "fictoan-react",
-    "version": "1.7.0",
+    "version": "1.7.1",
     "private": false,
     "description": "",
     "type": "module",
@@ -39,6 +39,7 @@
         "Dhruv Misra (https://dhruvmisra.com/)",
         "Aditya Gannavarapu <adityagannavarapu.67@gmail.com> (https://aditya-67.github.io/)",
         "Dhiraj Bhakta K <dhirajbhakta110@gmail.com>",
+        "Sreejit De <sreejitde7@gmail.com> (https://www.sreejit.dev)",
         "Rohit Singhal"
     ],
     "license": "MIT",
