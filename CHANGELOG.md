@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 1.7.2
+- Fix Drawer trigger bug
+- Remove `modal-` suffix for `Modal` class
+- Fix `kbd` theme issue
+- Fix `table` theme bug
+- Fix `ListBox` theme values
+- Tweak `CodeBlock` token colours
+
 ## 1.7.0
 - Add accessibility improvements for most components
 - Extract `Pagination` component from `TablePagination` and make it more generic

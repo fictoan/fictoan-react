@@ -111,6 +111,14 @@
         color : var(--token-plain-css) !important;
     }
 
+    & pre.language-css .token.function {
+        color : var(--token-function-css) !important;
+    }
+
+    & pre.language-css .token.pseudo-class {
+        color : var(--token-pseudo-class) !important;
+    }
+
     /* HTML ----------------------------------------------------------------- */
     & pre.language-html .token.plain {
         color : var(--token-plain-html) !important;
