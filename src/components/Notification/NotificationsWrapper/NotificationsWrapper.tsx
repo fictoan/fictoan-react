@@ -36,7 +36,6 @@ export const NotificationsWrapper = React.forwardRef(
         ref: React.Ref<NotificationsWrapperElementType>
     ) => {
         let classNames = [];
-
         if (position) classNames.push(position);
         if (anchor) classNames.push(anchor);
         if (order) classNames.push(order);

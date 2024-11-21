@@ -16,7 +16,9 @@
         "emitDeclarationOnly"              : true,
         "types"                            : [
             "vite-plugin-svgr/client",
-            "node"
+            "node",
+            "react",
+            "react-dom"
         ],
         "paths"                            : {
             "@/*" : [

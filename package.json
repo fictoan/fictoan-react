@@ -1,6 +1,6 @@
 {
     "name": "fictoan-react",
-    "version": "1.7.2",
+    "version": "1.8.0",
     "private": false,
     "description": "",
     "type": "module",
@@ -24,16 +24,15 @@
         "./dist/": "./dist/"
     },
     "scripts": {
-        "preinstall": "npx only-allow pnpm",
         "watch": "vite build --watch",
         "build": "tsc && vite build",
         "build:umd": "tsc && vite build -c vite.config.umd.js",
         "tree-shake": "agadoo",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "generate-colours": "ts-node scripts/generateColourClasses.ts"
+        "generate-colours": "tsx scripts/generateColourClasses.ts"
     },
     "keywords": [],
-    "author": "Sujan Sundareswaran <sujan.sundareswaran@gmail.com (https://sujansundareswaran.com)",
+    "author": "Sujan Sundareswaran <sujan.sundareswaran@gmail.com> (https://sujansundareswaran.com)",
     "contributors": [
         "Naresh <ghostwriternr@gmail.com> (https://ghostwriternr.me/)",
         "Dhruv Misra (https://dhruvmisra.com/)",
@@ -49,24 +48,24 @@
         "@babel/preset-react": "^7.23.3",
         "@rollup/plugin-babel": "^6.0.4",
         "@rollup/plugin-terser": "^0.4.4",
-        "@types/node": "^22.9.0",
+        "@types/node": "^20.11.0",
         "@types/prismjs": "^1.26.4",
         "@types/react": "^18.2.45",
+        "@types/react-dom": "^18.2.0",
         "@vitejs/plugin-react": "^4.2.1",
         "agadoo": "^3.0.0",
+        "autoprefixer": "^10.4.14",
         "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
         "glob": "^10.3.10",
         "html-react-parser": "^5.1.15",
         "postcss": "^8.4.30",
         "postcss-nesting": "^12.0.1",
-        "autoprefixer": "^10.4.14",
         "prismjs": "^1.29.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "rollup-plugin-visualizer": "^5.11.0",
         "ts-node": "^10.9.2",
         "tsx": "^4.19.2",
-        "types": "link:types",
         "typescript": "^5.3.3",
         "vite": "5.4.6",
         "vite-plugin-dts": "^3.6.4",
@@ -74,6 +73,7 @@
         "vite-plugin-svgr": "^4.2.0"
     },
     "peerDependencies": {
-        "react": "^18.2.0"
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
     }
 }
