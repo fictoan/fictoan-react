@@ -121,8 +121,8 @@ kbd {
     font-size        : 14px;
     line-height      : 1.4;
     border-radius    : var(--kbd-border-radius);
-    text-shadow      : 0 1px 0 #fff;
-    box-shadow       : 0 3px 0 0 rgba(0, 0, 0, 0.16);
+    text-shadow      : 0 1px 0 var(--kbd-text-outline);
+    box-shadow       : 0 3px 0 0 var(--kbd-shadow);
     user-select      : none;
 
     &:active {

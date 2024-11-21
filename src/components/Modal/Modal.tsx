@@ -102,7 +102,7 @@ export const Modal = React.forwardRef(
 
 // MODAL METHODS ///////////////////////////////////////////////////////////////////////////////////////////////////////
 export const showModal = (modalId: string) => {
-    const modal = document.querySelector(`#modal-${modalId}[data-modal]`);
+    const modal = document.querySelector(`#${modalId}[data-modal]`);
     if (modal instanceof HTMLElement) {
         modal.showPopover();
         // Focus trap
@@ -116,7 +116,7 @@ export const showModal = (modalId: string) => {
 };
 
 export const hideModal = (modalId: string) => {
-    const modal = document.querySelector(`#modal-${modalId}[data-modal]`);
+    const modal = document.querySelector(`#${modalId}[data-modal]`);
     if (modal instanceof HTMLElement) {
         modal.hidePopover();
         // Return focus to trigger element if possible
@@ -127,7 +127,7 @@ export const hideModal = (modalId: string) => {
 };
 
 export const toggleModal = (modalId: string) => {
-    const modal = document.querySelector(`#modal-${modalId}[data-modal]`);
+    const modal = document.querySelector(`#${modalId}[data-modal]`);
     if (modal instanceof HTMLElement) {
         modal.matches(":popover-open") ? hideModal(modalId) : showModal(modalId);
     }

@@ -1,5 +1,6 @@
 /* CREATING NEW VARIABLES */
-/* Follow the item-name-kind-aspect-state structure of naming things  */
+/* Please follow the item-name-kind-aspect-state structure of naming things  */
+
 /* FOR EXAMPLE  */
 /* pagination-item-outlined-border-selected  */
 /* item-name -     kind    -aspect-state  */
@@ -254,8 +255,15 @@
 
 /* LIST BOX ///////////////////////////////////////////////////////////////// */
 :root {
-    --list-box-badge-bg   : var(--slate-light20);
-    --list-box-badge-text : var(--paragraph-text-colour);
+    --list-box-bg-default    : var(--input-bg-default);
+    --list-box-bg-hover      : var(--input-bg-focus);
+    --list-box-bg-disabled   : var(--input-bg-disabled);
+
+    --list-box-text-disabled : var(--input-text-disabled);
+    --list-box-focus-color   : var(--input-border-focus);
+
+    --list-box-badge-bg      : var(--slate-light20);
+    --list-box-badge-text    : var(--paragraph-text-colour);
 }
 
 /* METER //////////////////////////////////////////////////////////////////// */
@@ -432,8 +440,8 @@
     --range-label         : var(--input-label-default);
     --range-value         : var(--input-label-default);
 
-    --range-track-bgs      : var(--slate-light70);
-    --range-thumb-bgs      : var(--blue-light20);
+    --range-track-bg      : var(--slate-light70);
+    --range-thumb-bg      : var(--blue-light20);
     --range-thumb-border  : var(--blue-light20);
 
     --range-border-focus  : var(--blue);
@@ -443,15 +451,6 @@
 /* SELECT /////////////////////////////////////////////////////////////////// */
 :root {
     --select-chevron : var(--slate-light40);
-}
-
-/* SELECT WITH SEARCH /////////////////////////////////////////////////////// */
-:root {
-    --select-bg-default    : var(--input-bg-default);
-    --select-bg-hover      : var(--input-bg-focus);
-    --select-bg-disabled   : var(--input-bg-disabled);
-    --select-text-disabled : var(--input-text-disabled);
-    --select-focus-color   : var(--input-border-focus);
 }
 
 /* SIDEBAR + CONTENT WRAPPER //////////////////////////////////////////////// */
@@ -535,8 +534,8 @@
     --table-striped-header-bg            : var(--blue-light40);
     --table-striped-cell-bg              : var(--slate-light70);
 
-    --table-highlightbg                  : var(--amber-light20);
-    --table-highlighttext                : var(--paragraph-text-colour);
+    --table-highlight-bg                 : var(--amber-light20);
+    --table-highlight-text               : var(--paragraph-text-colour);
 
     --table-pagination-bg                : var(--white);
     --table-pagination-border-radius     : var(--global-border-radius);
@@ -557,13 +556,6 @@
 
     --tab-alert-badge-bg     : var(--red);
     --tab-alert-badge-border : var(--red);
-}
-
-/* TOAST //////////////////////////////////////////////////////////////////// */
-:root {
-    --toast-bg            : var(--slate-light10);
-    --toast-text          : var(--black);
-    --toast-border-radius : var(--global-border-radius);
 }
 
 /* TEXT ///////////////////////////////////////////////////////////////////// */
@@ -627,6 +619,8 @@
     --kbd-font                       : var(--font-mono);
     --kbd-bg                         : var(--grey-light10);
     --kbd-text                       : var(--grey);
+    --kbd-text-outline               : var(--transparent);
+    --kbd-shadow                     : var(--slate);
     --kbd-border-radius              : var(--global-border-radius);
 
     /* TOKENS =============================================================== */
@@ -657,6 +651,8 @@
     --token-plain                    : var(--slate-light60);
     --token-plain-html               : var(--slate);
     --token-plain-css                : var(--salmon-light30);
+    --token-function-css             : var(--pistachio);
+    --token-pseudo-class             : var(--brick);
     --token-prolog                   : var(--grey);
     --token-property                 : var(--pistachio-dark20);
     --token-property-css             : var(--slate);
@@ -676,4 +672,11 @@
     --token-unit                     : var(--crimson-light20);
     --token-url                      : var(--green);
     --token-variable                 : var(--orange);
+}
+
+/* TOAST //////////////////////////////////////////////////////////////////// */
+:root {
+    --toast-bg            : var(--slate-light10);
+    --toast-text          : var(--black);
+    --toast-border-radius : var(--global-border-radius);
 }

@@ -24,7 +24,7 @@
     padding               : 12px 8px;
     border-radius         : var(--input-border-radius-default);
     border                : var(--global-border-width) solid var(--input-border-default);
-    background-color      : var(--select-bg-default);
+    background-color      : var(--list-box-bg-default);
     cursor                : pointer;
     font-family           : var(--paragraph-font);
     color                 : var(--input-text-default);
@@ -119,7 +119,7 @@
     top              : calc(100% + 12px);
     left             : 0;
     right            : 0;
-    background-color : var(--input-bg-default);
+    background-color : var(--list-box-bg-default);
     border           : var(--global-border-width) solid var(--input-border-default);
     border-radius    : var(--input-border-radius-default);
     padding          : 4px;
@@ -145,11 +145,11 @@
 .list-box-option.active,
 .list-box-option:hover:not(.disabled),
 .list-box-option:active:not(.disabled) {
-    background-color : var(--select-bg-hover);
+    background-color : var(--list-box-bg-hover);
 }
 
 .list-box-option.disabled {
-    color  : var(--select-text-disabled);
+    color  : var(--list-box-text-disabled);
     cursor : not-allowed;
 }
 
@@ -159,12 +159,12 @@
 .list-box-options > [data-form-item] { margin-bottom : 0 !important; }
 
 .list-box-display:focus {
-    outline        : 2px solid var(--select-focus-color);
+    outline        : 2px solid var(--list-box-focus-color);
     outline-offset : 2px;
 }
 
 .list-box-input:focus {
-    outline        : 2px solid var(--select-focus-color);
+    outline        : 2px solid var(--list-box-focus-color);
     outline-offset : -2px;
 }
 
