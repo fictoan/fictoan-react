@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.8.0
+- Move from `pnpm` to `yarn`, because of constant symlinking issues
+- Fix `NotificationWrapper` overlay issue
+
 ## 1.7.2
 - Fix Drawer trigger bug
 - Remove `modal-` suffix for `Modal` class
