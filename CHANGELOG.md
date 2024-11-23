@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 1.8.1
+#### ⚠️ BREAKING CHANGES ⚠️
+- Remove `SidebarItemIcon` and `SidebarItemText` components to simplify markup
+- #### GENERIC CHANGES
+- Fix `defaultValue` bug for `ListBox`
+- Fix text colour for `ListBox`
+
 ## 1.8.0
 - Move from `pnpm` to `yarn`, because of constant symlinking issues
 - Fix `NotificationWrapper` overlay issue

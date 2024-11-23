@@ -24,7 +24,7 @@
 
     .header-logo {
         display : block;
-        width   : var(--sidebar-header-logo-width);
+        width   : var(--sidebar-header-asset-expanded-width);
     }
 
     .header-icon {

@@ -39,6 +39,8 @@
         color       : var(--input-placeholder-default);
     }
 
+    p { color : var(--input-text-default) }
+
     .icon-wrapper {
         display         : flex;
         align-items     : center;

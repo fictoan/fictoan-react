@@ -1,11 +1,8 @@
-export { SidebarWrapper, type SidebarWrapperProps } from "./SidebarWrapper/SidebarWrapper";
+export { SidebarWrapper, type SidebarWrapperNewProps } from "./SidebarWrapper/SidebarWrapper";
+export { ContentWrapper, type ContentWrapperProps } from "./ContentWrapper/ContentWrapper";
 
-export { SidebarHeader, type SidebarHeaderProps } from "./SidebarHeader/SidebarHeader";
+export { SidebarHeader, type SidebarHeaderNewProps } from "./SidebarHeader/SidebarHeader";
 
-export { SidebarItem, type SidebarItemProps } from "./SidebarItem/SidebarItem";
+export { SidebarItem, type SidebarItemNewProps } from "./SidebarItem/SidebarItem";
 
-export { SidebarItemIcon, type SidebarItemIconProps } from "./SidebarItemIcon/SidebarItemIcon";
-
-export { SidebarItemText, type SidebarItemTextProps } from "./SidebarItemText/SidebarItemText";
-
-export { SidebarFooter, type SidebarFooterProps } from "./SidebarFooter/SidebarFooter";
+export { SidebarFooter, type SidebarFooterNewProps } from "./SidebarFooter/SidebarFooter";

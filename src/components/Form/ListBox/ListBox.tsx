@@ -32,8 +32,9 @@ export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>(
             label,
             placeholder = "Select an option",
             id,
-            allowMultiSelect = false,
+            defaultValue,
             onChange,
+            allowMultiSelect = false,
             disabled,
             badgeBgColour,
             badgeBgColor,
@@ -45,10 +46,24 @@ export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>(
         }, ref) => {
         // STATES ====================================================================================================
         const [ isOpen, setIsOpen ]                   = useState(false);
-        const [ selectedOption, setSelectedOption ]   = useState<OptionForListBoxProps | null>(null);
         const [ selectedOptions, setSelectedOptions ] = useState<OptionForListBoxProps[]>([]);
         const [ searchValue, setSearchValue ]         = useState("");
         const [ activeIndex, setActiveIndex ]         = useState(-1);
+
+        // Initialize selectedOption based on defaultValue
+        const [selectedOption, setSelectedOption] = useState<OptionForListBoxProps | null>(() => {
+            if (defaultValue) {
+                return options.find(opt => opt.value === defaultValue) || null;
+            }
+            return null;
+        });
+
+        // Set initial value
+        useEffect(() => {
+            if (defaultValue && onChange) {
+                onChange(defaultValue);
+            }
+        }, []);
 
         // REFS =====================================================================================================
         const dropdownRef    = useRef() as MutableRefObject<HTMLSelectElement>;

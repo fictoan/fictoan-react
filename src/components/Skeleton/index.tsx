@@ -1,4 +1,4 @@
 export {
     Skeleton, SkeletonGroup,
-    type SkeletonProps, type SkeletonGroupProps, type SkeletonElementType
+    type SkeletonProps, type SkeletonGroupProps
 } from "./Skeleton";

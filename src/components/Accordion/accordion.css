@@ -9,7 +9,7 @@
             content      : "";
             display      : inline-block;
             position     : absolute;
-            top          : 50%;
+            top          : calc(50% - 2px);
             right        : 12px;
             width        : 8px;
             height       : 8px;
