@@ -49,9 +49,6 @@ export { Card, type CardProps } from "./components/Card";
 // CODE BLOCK ==========================================================================================================
 export { CodeBlock, type CodeBlockProps } from "./components/CodeBlock";
 
-// CONTENT WRAPPER =====================================================================================================
-export { ContentWrapper, type ContentWrapperProps } from "./components/ContentWrapper";
-
 // DIVIDER =============================================================================================================
 export { Divider, type DividerProps } from "./components/Divider";
 
@@ -137,29 +134,26 @@ export { ProgressBar, type ProgressBarProps, type ProgressBarMetaProps } from ".
 // ROW =================================================================================================================
 export { Row, type RowProps } from "./components/Row";
 
-// SIDEBAR =============================================================================================================
+// SIDEBAR + CONTENT WRAPPER ===========================================================================================
 export {
     SidebarWrapper,
-    type SidebarWrapperProps,
+    type SidebarWrapperNewProps,
+    ContentWrapper,
+    type ContentWrapperProps,
     SidebarHeader,
-    type SidebarHeaderProps,
+    type SidebarHeaderNewProps,
     SidebarItem,
-    type SidebarItemProps,
-    SidebarItemIcon,
-    type SidebarItemIconProps,
-    SidebarItemText,
-    type SidebarItemTextProps,
+    type SidebarItemNewProps,
     SidebarFooter,
-    type SidebarFooterProps,
+    type SidebarFooterNewProps,
 } from "./components/Sidebar";
 
 // SKELETON ============================================================================================================
 export {
     Skeleton,
-    SkeletonGroup,
     type SkeletonProps,
+    SkeletonGroup,
     type SkeletonGroupProps,
-    type SkeletonElementType
 } from "./components/Skeleton";
 
 // SPINNER =============================================================================================================

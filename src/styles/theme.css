@@ -456,14 +456,16 @@
 /* SIDEBAR + CONTENT WRAPPER //////////////////////////////////////////////// */
 :root {
     --sidebar-bg                             : var(--white);
-    --sidebar-border                         : var(--slate-dark80);
     --sidebar-width-default                  : 240px;
     --sidebar-width-collapsed                : 48px;
 
+    --sidebar-border-width                   : var(--global-border-width);
+    --sidebar-border-right                   : var(--slate-dark80);
+
     --sidebar-header-bg                      : var(--white);
     --sidebar-header-border-bottom           : var(--slate-dark80);
-    --sidebar-header-logo-width              : 50%;
-    --sidebar-header-icon-width              : 40px;
+    --sidebar-header-asset-expanded-width    : 50%;
+    --sidebar-header-asset-collapsed-width   : 40px;
 
     --sidebar-item-icon-width                : 24px;
 
@@ -489,9 +491,9 @@
     --sidebar-item-text-scale                : 100%;
     --sidebar-item-text-weight               : 600;
 
-    --sidebar-item-has-alert-bg              : var(--red-dark70);
+    --sidebar-item-has-alert-bg              : var(--red);
 
-    --sidebar-footer-height                  : 32px;
+    --sidebar-footer-height                  : 40px;
     --sidebar-footer-bg                      : var(--white);
     --sidebar-footer-border-top              : var(--slate-light10);
 

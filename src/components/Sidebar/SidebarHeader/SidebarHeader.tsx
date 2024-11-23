@@ -1,9 +1,14 @@
+// FRAMEWORK ===========================================================================================================
 import React from "react";
 
+// FICTOAN =============================================================================================================
 import { Element } from "../../Element/Element";
-import { CommonAndHTMLProps } from "../../Element/constants";
 
+// STYLES ==============================================================================================================
 import "./sidebar-header.css";
+
+// TYPES ===============================================================================================================
+import { CommonAndHTMLProps } from "../../Element/constants";
 
 // prettier-ignore
 export interface SidebarHeaderCustomProps {
@@ -11,11 +16,11 @@ export interface SidebarHeaderCustomProps {
 }
 
 export type SidebarHeaderElementType = HTMLDivElement;
-export type SidebarHeaderProps = Omit<CommonAndHTMLProps<SidebarHeaderElementType>, keyof SidebarHeaderCustomProps> &
-    SidebarHeaderCustomProps;
+export type SidebarHeaderNewProps = Omit<CommonAndHTMLProps<SidebarHeaderElementType>, keyof SidebarHeaderCustomProps>
+    & SidebarHeaderCustomProps;
 
 export const SidebarHeader = React.forwardRef(
-    ({ isSticky, ...props }: SidebarHeaderProps, ref: React.Ref<SidebarHeaderElementType>) => {
+    ({ isSticky, ...props }: SidebarHeaderNewProps, ref: React.Ref<SidebarHeaderElementType>) => {
         let classNames = [];
 
         if (isSticky) {
@@ -23,7 +28,13 @@ export const SidebarHeader = React.forwardRef(
         }
 
         return (
-            <Element<SidebarHeaderElementType> as="header" data-sidebar-header ref={ref} classNames={classNames} {...props} />
+            <Element<SidebarHeaderElementType>
+                as="header"
+                data-sidebar-header
+                ref={ref}
+                classNames={classNames}
+                {...props}
+            />
         );
     }
 );

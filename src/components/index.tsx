@@ -22,9 +22,6 @@ export { Card, type CardProps } from "./Card";
 // CODE BLOCK ==========================================================================================================
 export { CodeBlock, type CodeBlockProps } from "./CodeBlock";
 
-// CONTENT WRAPPER =====================================================================================================
-export { ContentWrapper, type ContentWrapperProps } from "./ContentWrapper";
-
 // DIVIDER =============================================================================================================
 export { Divider, type DividerProps } from "./Divider";
 
@@ -110,29 +107,26 @@ export { Row, type RowProps } from "./Row";
 export { OptionCard, OptionCardsGroup, type OptionCardProps } from "./OptionCard";
 export { useOptionCard } from "./OptionCard";
 
-// SIDEBAR =============================================================================================================
+// SIDEBAR + CONTENT WRAPPER ===========================================================================================
 export {
     SidebarWrapper,
-    type SidebarWrapperProps,
+    type SidebarWrapperNewProps,
+    ContentWrapper,
+    type ContentWrapperProps,
     SidebarHeader,
-    type SidebarHeaderProps,
+    type SidebarHeaderNewProps,
     SidebarItem,
-    type SidebarItemProps,
-    SidebarItemIcon,
-    type SidebarItemIconProps,
-    SidebarItemText,
-    type SidebarItemTextProps,
+    type SidebarItemNewProps,
     SidebarFooter,
-    type SidebarFooterProps,
+    type SidebarFooterNewProps,
 } from "./Sidebar";
 
 // SKELETON ============================================================================================================
 export {
     Skeleton,
-    SkeletonGroup,
     type SkeletonProps,
-    type SkeletonGroupProps,
-    type SkeletonElementType
+    SkeletonGroup,
+    type SkeletonGroupProps
 } from "./Skeleton";
 
 // SPINNER =============================================================================================================

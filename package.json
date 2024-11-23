@@ -1,6 +1,6 @@
 {
     "name": "fictoan-react",
-    "version": "1.8.0",
+    "version": "1.8.2",
     "private": false,
     "description": "",
     "type": "module",
@@ -31,7 +31,18 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "generate-colours": "tsx scripts/generateColourClasses.ts"
     },
-    "keywords": [],
+    "keywords": [
+        "react",
+        "ui",
+        "library",
+        "component",
+        "framework",
+        "components",
+        "ui-library",
+        "react-library",
+        "fictoan",
+        "fictoan-react"
+    ],
     "author": "Sujan Sundareswaran <sujan.sundareswaran@gmail.com> (https://sujansundareswaran.com)",
     "contributors": [
         "Naresh <ghostwriternr@gmail.com> (https://ghostwriternr.me/)",

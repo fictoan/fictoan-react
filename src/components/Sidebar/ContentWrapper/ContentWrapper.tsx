@@ -2,13 +2,13 @@
 import React from "react";
 
 // FICTOAN =============================================================================================================
-import { Element } from "../Element/Element";
+import { Element } from "../../Element/Element";
 
 // STYLES ==============================================================================================================
 import "./content-wrapper.css";
 
 // TYPES ===============================================================================================================
-import { CommonAndHTMLProps } from "../Element/constants";
+import { CommonAndHTMLProps } from "../../Element/constants";
 
 export type ContentWrapperElementType = HTMLDivElement;
 interface ContentWrapperCustomProps {
