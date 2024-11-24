@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.8.4
+- Fix controlled/uncontrolled input bug for `RadioTabgroup`
+
 ## 1.8.3
 - Add default styles for `Badge`
 

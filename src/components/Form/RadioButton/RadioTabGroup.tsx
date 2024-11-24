@@ -15,7 +15,6 @@ const RadioTabGroupOptions = ({ options, defaultValue, value, required, ...props
                         type="radio"
                         {...props}
                         {...option}
-                        defaultChecked={defaultValue === option.value}
                         checked={value === option.value}
                     />
                     <label htmlFor={option.id}>{option.label}</label>
