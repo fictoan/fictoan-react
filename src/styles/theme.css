@@ -18,11 +18,12 @@
 /* BADGE //////////////////////////////////////////////////////////////////// */
 :root {
     --badge-font          : var(--paragraph-font);
+    --badge-bg            : var(--blue-light60);
+    --badge-text          : var(--blue-dark20);
+
+    --badge-border        : var(--blue);
     --badge-border-radius : var(--global-border-radius);
     --badge-border-width  : var(--global-border-width);
-
-    --badge-bg-default    : var(--blue-light60);
-    --badge-text-default  : var(--blue-dark20);
 }
 
 /* BODY ///////////////////////////////////////////////////////////////////// */

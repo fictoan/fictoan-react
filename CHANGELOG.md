@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.8.3
+- Add default styles for `Badge`
+
 ## 1.8.1
 #### ⚠️ BREAKING CHANGES ⚠️
 - Remove `SidebarItemIcon` and `SidebarItemText` components to simplify markup

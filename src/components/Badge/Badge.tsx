@@ -70,7 +70,7 @@ export const Badge = React.forwardRef(
                     <Text
                         className="dismiss-button"
                         onClick={handleDelete}
-                        onKeyPress={handleKeyPress}
+                        onKeyDown={handleKeyPress}
                         role="button"
                         tabIndex={0}
                         aria-label={`Remove ${label || children}`}

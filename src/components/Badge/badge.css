@@ -12,6 +12,10 @@
     height              : fit-content;
     display             : flex;
     align-items         : center;
+    background-color    : var(--badge-bg);
+    color               : var(--badge-text);
+    border-color        : var(--badge-border);
+    border-style        : solid;
 
     /* To make sure a badge’s children don’t style themselves like a d-bag*/
     > * { all : unset; }
@@ -36,7 +40,7 @@
         }
 
         &:active {
-            transform  : scale(0.9);
+            transform : scale(0.9);
         }
     }
 
