@@ -160,7 +160,7 @@ export {
 export { Spinner, type SpinnerProps } from "./components/Spinner";
 
 // TABLE ===============================================================================================================
-export { Table, type TableProps, TablePagination, type TablePaginationProps } from "./components/Table";
+export { Table, type TableProps } from "./components/Table";
 
 // TABS  ===============================================================================================================
 export { Tabs, type TabsProps } from "./components/Tabs";
@@ -170,6 +170,9 @@ export { ThemeProvider, type ThemeProviderProps, useTheme } from "./components/T
 
 // TOAST ===============================================================================================================
 export { ToastsWrapper, type ToastsWrapperProps, ToastItem, type ToastItemProps } from "./components/Toast";
+
+// TOOLTIP =============================================================================================================
+export { Tooltip, type TooltipProps } from "./components/Tooltip";
 
 // TYPOGRAPHY ==========================================================================================================
 export {

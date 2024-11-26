@@ -1,0 +1,26 @@
+[data-tooltip] {
+    position         : fixed;
+    top              : -9999px; /* Initial position off-screen */
+    left             : -9999px;
+    z-index          : 1000;
+    width            : auto;
+    height           : auto;
+    padding          : 8px 12px;
+    background-color : var(--tooltip-bg);
+    color            : var(--tooltip-text);
+    border-radius    : var(--tooltip-border-radius);
+    max-width        : var(--tooltip-max-width);
+    pointer-events   : none;
+    opacity          : 0;
+    visibility       : hidden;
+    transition       : opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    font-size        : 0.875rem;
+    line-height      : 1.4;
+    word-wrap        : break-word;
+}
+
+[data-tooltip].visible {
+    opacity    : 1;
+    visibility : visible;
+    display    : block;
+}

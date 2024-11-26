@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.9.0
+- Add `Tooltip` component
+- Remove redundant `TablePagination` component
+
 ## 1.8.4
 - Fix controlled/uncontrolled input bug for `RadioTabgroup`
 
