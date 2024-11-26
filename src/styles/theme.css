@@ -201,10 +201,10 @@
     --divider-primary-bg       : var(--slate);
 
     --divider-secondary-height : 2px;
-    --divider-secondary-bg     : var(--slate-light60);
+    --divider-secondary-bg     : var(--slate-light20);
 
     --divider-tertiary-height  : 1px;
-    --divider-tertiary-bg      : var(--slate-light20);
+    --divider-tertiary-bg      : var(--slate-light60);
 }
 
 /* INPUT FIELD ////////////////////////////////////////////////////////////// */
@@ -682,4 +682,12 @@
     --toast-bg            : var(--slate-light10);
     --toast-text          : var(--black);
     --toast-border-radius : var(--global-border-radius);
+}
+
+/* TOOLTIP ////////////////////////////////////////////////////////////////// */
+:root {
+    --tooltip-bg            : var(--slate-dark80);
+    --tooltip-text          : var(--white);
+    --tooltip-border-radius : var(--global-border-radius);
+    --tooltip-max-width     : 200px;
 }

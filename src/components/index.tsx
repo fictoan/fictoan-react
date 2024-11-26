@@ -133,7 +133,7 @@ export {
 export { Spinner, type SpinnerProps } from "./Spinner";
 
 // TABLE ===============================================================================================================
-export { Table, type TableProps, TablePagination, type TablePaginationProps } from "./Table";
+export { Table, type TableProps } from "./Table";
 
 // TABS ================================================================================================================
 export { Tabs, type TabsProps } from "./Tabs";
@@ -143,6 +143,9 @@ export { ThemeProvider, type ThemeProviderProps, useTheme } from "./ThemeProvide
 
 // TOAST ===============================================================================================================
 export { ToastsWrapper, type ToastsWrapperProps, ToastItem, type ToastItemProps } from "./Toast";
+
+// TOOLTIP =============================================================================================================
+export { Tooltip, type TooltipProps } from "./Tooltip";
 
 // TYPOGRAPHY ==========================================================================================================
 export {
