@@ -2,7 +2,7 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 	 viewBox="0 0 320 320" style="enable-background:new 0 0 320 320;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#fff;}
+	.st0{fill:#fff; stroke:#000; stroke-miterlimit:10; stroke-width:2px;}
 </style>
 <g>
 	<path class="st0" d="M283.7,112.9L220.5,176c-2.6,2.6-7,0.7-7-2.9v-23c0-4.3,1.7-8.5,4.8-11.6L315,41.9c3.2-3.2,3.2-8.4,0-11.6
