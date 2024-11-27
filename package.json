@@ -1,6 +1,6 @@
 {
     "name": "fictoan-react",
-    "version": "1.9.1-alpha.25",
+    "version": "1.9.2",
     "private": false,
     "description": "",
     "type": "module",
@@ -85,6 +85,12 @@
     },
     "peerDependencies": {
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "prismjs": "^1.29.0"
+    },
+    "peerDependenciesMeta": {
+        "prismjs": {
+            "optional": true
+        }
     }
 }
