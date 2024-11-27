@@ -1,7 +1,4 @@
-// FRAMEWORK ===========================================================================================================
-import React, { useState } from "react";
-import parse from "html-react-parser";
-import { Prism } from "./prism";
+import React, { useState, useEffect } from "react";
 
 // FICTOAN =============================================================================================================
 import { Element } from "../Element/Element";
@@ -16,18 +13,37 @@ import { CommonAndHTMLProps } from "../Element/constants";
 
 // prettier-ignore
 export interface CodeBlockCustomProps {
-    source          ? : object | string;
-    language        ? : string | undefined;
-    showCopyButton  ? : boolean;
-    showLineNumbers ? : boolean;
-    description     ? : string;
+    source                 ? : object | string;
+    language               ? : SupportedLanguage | undefined;
+    showCopyButton         ? : boolean;
+    showLineNumbers        ? : boolean;
+    description            ? : string;
+    withSyntaxHighlighting ? : boolean;
 }
 
+interface PrismType {
+    languages : { [key : string] : any };
+    highlight : (
+        code     : string,
+        grammar  : any,
+        language : string
+    ) => string;
+}
+
+const SUPPORTED_LANGUAGES = [
+    "javascript",
+    "jsx",
+    "typescript",
+    "css",
+    "json",
+    "markdown",
+] as const;
+
+export type SupportedLanguage = typeof SUPPORTED_LANGUAGES[number];
 export type CodeBlockElementType = HTMLPreElement;
 export type CodeBlockProps = Omit<CommonAndHTMLProps<CodeBlockElementType>, keyof CodeBlockCustomProps> &
     CodeBlockCustomProps;
 
-// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const CodeBlock = React.forwardRef(
     (
         {
@@ -37,11 +53,14 @@ export const CodeBlock = React.forwardRef(
             showCopyButton,
             showLineNumbers,
             description,
+            withSyntaxHighlighting = false,
             ...props
         }: CodeBlockProps,
         ref: React.Ref<CodeBlockElementType>,
     ) => {
-        const [ isCodeCopied, setIsCodeCopied ] = useState(false);
+        const [isCodeCopied, setIsCodeCopied] = useState(false);
+        const [highlightedCode, setHighlightedCode] = useState<string>("");
+        const [prismModule, setPrismModule] = useState<PrismType | null>(null);
 
         // Use children if provided, else use source
         let code = typeof children === "string" ? children : React.Children.toArray(children).join("");
@@ -50,17 +69,60 @@ export const CodeBlock = React.forwardRef(
         }
 
         let classNames = [];
-
         if (showLineNumbers) {
             classNames.push("show-line-numbers");
         }
 
         const lines = code.split(/\r\n|\r|\n/gm);
 
-        const highlightElement = () => {
-            const languageGrammar = Prism.languages[language];
-            return typeof languageGrammar === "undefined" ? code : Prism.highlight(code, languageGrammar, language);
-        };
+        // Load Prism only if withSyntaxHighlighting prop is present
+        useEffect(() => {
+            if (!withSyntaxHighlighting) {
+                setHighlightedCode(code);
+                return;
+            }
+
+            if (prismModule && code) {
+                const languageGrammar = prismModule.languages[language];
+                if (languageGrammar) {
+                    const highlighted = prismModule.highlight(code, languageGrammar, language);
+                    setHighlightedCode(highlighted);
+                } else {
+                    setHighlightedCode(code);
+                }
+                return;
+            }
+
+            // Load Prism and language modules
+            const loadPrismWithLanguages = async () => {
+                try {
+                    // Load core Prism first
+                    const [prism] = await Promise.all([
+                        import('prismjs'),
+                        // TypeScript will ignore these dynamic imports
+                        ...SUPPORTED_LANGUAGES.map(lang =>
+                            import(/* @vite-ignore */ `prismjs/components/prism-${lang}`)
+                        )
+                    ]);
+
+                    setPrismModule(prism.default);
+
+                    // Now highlight the code with the loaded module
+                    const languageGrammar = prism.default.languages[language];
+                    if (languageGrammar) {
+                        const highlighted = prism.default.highlight(code, languageGrammar, language);
+                        setHighlightedCode(highlighted);
+                    } else {
+                        setHighlightedCode(code);
+                    }
+                } catch (error) {
+                    console.warn("Syntax highlighting not available:", error);
+                    setHighlightedCode(code);
+                }
+            };
+
+            loadPrismWithLanguages();
+        }, [withSyntaxHighlighting, code, language, prismModule]);
 
         const copyToClipboard = async () => {
             try {
@@ -118,17 +180,21 @@ export const CodeBlock = React.forwardRef(
                     tabIndex={0}
                     aria-label={`Code in ${language}`}
                 >
-                   {showLineNumbers && Array.from(Array(lines.length).keys()).map((index) => (
-                       <span
-                           key={index}
-                           className="line-numbers"
-                           aria-hidden="true"
-                       >
-                           {index + 1}
-                       </span>
-                   ))}
-                    {parse(highlightElement())}
-               </pre>
+                    {showLineNumbers && Array.from(Array(lines.length).keys()).map((index) => (
+                        <span
+                            key={index}
+                            className="line-numbers"
+                            aria-hidden="true"
+                        >
+                            {index + 1}
+                        </span>
+                    ))}
+                    {withSyntaxHighlighting ? (
+                        <code dangerouslySetInnerHTML={{ __html: highlightedCode }} />
+                    ) : (
+                        <code>{code}</code>
+                    )}
+                </pre>
             </Element>
         );
     },
