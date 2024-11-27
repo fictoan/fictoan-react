@@ -2,7 +2,15 @@
     "name": "fictoan-react",
     "version": "1.9.3",
     "private": false,
-    "description": "",
+    "description": "A full-featured, designer-friendly, yet performant framework with plain-English props and focus on rapid iteration.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fictoan/fictoan-react"
+    },
+    "bugs": {
+        "url": "https://github.com/fictoan/fictoan-react/issues"
+    },
+    "homepage": "https://fictoan.io",
     "type": "module",
     "sideEffects": [
         "./src/styles/*.css",
