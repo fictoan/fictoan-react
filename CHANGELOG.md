@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.9.2
+- `CodeBlock` now is a peer dependency, and supports lazy loading language support, so you are never downloading 
+  anything you don't need
+
 ## 1.9.1
 - Add fluid typography support
 

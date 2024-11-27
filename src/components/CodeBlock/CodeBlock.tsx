@@ -14,13 +14,14 @@ import { CommonAndHTMLProps } from "../Element/constants";
 // prettier-ignore
 export interface CodeBlockCustomProps {
     source                 ? : object | string;
-    language               ? : SupportedLanguage | undefined;
+    language               ? : string;  // Accepts any language string
     showCopyButton         ? : boolean;
     showLineNumbers        ? : boolean;
     description            ? : string;
     withSyntaxHighlighting ? : boolean;
 }
 
+// prettier-ignore
 interface PrismType {
     languages : { [key : string] : any };
     highlight : (
@@ -30,16 +31,6 @@ interface PrismType {
     ) => string;
 }
 
-const SUPPORTED_LANGUAGES = [
-    "javascript",
-    "jsx",
-    "typescript",
-    "css",
-    "json",
-    "markdown",
-] as const;
-
-export type SupportedLanguage = typeof SUPPORTED_LANGUAGES[number];
 export type CodeBlockElementType = HTMLPreElement;
 export type CodeBlockProps = Omit<CommonAndHTMLProps<CodeBlockElementType>, keyof CodeBlockCustomProps> &
     CodeBlockCustomProps;
@@ -75,6 +66,17 @@ export const CodeBlock = React.forwardRef(
 
         const lines = code.split(/\r\n|\r|\n/gm);
 
+        // Helper function to load a specific language module
+        const loadLanguage = async (languageName: string) => {
+            try {
+                await import(/* @vite-ignore */ `prismjs/components/prism-${languageName}`);
+                return true;
+            } catch (error) {
+                console.warn(`Language '${languageName}' could not be loaded:`, error);
+                return false;
+            }
+        };
+
         // Load Prism only if withSyntaxHighlighting prop is present
         useEffect(() => {
             if (!withSyntaxHighlighting) {
@@ -82,46 +84,60 @@ export const CodeBlock = React.forwardRef(
                 return;
             }
 
+            // If Prism is already loaded, try to highlight with it
             if (prismModule && code) {
                 const languageGrammar = prismModule.languages[language];
                 if (languageGrammar) {
+                    // Language already loaded, highlight immediately
                     const highlighted = prismModule.highlight(code, languageGrammar, language);
                     setHighlightedCode(highlighted);
                 } else {
-                    setHighlightedCode(code);
+                    // Try to load the language dynamically
+                    loadLanguage(language).then(success => {
+                        if (success && prismModule.languages[language]) {
+                            const highlighted = prismModule.highlight(
+                                code,
+                                prismModule.languages[language],
+                                language
+                            );
+                            setHighlightedCode(highlighted);
+                        } else {
+                            setHighlightedCode(code);
+                        }
+                    });
                 }
                 return;
             }
 
-            // Load Prism and language modules
-            const loadPrismWithLanguages = async () => {
+            // Initial load of Prism and the requested language
+            const loadPrismWithLanguage = async () => {
                 try {
-                    // Load core Prism first
+                    // Load Prism core and the requested language
                     const [prism] = await Promise.all([
                         import('prismjs'),
-                        // TypeScript will ignore these dynamic imports
-                        ...SUPPORTED_LANGUAGES.map(lang =>
-                            import(/* @vite-ignore */ `prismjs/components/prism-${lang}`)
-                        )
+                        loadLanguage(language)
                     ]);
 
                     setPrismModule(prism.default);
 
-                    // Now highlight the code with the loaded module
-                    const languageGrammar = prism.default.languages[language];
-                    if (languageGrammar) {
-                        const highlighted = prism.default.highlight(code, languageGrammar, language);
+                    // Highlight if language was loaded successfully
+                    if (prism.default.languages[language]) {
+                        const highlighted = prism.default.highlight(
+                            code,
+                            prism.default.languages[language],
+                            language
+                        );
                         setHighlightedCode(highlighted);
                     } else {
                         setHighlightedCode(code);
                     }
                 } catch (error) {
-                    console.warn("Syntax highlighting not available:", error);
+                    console.warn("Syntax highlighting doesnt seem to work:", error);
                     setHighlightedCode(code);
                 }
             };
 
-            loadPrismWithLanguages();
+            loadPrismWithLanguage();
         }, [withSyntaxHighlighting, code, language, prismModule]);
 
         const copyToClipboard = async () => {
