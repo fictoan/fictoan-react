@@ -563,6 +563,15 @@
 
 /* TEXT ///////////////////////////////////////////////////////////////////// */
 :root {
+    --screen-width-min : 320;
+    --screen-width-max : 1600;
+    --font-size-min    : 16;
+    --font-size-max    : 20;
+    --scale-ratio-min  : 1.16;
+    --scale-ratio-max  : 1.48;
+}
+
+:root {
     /* GENERICS ============================================================= */
     --font-sans-serif                : sans-serif;
     --font-serif                     : serif;
@@ -570,21 +579,19 @@
 
     /* PARAGRAPHS =========================================================== */
     --paragraph-font                 : var(--font-sans-serif);
-    --paragraph-font-size            : 1rem;
+    --paragraph-font-size            : var(--text-medium);
     --paragraph-line-height          : 1.2;
     --paragraph-font-weight          : 400;
     --paragraph-text-colour          : var(--grey);
 
     --paragraph-subtext-colour       : var(--slate-dark30);
-    --paragraph-subtext-size         : 0.8rem;
+    --paragraph-subtext-size         : calc(var(--paragraph-font-size) * 0.8);
 
     /* HEADINGS ============================================================= */
     --heading-font                   : var(--font-sans-serif);
-    --heading-font-size              : 1.5rem;
-    --heading-size-multiplier        : 1.2;
-    --heading-line-height            : 1;
-    --heading-font-weight            : 700;
     --heading-text-colour            : var(--slate);
+    --heading-font-weight            : 700;
+    --heading-line-height            : 1;
 
     /* LINKS ================================================================ */
     --link-font                      : var(--paragraph-font);

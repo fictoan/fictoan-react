@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.9.1
+- Improve type sizing calculation
+
 ## 1.9.0
 - Add `Tooltip` component
 - Remove redundant `TablePagination` component
