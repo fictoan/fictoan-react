@@ -1,7 +1,7 @@
 # CHANGELOG
 
 ## 1.9.1
-- Improve type sizing calculation
+- Add fluid typography support
 
 ## 1.9.0
 - Add `Tooltip` component
