@@ -35,11 +35,10 @@
 :root {
     --breadcrumbs-wrapper-bg           : var(--transparent);
 
-    --breadcrumb-item-separator        : "/";
-    --breadcrumb-item-separator-colour : var(--slate-light10);
-
     --breadcrumb-item-text             : var(--link-text-default);
     --breadcrumb-item-text-active      : var(--paragraph-text-colour);
+
+    --breadcrumb-item-separator-colour : var(--slate-light10);
 }
 
 /* BUTTON /////////////////////////////////////////////////////////////////// */

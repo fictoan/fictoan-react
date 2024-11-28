@@ -3,16 +3,19 @@ import React from "react";
 
 // FICTOAN =============================================================================================================
 import { Element } from "../Element";
+import { Text } from "../Typography/Text";
 
 // STYLES ==============================================================================================================
 import "./breadcrumbs.css";
 
 // TYPES ===============================================================================================================
-import { CommonAndHTMLProps } from "../Element/constants";
+import { CommonAndHTMLProps, SpacingTypes } from "../Element/constants";
 
 export type BreadcrumbsElementType = HTMLDivElement;
 export interface BreadcrumbsProps extends CommonAndHTMLProps<BreadcrumbsElementType> {
-    children : React.ReactNode;
+    children    : React.ReactNode;
+    separator ? : string;
+    spacing   ? : SpacingTypes;
 }
 
 export type BreadcrumbItemElementType = HTMLLIElement;
@@ -21,8 +24,13 @@ export interface BreadcrumbItemProps extends CommonAndHTMLProps<BreadcrumbItemEl
     current  ? : boolean;
 }
 
+interface SeparatorProps {
+    separator : string;
+}
+
 // COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-export const BreadcrumbItem = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(
+// BREADCRUMB ITEM =====================================================================================================
+const BreadcrumbItem = React.forwardRef<HTMLLIElement, BreadcrumbItemProps>(
     ({ children, current, ...props }, ref) => {
         return (
             <Element
@@ -32,43 +40,77 @@ export const BreadcrumbItem = React.forwardRef<HTMLLIElement, BreadcrumbItemProp
                 {...props}
                 aria-current={current ? "page" : undefined}
                 className={current ? "current" : undefined}
-                role="navigation"
-                aria-label="List of breadcrumbs"
+                role="listitem"
             >
-                {children}
+                <span className="breadcrumb-content">
+                    {children}
+                </span>
             </Element>
         );
     }
 );
 
+// SEPARATOR ===========================================================================================================
+const Separator: React.FC<SeparatorProps> = ({ separator }) => (
+    <Text
+        className="breadcrumb-separator"
+        aria-hidden="true"
+        role="presentation"
+        margin="none"
+    >
+        {separator}
+    </Text>
+);
+
+// BREADCRUMBS =========================================================================================================
 export const Breadcrumbs = React.forwardRef<HTMLDivElement, BreadcrumbsProps>(
-    ({ children, ...props }, ref) => {
-        // Helper function to check if child is already a BreadcrumbItem
-        const isBreadcrumbItem = (child: React.ReactNode): boolean => {
-            return React.isValidElement(child) &&
-                child.type === BreadcrumbItem;
-        };
+    ({ children, separator = "/", spacing, ...props }, ref) => {
+        let classNames = [];
 
-        // Process children to wrap them in BreadcrumbItem if needed
-        const processedChildren = React.Children.map(children, (child, index) => {
-            if (!React.isValidElement(child)) return child;
+        if (spacing) {
+            classNames.push(`spacing-${spacing}`);
+        }
 
-            // If it's already a BreadcrumbItem, return as is
-            if (isBreadcrumbItem(child)) return child;
+        const childrenArray = React.Children.toArray(children).filter(Boolean);
 
-            // Otherwise wrap it in a BreadcrumbItem
-            // The last item gets the current prop
-            const isLast = index === React.Children.count(children) - 1;
-            return (
-                <BreadcrumbItem current={isLast}>
-                    {child}
-                </BreadcrumbItem>
-            );
-        });
+        const processedChildren = childrenArray.reduce<React.ReactNode[]>((acc, child, index) => {
+            if (!React.isValidElement(child)) return acc;
+
+            const isLast = index === childrenArray.length - 1;
+
+            let breadcrumbItem: React.ReactNode;
+            if (child.type === BreadcrumbItem) {
+                breadcrumbItem = React.cloneElement(child, {
+                    ...child.props,
+                    current: isLast
+                });
+            } else {
+                breadcrumbItem = (
+                    <BreadcrumbItem key={`item-${index}`} current={isLast}>
+                        {child}
+                    </BreadcrumbItem>
+                );
+            }
+
+            acc.push(breadcrumbItem);
+
+            if (!isLast) {
+                acc.push(
+                    <Separator key={`sep-${index}`} separator={separator} />
+                );
+            }
+
+            return acc;
+        }, []);
 
         return (
             <nav aria-label="Breadcrumb" ref={ref} {...props}>
-                <Element as="ul" data-breadcrumbs-wrapper>
+                <Element
+                    as="ul"
+                    data-breadcrumbs-wrapper
+                    role="list"
+                    classNames={classNames}
+                >
                     {processedChildren}
                 </Element>
             </nav>
