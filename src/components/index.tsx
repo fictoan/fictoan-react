@@ -11,7 +11,7 @@ export { Drawer, type DrawerProps } from "./Drawer";
 export { Button, type ButtonProps } from "./Button";
 
 // BREADCRUMBS =========================================================================================================
-export { Breadcrumbs, type BreadcrumbsProps, BreadcrumbItem, type BreadcrumbItemProps } from "./Breadcrumbs";
+export { Breadcrumbs, type BreadcrumbsProps } from "./Breadcrumbs";
 
 // CALLOUT =============================================================================================================
 export { Callout, type CalloutProps } from "./Callout";

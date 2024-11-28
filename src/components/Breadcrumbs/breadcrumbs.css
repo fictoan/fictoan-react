@@ -1,3 +1,15 @@
+[data-breadcrumbs-wrapper] {
+    margin      : 0; /* Reset */
+    padding     : 0; /* Reset */
+    display     : flex;
+    flex-wrap   : wrap;
+    align-items : flex-start;
+
+    &:not([class*="bg-"]) {
+        background-color : var(--breadcrumbs-wrapper-bg);
+    }
+}
+
 li[data-breadcrumb-item] {
     display   : inline-flex;
     position  : relative;

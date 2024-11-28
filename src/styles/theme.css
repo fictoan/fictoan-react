@@ -506,7 +506,7 @@
 /* SKELETON ///////////////////////////////////////////////////////////////// */
 :root {
     --skeleton-bg        : var(--slate-light40);
-    --skeleton-highlight : var(--slate-light40-opacity40);
+    --skeleton-highlight : var(--slate-light60);
 }
 
 /* SPINNER ////////////////////////////////////////////////////////////////// */
