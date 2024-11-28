@@ -12,9 +12,9 @@ import { CommonAndHTMLProps, ShapeTypes, SpacingTypes } from "../Element/constan
 
 // Common skeleton props shared between Skeleton and SkeletonGroup
 interface CommonSkeletonProps {
-    effect    ? : "pulse" | "wave" | "none";
-    animate   ? : boolean;
-    loadingLabel ? : string;    // Accessible label for loading state
+    effect       ? : "pulse" | "wave" | "none";
+    animate      ? : boolean;
+    loadingLabel ? : string; // Accessible label for loading state
 }
 
 // Context to share common properties

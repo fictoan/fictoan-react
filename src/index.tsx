@@ -31,14 +31,11 @@ export { Accordion, type AccordionProps } from "./components/Accordion";
 // BADGE ===============================================================================================================
 export { Badge, type BadgeProps } from "./components/Badge";
 
-// DRAWER ==============================================================================================================
-export { Drawer, type DrawerProps } from "./components/Drawer";
+// BREADCRUMBS =========================================================================================================
+export { Breadcrumbs, type BreadcrumbsProps } from "./components/Breadcrumbs";
 
 // BUTTON ==============================================================================================================
 export { Button, type ButtonProps } from "./components/Button";
-
-// BREADCRUMBS =========================================================================================================
-export { Breadcrumbs, type BreadcrumbsProps, BreadcrumbItem, type BreadcrumbItemProps } from "./components/Breadcrumbs";
 
 // CALLOUT =============================================================================================================
 export { Callout, type CalloutProps } from "./components/Callout";
@@ -51,6 +48,9 @@ export { CodeBlock, type CodeBlockProps } from "./components/CodeBlock";
 
 // DIVIDER =============================================================================================================
 export { Divider, type DividerProps } from "./components/Divider";
+
+// DRAWER ==============================================================================================================
+export { Drawer, type DrawerProps } from "./components/Drawer";
 
 // ELEMENT =============================================================================================================
 export {

@@ -1,0 +1,42 @@
+/* BREADCRUMBS WRAPPER ////////////////////////////////////////////////////// */
+[data-breadcrumbs-wrapper] {
+    margin      : 0; /* Reset */
+    padding     : 0; /* Reset */
+    display     : flex;
+    flex-wrap   : wrap;
+    align-items : center;
+    list-style  : none;
+
+    &:not([class*="bg-"]) {
+        background-color : var(--breadcrumbs-wrapper-bg);
+    }
+
+    &.spacing-nano   { gap : 4px; }
+    &.spacing-micro  { gap : 8px; }
+    &.spacing-tiny   { gap : 12px; }
+    &.spacing-small  { gap : 16px; }
+    &.spacing-medium { gap : 24px; }
+    &.spacing-large  { gap : 32px; }
+    &.spacing-huge   { gap : 40px; }
+}
+
+/* BREADCRUMBS ITEM ///////////////////////////////////////////////////////// */
+li[data-breadcrumb-item] {
+    display     : inline-flex;
+    align-items : center;
+    gap         : 16px;
+
+    .breadcrumb-content {
+        color : var(--breadcrumb-item-text);
+    }
+
+    &.current .breadcrumb-content {
+        color : var(--breadcrumb-item-text-active);
+    }
+
+    .breadcrumb-separator {
+        color       : var(--breadcrumb-item-separator-colour);
+        margin      : 0;
+        user-select : none;
+    }
+}
