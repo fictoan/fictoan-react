@@ -44,7 +44,7 @@ export const BaseInputComponent = React.forwardRef(
             {label && <InputLabel label={label} htmlFor={inputProps.id} />}
 
             {(helpText || errorText) && (
-                <Div className="info-section vertically-center-items" marginTop="nano">
+                <Div className="info-section vertically-center-items">
                     {helpText && (
                         <Element as="span" className="help-text">
                             {helpText}

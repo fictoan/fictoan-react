@@ -566,8 +566,8 @@
     --screen-width-max : 1600;
     --font-size-min    : 16;
     --font-size-max    : 20;
-    --scale-ratio-min  : 1.16;
-    --scale-ratio-max  : 1.24;
+    --scale-ratio-min  : 1.12;
+    --scale-ratio-max  : 1.16;
 }
 
 :root {
