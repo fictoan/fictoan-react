@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.10.0
+- `Breadcrumbs` is now far simpler, and immediate children are automatically converted to `BreadcrumbItem`
+
 ## 1.9.4
 - `Breadcrumbs` is now far simpler, and immediate children are automatically converted to `BreadcrumbItem`
 

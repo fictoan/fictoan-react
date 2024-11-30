@@ -23,6 +23,7 @@ export const BaseInputComponent = React.forwardRef(
             errorText,
             validateThis,
             classNames,
+            children,
             ...inputProps
         }: BaseInputComponentWithIconProps<K>,
         ref: React.LegacyRef<InputElementType>
@@ -31,20 +32,28 @@ export const BaseInputComponent = React.forwardRef(
             data-form-item
             required={inputProps.required}
         >
-            <Element<K>
-                as={Component}
-                ref={ref}
-                classNames={[
-                    className || "",
-                    validateThis ? "validate-this" : "",
-                ].concat(classNames || [])}
-                {...inputProps}
-            />
-
+            {/* LABEL ////////////////////////////////////////////////////////////////////////////////////////////// */}
             {label && <InputLabel label={label} htmlFor={inputProps.id} />}
 
+            {/* MAIN INPUT ///////////////////////////////////////////////////////////////////////////////////////// */}
+            <Div data-input-wrapper>
+                {/* MAIN INPUT */}
+                <Element<K>
+                    as={Component}
+                    ref={ref}
+                    classNames={[
+                        className || "",
+                        validateThis ? "validate-this" : "",
+                    ].concat(classNames || [])}
+                    {...inputProps}
+                />
+
+                {children}
+            </Div>
+
+            {/* INFO SECTION /////////////////////////////////////////////////////////////////////////////////////// */}
             {(helpText || errorText) && (
-                <Div className="info-section vertically-center-items" marginTop="nano">
+                <Div className="info-section vertically-center-items">
                     {helpText && (
                         <Element as="span" className="help-text">
                             {helpText}

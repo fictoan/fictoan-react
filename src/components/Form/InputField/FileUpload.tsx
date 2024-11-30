@@ -6,12 +6,13 @@ import { InputField } from "./InputField";
 
 // TYPES ===============================================================================================================
 import { InputFieldProps } from "./InputField";
+import { InputSideElementProps, NoSideElements } from "../BaseInputComponent/constants";
 
-export type FileUploadProps = Omit<InputFieldProps, "type"> & {
-    accept   ? : string;
-    multiple ? : boolean;
-    capture  ? : "user" | "environment";
-};
+export type FileUploadProps = Omit<InputFieldProps, "type" | keyof InputSideElementProps> & {
+    accept?: string;
+    multiple?: boolean;
+    capture?: "user" | "environment";
+} & NoSideElements;
 
 // COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const FileUpload = React.forwardRef(

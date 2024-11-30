@@ -1,3 +1,10 @@
+/* First, define default values at the root level */
+:root {
+    --side-element-left-width  : 0px;
+    --side-element-right-width : 0px;
+    --side-element-padding     : 8px;
+}
+
 input[data-input-field] {
     position         : relative;
     width            : 100%;
@@ -7,8 +14,9 @@ input[data-input-field] {
     background-color : var(--input-bg-default);
     border           : var(--input-border-width-default) solid var(--input-border-default);
     border-radius    : var(--input-border-radius-default);
-    padding          : 12px;
     line-height      : 1;
+    padding-top      : 12px;
+    padding-bottom   : 12px;
 
     ::placeholder {
         color   : var(--input-placeholder-default);
@@ -91,4 +99,73 @@ input[data-input-field] {
         background-position : 98%;
         background-size     : 24px;
     }
+}
+
+/* INPUT HELPER ///////////////////////////////////////////////////////////// */
+/* This is what renders the left/right icons or text */
+[data-input-helper] {
+    position              : absolute;
+    inset                 : 0;
+    width                 : 100%;
+    padding               : 12px;
+    pointer-events        : none;
+    display               : grid;
+    grid-template-rows    : 1fr;
+    grid-template-columns:
+        minmax(var(--side-element-left-width), auto) 1fr minmax(var(--side-element-right-width), auto);
+    grid-template-areas   : "leftElement spaceForInput rightElement";
+    align-items           : center;
+    justify-content       : space-between;
+}
+
+[data-input-side-element] {
+    line-height: 0;
+    white-space: nowrap;
+
+    &.is-text {
+        &.left {
+            min-width: var(--side-element-left-width);
+        }
+
+        &.right {
+            min-width: var(--side-element-right-width);
+        }
+    }
+
+    &.is-icon {
+        width: 24px;
+    }
+}
+
+[data-input-side-element].left { grid-area : leftElement; }
+[data-input-side-element].right { grid-area : rightElement; }
+
+
+/* LEFT SIDE ================================================================ */
+[data-form-item]:has([data-input-side-element].left.is-icon:empty) [data-input-field] {
+    padding-left: 12px;
+}
+
+/* When there is an icon ---------------------------------------------------- */
+[data-form-item]:has([data-input-side-element].left.is-icon:not(:empty)) [data-input-field] {
+    padding-left: 48px;
+}
+
+/* For text ----------------------------------------------------------------- */
+[data-form-item]:has([data-input-side-element].left.is-text) [data-input-field] {
+    padding-left: calc(var(--side-element-left-width) + var(--side-element-padding) * 2);
+}
+/* RIGHT SIDE =============================================================== */
+[data-form-item]:has([data-input-side-element].right.is-icon:empty) [data-input-field] {
+    padding-right: 12px;
+}
+
+/* When there is an icon ---------------------------------------------------- */
+[data-form-item]:has([data-input-side-element].right.is-icon:not(:empty)) [data-input-field] {
+    padding-right: 48px;
+}
+
+/* For text ----------------------------------------------------------------- */
+[data-form-item]:has([data-input-side-element].right.is-text) [data-input-field] {
+    padding-right: calc(var(--side-element-right-width) + var(--side-element-padding) * 2);
 }

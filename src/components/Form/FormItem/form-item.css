@@ -1,105 +1,260 @@
+/*
++-----------------------------------------+
+| Label                                   |
++-----------------------------------------+
+| ANY INPUT ITEM                          |
++-----------------------------------------+
+| Info section                            |
++-----------------------------------------+
+*/
+
+/* SUPER PARENT ///////////////////////////////////////////////////////////// */
+/* Need this as a common parent to align the left/right icons */
+[data-input-wrapper] {
+    position : relative;
+}
+
+
+/* PARENT ELEMENT /////////////////////////////////////////////////////////// */
 [data-form-item] {
-    display        : flex;
-    flex-direction : column;
-    position       : relative;
-    width          : 100%;
-    align-items    : flex-start;
+    position              : relative;
+    width                 : 100%;
+    display               : grid;
+    grid-template-rows    : auto auto auto;
+    grid-template-columns : 1fr;
+    gap                   : 4px;
+    grid-template-areas   :
+        "label"
+        "input"
+        "info";
+}
 
-    & > label {
-        position      : relative;
-        display       : flex;
-        flex          : 1 0 auto;
-        align-self    : flex-start;
-        margin-bottom : 4px;
-        color         : var(--input-label-default);
-        font-family   : var(--paragraph-font);
-        order         : -1;
-        flex-wrap     : wrap;
-    }
+/* Hide empty grid areas when there is no label or info section ============= */
+[data-form-item]:not(:has(label)) {
+    grid-template-areas :
+        "input"
+        "info";
+    grid-template-rows  : auto auto;
+}
 
-    .info-section {
-        flex-wrap       : wrap;
-        justify-content : space-between;
+[data-form-item]:not(:has(.info-section)) {
+    grid-template-rows  : auto auto;
+    grid-template-areas :
+        "label"
+        "input";
+}
 
-        span.help-text,
-        span.error-text {
-            font-size   : var(--input-helptext-scale);
-            font-family : var(--paragraph-font);
-        }
+[data-form-item]:not(:has(label)):not(:has(.info-section)) {
+    grid-template-areas : "input";
+    grid-template-rows  : auto;
+}
 
-        span.help-text {
-            color : var(--input-helptext);
-        }
+/* LABEL //////////////////////////////////////////////////////////////////// */
+[data-form-item] > label {
+    grid-area   : label;
+    position    : relative;
+    color       : var(--input-label-default);
+    font-family : var(--paragraph-font);
+    width       : fit-content;
+}
 
-        span.error-text {
-            display : none;
-        }
-
-        span:not(:last-of-type) {
-            margin-right : 8px;
-        }
-    }
-
-    &[required] {
-        & > div,
-        & > [data-input-field],
-        & > [data-text-area],
-        & > [data-select-wrapper] {
-            & ~ label::before {
-                position  : absolute;
-                top       : -4px;
-                bottom    : 0;
-                right     : -12px;
-                margin    : auto;
-                content   : "*";
-                font-size : 120%;
-                color     : var(--input-required-indicator);
-            }
-        }
-    }
-
-    input[type="radio"]:disabled + label,
-    input[type="checkbox"]:disabled + label {
-        pointer-events : none;
-        user-select    : none;
-        cursor         : default;
-        opacity        : 0.36;
-    }
-
-    [data-input-field],
-    [data-text-area],
-    [data-select-wrapper] {
-        &:read-only {
-            background-color : var(--input-bg-read-only);
-            color            : var(--input-text-read-only);
-            cursor           : text;
-
-            &:focus {
-                border : var(--global-border-width) solid var(--input-border-read-only);
-            }
-        }
-
-        &:disabled,
-        &[disabled] select {
-            background-color : var(--input-bg-disabled);
-            border-color     : var(--input-border-disabled);
-            color            : var(--input-text-disabled);
-            cursor           : not-allowed;
-
-            & + label {
-                color : var(--input-label-disabled);
-            }
-        }
-
-        &:not(:disabled) {
-            &:focus ~ label {
-                font-weight : bold;
-            }
-
-            &:invalid:not(:focus):not(:placeholder-shown) ~ .info-section span.error-text {
-                display : block;
-                color   : var(--input-error-text-invalid);
-            }
+[data-form-item][required] {
+    & > div,
+    & > [data-input-field],
+    & > [data-text-area],
+    & > [data-select-wrapper] {
+        & ~ label::after {
+            position  : absolute;
+            top       : -4px;
+            bottom    : 0;
+            right     : -12px;
+            margin    : auto;
+            content   : "*";
+            font-size : 120%;
+            color     : var(--input-required-indicator);
         }
     }
 }
+
+/* INPUT //////////////////////////////////////////////////////////////////// */
+[data-form-item][data-input-field],
+[data-form-item][data-text-area],
+[data-form-item][data-select-wrapper] {
+    grid-area : input;
+}
+
+/* INFO ///////////////////////////////////////////////////////////////// */
+[data-form-item] .info-section {
+    grid-area : info;
+
+    flex-wrap : wrap;
+
+    span.help-text,
+    span.error-text {
+        font-size   : var(--input-helptext-scale);
+        font-family : var(--paragraph-font);
+    }
+
+    span.help-text {
+        color : var(--input-helptext);
+    }
+
+    span.error-text {
+        display : none;
+    }
+
+    span:not(:last-of-type) {
+        margin-right : 8px;
+    }
+}
+
+[data-form-item] input[type="radio"]:disabled + label,
+[data-form-item] input[type="checkbox"]:disabled + label {
+    pointer-events : none;
+    user-select    : none;
+    cursor         : default;
+    opacity        : 0.36;
+}
+
+[data-form-item] [data-input-field],
+[data-form-item] [data-text-area],
+[data-form-item] [data-select-wrapper] {
+    &:read-only {
+        background-color : var(--input-bg-read-only);
+        color            : var(--input-text-read-only);
+        cursor           : text;
+
+        &:focus {
+            border : var(--global-border-width) solid var(--input-border-read-only);
+        }
+    }
+
+    &:disabled,
+    &[disabled] select {
+        background-color : var(--input-bg-disabled);
+        border-color     : var(--input-border-disabled);
+        color            : var(--input-text-disabled);
+        cursor           : not-allowed;
+
+        & + label {
+            color : var(--input-label-disabled);
+        }
+    }
+
+    &:not(:disabled) {
+        &:focus ~ label {
+            font-weight : bold;
+        }
+
+        &:invalid:not(:focus):not(:placeholder-shown) ~ .info-section span.error-text {
+            display : block;
+            color   : var(--input-error-text-invalid);
+        }
+    }
+}
+
+/*[data-form-item] {*/
+/*    display        : flex;*/
+/*    flex-direction : column;*/
+/*    position       : relative;*/
+/*    width          : 100%;*/
+/*    align-items    : flex-start;*/
+
+/*    & > label {*/
+/*        position      : relative;*/
+/*        display       : flex;*/
+/*        flex          : 1 0 auto;*/
+/*        align-self    : flex-start;*/
+/*        margin-bottom : 4px;*/
+/*        color         : var(--input-label-default);*/
+/*        font-family   : var(--paragraph-font);*/
+/*        order         : -1;*/
+/*        flex-wrap     : wrap;*/
+/*    }*/
+
+/*    .info-section {*/
+/*        flex-wrap       : wrap;*/
+/*        justify-content : space-between;*/
+
+/*        span.help-text,*/
+/*        span.error-text {*/
+/*            font-size   : var(--input-helptext-scale);*/
+/*            font-family : var(--paragraph-font);*/
+/*        }*/
+
+/*        span.help-text {*/
+/*            color : var(--input-helptext);*/
+/*        }*/
+
+/*        span.error-text {*/
+/*            display : none;*/
+/*        }*/
+
+/*        span:not(:last-of-type) {*/
+/*            margin-right : 8px;*/
+/*        }*/
+/*    }*/
+
+/*    &[required] {*/
+/*        & > div,*/
+/*        & > [data-input-field],*/
+/*        & > [data-text-area],*/
+/*        & > [data-select-wrapper] {*/
+/*            & ~ label::before {*/
+/*                position  : absolute;*/
+/*                top       : -4px;*/
+/*                bottom    : 0;*/
+/*                right     : -12px;*/
+/*                margin    : auto;*/
+/*                content   : "*";*/
+/*                font-size : 120%;*/
+/*                color     : var(--input-required-indicator);*/
+/*            }*/
+/*        }*/
+/*    }*/
+
+/*    input[type="radio"]:disabled + label,*/
+/*    input[type="checkbox"]:disabled + label {*/
+/*        pointer-events : none;*/
+/*        user-select    : none;*/
+/*        cursor         : default;*/
+/*        opacity        : 0.36;*/
+/*    }*/
+
+/*    [data-input-field],*/
+/*    [data-text-area],*/
+/*    [data-select-wrapper] {*/
+/*        &:read-only {*/
+/*            background-color : var(--input-bg-read-only);*/
+/*            color            : var(--input-text-read-only);*/
+/*            cursor           : text;*/
+
+/*            &:focus {*/
+/*                border : var(--global-border-width) solid var(--input-border-read-only);*/
+/*            }*/
+/*        }*/
+
+/*        &:disabled,*/
+/*        &[disabled] select {*/
+/*            background-color : var(--input-bg-disabled);*/
+/*            border-color     : var(--input-border-disabled);*/
+/*            color            : var(--input-text-disabled);*/
+/*            cursor           : not-allowed;*/
+
+/*            & + label {*/
+/*                color : var(--input-label-disabled);*/
+/*            }*/
+/*        }*/
+
+/*        &:not(:disabled) {*/
+/*            &:focus ~ label {*/
+/*                font-weight : bold;*/
+/*            }*/
+
+/*            &:invalid:not(:focus):not(:placeholder-shown) ~ .info-section span.error-text {*/
+/*                display : block;*/
+/*                color   : var(--input-error-text-invalid);*/
+/*            }*/
+/*        }*/
+/*    }*/
+/*}*/
