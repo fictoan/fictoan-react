@@ -208,49 +208,62 @@
 
 /* INPUT FIELD ////////////////////////////////////////////////////////////// */
 :root {
-    --input-bg-default            : var(--white);
+    --input-padding                   : 12px;
+    --input-icon-size                 : 24px;
 
-    --input-border-default        : var(--slate-light40);
-    --input-border-radius-default : var(--global-border-radius);
-    --input-border-width-default  : var(--global-border-width);
+    --input-bg-default                : var(--white);
+    --input-border-default            : var(--slate-light40);
+    --input-border-radius-default     : var(--global-border-radius);
+    --input-border-width-default      : var(--global-border-width);
 
-    --input-label-default         : var(--paragraph-text-colour);
-    --input-placeholder-default   : var(--slate-light40);
-    --input-text-default          : var(--paragraph-text-colour);
+    --input-label-default             : var(--paragraph-text-colour);
+    --input-placeholder-default       : var(--slate-light40);
+    --input-text-default              : var(--paragraph-text-colour);
 
-    --input-bg-focus              : var(--white);
-    --input-border-focus          : var(--slate-light40);
-    --input-border-width-focus    : var(--global-border-width);
-    --input-text-focus            : var(--shade);
+    --input-bg-focus                  : var(--white);
+    --input-border-focus              : var(--slate-light40);
+    --input-border-width-focus        : var(--global-border-width);
+    --input-text-focus                : var(--shade);
 
-    --input-bg-valid              : var(--white);
-    --input-border-valid          : var(--green-dark30);
-    --input-label-valid           : var(--shade);
+    --input-bg-valid                  : var(--white);
+    --input-border-valid              : var(--green-dark30);
+    --input-label-valid               : var(--shade);
 
-    --input-bg-invalid            : var(--red-light60);
-    --input-border-invalid        : var(--red-dark30);
-    --input-label-invalid         : var(--red);
-    --input-text-invalid          : var(--red);
-    --input-error-text-invalid    : var(--red);
+    --input-bg-invalid                : var(--red-light60);
+    --input-border-invalid            : var(--red-dark30);
+    --input-label-invalid             : var(--red);
+    --input-text-invalid              : var(--red);
+    --input-error-text-invalid        : var(--red);
 
-    --input-bg-disabled           : var(--slate-light40);
-    --input-border-disabled       : var(--slate-light40);
-    --input-label-disabled        : var(--slate-dark40);
-    --input-text-disabled         : var(--slate-dark60);
+    --input-bg-disabled               : var(--slate-light40);
+    --input-border-disabled           : var(--slate-light40);
+    --input-label-disabled            : var(--slate-dark40);
+    --input-text-disabled             : var(--slate-dark60);
 
-    --input-bg-read-only          : var(--slate-light40);
-    --input-border-read-only      : var(--slate-light40);
-    --input-label-read-only       : var(--slate-dark40);
-    --input-text-read-only        : var(--slate-dark60);
+    --input-bg-read-only              : var(--slate-light40);
+    --input-border-read-only          : var(--slate-light40);
+    --input-label-read-only           : var(--slate-dark40);
+    --input-text-read-only            : var(--slate-dark60);
 
-    --input-required-indicator    : var(--red);
+    --input-required-indicator        : var(--red);
 
-    --input-helptext              : var(--slate-dark40);
-    --input-helptext-scale        : 92%;
+    --input-helptext                  : var(--slate-dark40);
+    --input-helptext-scale            : 92%;
 
-    --input-icon-default          : var(--slate-light40);
-    --input-icon-focus            : var(--hue);
-    --input-icon-valid            : var(--green-dark30);
+    --input-inner-text-left-default   : var(--slate);
+    --input-inner-text-right-default  : var(--slate);
+    --input-inner-icon-left-default   : var(--slate);
+    --input-inner-icon-right-default  : var(--slate);
+
+    --input-inner-text-left-focus     : var(--slate-light70);
+    --input-inner-text-right-focus    : var(--slate-light70);
+    --input-inner-icon-left-focus     : var(--slate-light70);
+    --input-inner-icon-right-focus    : var(--slate-light70);
+
+    --input-inner-text-left-disabled  : var(--slate-dark40);
+    --input-inner-text-right-disabled : var(--slate-dark40);
+    --input-inner-icon-left-disabled  : var(--slate-dark40);
+    --input-inner-icon-right-disabled : var(--slate-dark40);
 }
 
 /* LIST BOX ///////////////////////////////////////////////////////////////// */

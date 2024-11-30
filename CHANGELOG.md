@@ -1,7 +1,11 @@
 # CHANGELOG
 
+
+## 1.10.1
+- Tweak theme values for icons and text inside `InputField`
+
 ## 1.10.0
-- `Breadcrumbs` is now far simpler, and immediate children are automatically converted to `BreadcrumbItem`
+- Add ability to add icons and text inside `InputField` via props
 
 ## 1.9.4
 - `Breadcrumbs` is now far simpler, and immediate children are automatically converted to `BreadcrumbItem`
@@ -727,10 +731,10 @@
 - TODO: Fix Dismiss Button in NotificationItem
 - TODO: Add mask design to PinInputField
 - TODO: Fix Sidebar scrolling issue
-- TODO: Add Tooltip component
 - TODO: Drag and drop file upload component
 - TODO: Date picker
 - TODO: Button size medium padding value
 
+~~- TODO: Add Tooltip component~~
 ~~TODO: ⚠️ Fix TS issue in Select and SWS~~
 ~~TODO: ⚠️ Fix Meter height issue)~~
