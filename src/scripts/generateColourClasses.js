@@ -1,4 +1,4 @@
-// src/scripts/generateColourClasses.js
+// Keeping this file as JS because TS was throwing errors in the build
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";

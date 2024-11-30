@@ -1,6 +1,9 @@
 # CHANGELOG
 
 
+## 1.10.3
+- Fix CSS variable mismatch for  `Sidebar`
+
 ## 1.10.1
 - Tweak theme values for icons and text inside `InputField`
 
