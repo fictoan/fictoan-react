@@ -15,7 +15,7 @@ const pkg = JSON.parse(readFileSync(new URL("./package.json", import.meta.url)))
 
 const input = Object.fromEntries(
     glob
-        .sync(["src/index.tsx", "src/components/**/*.{ts,tsx}"], { ignore: "src/**/*.stories.{js,jsx,ts,tsx}" })
+        .sync(["src/index.tsx", "src/components/**/*.{ts,tsx}"], { ignore : "src/**/*.stories.{js,jsx,ts,tsx}" })
         .map((file) => [
             relative("src", file.slice(0, file.length - extname(file).length)),
             fileURLToPath(new URL(file, import.meta.url)),
@@ -24,14 +24,14 @@ const input = Object.fromEntries(
 
 function preserveUseClient() {
     return {
-        name: "preserve-use-client",
-        enforce: "post",
+        name    : "preserve-use-client",
+        enforce : "post",
         generateBundle(options, bundle) {
             Object.entries(bundle).forEach(([_, chunk]) => {
                 if (chunk.type === "chunk") {
                     chunk.code = chunk.code.replace(
                         /("use client";|('use client';))?/,
-                        '"use client";\n'
+                        "\"use client\";\n",
                     );
                 }
             });
@@ -41,25 +41,25 @@ function preserveUseClient() {
 
 function generateColors() {
     return {
-        name: "generate-colors",
-        buildStart: {
-            sequential: true,
+        name       : "generate-colors",
+        buildStart : {
+            sequential : true,
             handler() {
                 console.log("Generating color system...");
-                execSync("node src/scripts/generateColourClasses.js", { stdio: "inherit" });
+                execSync("node src/scripts/generateColourClasses.js", { stdio : "inherit" });
             },
         },
         configureServer(server) {
             // Generate on dev server start
             console.log("Generating color system...");
-            execSync("node src/scripts/generateColourClasses.js", { stdio: "inherit" });
+            execSync("node src/scripts/generateColourClasses.js", { stdio : "inherit" });
 
             // Watch for changes in the script
             server.watcher.add("src/scripts/generateColourClasses.js");
             server.watcher.on("change", (path) => {
                 if (path.endsWith("generateColourClasses.js")) {
                     console.log("Color generation script changed, regenerating...");
-                    execSync("node scripts/generateColourClasses.js", { stdio: "inherit" });
+                    execSync("node scripts/generateColourClasses.js", { stdio : "inherit" });
                 }
             });
         },
@@ -68,57 +68,78 @@ function generateColors() {
 
 function createVisualizer() {
     return {
-        ...visualizer({ gzipSize: true }),
-        apply: "build",
+        ...visualizer({ gzipSize : true }),
+        apply : "build",
     };
 }
 
 export default defineConfig({
-    build: {
-        minify: "terser",
-        terserOptions: {
-            format: {
-                comments: false,
-                preserve_annotations: true,
+    build   : {
+        minify        : "terser",
+        terserOptions : {
+            format : {
+                comments             : false,
+                preserve_annotations : true,
             },
         },
-        lib: {
-            entry: input,
-            name: pkg.name,
-            fileName: "index",
+        lib           : {
+            entry    : input,
+            name     : pkg.name,
+            fileName : "index",
         },
-        rollupOptions: {
-            output: [
+        rollupOptions : {
+            output   : [
                 {
-                    format: "es",
-                    entryFileNames: "[name].js",
-                    assetFileNames: "index.[ext]",
-                    banner: `"use client;"`,
+                    format              : "es",
+                    entryFileNames      : "[name].js",
+                    assetFileNames      : "index.[ext]",
+                    banner              : `"use client;"`,
+                    preserveModules     : true,
+                    preserveModulesRoot : "src",
                 },
             ],
-            plugins: [
+            plugins  : [
                 babel({
-                    exclude: "node_modules/**",
-                    babelHelpers: "bundled",
-                    presets: [
+                    exclude      : "node_modules/**",
+                    babelHelpers : "bundled",
+                    presets      : [
                         ["@babel/preset-env", {
-                            useBuiltIns: "usage",
-                            corejs: 3,
-                            targets: {
-                                esmodules: true,
+                            useBuiltIns : "usage",
+                            corejs      : 3,
+                            targets     : {
+                                esmodules : true,
                             },
                         }],
                         "@babel/preset-react",
                     ],
                 }),
             ],
-            external: [...Object.keys(pkg.peerDependencies)],
+            external : [...Object.keys(pkg.peerDependencies)],
         },
     },
-    plugins: [
+    plugins : [
         generateColors(),
         svgr(),
         preserveUseClient(),
         createVisualizer(),
+        dts({
+            insertTypesEntry : true,
+            include          : ["src"],
+            outDir           : "dist/types",
+            exclude          : ["**/*.stories.{ts,tsx}", "**/*.test.{ts,tsx}"],
+            copyDtsFiles     : true,
+            skipDiagnostics  : false,
+            rollupTypes      : true,
+            compilerOptions  : {
+                baseUrl : ".",
+                paths   : {
+                    "@/*" : ["./src/*"],
+                },
+            },
+            afterBuild       : () => {
+                // Optional: Log completion of type generation
+                console.log("Type definitions generated successfully");
+            },
+        }),
     ],
 });

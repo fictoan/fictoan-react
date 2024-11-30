@@ -17,13 +17,15 @@
         "./src/components/**/typography.css"
     ],
     "files": [
-        "dist"
+        "dist",
+        "dist/types"
     ],
     "main": "./dist/index.js",
     "module": "./dist/index.js",
-    "types": "./dist/index.d.ts",
+    "types": "./dist/types/fictoan-react.d.ts",
     "exports": {
         ".": {
+            "types": "./dist/types/fictoan-react.d.ts",
             "import": "./dist/index.js"
         },
         "./components": {

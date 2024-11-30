@@ -1,5 +1,6 @@
 # CHANGELOG
 
+
 ## 1.10.1
 - Tweak theme values for icons and text inside `InputField`
 
@@ -730,10 +731,10 @@
 - TODO: Fix Dismiss Button in NotificationItem
 - TODO: Add mask design to PinInputField
 - TODO: Fix Sidebar scrolling issue
-- TODO: Add Tooltip component
 - TODO: Drag and drop file upload component
 - TODO: Date picker
 - TODO: Button size medium padding value
 
+~~- TODO: Add Tooltip component~~
 ~~TODO: ⚠️ Fix TS issue in Select and SWS~~
 ~~TODO: ⚠️ Fix Meter height issue)~~
