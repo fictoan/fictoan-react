@@ -52,15 +52,15 @@
         position : relative;
 
         &::after {
+            position         : absolute;
             content          : "";
             display          : block;
-            position         : absolute;
             pointer-events   : none;
             right            : 6px;
             height           : 8px;
             width            : 8px;
             border-radius    : 50%;
-            background-color : var(--sidebar-item-has-alert-bg);
+            background-color : var(--sidebar-item-alert-bg);
         }
     }
 

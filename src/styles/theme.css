@@ -504,7 +504,7 @@
     --sidebar-item-text-scale                : 100%;
     --sidebar-item-text-weight               : 600;
 
-    --sidebar-item-has-alert-bg              : var(--red);
+    --sidebar-item-alert-bg              : var(--red);
 
     --sidebar-footer-height                  : 40px;
     --sidebar-footer-bg                      : var(--white);
@@ -574,6 +574,7 @@
 }
 
 /* TEXT ///////////////////////////////////////////////////////////////////// */
+/* To compute fluid font sizes based on screen size */
 :root {
     --screen-width-min : 320;
     --screen-width-max : 1600;

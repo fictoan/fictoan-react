@@ -1,9 +1,15 @@
+// FRAMEWORK ===========================================================================================================
 import React, { useState, useEffect } from "react";
 
+// FICTOAN =============================================================================================================
 import { Element } from "../../Element/Element";
+
+// STYLES ==============================================================================================================
+import "./toast-item.css";
+
+// TYPES ===============================================================================================================
 import { CommonAndHTMLProps } from "../../Element/constants";
 
-import "./toast-item.css";
 
 // prettier-ignore
 export interface ToastItemCustomProps {
@@ -16,6 +22,7 @@ export type ToastItemElementType = HTMLDivElement;
 export type ToastItemProps = Omit<CommonAndHTMLProps<ToastItemElementType>, keyof ToastItemCustomProps> &
     ToastItemCustomProps;
 
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const ToastItem = React.forwardRef(
     ({ showWhen, children, secondsToShowFor, closeWhen, ...props }: ToastItemProps, ref: React.Ref<ToastItemElementType>) => {
         let classNames: string[]          = [];

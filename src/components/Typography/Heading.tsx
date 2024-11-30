@@ -1,6 +1,10 @@
+// FRAMEWORK ===========================================================================================================
 import React from "react";
 
+// FICTOAN =============================================================================================================
 import { Element } from "../Element";
+
+// TYPES ===============================================================================================================
 import { CommonAndHTMLProps, WeightTypes } from "../Element/constants";
 
 // prettier-ignore
@@ -14,6 +18,7 @@ interface HeadingBaseProps {
 export type HeadingElementType = HTMLHeadingElement;
 export type HeadingProps = Omit<CommonAndHTMLProps<HeadingElementType>, keyof HeadingBaseProps> & HeadingBaseProps;
 
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 const Heading = React.forwardRef(
     ({ fontStyle = "sans-serif", weight, align, ...props }: HeadingProps, ref: React.Ref<HeadingElementType>) => {
         let classNames = [];
