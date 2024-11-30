@@ -1,10 +1,11 @@
-/* First, define default values at the root level */
+/* For calculating padding, based on side element widths */
 :root {
     --side-element-left-width  : 0px;
     --side-element-right-width : 0px;
-    --side-element-padding     : 8px;
+    --side-element-padding     : 4px;
 }
 
+/* BASE INPUT FIELD ///////////////////////////////////////////////////////// */
 input[data-input-field] {
     position         : relative;
     width            : 100%;
@@ -15,8 +16,8 @@ input[data-input-field] {
     border           : var(--input-border-width-default) solid var(--input-border-default);
     border-radius    : var(--input-border-radius-default);
     line-height      : 1;
-    padding-top      : 12px;
-    padding-bottom   : 12px;
+    padding-top      : var(--input-padding);
+    padding-bottom   : var(--input-padding);
 
     ::placeholder {
         color   : var(--input-placeholder-default);
@@ -38,51 +39,18 @@ input[data-input-field] {
 
     &[type=password]:placeholder-shown { letter-spacing : unset; }
 
-    /*  LEFT AND  RIGHT ICONS  ============================================  */
-    &.with-icon-left { padding-left : 40px; }
-    &.with-icon-right { padding-right : 40px; }
-
-    span.icon-left,
-    span.icon-right {
-        position : absolute;
-        bottom   : 12px;
-        width    : 24px;
-        height   : 24px;
-    }
-
-    span.icon-left svg,
-    span.icon-right svg {
-        fill       : var(--input-icon-default);
-        transition : all 0.2s;
-        width      : 24px;
-        height     : 24px;
-    }
-
-    span.icon-left { left : 8px; }
-
-    span.icon-right {
-        right   : 8px;
-        opacity : 0.24;
-    }
-
-    &.with-icon-left:focus ~ span.icon-left svg {
-        fill : var(--input-icon-focus);
-    }
-
     /* Grey check mark ====================================================== */
     &.validate-this {
         padding-right       : 40px;
         background-image    : url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+ICA8cG9seWxpbmUgcG9pbnRzPSIzLjUgMTIuNSA4LjUgMTcuNSAyMC41IDUuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZTJlMmUyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIgb3BhY2l0eT0iMC40Ii8+PC9zdmc+");
         background-repeat   : no-repeat;
         background-position : right 12px top 56%;
-        background-size     : 24px;
+        background-size     : var(--input-icon-size);
 
         &:focus {
             background-position : right 11px top 56%;
         }
     }
-
-    &.validate-this ~ span.icon-right { display : none; }
 
     /* Green check mark ===================================================== */
     &.validate-this:valid:not(:placeholder-shown) {
@@ -97,7 +65,7 @@ input[data-input-field] {
         background-image    : url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+ICA8bGluZSB4MT0iNi41IiB5MT0iMTcuNSIgeDI9IjE4LjUiIHkyPSI1LjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2VmNDM0MyIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjIiLz4gIDxsaW5lIHgxPSI2LjUiIHkxPSI1LjUiIHgyPSIxOC41IiB5Mj0iMTcuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZWY0MzQzIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==);
         background-repeat   : no-repeat;
         background-position : 98%;
-        background-size     : 24px;
+        background-size     : var(--input-icon-size);
     }
 }
 
@@ -107,7 +75,7 @@ input[data-input-field] {
     position              : absolute;
     inset                 : 0;
     width                 : 100%;
-    padding               : 12px;
+    padding               : calc(var(--input-padding) - (var(--global-border-width)*2));
     pointer-events        : none;
     display               : grid;
     grid-template-rows    : 1fr;
@@ -128,41 +96,114 @@ input[data-input-field] {
     }
 
     &.is-icon {
-        width : 24px;
+        width        : 24px;
+        height       : 24px;
+        fill         : none;
+        stroke       : var(--slate-light40);
+        stroke-width : 2px;
     }
 }
 
 [data-input-side-element].left { grid-area : leftElement; }
 [data-input-side-element].right { grid-area : rightElement; }
 
-/* LEFT SIDE ================================================================ */
+/* PADDING LEFT SIDE ======================================================== */
+/* Padding when there is no icon or text ------------------------------------ */
 [data-form-item]:has([data-input-helper]:empty) [data-input-field],
 [data-form-item]:has([data-input-side-element].left:empty) [data-input-field] {
     padding-left : 12px;
 }
 
-/* When there is an icon ---------------------------------------------------- */
+/* Padding when there is an icon on the left -------------------------------- */
 [data-form-item]:has([data-input-side-element].left.is-icon:not(:empty)) [data-input-field] {
     padding-left : 48px;
 }
 
-/* For text ----------------------------------------------------------------- */
+/* Padding when there is text on the left ----------------------------------- */
 [data-form-item]:has([data-input-side-element].left.is-text) [data-input-field] {
     padding-left : calc(var(--side-element-left-width) + var(--side-element-padding) * 2);
 }
 
-/* RIGHT SIDE =============================================================== */
+/* PADDING RIGHT SIDE ======================================================= */
+/* Padding when there is no icon or text ------------------------------------ */
 [data-form-item]:has([data-input-helper]:empty) [data-input-field],
 [data-form-item]:has([data-input-side-element].right:empty) [data-input-field] {
     padding-right : 12px;
 }
 
-/* When there is an icon ---------------------------------------------------- */
+/* Padding when there is an icon on the right ------------------------------- */
 [data-form-item]:has([data-input-side-element].right.is-icon:not(:empty)) [data-input-field] {
     padding-right : 48px;
 }
 
-/* For text ----------------------------------------------------------------- */
+/* Padding when there is text on the right ---------------------------------- */
 [data-form-item]:has([data-input-side-element].right.is-text) [data-input-field] {
     padding-right : calc(var(--side-element-right-width) + var(--side-element-padding) * 2);
+}
+
+
+/* THEME //////////////////////////////////////////////////////////////////// */
+/* DEFAULT ================================================================== */
+/* Left text default state -------------------------------------------------- */
+[data-form-item]:has(input[data-input-field]) [data-input-side-element].left.is-text {
+    color : var(--input-inner-text-left-default);
+}
+
+/* Right text default state ------------------------------------------------- */
+[data-form-item]:has(input[data-input-field]) [data-input-side-element].right.is-text {
+    color : var(--input-inner-text-right-default);
+}
+
+/* Left icon default state -------------------------------------------------- */
+[data-form-item]:has(input[data-input-field]) [data-input-side-element].left.is-icon {
+    stroke : var(--input-inner-icon-left-default);
+}
+
+/* Right icon default state ------------------------------------------------- */
+[data-form-item]:has(input[data-input-field]) [data-input-side-element].right.is-icon {
+    stroke : var(--input-inner-icon-right-default);
+}
+
+
+/* FOCUS ==================================================================== */
+/* Left text focus state ---------------------------------------------------- */
+[data-form-item]:has(input[data-input-field]:focus) [data-input-side-element].left.is-text {
+    color : var(--input-inner-text-left-focus);
+}
+
+/* Right text focus state --------------------------------------------------- */
+[data-form-item]:has(input[data-input-field]:focus) [data-input-side-element].right.is-text {
+    color : var(--input-inner-text-right-focus);
+}
+
+/* Left icon focus state ---------------------------------------------------- */
+[data-form-item]:has(input[data-input-field]:focus) [data-input-side-element].left.is-icon {
+    stroke : var(--input-inner-icon-left-focus);
+}
+
+/* Right icon focus state --------------------------------------------------- */
+[data-form-item]:has(input[data-input-field]:focus) [data-input-side-element].right.is-icon {
+    stroke : var(--input-inner-icon-right-focus);
+}
+
+
+/* DISABLED ================================================================= */
+/* Left text disabled state ------------------------------------------------- */
+[data-form-item]:has(input[data-input-field]:disabled) [data-input-side-element].left.is-text {
+    color : var(--input-inner-text-left-disabled);
+}
+
+/* Right text disabled state ------------------------------------------------ */
+[data-form-item]:has(input[data-input-field]:disabled) [data-input-side-element].right.is-text {
+    color : var(--input-inner-text-right-disabled);
+}
+
+/* Left icon disabled state ------------------------------------------------- */
+[data-form-item]:has(input[data-input-field]:disabled) [data-input-side-element].left.is-icon {
+    color : var(--input-inner-icon-left-disabled);
+}
+
+/* Right icon disabled state ------------------------------------------------ */
+[data-form-item]:has(input[data-input-field]:disabled) [data-input-side-element].right.is-icon {
+    color : var(--input-inner-icon-right-disabled);
 }

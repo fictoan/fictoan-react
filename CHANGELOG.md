@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 1.10.1
+- Tweak theme values for icons and text inside `InputField`
+
+## 1.10.0
+- Add ability to add icons and text inside `InputField` via props
+
 ## 1.9.4
 - `Breadcrumbs` is now far simpler, and immediate children are automatically converted to `BreadcrumbItem`
 
