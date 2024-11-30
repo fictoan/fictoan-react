@@ -111,7 +111,7 @@ input[data-input-field] {
     pointer-events        : none;
     display               : grid;
     grid-template-rows    : 1fr;
-    grid-template-columns:
+    grid-template-columns :
         minmax(var(--side-element-left-width), auto) 1fr minmax(var(--side-element-right-width), auto);
     grid-template-areas   : "leftElement spaceForInput rightElement";
     align-items           : center;
@@ -119,53 +119,50 @@ input[data-input-field] {
 }
 
 [data-input-side-element] {
-    line-height: 0;
-    white-space: nowrap;
+    line-height : 0;
+    white-space : nowrap;
 
     &.is-text {
-        &.left {
-            min-width: var(--side-element-left-width);
-        }
-
-        &.right {
-            min-width: var(--side-element-right-width);
-        }
+        &.left { min-width : var(--side-element-left-width); }
+        &.right { min-width : var(--side-element-right-width); }
     }
 
     &.is-icon {
-        width: 24px;
+        width : 24px;
     }
 }
 
 [data-input-side-element].left { grid-area : leftElement; }
 [data-input-side-element].right { grid-area : rightElement; }
 
-
 /* LEFT SIDE ================================================================ */
-[data-form-item]:has([data-input-side-element].left.is-icon:empty) [data-input-field] {
-    padding-left: 12px;
+[data-form-item]:has([data-input-helper]:empty) [data-input-field],
+[data-form-item]:has([data-input-side-element].left:empty) [data-input-field] {
+    padding-left : 12px;
 }
 
 /* When there is an icon ---------------------------------------------------- */
 [data-form-item]:has([data-input-side-element].left.is-icon:not(:empty)) [data-input-field] {
-    padding-left: 48px;
+    padding-left : 48px;
 }
 
 /* For text ----------------------------------------------------------------- */
 [data-form-item]:has([data-input-side-element].left.is-text) [data-input-field] {
-    padding-left: calc(var(--side-element-left-width) + var(--side-element-padding) * 2);
+    padding-left : calc(var(--side-element-left-width) + var(--side-element-padding) * 2);
 }
+
 /* RIGHT SIDE =============================================================== */
-[data-form-item]:has([data-input-side-element].right.is-icon:empty) [data-input-field] {
-    padding-right: 12px;
+[data-form-item]:has([data-input-helper]:empty) [data-input-field],
+[data-form-item]:has([data-input-side-element].right:empty) [data-input-field] {
+    padding-right : 12px;
 }
 
 /* When there is an icon ---------------------------------------------------- */
 [data-form-item]:has([data-input-side-element].right.is-icon:not(:empty)) [data-input-field] {
-    padding-right: 48px;
+    padding-right : 48px;
 }
 
 /* For text ----------------------------------------------------------------- */
 [data-form-item]:has([data-input-side-element].right.is-text) [data-input-field] {
-    padding-right: calc(var(--side-element-right-width) + var(--side-element-padding) * 2);
+    padding-right : calc(var(--side-element-right-width) + var(--side-element-padding) * 2);
 }
