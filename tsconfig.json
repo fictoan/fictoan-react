@@ -13,7 +13,15 @@
         "outDir"                           : "dist",
         "moduleResolution"                 : "bundler",
         "allowSyntheticDefaultImports"     : true,
+        "rootDir"                          : "./src",
         "emitDeclarationOnly"              : true,
+        "declarationDir"                   : "./dist/types",
+        "declarationMap"                   : true,
+        "allowJs"                          : true,
+        "isolatedModules"                  : true,
+        "noEmitOnError"                    : true,
+        "composite"                        : true,
+        "baseUrl"                          : ".",
         "types"                            : [
             "vite-plugin-svgr/client",
             "node",
@@ -21,8 +29,11 @@
             "react-dom"
         ],
         "paths"                            : {
-            "@/*" : [
+            "@/*"          : [
                 "./src/*"
+            ],
+            "components/*" : [
+                "./src/components/*"
             ]
         }
     },
