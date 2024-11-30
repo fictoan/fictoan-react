@@ -1,11 +1,15 @@
 // FRAMEWORK ===========================================================================================================
 import React from "react";
+
 // FICTOAN =============================================================================================================
 import { Element } from "../../Element/Element";
+
 // STYLES ==============================================================================================================
 import "./form-item.css";
+
 // TYPES ===============================================================================================================
 import { CommonAndHTMLProps } from "../../Element/constants";
+
 export type FormItemElementType = HTMLDivElement;
 export type FormItemProps = CommonAndHTMLProps<FormItemElementType>;
 

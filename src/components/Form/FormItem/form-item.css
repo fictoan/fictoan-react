@@ -8,6 +8,13 @@
 +-----------------------------------------+
 */
 
+/* SUPER PARENT ///////////////////////////////////////////////////////////// */
+/* Need this as a common parent to align the left/right icons */
+[data-input-wrapper] {
+    position : relative;
+}
+
+
 /* PARENT ELEMENT /////////////////////////////////////////////////////////// */
 [data-form-item] {
     position              : relative;
