@@ -96,10 +96,9 @@ input[data-input-field] {
     }
 
     &.is-icon {
-        width        : 24px;
-        height       : 24px;
+        width        : var(--input-icon-size);
+        height       : var(--input-icon-size);
         fill         : none;
-        stroke       : var(--slate-light40);
         stroke-width : 2px;
     }
 }
