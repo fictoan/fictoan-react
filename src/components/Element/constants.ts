@@ -1,4 +1,4 @@
-import { CSSProperties, ElementType, HTMLProps } from "react";
+import { ElementType, HTMLProps } from "react";
 
 export const DefaultColours = [
     "red",

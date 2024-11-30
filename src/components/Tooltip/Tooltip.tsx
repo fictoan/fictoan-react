@@ -1,58 +1,70 @@
+// FRAMEWORK ===========================================================================================================
 import React, { useState, useEffect, useRef } from "react";
+
+// FICTOAN =============================================================================================================
 import { Element } from "../Element/Element";
 import { CommonAndHTMLProps } from "../Element/constants";
 
+// STYLES ==============================================================================================================
 import "./tooltip.css";
 
-// Constants
+// TYPES ===============================================================================================================
+export interface TooltipCustomProps {
+    isTooltipFor: string;
+    showOn   ? : "click" | "hover";
+    position ? : "top" | "bottom" | "left" | "right";
+}
+
+export type TooltipElementType = HTMLDivElement;
+export type TooltipProps = Omit<CommonAndHTMLProps<TooltipElementType>, keyof TooltipCustomProps> & TooltipCustomProps;
+
 const TOOLTIP_OFFSET = 8;
 const SCREEN_PADDING = 16;
 
-// Positioning helper function
+// Positioning helper function =========================================================================================
 const calculatePosition = (
     tooltipElement: HTMLElement,
     targetElement: HTMLElement,
     position: "top" | "bottom" | "left" | "right",
 ) => {
-    console.log("Calculating position...");  // Debug log
-    const tooltipRect = tooltipElement.getBoundingClientRect();
-    const targetRect = targetElement.getBoundingClientRect();
+    const tooltipRect    = tooltipElement.getBoundingClientRect();
+    const targetRect     = targetElement.getBoundingClientRect();
     const viewportHeight = window.innerHeight;
-    const viewportWidth = window.innerWidth;
+    const viewportWidth  = window.innerWidth;
 
     let top, left;
 
     switch (position) {
         case "top":
-            top = targetRect.top - tooltipRect.height - TOOLTIP_OFFSET;
+            top  = targetRect.top - tooltipRect.height - TOOLTIP_OFFSET;
             left = targetRect.left + (targetRect.width - tooltipRect.width) / 2;
             if (top < SCREEN_PADDING) {
                 top = targetRect.bottom + TOOLTIP_OFFSET;
             }
             break;
         case "bottom":
-            top = targetRect.bottom + TOOLTIP_OFFSET;
+            top  = targetRect.bottom + TOOLTIP_OFFSET;
             left = targetRect.left + (targetRect.width - tooltipRect.width) / 2;
             if (top + tooltipRect.height > viewportHeight - SCREEN_PADDING) {
                 top = targetRect.top - tooltipRect.height - TOOLTIP_OFFSET;
             }
             break;
         case "left":
-            top = targetRect.top + (targetRect.height - tooltipRect.height) / 2;
+            top  = targetRect.top + (targetRect.height - tooltipRect.height) / 2;
             left = targetRect.left - tooltipRect.width - TOOLTIP_OFFSET;
             if (left < SCREEN_PADDING) {
                 left = targetRect.right + TOOLTIP_OFFSET;
             }
             break;
         case "right":
-            top = targetRect.top + (targetRect.height - tooltipRect.height) / 2;
+            top  = targetRect.top + (targetRect.height - tooltipRect.height) / 2;
             left = targetRect.right + TOOLTIP_OFFSET;
             if (left + tooltipRect.width > viewportWidth - SCREEN_PADDING) {
                 left = targetRect.left - tooltipRect.width - TOOLTIP_OFFSET;
             }
             break;
         default:
-            top = targetRect.top - tooltipRect.height - TOOLTIP_OFFSET;
+            top  = targetRect.top - tooltipRect.height - TOOLTIP_OFFSET;
             left = targetRect.left + (targetRect.width - tooltipRect.width) / 2;
     }
 
@@ -69,19 +81,10 @@ const calculatePosition = (
         top = viewportHeight - tooltipRect.height - SCREEN_PADDING;
     }
 
-    console.log("Calculated position:", { top, left });  // Debug log
     return { top, left };
 };
 
-export interface TooltipCustomProps {
-    isTooltipFor: string;
-    showOn?: "click" | "hover";
-    position?: "top" | "bottom" | "left" | "right";
-}
-
-export type TooltipElementType = HTMLDivElement;
-export type TooltipProps = Omit<CommonAndHTMLProps<TooltipElementType>, keyof TooltipCustomProps> & TooltipCustomProps;
-
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const Tooltip = React.forwardRef(
     (
         {
@@ -94,30 +97,27 @@ export const Tooltip = React.forwardRef(
         }: TooltipProps,
         ref: React.Ref<TooltipElementType>,
     ) => {
-        const [isVisible, setIsVisible] = useState(false);
-        const [tooltipPosition, setTooltipPosition] = useState({ top: -9999, left: -9999 });
-        const tooltipRef = useRef<HTMLDivElement>(null);
-        const effectiveRef = (ref || tooltipRef) as React.RefObject<HTMLDivElement>;
+        const [ isVisible, setIsVisible ]             = useState(false);
+        const [ tooltipPosition, setTooltipPosition ] = useState({ top : -9999, left : -9999 });
+        const tooltipRef                              = useRef<HTMLDivElement>(null);
+        const effectiveRef                            = (ref || tooltipRef) as React.RefObject<HTMLDivElement>;
 
         const updatePosition = () => {
-            console.log("updatePosition called", { isVisible });  // Debug log
             if (!isVisible || !effectiveRef.current) return;
 
             const targetElement = document.getElementById(isTooltipFor);
             if (!targetElement) return;
 
             const { top, left } = calculatePosition(effectiveRef.current, targetElement, position);
-            console.log("Setting new position:", { top, left });  // Debug log
             setTooltipPosition({ top, left });
         };
 
         // Update position when visibility or position prop changes
         useEffect(() => {
             if (isVisible) {
-                console.log("Visibility changed, updating position");  // Debug log
                 updatePosition();
             }
-        }, [isVisible, position]);
+        }, [ isVisible, position ]);
 
         useEffect(() => {
             const targetElement = document.getElementById(isTooltipFor);
@@ -127,12 +127,10 @@ export const Tooltip = React.forwardRef(
             }
 
             const showTooltip = () => {
-                console.log("Showing tooltip");  // Debug log
                 setIsVisible(true);
             };
 
             const hideTooltip = () => {
-                console.log("Hiding tooltip");  // Debug log
                 setIsVisible(false);
             };
 
@@ -164,7 +162,7 @@ export const Tooltip = React.forwardRef(
                 window.removeEventListener("scroll", updatePosition);
                 window.removeEventListener("resize", updatePosition);
             };
-        }, [isTooltipFor, showOn, position]);
+        }, [ isTooltipFor, showOn, position ]);
 
         return (
             <Element<TooltipElementType>
@@ -174,10 +172,10 @@ export const Tooltip = React.forwardRef(
                 className={`${isVisible ? "visible" : ""}`}
                 role="tooltip"
                 style={{
-                    position: "fixed",
-                    zIndex: 1000,
-                    top: `${tooltipPosition.top}px`,
-                    left: `${tooltipPosition.left}px`,
+                    position : "fixed",
+                    zIndex   : 1000,
+                    top      : `${tooltipPosition.top}px`,
+                    left     : `${tooltipPosition.left}px`,
                 }}
                 {...props}
             >

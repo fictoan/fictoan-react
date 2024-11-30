@@ -1,15 +1,22 @@
+// FRAMEWORK ===========================================================================================================
 import React from "react";
 
+// FICTOAN =============================================================================================================
 import { Element } from "../Element/Element";
 import { Div } from "../Element/Tags";
 import { Text } from "../Typography/Text";
 import { Spinner } from "../Spinner/Spinner";
 import { Button } from "../Button/Button";
 
+// HOOKS ===============================================================================================================
 import { usePagination } from "./usePagination";
+
+// STYLES ==============================================================================================================
+import "./pagination.css";
+
+// TYPES ===============================================================================================================
 import { PaginationProps, PaginationElementType, RenderItemProps } from "./constants";
 
-import "./pagination.css";
 
 const defaultRenderItem = (
     {
@@ -85,6 +92,7 @@ const defaultRenderItem = (
     );
 };
 
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const Pagination = React.forwardRef(
     (
         {

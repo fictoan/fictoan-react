@@ -1,8 +1,8 @@
+// FRAMEWORK ===========================================================================================================
 import React, { useCallback, useEffect, useState } from "react";
 
+// FICTOAN =============================================================================================================
 import { Element } from "../Element/Element";
-import type { UseThemeProps } from "./types";
-import { CommonAndHTMLProps } from "../Element/constants";
 
 export type ThemeProviderElementType = HTMLDivElement;
 export type RenderProps = () => JSX.Element;
@@ -14,6 +14,10 @@ const ThemeContext = React.createContext<UseThemeProps | undefined>(undefined);
 const defaultContext: UseThemeProps = { setTheme: (_) => {} };
 
 export const useTheme = () => React.useContext(ThemeContext) ?? defaultContext;
+
+// TYPES ===============================================================================================================
+import type { UseThemeProps } from "./types";
+import { CommonAndHTMLProps } from "../Element/constants";
 
 export interface ThemeProviderProps extends CommonAndHTMLProps<ThemeProviderElementType> {
     currentTheme?: string;
@@ -29,6 +33,7 @@ const getTheme = (key: string, fallback?: string) => {
     return theme || fallback;
 };
 
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const ThemeProvider = React.forwardRef(
     ({ currentTheme, children, ...props }: ThemeProviderProps, ref: React.Ref<ThemeProviderElementType>) => {
         const [shouldRender, setShouldRender] = useState<boolean>(false);

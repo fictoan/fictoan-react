@@ -1,10 +1,15 @@
+// FRAMEWORK ===========================================================================================================
 import React, { createContext, useContext, useState, ReactNode, useCallback } from "react";
 
+// FICTOAN =============================================================================================================
 import { Element } from "../Element/Element";
+import { Div } from "../Element/Tags";
 import { Card, CardElementType, CardProps } from "../Card/Card";
 
+// STYLES ==============================================================================================================
 import "./option-card.css";
 
+// TYPES ===============================================================================================================
 export type TickPosition =
     | "top-left"
     | "top-right"
@@ -47,6 +52,7 @@ const OptionCardsContext = createContext<{
     tickPosition    : "top-right",
 });
 
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const OptionCardsGroup: React.FC<OptionCardsProviderProps> = (
     {
         children,
@@ -87,9 +93,9 @@ export const OptionCardsGroup: React.FC<OptionCardsProviderProps> = (
 
     return (
         <OptionCardsContext.Provider value={{ isSelected, toggleSelection, showTickIcon, tickPosition }}>
-            <div data-option-cards-group className={`tick-${tickPosition}`}>
+            <Div data-option-cards-group className={`tick-${tickPosition}`}>
                 {children}
-            </div>
+            </Div>
         </OptionCardsContext.Provider>
     );
 };
@@ -172,6 +178,7 @@ export const OptionCard: React.FC<OptionCardProps> = ({ id, children, disabled =
                         <circle cx="12" cy="12" r="11" />
                         <path d="M8 13 L11 15 L16 9" />
                     </svg>
+
                     <svg viewBox="0 0 24 24" className="deselect-icon">
                         <circle cx="12" cy="12" r="11" />
                         <path d="M8 8 L16 16 M16 8 L8 16" />
