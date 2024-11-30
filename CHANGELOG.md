@@ -1,7 +1,7 @@
 # CHANGELOG
 
 
-## 1.10.2
+## 1.10.3
 - Fix CSS variable mismatch for  `Sidebar`
 
 ## 1.10.1
