@@ -1,5 +1,4 @@
 import React from "react";
-
 import { ElementProps } from "../../Element/constants";
 import { InputLabelCustomProps } from "../InputLabel/InputLabel";
 
@@ -12,37 +11,36 @@ export interface InputCommonProps {
     invalid      ? : boolean;
 }
 
-// prettier-ignore
-export interface PossibleInputSideElementProps {
-    iconLeft    ? : React.ReactNode;
-    iconRight   ? : React.ReactNode;
-    stringLeft  ? : string;
-    stringRight ? : string;
-}
+// Define allowed combinations for the left side
+type LeftSideProps =
+    | { iconLeft: React.ReactNode; stringLeft?: never }
+    | { stringLeft: string; iconLeft?: never }
+    | { iconLeft?: never; stringLeft?: never };
 
-// Check for mutually exclusive properties—basically we want to
-// allow either icon or string on each side, but never both
-type HasIconLeft<T> = T extends { iconLeft: React.ReactNode } ? true : false;
-type HasStringLeft<T> = T extends { stringLeft: string } ? true : false;
-type HasIconRight<T> = T extends { iconRight: React.ReactNode } ? true : false;
-type HasStringRight<T> = T extends { stringRight: string } ? true : false;
+// Define allowed combinations for the right side
+type RightSideProps =
+    | { iconRight: React.ReactNode; stringRight?: never }
+    | { stringRight: string; iconRight?: never }
+    | { iconRight?: never; stringRight?: never };
 
-// Conditional type that only allows valid combinations
-type ValidInputSideElements<T> = T extends object
-    ? (HasIconLeft<T> extends true
-    ? HasStringLeft<T> extends true
-        ? never
-        : T
-    : T) &
-    (HasIconRight<T> extends true
-        ? HasStringRight<T> extends true
-            ? never
-            : T
-        : T)
-    : T;
+// Allows no side elements
+export type NoSideElements = {
+    iconLeft?: never;
+    iconRight?: never;
+    stringLeft?: never;
+    stringRight?: never;
+};
 
-// Enforce all above conditions
-export type InputSideElementProps = ValidInputSideElements<PossibleInputSideElementProps>;
+// Combine left and right side constraints
+export type InputSideElementProps = LeftSideProps & RightSideProps;
 
-export type BaseInputComponentProps<K extends {}> = ElementProps<K> & InputLabelCustomProps & InputCommonProps;
-export type BaseInputComponentWithIconProps<K extends {}> = BaseInputComponentProps<K> & InputSideElementProps;
+// Base component props including common form input properties
+export type BaseInputComponentProps<K extends {}> =
+    ElementProps<K> &
+    InputLabelCustomProps &
+    InputCommonProps;
+
+// Extended component props including side element constraints
+export type BaseInputComponentWithIconProps<K extends {}> =
+    BaseInputComponentProps<K> &
+    InputSideElementProps;
