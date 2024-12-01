@@ -1,16 +1,35 @@
-import React from "react";
+// FRAMEWORK ===========================================================================================================
+import React, { useMemo } from "react";
 
+// FICTOAN =============================================================================================================
 import { RadioButton } from "./RadioButton";
 import { Element } from "../../Element/Element";
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 
+// TYPES ===============================================================================================================
 import { RadioGroupProps } from "./constants";
 
-const RadioGroupOptions = ({ options, defaultValue, required, ...props }: RadioGroupProps) => {
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+const RadioGroupOptions = ({ id, name, options, defaultValue, required, ...props }: RadioGroupProps) => {
+    // Use ID as default for name if not provided
+    const derivedName = useMemo(() => name || id, [name, id]);
+
     return (
         <Element as="div" required={required}>
             {options.map((option, index) => {
-                return <RadioButton key={index} {...props} {...option} />;
+                const { id: optionId, ...optionProps } = option;
+                // Derive option id if not provided
+                const finalId = optionId || `${id}-option-${index}`;
+
+                return (
+                    <RadioButton
+                        key={finalId}
+                        {...props}
+                        {...optionProps}
+                        id={finalId}
+                        name={derivedName} // Pass group's name to all radio buttons
+                    />
+                );
             })}
         </Element>
     );
