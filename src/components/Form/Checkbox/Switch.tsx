@@ -1,5 +1,5 @@
 // FRAMEWORK ===========================================================================================================
-import React from "react";
+import React, { useMemo } from "react";
 
 // FICTOAN =============================================================================================================
 import { Element } from "../../Element/Element";
@@ -21,10 +21,21 @@ export type SwitchProps = Omit<BaseInputComponentProps<SwitchElementType>, keyof
 
 // COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const Switch = React.forwardRef(
-    ({ size = "medium", ...props }: SwitchProps, ref: React.Ref<SwitchElementType>) => {
+    ({ id, name, value, size = "medium", ...props }: SwitchProps, ref: React.Ref<SwitchElementType>) => {
+        // Use ID as default for name and value if they’re not provided
+        const derivedName = useMemo(() => name || id, [name, id]);
+        const derivedValue = useMemo(() => value || id, [value, id]);
+
         return (
             <Element<SwitchElementType> as="div" data-switch ref={ref} className={`size-${size}`}>
-                <BaseInputComponent as="input" type="checkbox" {...props} />
+                <BaseInputComponent
+                    as="input"
+                    type="checkbox"
+                    id={id}
+                    name={derivedName}
+                    value={derivedValue}
+                    {...props}
+                />
             </Element>
         );
     }
