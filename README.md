@@ -35,6 +35,7 @@
 - **Familiar like Figma**: Props mirror properties in your favourite design tool—`bgColour`, `shadow`, `shape`, `marginBottom`, `weight` and so on.
 - **Theme to your heart’s content**: Intricate control over every aspect of the UI
 - **Iterate like crazy**: Change properties as easily as you would in a design tool
+- **For one and all**: Accessible components and elements
 
 ### For Developers
 - **Just your type**: Fully typed, and a clean consistent component API
