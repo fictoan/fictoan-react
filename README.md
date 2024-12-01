@@ -5,7 +5,7 @@
 <h1 align="center">Fictoan</h1>
 <p align="center" style="font-size: 1rem;">
     React version of the Fictoan framework<br>
-    Fictoan is an intuitive framework for designers looking to code and rapidly iterate on UI.
+    Fictoan is an intuitive React framework for designers looking to code and rapidly iterate on UI.
 </p>
 
 <p align="center">
