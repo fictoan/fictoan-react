@@ -25,7 +25,7 @@
 ## Yet another component library? No, sir! 🎨
 ### What if a designer wrote static UI code, allowing the developer to focus more on integration, performance, deployments etc? Wouldn’t that be a massive time saver?
 
-### We want to blur the lines between a designer and a developer. Read out [Manifesto](https://fictoan.io/manifesto) 🌞
+### We want to blur the lines between a designer and a developer. Read our [Manifesto](https://fictoan.io/manifesto) 🌞
 
 ---
 
