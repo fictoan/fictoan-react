@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.10.4
+- Fix text alignment for `stringRight` in `InputField`
+- Simplified markup for `Checkbox`, `Switch`, `Select`, `RadioButton`, `RadioGroup` and `RadioTabGroup`, where `name` 
+and `value` props are inherited from `id` if not present.
 
 ## 1.10.3
 - Fix CSS variable mismatch for  `Sidebar`
