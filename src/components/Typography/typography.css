@@ -170,14 +170,6 @@ li { color : var(--paragraph-text-colour); }
 .text-tera { font-size: var(--text-tera); }
 .text-peta { font-size: var(--text-peta); }
 
-
-
-
-
-
-
-
-
 /* CODE ///////////////////////////////////////////////////////////////////// */
 code { font-family : var(--code-font), monospace; }
 
@@ -195,7 +187,6 @@ code { font-family : var(--code-font), monospace; }
 }
 
 @media all and (max-width : 720px) {
-    code,
     :not(pre) > code {
         word-wrap   : break-word;
         white-space : normal;
