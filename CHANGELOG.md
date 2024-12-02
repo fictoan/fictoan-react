@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.10.7
+- Fix `CodeBlock` word break bug
+
 ## 1.10.6
 - `RadioTabGroup` now has a more robust width calculation, and there is no limit on the number of tabs
 
