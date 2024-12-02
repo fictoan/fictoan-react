@@ -44,6 +44,8 @@
 - **Flexible**: Easily extend and customise components
 - **Modern Stack**: Built with React 18+ and modern best practices
 
+---
+
 ## Getting started 🚀
 
 1. Add Fictoan to your project:
@@ -78,6 +80,8 @@ export const MyComponent = () => {
 }
 ```
 
+---
+
 ## Write UI code the way you’d speak 🧠
 Doesn’t get simpler than this—
 ```jsx
@@ -108,7 +112,7 @@ Doesn’t get simpler than this—
 ## Core principles 🎯
 - **Intuitive props**: Properties that make sense at first glance
 - **Consistent patterns**: Similar components share similar prop patterns
-- **Design-Developer bridge**: The most painless hand-off ever
+- **Design-Developer bridge**: Make hand-off painless as possible
 - **Minimal friction**: Get from design to implementation faster
 
 ---
