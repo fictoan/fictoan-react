@@ -1,6 +1,6 @@
 {
     "name": "fictoan-react",
-    "version": "1.10.4",
+    "version": "1.10.5",
     "private": false,
     "description": "A full-featured, designer-friendly, yet performant framework with plain-English props and focus on rapid iteration.",
     "repository": {
@@ -22,14 +22,15 @@
     ],
     "main": "./dist/index.js",
     "module": "./dist/index.js",
-    "types": "./dist/types/fictoan-react.d.ts",
+    "types": "./dist/types/index.d.ts",
     "exports": {
         ".": {
-            "types": "./dist/types/fictoan-react.d.ts",
-            "import": "./dist/index.js"
+            "types": "./dist/types/index.d.ts",
+            "default": "./dist/index.js"
         },
-        "./components": {
-            "import": "./dist/components/index.js"
+        "./components/*": {
+            "types": "./dist/types/components/*.d.ts",
+            "default": "./dist/components/*.js"
         },
         "./dist/": "./dist/"
     },
@@ -67,7 +68,6 @@
         "@babel/compat-data": "^7.26.2",
         "@babel/preset-env": "^7.23.6",
         "@babel/preset-react": "^7.23.3",
-        "@rollup/plugin-babel": "^6.0.4",
         "@rollup/plugin-terser": "^0.4.4",
         "@types/node": "^20.11.0",
         "@types/prismjs": "^1.26.4",
