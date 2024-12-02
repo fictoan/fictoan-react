@@ -64,3 +64,4 @@ stats*.html
 
 # storybook
 storybook-static
+/vite.config.js.timestamp-*.mjs

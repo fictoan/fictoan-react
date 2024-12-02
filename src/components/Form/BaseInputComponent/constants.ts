@@ -1,4 +1,5 @@
 import React from "react";
+
 import { ElementProps } from "../../Element/constants";
 import { InputLabelCustomProps } from "../InputLabel/InputLabel";
 
@@ -13,22 +14,22 @@ export interface InputCommonProps {
 
 // Define allowed combinations for the left side
 type LeftSideProps =
-    | { iconLeft: React.ReactNode; stringLeft?: never }
-    | { stringLeft: string; iconLeft?: never }
-    | { iconLeft?: never; stringLeft?: never };
+    | { iconLeft: React.ReactNode; stringLeft ? : never }
+    | { stringLeft: string; iconLeft ? : never }
+    | { iconLeft ? : never; stringLeft ? : never };
 
 // Define allowed combinations for the right side
 type RightSideProps =
-    | { iconRight: React.ReactNode; stringRight?: never }
-    | { stringRight: string; iconRight?: never }
-    | { iconRight?: never; stringRight?: never };
+    | { iconRight: React.ReactNode; stringRight ? : never }
+    | { stringRight: string; iconRight ? : never }
+    | { iconRight ? : never; stringRight ? : never };
 
 // Allows no side elements
 export type NoSideElements = {
-    iconLeft?: never;
-    iconRight?: never;
-    stringLeft?: never;
-    stringRight?: never;
+    iconLeft    ? : never;
+    iconRight   ? : never;
+    stringLeft  ? : never;
+    stringRight ? : never;
 };
 
 // Combine left and right side constraints

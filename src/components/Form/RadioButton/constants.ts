@@ -1,3 +1,5 @@
+import React from "react";
+
 import { BaseInputComponentProps } from "../BaseInputComponent/constants";
 import { SpacingTypes } from "@/components/Element/constants";
 
@@ -10,10 +12,11 @@ export interface RadioGroupOptionProps extends RadioButtonProps {
 }
 
 export interface RadioGroupCustomProps {
-    name    : string;
-    options : RadioGroupOptionProps[];
+    name       : string;
+    options    : RadioGroupOptionProps[];
+    value    ? : string;
+    onChange ?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
-
 
 export interface RadioTabGroupCustomProps {
     size ? : SpacingTypes;

@@ -434,13 +434,13 @@
     /* RADIO GROUP TABS ===================================================== */
     --radio-tabs-height             : 48px;
     --radio-tabs-vertical-gap       : 4px;
-    --radio-tabs-bg                 : var(--slate-light70);
-    --radio-tabs-border             : var(--slate-light70);
+    --radio-tabs-bg                 : var(--input-bg-default);
+    --radio-tabs-border             : var(--input-bg-default);
 
-    --radio-tabs-label-text-default : var(--slate-dark60);
+    --radio-tabs-label-text-default : var(--input-text-default);
 
     --radio-tabs-label-text-hover   : var(--slate-dark80);
-    --radio-tabs-label-bg-hover     : var(--slate-light90);
+    --radio-tabs-label-bg-hover     : var(--slate-light90-opacity40);
 
     --radio-tabs-label-bg-active    : var(--white);
     --radio-tabs-label-text-active  : var(--black);
