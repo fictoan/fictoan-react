@@ -440,7 +440,7 @@
     --radio-tabs-label-text-default : var(--slate-dark60);
 
     --radio-tabs-label-text-hover   : var(--slate-dark80);
-    --radio-tabs-label-bg-hover     : var(--slate-light90);
+    --radio-tabs-label-bg-hover     : var(--slate-light90-opacity40);
 
     --radio-tabs-label-bg-active    : var(--white);
     --radio-tabs-label-text-active  : var(--black);

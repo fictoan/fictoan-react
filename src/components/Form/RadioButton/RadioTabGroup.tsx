@@ -1,5 +1,5 @@
 // FRAMEWORK ===========================================================================================================
-import React, { useMemo } from "react";
+import React, { useMemo, useRef, useEffect, useState, ChangeEvent } from "react";
 
 // FICTOAN =============================================================================================================
 import { Div } from "../../Element/Tags";
@@ -11,17 +11,69 @@ import "./radio-tab-group.css";
 // TYPES ===============================================================================================================
 import { RadioTabGroupProps, RadioGroupProps, RadioButtonElementType } from "./constants";
 
+interface IndicatorPosition {
+    width: number;
+    transform: string;
+}
+
 // COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-const RadioTabGroupOptions = ({ id, name, options, defaultValue, value, required, ...props }: RadioGroupProps) => {
+const RadioTabGroupOptions = (
+    {
+        id,
+        name,
+        options,
+        defaultValue,
+        value,
+        required,
+        onChange,
+        ...props
+    }: RadioGroupProps) => {
     // Use ID as default for name if not provided
-    const derivedName = useMemo(() => name || id, [name, id]);
+    const derivedName                       = useMemo(() => name || id, [ name, id ]);
+    const [ indicatorPos, setIndicatorPos ] = useState<IndicatorPosition>({ width : 0, transform : "translateX(0)" });
+    const labelsRef                         = useRef<(HTMLLabelElement | null)[]>([]);
+
+    // Update indicator position based on selected radio
+    useEffect(() => {
+        const selectedIndex = options.findIndex(option => option.value === value);
+        if (selectedIndex >= 0) {
+            const label = labelsRef.current[selectedIndex];
+            if (label) {
+                const width   = label.offsetWidth;
+                let transform = "translateX(0)";
+
+                // Calculate the total offset by summing widths of all previous labels
+                if (selectedIndex > 0) {
+                    const offset = labelsRef.current
+                        .slice(0, selectedIndex)
+                        .reduce((acc, label) => acc + (label?.offsetWidth || 0), 0);
+                    transform    = `translateX(${offset}px)`;
+                }
+
+                setIndicatorPos({ width, transform });
+            }
+        }
+    }, [ value, options ]);
+
+    // Handle onChange with abstracted value
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        if (onChange) {
+            onChange(e.target.value);
+        }
+    };
 
     return (
         <Div data-radio-tab-group name={derivedName} required={required}>
+            <div
+                className="indicator"
+                style={{
+                    width     : `${indicatorPos.width}px`,
+                    transform : indicatorPos.transform,
+                }}
+            />
             {options.map((option, index) => {
-                const { id: optionId, ...optionProps } = option;
-                // Derive option id if not provided
-                const finalId = optionId || `${id}-option-${index}`;
+                const { id : optionId, ...optionProps } = option;
+                const finalId                           = optionId || `${id}-option-${index}`;
 
                 return (
                     <React.Fragment key={finalId}>
@@ -32,8 +84,14 @@ const RadioTabGroupOptions = ({ id, name, options, defaultValue, value, required
                             id={finalId}
                             name={derivedName}
                             checked={value === option.value}
+                            onChange={handleChange}
                         />
-                        <label htmlFor={finalId}>{option.label}</label>
+                        <label
+                            ref={el => labelsRef.current[index] = el}
+                            htmlFor={finalId}
+                        >
+                            {option.label}
+                        </label>
                     </React.Fragment>
                 );
             })}
@@ -58,5 +116,5 @@ export const RadioTabGroup = React.forwardRef(
                 {...props}
             />
         );
-    }
+    },
 );

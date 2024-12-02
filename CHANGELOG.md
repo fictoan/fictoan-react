@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.10.6
+- `RadioTabGroup` now has a more robust width calculation, and there is no limit on the number of tabs
+
 ## 1.10.5
 - Fix the broken type definitions that were not working since 1.7.0. While still not a proper solution and more of a hack—it works as a stopgap solution while we find a better solution.
 

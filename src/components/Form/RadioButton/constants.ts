@@ -1,5 +1,6 @@
 import { BaseInputComponentProps } from "../BaseInputComponent/constants";
 import { SpacingTypes } from "@/components/Element/constants";
+import { ChangeEvent } from "react";
 
 export type RadioButtonElementType = HTMLDivElement;
 export type RadioButtonProps = Omit<BaseInputComponentProps<RadioButtonElementType>, "as">;
@@ -10,10 +11,11 @@ export interface RadioGroupOptionProps extends RadioButtonProps {
 }
 
 export interface RadioGroupCustomProps {
-    name    : string;
-    options : RadioGroupOptionProps[];
+    name       : string;
+    options    : RadioGroupOptionProps[];
+    value    ? : string;
+    onChange ?: (value: string) => void;
 }
-
 
 export interface RadioTabGroupCustomProps {
     size ? : SpacingTypes;
