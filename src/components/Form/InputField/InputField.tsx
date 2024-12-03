@@ -66,7 +66,6 @@ export const InputField = React.forwardRef(
             );
         };
 
-
         const hasLeftElement  = Boolean(iconLeft || stringLeft);
         const hasRightElement = Boolean(iconRight || stringRight);
 

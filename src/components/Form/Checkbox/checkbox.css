@@ -18,13 +18,14 @@
     }
 
     label {
-        display     : inline-flex;
-        position    : relative;
-        font-family : var(--paragraph-font);
-        color       : var(--paragraph-text-colour);
-        cursor      : pointer;
-        line-height : 1;
-        user-select : none;
+        display      : inline-flex;
+        position     : relative;
+        font-family  : var(--paragraph-font);
+        color        : var(--paragraph-text-colour);
+        cursor       : pointer;
+        padding-left : 24px;
+        line-height  : 1;
+        user-select  : none;
 
         &::before,
         &::after {
@@ -40,22 +41,12 @@
         pointer-events : none;
         background     : var(--checkbox-square-bg-default);
         box-shadow     : 0 2px 4px -2px hsla(0, 0%, 0%, 0.24) inset;
-    }
-
-    &:hover label::before { background : var(--checkbox-square-bg-hover); }
-    input[type="checkbox"]:checked + label::before { background : var(--checkbox-square-bg-checked); }
-    input[type="checkbox"]:focus + label::before { outline : solid 2px var(--checkbox-square-bg-disabled); }
-
-    label::after { opacity : 0; }
-
-    /* The square =========================================================== */
-    label::before {
-        position      : absolute;
-        height        : 16px;
-        width         : 16px;
-        top           : 0;
-        left          : 0;
-        border-radius : var(--checkbox-square-border-radius);
+        position       : absolute;
+        height         : 16px;
+        width          : 16px;
+        top            : 0;
+        left           : 0;
+        border-radius  : var(--checkbox-square-border-radius);
     }
 
     /* The white tick inside ================================================ */
@@ -65,31 +56,36 @@
         width         : 12px;
         left          : 2px;
         top           : 4px;
+        opacity       : 0;
         border-left   : 2px solid var(--checkbox-tick);
         border-bottom : 2px solid var(--checkbox-tick);
         transform     : rotate(-45deg);
     }
 
-    label { padding-left : 24px; }
-
-    input[type="checkbox"]:checked + label::after { opacity : 1; }
-
     /* DISABLED ============================================================= */
-    input[type="checkbox"]:disabled + label,
-    input[type="checkbox"]:disabled + label::before,
-    input[type="checkbox"]:disabled + label::after {
-        filter         : grayscale(24%);
-        user-select    : none;
-        pointer-events : none;
-        cursor         : not-allowed;
-    }
 
-    [data-form-wrapper].spacing-none   & { margin-bottom :    0; }
-    [data-form-wrapper].spacing-nano   & { margin-bottom :  8px; }
-    [data-form-wrapper].spacing-micro  & { margin-bottom : 12px; }
-    [data-form-wrapper].spacing-tiny   & { margin-bottom : 16px; }
-    [data-form-wrapper].spacing-small  & { margin-bottom : 24px; }
+
+    [data-form-wrapper].spacing-none & { margin-bottom : 0; }
+    [data-form-wrapper].spacing-nano & { margin-bottom : 8px; }
+    [data-form-wrapper].spacing-micro & { margin-bottom : 12px; }
+    [data-form-wrapper].spacing-tiny & { margin-bottom : 16px; }
+    [data-form-wrapper].spacing-small & { margin-bottom : 24px; }
     [data-form-wrapper].spacing-medium & { margin-bottom : 32px; }
-    [data-form-wrapper].spacing-large  & { margin-bottom : 40px; }
-    [data-form-wrapper].spacing-huge   & { margin-bottom : 48px; }
+    [data-form-wrapper].spacing-large & { margin-bottom : 40px; }
+    [data-form-wrapper].spacing-huge & { margin-bottom : 48px; }
 }
+
+
+/* HOVER */
+[data-form-item]:has(input[type="checkbox"]:hover) > label::before {
+    background : var(--checkbox-square-bg-hover);
+}
+
+/* FOCUS */
+[data-form-item]:has(input[type="checkbox"]:focus) > label::before {
+    outline : solid 2px var(--checkbox-square-bg-disabled);
+}
+
+/* CHECKED */
+[data-form-item]:has(input[type="checkbox"]:checked) > label::before { background : var(--checkbox-square-bg-checked); }
+[data-form-item]:has(input[type="checkbox"]:checked) > label::after { opacity : 1; }

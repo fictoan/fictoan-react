@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FormEvent } from "react";
 import { ColourPropTypes, CommonAndHTMLProps } from "@/components/Element/constants";
 
 type NonZeroNumber = Exclude<number, 0>;
@@ -18,7 +18,6 @@ export interface ListBoxCustomProps {
     helpText           ? : string;
     errorText          ? : string;
     allowMultiSelect   ? : boolean;
-    onChange           ? : (value: string | string[]) => void;
     disabled           ? : boolean;
     placeholder        ? : string;
     id                 ? : string;
@@ -30,6 +29,7 @@ export interface ListBoxCustomProps {
     selectionLimit     ? : NonZeroNumber;
     allowCustomEntries ? : boolean;
     isLoading          ? : boolean;
+    onChange           ? : (event: FormEvent<HTMLDivElement>) => void;
 }
 
 export type ListBoxProps =
