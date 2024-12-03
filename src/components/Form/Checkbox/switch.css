@@ -18,13 +18,14 @@
     }
 
     label {
-        display     : inline-flex;
-        position    : relative;
-        font-family : var(--paragraph-font);
-        color       : var(--paragraph-text-colour);
-        cursor      : pointer;
-        line-height : 1;
-        user-select : none;
+        display      : inline-flex;
+        position     : relative;
+        font-family  : var(--paragraph-font);
+        color        : var(--paragraph-text-colour);
+        cursor       : pointer;
+        line-height  : 1;
+        user-select  : none;
+        padding-left : 44px;
 
         &::before,
         &::after {
@@ -34,149 +35,49 @@
         }
     }
 
-    /* The grey square ====================================================== */
-    label::before,
-    input[type="checkbox"]:disabled + label::before {
-        user-select    : none;
-        pointer-events : none;
-        background     : var(--checkbox-square-bg-default);
-        box-shadow     : 0 2px 4px -2px hsla(0, 0%, 0%, 0.24) inset;
+    /* The grey stadium shape for the case ================================== */
+    label::before {
+        position      : absolute;
+        top           : 50%;
+        left          : 0;
+        transform     : translateY(-50%);
+        border-radius : 16px;
+        margin-right  : 4px;
+        background    : var(--switch-bg-default);
+        width         : 36px;
+        height        : 18px;
     }
 
-    &:hover label::before { background : var(--checkbox-square-bg-hover); }
-    input[type="checkbox"]:checked + label::before { background : var(--checkbox-square-bg-checked); }
-    input[type="checkbox"]:focus + label::before { outline : solid 2px var(--checkbox-square-bg-disabled); }
-
-    label::after { opacity : 0; }
-
-    label {
-        position : relative;
-
-        /* The grey stadium shape for the case ============================== */
-        &::before {
-            position      : absolute;
-            top           : 50%;
-            left          : 0;
-            transform     : translateY(-50%);
-            border-radius : 16px;
-            margin-right  : 4px;
-            background    : var(--switch-bg-default);
-        }
-
-        /* The white inner circle actuator ================================== */
-        &::after {
-            content       : "";
-            position      : absolute;
-            top           : 50%;
-            transform     : translateY(-50%);
-            display       : inline-block;
-            background    : var(--switch-slider-bg-default);
-            border-radius : 50%;
-            transition    : all 0.1s ease-out;
-            box-shadow    : 0 2px 4px -2px hsla(0, 0%, 0%, 0.6);
-            opacity       : 1;
-        }
+    /* The white inner circle actuator ====================================== */
+    label::after {
+        position      : absolute;
+        top           : 50%;
+        transform     : translateY(-50%);
+        display       : inline-block;
+        background    : var(--switch-slider-bg-default);
+        border-radius : 50%;
+        box-shadow    : 0 2px 4px -2px hsla(0, 0%, 0%, 0.6);
+        left          : 3px;
+        width         : 12px;
+        height        : 12px;
     }
+}
 
-    /* States for the stadium */
-    input[type="checkbox"]:hover + label::before {
-        background : var(--switch-bg-hover);
-    }
+/* HOVER */
+[data-switch]:has(input[type="checkbox"]:hover) > label::before {
+    background : var(--switch-bg-hover);
+}
 
-    input[type="checkbox"]:checked + label::before {
-        background : var(--switch-bg-checked);
-    }
+[data-switch]:has(input[type="checkbox"]:hover) > label::after {
+    background : var(--switch-slider-bg-hover);
+}
 
-    /* States for the circle */
-    input[type="checkbox"]:hover + label::after {
-        background : var(--switch-slider-bg-hover);
-    }
+/* CHECKED */
+[data-switch]:has(input[type="checkbox"]:checked) > label::before {
+    background : var(--switch-bg-checked);
+}
 
-    input[type="checkbox"]:checked + label::after {
-        background : var(--switch-slider-bg-checked);
-    }
-
-    /* DISABLED ============================================================= */
-    input[type="checkbox"]:disabled + label,
-    input[type="checkbox"]:disabled + label::before,
-    input[type="checkbox"]:disabled + label::after {
-        filter         : grayscale(24%);
-        user-select    : none;
-        pointer-events : none;
-        cursor         : not-allowed;
-    }
-
-    /* SIZES ================================================================ */
-    &.size-small {
-        label {
-            padding-left : 32px;
-
-            &::before {
-                width  : 24px;
-                height : 12px;
-            }
-
-            &::after {
-                left   : 2px;
-                width  : 8px;
-                height : 8px;
-            }
-        }
-
-        input[type="checkbox"]:checked + label::after {
-            transform : translateY(-50%) translateX(12px);
-        }
-    }
-
-    &.size-medium {
-        label {
-            padding-left : 44px;
-
-            &::before {
-                width  : 36px;
-                height : 18px;
-            }
-
-            &::after {
-                left   : 3px;
-                width  : 12px;
-                height : 12px;
-            }
-        }
-
-        input[type="checkbox"]:checked + label::after {
-            transform : translateY(-50%) translateX(18px);
-        }
-    }
-
-    &.size-large {
-        label {
-            padding-left : 56px;
-
-            &::before {
-                width  : 48px;
-                height : 24px;
-            }
-
-            &::after {
-                left   : 4px;
-                width  : 16px;
-                height : 16px;
-            }
-        }
-
-        input[type="checkbox"]:checked + label::after {
-            transform : translateY(-50%) translateX(24px);
-        }
-    }
-
-    /* MARGINS ============================================================== */
-    [data-form-wrapper].spacing-none & { margin-bottom : 0; }
-    [data-form-wrapper].spacing-nano & { margin-bottom : 8px; }
-    [data-form-wrapper].spacing-micro & { margin-bottom : 12px; }
-    [data-form-wrapper].spacing-tiny & { margin-bottom : 16px; }
-    [data-form-wrapper].spacing-small & { margin-bottom : 24px; }
-    [data-form-wrapper].spacing-medium & { margin-bottom : 32px; }
-    [data-form-wrapper].spacing-large & { margin-bottom : 40px; }
-    [data-form-wrapper].spacing-huge & { margin-bottom : 48px; }
+[data-switch] [data-form-item]:has(input[type="checkbox"]:checked) > label::after {
+    transform  : translateY(-50%) translateX(18px);
+    background : var(--switch-slider-bg-checked);
 }

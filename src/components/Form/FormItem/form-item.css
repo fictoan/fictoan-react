@@ -108,14 +108,6 @@
     }
 }
 
-[data-form-item] input[type="radio"]:disabled + label,
-[data-form-item] input[type="checkbox"]:disabled + label {
-    pointer-events : none;
-    user-select    : none;
-    cursor         : default;
-    opacity        : 0.36;
-}
-
 [data-form-item] [data-input-field],
 [data-form-item] [data-text-area],
 [data-form-item] [data-select-wrapper] {
@@ -151,4 +143,15 @@
             color   : var(--input-error-text-invalid);
         }
     }
+}
+
+/* DISABLED */
+[data-form-item]:has(input:disabled) > label,
+[data-form-item]:has(input:disabled) > label::before,
+[data-form-item]:has(input:disabled) > label::after {
+    filter         : grayscale(24%);
+    user-select    : none;
+    pointer-events : none;
+    cursor         : not-allowed;
+    opacity        : 0.64;
 }

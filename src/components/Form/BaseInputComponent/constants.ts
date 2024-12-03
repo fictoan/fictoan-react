@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FormEventHandler } from "react";
 
 import { ElementProps } from "../../Element/constants";
 import { InputLabelCustomProps } from "../InputLabel/InputLabel";
@@ -12,6 +12,7 @@ export interface InputCommonProps {
     invalid      ? : boolean;
 }
 
+// INPUT FIELD PROPS ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Define allowed combinations for the left side
 type LeftSideProps =
     | { iconLeft: React.ReactNode; stringLeft ? : never }
@@ -35,11 +36,16 @@ export type NoSideElements = {
 // Combine left and right side constraints
 export type InputSideElementProps = LeftSideProps & RightSideProps;
 
-// Base component props including common form input properties
+export type FormChangeHandler<K> = FormEventHandler<K>;
+export type ValueChangeHandler = (value: string | string[]) => void;
+export type FlexibleChangeHandler<K> = FormChangeHandler<K> | ValueChangeHandler;
+
 export type BaseInputComponentProps<K extends {}> =
-    ElementProps<K> &
+    Omit<ElementProps<K>, "onChange"> &
     InputLabelCustomProps &
-    InputCommonProps;
+    InputCommonProps & {
+    onChange?: FlexibleChangeHandler<K>;
+};
 
 // Extended component props including side element constraints
 export type BaseInputComponentWithIconProps<K extends {}> =
