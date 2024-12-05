@@ -1,5 +1,5 @@
 // FRAMEWORK ===========================================================================================================
-import React, { FormEvent } from "react";
+import React, { ChangeEvent, FormEvent } from "react";
 
 // FICTOAN =============================================================================================================
 import { Element } from "../../Element/Element";
@@ -31,18 +31,15 @@ export const BaseInputComponent = React.forwardRef(
         ref: React.LegacyRef<InputElementType>
     ) => {
         // Handle both new value-based and legacy event-based onChange
-        const handleChange = (event: InputChangeEvent) => {
-            if (onChange) {
-                // Check handler type and adapt accordingly
-                if (onChange.length === 1 && typeof onChange === "function") {
-                    const firstParam = onChange.toString().match(/\((.*?)\)/)?.[1];
-                    if (firstParam?.includes("event")) {
-                        (onChange as (e: InputChangeEvent) => void)(event);
-                        return;
-                    }
-                }
-                // Default to value-based pattern
+        const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+            if (!onChange) return;
+
+            // If the handler is looking for just the value (has exactly one parameter)
+            if (onChange.length === 1) {
                 (onChange as (value: string) => void)(event.target.value);
+            } else {
+                // Otherwise pass the whole event
+                (onChange as (e: ChangeEvent<HTMLInputElement>) => void)(event);
             }
         };
 
@@ -93,7 +90,3 @@ export const BaseInputComponent = React.forwardRef(
         ref ? : React.LegacyRef<InputElementType>
     }
 ) => React.ReactElement;
-
-function isFormEvent(event: any): event is FormEvent<any> {
-    return event && "target" in event && "currentTarget" in event;
-}

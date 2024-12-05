@@ -1,4 +1,4 @@
-import React, { FormEventHandler } from "react";
+import React, { ChangeEvent, FormEventHandler } from "react";
 
 import { ElementProps } from "../../Element/constants";
 import { InputLabelCustomProps } from "../InputLabel/InputLabel";
@@ -42,9 +42,8 @@ export type InputFocusHandler =
 
 // Handle values directly
 export type InputChangeHandler<T = string> =
-    ((value: T) => void)
-    | ((event: React.ChangeEvent<HTMLInputElement>) => void)
-    | FormEventHandler<HTMLInputElement>;
+    | ((value: T) => void)
+    | ((event: ChangeEvent<HTMLInputElement>) => void);
 
 export type InputChangeEvent = React.ChangeEvent<HTMLInputElement
     | HTMLTextAreaElement

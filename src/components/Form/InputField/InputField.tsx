@@ -10,12 +10,17 @@ import "./input-field.css";
 
 // TYPES ===============================================================================================================
 import { CommonAndHTMLProps } from "../../Element/constants";
-import { InputCommonProps, InputFocusHandler, InputSideElementProps } from "../BaseInputComponent/constants";
+import {
+    BaseInputComponentProps,
+    InputCommonProps,
+    InputFocusHandler,
+    InputSideElementProps,
+} from "../BaseInputComponent/constants";
 import { InputLabelCustomProps } from "../InputLabel/InputLabel";
 
 // prettier-ignore
 export type InputFieldElementType = HTMLInputElement;
-export type InputFieldProps = CommonAndHTMLProps<InputFieldElementType> &
+export type InputFieldProps = Omit<BaseInputComponentProps<HTMLInputElement>, "onChange"> &
     InputLabelCustomProps & InputCommonProps & InputSideElementProps & {
     type         ? : "text" | "password" | "email" | "number" | "tel" | "url" | "search" | "file";
     placeholder  ? : string;
@@ -27,7 +32,7 @@ export type InputFieldProps = CommonAndHTMLProps<InputFieldElementType> &
     required     ? : boolean;
     onFocus      ? : InputFocusHandler;
     onBlur       ? : InputFocusHandler;
-    onChange?:
+    onChange     ? :
         | ((value: string) => void)
         | FormEventHandler<HTMLInputElement>
         | ((event: React.ChangeEvent<HTMLInputElement>) => void);
