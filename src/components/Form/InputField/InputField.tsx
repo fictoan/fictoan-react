@@ -1,5 +1,5 @@
 // FRAMEWORK ===========================================================================================================
-import React from "react";
+import React, { FormEventHandler } from "react";
 
 // FICTOAN =============================================================================================================
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
@@ -27,7 +27,10 @@ export type InputFieldProps = CommonAndHTMLProps<InputFieldElementType> &
     required     ? : boolean;
     onFocus      ? : InputFocusHandler;
     onBlur       ? : InputFocusHandler;
-    onChange     ? : (value: string) => void;
+    onChange?:
+        | ((value: string) => void)
+        | FormEventHandler<HTMLInputElement>
+        | ((event: React.ChangeEvent<HTMLInputElement>) => void);
 };
 
 // COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -46,18 +49,18 @@ export const InputField = React.forwardRef(
     ) => {
 
         // Wrap the onChange handler to ensure correct typing ==========================================================
-        const handleChange = React.useCallback(
-            (valueOrEvent: string | React.ChangeEvent<HTMLInputElement>) => {
-                if (!onChange) return;
+        const handleChange = (valueOrEvent: string | React.FormEvent<HTMLInputElement>) => {
+            if (!onChange) return;
 
-                if (typeof valueOrEvent === "string") {
-                    (onChange as (value: string) => void)(valueOrEvent);
-                } else {
-                    (onChange as (event: React.ChangeEvent<HTMLInputElement>) => void)(valueOrEvent);
-                }
-            },
-            [onChange]
-        );
+            // If it's a FormEvent
+            if (typeof valueOrEvent !== "string" && "target" in valueOrEvent) {
+                (onChange as FormEventHandler<HTMLInputElement>)(valueOrEvent);
+            }
+            // If it's a direct string value
+            else if (typeof valueOrEvent === "string") {
+                (onChange as (value: string) => void)(valueOrEvent);
+            }
+        };
 
         // Render either icon or string ================================================================================
         const renderSideElement = (
@@ -111,7 +114,7 @@ export const InputField = React.forwardRef(
                     aria-invalid={ariaInvalid || props.invalid || undefined}
                     aria-required={props.required}
                     placeholder=" "
-                    onChange={onChange}
+                    onChange={handleChange}
                     {...props}
                 >
                     <Div data-input-helper aria-hidden="true">

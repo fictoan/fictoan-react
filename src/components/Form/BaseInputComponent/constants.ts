@@ -41,8 +41,14 @@ export type InputFocusHandler =
     | (() => void);
 
 // Handle values directly
-export type InputChangeHandler<T = string> = ((value: T) => void) | ((event: React.ChangeEvent<HTMLInputElement>) => void);
-export type InputChangeEvent = React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>;
+export type InputChangeHandler<T = string> =
+    ((value: T) => void)
+    | ((event: React.ChangeEvent<HTMLInputElement>) => void)
+    | FormEventHandler<HTMLInputElement>;
+
+export type InputChangeEvent = React.ChangeEvent<HTMLInputElement
+    | HTMLTextAreaElement
+    | HTMLSelectElement>;
 
 // Base component props including common form input properties
 export type BaseInputComponentProps<K extends {}> =
