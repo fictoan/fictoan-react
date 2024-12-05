@@ -1,5 +1,5 @@
 // FRAMEWORK ===========================================================================================================
-import React, { useMemo } from "react";
+import React from "react";
 
 // FICTOAN =============================================================================================================
 import { RadioButton } from "./RadioButton";
@@ -10,14 +10,30 @@ import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 import { RadioGroupProps } from "./constants";
 
 // COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-const RadioGroupOptions = ({ id, name, options, defaultValue, required, ...props }: RadioGroupProps) => {
+const RadioGroupOptions = (
+    {
+        id,
+        name,
+        options,
+        value,
+        defaultValue,
+        onChange,
+        ...props
+    }: RadioGroupProps) => {
+
     // Use ID as default for name if not provided
-    const derivedName = useMemo(() => name || id, [name, id]);
+    const derivedName = React.useMemo(() => name || id, [ name, id ]);
+
+    // Handle individual radio button changes
+    const handleRadioChange = (optionValue: string) => {
+        onChange?.(optionValue);
+    };
 
     return (
-        <Element as="div" required={required}>
+        <Element as="div">
             {options.map((option, index) => {
-                const { id: optionId, ...optionProps } = option;
+                const { id : optionId, value : optionValue, ...optionProps } = option;
+
                 // Derive option id if not provided
                 const finalId = optionId || `${id}-option-${index}`;
 
@@ -27,7 +43,10 @@ const RadioGroupOptions = ({ id, name, options, defaultValue, required, ...props
                         {...props}
                         {...optionProps}
                         id={finalId}
-                        name={derivedName} // Pass group's name to all radio buttons
+                        name={derivedName}
+                        value={optionValue}
+                        checked={value ? value === optionValue : defaultValue === optionValue}
+                        onChange={() => handleRadioChange(optionValue)}
                     />
                 );
             })}

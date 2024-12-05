@@ -8,7 +8,7 @@ import { InputLabel } from "../InputLabel/InputLabel";
 import { FormItem } from "../FormItem/FormItem";
 
 // TYPES ===============================================================================================================
-import { BaseInputComponentWithIconProps } from "./constants";
+import { BaseInputComponentWithIconProps, InputChangeEvent } from "./constants";
 
 export type InputElementType = HTMLInputElement | HTMLDivElement | HTMLSelectElement;
 
@@ -25,19 +25,36 @@ export const BaseInputComponent = React.forwardRef(
             classNames,
             children,
             onChange,
+            onValueChange,
             ...inputProps
         }: BaseInputComponentWithIconProps<K>,
         ref: React.LegacyRef<InputElementType>
     ) => {
+        // Handle both new value-based and legacy event-based onChange
+        const handleChange = (event: InputChangeEvent) => {
+            if (onChange) {
+                // Check handler type and adapt accordingly
+                if (onChange.length === 1 && typeof onChange === "function") {
+                    const firstParam = onChange.toString().match(/\((.*?)\)/)?.[1];
+                    if (firstParam?.includes("event")) {
+                        (onChange as (e: InputChangeEvent) => void)(event);
+                        return;
+                    }
+                }
+                // Default to value-based pattern
+                (onChange as (value: string) => void)(event.target.value);
+            }
+        };
+
         return (
             <FormItem
                 data-form-item
                 required={inputProps.required}
             >
-                {/* LABEL ////////////////////////////////////////////////////////////////////////////////////////////// */}
+                {/* LABEL ////////////////////////////////////////////////////////////////////////////////////////// */}
                 {label && <InputLabel label={label} htmlFor={inputProps.id} />}
 
-                {/* MAIN INPUT ///////////////////////////////////////////////////////////////////////////////////////// */}
+                {/* MAIN INPUT ///////////////////////////////////////////////////////////////////////////////////// */}
                 <Div data-input-wrapper>
                     {/* MAIN INPUT */}
                     <Element<K>
@@ -47,13 +64,13 @@ export const BaseInputComponent = React.forwardRef(
                             className || "",
                             validateThis ? "validate-this" : "",
                         ].concat(classNames || [])}
-                        onChange={onChange}
                         {...inputProps}
+                        onChange={handleChange}
                     />
                     {children}
                 </Div>
 
-                {/* INFO SECTION /////////////////////////////////////////////////////////////////////////////////////// */}
+                {/* INFO SECTION /////////////////////////////////////////////////////////////////////////////////// */}
                 {(helpText || errorText) && (
                     <Div className="info-section vertically-center-items">
                         {helpText && (

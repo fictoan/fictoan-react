@@ -4,11 +4,11 @@ import React, {
     useRef,
     useEffect,
     MutableRefObject,
-    FormEvent,
     KeyboardEvent,
 } from "react";
 
 // FICTOAN =============================================================================================================
+import { Element } from "../../Element/Element";
 import { Div } from "../../Element/Tags";
 import { InputField } from "../InputField/InputField";
 import { Badge } from "../../Badge/Badge";
@@ -25,15 +25,14 @@ import { searchOptions } from "./listBoxUtils";
 import "./list-box.css";
 
 // TYPES ===============================================================================================================
-import { FormChangeHandler, ValueChangeHandler } from "../BaseInputComponent/constants";
-import { ListBoxProps, OptionForListBoxProps, ListBoxElementType } from "./constants";
+import { ListBoxProps, OptionForListBoxProps, ListBoxElementType, ListBoxCustomProps } from "./constants";
 
-// Internal ListBox component similar to SelectWithOptions
 const ListBoxWithOptions = (
     {
-        id,
         options,
+        label,
         placeholder = "Select an option",
+        id,
         defaultValue,
         onChange,
         allowMultiSelect = false,
@@ -44,9 +43,9 @@ const ListBoxWithOptions = (
         badgeTextColor,
         selectionLimit,
         allowCustomEntries = false,
-        className,
+        isLoading,
         ...props
-    }: Omit<ListBoxProps, "as">) => {
+    }: ListBoxCustomProps & { className?: string }) => {
     // STATES ====================================================================================================
     const [ isOpen, setIsOpen ]                   = useState(false);
     const [ selectedOptions, setSelectedOptions ] = useState<OptionForListBoxProps[]>([]);
@@ -54,7 +53,7 @@ const ListBoxWithOptions = (
     const [ activeIndex, setActiveIndex ]         = useState(-1);
 
     // Initialize selectedOption based on defaultValue
-    const [ selectedOption, setSelectedOption ] = useState<OptionForListBoxProps | null>(() => {
+    const [selectedOption, setSelectedOption] = useState<OptionForListBoxProps | null>(() => {
         if (defaultValue) {
             return options.find(opt => opt.value === defaultValue) || null;
         }
@@ -63,8 +62,8 @@ const ListBoxWithOptions = (
 
     // Set initial value
     useEffect(() => {
-        if (defaultValue) {
-            handleChange(defaultValue);
+        if (defaultValue && onChange) {
+            onChange(defaultValue);
         }
     }, []);
 
@@ -77,22 +76,19 @@ const ListBoxWithOptions = (
     const filteredOptions = searchOptions(options, searchValue);
 
     // HANDLERS ================================================================================================
-    const handleChange = (value: string | string[]) => {
-        if (!onChange) return;
-
-        const target = { value };
-        const event = {
-            target,
-            currentTarget: target,
-        } as unknown as FormEvent<HTMLDivElement>;
-
-        onChange(event);
+    const handleSearchChange = (valueOrEvent: string | React.FormEvent<HTMLInputElement>) => {
+        const value = typeof valueOrEvent === "string"
+            ? valueOrEvent
+            : (valueOrEvent.target as HTMLInputElement).value;
+        setSearchValue(value);
     };
 
     const handleSelectOption = (option: OptionForListBoxProps) => {
         if (option.disabled) return;
 
         let newSelectedOptions: OptionForListBoxProps[];
+        let valueToEmit: string | string[];
+
         if (allowMultiSelect) {
             const isSelected = selectedOptions.some(opt => opt.value === option.value);
             if (isSelected) {
@@ -101,17 +97,18 @@ const ListBoxWithOptions = (
                 if (selectionLimit && selectedOptions.length >= selectionLimit) {
                     return;
                 }
-                newSelectedOptions = [ ...selectedOptions, option ];
+                newSelectedOptions = [...selectedOptions, option];
             }
-            setSelectedOptions(newSelectedOptions);
-            handleChange(newSelectedOptions.map(opt => opt.value));
+            valueToEmit = newSelectedOptions.map(opt => opt.value);
         } else {
-            newSelectedOptions = [ option ];
+            newSelectedOptions = [option];
             setSelectedOption(option);
-            setSelectedOptions(newSelectedOptions);
-            handleChange(option.value);
+            valueToEmit = option.value;
             setIsOpen(false);
         }
+
+        setSelectedOptions(newSelectedOptions);
+        onChange?.(valueToEmit);
         setSearchValue("");
         setActiveIndex(-1);
     };
@@ -129,11 +126,10 @@ const ListBoxWithOptions = (
         setActiveIndex(-1);
     };
 
-    const handleDeleteOption = (e: React.MouseEvent<HTMLElement>, valueToRemove: string) => {
-        e.stopPropagation();
+    const handleDeleteOption = (valueToRemove: string) => {
         const newSelectedOptions = selectedOptions.filter(opt => opt.value !== valueToRemove);
         setSelectedOptions(newSelectedOptions);
-        handleChange(newSelectedOptions.map(opt => opt.value));
+        onChange?.(newSelectedOptions.map(opt => opt.value));
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -200,9 +196,17 @@ const ListBoxWithOptions = (
         }
     }, [ isOpen ]);
 
+    // SCROLL ACTIVE OPTION INTO VIEW =======================================================================
+    useEffect(() => {
+        if (activeIndex >= 0) {
+            const activeOption = document.querySelector(`[data-index="${activeIndex}"]`);
+            activeOption?.scrollIntoView({ block: "nearest" });
+        }
+    }, [activeIndex]);
+
     // RENDER ==================================================================================================
     return (
-        <Div data-list-box className={`${className || ""} list-box-wrapper ${disabled ? "disabled" : ""}`}
+        <Div data-list-box className={`list-box-wrapper ${disabled ? "disabled" : ""}`}
              ref={dropdownRef}>
             <Div
                 className="list-box-input-wrapper"
@@ -223,7 +227,7 @@ const ListBoxWithOptions = (
                                         <Badge
                                             key={option.value}
                                             withDelete={allowMultiSelect}
-                                            onDelete={(e) => handleDeleteOption(e, option.value)}
+                                            onDelete={() => handleDeleteOption(option.value)}
                                             size="small"
                                             shape="rounded"
                                             bgColour={badgeBgColour || badgeBgColor}
@@ -271,9 +275,7 @@ const ListBoxWithOptions = (
                             className="list-box-search"
                             placeholder="Search"
                             value={searchValue}
-                            onChange={(e) => {
-                                setSearchValue((e.target as HTMLInputElement).value);
-                            }}
+                            onChange={handleSearchChange}
                             onKeyDown={handleKeyDown}
                             aria-controls={`${listboxId}-listbox`}
                             aria-label="Search options"
@@ -289,12 +291,13 @@ const ListBoxWithOptions = (
                         )}
                     </Div>
 
-                    <ul
+                    <Element
+                        as="ul"
                         id={`${listboxId}-listbox`}
                         className="list-box-options"
                         role="listbox"
                         aria-multiselectable={allowMultiSelect}
-                        aria-busy={props.isLoading}
+                        aria-busy={isLoading}
                         tabIndex={-1}
                     >
                         {filteredOptions.length > 0 ? (
@@ -322,7 +325,7 @@ const ListBoxWithOptions = (
                                 No matches found
                             </li>
                         )}
-                    </ul>
+                    </Element>
                 </Div>
             )}
         </Div>

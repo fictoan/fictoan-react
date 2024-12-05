@@ -8,14 +8,13 @@ import { Element } from "../../Element/Element";
 import "./form-item-group.css";
 
 // TYPES ===============================================================================================================
-import { CommonAndHTMLProps, SpacingTypes } from "../../Element/constants";
+import { CommonAndHTMLProps } from "../../Element/constants";
 
 // prettier-ignore
 export interface FormItemGroupCustomProps {
     isJoint      ? : boolean;
     retainLayout ? : boolean;
     legend       ? : string;
-    // spacing      ? : SpacingTypes;
 }
 
 export type FormItemGroupElementType = HTMLDivElement;

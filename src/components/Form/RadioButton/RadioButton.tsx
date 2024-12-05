@@ -17,24 +17,28 @@ export const RadioButton = React.forwardRef(
          id,
          name,
          value,
-         onClick,
+         onChange,
+         checked,
          ...props
      }: RadioButtonProps,
      ref: React.Ref<RadioButtonElementType>,
     ) => {
-        // Use ID as default for value if not provided
-        // Note: name should typically come from RadioGroup
-        const derivedValue = useMemo(() => value || id, [value, id]);
         const derivedName = useMemo(() => name || id, [name, id]);
+
+        // Handle change events to return boolean instead of event
+        const handleChange = (val: string) => {
+            // Since we're dealing with a radio button, the value isn't relevant
+            // Instead, we need to check the current checked state
+            onChange?.(true);
+        };
 
         return (
             <Element<RadioButtonElementType>
                 as="div"
                 data-radio-button
                 ref={ref}
-                onClick={onClick}
                 role="radio"
-                aria-checked={props.checked}
+                aria-checked={checked}
                 aria-disabled={props.disabled}
             >
                 <BaseInputComponent
@@ -42,7 +46,9 @@ export const RadioButton = React.forwardRef(
                     type="radio"
                     id={id}
                     name={derivedName}
-                    value={derivedValue}
+                    value={value}
+                    checked={checked}
+                    onChange={handleChange}
                     {...props}
                 />
             </Element>

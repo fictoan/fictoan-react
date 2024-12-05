@@ -36,16 +36,23 @@ export type NoSideElements = {
 // Combine left and right side constraints
 export type InputSideElementProps = LeftSideProps & RightSideProps;
 
-export type FormChangeHandler<K> = FormEventHandler<K>;
-export type ValueChangeHandler = (value: string | string[]) => void;
-export type FlexibleChangeHandler<K> = FormChangeHandler<K> | ValueChangeHandler;
+export type InputFocusHandler =
+    | ((e: React.FocusEvent<HTMLInputElement>) => void)
+    | (() => void);
 
+// Handle values directly
+export type InputChangeHandler<T = string> = ((value: T) => void) | ((event: React.ChangeEvent<HTMLInputElement>) => void);
+export type InputChangeEvent = React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>;
+
+// Base component props including common form input properties
 export type BaseInputComponentProps<K extends {}> =
     Omit<ElementProps<K>, "onChange"> &
     InputLabelCustomProps &
     InputCommonProps & {
-    onChange?: FlexibleChangeHandler<K>;
-};
+        onChange      ? : InputChangeHandler;
+        onValueChange ? : InputChangeHandler; // For backward compatibility
+        value         ? : string | number | readonly string[];
+}   ;
 
 // Extended component props including side element constraints
 export type BaseInputComponentWithIconProps<K extends {}> =

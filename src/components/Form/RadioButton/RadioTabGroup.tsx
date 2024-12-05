@@ -1,5 +1,5 @@
 // FRAMEWORK ===========================================================================================================
-import React, { useMemo, useRef, useEffect, useState, ChangeEvent } from "react";
+import React, { useMemo, useRef, useEffect, useState } from "react";
 
 // FICTOAN =============================================================================================================
 import { Div } from "../../Element/Tags";
@@ -53,6 +53,13 @@ const RadioTabGroupOptions = (
         }
     }, [value, options]);
 
+    // Handle change to emit the selected value directly
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (onChange) {
+            onChange(e.target.value);
+        }
+    };
+
     return (
         <Div data-radio-tab-group name={derivedName} required={required}>
             <div
@@ -75,7 +82,7 @@ const RadioTabGroupOptions = (
                             id={finalId}
                             name={derivedName}
                             checked={value === option.value}
-                            onChange={onChange}
+                            onChange={handleChange}
                         />
                         <label
                             ref={el => labelsRef.current[index] = el}

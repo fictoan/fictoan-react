@@ -17,7 +17,7 @@ import { CommonAndHTMLProps, SpacingTypes } from "../../Element/constants";
 export interface FormCustomProps {
     spacing        ? : SpacingTypes;
     fields         ? : FormFieldsConfig[];
-    onFieldsChange ? : React.FormEventHandler;
+    onFieldsChange ? : (values: Record<string, any>) => void;
     errorText      ? : string;
 }
 
@@ -32,13 +32,22 @@ export const Form = React.forwardRef(
         ref: React.Ref<FormElementType>
     ) => {
         let classNames = [];
+
         if (spacing) {
             classNames.push(`spacing-${spacing}`);
         }
 
-        if (fields && fields.length > 0) {
-            children = [generateFormThroughConfig(fields, onFieldsChange, spacing), children];
-        }
+        // Handle form field changes to provide direct values
+        const handleFieldChange = (fieldName: string, value: any) => {
+            if (onFieldsChange) {
+                onFieldsChange({
+                    [fieldName]: value
+                });
+            }
+        };
+
+        // Generate form fields if config is provided
+        const formContent = fields?.length ? generateFormThroughConfig(fields, handleFieldChange, spacing) : children;
 
         return (
             <Element<FormElementType>
@@ -48,8 +57,7 @@ export const Form = React.forwardRef(
                 classNames={classNames}
                 {...props}
             >
-                {children}
-
+                {formContent}
                 {errorText && <Callout kind="error">{errorText}</Callout>}
             </Element>
         );
