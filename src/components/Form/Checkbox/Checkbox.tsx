@@ -13,14 +13,15 @@ import { BaseInputComponentProps } from "../BaseInputComponent/constants";
 
 export type CheckboxElementType = HTMLInputElement;
 export type CheckboxProps = Omit<BaseInputComponentProps<CheckboxElementType>, "as" | "onChange" | "value"> & {
-    checked        ? : boolean;
+    value          ? : string;
     defaultChecked ? : boolean;
+    checked        ? : boolean;
     onChange       ? : (checked: boolean) => void;
 };
 
 // COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const Checkbox = React.forwardRef(
-    ({ id, name, onChange, checked, defaultChecked, ...props }: CheckboxProps, ref: React.Ref<CheckboxElementType>) => {
+    ({ id, name, value, onChange, checked, defaultChecked, ...props }: CheckboxProps, ref: React.Ref<CheckboxElementType>) => {
         // Use ID as default for name and value if they’re not provided
         const derivedName = useMemo(() => name || id, [name, id]);
 
@@ -39,6 +40,7 @@ export const Checkbox = React.forwardRef(
                     type="checkbox"
                     id={id}
                     name={derivedName}
+                    value={value}
                     checked={checked}
                     defaultChecked={defaultChecked}
                     onChange={handleChange}
