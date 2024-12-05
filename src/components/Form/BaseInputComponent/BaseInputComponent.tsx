@@ -10,7 +10,7 @@ import { FormItem } from "../FormItem/FormItem";
 // TYPES ===============================================================================================================
 import { BaseInputComponentWithIconProps, InputChangeEvent } from "./constants";
 
-export type InputElementType = HTMLInputElement | HTMLDivElement | HTMLSelectElement;
+export type InputElementType = HTMLInputElement | HTMLDivElement | HTMLSelectElement | HTMLTextAreaElement;
 
 // COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const BaseInputComponent = React.forwardRef(
