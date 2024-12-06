@@ -1,14 +1,15 @@
 // FRAMEWORK ===========================================================================================================
-import React, { ChangeEvent, FormEvent } from "react";
+import React, { ChangeEvent } from "react";
 
 // FICTOAN =============================================================================================================
 import { Element } from "../../Element/Element";
 import { Div } from "../../Element/Tags";
+import { Text } from "../../Typography/Text";
 import { InputLabel } from "../InputLabel/InputLabel";
 import { FormItem } from "../FormItem/FormItem";
 
 // TYPES ===============================================================================================================
-import { BaseInputComponentWithIconProps, InputChangeEvent } from "./constants";
+import { BaseInputComponentWithIconProps } from "./constants";
 
 export type InputElementType = HTMLInputElement | HTMLDivElement | HTMLSelectElement | HTMLTextAreaElement;
 
@@ -71,14 +72,14 @@ export const BaseInputComponent = React.forwardRef(
                 {(helpText || errorText) && (
                     <Div className="info-section vertically-center-items">
                         {helpText && (
-                            <Element as="span" className="help-text">
-                                {helpText}
-                            </Element>
+                            <Text className="help-text">
+                                {typeof helpText === "string" ? helpText : helpText}
+                            </Text>
                         )}
                         {errorText && (
-                            <Element as="span" className="error-text">
+                            <Text className="error-text">
                                 {errorText}
-                            </Element>
+                            </Text>
                         )}
                     </Div>
                 )}

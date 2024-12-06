@@ -1,13 +1,14 @@
-textarea {
+textarea[data-textarea] {
     position         : relative;
     width            : 100%;
     flex             : 1 1 auto;
     font-family      : var(--paragraph-font);
+    color            : var(--input-text-default);
     background-color : var(--input-bg-default);
     border           : 1px solid var(--input-border-default);
     border-radius    : var(--input-border-radius-default);
     padding          : 12px;
-    line-height      : 1;
+    line-height      : var(--paragraph-line-height);
     max-width        : 100%;
     min-width        : 100%;
     resize           : vertical;
@@ -18,4 +19,20 @@ textarea {
         border           : 2px solid var(--input-border-focus);
         padding          : 11px;
     }
+}
+
+.help-text-wrapper {
+    display: inline-block;
+}
+
+.limit-normal {
+    color: var(--slate-dark40);
+}
+
+.limit-warning {
+    color: var(--amber-dark20);
+}
+
+.limit-exceeded {
+    color: var(--red);
 }

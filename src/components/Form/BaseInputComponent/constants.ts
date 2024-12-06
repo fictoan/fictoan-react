@@ -57,6 +57,7 @@ export type BaseInputComponentProps<K extends {}> =
         onChange      ? : InputChangeHandler;
         onValueChange ? : InputChangeHandler; // For backward compatibility
         value         ? : string | number | readonly string[];
+        helpText      ? : string | JSX.Element | React.ReactNode; // The node is for TextArea to display colours for limits
 }   ;
 
 // Extended component props including side element constraints

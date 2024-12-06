@@ -86,26 +86,22 @@
 /* INFO ///////////////////////////////////////////////////////////////// */
 [data-form-item] .info-section {
     grid-area : info;
-
     flex-wrap : wrap;
 
-    span.help-text,
-    span.error-text {
+    p.help-text,
+    p.error-text {
         font-size   : var(--input-helptext-scale);
         font-family : var(--paragraph-font);
     }
 
-    span.help-text {
-        color : var(--input-helptext);
+    p.help-text {
+        color       : var(--input-helptext);
+        line-height : 1.12;
     }
 
-    span.error-text {
-        display : none;
-    }
+    p.error-text { display : none; }
 
-    span:not(:last-of-type) {
-        margin-right : 8px;
-    }
+    p:not(:last-of-type) { margin-right : 8px; }
 }
 
 [data-form-item] [data-input-field],

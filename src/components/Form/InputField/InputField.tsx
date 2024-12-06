@@ -9,7 +9,6 @@ import { Div } from "../../Element/Tags";
 import "./input-field.css";
 
 // TYPES ===============================================================================================================
-import { CommonAndHTMLProps } from "../../Element/constants";
 import {
     BaseInputComponentProps,
     InputCommonProps,
