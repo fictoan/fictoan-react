@@ -14,11 +14,6 @@
         /*margin-bottom  : 24px;*/
     }
 
-    & > label {
-        flex  : 1 1 100%;
-        order : -1;
-    }
-
     /*&.spacing-none > [data-form-item]:not(:last-of-type) { margin-right : 0; }*/
     /*&.spacing-nano > [data-form-item]:not(:last-of-type) { margin-right : 8px; }*/
     /*&.spacing-micro > [data-form-item]:not(:last-of-type) { margin-right : 12px; }*/

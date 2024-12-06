@@ -12,16 +12,15 @@ import "./switch.css";
 import { BaseInputComponentProps } from "../BaseInputComponent/constants";
 
 export interface SwitchCustomProps {
-    size?: "small" | "medium" | "large";
+    size ? : "small" | "medium" | "large";
 }
 
 export type SwitchElementType = HTMLInputElement;
 export type SwitchProps = Omit<BaseInputComponentProps<SwitchElementType>,
-    keyof SwitchCustomProps | "as" | "onChange" | "value"> &
-    SwitchCustomProps & {
-    onChange?: (checked: boolean) => void;
-    checked?: boolean;
-    defaultChecked?: boolean;
+    keyof SwitchCustomProps | "as" | "onChange" | "value"> & SwitchCustomProps & {
+    onChange       ? : (checked: boolean) => void;
+    checked        ? : boolean;
+    defaultChecked ? : boolean;
 };
 
 // COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
