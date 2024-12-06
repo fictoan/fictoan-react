@@ -58,22 +58,15 @@
     width       : fit-content;
 }
 
-[data-form-item][required] {
-    & > div,
-    & > [data-input-field],
-    & > [data-text-area],
-    & > [data-select-wrapper] {
-        & ~ label::after {
-            position  : absolute;
-            top       : -4px;
-            bottom    : 0;
-            right     : -12px;
-            margin    : auto;
-            content   : "*";
-            font-size : 120%;
-            color     : var(--input-required-indicator);
-        }
-    }
+[data-form-item][required] > label::after {
+    position  : absolute;
+    top       : -4px;
+    bottom    : 0;
+    right     : -12px;
+    margin    : auto;
+    content   : "*";
+    font-size : 120%;
+    color     : var(--input-required-indicator);
 }
 
 /* INPUT //////////////////////////////////////////////////////////////////// */
