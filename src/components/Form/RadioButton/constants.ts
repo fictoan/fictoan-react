@@ -6,9 +6,9 @@ import { SpacingTypes } from "@/components/Element/constants";
 // RADIO BUTTON ////////////////////////////////////////////////////////////////////////////////////////////////////////
 export type RadioButtonElementType = HTMLDivElement;
 export type RadioButtonProps = Omit<BaseInputComponentProps<RadioButtonElementType>, "as" | "onChange" | "value"> & {
-    onChange?: (checked: boolean) => void;
+    onChange?: (value: string) => void;
     checked?: boolean;
-    value: string;  // Making value required for radio buttons
+    value: string;  // Value is required for radio buttons
 };
 
 // RADIO GROUP OPTIONS /////////////////////////////////////////////////////////////////////////////////////////////////

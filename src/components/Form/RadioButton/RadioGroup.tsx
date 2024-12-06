@@ -2,7 +2,7 @@
 import React from "react";
 
 // FICTOAN =============================================================================================================
-import { RadioButton } from "./RadioButton";
+import { Div } from "../../Element/Tags";
 import { Element } from "../../Element/Element";
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 
@@ -10,50 +10,67 @@ import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 import { RadioGroupProps } from "./constants";
 
 // COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-const RadioGroupOptions = (
-    {
-        id,
-        name,
-        options,
-        value,
-        defaultValue,
-        onChange,
-        ...props
-    }: RadioGroupProps) => {
+export const RadioGroup = React.forwardRef((props: RadioGroupProps, ref: React.Ref<HTMLDivElement>) => {
+    const RadioGroupOptions = (
+        {
+            id,
+            name,
+            options,
+            value,
+            defaultValue,
+            onChange,
+            ...groupProps
+        }: RadioGroupProps) => {
+        const derivedName = React.useMemo(() => name || id, [ name, id ]);
 
-    // Use ID as default for name if not provided
-    const derivedName = React.useMemo(() => name || id, [ name, id ]);
+        console.log("RadioGroup render:", {
+            groupName    : name,
+            currentValue : value,
+            defaultValue,
+        });
 
-    // Handle individual radio button changes
-    const handleRadioChange = (optionValue: string) => {
-        onChange?.(optionValue);
+        const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+            if (onChange) {
+                onChange(e.target.value);
+            }
+        };
+
+        return (
+            <Element as="div">
+                {options.map((option, index) => {
+                    const { id: optionId, value: optionValue, label, ...optionProps } = option;
+                    const finalId = optionId || `${id}-option-${index}`;
+                    const isChecked = value ? value === optionValue : defaultValue === optionValue;
+
+                    return (
+                        <Div
+                            key={finalId}
+                            data-radio-button
+                            role="radio"
+                            aria-checked={isChecked}
+                        >
+                            <input
+                                type="radio"
+                                id={finalId}
+                                name={derivedName}
+                                value={optionValue}
+                                checked={isChecked}
+                                onChange={handleChange}
+                                {...optionProps}
+                            />
+                            <label htmlFor={finalId}>{label}</label>
+                        </Div>
+                    );
+                })}
+            </Element>
+        );
     };
 
     return (
-        <Element as="div">
-            {options.map((option, index) => {
-                const { id : optionId, value : optionValue, ...optionProps } = option;
-
-                // Derive option id if not provided
-                const finalId = optionId || `${id}-option-${index}`;
-
-                return (
-                    <RadioButton
-                        key={finalId}
-                        {...props}
-                        {...optionProps}
-                        id={finalId}
-                        name={derivedName}
-                        value={optionValue}
-                        checked={value ? value === optionValue : defaultValue === optionValue}
-                        onChange={() => handleRadioChange(optionValue)}
-                    />
-                );
-            })}
-        </Element>
+        <BaseInputComponent<HTMLDivElement>
+            as={RadioGroupOptions}
+            ref={ref}
+            {...props}
+        />
     );
-};
-
-export const RadioGroup = React.forwardRef((props: RadioGroupProps, ref: React.Ref<HTMLDivElement>) => {
-    return <BaseInputComponent<HTMLDivElement> as={RadioGroupOptions} ref={ref} {...props} />;
 });

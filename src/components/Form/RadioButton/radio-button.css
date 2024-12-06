@@ -2,6 +2,8 @@
     display      : inline-flex;
     margin-right : 24px;
 
+    &:only-of-type { margin-right : 0; }
+
     input[type="radio"] {
         position : absolute;
         height   : 1px;
@@ -11,36 +13,8 @@
         clip     : rect(1px, 1px, 1px, 1px);
     }
 
-    /*  The grey outer circle  */
-    & label::before {
-        width         : 16px;
-        height        : 16px;
-        /* top           : 4px; */
-        left          : 0;
-        border-radius : 50%;
-        background    : var(--radio-circle-bg-default);
-    }
-
-    &:hover label::before {
-        background : var(--radio-circle-bg-hover);
-    }
-
-    /* The white inner circle */
-    & label::after {
-        opacity       : 0;
-        left          : 4px;
-        top           : 4px;
-        width         : 8px;
-        height        : 8px;
-        background    : var(--radio-button-dot);
-        border-radius : 50%;
-    }
-
-    &:only-of-type {
-        margin-right : 0;
-    }
-
-    & label {
+    /* LABEL ================================================================ */
+    label {
         display        : inline-block;
         position       : relative;
         font-family    : var(--paragraph-font);
@@ -59,6 +33,30 @@
         }
     }
 
+    /* The grey outer circle ------------------------------------------------ */
+    label::before {
+        width         : 16px;
+        height        : 16px;
+        left          : 0;
+        border-radius : 50%;
+        background    : var(--radio-circle-bg-default);
+    }
+
+    /* The white inner circle ----------------------------------------------- */
+    label::after {
+        opacity       : 0;
+        left          : 4px;
+        top           : 4px;
+        width         : 8px;
+        height        : 8px;
+        background    : var(--radio-button-dot);
+        border-radius : 50%;
+    }
+
+    &:hover label::before {
+        background : var(--radio-circle-bg-hover);
+    }
+
     /*  The grey square  */
     &:disabled + label::before {
         background : var(--radio-circle-bg-disabled);
@@ -67,14 +65,14 @@
 }
 
 /* STATES =================================================================== */
-[data-form-item]:has(input[type="radio"]:checked) > label::before {
+[data-radio-button]:has(input[type="radio"]:checked) > label::before {
     background : var(--radio-circle-bg-checked);
 }
 
-[data-form-item]:has(input[type="radio"]:checked) > label::after {
+[data-radio-button]:has(input[type="radio"]:checked) > label::after {
     opacity : 1;
 }
 
-[data-form-item]:has(input[type="radio"]:focus) > label::before {
+[data-radio-button]:has(input[type="radio"]:focus) > label::before {
     outline : solid 2px var(--radio-circle-bg-checked);
 }

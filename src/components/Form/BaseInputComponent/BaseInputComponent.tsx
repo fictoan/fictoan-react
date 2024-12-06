@@ -32,15 +32,21 @@ export const BaseInputComponent = React.forwardRef(
         ref: React.LegacyRef<InputElementType>
     ) => {
         // Handle both new value-based and legacy event-based onChange
-        const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const handleChange = (valueOrEvent: string | React.ChangeEvent<HTMLInputElement>) => {
             if (!onChange) return;
 
-            // If the handler is looking for just the value (has exactly one parameter)
+            // If it's a direct string value, use it as is
+            if (typeof valueOrEvent === "string") {
+                (onChange as (value: string) => void)(valueOrEvent);
+                return;
+            }
+
+            // If it's an event, try to get the value from target
+            const value = valueOrEvent?.target?.value;
             if (onChange.length === 1) {
-                (onChange as (value: string) => void)(event.target.value);
+                (onChange as (value: string) => void)(value);
             } else {
-                // Otherwise pass the whole event
-                (onChange as (e: ChangeEvent<HTMLInputElement>) => void)(event);
+                (onChange as (e: React.ChangeEvent<HTMLInputElement>) => void)(valueOrEvent);
             }
         };
 
