@@ -36,8 +36,8 @@ export const BaseInputComponent = React.forwardRef(
             if (!onChange) return;
 
             // If it's a direct string value, use it as is
-            if (typeof valueOrEvent === "string") {
-                (onChange as (value: string) => void)(valueOrEvent);
+            if (typeof valueOrEvent === "string" || Array.isArray(valueOrEvent)) {
+                (onChange as (value: string | string[]) => void)(valueOrEvent);
                 return;
             }
 

@@ -19,6 +19,8 @@ export type CheckboxProps = Omit<BaseInputComponentProps<CheckboxElementType>, "
     onChange       ? : (checked: boolean) => void;
 };
 
+// TODO: Fix required indicator that clashes with tick because both use the same `label::after` setup.
+
 // COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const Checkbox = React.forwardRef(
     ({ id, name, value, onChange, checked, defaultChecked, ...props }: CheckboxProps, ref: React.Ref<CheckboxElementType>) => {

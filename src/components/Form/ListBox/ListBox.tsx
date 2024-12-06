@@ -35,30 +35,29 @@ const ListBoxWithOptions = (
         id,
         defaultValue,
         onChange,
-        allowMultiSelect = false,
         disabled,
         badgeBgColour,
         badgeBgColor,
         badgeTextColour,
         badgeTextColor,
         selectionLimit,
+        allowMultiSelect = false,
         allowCustomEntries = false,
         isLoading,
+        value,
         ...props
     }: ListBoxCustomProps & { className?: string }) => {
+
     // STATES ====================================================================================================
     const [ isOpen, setIsOpen ]                   = useState(false);
-    const [ selectedOptions, setSelectedOptions ] = useState<OptionForListBoxProps[]>([]);
     const [ searchValue, setSearchValue ]         = useState("");
     const [ activeIndex, setActiveIndex ]         = useState(-1);
 
-    // Initialize selectedOption based on defaultValue
-    const [selectedOption, setSelectedOption] = useState<OptionForListBoxProps | null>(() => {
-        if (defaultValue) {
-            return options.find(opt => opt.value === defaultValue) || null;
-        }
-        return null;
-    });
+    const selectedOptions = value
+        ? (Array.isArray(value)
+            ? options.filter(opt => value.includes(opt.value))
+            : options.filter(opt => opt.value === value))
+        : [];
 
     // Set initial value
     useEffect(() => {
@@ -84,33 +83,28 @@ const ListBoxWithOptions = (
     };
 
     const handleSelectOption = (option: OptionForListBoxProps) => {
-        if (option.disabled) return;
-
-        let newSelectedOptions: OptionForListBoxProps[];
         let valueToEmit: string | string[];
 
         if (allowMultiSelect) {
             const isSelected = selectedOptions.some(opt => opt.value === option.value);
-            if (isSelected) {
-                newSelectedOptions = selectedOptions.filter(opt => opt.value !== option.value);
-            } else {
-                if (selectionLimit && selectedOptions.length >= selectionLimit) {
-                    return;
-                }
-                newSelectedOptions = [...selectedOptions, option];
-            }
-            valueToEmit = newSelectedOptions.map(opt => opt.value);
+            valueToEmit = isSelected
+                ? selectedOptions
+                    .filter(opt => opt.value !== option.value)
+                    .map(opt => opt.value)
+                : [...selectedOptions.map(opt => opt.value), option.value];
         } else {
-            newSelectedOptions = [option];
-            setSelectedOption(option);
             valueToEmit = option.value;
             setIsOpen(false);
         }
 
-        setSelectedOptions(newSelectedOptions);
-        onChange?.(valueToEmit);
-        setSearchValue("");
-        setActiveIndex(-1);
+        // Create a synthetic event that BaseInputComponent will understand
+        const syntheticEvent = {
+            target: {
+                value: valueToEmit
+            }
+        } as React.ChangeEvent<HTMLInputElement>;
+        // @ts-ignore
+        onChange?.(syntheticEvent);
     };
 
     const handleCustomEntry = () => {
@@ -127,9 +121,10 @@ const ListBoxWithOptions = (
     };
 
     const handleDeleteOption = (valueToRemove: string) => {
-        const newSelectedOptions = selectedOptions.filter(opt => opt.value !== valueToRemove);
-        setSelectedOptions(newSelectedOptions);
-        onChange?.(newSelectedOptions.map(opt => opt.value));
+        const valueToEmit = selectedOptions
+            .filter(opt => opt.value !== valueToRemove)
+            .map(opt => opt.value);
+        onChange?.(valueToEmit);
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -238,12 +233,7 @@ const ListBoxWithOptions = (
                                     ))}
                                 </Div>
                                 {selectionLimit && selectedOptions.length >= selectionLimit && (
-                                    <Text
-                                        className="options-limit-warning"
-                                        textColour="red"
-                                        size="small"
-                                        role="alert"
-                                    >
+                                    <Text className="options-limit-warning" textColour="red" size="small">
                                         You can choose only {selectionLimit} option{selectionLimit === 1 ? "" : "s"}
                                     </Text>
                                 )}
@@ -253,8 +243,8 @@ const ListBoxWithOptions = (
                         )}
                     </>
                 ) : (
-                    selectedOption
-                        ? <Text className="selected-option">{selectedOption.label}</Text>
+                    selectedOptions[0]
+                        ? <Text className="selected-option">{selectedOptions[0].label}</Text>
                         : <span className="placeholder">{placeholder}</span>
                 )}
 
@@ -334,11 +324,21 @@ const ListBoxWithOptions = (
 
 // Main ListBox component
 export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>((props, ref) => {
+    const handleChange = (valueOrEvent: string | string[] | React.ChangeEvent<HTMLInputElement>) => {
+        // Handle both direct values and events
+        const value = typeof valueOrEvent === "object" && "target" in valueOrEvent
+            ? valueOrEvent.target.value
+            : valueOrEvent;
+
+        props.onChange?.(value);
+    };
+
     return (
         <BaseInputComponent<ListBoxElementType>
             as={ListBoxWithOptions}
             ref={ref}
             {...props}
+            onChange={handleChange}
         />
     );
 });

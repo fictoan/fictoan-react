@@ -23,12 +23,6 @@ export const RadioGroup = React.forwardRef((props: RadioGroupProps, ref: React.R
         }: RadioGroupProps) => {
         const derivedName = React.useMemo(() => name || id, [ name, id ]);
 
-        console.log("RadioGroup render:", {
-            groupName    : name,
-            currentValue : value,
-            defaultValue,
-        });
-
         const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
             if (onChange) {
                 onChange(e.target.value);

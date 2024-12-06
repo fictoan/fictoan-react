@@ -30,6 +30,7 @@ export interface ListBoxCustomProps {
     allowCustomEntries ? : boolean;
     isLoading          ? : boolean;
     onChange           ? : (value: string | string[]) => void;
+    value              ? : string | string[];
 }
 
 export type ListBoxProps =
