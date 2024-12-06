@@ -6,7 +6,7 @@ import { InputField } from "../InputField/InputField";
 import { Div } from "../../Element/Tags";
 
 // STYLES ==============================================================================================================
-import "./PinInputField.css";
+import "./pin-input-field.css";
 
 // TYPES ===============================================================================================================
 import { CommonAndHTMLProps } from "../../Element/constants";
