@@ -1,6 +1,7 @@
 textarea[data-textarea] {
     position         : relative;
     width            : 100%;
+    height           : 100%;
     flex             : 1 1 auto;
     font-family      : var(--paragraph-font);
     color            : var(--input-text-default);
@@ -9,8 +10,8 @@ textarea[data-textarea] {
     border-radius    : var(--input-border-radius-default);
     padding          : 12px;
     line-height      : var(--paragraph-line-height);
-    max-width        : 100%;
     min-width        : 100%;
+    max-width        : 100%;
     resize           : vertical;
 
     &:active,
@@ -21,18 +22,10 @@ textarea[data-textarea] {
     }
 }
 
-.help-text-wrapper {
-    display: inline-block;
-}
+.help-text-wrapper { display : inline-block; }
 
-.limit-normal {
-    color: var(--slate-dark40);
-}
+.limit-normal { color : inherit; }
 
-.limit-warning {
-    color: var(--amber-dark20);
-}
+.limit-warning { color : var(--textarea-limit-warning); }
 
-.limit-exceeded {
-    color: var(--red);
-}
+.limit-exceeded { color : var(--textarea-limit-error); }

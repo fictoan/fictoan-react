@@ -573,6 +573,12 @@
     --tab-alert-badge-border : var(--red);
 }
 
+/* TEXTAREA ///////////////////////////////////////////////////////////////// */
+:root {
+    --textarea-limit-warning : var(--amber);
+    --textarea-limit-error   : var(--input-error-text-invalid);
+}
+
 /* TEXT ///////////////////////////////////////////////////////////////////// */
 /* To compute fluid font sizes based on screen size */
 :root {
