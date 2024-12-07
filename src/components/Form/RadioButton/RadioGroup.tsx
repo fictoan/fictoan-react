@@ -3,8 +3,10 @@ import React from "react";
 
 // FICTOAN =============================================================================================================
 import { Div } from "../../Element/Tags";
-import { Element } from "../../Element/Element";
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
+
+// STYLES ==============================================================================================================
+import "./radio-group.css";
 
 // TYPES ===============================================================================================================
 import { RadioGroupProps } from "./constants";
@@ -30,7 +32,7 @@ export const RadioGroup = React.forwardRef((props: RadioGroupProps, ref: React.R
         };
 
         return (
-            <Element as="div">
+            <React.Fragment>
                 {options.map((option, index) => {
                     const { id: optionId, value: optionValue, label, ...optionProps } = option;
                     const finalId = optionId || `${id}-option-${index}`;
@@ -42,6 +44,7 @@ export const RadioGroup = React.forwardRef((props: RadioGroupProps, ref: React.R
                             data-radio-button
                             role="radio"
                             aria-checked={isChecked}
+                            classNames={classNames}
                         >
                             <input
                                 type="radio"
@@ -56,15 +59,27 @@ export const RadioGroup = React.forwardRef((props: RadioGroupProps, ref: React.R
                         </Div>
                     );
                 })}
-            </Element>
+            </React.Fragment>
         );
     };
 
+    let classNames: string[] | undefined = [];
+
+    if (props.align) {
+        classNames.push(`align-${props.align}`);
+    }
+
+    if (props.equaliseWidth || props.equalizeWidth) {
+        classNames.push(`equalise-width`);
+    }
+
     return (
         <BaseInputComponent<HTMLDivElement>
+            data-radio-group
             as={RadioGroupOptions}
             ref={ref}
             {...props}
+            classNames={classNames}
         />
     );
 });
