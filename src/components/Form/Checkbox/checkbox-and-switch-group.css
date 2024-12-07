@@ -1,0 +1,17 @@
+[data-checkbox-group],
+[data-switch-group] {
+    display        : flex;
+    flex-direction : row;
+    gap            : 24px;
+    flex-wrap      : wrap;
+}
+
+[data-checkbox-group].equalise-width > [data-checkbox],
+[data-switch-group].equalise-width > [data-switch] {
+    flex : 1 1;
+}
+
+[data-checkbox-group].align-vertical,
+[data-switch-group].align-vertical {
+    flex-direction : column;
+}
