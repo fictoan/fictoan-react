@@ -48,7 +48,7 @@ const ListBoxWithOptions = (
         ...props
     }: ListBoxCustomProps & { className?: string }) => {
 
-    // STATES ====================================================================================================
+    // STATES ==========================================================================================================
     const [ isOpen, setIsOpen ]                   = useState(false);
     const [ searchValue, setSearchValue ]         = useState("");
     const [ activeIndex, setActiveIndex ]         = useState(-1);
@@ -59,29 +59,22 @@ const ListBoxWithOptions = (
             : options.filter(opt => opt.value === value))
         : [];
 
-    // Set initial value
+    // Set initial value ===============================================================================================
     useEffect(() => {
         if (defaultValue && onChange) {
             onChange(defaultValue);
         }
     }, []);
 
-    // REFS =====================================================================================================
+    // REFS ============================================================================================================
     const dropdownRef    = useRef() as MutableRefObject<HTMLSelectElement>;
     const searchInputRef = useRef<HTMLInputElement>(null);
 
-    // CONSTANTS ===============================================================================================
+    // CONSTANTS =======================================================================================================
     const listboxId       = id || `listbox-${Math.random().toString(36).substring(2, 9)}`;
     const filteredOptions = searchOptions(options, searchValue);
 
-    // HANDLERS ================================================================================================
-    const handleSearchChange = (valueOrEvent: string | React.FormEvent<HTMLInputElement>) => {
-        const value = typeof valueOrEvent === "string"
-            ? valueOrEvent
-            : (valueOrEvent.target as HTMLInputElement).value;
-        setSearchValue(value);
-    };
-
+    // SELECT AN OPTION ================================================================================================
     const handleSelectOption = (option: OptionForListBoxProps) => {
         let valueToEmit: string | string[];
 
@@ -107,6 +100,15 @@ const ListBoxWithOptions = (
         onChange?.(syntheticEvent);
     };
 
+    // SEARCH ==========================================================================================================
+    const handleSearchChange = (valueOrEvent: string | React.FormEvent<HTMLInputElement>) => {
+        const value = typeof valueOrEvent === "string"
+            ? valueOrEvent
+            : (valueOrEvent.target as HTMLInputElement).value;
+        setSearchValue(value);
+    };
+
+    // CUSTOM ENTRY ====================================================================================================
     const handleCustomEntry = () => {
         if (!searchValue.trim() || !allowCustomEntries) return;
 
@@ -120,6 +122,7 @@ const ListBoxWithOptions = (
         setActiveIndex(-1);
     };
 
+    // REMOVE AN OPTION ================================================================================================
     const handleDeleteOption = (valueToRemove: string) => {
         const valueToEmit = selectedOptions
             .filter(opt => opt.value !== valueToRemove)
@@ -127,6 +130,7 @@ const ListBoxWithOptions = (
         onChange?.(valueToEmit);
     };
 
+    // ARROW KEYS ======================================================================================================
     const handleKeyDown = (event: KeyboardEvent) => {
         switch (event.key) {
             case "ArrowDown":
@@ -178,7 +182,7 @@ const ListBoxWithOptions = (
         }
     };
 
-    // Click outside handling
+    // Click outside handling ==========================================================================================
     useClickOutside(dropdownRef, () => {
         setIsOpen(false);
         setActiveIndex(-1);
@@ -191,7 +195,7 @@ const ListBoxWithOptions = (
         }
     }, [ isOpen ]);
 
-    // SCROLL ACTIVE OPTION INTO VIEW =======================================================================
+    // SCROLL ACTIVE OPTION INTO VIEW ==================================================================================
     useEffect(() => {
         if (activeIndex >= 0) {
             const activeOption = document.querySelector(`[data-index="${activeIndex}"]`);
@@ -199,8 +203,8 @@ const ListBoxWithOptions = (
         }
     }, [activeIndex]);
 
-    // RENDER ==================================================================================================
     return (
+        // PARENT //////////////////////////////////////////////////////////////////////////////////////////////////////
         <Div data-list-box className={`list-box-wrapper ${disabled ? "disabled" : ""}`}
              ref={dropdownRef}>
             <Div
@@ -256,6 +260,7 @@ const ListBoxWithOptions = (
                 </Div>
             </Div>
 
+            {/* DROPDOWN /////////////////////////////////////////////////////////////////////////////////////////// */}
             {isOpen && !disabled && (
                 <Div className="list-box-dropdown">
                     <Div className="list-box-search-wrapper">
@@ -281,6 +286,7 @@ const ListBoxWithOptions = (
                         )}
                     </Div>
 
+                    {/* OPTIONS //////////////////////////////////////////////////////////////////////////////////// */}
                     <Element
                         as="ul"
                         id={`${listboxId}-listbox`}
@@ -322,7 +328,7 @@ const ListBoxWithOptions = (
     );
 };
 
-// Main ListBox component
+// MAIN LISTBOX COMPONENT //////////////////////////////////////////////////////////////////////////////////////////////
 export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>((props, ref) => {
     const handleChange = (valueOrEvent: string | string[] | React.ChangeEvent<HTMLInputElement>) => {
         // Handle both direct values and events
