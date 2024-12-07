@@ -4,14 +4,8 @@
     width       : 100%;
     align-items : flex-start;
 
-    input {
-        align-self : flex-end;
-    }
-
-    & > [data-form-item] {
-        flex           : 1 1 0;
-        flex-direction : column;
-        /*margin-bottom  : 24px;*/
+    & > * {
+        flex : 1 1;
     }
 
     /*&.spacing-none > [data-form-item]:not(:last-of-type) { margin-right : 0; }*/
@@ -37,8 +31,6 @@
         flex-wrap : nowrap;
 
         & > [data-form-item] {
-            margin-right : 0;
-
             &:first-of-type input, select, textarea {
                 border-top-right-radius    : 0;
                 border-bottom-right-radius : 0;
