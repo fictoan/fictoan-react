@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 1.11.0
+#### ⚠️ BREAKING CHANGES ⚠️
+- Overhaul all form components to follow a state-led `onChange` handling, instead of mucking around with direct DOM 
+  events.
+
+#### GENERIC CHANGES
+- Add `CheckboxGroup` and `SwitchGroup` components, that work in the same way as `RadioGroup`
+
 ## 1.10.7
 - Fix `CodeBlock` word break bug
 
@@ -49,7 +57,7 @@ and `value` props are inherited from `id` if not present.
 ## 1.8.1
 #### ⚠️ BREAKING CHANGES ⚠️
 - Remove `SidebarItemIcon` and `SidebarItemText` components to simplify markup
-- #### GENERIC CHANGES
+#### GENERIC CHANGES
 - Fix `defaultValue` bug for `ListBox`
 - Fix text colour for `ListBox`
 

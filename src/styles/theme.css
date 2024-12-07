@@ -248,7 +248,7 @@
     --input-required-indicator        : var(--red);
 
     --input-helptext                  : var(--slate-dark40);
-    --input-helptext-scale            : 92%;
+    --input-helptext-scale            : 88%;
 
     --input-inner-text-left-default   : var(--slate);
     --input-inner-text-right-default  : var(--slate);
@@ -571,6 +571,12 @@
 
     --tab-alert-badge-bg     : var(--red);
     --tab-alert-badge-border : var(--red);
+}
+
+/* TEXTAREA ///////////////////////////////////////////////////////////////// */
+:root {
+    --textarea-limit-warning : var(--amber);
+    --textarea-limit-error   : var(--input-error-text-invalid);
 }
 
 /* TEXT ///////////////////////////////////////////////////////////////////// */

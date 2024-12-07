@@ -2,7 +2,6 @@
     display        : inline-flex;
     flex-direction : row;
     align-items    : center;
-    margin-right   : 24px;
 
     &:only-of-type {
         margin-right : 0;
@@ -63,8 +62,6 @@
     }
 
     /* DISABLED ============================================================= */
-
-
     [data-form-wrapper].spacing-none & { margin-bottom : 0; }
     [data-form-wrapper].spacing-nano & { margin-bottom : 8px; }
     [data-form-wrapper].spacing-micro & { margin-bottom : 12px; }

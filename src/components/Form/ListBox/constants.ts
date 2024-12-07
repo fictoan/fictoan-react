@@ -29,7 +29,8 @@ export interface ListBoxCustomProps {
     selectionLimit     ? : NonZeroNumber;
     allowCustomEntries ? : boolean;
     isLoading          ? : boolean;
-    onChange           ? : (event: FormEvent<HTMLDivElement>) => void;
+    onChange           ? : (value: string | string[]) => void;
+    value              ? : string | string[];
 }
 
 export type ListBoxProps =
