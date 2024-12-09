@@ -31,6 +31,7 @@ export interface ListBoxCustomProps {
     isLoading          ? : boolean;
     onChange           ? : (value: string | string[]) => void;
     value              ? : string | string[];
+    isFullWidth        ? : boolean;
 }
 
 export type ListBoxProps =

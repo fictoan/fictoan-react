@@ -45,8 +45,10 @@ const ListBoxWithOptions = (
         allowCustomEntries = false,
         isLoading,
         value,
+        isFullWidth,
+        className,
         ...props
-    }: ListBoxCustomProps & { className?: string }) => {
+    }: ListBoxCustomProps & { className ? : string }) => {
 
     // STATES ==========================================================================================================
     const [ isOpen, setIsOpen ]                   = useState(false);
@@ -182,13 +184,13 @@ const ListBoxWithOptions = (
         }
     };
 
-    // Click outside handling ==========================================================================================
+    // CLICK OUTSIDE HANDLING ==========================================================================================
     useClickOutside(dropdownRef, () => {
         setIsOpen(false);
         setActiveIndex(-1);
     });
 
-    // Focus management
+    // FOCUS MANAGEMENT ================================================================================================
     useEffect(() => {
         if (isOpen && searchInputRef.current) {
             searchInputRef.current.focus();
@@ -205,8 +207,13 @@ const ListBoxWithOptions = (
 
     return (
         // PARENT //////////////////////////////////////////////////////////////////////////////////////////////////////
-        <Div data-list-box className={`list-box-wrapper ${disabled ? "disabled" : ""}`}
-             ref={dropdownRef}>
+        <Element
+            as="div"
+            data-list-box
+            classNames={["list-box-wrapper", disabled ? "disabled" : ""]}
+            ref={dropdownRef}
+            {...props}
+        >
             <Div
                 className="list-box-input-wrapper"
                 onClick={() => !disabled && setIsOpen(!isOpen)}
@@ -324,7 +331,7 @@ const ListBoxWithOptions = (
                     </Element>
                 </Div>
             )}
-        </Div>
+        </Element>
     );
 };
 

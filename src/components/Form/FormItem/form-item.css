@@ -72,11 +72,12 @@
 /* INPUT //////////////////////////////////////////////////////////////////// */
 [data-form-item][data-input-field],
 [data-form-item][data-text-area],
-[data-form-item][data-select-wrapper] {
+[data-form-item][data-select-wrapper],
+[data-form-item][data-listbox-wrapper] {
     grid-area : input;
 }
 
-/* INFO ///////////////////////////////////////////////////////////////// */
+/* INFO ///////////////////////////////////////////////////////////////////// */
 [data-form-item] .info-section {
     grid-area : info;
     flex-wrap : wrap;
@@ -134,7 +135,7 @@
     }
 }
 
-/* DISABLED */
+/* DISABLED ///////////////////////////////////////////////////////////////// */
 [data-form-item]:has(input:disabled) > label,
 [data-form-item]:has(input:disabled) > label::before,
 [data-form-item]:has(input:disabled) > label::after {
