@@ -1,4 +1,4 @@
-[data-radio-tab-group] {
+[data-radio-tab-group] .rtg-options-wrapper {
     position      : relative;
     display       : inline-flex;
     background    : var(--radio-tabs-bg);
@@ -6,6 +6,8 @@
     height        : var(--radio-tabs-height);
     border        : var(--radio-tabs-vertical-gap) solid var(--radio-tabs-border);
     user-select   : none;
+    transition    : transform 0.3s ease;
+    will-change   : transform;
 
     /* Hide radio inputs but keep them accessible */
     & input[type="radio"] {
@@ -49,11 +51,6 @@
         border-radius : calc(var(--global-border-radius) - var(--radio-tabs-vertical-gap));
     }
 
-    &.needs-scroll {
-        padding-left  : 26px;
-        padding-right : 26px;
-    }
-
     /* Active indicator ///////////////////////////////////////////////////// */
     & .indicator {
         position       : absolute;
@@ -68,12 +65,29 @@
         outline : 2px solid var(--radio-tabs-label-focus-border);
     }
 
-    /* Scroll buttons /////////////////////////////////////////////////////// */
+    /* SCROLLING OPTIONS WHEN THERE ARE MANY OPTIONS AND NO SPACE /////////// */
+    /* Scrollable tabs ====================================================== */
+    &.needs-scroll {
+        padding-left               : 26px;
+        padding-right              : 26px;
+        display                    : flex;
+        overflow-x                 : hidden;
+        scroll-behavior            : smooth;
+        overflow-y                 : hidden;
+        -webkit-overflow-scrolling : touch; /* For better iOS scrolling */
+    }
+}
+
+.radio-tab-group-container {
+    position : relative;
+
+    /* Scroll buttons ======================================================= */
     .scroll-button {
         position        : absolute;
         top             : 0;
         bottom          : 0;
         width           : 24px;
+        z-index         : 50;
         display         : flex;
         align-items     : center;
         justify-content : center;
