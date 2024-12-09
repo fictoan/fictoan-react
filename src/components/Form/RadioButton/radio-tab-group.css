@@ -2,6 +2,13 @@
     position : relative;
     overflow : hidden;
 
+    .rtg-options-container {
+        position   : relative;
+        overflow   : hidden;
+        width      : 100%;
+        height     : 100%;
+    }
+
     .rtg-options-wrapper {
         position      : relative;
         display       : inline-flex;
