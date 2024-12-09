@@ -1,5 +1,5 @@
 // FRAMEWORK ===========================================================================================================
-import React, { useMemo, useRef, useEffect, useState } from "react";
+import React, { useMemo, useRef, useEffect, useState, useCallback } from "react";
 
 // FICTOAN =============================================================================================================
 import { Div } from "../../Element/Tags";
@@ -32,7 +32,40 @@ const RadioTabGroupOptions = (
     const [indicatorPos, setIndicatorPos] = useState<IndicatorPosition>({ width: 0, transform: "translateX(0)" });
     const labelsRef = useRef<(HTMLLabelElement | null)[]>([]);
 
+    const containerRef = useRef<HTMLDivElement>(null);
+    const formItemRef = useRef<HTMLDivElement>(null);
     const [needsScroll, setNeedsScroll] = useState(true);
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const [maxScroll, setMaxScroll] = useState(0);
+
+    // Function to measure and determine if scrolling is needed
+    const measureWidths = useCallback(() => {
+        const container = containerRef.current;
+        const formItem = container?.closest("[data-form-item]");
+
+        if (container && formItem) {
+            const containerWidth = container.scrollWidth;
+            const formItemWidth = formItem.clientWidth;
+            const needsToScroll = containerWidth > formItemWidth;
+
+            setNeedsScroll(needsToScroll);
+            if (needsToScroll) {
+                setMaxScroll(containerWidth - formItemWidth);
+            }
+        }
+    }, []);
+
+    // Set up resize observer
+    useEffect(() => {
+        const container = containerRef.current;
+        if (!container) return;
+
+        const observer = new ResizeObserver(measureWidths);
+        observer.observe(container);
+        observer.observe(container.closest("[data-form-item]") as Element);
+
+        return () => observer.disconnect();
+    }, [measureWidths]);
 
     // Update indicator position based on selected radio
     useEffect(() => {
