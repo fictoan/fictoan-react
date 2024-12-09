@@ -210,7 +210,7 @@ const ListBoxWithOptions = (
         <Element
             as="div"
             data-list-box
-            classNames={["list-box-wrapper", disabled ? "disabled" : ""]}
+            classNames={["list-box-wrapper", disabled ? "disabled" : "", className || ""]}
             ref={dropdownRef}
             {...props}
         >
