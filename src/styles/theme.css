@@ -446,6 +446,8 @@
     --radio-tabs-label-text-active  : var(--black);
 
     --radio-tabs-label-focus-border : var(--blue);
+
+    --radio-tabs-scroll-button-default : var(--slate-light40)
 }
 
 /* RANGE //////////////////////////////////////////////////////////////////// */

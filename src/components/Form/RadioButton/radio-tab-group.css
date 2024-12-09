@@ -44,9 +44,14 @@
     }
 
     & input:not(:checked) + label:hover {
-        background : var(--radio-tabs-label-bg-hover);
-        color      : var(--radio-tabs-label-text-hover);
-        border-radius  : calc(var(--global-border-radius) - var(--radio-tabs-vertical-gap));
+        background    : var(--radio-tabs-label-bg-hover);
+        color         : var(--radio-tabs-label-text-hover);
+        border-radius : calc(var(--global-border-radius) - var(--radio-tabs-vertical-gap));
+    }
+
+    &.needs-scroll {
+        padding-left  : 26px;
+        padding-right : 26px;
     }
 
     /* Active indicator ///////////////////////////////////////////////////// */
@@ -61,5 +66,41 @@
 
     &:has(:focus-visible) .indicator {
         outline : 2px solid var(--radio-tabs-label-focus-border);
+    }
+
+    /* Scroll buttons /////////////////////////////////////////////////////// */
+    .scroll-button {
+        position        : absolute;
+        top             : 0;
+        bottom          : 0;
+        width           : 24px;
+        display         : flex;
+        align-items     : center;
+        justify-content : center;
+        cursor          : pointer;
+        color           : var(--radio-tabs-label-text-default);
+    }
+
+    .scroll-button svg {
+        width          : 16px;
+        height         : 16px;
+        fill           : none;
+        stroke         : white;
+        stroke-width   : 2px;
+        stroke-linecap : round;
+    }
+
+    .scroll-button:hover {
+        color : var(--radio-tabs-label-text-hover);
+    }
+
+    .scroll-button.left {
+        left          : 0;
+        border-radius : var(--global-border-radius) 0 0 var(--global-border-radius);
+    }
+
+    .scroll-button.right {
+        right         : 0;
+        border-radius : 0 var(--global-border-radius) var(--global-border-radius) 0;
     }
 }

@@ -32,6 +32,8 @@ const RadioTabGroupOptions = (
     const [indicatorPos, setIndicatorPos] = useState<IndicatorPosition>({ width: 0, transform: "translateX(0)" });
     const labelsRef = useRef<(HTMLLabelElement | null)[]>([]);
 
+    const [needsScroll, setNeedsScroll] = useState(true);
+
     // Update indicator position based on selected radio
     useEffect(() => {
         const selectedIndex = options.findIndex(option => option.value === value);
@@ -61,14 +63,31 @@ const RadioTabGroupOptions = (
     };
 
     return (
-        <Div data-radio-tab-group name={derivedName} required={required}>
-            <div
+        <Div
+            data-radio-tab-group
+            name={derivedName}
+            required={required}
+            className={needsScroll ? "needs-scroll" : ""}
+        >
+            {/* SELECTED OPTION INDICATOR ////////////////////////////////////////////////////////////////////////// */}
+            <Div
                 className="indicator"
                 style={{
                     width: `${indicatorPos.width}px`,
                     transform: indicatorPos.transform,
                 }}
             />
+
+            {/* LEFT SCROLL BUTTON ///////////////////////////////////////////////////////////////////////////////// */}
+            {needsScroll &&
+                <Div className="scroll-button left">
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="15 18  9 12  15 6" />
+                    </svg>
+                </Div>
+            }
+
+            {/* RADIO OPTIONS ////////////////////////////////////////////////////////////////////////////////////// */}
             {options.map((option, index) => {
                 const { id: optionId, ...optionProps } = option;
                 const finalId = optionId || `${id}-option-${index}`;
@@ -93,6 +112,15 @@ const RadioTabGroupOptions = (
                     </React.Fragment>
                 );
             })}
+
+            {/* RIGHT SCROLL BUTTON //////////////////////////////////////////////////////////////////////////////// */}
+            {needsScroll &&
+                <Div className="scroll-button right">
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="9 6  15 12  9 18" />
+                    </svg>
+                </Div>
+            }
         </Div>
     );
 };
