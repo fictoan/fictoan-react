@@ -70,10 +70,10 @@
 }
 
 /* INPUT //////////////////////////////////////////////////////////////////// */
-[data-form-item][data-input-field],
-[data-form-item][data-text-area],
-[data-form-item][data-select-wrapper],
-[data-form-item][data-listbox-wrapper] {
+[data-form-item] [data-input-field],
+[data-form-item] [data-text-area],
+[data-form-item] [data-select-wrapper],
+[data-form-item] [data-listbox-wrapper] {
     grid-area : input;
 }
 
@@ -149,6 +149,7 @@
 /* SPECIAL CASE ///////////////////////////////////////////////////////////// */
 /* Here, this overflow rule is required for the scroll behaviour to work, as */
 /* the clipping needs to happen for the scroll buttons to show */
-[data-form-item]:has([data-radio-tab-group]) {
+[data-form-item]:has([data-radio-tab-group]),
+[data-input-wrapper]:has([data-radio-tab-group]) {
     overflow : auto;
 }

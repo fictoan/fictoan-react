@@ -22,8 +22,6 @@ interface ExtendedRadioGroupProps extends Omit<RadioGroupProps, "as"> {
     optionsWrapperRef: React.RefObject<HTMLDivElement>;
 }
 
-type RadioTabBaseProps = BaseInputComponentProps<HTMLDivElement> & ExtendedRadioGroupProps;
-
 // COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 const RadioTabGroupOptions = (
     {
@@ -37,32 +35,31 @@ const RadioTabGroupOptions = (
         onMeasure,
         optionsWrapperRef,
         ...props
-    }: ExtendedRadioGroupProps & {
-        onMeasure: (needsScroll: boolean, maxScroll: number) => void;
-        optionsWrapperRef: React.RefObject<HTMLDivElement>;
-    }) => {
+    }: ExtendedRadioGroupProps) => {
     const derivedName = useMemo(() => name || id, [name, id]);
+
     const [indicatorPos, setIndicatorPos] = useState<IndicatorPosition>({ width: 0, transform: "translateX(0)" });
+    const [needsScroll, setNeedsScroll] = useState(false);
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const [maxScroll, setMaxScroll] = useState(0);
+
     const labelsRef = useRef<(HTMLLabelElement | null)[]>([]);
-    const containerRef = useRef<HTMLDivElement>(null);
 
     // Function to measure and determine if scrolling is needed
     const measureWidths = useCallback(() => {
         if (!optionsWrapperRef.current) return;
 
         const wrapper = optionsWrapperRef.current;
-        const formItem = wrapper.closest("[data-form-item]");
+        const inputWrapper = wrapper.closest("[data-input-wrapper]");
 
-        if (wrapper && formItem) {
+        if (wrapper && inputWrapper) {
             const totalContentWidth = wrapper.scrollWidth;
-            const availableWidth = formItem.clientWidth;
+            const availableWidth = inputWrapper.clientWidth;
             const needsToScroll = totalContentWidth > availableWidth;
 
-            // Call onMeasure with the scroll status and max scroll amount
-            onMeasure(
-                needsToScroll,
-                needsToScroll ? totalContentWidth - availableWidth : 0
-            );
+            setNeedsScroll(needsToScroll);
+            setMaxScroll(needsToScroll ? totalContentWidth - availableWidth : 0);
+            onMeasure(needsToScroll, needsToScroll ? totalContentWidth - availableWidth : 0);
         }
     }, [onMeasure]);
 
@@ -80,8 +77,8 @@ const RadioTabGroupOptions = (
         });
 
         observer.observe(wrapper);
-        if (wrapper.closest("[data-form-item]")) {
-            observer.observe(wrapper.closest("[data-form-item]") as Element);
+        if (wrapper.closest("[data-input-wrapper]")) {
+            observer.observe(wrapper.closest("[data-input-wrapper]") as Element);
         }
 
         return () => observer.disconnect();
@@ -114,12 +111,44 @@ const RadioTabGroupOptions = (
         }
     };
 
+    const handleScroll = useCallback((direction: "left" | "right") => {
+        const optionsWrapper = optionsWrapperRef.current;
+        if (!optionsWrapper) return;
+
+        const visibleWidth = optionsWrapper.clientWidth;
+        const scrollAmount = visibleWidth * 0.8; // Keep the 80% scroll amount
+
+        // Calculate the new position
+        const targetPosition = direction === "right"
+            ? scrollPosition + scrollAmount
+            : scrollPosition - scrollAmount;
+
+        // Explicitly clamp the value between 0 and maxScroll
+        const newPosition = Math.max(0, Math.min(targetPosition, maxScroll));
+
+        setScrollPosition(newPosition);
+
+        requestAnimationFrame(() => {
+            optionsWrapper.style.transform = `translateX(-${newPosition}px)`;
+        });
+    }, [scrollPosition, maxScroll]);
+
+    const canScrollLeft = scrollPosition > 0;
+    const canScrollRight = scrollPosition < maxScroll;
+
     return (
-        <Div
-            data-radio-tab-group
-            name={derivedName}
-            required={required}
-        >
+        <Div data-radio-tab-group name={derivedName} required={required}>
+            {needsScroll && canScrollLeft && (
+                <Div
+                    className="scroll-button left"
+                    onClick={() => handleScroll("left")}
+                >
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                </Div>
+            )}
+
             <Div
                 className="rtg-options-wrapper"
                 ref={optionsWrapperRef}
@@ -158,46 +187,28 @@ const RadioTabGroupOptions = (
                     );
                 })}
             </Div>
+
+            {needsScroll && canScrollRight && (
+                <Div
+                    className="scroll-button right"
+                    onClick={() => handleScroll("right")}
+                >
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="9 6 15 12 9 18" />
+                    </svg>
+                </Div>
+            )}
         </Div>
     );
 };
 
-// Main RadioTabGroup component that will handle the BaseInputComponent and scroll buttons
+// Main RadioTabGroup component
 export const RadioTabGroup = React.forwardRef(
     ({ size = "medium", ...props }: RadioTabGroupProps, ref: React.Ref<HTMLDivElement>) => {
-        const [needsScroll, setNeedsScroll] = useState(false);
-        const [scrollPosition, setScrollPosition] = useState(0);
-        const [maxScroll, setMaxScroll] = useState(0);
-        const wrapperRef = useRef<HTMLDivElement>(null);
         const optionsWrapperRef = useRef<HTMLDivElement>(null);
 
-        // Throttle resize measurements
-        const handleMeasure = useCallback((needsToScroll: boolean, maxScrollValue: number) => {
-            // Only update if values have changed significantly
-            setNeedsScroll(needsToScroll);
-            setMaxScroll(Math.floor(maxScrollValue)); // Round down to avoid floating point issues
-        }, []);
-
-        const handleScroll = useCallback((direction: "left" | "right") => {
-            const optionsWrapper = optionsWrapperRef.current;
-            if (!optionsWrapper) return;
-
-            const visibleWidth = optionsWrapper.clientWidth;
-            const scrollAmount = visibleWidth * 0.8;
-
-            let newPosition = direction === "right"
-                ? Math.min(scrollPosition + scrollAmount, maxScroll)
-                : Math.max(scrollPosition - scrollAmount, 0);
-
-            setScrollPosition(newPosition);
-
-            requestAnimationFrame(() => {
-                optionsWrapper.style.transform = `translateX(-${newPosition}px)`;
-            });
-        }, [scrollPosition, maxScroll]);
-
-        const canScrollLeft = scrollPosition > 0;
-        const canScrollRight = scrollPosition < maxScroll;
+        // Stub for onMeasure as we handle everything in RadioTabGroupOptions now
+        const handleMeasure = useCallback(() => {}, []);
 
         let classNames = [];
         if (size) {
@@ -205,40 +216,16 @@ export const RadioTabGroup = React.forwardRef(
         }
 
         return (
-            <Div className="radio-tab-group-container" ref={wrapperRef}>
-                {needsScroll && canScrollLeft && (
-                    <Div
-                        className="scroll-button left"
-                        onClick={() => handleScroll("left")}
-                    >
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="15 18 9 12 15 6" />
-                        </svg>
-                    </Div>
-                )}
-
-                <BaseInputComponent<RadioButtonElementType>
-                    as={RadioTabGroupOptions}
-                    ref={ref}
-                    classNames={classNames}
-                    bgColour={props.bgColour}
-                    // @ts-ignore
-                    onMeasure={handleMeasure}
-                    optionsWrapperRef={optionsWrapperRef}
-                    {...props}
-                />
-
-                {needsScroll && canScrollRight && (
-                    <Div
-                        className="scroll-button right"
-                        onClick={() => handleScroll("right")}
-                    >
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="9 6 15 12 9 18" />
-                        </svg>
-                    </Div>
-                )}
-            </Div>
+            <BaseInputComponent<RadioButtonElementType>
+                as={RadioTabGroupOptions}
+                ref={ref}
+                classNames={classNames}
+                bgColour={props.bgColour}
+                // @ts-expect-error
+                onMeasure={handleMeasure}
+                optionsWrapperRef={optionsWrapperRef}
+                {...props}
+            />
         );
     }
 );

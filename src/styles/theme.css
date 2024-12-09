@@ -424,30 +424,34 @@
 /* RADIO BUTTON ///////////////////////////////////////////////////////////// */
 :root {
     /* GENERIC RADIO BUTTON ================================================= */
-    --radio-circle-bg-default       : var(--slate-light60);
-    --radio-circle-bg-hover         : var(--slate-light40);
-    --radio-circle-bg-checked       : var(--hue);
-    --radio-circle-bg-disabled      : var(--slate-light90);
+    --radio-circle-bg-default          : var(--slate-light60);
+    --radio-circle-bg-hover            : var(--slate-light40);
+    --radio-circle-bg-checked          : var(--hue);
+    --radio-circle-bg-disabled         : var(--slate-light90);
 
-    --radio-button-dot              : var(--white);
+    --radio-button-dot                 : var(--white);
 
     /* RADIO GROUP TABS ===================================================== */
-    --radio-tabs-height             : 48px;
-    --radio-tabs-vertical-gap       : 4px;
-    --radio-tabs-bg                 : var(--input-bg-default);
-    --radio-tabs-border             : var(--input-bg-default);
+    --radio-tabs-height                : 48px;
+    --radio-tabs-vertical-gap          : 4px;
+    --radio-tabs-bg                    : var(--input-bg-default);
+    --radio-tabs-border                : var(--input-bg-default);
 
-    --radio-tabs-label-text-default : var(--input-text-default);
+    --radio-tabs-label-text-default    : var(--input-text-default);
 
-    --radio-tabs-label-text-hover   : var(--slate-dark80);
-    --radio-tabs-label-bg-hover     : var(--slate-light90-opacity40);
+    --radio-tabs-label-text-hover      : var(--slate-dark80);
+    --radio-tabs-label-bg-hover        : var(--slate-light90-opacity40);
 
-    --radio-tabs-label-bg-active    : var(--white);
-    --radio-tabs-label-text-active  : var(--black);
+    --radio-tabs-label-bg-active       : var(--white);
+    --radio-tabs-label-text-active     : var(--black);
 
-    --radio-tabs-label-focus-border : var(--blue);
+    --radio-tabs-label-focus-border    : var(--blue);
 
-    --radio-tabs-scroll-button-default : var(--slate-light40)
+    --radio-tabs-scroll-button-default : var(--slate-light10-opacity30);
+    --radio-tabs-scroll-arrow-default  : var(--white);
+
+    --radio-tabs-scroll-button-hover   : var(--white);
+    --radio-tabs-scroll-arrow-hover    : var(--white);
 }
 
 /* RANGE //////////////////////////////////////////////////////////////////// */
@@ -506,7 +510,7 @@
     --sidebar-item-text-scale                : 100%;
     --sidebar-item-text-weight               : 600;
 
-    --sidebar-item-alert-bg              : var(--red);
+    --sidebar-item-alert-bg                  : var(--red);
 
     --sidebar-footer-height                  : 40px;
     --sidebar-footer-bg                      : var(--white);

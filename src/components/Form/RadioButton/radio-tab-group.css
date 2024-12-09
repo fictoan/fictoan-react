@@ -1,85 +1,74 @@
-[data-radio-tab-group] .rtg-options-wrapper {
-    position      : relative;
-    display       : inline-flex;
-    background    : var(--radio-tabs-bg);
-    border-radius : var(--global-border-radius);
-    height        : var(--radio-tabs-height);
-    border        : var(--radio-tabs-vertical-gap) solid var(--radio-tabs-border);
-    user-select   : none;
-    transition    : transform 0.3s ease;
-    will-change   : transform;
-
-    /* Hide radio inputs but keep them accessible */
-    & input[type="radio"] {
-        position     : absolute;
-        width        : 1px;
-        height       : 1px;
-        padding      : 0;
-        margin       : -1px;
-        overflow     : hidden;
-        clip         : rect(0, 0, 0, 0);
-        white-space  : nowrap;
-        border-width : 0;
-    }
-
-    & label {
-        display                    : flex;
-        align-items                : center;
-        height                     : 100%;
-        padding                    : 0 clamp(0.5rem, 2vw + 0.25rem, 2rem);
-        cursor                     : pointer;
-        text-align                 : center;
-        border-radius              : var(--global-border-radius);
-        color                      : var(--radio-tabs-label-text-default);
-        transition                 : background, color;
-        transition-timing-function : ease-in-out;
-        white-space                : nowrap;
-        z-index                    : 5;
-    }
-
-    & input.size-nano + label {
-        padding : 0 4px;
-    }
-
-    & input:checked + label {
-        color : var(--radio-tabs-label-text-active);
-    }
-
-    & input:not(:checked) + label:hover {
-        background    : var(--radio-tabs-label-bg-hover);
-        color         : var(--radio-tabs-label-text-hover);
-        border-radius : calc(var(--global-border-radius) - var(--radio-tabs-vertical-gap));
-    }
-
-    /* Active indicator ///////////////////////////////////////////////////// */
-    & .indicator {
-        position       : absolute;
-        height         : 100%;
-        pointer-events : none;
-        background     : var(--radio-tabs-label-bg-active);
-        border-radius  : calc(var(--global-border-radius) - var(--radio-tabs-vertical-gap));
-        transition     : all 0.2s ease-in-out;
-    }
-
-    &:has(:focus-visible) .indicator {
-        outline : 2px solid var(--radio-tabs-label-focus-border);
-    }
-
-    /* SCROLLING OPTIONS WHEN THERE ARE MANY OPTIONS AND NO SPACE /////////// */
-    /* Scrollable tabs ====================================================== */
-    &.needs-scroll {
-        padding-left               : 26px;
-        padding-right              : 26px;
-        display                    : flex;
-        overflow-x                 : hidden;
-        scroll-behavior            : smooth;
-        overflow-y                 : hidden;
-        -webkit-overflow-scrolling : touch; /* For better iOS scrolling */
-    }
-}
-
-.radio-tab-group-container {
+[data-radio-tab-group] {
     position : relative;
+    overflow : hidden;
+
+    .rtg-options-wrapper {
+        position      : relative;
+        display       : inline-flex;
+        background    : var(--radio-tabs-bg);
+        border-radius : var(--global-border-radius);
+        height        : var(--radio-tabs-height);
+        border        : var(--radio-tabs-vertical-gap) solid var(--radio-tabs-border);
+        user-select   : none;
+        transition    : transform 0.3s ease;
+        will-change   : transform;
+
+        /* Hide radio inputs but keep them accessible */
+        & input[type="radio"] {
+            position     : absolute;
+            width        : 1px;
+            height       : 1px;
+            padding      : 0;
+            margin       : -1px;
+            overflow     : hidden;
+            clip        : rect(0, 0, 0, 0);
+            white-space  : nowrap;
+            border-width : 0;
+        }
+
+        & label {
+            display                    : flex;
+            align-items                : center;
+            height                     : 100%;
+            padding                    : 0 clamp(0.5rem, 2vw + 0.25rem, 2rem);
+            cursor                     : pointer;
+            text-align                 : center;
+            border-radius              : var(--global-border-radius);
+            color                      : var(--radio-tabs-label-text-default);
+            transition                 : background, color;
+            transition-timing-function : ease-in-out;
+            white-space                : nowrap;
+            z-index                    : 5;
+        }
+
+        & input.size-nano + label {
+            padding : 0 4px;
+        }
+
+        & input:checked + label {
+            color : var(--radio-tabs-label-text-active);
+        }
+
+        & input:not(:checked) + label:hover {
+            background    : var(--radio-tabs-label-bg-hover);
+            color         : var(--radio-tabs-label-text-hover);
+            border-radius : calc(var(--global-border-radius) - var(--radio-tabs-vertical-gap));
+        }
+
+        /* Active indicator ///////////////////////////////////////////////////// */
+        & .indicator {
+            position       : absolute;
+            height         : 100%;
+            pointer-events : none;
+            background     : var(--radio-tabs-label-bg-active);
+            border-radius  : calc(var(--global-border-radius) - var(--radio-tabs-vertical-gap));
+            transition     : all 0.2s ease-in-out;
+        }
+
+        &:has(:focus-visible) .indicator {
+            outline : 2px solid var(--radio-tabs-label-focus-border);
+        }
+    }
 
     /* Scroll buttons ======================================================= */
     .scroll-button {
@@ -92,20 +81,26 @@
         align-items     : center;
         justify-content : center;
         cursor          : pointer;
-        color           : var(--radio-tabs-label-text-default);
+        background-color: var(--radio-tabs-scroll-button-default);
+        backdrop-filter: blur(8px);
+
+        &:hover {
+            background-color: var(--radio-tabs-label-bg-hover);
+        }
     }
 
     .scroll-button svg {
         width          : 16px;
         height         : 16px;
         fill           : none;
-        stroke         : white;
+        stroke         : var(--radio-tabs-scroll-arrow-default);
         stroke-width   : 2px;
         stroke-linecap : round;
-    }
+        stroke-linejoin: round;
 
-    .scroll-button:hover {
-        color : var(--radio-tabs-label-text-hover);
+        &:hover {
+            stroke : var(--radio-tabs-scroll-arrow-hover);
+        }
     }
 
     .scroll-button.left {
@@ -117,4 +112,10 @@
         right         : 0;
         border-radius : 0 var(--global-border-radius) var(--global-border-radius) 0;
     }
+
+    /* When scroll is needed, add padding for the buttons */
+    /*&:has(.scroll-button) .rtg-options-wrapper {*/
+    /*    padding-left  : 26px;*/
+    /*    padding-right : 26px;*/
+    /*}*/
 }
