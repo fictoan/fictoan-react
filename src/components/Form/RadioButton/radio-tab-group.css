@@ -37,7 +37,7 @@
             display                    : flex;
             align-items                : center;
             height                     : 100%;
-            padding                    : 0 clamp(0.5rem, 2vw + 0.25rem, 2rem);
+            /*padding                    : 0 clamp(0.5rem, 2vw + 0.25rem, 2rem);*/
             cursor                     : pointer;
             text-align                 : center;
             border-radius              : var(--global-border-radius);
