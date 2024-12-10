@@ -1,7 +1,7 @@
 export { Checkbox, type CheckboxProps } from "./Checkbox/Checkbox";
 export { CheckboxGroup, SwitchGroup, type InputGroupProps } from "./Checkbox/CheckboxAndSwitchGroup";
 
-export { FileUpload, type FileUploadProps } from "./InputField/FileUpload";
+export { FileUpload, type FileUploadProps } from "./FileUpload/FileUpload";
 
 export { Form, type FormProps } from "./Form/Form";
 
