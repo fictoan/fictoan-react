@@ -40,12 +40,12 @@
 
 .file-upload-content p {
     margin : 0;
-    color  : var(--file-upload-area-text-default);
+    color  : var(--file-upload-area-main-text-default);
 }
 
 .file-upload-area:hover .file-upload-content p,
 [data-file-upload-area].dragging .file-upload-content p {
-    color : var(--file-upload-area-text-hover);
+    color : var(--file-upload-area-main-text-hover);
 }
 
 .uploaded-files {

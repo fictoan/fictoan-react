@@ -7,10 +7,10 @@ import { Div } from "../../Element/Tags";
 import { Text } from "../../Typography/Text";
 import { Badge } from "../../Badge/Badge";
 
-// STYLES ============================================================================================================
+// STYLES ==============================================================================================================
 import "./file-upload.css";
 
-// TYPES =============================================================================================================
+// TYPES ===============================================================================================================
 import { BaseInputComponentProps } from "../BaseInputComponent/constants";
 import { InputLabelCustomProps } from "../InputLabel/InputLabel";
 import { ColourPropTypes } from "components/Element/constants";
@@ -18,18 +18,20 @@ import { ColourPropTypes } from "components/Element/constants";
 export type FileUploadElementType = HTMLInputElement;
 export type FileUploadProps = Omit<BaseInputComponentProps<HTMLInputElement>, "onChange"> &
     InputLabelCustomProps & {
-        accept             ? : string;
-        allowMultipleFiles ? : boolean;
-        capture            ? : "user" | "environment";
-        height            ? : string;
-        onChange           ? : (files: File[]) => void;
-        badgeBgColour      ? : ColourPropTypes;
-        badgeBgColor       ? : ColourPropTypes;
-        badgeTextColour    ? : ColourPropTypes;
-        badgeTextColor     ? : ColourPropTypes;
+        accept              ? : string;
+        allowMultipleFiles  ? : boolean;
+        capture             ? : "user" | "environment";
+        height              ? : string;
+        onChange            ? : (files: File[]) => void;
+        instructionMainText ? : string;
+        instructionSubText  ? : string;
+        badgeBgColour       ? : ColourPropTypes;
+        badgeBgColor        ? : ColourPropTypes;
+        badgeTextColour     ? : ColourPropTypes;
+        badgeTextColor      ? : ColourPropTypes;
     };
 
-// COMPONENT /////////////////////////////////////////////////////////////////////////////////////////////////////////
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const FileUpload = React.forwardRef(
     (
         {
@@ -41,6 +43,8 @@ export const FileUpload = React.forwardRef(
             height = "120px",
             onChange,
             className = "",
+            instructionMainText = "Drag and drop or click to upload",
+            instructionSubText = "You can add multiple files",
             ...props
         }: FileUploadProps,
         ref: React.Ref<FileUploadElementType>
@@ -132,13 +136,15 @@ export const FileUpload = React.forwardRef(
                         capture={capture}
                         className="file-input"
                     />
-                    
-                    <Div className="file-upload-content">
-                        <Text>Drop files here or click to select</Text>
-                        {allowMultipleFiles && (
-                            <Text isSubtext>You can add multiple files</Text>
-                        )}
-                    </Div>
+
+                    {instructionMainText &&
+                        <Div className="file-upload-content">
+                            <Text>{instructionMainText}</Text>
+                            {instructionSubText && (
+                                <Text isSubtext>{instructionSubText}</Text>
+                            )}
+                        </Div>
+                    }
                 </Div>
 
                 {files.length > 0 && (

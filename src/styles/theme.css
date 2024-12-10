@@ -209,13 +209,13 @@
 /* FILE UPLOAD ////////////////////////////////////////////////////////////// */
 :root {
 
-    --file-upload-area-bg-default     : var(--input-bg-default);
-    --file-upload-area-border-default : var(--input-border-default);
-    --file-upload-area-text-default   : var(--input-label-default);
+    --file-upload-area-bg-default        : var(--input-bg-default);
+    --file-upload-area-border-default    : var(--input-border-default);
+    --file-upload-area-main-text-default : var(--input-label-default);
 
-    --file-upload-area-bg-hover       : var(--button-secondary-bg-hover);
-    --file-upload-area-border-hover   : var(--button-secondary-border-default);
-    --file-upload-area-text-hover     : var(--button-secondary-text-default);
+    --file-upload-area-bg-hover          : var(--button-secondary-bg-hover);
+    --file-upload-area-border-hover      : var(--button-secondary-border-default);
+    --file-upload-area-main-text-hover   : var(--button-secondary-text-default);
 }
 
 /* INPUT FIELD ////////////////////////////////////////////////////////////// */
