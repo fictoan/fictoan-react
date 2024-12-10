@@ -10,11 +10,10 @@ import "./radio-tab-group.css";
 
 // TYPES ===============================================================================================================
 import { RadioTabGroupProps, RadioGroupProps, RadioButtonElementType } from "./constants";
-import { BaseInputComponentProps } from "components/Form/BaseInputComponent/constants";
 
 interface IndicatorPosition {
-    width: number;
-    transform: string;
+    width     : number;
+    transform : string;
 }
 
 interface ExtendedRadioGroupProps extends Omit<RadioGroupProps, "as"> {
@@ -37,16 +36,18 @@ const RadioTabGroupOptions = (
         ...props
     }: ExtendedRadioGroupProps) => {
     const derivedName                           = useMemo(() => name || id, [ name, id ]);
+
     const [ indicatorPos, setIndicatorPos ]     = useState<IndicatorPosition>({
         width     : 0,
         transform : "translateX(0)",
     });
-    const labelsRef                             = useRef<(HTMLLabelElement | null)[]>([]);
     const [ needsScroll, setNeedsScroll ]       = useState(false);
     const [ scrollPosition, setScrollPosition ] = useState(0);
     const [ maxScroll, setMaxScroll ]           = useState(0);
 
-    // Function to measure and determine if scrolling is needed
+    const labelsRef                             = useRef<(HTMLLabelElement | null)[]>([]);
+
+    // Measure and determine if scrolling is needed ====================================================================
     const measureWidths = useCallback(() => {
         if (!optionsWrapperRef.current) return;
 
@@ -64,7 +65,7 @@ const RadioTabGroupOptions = (
         }
     }, [ onMeasure ]);
 
-    // Set up resize observer
+    // Set up resize observer to measure widths on window resize =======================================================
     useEffect(() => {
         const wrapper = optionsWrapperRef.current;
         if (!wrapper) return;
@@ -106,17 +107,20 @@ const RadioTabGroupOptions = (
         }
     }, [ value, options ]);
 
+    // HANDLE RADIO CHANGE =============================================================================================
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (onChange) {
             onChange(e.target.value);
         }
     };
 
+    // SCROLL LEFT OR RIGHT ============================================================================================
     const handleScroll = useCallback((direction: "left" | "right") => {
         const optionsWrapper = optionsWrapperRef.current;
         if (!optionsWrapper) return;
 
         const visibleWidth = optionsWrapper.clientWidth;
+        // TODO: Scroll only a few options at a time, not straight to the end
         const scrollAmount = visibleWidth * 0.8;
 
         let newPosition = direction === "right"
@@ -135,6 +139,7 @@ const RadioTabGroupOptions = (
 
     return (
         <Div data-radio-tab-group name={derivedName} required={required}>
+            {/* LEFT SCROLL BUTTON ================================================================================= */}
             {needsScroll && canScrollLeft && (
                 <Div
                     className="scroll-button left"
@@ -146,11 +151,13 @@ const RadioTabGroupOptions = (
                 </Div>
             )}
 
+            {/* RADIO OPTIONS ====================================================================================== */}
             <Div className="rtg-options-container">
                 <Div
                     className="rtg-options-wrapper"
                     ref={optionsWrapperRef}
                 >
+                    {/* INDICATOR ---------------------------------------------------------------------------------- */}
                     <Div
                         className="indicator"
                         style={{
@@ -185,6 +192,7 @@ const RadioTabGroupOptions = (
                     })}
                 </Div>
 
+                {/* RIGHT SCROLL BUTTON ============================================================================ */}
                 {needsScroll && canScrollRight && (
                     <Div
                         className="scroll-button right"
@@ -200,7 +208,7 @@ const RadioTabGroupOptions = (
     );
 };
 
-// Main RadioTabGroup component
+// COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const RadioTabGroup = React.forwardRef(
     ({ size = "medium", ...props }: RadioTabGroupProps, ref: React.Ref<HTMLDivElement>) => {
         const optionsWrapperRef = useRef<HTMLDivElement>(null);

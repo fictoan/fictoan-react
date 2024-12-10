@@ -8,7 +8,7 @@ import { PortionProps, Portion } from "../../Portion/Portion";
 import { InputLabel, InputLabelCustomProps } from "../InputLabel/InputLabel";
 import { InputCommonProps } from "../BaseInputComponent/constants";
 import { InputField } from "../InputField/InputField";
-import { FileUpload } from "../InputField/FileUpload";
+import { FileUpload } from "../FileUpload/FileUpload";
 import { Checkbox } from "../Checkbox/Checkbox";
 import { Switch } from "../Checkbox/Switch";
 import { RadioButton } from "../RadioButton/RadioButton";
