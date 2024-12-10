@@ -206,6 +206,18 @@
     --divider-tertiary-bg      : var(--slate-light60);
 }
 
+/* FILE UPLOAD ////////////////////////////////////////////////////////////// */
+:root {
+
+    --file-upload-area-bg-default        : var(--input-bg-default);
+    --file-upload-area-border-default    : var(--input-border-default);
+    --file-upload-area-main-text-default : var(--input-label-default);
+
+    --file-upload-area-bg-hover          : var(--button-secondary-bg-hover);
+    --file-upload-area-border-hover      : var(--button-secondary-border-default);
+    --file-upload-area-main-text-hover   : var(--button-secondary-text-default);
+}
+
 /* INPUT FIELD ////////////////////////////////////////////////////////////// */
 :root {
     --input-padding                   : 12px;
@@ -248,7 +260,7 @@
     --input-required-indicator        : var(--red);
 
     --input-helptext                  : var(--slate-dark40);
-    --input-helptext-scale            : 92%;
+    --input-helptext-scale            : 88%;
 
     --input-inner-text-left-default   : var(--slate);
     --input-inner-text-right-default  : var(--slate);
@@ -424,28 +436,34 @@
 /* RADIO BUTTON ///////////////////////////////////////////////////////////// */
 :root {
     /* GENERIC RADIO BUTTON ================================================= */
-    --radio-circle-bg-default       : var(--slate-light60);
-    --radio-circle-bg-hover         : var(--slate-light40);
-    --radio-circle-bg-checked       : var(--hue);
-    --radio-circle-bg-disabled      : var(--slate-light90);
+    --radio-circle-bg-default          : var(--slate-light60);
+    --radio-circle-bg-hover            : var(--slate-light40);
+    --radio-circle-bg-checked          : var(--hue);
+    --radio-circle-bg-disabled         : var(--slate-light90);
 
-    --radio-button-dot              : var(--white);
+    --radio-button-dot                 : var(--white);
 
     /* RADIO GROUP TABS ===================================================== */
-    --radio-tabs-height             : 48px;
-    --radio-tabs-vertical-gap       : 4px;
-    --radio-tabs-bg                 : var(--input-bg-default);
-    --radio-tabs-border             : var(--input-bg-default);
+    --radio-tabs-height                : 48px;
+    --radio-tabs-vertical-gap          : 4px;
+    --radio-tabs-bg                    : var(--input-bg-default);
+    --radio-tabs-border                : var(--input-bg-default);
 
-    --radio-tabs-label-text-default : var(--input-text-default);
+    --radio-tabs-label-text-default    : var(--input-text-default);
 
-    --radio-tabs-label-text-hover   : var(--slate-dark80);
-    --radio-tabs-label-bg-hover     : var(--slate-light90-opacity40);
+    --radio-tabs-label-text-hover      : var(--slate-dark80);
+    --radio-tabs-label-bg-hover        : var(--slate-light90-opacity40);
 
-    --radio-tabs-label-bg-active    : var(--white);
-    --radio-tabs-label-text-active  : var(--black);
+    --radio-tabs-label-bg-active       : var(--white);
+    --radio-tabs-label-text-active     : var(--black);
 
-    --radio-tabs-label-focus-border : var(--blue);
+    --radio-tabs-label-focus-border    : var(--blue);
+
+    --radio-tabs-scroll-button-default : var(--slate-light10-opacity30);
+    --radio-tabs-scroll-arrow-default  : var(--white);
+
+    --radio-tabs-scroll-button-hover   : var(--white);
+    --radio-tabs-scroll-arrow-hover    : var(--white);
 }
 
 /* RANGE //////////////////////////////////////////////////////////////////// */
@@ -504,7 +522,7 @@
     --sidebar-item-text-scale                : 100%;
     --sidebar-item-text-weight               : 600;
 
-    --sidebar-item-alert-bg              : var(--red);
+    --sidebar-item-alert-bg                  : var(--red);
 
     --sidebar-footer-height                  : 40px;
     --sidebar-footer-bg                      : var(--white);
@@ -571,6 +589,12 @@
 
     --tab-alert-badge-bg     : var(--red);
     --tab-alert-badge-border : var(--red);
+}
+
+/* TEXTAREA ///////////////////////////////////////////////////////////////// */
+:root {
+    --textarea-limit-warning : var(--amber);
+    --textarea-limit-error   : var(--input-error-text-invalid);
 }
 
 /* TEXT ///////////////////////////////////////////////////////////////////// */

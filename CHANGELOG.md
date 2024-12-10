@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 1.11.0
+#### ⚠️ BREAKING CHANGES ⚠️
+- Overhaul all form components to follow a state-led `onChange` handling, instead of mucking around with direct DOM 
+  events, meaning instead of `onChange={e => doSomething(e.target.value)}` you can now just do `onChange={value => 
+  setValue(value)}` and do whatever you want using the `useState` hook.
+
+#### GENERIC CHANGES
+- Add `CheckboxGroup` and `SwitchGroup` components, that work in the same way as `RadioGroup`
+- Add `FileUpload` component with drag-and-drop support
+
 ## 1.10.7
 - Fix `CodeBlock` word break bug
 
@@ -11,8 +21,8 @@
 
 ## 1.10.4
 - Fix text alignment for `stringRight` in `InputField`
-- Simplified markup for `Checkbox`, `Switch`, `Select`, `RadioButton`, `RadioGroup` and `RadioTabGroup`, where `name` 
-and `value` props are inherited from `id` if not present.
+- Simplified markup for `Checkbox`, `Switch`, `Select`, `RadioButton`, `RadioGroup` and `RadioTabGroup`, where `name`
+  and `value` props are inherited from `id` if not present.
 
 ## 1.10.3
 - Fix CSS variable mismatch for  `Sidebar`
@@ -30,7 +40,7 @@ and `value` props are inherited from `id` if not present.
 - `CodeBlock` now has robust editing support, and also an `onChange` callback
 
 ## 1.9.2
-- `CodeBlock` now is a peer dependency, and supports lazy loading language support, so you are never downloading 
+- `CodeBlock` now is a peer dependency, and supports lazy loading language support, so you are never downloading
   anything you don't need
 
 ## 1.9.1
@@ -49,7 +59,7 @@ and `value` props are inherited from `id` if not present.
 ## 1.8.1
 #### ⚠️ BREAKING CHANGES ⚠️
 - Remove `SidebarItemIcon` and `SidebarItemText` components to simplify markup
-- #### GENERIC CHANGES
+#### GENERIC CHANGES
 - Fix `defaultValue` bug for `ListBox`
 - Fix text colour for `ListBox`
 
@@ -72,16 +82,16 @@ and `value` props are inherited from `id` if not present.
 ## 1.6.0
 #### ⚠️ BREAKING CHANGES ⚠️
 - Colours now support opacity values
-  - | Old               | New                        |
-    |-------------------|----------------------------|
-    | `--slate-dark-40` | `--slate-dark40`           |
-    | `--red-light-20`  | `--red-light20`            |
-    | —                 | `--red-light20-opacity90`  |
-    | —                 | `--amber-dark20-opacity20` |
-    | —                 | `--pistacho-opacity40`     |
+    - | Old               | New                        |
+          |-------------------|----------------------------|
+      | `--slate-dark-40` | `--slate-dark40`           |
+      | `--red-light-20`  | `--red-light20`            |
+      | —                 | `--red-light20-opacity90`  |
+      | —                 | `--amber-dark20-opacity20` |
+      | —                 | `--pistacho-opacity40`     |
 
-  - Basically you just have to remove the hyphen after the `light` and `dark` string for the new format, and it works on all props: `bgColour`, `textColour`, `var()` etc
-  - This colour generation is now more robust, as its generated with TS, instead of SCSS.
+    - Basically you just have to remove the hyphen after the `light` and `dark` string for the new format, and it works on all props: `bgColour`, `textColour`, `var()` etc
+    - This colour generation is now more robust, as its generated with TS, instead of SCSS.
 - Removed CJS support, ESM only, because it’s 2024
 - Remove Storybook, because we have configurators for each component that does the same job, but better
 #### GENERIC CHANGES

@@ -17,10 +17,11 @@ export interface OptGroupProps {
 }
 
 export interface SelectCustomProps {
-    options     : OptionProps[];
+    options     : OptionProps[] | OptGroupProps[];
     label     ? : string;
     helpText  ? : string;
     errorText ? : string;
+    onChange  ? : (value: string) => void;
 }
 
 export type SelectProps = Omit<CommonAndHTMLProps<SelectElementType>, keyof SelectCustomProps> & SelectCustomProps;

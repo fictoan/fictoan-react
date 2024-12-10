@@ -4,11 +4,11 @@ import React, {
     useRef,
     useEffect,
     MutableRefObject,
-    FormEvent,
     KeyboardEvent,
 } from "react";
 
 // FICTOAN =============================================================================================================
+import { Element } from "../../Element/Element";
 import { Div } from "../../Element/Tags";
 import { InputField } from "../InputField/InputField";
 import { Badge } from "../../Badge/Badge";
@@ -25,97 +25,92 @@ import { searchOptions } from "./listBoxUtils";
 import "./list-box.css";
 
 // TYPES ===============================================================================================================
-import { FormChangeHandler, ValueChangeHandler } from "../BaseInputComponent/constants";
-import { ListBoxProps, OptionForListBoxProps, ListBoxElementType } from "./constants";
+import { ListBoxProps, OptionForListBoxProps, ListBoxElementType, ListBoxCustomProps } from "./constants";
 
-// Internal ListBox component similar to SelectWithOptions
 const ListBoxWithOptions = (
     {
-        id,
         options,
+        label,
         placeholder = "Select an option",
+        id,
         defaultValue,
         onChange,
-        allowMultiSelect = false,
         disabled,
         badgeBgColour,
         badgeBgColor,
         badgeTextColour,
         badgeTextColor,
         selectionLimit,
+        allowMultiSelect = false,
         allowCustomEntries = false,
+        isLoading,
+        value,
+        isFullWidth,
         className,
         ...props
-    }: Omit<ListBoxProps, "as">) => {
-    // STATES ====================================================================================================
+    }: ListBoxCustomProps & { className ? : string }) => {
+
+    // STATES ==========================================================================================================
     const [ isOpen, setIsOpen ]                   = useState(false);
-    const [ selectedOptions, setSelectedOptions ] = useState<OptionForListBoxProps[]>([]);
     const [ searchValue, setSearchValue ]         = useState("");
     const [ activeIndex, setActiveIndex ]         = useState(-1);
 
-    // Initialize selectedOption based on defaultValue
-    const [ selectedOption, setSelectedOption ] = useState<OptionForListBoxProps | null>(() => {
-        if (defaultValue) {
-            return options.find(opt => opt.value === defaultValue) || null;
-        }
-        return null;
-    });
+    const selectedOptions = value
+        ? (Array.isArray(value)
+            ? options.filter(opt => value.includes(opt.value))
+            : options.filter(opt => opt.value === value))
+        : [];
 
-    // Set initial value
+    // Set initial value ===============================================================================================
     useEffect(() => {
-        if (defaultValue) {
-            handleChange(defaultValue);
+        if (defaultValue && onChange) {
+            onChange(defaultValue);
         }
     }, []);
 
-    // REFS =====================================================================================================
+    // REFS ============================================================================================================
     const dropdownRef    = useRef() as MutableRefObject<HTMLSelectElement>;
     const searchInputRef = useRef<HTMLInputElement>(null);
 
-    // CONSTANTS ===============================================================================================
+    // CONSTANTS =======================================================================================================
     const listboxId       = id || `listbox-${Math.random().toString(36).substring(2, 9)}`;
     const filteredOptions = searchOptions(options, searchValue);
 
-    // HANDLERS ================================================================================================
-    const handleChange = (value: string | string[]) => {
-        if (!onChange) return;
-
-        const target = { value };
-        const event = {
-            target,
-            currentTarget: target,
-        } as unknown as FormEvent<HTMLDivElement>;
-
-        onChange(event);
-    };
-
+    // SELECT AN OPTION ================================================================================================
     const handleSelectOption = (option: OptionForListBoxProps) => {
-        if (option.disabled) return;
+        let valueToEmit: string | string[];
 
-        let newSelectedOptions: OptionForListBoxProps[];
         if (allowMultiSelect) {
             const isSelected = selectedOptions.some(opt => opt.value === option.value);
-            if (isSelected) {
-                newSelectedOptions = selectedOptions.filter(opt => opt.value !== option.value);
-            } else {
-                if (selectionLimit && selectedOptions.length >= selectionLimit) {
-                    return;
-                }
-                newSelectedOptions = [ ...selectedOptions, option ];
-            }
-            setSelectedOptions(newSelectedOptions);
-            handleChange(newSelectedOptions.map(opt => opt.value));
+            valueToEmit = isSelected
+                ? selectedOptions
+                    .filter(opt => opt.value !== option.value)
+                    .map(opt => opt.value)
+                : [...selectedOptions.map(opt => opt.value), option.value];
         } else {
-            newSelectedOptions = [ option ];
-            setSelectedOption(option);
-            setSelectedOptions(newSelectedOptions);
-            handleChange(option.value);
+            valueToEmit = option.value;
             setIsOpen(false);
         }
-        setSearchValue("");
-        setActiveIndex(-1);
+
+        // Create a synthetic event that BaseInputComponent will understand
+        const syntheticEvent = {
+            target: {
+                value: valueToEmit
+            }
+        } as React.ChangeEvent<HTMLInputElement>;
+        // @ts-ignore
+        onChange?.(syntheticEvent);
     };
 
+    // SEARCH ==========================================================================================================
+    const handleSearchChange = (valueOrEvent: string | React.FormEvent<HTMLInputElement>) => {
+        const value = typeof valueOrEvent === "string"
+            ? valueOrEvent
+            : (valueOrEvent.target as HTMLInputElement).value;
+        setSearchValue(value);
+    };
+
+    // CUSTOM ENTRY ====================================================================================================
     const handleCustomEntry = () => {
         if (!searchValue.trim() || !allowCustomEntries) return;
 
@@ -129,13 +124,15 @@ const ListBoxWithOptions = (
         setActiveIndex(-1);
     };
 
-    const handleDeleteOption = (e: React.MouseEvent<HTMLElement>, valueToRemove: string) => {
-        e.stopPropagation();
-        const newSelectedOptions = selectedOptions.filter(opt => opt.value !== valueToRemove);
-        setSelectedOptions(newSelectedOptions);
-        handleChange(newSelectedOptions.map(opt => opt.value));
+    // REMOVE AN OPTION ================================================================================================
+    const handleDeleteOption = (valueToRemove: string) => {
+        const valueToEmit = selectedOptions
+            .filter(opt => opt.value !== valueToRemove)
+            .map(opt => opt.value);
+        onChange?.(valueToEmit);
     };
 
+    // ARROW KEYS ======================================================================================================
     const handleKeyDown = (event: KeyboardEvent) => {
         switch (event.key) {
             case "ArrowDown":
@@ -187,23 +184,36 @@ const ListBoxWithOptions = (
         }
     };
 
-    // Click outside handling
+    // CLICK OUTSIDE HANDLING ==========================================================================================
     useClickOutside(dropdownRef, () => {
         setIsOpen(false);
         setActiveIndex(-1);
     });
 
-    // Focus management
+    // FOCUS MANAGEMENT ================================================================================================
     useEffect(() => {
         if (isOpen && searchInputRef.current) {
             searchInputRef.current.focus();
         }
     }, [ isOpen ]);
 
-    // RENDER ==================================================================================================
+    // SCROLL ACTIVE OPTION INTO VIEW ==================================================================================
+    useEffect(() => {
+        if (activeIndex >= 0) {
+            const activeOption = document.querySelector(`[data-index="${activeIndex}"]`);
+            activeOption?.scrollIntoView({ block: "nearest" });
+        }
+    }, [activeIndex]);
+
     return (
-        <Div data-list-box className={`${className || ""} list-box-wrapper ${disabled ? "disabled" : ""}`}
-             ref={dropdownRef}>
+        // PARENT //////////////////////////////////////////////////////////////////////////////////////////////////////
+        <Element
+            as="div"
+            data-list-box
+            classNames={["list-box-wrapper", disabled ? "disabled" : "", className || ""]}
+            ref={dropdownRef}
+            {...props}
+        >
             <Div
                 className="list-box-input-wrapper"
                 onClick={() => !disabled && setIsOpen(!isOpen)}
@@ -223,7 +233,7 @@ const ListBoxWithOptions = (
                                         <Badge
                                             key={option.value}
                                             withDelete={allowMultiSelect}
-                                            onDelete={(e) => handleDeleteOption(e, option.value)}
+                                            onDelete={() => handleDeleteOption(option.value)}
                                             size="small"
                                             shape="rounded"
                                             bgColour={badgeBgColour || badgeBgColor}
@@ -234,12 +244,7 @@ const ListBoxWithOptions = (
                                     ))}
                                 </Div>
                                 {selectionLimit && selectedOptions.length >= selectionLimit && (
-                                    <Text
-                                        className="options-limit-warning"
-                                        textColour="red"
-                                        size="small"
-                                        role="alert"
-                                    >
+                                    <Text className="options-limit-warning" textColour="red" size="small">
                                         You can choose only {selectionLimit} option{selectionLimit === 1 ? "" : "s"}
                                     </Text>
                                 )}
@@ -249,8 +254,8 @@ const ListBoxWithOptions = (
                         )}
                     </>
                 ) : (
-                    selectedOption
-                        ? <Text className="selected-option">{selectedOption.label}</Text>
+                    selectedOptions[0]
+                        ? <Text className="selected-option">{selectedOptions[0].label}</Text>
                         : <span className="placeholder">{placeholder}</span>
                 )}
 
@@ -262,6 +267,7 @@ const ListBoxWithOptions = (
                 </Div>
             </Div>
 
+            {/* DROPDOWN /////////////////////////////////////////////////////////////////////////////////////////// */}
             {isOpen && !disabled && (
                 <Div className="list-box-dropdown">
                     <Div className="list-box-search-wrapper">
@@ -271,9 +277,7 @@ const ListBoxWithOptions = (
                             className="list-box-search"
                             placeholder="Search"
                             value={searchValue}
-                            onChange={(e) => {
-                                setSearchValue((e.target as HTMLInputElement).value);
-                            }}
+                            onChange={handleSearchChange}
                             onKeyDown={handleKeyDown}
                             aria-controls={`${listboxId}-listbox`}
                             aria-label="Search options"
@@ -289,12 +293,14 @@ const ListBoxWithOptions = (
                         )}
                     </Div>
 
-                    <ul
+                    {/* OPTIONS //////////////////////////////////////////////////////////////////////////////////// */}
+                    <Element
+                        as="ul"
                         id={`${listboxId}-listbox`}
                         className="list-box-options"
                         role="listbox"
                         aria-multiselectable={allowMultiSelect}
-                        aria-busy={props.isLoading}
+                        aria-busy={isLoading}
                         tabIndex={-1}
                     >
                         {filteredOptions.length > 0 ? (
@@ -322,20 +328,30 @@ const ListBoxWithOptions = (
                                 No matches found
                             </li>
                         )}
-                    </ul>
+                    </Element>
                 </Div>
             )}
-        </Div>
+        </Element>
     );
 };
 
-// Main ListBox component
+// MAIN LISTBOX COMPONENT //////////////////////////////////////////////////////////////////////////////////////////////
 export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>((props, ref) => {
+    const handleChange = (valueOrEvent: string | string[] | React.ChangeEvent<HTMLInputElement>) => {
+        // Handle both direct values and events
+        const value = typeof valueOrEvent === "object" && "target" in valueOrEvent
+            ? valueOrEvent.target.value
+            : valueOrEvent;
+
+        props.onChange?.(value);
+    };
+
     return (
         <BaseInputComponent<ListBoxElementType>
             as={ListBoxWithOptions}
             ref={ref}
             {...props}
+            onChange={handleChange}
         />
     );
 });

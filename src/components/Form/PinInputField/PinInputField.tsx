@@ -6,7 +6,7 @@ import { InputField } from "../InputField/InputField";
 import { Div } from "../../Element/Tags";
 
 // STYLES ==============================================================================================================
-import "./PinInputField.css";
+import "./pin-input-field.css";
 
 // TYPES ===============================================================================================================
 import { CommonAndHTMLProps } from "../../Element/constants";
@@ -61,9 +61,9 @@ export const PinInputField = React.forwardRef(
     ) => {
         // REFS =====================================================================================================
         const pinInputFieldRef = useRef<PinInputFieldElementType>(null);
+        const [inputRefs, setInputRefs] = useState<React.RefObject<HTMLInputElement>[]>([]);
 
         // STATES ===================================================================================================
-        const [inputRefs, setInputRefs] = useState<React.RefObject<HTMLInputElement>[]>([]);
         const [values, setValues] = useState<string[]>([]);
         const [moveFocus, setMoveFocus] = useState<boolean>(true);
         const [focusedIndex, setFocusedIndex] = useState<number>(-1);
@@ -94,25 +94,28 @@ export const PinInputField = React.forwardRef(
 
         const handleResetPinInput = useCallback(() => {
             setValues(Array(length).fill(""));
-            onChange?.("");
+            onChange?.(""); // Clear the complete value
             if (focusFirstInputOnReset) {
                 focus(0);
                 setFocusedIndex(0);
             }
         }, [length, onChange, focus, focusFirstInputOnReset]);
 
+        // VALUE HANDLING ==============================================================================================
         const setValue = useCallback(
             (value: string, index: number) => {
                 const nextValues = [...values];
                 nextValues[index] = value;
                 setValues(nextValues);
+
+                // Emit complete PIN value
                 onChange?.(nextValues.join(""));
 
                 const isComplete =
                           value !== "" &&
                           nextValues.length === length &&
                           nextValues.every((inputValue) => inputValue != null && inputValue !== "") &&
-                          index == length - 1;
+                          index === length - 1;
 
                 if (!isComplete) {
                     setMoveFocus(true);
@@ -122,60 +125,58 @@ export const PinInputField = React.forwardRef(
             [focusNext, length, onChange, values]
         );
 
-        const handleInputChange = (event: React.FormEvent<HTMLInputElement>, inputFieldIndex: number) => {
-            const eventValue = event.currentTarget.value;
+        // Updated input handler to work with both string values and events
+        const handleInputChange = useCallback((inputValue: string | React.FormEvent<HTMLInputElement>, inputFieldIndex: number) => {
+            // Extract value whether we get a string or an event
+            const value = typeof inputValue === "string" ? inputValue : (inputValue.target as HTMLInputElement).value;
             const currentValue = values[inputFieldIndex];
 
-            if (eventValue === "") {
+            if (value === "") {
                 setValue("", inputFieldIndex);
                 return;
             }
 
-            // Handle scenario where multiple characters are entered in a single InputField
-            if (eventValue.length > 1 && inputFieldIndex < length - 1) {
-                if (validate(eventValue, type)) {
+            // Rest of the logic remains the same
+            if (value.length > 1 && inputFieldIndex < length - 1) {
+                if (validate(value, type)) {
                     let nextValue: string[] = [];
-                    // In all cases, we need to ensure characters longer than the remaining fields are removed.
-                    if (currentValue == "") {
-                        // Case: Current input field is empty
-                        nextValue = eventValue.split("").filter((_, j) => inputFieldIndex + j < length);
-                    } else if (event.currentTarget.selectionEnd === eventValue.length) {
-                        // Case: Current field has a value and cursor is after it
-                        nextValue = eventValue.split("").filter((_, j) => j > 0 && inputFieldIndex + j - 1 < length);
+                    const chars = value.split("");
+
+                    if (currentValue === "") {
+                        nextValue = chars.filter((_, j) => inputFieldIndex + j < length);
                     } else {
-                        // Case: Current field has a value and cursor is before it
-                        nextValue = eventValue
-                            .split("")
-                            .filter((_, j) => j < eventValue.length - 1 && inputFieldIndex + j < length);
+                        const isAppending = inputRefs[inputFieldIndex].current?.selectionEnd === value.length;
+                        if (isAppending) {
+                            nextValue = chars.filter((_, j) => j > 0 && inputFieldIndex + j - 1 < length);
+                        } else {
+                            nextValue = chars.filter((_, j) => j < value.length - 1 && inputFieldIndex + j < length);
+                        }
                     }
-                    setValues((values) =>
-                        values.map((v, j) =>
-                            j >= inputFieldIndex && j < inputFieldIndex + nextValue.length
-                                ? nextValue[j - inputFieldIndex]
-                                : v
-                        )
+
+                    const newValues = values.map((v, j) =>
+                        j >= inputFieldIndex && j < inputFieldIndex + nextValue.length
+                            ? nextValue[j - inputFieldIndex]
+                            : v
                     );
-                    focus(
-                        inputFieldIndex + nextValue.length < length ? inputFieldIndex + nextValue.length : length - 1
-                    );
-                    onChange?.(nextValue.join(""));
+
+                    setValues(newValues);
+                    onChange?.(newValues.join(""));
+
+                    const nextFocusIndex = Math.min(inputFieldIndex + nextValue.length, length - 1);
+                    focus(nextFocusIndex);
                 }
             } else {
-                let nextValue = eventValue;
+                let nextValue = value;
                 if (currentValue?.length > 0) {
-                    if (currentValue[0] === eventValue.charAt(0)) {
-                        nextValue = eventValue.charAt(1);
-                    } else if (currentValue[0] === eventValue.charAt(1)) {
-                        nextValue = eventValue.charAt(0);
-                    }
+                    nextValue = value.charAt(value.length - 1);
                 }
                 if (validate(nextValue, type)) {
                     setValue(nextValue, inputFieldIndex);
                 }
             }
-        };
+        }, [length, onChange, setValue, type, values, focus, inputRefs]);
 
-        const onKeyDown = (event: React.KeyboardEvent, i: number) => {
+        const handleKeyDown = useCallback((event: React.KeyboardEvent<HTMLInputElement>, i: number) => {
             if (event.key === "Backspace") {
                 if ((event.target as HTMLInputElement).value === "") {
                     if (i > 0) {
@@ -189,7 +190,7 @@ export const PinInputField = React.forwardRef(
                 }
             } else if (event.key === "Escape") {
                 inputRefs[i].current?.blur();
-                onBlur();
+                handleBlur();
             } else if (event.key === "ArrowRight") {
                 if (i < length - 1) {
                     focus(i + 1);
@@ -199,12 +200,13 @@ export const PinInputField = React.forwardRef(
                     focus(i - 1);
                 }
             }
-        };
+        }, [focus, setValue, inputRefs, length]);
 
         // EVENT HANDLERS ==============================================================================================
-        const onFocus = (e: React.FocusEvent<HTMLInputElement>, i: number) => {
+        // Updated focus handler to work with event type
+        const handleFocus = useCallback((e: React.FocusEvent<HTMLInputElement> | undefined, i: number) => {
             setFocusedIndex(i);
-        };
+        }, []);
 
         // When moving around the InputElements using tab key, browsers automatically select
         // the value (if it exists) in the InputElement - which we want to disable. Additionally,
@@ -215,17 +217,16 @@ export const PinInputField = React.forwardRef(
         // value and pasting '67'. By disabling this, we eliminate one of these cases.
         // Is this a hack? Yes. Is there a better way? IDK. Does it matter? Not unless there is a
         // valid reason for users to need selecting a single InputElement within a PinInput.
-        const onSelect = (e: React.SyntheticEvent<HTMLInputElement, Event>) => {
+        const handleSelect = useCallback((e: React.SyntheticEvent<HTMLInputElement, Event>) => {
             const target = e.target as HTMLInputElement;
             setTimeout(() => {
-                // https://github.com/facebook/react/issues/6483
                 target.setSelectionRange(target.value.length, target.value.length);
             }, 0);
-        };
+        }, []);
 
-        const onBlur = () => {
+        const handleBlur = useCallback(() => {
             setFocusedIndex(-1);
-        };
+        }, []);
 
         // EFFECTS =====================================================================================================
         useEffect(() => {
@@ -244,7 +245,8 @@ export const PinInputField = React.forwardRef(
         }, [length, autoFocus]);
 
         useImperativeHandle(
-            ref, () => ({
+            ref,
+            () => ({
                 ...(pinInputFieldRef.current as HTMLDivElement),
                 reset: handleResetPinInput
             }) as PinInputFieldHandle,
@@ -262,25 +264,25 @@ export const PinInputField = React.forwardRef(
             <Div
                 data-pin-input-field
                 ref={pinInputFieldRef}
-                classNames={classNames}
+                classNames={isFullWidth ? ["full-width"] : []}
                 role="group"
                 aria-label={inputDescription}
                 aria-required={props.required}
                 {...props}
             >
-                {[...Array(length)].map((_, i) => (
+                {Array.from({ length }, (_, i) => (
                     <InputField
                         key={i}
                         id={`${inputGroupId}-${i}`}
                         ref={inputRefs[i]}
                         type={mask ? "password" : type === "number" ? "tel" : "text"}
                         inputMode={type === "number" ? "numeric" : "text"}
-                        onChange={(e) => handleInputChange(e, i)}
-                        onKeyDown={(e) => onKeyDown(e, i)}
-                        onFocus={(e) => onFocus(e, i)}
-                        onSelect={(e) => onSelect(e)}
-                        onBlur={onBlur}
-                        placeholder={focusedIndex !== i ? `\u2981` : undefined}
+                        onChange={(value: string | React.FormEvent<HTMLInputElement>) => handleInputChange(value, i)}
+                        onKeyDown={(e) => handleKeyDown(e, i)}
+                        onFocus={(e) => handleFocus(e as React.FocusEvent<HTMLInputElement>, i)}
+                        onSelect={handleSelect}
+                        onBlur={handleBlur}
+                        placeholder={focusedIndex !== i ? "\u2981" : undefined}
                         autoComplete={isOTP ? "one-time-code" : "off"}
                         value={values[i] || ""}
                         autoFocus={autoFocus && i === 0}

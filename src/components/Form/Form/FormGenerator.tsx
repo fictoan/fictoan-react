@@ -8,7 +8,7 @@ import { PortionProps, Portion } from "../../Portion/Portion";
 import { InputLabel, InputLabelCustomProps } from "../InputLabel/InputLabel";
 import { InputCommonProps } from "../BaseInputComponent/constants";
 import { InputField } from "../InputField/InputField";
-import { FileUpload } from "../InputField/FileUpload";
+import { FileUpload } from "../FileUpload/FileUpload";
 import { Checkbox } from "../Checkbox/Checkbox";
 import { Switch } from "../Checkbox/Switch";
 import { RadioButton } from "../RadioButton/RadioButton";
@@ -23,6 +23,7 @@ export type FormFieldsType = ElementProps<HTMLInputElement> &
     ElementProps<HTMLTextAreaElement> &
     InputLabelCustomProps &
     InputCommonProps;
+
 export type FormFieldsConfigBase = PortionProps & FormFieldsType;
 
 interface FormFieldOptionsType extends RadioGroupOptionProps {
@@ -34,46 +35,61 @@ interface FormFieldOptionsType extends RadioGroupOptionProps {
 export interface FormFieldsConfig extends FormFieldsConfigBase {
     as: ElementType;
     options?: FormFieldOptionsType[];
+    name: string;  // Making name required for field identification
 }
 
 // Supported Form elements for "as" prop in config
 const FormElements: Record<string, ElementType> = {
-    Checkbox: Checkbox,
-    Switch: Switch,
-    InputField: InputField,
-    FileUpload: FileUpload,
-    InputLabel: InputLabel,
-    RadioButton: RadioButton,
-    RadioGroup: RadioGroup,
-    Select: Select,
-    TextArea: TextArea,
+    Checkbox,
+    Switch,
+    InputField,
+    FileUpload,
+    InputLabel,
+    RadioButton,
+    RadioGroup,
+    Select,
+    TextArea,
     Empty: "div",
 };
 
-const getFormItem = (formField: Omit<FormFieldsConfig, "mobileSpan" | "tabletLandscapeSpan" | "isHorizontal" | "desktopSpan" | "tabletPortraitSpan">, onFieldsChange: React.FormEventHandler | undefined): React.ReactNode => {
-    const { as: elementName, ...formFieldProps } = formField;
+const getFormItem = (
+    formField: Omit<FormFieldsConfig, "mobileSpan" | "tabletLandscapeSpan" | "isHorizontal" | "desktopSpan" | "tabletPortraitSpan">,
+    onFieldChange: (fieldName: string, value: any) => void
+): React.ReactNode => {
+    const { as: elementName, name, ...formFieldProps } = formField;
+
+    // Create an onChange handler specific to this field
+    const handleChange = (value: any) => {
+        onFieldChange(name, value);
+    };
+
+    const ElementComponent = FormElements[elementName as keyof typeof FormElements] || InputField;
 
     return (
         <Element
-            as={FormElements[elementName as keyof typeof FormElements] || InputField}
+            as={ElementComponent}
             {...formFieldProps}
+            name={name}
             isFullWidth
-            // disabled={disabledIds.includes(formFieldProps.id)}
-            onChange={onFieldsChange}
+            onChange={handleChange}
         />
     );
 };
 
 export const generateFormThroughConfig = (
     fields: FormFieldsConfig[],
-    onFieldsChange: React.FormEventHandler | undefined,
+    onFieldChange: (fieldName: string, value: any) => void,
     spacing: SpacingTypes | undefined,
 ): React.ReactNode => {
-    let formChildren: ReactNode[] = [];
-
-    for (const i in fields) {
-        const { desktopSpan, tabletLandscapeSpan, tabletPortraitSpan, mobileSpan, isHorizontal, ...formField } =
-            fields[i];
+    const formChildren: ReactNode[] = fields.map((field, index) => {
+        const {
+                  desktopSpan,
+                  tabletLandscapeSpan,
+                  tabletPortraitSpan,
+                  mobileSpan,
+                  isHorizontal,
+                  ...formField
+              } = field;
 
         const portionProps = {
             desktopSpan,
@@ -83,11 +99,12 @@ export const generateFormThroughConfig = (
             isHorizontal,
         };
 
-        formChildren.push(
-            <Portion {...portionProps} key={`fields-${i}`}>
-                {getFormItem(formField, onFieldsChange)}
+        return (
+            <Portion {...portionProps} key={`${field.name}-${index}`}>
+                {getFormItem(formField, onFieldChange)}
             </Portion>
         );
-    }
+    });
+
     return <Row gutters={spacing}>{formChildren}</Row>;
 };

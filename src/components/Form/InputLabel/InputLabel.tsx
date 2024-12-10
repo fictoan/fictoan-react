@@ -26,7 +26,9 @@ export const InputLabel = React.forwardRef(
             hideLabel,
             htmlFor,
             ...props
-        }: InputLabelProps, ref: React.Ref<InputLabelElementType>) => {
+        }: InputLabelProps,
+        ref: React.Ref<InputLabelElementType>
+    ) => {
         let classNames = [];
 
         if (hideLabel) {
@@ -44,5 +46,5 @@ export const InputLabel = React.forwardRef(
                 {label}
             </Element>
         );
-    },
+    }
 );

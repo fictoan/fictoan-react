@@ -1,0 +1,15 @@
+[data-input-wrapper]:has(> [data-radio-button]:nth-child(2)) {
+    display        : flex;
+    flex-direction : row;
+    gap            : 24px;
+    flex-wrap      : wrap;
+}
+
+[data-input-wrapper]:has(> [data-radio-button].equalise-width:nth-child(2)) > [data-radio-button] {
+    flex : 1 1;
+}
+
+[data-input-wrapper]:has(> [data-radio-button].align-vertical:nth-child(2)) > [data-radio-button] {
+    flex-direction : column;
+}
+

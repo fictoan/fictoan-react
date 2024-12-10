@@ -1,15 +1,17 @@
-textarea {
+textarea[data-textarea] {
     position         : relative;
     width            : 100%;
+    height           : 100%;
     flex             : 1 1 auto;
     font-family      : var(--paragraph-font);
+    color            : var(--input-text-default);
     background-color : var(--input-bg-default);
     border           : 1px solid var(--input-border-default);
     border-radius    : var(--input-border-radius-default);
     padding          : 12px;
-    line-height      : 1;
-    max-width        : 100%;
+    line-height      : var(--paragraph-line-height);
     min-width        : 100%;
+    max-width        : 100%;
     resize           : vertical;
 
     &:active,
@@ -19,3 +21,11 @@ textarea {
         padding          : 11px;
     }
 }
+
+.help-text-wrapper { display : inline-block; }
+
+.limit-normal { color : inherit; }
+
+.limit-warning { color : var(--textarea-limit-warning); }
+
+.limit-exceeded { color : var(--textarea-limit-error); }

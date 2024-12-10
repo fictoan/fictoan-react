@@ -19,7 +19,7 @@ import {
 } from "./constants";
 
 // COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-const SelectWithOptions = ({ id, name, options, className, ...props }: SelectProps) => {
+const SelectWithOptions = ({ id, name, options, className, onChange, ...props }: SelectProps) => {
     // Use ID as default for name if it’s not provided
     const derivedName = useMemo(() => name || id, [name, id]);
 
@@ -40,10 +40,15 @@ const SelectWithOptions = ({ id, name, options, className, ...props }: SelectPro
             key={group.label}
             label={group.label}
         >
-            {/* @ts-ignore */}
             {group.options.map(renderOption)}
         </Element>
     );
+
+    const handleChange = (value: string) => {
+        if (onChange) {
+            onChange(value);
+        }
+    };
 
     return (
         <Div data-select className={className} disabled={props.disabled}>
@@ -51,10 +56,10 @@ const SelectWithOptions = ({ id, name, options, className, ...props }: SelectPro
                 as="select"
                 id={id}
                 name={derivedName}
+                onChange={(value: string) => handleChange(value)}
                 {...props}
             >
                 {options.map((option) =>
-                    // @ts-ignore
                     "options" in option ? renderOptGroup(option) : renderOption(option)
                 )}
             </Element>
