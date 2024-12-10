@@ -102,7 +102,7 @@ p {
 }
 
 .sub-text {
-    font-size: calc(var(--text-medium) * 0.95);
+    font-size: calc(var(--paragraph-font-size) * 0.88);
     color: var(--paragraph-subtext-colour);
 }
 

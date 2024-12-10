@@ -24,6 +24,8 @@ interface RowCustomProps {
 export type RowElementType = HTMLDivElement;
 export type RowProps = Omit<CommonAndHTMLProps<RowElementType>, keyof RowCustomProps> & RowCustomProps;
 
+// TODO: Fix fixed gutter widths
+
 // COMPONENT //////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const Row = React.forwardRef(
     (

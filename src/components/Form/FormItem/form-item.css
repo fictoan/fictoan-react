@@ -58,54 +58,44 @@
     width       : fit-content;
 }
 
-[data-form-item][required] {
-    & > div,
-    & > [data-input-field],
-    & > [data-text-area],
-    & > [data-select-wrapper] {
-        & ~ label::after {
-            position  : absolute;
-            top       : -4px;
-            bottom    : 0;
-            right     : -12px;
-            margin    : auto;
-            content   : "*";
-            font-size : 120%;
-            color     : var(--input-required-indicator);
-        }
-    }
+[data-form-item][required] > label::after {
+    position  : absolute;
+    top       : -4px;
+    bottom    : 0;
+    right     : -12px;
+    margin    : auto;
+    content   : "*";
+    font-size : 120%;
+    color     : var(--input-required-indicator);
 }
 
 /* INPUT //////////////////////////////////////////////////////////////////// */
-[data-form-item][data-input-field],
-[data-form-item][data-text-area],
-[data-form-item][data-select-wrapper] {
+[data-form-item] [data-input-field],
+[data-form-item] [data-text-area],
+[data-form-item] [data-select-wrapper],
+[data-form-item] [data-listbox-wrapper] {
     grid-area : input;
 }
 
-/* INFO ///////////////////////////////////////////////////////////////// */
+/* INFO ///////////////////////////////////////////////////////////////////// */
 [data-form-item] .info-section {
     grid-area : info;
-
     flex-wrap : wrap;
 
-    span.help-text,
-    span.error-text {
+    p.help-text,
+    p.error-text {
         font-size   : var(--input-helptext-scale);
         font-family : var(--paragraph-font);
     }
 
-    span.help-text {
-        color : var(--input-helptext);
+    p.help-text {
+        color       : var(--input-helptext);
+        line-height : 1.12;
     }
 
-    span.error-text {
-        display : none;
-    }
+    p.error-text { display : none; }
 
-    span:not(:last-of-type) {
-        margin-right : 8px;
-    }
+    p:not(:last-of-type) { margin-right : 8px; }
 }
 
 [data-form-item] [data-input-field],
@@ -145,7 +135,7 @@
     }
 }
 
-/* DISABLED */
+/* DISABLED ///////////////////////////////////////////////////////////////// */
 [data-form-item]:has(input:disabled) > label,
 [data-form-item]:has(input:disabled) > label::before,
 [data-form-item]:has(input:disabled) > label::after {
@@ -154,4 +144,12 @@
     pointer-events : none;
     cursor         : not-allowed;
     opacity        : 0.64;
+}
+
+/* SPECIAL CASE ///////////////////////////////////////////////////////////// */
+/* Here, this overflow rule is required for the scroll behaviour to work, as */
+/* the clipping needs to happen for the scroll buttons to show */
+[data-form-item]:has([data-radio-tab-group]),
+[data-input-wrapper]:has([data-radio-tab-group]) {
+    overflow : auto;
 }
