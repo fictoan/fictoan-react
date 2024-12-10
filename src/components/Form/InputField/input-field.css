@@ -17,7 +17,9 @@ input[data-input-field] {
     border-radius    : var(--input-border-radius-default);
     line-height      : 1;
     padding-top      : var(--input-padding);
+    padding-right    : var(--input-padding);
     padding-bottom   : var(--input-padding);
+    padding-left     : var(--input-padding);
 
     ::placeholder {
         color   : var(--input-placeholder-default);
@@ -39,6 +41,7 @@ input[data-input-field] {
 
     &[type=password]:placeholder-shown { letter-spacing : unset; }
 
+    /* TODO : Use the rightIcon setup to do the validation check mark/cross mark */
     /* Grey check mark ====================================================== */
     &.validate-this {
         padding-right       : 40px;
@@ -110,6 +113,17 @@ input[data-input-field] {
         fill         : none;
         stroke-width : 2px;
     }
+}
+
+/* Enable pointer events for interactive side elements */
+[data-input-side-element].is-interactive {
+    pointer-events : auto;
+    cursor         : pointer;
+}
+
+/* Keep child elements of interactive side elements clickable */
+[data-input-side-element].is-interactive * {
+    pointer-events : auto;
 }
 
 /* PADDING LEFT SIDE ======================================================== */

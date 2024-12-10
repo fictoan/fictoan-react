@@ -76,12 +76,21 @@ export const InputField = React.forwardRef(
             const isText     = typeof content === "string";
             const elementRef = React.useRef<HTMLDivElement>(null);
 
+            // Conditional interactivity -------------------------------------------------------------------------------
+            // Check if the content is interactive by checking if it has onClick or other handlers
+            // If it does, it adds the "is-interactive" class, and changes cursor to pointer
+            const isInteractive = React.isValidElement(content) && (
+                content.props.onClick ||
+                content.props.onKeyDown ||
+                content.props.onKeyPress ||
+                content.props.onKeyUp
+            );
+
             // Effect to measure and set the width
             React.useEffect(() => {
                 if (isText && elementRef.current) {
                     const width        = elementRef.current.getBoundingClientRect().width;
-                    // Set the appropriate custom property based on position
-                    const propertyName = `--side-element-${position}-width`;
+                    const propertyName = `--side-element-${position}-width`; // Set custom property based on position
                     (elementRef.current.closest("[data-form-item]") as HTMLElement)?.style.setProperty(
                         propertyName,
                         `${width}px`,
@@ -93,8 +102,8 @@ export const InputField = React.forwardRef(
                 <Div
                     ref={elementRef}
                     data-input-side-element
-                    className={`${position} ${isText ? "is-text" : "is-icon"}`}
-                    aria-hidden="true"
+                    className={`${position} ${isText ? "is-text" : "is-icon"} ${isInteractive ? "is-interactive" : ""}`}
+                    aria-hidden={!isInteractive}
                 >
                     {content}
                 </Div>
