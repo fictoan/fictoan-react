@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.11.2
+- Fix smaller font size classes to use `--paragraph-font-size` instead of `--text-medium` as base
+
 ## 1.11.1
 - `Hyperlink` is an `Element` you can use as a <a> tag so you can access Fictoan props
 
