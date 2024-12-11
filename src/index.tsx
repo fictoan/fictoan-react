@@ -65,7 +65,8 @@ export {
     Main,
     Nav,
     Section,
-    Span
+    Span,
+    Hyperlink
 } from "./components/Element";
 
 // FORM ================================================================================================================

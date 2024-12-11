@@ -10,7 +10,8 @@ export {
     Main,
     Nav,
     Section,
-    Span
+    Span,
+    Hyperlink
 } from "./Tags";
 
 export type { ElementProps } from "./constants";
