@@ -158,11 +158,11 @@ li { color : var(--paragraph-text-colour); }
 
 /* TEXT SIZES ====================================================== */
 /* These are utility classes for one-off size adjustments */
-.text-nano { font-size: calc(var(--text-medium) * 0.56); }
-.text-micro { font-size: calc(var(--text-medium) * 0.64); }
-.text-tiny { font-size: calc(var(--text-medium) * 0.80); }
-.text-small { font-size: calc(var(--text-medium) * 0.96); }
-.text-medium { font-size: var(--text-medium); }
+.text-nano { font-size: calc(var(--paragraph-font-size) * 0.56); }
+.text-micro { font-size: calc(var(--paragraph-font-size) * 0.64); }
+.text-tiny { font-size: calc(var(--paragraph-font-size) * 0.80); }
+.text-small { font-size: calc(var(--paragraph-font-size) * 0.96); }
+.text-medium { font-size: var(--paragraph-font-size); }
 .text-large { font-size: var(--text-large); }
 .text-huge { font-size: var(--text-huge); }
 .text-mega { font-size: var(--text-mega); }
