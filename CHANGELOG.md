@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.11.1
+- `Hyperlink` is an `Element` you can use as a <a> tag so you can access Fictoan props
+
 ## 1.11.0
 #### ⚠️ BREAKING CHANGES ⚠️
 - Overhaul all form components to follow a state-led `onChange` handling, instead of mucking around with direct DOM 
@@ -9,6 +12,8 @@
 #### GENERIC CHANGES
 - Add `CheckboxGroup` and `SwitchGroup` components, that work in the same way as `RadioGroup`
 - Add `FileUpload` component with drag-and-drop support
+- Revamp `FileUpload` with drag-and-drop support and multiple file upload support
+- `Textarea` now has a `charLimit` and `wordLimit` props, along with warning and error messages
 
 ## 1.10.7
 - Fix `CodeBlock` word break bug
