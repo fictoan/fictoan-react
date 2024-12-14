@@ -5,15 +5,23 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Element } from "../Element/Element";
 
 // TYPES ===============================================================================================================
-import type { UseThemeProps } from "./types";
 import { CommonAndHTMLProps } from "../Element/constants";
 
 const storageKey = "fictoan-theme";
 
-const defaultContext: UseThemeProps = { setTheme : (_) => {}, };
-const ThemeContext = React.createContext<UseThemeProps | undefined>(undefined);
+// Create a tuple type for the theme context
+type ThemeContextType = [string, React.Dispatch<React.SetStateAction<string>>];
 
-export const useTheme = () => React.useContext(ThemeContext) ?? defaultContext;
+const defaultContext: ThemeContextType = ["", (_) => {}];
+const ThemeContext = React.createContext<ThemeContextType | undefined>(undefined);
+
+export const useTheme = (): ThemeContextType => {
+    const context = React.useContext(ThemeContext);
+    if (context === undefined) {
+        return defaultContext;
+    }
+    return context;
+};
 
 export type ThemeProviderElementType = HTMLDivElement;
 export interface ThemeProviderProps extends CommonAndHTMLProps<ThemeProviderElementType> {
@@ -80,7 +88,7 @@ export const ThemeProvider = React.forwardRef(
         }, [currentTheme, setTheme]);
 
         return (
-            <ThemeContext.Provider value={{ theme: themeState, setTheme }}>
+            <ThemeContext.Provider value={[themeState, setTheme]}>
                 <Element<ThemeProviderElementType> as="div" data-theme-provider ref={ref} {...props}>
                     {shouldRender && children}
                 </Element>
