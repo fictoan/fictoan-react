@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.11.3
+- Tweak `ThemeProvider` to accept any string for theme name, so you can switch between many themes, instead of just `light` and `dark`
+
 ## 1.11.2
 - Fix smaller font size classes to use `--paragraph-font-size` instead of `--text-medium` as base
 
