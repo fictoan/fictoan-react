@@ -2,10 +2,10 @@
     display     : flex;
     flex-wrap   : wrap;
     width       : 100%;
-    align-items : flex-start;
+    align-items : stretch;
 
-    & > * {
-        flex : 1 1;
+    & * {
+        line-height: 1;
     }
 
     /*&.spacing-none > [data-form-item]:not(:last-of-type) { margin-right : 0; }*/
@@ -26,27 +26,6 @@
     &.spacing-large { gap : 40px; }
     &.spacing-huge { gap : 48px; }
 
-    &.is-joint {
-        gap       : 0 !important;
-        flex-wrap : nowrap;
-
-        & > [data-form-item] {
-            &:first-of-type input, select, textarea {
-                border-top-right-radius    : 0;
-                border-bottom-right-radius : 0;
-            }
-
-            &:not(:first-of-type):not(:last-of-type) input, select, textarea {
-                border-radius : 0;
-            }
-
-            &:last-of-type input, select, textarea {
-                border-top-left-radius    : 0;
-                border-bottom-left-radius : 0;
-            }
-        }
-    }
-
     /*@media screen and (max-width : 520px) {*/
     /*    &:not(.retain-layout) > [data-form-item] {*/
     /*        flex         : 1 1 auto;*/
@@ -58,4 +37,42 @@
     /*        margin-bottom : 16px;*/
     /*    }*/
     /*}*/
+}
+
+[data-form-item-group] [data-form-item] {
+    width : auto;
+}
+
+[data-form-item-group] > * {
+    flex: 0 0 auto; /* Don't grow or shrink by default */
+}
+
+/* Make only input fields grow to fill space */
+[data-form-item-group] [data-form-item]:has([data-input-field]):not(:has([data-select])):not(:has([data-button])) {
+    flex: 1 1 auto;
+}
+
+[data-form-item-group].is-joint {
+    gap       : 0 !important;
+    flex-wrap : nowrap;
+}
+
+[data-form-item-group].is-joint [data-form-item]:first-child input,
+[data-form-item-group].is-joint [data-form-item]:first-child select,
+[data-form-item-group].is-joint button:first-child {
+    border-top-right-radius    : 0;
+    border-bottom-right-radius : 0;
+}
+
+[data-form-item-group].is-joint [data-form-item]:not(:first-child):not(:last-child) input,
+[data-form-item-group].is-joint [data-form-item]:not(:first-child):not(:last-child) select,
+[data-form-item-group].is-joint button:not(:first-child):not(:last-child) {
+    border-radius : 0;
+}
+
+[data-form-item-group].is-joint [data-form-item]:last-child input,
+[data-form-item-group].is-joint [data-form-item]:last-child select,
+[data-form-item-group].is-joint button:last-child {
+    border-top-left-radius    : 0;
+    border-bottom-left-radius : 0;
 }

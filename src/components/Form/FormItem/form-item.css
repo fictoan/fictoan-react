@@ -12,8 +12,8 @@
 /* Need this as a common parent to align the left/right icons */
 [data-input-wrapper] {
     position : relative;
+    display  : flex;
 }
-
 
 /* PARENT ELEMENT /////////////////////////////////////////////////////////// */
 [data-form-item] {

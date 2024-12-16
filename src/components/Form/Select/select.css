@@ -1,7 +1,6 @@
 [data-select] {
     position         : relative;
     width            : max-content;
-    align-self       : flex-start;
     border-radius    : var(--input-border-radius-default);
 
     &::after {
@@ -28,7 +27,7 @@
     select {
         display          : flex;
         height           : 100%;
-        padding          : 12px 36px 12px 8px;
+        padding          : 12px 36px 12px 12px;
         font-family      : var(--paragraph-font);
         color            : var(--input-text-default);
         background-color : var(--input-bg-default);

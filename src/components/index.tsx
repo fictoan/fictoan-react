@@ -81,6 +81,9 @@ export {
     type ListBoxProps
 } from "./Form";
 
+// LOADING BAR =========================================================================================================
+export { LoadingBar, type LoadingBarProps } from "./LoadingBar";
+
 // METER ===============================================================================================================
 export { Meter, type MeterProps, type MeterMetaProps } from "./Meter";
 
