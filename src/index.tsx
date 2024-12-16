@@ -108,6 +108,9 @@ export {
     type ListBoxProps
 } from "./components/Form";
 
+// LOADING BAR =========================================================================================================
+export { LoadingBar, type LoadingBarProps } from "./components/LoadingBar";
+
 // METER ===============================================================================================================
 export { Meter, type MeterProps, type MeterMetaProps } from "./components/Meter";
 
