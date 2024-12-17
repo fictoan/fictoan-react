@@ -240,7 +240,7 @@
     --input-border-valid              : var(--green-dark30);
     --input-label-valid               : var(--shade);
 
-    --input-bg-invalid                : var(--red-light60);
+    --input-bg-invalid                : var(--red-dark40);
     --input-border-invalid            : var(--red-dark30);
     --input-label-invalid             : var(--red);
     --input-text-invalid              : var(--red);
@@ -266,10 +266,10 @@
     --input-inner-icon-left-default   : var(--slate);
     --input-inner-icon-right-default  : var(--slate);
 
-    --input-inner-text-left-focus     : var(--slate-light70);
-    --input-inner-text-right-focus    : var(--slate-light70);
-    --input-inner-icon-left-focus     : var(--slate-light70);
-    --input-inner-icon-right-focus    : var(--slate-light70);
+    --input-inner-text-left-focus     : var(--slate-light20);
+    --input-inner-text-right-focus    : var(--slate-light20);
+    --input-inner-icon-left-focus     : var(--slate-light20);
+    --input-inner-icon-right-focus    : var(--slate-light20);
 
     --input-inner-text-left-disabled  : var(--slate-dark40);
     --input-inner-text-right-disabled : var(--slate-dark40);

@@ -1,5 +1,5 @@
 // FRAMEWORK ===========================================================================================================
-import React, { FormEventHandler } from "react";
+import React, { FormEventHandler, useEffect, useRef } from "react";
 
 // FICTOAN =============================================================================================================
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
@@ -43,14 +43,16 @@ export const InputField = React.forwardRef(
         {
             "aria-label"   : ariaLabel,
             "aria-invalid" : ariaInvalid,
-            iconLeft,
-            iconRight,
-            stringLeft,
-            stringRight,
+            innerIconLeft,
+            innerIconRight,
+            innerTextLeft,
+            innerTextRight,
             onChange,
             ...props
         }: InputFieldProps, ref: React.Ref<InputFieldElementType>
     ) => {
+        const leftElementRef = useRef<HTMLDivElement>(null);
+        const rightElementRef = useRef<HTMLDivElement>(null);
 
         // Wrap the onChange handler to ensure correct typing ==========================================================
         const handleChange = (valueOrEvent: string | React.FormEvent<HTMLInputElement>) => {
@@ -66,52 +68,55 @@ export const InputField = React.forwardRef(
             }
         };
 
+
+        // Effect for handling side element measurements ===============================================================
+        useEffect(() => {
+            const updateElementWidth = (element: HTMLDivElement | null, position: "left" | "right") => {
+                if (element) {
+                    const width = element.getBoundingClientRect().width;
+                    const propertyName = `--side-element-${position}-width`;
+                    const formItem = element.closest("[data-form-item]") as HTMLElement;
+                    if (formItem) {
+                        formItem.style.setProperty(propertyName, `${width}px`);
+                    }
+                }
+            };
+
+            if (innerTextLeft || innerIconLeft) {
+                updateElementWidth(leftElementRef.current, "left");
+            }
+            if (innerTextRight || innerIconRight) {
+                updateElementWidth(rightElementRef.current, "right");
+            }
+        }, [innerTextLeft, innerTextRight, innerIconLeft, innerIconRight]);
+
         // Render either icon or string ================================================================================
         const renderSideElement = (
             content: React.ReactNode | string | undefined,
             position: "left" | "right",
+            ref: React.RefObject<HTMLDivElement>
         ) => {
             if (!content) return null;
 
-            const isText     = typeof content === "string";
-            const elementRef = React.useRef<HTMLDivElement>(null);
-
-            // Conditional interactivity -------------------------------------------------------------------------------
-            // Check if the content is interactive by checking if it has onClick or other handlers
-            // If it does, it adds the "is-interactive" class, and changes cursor to pointer
-            const isInteractive = React.isValidElement(content) && (
-                content.props.onClick ||
-                content.props.onKeyDown ||
-                content.props.onKeyPress ||
-                content.props.onKeyUp
-            );
-
-            // Effect to measure and set the width
-            React.useEffect(() => {
-                if (isText && elementRef.current) {
-                    const width        = elementRef.current.getBoundingClientRect().width;
-                    const propertyName = `--side-element-${position}-width`; // Set custom property based on position
-                    (elementRef.current.closest("[data-form-item]") as HTMLElement)?.style.setProperty(
-                        propertyName,
-                        `${width}px`,
-                    );
-                }
-            }, [ content, isText, position ]);
+            const isText = typeof content === "string";
+            const isInteractive = !isText && React.isValidElement(content) &&
+                (content.props.onClick || content.props.onKeyDown ||
+                    content.type === "button" || content.type === "a");
 
             return (
                 <Div
-                    ref={elementRef}
+                    ref={ref}
                     data-input-side-element
                     className={`${position} ${isText ? "is-text" : "is-icon"} ${isInteractive ? "is-interactive" : ""}`}
-                    aria-hidden={!isInteractive}
+                    aria-hidden="true"
                 >
                     {content}
                 </Div>
             );
         };
 
-        const hasLeftElement  = Boolean(iconLeft || stringLeft);
-        const hasRightElement = Boolean(iconRight || stringRight);
+        const hasLeftElement  = Boolean(innerIconLeft || innerTextLeft);
+        const hasRightElement = Boolean(innerIconRight || innerTextRight);
 
         return (
             <>
@@ -131,8 +136,8 @@ export const InputField = React.forwardRef(
                     {...props}
                 >
                     <Div data-input-helper aria-hidden="true">
-                        {renderSideElement(iconLeft || stringLeft, "left")}
-                        {renderSideElement(iconRight || stringRight, "right")}
+                        {renderSideElement(innerIconLeft || innerTextLeft, "left", leftElementRef)}
+                        {renderSideElement(innerIconRight || innerTextRight, "right", rightElementRef)}
                     </Div>
                 </BaseInputComponent>
             </>

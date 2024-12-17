@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEventHandler } from "react";
+import React, { ChangeEvent } from "react";
 
 import { ElementProps } from "../../Element/constants";
 import { InputLabelCustomProps } from "../InputLabel/InputLabel";
@@ -15,22 +15,22 @@ export interface InputCommonProps {
 // INPUT FIELD PROPS ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Define allowed combinations for the left side
 type LeftSideProps =
-    | { iconLeft: React.ReactNode; stringLeft ? : never }
-    | { stringLeft: string; iconLeft ? : never }
-    | { iconLeft ? : never; stringLeft ? : never };
+    | { innerIconLeft: React.ReactNode; innerTextLeft ? : never }
+    | { innerTextLeft: string; innerIconLeft ? : never }
+    | { innerIconLeft ? : never; innerTextLeft ? : never };
 
 // Define allowed combinations for the right side
 type RightSideProps =
-    | { iconRight: React.ReactNode; stringRight ? : never }
-    | { stringRight: string; iconRight ? : never }
-    | { iconRight ? : never; stringRight ? : never };
+    | { innerIconRight: React.ReactNode; innerTextRight ? : never }
+    | { innerTextRight: string; innerIconRight ? : never }
+    | { innerIconRight ? : never; innerTextRight ? : never };
 
 // Allows no side elements
 export type NoSideElements = {
-    iconLeft    ? : never;
-    iconRight   ? : never;
-    stringLeft  ? : never;
-    stringRight ? : never;
+    innerIconLeft    ? : never;
+    innerIconRight   ? : never;
+    innerTextLeft    ? : never;
+    innerTextRight   ? : never;
 };
 
 // Combine left and right side constraints
