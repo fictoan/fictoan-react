@@ -54,12 +54,8 @@ const ListBoxWithOptions = (
     const [ isOpen, setIsOpen ]                   = useState(false);
     const [ searchValue, setSearchValue ]         = useState("");
     const [ activeIndex, setActiveIndex ]         = useState(-1);
-
-    const selectedOptions = value
-        ? (Array.isArray(value)
-            ? options.filter(opt => value.includes(opt.value))
-            : options.filter(opt => opt.value === value))
-        : [];
+    const [ selectedOption, setSelectedOption ]   = useState<OptionForListBoxProps | null>(null);
+    const [ selectedOptions, setSelectedOptions ] = useState<OptionForListBoxProps[]>([]);
 
     // Set initial value ===============================================================================================
     useEffect(() => {
@@ -78,28 +74,31 @@ const ListBoxWithOptions = (
 
     // SELECT AN OPTION ================================================================================================
     const handleSelectOption = (option: OptionForListBoxProps) => {
-        let valueToEmit: string | string[];
+        if (option.disabled) return;
 
+        let newSelectedOptions: OptionForListBoxProps[];
         if (allowMultiSelect) {
             const isSelected = selectedOptions.some(opt => opt.value === option.value);
-            valueToEmit = isSelected
-                ? selectedOptions
-                    .filter(opt => opt.value !== option.value)
-                    .map(opt => opt.value)
-                : [...selectedOptions.map(opt => opt.value), option.value];
+            if (isSelected) {
+                newSelectedOptions = selectedOptions.filter(opt => opt.value !== option.value);
+            } else {
+                if (selectionLimit && selectedOptions.length >= selectionLimit) {
+                    return;
+                }
+                newSelectedOptions = [...selectedOptions, option];
+            }
+            setSelectedOptions(newSelectedOptions);
+            onChange?.(newSelectedOptions.map(opt => opt.value));
         } else {
-            valueToEmit = option.value;
+            newSelectedOptions = [option];
+            setSelectedOption(option);
+            setSelectedOptions(newSelectedOptions);
+            onChange?.(option.value);
             setIsOpen(false);
         }
 
-        // Create a synthetic event that BaseInputComponent will understand
-        const syntheticEvent = {
-            target: {
-                value: valueToEmit
-            }
-        } as React.ChangeEvent<HTMLInputElement>;
-        // @ts-ignore
-        onChange?.(syntheticEvent);
+        setSearchValue("");
+        setActiveIndex(-1);
     };
 
     // SEARCH ==========================================================================================================
@@ -114,22 +113,30 @@ const ListBoxWithOptions = (
     const handleCustomEntry = () => {
         if (!searchValue.trim() || !allowCustomEntries) return;
 
+        const customValue = searchValue.trim();
         const customOption: OptionForListBoxProps = {
-            value : searchValue.trim(),
-            label : searchValue.trim(),
+            value: customValue,
+            label: customValue,
         };
 
         handleSelectOption(customOption);
-        setSearchValue("");
-        setActiveIndex(-1);
     };
 
     // REMOVE AN OPTION ================================================================================================
-    const handleDeleteOption = (valueToRemove: string) => {
-        const valueToEmit = selectedOptions
-            .filter(opt => opt.value !== valueToRemove)
-            .map(opt => opt.value);
-        onChange?.(valueToEmit);
+    const handleDeleteOption = (e: React.MouseEvent<HTMLElement>, valueToRemove: string) => {
+        e.stopPropagation();
+        if (allowMultiSelect) {
+            const newValue = selectedOptions
+                .filter(opt => opt.value !== valueToRemove)
+                .map(opt => opt.value);
+            onChange?.(newValue);
+        }
+    };
+
+    // REMOVE ALL OPTIONS ==============================================================================================
+    const handleClearAll = (e: React.MouseEvent<HTMLElement>) => {
+        e.stopPropagation();
+        onChange?.(allowMultiSelect ? [] : "");
     };
 
     // ARROW KEYS ======================================================================================================
@@ -174,13 +181,27 @@ const ListBoxWithOptions = (
                 setActiveIndex(-1);
                 break;
 
-            case " ":
+                case " ": // Space key
                 if (!isOpen) {
                     event.preventDefault();
                     setIsOpen(true);
                     setActiveIndex(0);
                 }
                 break;
+
+                case "Home":
+                    if (isOpen) {
+                        event.preventDefault();
+                        setActiveIndex(0);
+                    }
+                    break;
+
+                case "End":
+                    if (isOpen) {
+                        event.preventDefault();
+                        setActiveIndex(filteredOptions.length - 1);
+                    }
+                    break;
         }
     };
 
@@ -233,7 +254,7 @@ const ListBoxWithOptions = (
                                         <Badge
                                             key={option.value}
                                             withDelete={allowMultiSelect}
-                                            onDelete={() => handleDeleteOption(option.value)}
+                                            onDelete={(e) => handleDeleteOption(e, option.value)}
                                             size="small"
                                             shape="rounded"
                                             bgColour={badgeBgColour || badgeBgColor}
@@ -251,6 +272,20 @@ const ListBoxWithOptions = (
                             </Div>
                         ) : (
                             <span className="placeholder">{placeholder}</span>
+                        )}
+
+                        {/* Clear button for multi-select */}
+                        {selectedOptions.length > 0 && (
+                            <Div
+                                className="icon-wrapper clear-all"
+                                title="Clear all options"
+                                onClick={handleClearAll}
+                            >
+                                <svg viewBox="0 0 24 24">
+                                    <line x1="5" y1="5" x2="19" y2="19" />
+                                    <line x1="5" y1="19" x2="19" y2="5" />
+                                </svg>
+                            </Div>
                         )}
                     </>
                 ) : (

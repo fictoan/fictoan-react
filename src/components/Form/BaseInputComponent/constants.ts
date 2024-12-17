@@ -54,6 +54,7 @@ export type BaseInputComponentProps<K extends {}> =
     Omit<ElementProps<K>, "onChange"> &
     InputLabelCustomProps &
     InputCommonProps & {
+        customLabel   ? : React.ReactNode; // For Range component
         onChange      ? : InputChangeHandler;
         onValueChange ? : InputChangeHandler; // For backward compatibility
         value         ? : string | number | readonly string[];

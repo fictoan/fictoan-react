@@ -146,10 +146,21 @@
     opacity        : 0.64;
 }
 
-/* SPECIAL CASE ///////////////////////////////////////////////////////////// */
+/* SPECIAL CASES //////////////////////////////////////////////////////////// */
+/* FOR RADIO TAB GROUP ===============================-====================== */
 /* Here, this overflow rule is required for the scroll behaviour to work, as */
 /* the clipping needs to happen for the scroll buttons to show */
 [data-form-item]:has([data-radio-tab-group]),
 [data-input-wrapper]:has([data-radio-tab-group]) {
     overflow : auto;
+}
+
+/* FOR RANGE ================================================================ */
+[data-form-item] [data-range-meta] {
+    grid-area : label;
+}
+
+/* FOR FILE UPLOAD ========================================================== */
+[data-form-item] [data-input-wrapper]:has([data-file-upload-area]) {
+    flex-direction : column;
 }

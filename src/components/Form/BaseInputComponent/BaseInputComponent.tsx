@@ -20,6 +20,7 @@ export const BaseInputComponent = React.forwardRef(
             as: Component,
             className,
             label,
+            customLabel,
             helpText,
             errorText,
             validateThis,
@@ -56,11 +57,10 @@ export const BaseInputComponent = React.forwardRef(
                 required={inputProps.required}
             >
                 {/* LABEL ////////////////////////////////////////////////////////////////////////////////////////// */}
-                {label && <InputLabel label={label} htmlFor={inputProps.id} />}
+                {customLabel || (label && <InputLabel label={label} htmlFor={inputProps.id} />)}
 
                 {/* MAIN INPUT ///////////////////////////////////////////////////////////////////////////////////// */}
                 <Div data-input-wrapper>
-                    {/* MAIN INPUT */}
                     <Element<K>
                         as={Component}
                         ref={ref}

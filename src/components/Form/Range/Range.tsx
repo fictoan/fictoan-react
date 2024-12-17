@@ -36,24 +36,21 @@ export const Range = React.forwardRef(({ label, value, suffix, onChange, ...prop
     };
 
         return (
-            <Element<RangeElementType> data-range ref={ref}>
-                {label && (
+            <BaseInputComponent<RangeElementType>
+                as="input"
+                type="range"
+                data-range
+                value={value?.toString()}
+                onChange={handleChange}
+                customLabel={label && (
                     <Div data-range-meta>
                         <InputLabel className="range-label" label={label} htmlFor={props.id} />
                         <Text className="range-value">
-                            {value}
-                            {suffix && suffix}
+                            {value} {suffix && suffix}
                         </Text>
                     </Div>
                 )}
-
-                <BaseInputComponent
-                    as="input"
-                    type="range"
-                    value={value?.toString()} // Clever, eh?
-                    onChange={handleChange}
-                    {...props}
-                />
-            </Element>
+                {...props}
+            />
         );
     });

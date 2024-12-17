@@ -1,74 +1,38 @@
-[data-range] {
-    [data-range-meta] {
-        display         : flex;
-        align-items     : baseline;
-        justify-content : space-between;
-        margin-bottom   : 4px;
+/* LABEL and VALUE + SUFFIX ///////////////////////////////////////////////// */
+[data-range-meta] {
+    grid-area       : label;
+    display         : flex;
+    align-items     : baseline;
+    justify-content : space-between;
+    margin-bottom   : 4px;
 
-        .range-label {
-            display : inline-flex;
-            margin  : 0;
-            color   : var(--range-label);
-        }
-
-        .range-value {
-            display    : inline-flex;
-            text-align : right;
-            margin     : 0;
-            color      : var(--range-value);
-        }
+    .range-label {
+        display : inline-flex;
+        margin  : 0;
+        color   : var(--range-label);
     }
 
-    /*input[type="range"] {*/
-    /*    cursor             : pointer;*/
-    /*    -webkit-appearance : none;*/
-    /*    appearance         : none;*/
-    /*    width              : 100%;*/
-    /*    background         : transparent;*/
-    /*}*/
+    .range-value {
+        display    : inline-flex;
+        text-align : right;
+        margin     : 0;
+        color      : var(--range-value);
+    }
+}
 
-    /*input[type="range"]::-webkit-slider-runnable-track {*/
-    /*    background : var(--slate-light-20);*/
-    /*    height     : 1px;*/
-    /*}*/
-
-    /*input[type="range"]::-webkit-slider-thumb {*/
-    /*    -webkit-appearance : none;*/
-    /*    appearance         : none;*/
-    /*    margin-top         : -7px;*/
-    /*    background-color   : var(--range-slider-bg);*/
-    /*    height             : 16px;*/
-    /*    width              : 16px;*/
-    /*    border-radius      : 50%;*/
-    /*}*/
-
-    /*input[type="range"]:focus {*/
-    /*    outline : none;*/
-    /*}*/
-
-    /*input[type="range"]:focus::-webkit-slider-thumb {*/
-    /*    border         : 1px solid var(--range-slider-border-focus);*/
-    /*    outline        : 3px solid var(--range-slider-outline-focus);*/
-    /*    outline-offset : 0.125rem;*/
-    /*}*/
-
-
-    /*  //////////////////////////////////////  */
+/* INPUT //////////////////////////////////////////////////////////////////// */
+[data-range-meta] + [data-input-wrapper] {
     input[type="range"] {
         width          : 100%;
         color          : var(--range-thumb-bg);
+        position       : relative;
+        background     : var(--transparent);
+        overflow       : hidden;
         --track-color  : var(--range-track-bg);
         --thumb-width  : 20px;
         --thumb-height : 20px;
         --track-height : 2px;
         --clip-edges   : 0;
-    }
-
-    /* DropdownSelect common ========================================================= */
-    input[type="range"] {
-        position   : relative;
-        background : var(--transparent);
-        overflow   : hidden;
     }
 
     input[type="range"]:active {
@@ -103,8 +67,8 @@
         --box-fill       : calc(-100vmax - var(--thumb-width, var(--thumb-height))) 0 0 100vmax currentColor;
 
         width            : var(--thumb-width, var(--thumb-height));
-        background       :
-                linear-gradient(currentColor 0 0) scroll no-repeat left center / 50% calc(var(--track-height) + 1px);
+        background       : linear-gradient(to right, currentColor, currentColor)
+                            no-repeat left center/ 50% calc(var(--track-height) + 1px) scroll;
         background-color : currentColor;
         box-shadow       : var(--box-fill);
         border-radius    : var(--global-border-radius);

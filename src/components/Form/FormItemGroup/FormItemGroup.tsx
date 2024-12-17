@@ -12,9 +12,10 @@ import { CommonAndHTMLProps } from "../../Element/constants";
 
 // prettier-ignore
 export interface FormItemGroupCustomProps {
-    isJoint      ? : boolean;
-    retainLayout ? : boolean;
-    legend       ? : string;
+    isJoint               ? : boolean;
+    equalWidthForChildren ? : React.ReactNode;
+    retainLayout          ? : boolean;
+    legend                ? : string;
 }
 
 export type FormItemGroupElementType = HTMLDivElement;
@@ -26,6 +27,7 @@ export const FormItemGroup = React.forwardRef(
     (
         {
             isJoint,
+            equalWidthForChildren,
             retainLayout,
             children,
             legend,
@@ -39,6 +41,10 @@ export const FormItemGroup = React.forwardRef(
 
         if (isJoint) {
             classNames.push("is-joint");
+        }
+
+        if (equalWidthForChildren) {
+            classNames.push("equal-width-for-children");
         }
 
         if (retainLayout) {

@@ -39,13 +39,14 @@
     /*}*/
 }
 
-[data-form-item-group] [data-form-item] {
-    width : auto;
+[data-form-item-group] [data-form-item] { width : auto; }
+
+[data-form-item-group].equal-width-for-children [data-form-item],
+[data-form-item-group].equal-width-for-children [data-switch] {
+    flex : 1;
 }
 
-[data-form-item-group] > * {
-    flex: 0 0 auto; /* Don't grow or shrink by default */
-}
+[data-form-item-group] > * { flex: 0 0 auto; }
 
 /* Make only input fields grow to fill space */
 [data-form-item-group] [data-form-item]:has([data-input-field]):not(:has([data-select])):not(:has([data-button])) {
