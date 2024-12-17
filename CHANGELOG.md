@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.11.6
+- Rename `InputField` `sideElements` to `innerTextLeft` and `innerTextRight`, `innerIconLeft` and `innerIconRight` 
+  to be more descriptive
+- Fix rendering issue for `InputField` with `sideElements` where hooks were conditionally called
+
 ## 1.11.4
 - Fix `FormItemGroup` alignment bug
 

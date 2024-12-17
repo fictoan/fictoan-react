@@ -41,34 +41,12 @@ input[data-input-field] {
 
     &[type=password]:placeholder-shown { letter-spacing : unset; }
 
-    /* TODO : Use the rightIcon setup to do the validation check mark/cross mark */
-    /* Grey check mark ====================================================== */
-    &.validate-this {
-        padding-right       : 40px;
-        background-image    : url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+ICA8cG9seWxpbmUgcG9pbnRzPSIzLjUgMTIuNSA4LjUgMTcuNSAyMC41IDUuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZTJlMmUyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIgb3BhY2l0eT0iMC40Ii8+PC9zdmc+");
-        background-repeat   : no-repeat;
-        background-position : right 12px top 56%;
-        background-size     : var(--input-icon-size);
-
-        &:focus {
-            background-position : right 11px top 56%;
-        }
-    }
-
-    /* Green check mark ===================================================== */
-    &.validate-this:valid:not(:placeholder-shown) {
-        background-image : url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+ICA8cG9seWxpbmUgcG9pbnRzPSIzLjUgMTIuNSA4LjUgMTcuNSAyMC41IDUuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMGVjMDVjIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==);
-    }
-
-    /* Red cross ============================================================ */
+    /* VALIDATION /////////////////////////////////////////////////////////// */
+    /* Red everything when invalid ========================================== */
     &:invalid:not(:focus):not(:placeholder-shown) {
         color               : var(--input-text-invalid);
         border              : var(--global-border-width) solid var(--input-border-invalid);
         background-color    : var(--input-bg-invalid);
-        background-image    : url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+ICA8bGluZSB4MT0iNi41IiB5MT0iMTcuNSIgeDI9IjE4LjUiIHkyPSI1LjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2VmNDM0MyIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjIiLz4gIDxsaW5lIHgxPSI2LjUiIHkxPSI1LjUiIHgyPSIxOC41IiB5Mj0iMTcuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZWY0MzQzIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==);
-        background-repeat   : no-repeat;
-        background-position : 98%;
-        background-size     : var(--input-icon-size);
     }
 }
 
@@ -87,7 +65,31 @@ input[data-input-field] {
     grid-template-areas   : "leftElement spaceForInput rightElement";
     align-items           : center;
     justify-content       : space-between;
+    gap                   : 8px;
 }
+
+/* VALIDATION =============================================================== */
+/*[data-input-field].validate-this + [data-input-helper]::after {*/
+/*    width    : 20px;*/
+/*    height   : 20px;*/
+/*    position : absolute;*/
+/*    right    : 16px;*/
+/*    top      : -20px;*/
+/*}*/
+
+/*[data-input-field].validate-this + [data-input-helper]::after {*/
+/*    content: "...";*/
+/*}*/
+
+/*!*GREEN TICK*!*/
+/*[data-input-field].validate-this:valid:not(:placeholder-shown) + [data-input-helper]::after {*/
+/*    content : url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+ICA8cG9seWxpbmUgcG9pbnRzPSIzLjUgMTIuNSA4LjUgMTcuNSAyMC41IDUuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMGVjMDVjIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==);*/
+/*}*/
+
+/*!*RED CROSS*!*/
+/*[data-input-field].validate-this:invalid:not(:focus):not(:placeholder-shown) + [data-input-helper]::after {*/
+/*    content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+ICA8bGluZSB4MT0iNi41IiB5MT0iMTcuNSIgeDI9IjE4LjUiIHkyPSI1LjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2VmNDM0MyIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjIiLz4gIDxsaW5lIHgxPSI2LjUiIHkxPSI1LjUiIHgyPSIxOC41IiB5Mj0iMTcuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZWY0MzQzIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==);*/
+/*}*/
 
 /* ELEMENTS ON THE LEFT/RIGHT =============================================== */
 [data-input-side-element] {
@@ -140,7 +142,7 @@ input[data-input-field] {
 
 /* Padding when there is text on the left ----------------------------------- */
 [data-form-item]:has([data-input-side-element].left.is-text) [data-input-field] {
-    padding-left : calc(var(--side-element-left-width) + var(--side-element-padding) * 2);
+    padding-left : calc(var(--side-element-left-width) + var(--side-element-padding) * 2 + 12px);
 }
 
 /* PADDING RIGHT SIDE ======================================================= */
@@ -157,7 +159,7 @@ input[data-input-field] {
 
 /* Padding when there is text on the right ---------------------------------- */
 [data-form-item]:has([data-input-side-element].right.is-text) [data-input-field] {
-    padding-right : calc(var(--side-element-right-width) + var(--side-element-padding) * 2);
+    padding-right : calc(var(--side-element-right-width) + var(--side-element-padding) * 2 + 12px);
 }
 
 
