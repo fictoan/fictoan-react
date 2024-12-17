@@ -370,7 +370,7 @@ const ListBoxWithOptions = (
     );
 };
 
-// MAIN LISTBOX COMPONENT //////////////////////////////////////////////////////////////////////////////////////////////
+// FINAL LISTBOX COMPONENT /////////////////////////////////////////////////////////////////////////////////////////////
 export const ListBox = React.forwardRef<ListBoxElementType, ListBoxProps>((props, ref) => {
     const handleChange = (valueOrEvent: string | string[] | React.ChangeEvent<HTMLInputElement>) => {
         // Handle both direct values and events
