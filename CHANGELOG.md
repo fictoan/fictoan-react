@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.11.7
+- Ensure syntax highlighting works on initial load as well.
+
 ## 1.11.6
 - Rename `InputField` `sideElements` to `innerTextLeft` and `innerTextRight`, `innerIconLeft` and `innerIconRight` 
   to be more descriptive
