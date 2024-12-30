@@ -126,3 +126,7 @@
     /*    padding-right : 26px;*/
     /*}*/
 }
+
+[data-radio-tab-group] label {
+    padding: 0 12px
+}
