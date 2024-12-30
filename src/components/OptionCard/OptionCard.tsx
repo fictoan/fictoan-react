@@ -32,13 +32,18 @@ export interface OptionCardsProviderProps {
     showTickIcon            ? : boolean;
     tickPosition            ? : TickPosition;
     onSelectionChange       ? : (selectedIds: Set<string>) => void;
-    selectionLimit         ? : number;
+    selectionLimit          ? : number;
 }
 
 export interface OptionCardProps extends CardProps {
     id         : string;
     children   : ReactNode;
     disabled ? : boolean;
+}
+
+export interface OptionCardsGroupRef {
+    selectAllOptions: () => void;
+    clearAllOptions: () => void;
 }
 
 interface OptionCardsContextType {
@@ -64,103 +69,111 @@ const OptionCardsContext = createContext<OptionCardsContextType>({
 });
 
 // COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-export const OptionCardsGroup: React.FC<OptionCardsProviderProps> = (
-    {
-        children,
-        allowMultipleSelections = false,
-        showTickIcon,
-        onSelectionChange,
-        tickPosition = "top-right",
-        selectionLimit,
-        ...props
-    },
-) => {
-    const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
-    const availableOptionsRef = useRef<Map<string, boolean>>(new Map()); // id -> disabled
+export const OptionCardsGroup = React.forwardRef<OptionCardsGroupRef, OptionCardsProviderProps>(
+    (
+        {
+            children,
+            allowMultipleSelections = false,
+            showTickIcon,
+            onSelectionChange,
+            tickPosition = "top-right",
+            selectionLimit,
+            ...props
+        },
+        ref
+    ) => {
+        const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
+        const availableOptionsRef = useRef<Map<string, boolean>>(new Map()); // id -> disabled
 
-    const registerOption = useCallback((id: string, disabled: boolean) => {
-        availableOptionsRef.current.set(id, disabled);
-    }, []);
+        const registerOption = useCallback((id: string, disabled: boolean) => {
+            availableOptionsRef.current.set(id, disabled);
+        }, []);
 
-    const unregisterOption = useCallback((id: string) => {
-        availableOptionsRef.current.delete(id);
-    }, []);
+        const unregisterOption = useCallback((id: string) => {
+            availableOptionsRef.current.delete(id);
+        }, []);
 
-    const toggleSelection = useCallback((id: string) => {
-        setSelectedIds(prevSelectedIds => {
-            const newSelectedIds = new Set(prevSelectedIds);
-            if (allowMultipleSelections) {
-                if (newSelectedIds.has(id)) {
-                    newSelectedIds.delete(id);
-                } else {
-                    if (selectionLimit && newSelectedIds.size >= selectionLimit) {
-                        return prevSelectedIds;
+        const toggleSelection = useCallback((id: string) => {
+            setSelectedIds(prevSelectedIds => {
+                const newSelectedIds = new Set(prevSelectedIds);
+                if (allowMultipleSelections) {
+                    if (newSelectedIds.has(id)) {
+                        newSelectedIds.delete(id);
+                    } else {
+                        if (selectionLimit && newSelectedIds.size >= selectionLimit) {
+                            return prevSelectedIds;
+                        }
+                        newSelectedIds.add(id);
                     }
-                    newSelectedIds.add(id);
-                }
-            } else {
-                if (newSelectedIds.has(id) && prevSelectedIds.size === 1) {
-                    newSelectedIds.clear();
                 } else {
-                    newSelectedIds.clear();
-                    newSelectedIds.add(id);
+                    if (newSelectedIds.has(id) && prevSelectedIds.size === 1) {
+                        newSelectedIds.clear();
+                    } else {
+                        newSelectedIds.clear();
+                        newSelectedIds.add(id);
+                    }
                 }
-            }
-            onSelectionChange?.(newSelectedIds);
-            return newSelectedIds;
-        });
-    }, [allowMultipleSelections, onSelectionChange, selectionLimit]);
+                onSelectionChange?.(newSelectedIds);
+                return newSelectedIds;
+            });
+        }, [allowMultipleSelections, onSelectionChange, selectionLimit]);
 
-    const selectAllOptions = useCallback(() => {
-        if (!allowMultipleSelections) return;
+        const selectAllOptions = useCallback(() => {
+            if (!allowMultipleSelections) return;
 
-        setSelectedIds(prevSelectedIds => {
-            const newSelectedIds = new Set(prevSelectedIds);
+            setSelectedIds(prevSelectedIds => {
+                const newSelectedIds = new Set(prevSelectedIds);
 
-            // Get all enabled options
-            const enabledOptions = Array.from(availableOptionsRef.current.entries())
-                .filter(([_, disabled]) => !disabled)
-                .map(([id]) => id);
+                // Get all enabled options
+                const enabledOptions = Array.from(availableOptionsRef.current.entries())
+                    .filter(([_, disabled]) => !disabled)
+                    .map(([id]) => id);
 
-            // Respect selection limit if set
-            const optionsToAdd = selectionLimit
-                ? enabledOptions.slice(0, selectionLimit)
-                : enabledOptions;
+                // Respect selection limit if set
+                const optionsToAdd = selectionLimit
+                    ? enabledOptions.slice(0, selectionLimit)
+                    : enabledOptions;
 
-            optionsToAdd.forEach(id => newSelectedIds.add(id));
-            onSelectionChange?.(newSelectedIds);
-            return newSelectedIds;
-        });
-    }, [allowMultipleSelections, selectionLimit, onSelectionChange]);
+                optionsToAdd.forEach(id => newSelectedIds.add(id));
+                onSelectionChange?.(newSelectedIds);
+                return newSelectedIds;
+            });
+        }, [allowMultipleSelections, selectionLimit, onSelectionChange]);
 
-    const clearAllOptions = useCallback(() => {
-        setSelectedIds(new Set());
-        onSelectionChange?.(new Set());
-    }, [onSelectionChange]);
+        const clearAllOptions = useCallback(() => {
+            setSelectedIds(new Set());
+            onSelectionChange?.(new Set());
+        }, [onSelectionChange]);
 
-    const isSelected = useCallback((id: string) => {
-        return selectedIds.has(id);
-    }, [selectedIds]);
+        const isSelected = useCallback((id: string) => {
+            return selectedIds.has(id);
+        }, [selectedIds]);
 
-    const contextValue = {
-        isSelected,
-        toggleSelection,
-        showTickIcon,
-        tickPosition,
-        selectAllOptions,
-        clearAllOptions,
-        registerOption,
-        unregisterOption,
-    };
+        React.useImperativeHandle(ref, () => ({
+            selectAllOptions,
+            clearAllOptions
+        }));
 
-    return (
-        <OptionCardsContext.Provider value={contextValue}>
-            <Div data-option-cards-group className={`tick-${tickPosition}`}>
-                {children}
-            </Div>
-        </OptionCardsContext.Provider>
-    );
-};
+        const contextValue = {
+            isSelected,
+            toggleSelection,
+            showTickIcon,
+            tickPosition,
+            selectAllOptions,
+            clearAllOptions,
+            registerOption,
+            unregisterOption,
+        };
+
+        return (
+            <OptionCardsContext.Provider value={contextValue}>
+                <Div data-option-cards-group className={`tick-${tickPosition}`}>
+                    {children}
+                </Div>
+            </OptionCardsContext.Provider>
+        );
+    }
+);
 
 export const useOptionCard = (id: string) => {
     const context = useContext(OptionCardsContext);
@@ -173,7 +186,7 @@ export const useOptionCard = (id: string) => {
 
 export const useOptionCards = () => {
     const { selectAllOptions, clearAllOptions } = useContext(OptionCardsContext);
-    return { selectAllOptions, clearAllOptions };  // Shorter version, same functionality
+    return { selectAllOptions, clearAllOptions };
 };
 
 export const OptionCard: React.FC<OptionCardProps> = ({ id, children, disabled = false, ...props }) => {
