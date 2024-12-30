@@ -1,5 +1,5 @@
 // FRAMEWORK ===========================================================================================================
-import React, { createContext, useContext, useState, ReactNode, useCallback } from "react";
+import React, { createContext, useContext, useState, ReactNode, useCallback, useRef } from "react";
 
 // FICTOAN =============================================================================================================
 import { Element } from "../Element/Element";
@@ -32,6 +32,7 @@ export interface OptionCardsProviderProps {
     showTickIcon            ? : boolean;
     tickPosition            ? : TickPosition;
     onSelectionChange       ? : (selectedIds: Set<string>) => void;
+    selectionLimit         ? : number;
 }
 
 export interface OptionCardProps extends CardProps {
@@ -40,16 +41,26 @@ export interface OptionCardProps extends CardProps {
     disabled ? : boolean;
 }
 
-const OptionCardsContext = createContext<{
-    isSelected        : (id: string) => boolean;
-    toggleSelection   : (id: string) => void;
-    showTickIcon    ? : boolean;
-    tickPosition    ? : TickPosition;
-}>({
-    isSelected      : () => false,
-    toggleSelection : () => {},
-    showTickIcon    : false,
-    tickPosition    : "top-right",
+interface OptionCardsContextType {
+    isSelected         : (id: string) => boolean;
+    toggleSelection    : (id: string) => void;
+    showTickIcon     ? : boolean;
+    tickPosition     ? : TickPosition;
+    selectAllOptions ? : () => void;
+    clearAllOptions  ? : () => void;
+    registerOption     : (id: string, disabled: boolean) => void;
+    unregisterOption   : (id: string) => void;
+}
+
+const OptionCardsContext = createContext<OptionCardsContextType>({
+    isSelected       : () => false,
+    toggleSelection  : () => {},
+    showTickIcon     : false,
+    tickPosition     : "top-right",
+    selectAllOptions : () => {},
+    clearAllOptions  : () => {},
+    registerOption   : () => {},
+    unregisterOption : () => {},
 });
 
 // COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -60,10 +71,20 @@ export const OptionCardsGroup: React.FC<OptionCardsProviderProps> = (
         showTickIcon,
         onSelectionChange,
         tickPosition = "top-right",
+        selectionLimit,
         ...props
     },
 ) => {
-    const [ selectedIds, setSelectedIds ] = useState<Set<string>>(new Set());
+    const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
+    const availableOptionsRef = useRef<Map<string, boolean>>(new Map()); // id -> disabled
+
+    const registerOption = useCallback((id: string, disabled: boolean) => {
+        availableOptionsRef.current.set(id, disabled);
+    }, []);
+
+    const unregisterOption = useCallback((id: string) => {
+        availableOptionsRef.current.delete(id);
+    }, []);
 
     const toggleSelection = useCallback((id: string) => {
         setSelectedIds(prevSelectedIds => {
@@ -72,6 +93,9 @@ export const OptionCardsGroup: React.FC<OptionCardsProviderProps> = (
                 if (newSelectedIds.has(id)) {
                     newSelectedIds.delete(id);
                 } else {
+                    if (selectionLimit && newSelectedIds.size >= selectionLimit) {
+                        return prevSelectedIds;
+                    }
                     newSelectedIds.add(id);
                 }
             } else {
@@ -85,14 +109,52 @@ export const OptionCardsGroup: React.FC<OptionCardsProviderProps> = (
             onSelectionChange?.(newSelectedIds);
             return newSelectedIds;
         });
-    }, [ allowMultipleSelections, onSelectionChange ]);
+    }, [allowMultipleSelections, onSelectionChange, selectionLimit]);
+
+    const selectAllOptions = useCallback(() => {
+        if (!allowMultipleSelections) return;
+
+        setSelectedIds(prevSelectedIds => {
+            const newSelectedIds = new Set(prevSelectedIds);
+
+            // Get all enabled options
+            const enabledOptions = Array.from(availableOptionsRef.current.entries())
+                .filter(([_, disabled]) => !disabled)
+                .map(([id]) => id);
+
+            // Respect selection limit if set
+            const optionsToAdd = selectionLimit
+                ? enabledOptions.slice(0, selectionLimit)
+                : enabledOptions;
+
+            optionsToAdd.forEach(id => newSelectedIds.add(id));
+            onSelectionChange?.(newSelectedIds);
+            return newSelectedIds;
+        });
+    }, [allowMultipleSelections, selectionLimit, onSelectionChange]);
+
+    const clearAllOptions = useCallback(() => {
+        setSelectedIds(new Set());
+        onSelectionChange?.(new Set());
+    }, [onSelectionChange]);
 
     const isSelected = useCallback((id: string) => {
         return selectedIds.has(id);
-    }, [ selectedIds ]);
+    }, [selectedIds]);
+
+    const contextValue = {
+        isSelected,
+        toggleSelection,
+        showTickIcon,
+        tickPosition,
+        selectAllOptions,
+        clearAllOptions,
+        registerOption,
+        unregisterOption,
+    };
 
     return (
-        <OptionCardsContext.Provider value={{ isSelected, toggleSelection, showTickIcon, tickPosition }}>
+        <OptionCardsContext.Provider value={contextValue}>
             <Div data-option-cards-group className={`tick-${tickPosition}`}>
                 {children}
             </Div>
@@ -109,14 +171,25 @@ export const useOptionCard = (id: string) => {
     };
 };
 
+export const useOptionCards = () => {
+    const { selectAllOptions, clearAllOptions } = useContext(OptionCardsContext);
+    return { selectAllOptions, clearAllOptions };  // Shorter version, same functionality
+};
+
 export const OptionCard: React.FC<OptionCardProps> = ({ id, children, disabled = false, ...props }) => {
-    const { isSelected, toggleSelection, showTickIcon } = useOptionCard(id);
+    const { isSelected, toggleSelection, showTickIcon, registerOption, unregisterOption } = useContext(OptionCardsContext);
     const [showDeselect, setShowDeselect] = useState(false);
     const [isInitialHover, setIsInitialHover] = useState(true);
 
+    // Register/unregister this option
+    React.useEffect(() => {
+        registerOption(id, disabled);
+        return () => unregisterOption(id);
+    }, [id, disabled, registerOption, unregisterOption]);
+
     let classNames = [];
 
-    if (isSelected) {
+    if (isSelected(id)) {
         classNames.push("selected");
     }
 
@@ -129,7 +202,7 @@ export const OptionCard: React.FC<OptionCardProps> = ({ id, children, disabled =
     }
 
     const handleMouseEnter = () => {
-        if (isSelected && !isInitialHover) {
+        if (isSelected(id) && !isInitialHover) {
             setShowDeselect(true);
         }
     };
@@ -143,7 +216,7 @@ export const OptionCard: React.FC<OptionCardProps> = ({ id, children, disabled =
         if (!disabled) {
             setIsInitialHover(true);
             setShowDeselect(false);
-            toggleSelection();
+            toggleSelection(id);
             props.onClick?.(e);
         }
     };
@@ -153,7 +226,7 @@ export const OptionCard: React.FC<OptionCardProps> = ({ id, children, disabled =
             e.preventDefault();
             setIsInitialHover(true);
             setShowDeselect(false);
-            toggleSelection();
+            toggleSelection(id);
         }
     };
 
@@ -164,7 +237,7 @@ export const OptionCard: React.FC<OptionCardProps> = ({ id, children, disabled =
             role="button"
             tabIndex={disabled ? -1 : 0}
             aria-disabled={disabled ? "true" : "false"}
-            aria-selected={isSelected ? "true" : "false"}
+            aria-selected={isSelected(id) ? "true" : "false"}
             classNames={classNames}
             onClick={handleClick}
             onKeyDown={handleKeyDown}

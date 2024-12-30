@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.11.8
+- All select all and clear all options for `OptionCardsGroup`
+- Fix label padding for `RadioTabGroup`
+
 ## 1.11.7
 - Ensure syntax highlighting works on initial load as well.
 
