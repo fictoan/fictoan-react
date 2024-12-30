@@ -197,7 +197,7 @@ export const useOptionCard = (id: string) => {
     };
 };
 
-export const useOptionCards = () => {
+export const useOptionCardsGroup = () => {
     const { selectAllOptions, clearAllOptions, setSelectedOptions } = useContext(OptionCardsContext);
     return { selectAllOptions, clearAllOptions, setSelectedOptions };
 };

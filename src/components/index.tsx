@@ -112,7 +112,7 @@ export { Row, type RowProps } from "./Row";
 
 // OPTION CARD =========================================================================================================
 export { OptionCard, OptionCardsGroup, type OptionCardProps } from "./OptionCard";
-export { useOptionCard } from "./OptionCard";
+export { useOptionCard, useOptionCardsGroup } from "./OptionCard";
 
 // SIDEBAR + CONTENT WRAPPER ===========================================================================================
 export {
