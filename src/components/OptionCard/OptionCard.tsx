@@ -44,17 +44,19 @@ export interface OptionCardProps extends CardProps {
 export interface OptionCardsGroupRef {
     selectAllOptions: () => void;
     clearAllOptions: () => void;
+    setSelectedOptions: (ids: string[]) => void;
 }
 
 interface OptionCardsContextType {
-    isSelected         : (id: string) => boolean;
-    toggleSelection    : (id: string) => void;
-    showTickIcon     ? : boolean;
-    tickPosition     ? : TickPosition;
-    selectAllOptions ? : () => void;
-    clearAllOptions  ? : () => void;
-    registerOption     : (id: string, disabled: boolean) => void;
-    unregisterOption   : (id: string) => void;
+    isSelected           : (id: string) => boolean;
+    toggleSelection      : (id: string) => void;
+    showTickIcon       ? : boolean;
+    tickPosition       ? : TickPosition;
+    selectAllOptions   ? : () => void;
+    clearAllOptions    ? : () => void;
+    setSelectedOptions ? : (ids: string[]) => void;
+    registerOption       : (id: string, disabled: boolean) => void;
+    unregisterOption     : (id: string) => void;
 }
 
 const OptionCardsContext = createContext<OptionCardsContextType>({
@@ -93,6 +95,7 @@ export const OptionCardsGroup = React.forwardRef<OptionCardsGroupRef, OptionCard
             availableOptionsRef.current.delete(id);
         }, []);
 
+        // Click to toggle an option ===================================================================================
         const toggleSelection = useCallback((id: string) => {
             setSelectedIds(prevSelectedIds => {
                 const newSelectedIds = new Set(prevSelectedIds);
@@ -118,6 +121,7 @@ export const OptionCardsGroup = React.forwardRef<OptionCardsGroupRef, OptionCard
             });
         }, [allowMultipleSelections, onSelectionChange, selectionLimit]);
 
+        // Select all available options ================================================================================
         const selectAllOptions = useCallback(() => {
             if (!allowMultipleSelections) return;
 
@@ -140,9 +144,16 @@ export const OptionCardsGroup = React.forwardRef<OptionCardsGroupRef, OptionCard
             });
         }, [allowMultipleSelections, selectionLimit, onSelectionChange]);
 
+        // De-select all options =======================================================================================
         const clearAllOptions = useCallback(() => {
             setSelectedIds(new Set());
             onSelectionChange?.(new Set());
+        }, [onSelectionChange]);
+
+        // Set default selected options ================================================================================
+        const setSelectedOptions = useCallback((ids: string[]) => {
+            setSelectedIds(new Set(ids));
+            onSelectionChange?.(new Set(ids));
         }, [onSelectionChange]);
 
         const isSelected = useCallback((id: string) => {
@@ -151,7 +162,8 @@ export const OptionCardsGroup = React.forwardRef<OptionCardsGroupRef, OptionCard
 
         React.useImperativeHandle(ref, () => ({
             selectAllOptions,
-            clearAllOptions
+            clearAllOptions,
+            setSelectedOptions
         }));
 
         const contextValue = {
@@ -161,6 +173,7 @@ export const OptionCardsGroup = React.forwardRef<OptionCardsGroupRef, OptionCard
             tickPosition,
             selectAllOptions,
             clearAllOptions,
+            setSelectedOptions,
             registerOption,
             unregisterOption,
         };
@@ -185,8 +198,8 @@ export const useOptionCard = (id: string) => {
 };
 
 export const useOptionCards = () => {
-    const { selectAllOptions, clearAllOptions } = useContext(OptionCardsContext);
-    return { selectAllOptions, clearAllOptions };
+    const { selectAllOptions, clearAllOptions, setSelectedOptions } = useContext(OptionCardsContext);
+    return { selectAllOptions, clearAllOptions, setSelectedOptions };
 };
 
 export const OptionCard: React.FC<OptionCardProps> = ({ id, children, disabled = false, ...props }) => {
