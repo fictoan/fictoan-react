@@ -111,7 +111,7 @@ export { ProgressBar, type ProgressBarProps, type ProgressBarMetaProps } from ".
 export { Row, type RowProps } from "./Row";
 
 // OPTION CARD =========================================================================================================
-export { OptionCard, OptionCardsGroup, type OptionCardProps } from "./OptionCard";
+export { OptionCard, OptionCardsGroup, type OptionCardProps, type OptionCardsGroupRef } from "./OptionCard";
 export { useOptionCard, useOptionCardsGroup } from "./OptionCard";
 
 // SIDEBAR + CONTENT WRAPPER ===========================================================================================

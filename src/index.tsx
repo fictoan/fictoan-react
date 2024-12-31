@@ -126,7 +126,7 @@ export {
 } from "./components/Notification";
 
 // OPTION CARD =========================================================================================================
-export { OptionCard, OptionCardsGroup, type OptionCardProps } from "./components/OptionCard";
+export { OptionCard, OptionCardsGroup, type OptionCardProps, type OptionCardsGroupRef } from "./components/OptionCard";
 export { useOptionCard, useOptionCardsGroup } from "./components/OptionCard";
 
 // PAGINATION ==========================================================================================================
