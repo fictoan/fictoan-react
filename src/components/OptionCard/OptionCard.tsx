@@ -151,9 +151,11 @@ export const OptionCardsGroup = React.forwardRef<OptionCardsGroupRef, OptionCard
         }, [onSelectionChange]);
 
         // Set default selected options ================================================================================
-        const setSelectedOptions = useCallback((ids: string[]) => {
+        const setSelectedOptions = useCallback((ids: string[], triggerChange: boolean = true) => {
             setSelectedIds(new Set(ids));
-            onSelectionChange?.(new Set(ids));
+            if (triggerChange) {
+                onSelectionChange?.(new Set(ids));
+            }
         }, [onSelectionChange]);
 
         const isSelected = useCallback((id: string) => {
