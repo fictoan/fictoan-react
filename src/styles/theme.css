@@ -228,8 +228,9 @@
     --input-border-width-default      : var(--global-border-width);
 
     --input-label-default             : var(--paragraph-text-colour);
-    --input-placeholder-default       : var(--slate-light40);
     --input-text-default              : var(--paragraph-text-colour);
+    --input-placeholder-default       : var(--slate-light40);
+    --input-placeholder-opacity       : 0.5;
 
     --input-bg-focus                  : var(--white);
     --input-border-focus              : var(--slate-light40);
