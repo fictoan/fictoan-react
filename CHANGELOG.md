@@ -4,10 +4,11 @@
 - Allow empty `options` object for `ListBox`
 
 ## 1.11.8
-- Add select all and clear all methods for  `OptionCardsGroup`
+- All select all and clear all methods for `OptionCardsGroup`
+- Fix label padding for `RadioTabGroup`
 
 ## 1.11.7
-- Fix label padding for `RadioTabGroup`
+- Ensure syntax highlighting works on initial load as well.
 
 ## 1.11.6
 - Rename `InputField` `sideElements` to `innerTextLeft` and `innerTextRight`, `innerIconLeft` and `innerIconRight` 

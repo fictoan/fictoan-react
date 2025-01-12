@@ -79,11 +79,9 @@ export const CodeBlock = React.forwardRef((
         const loadPrismWithLanguage = async () => {
             setIsLoading(true);
             try {
-                // Load both Prism core and language-specific module in parallel
-                const [prism] = await Promise.all([
-                    import("prismjs"),
-                    language !== "plain" ? import(`prismjs/components/prism-${language}`) : Promise.resolve(),
-                ]);
+                // Load both Prism core and language-specific module
+                const prism = await import("prismjs");
+                const _ = language !== "plain" ? await import(`prismjs/components/prism-${language}`) : null;
                 setPrismModule(prism.default);
             } catch (error) {
                 console.warn(`Failed to load syntax highlighting for ${language}:`, error);
