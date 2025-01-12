@@ -133,17 +133,32 @@ const ListBoxWithOptions = (
     // REMOVE AN OPTION ================================================================================================
     const handleDeleteOption = (valueToRemove: string) => {
         if (allowMultiSelect) {
-            onChange?.(selectedOptions
-                .filter(opt => opt.value !== valueToRemove)
-                .map(opt => opt.value));
+            // Filter out the option to remove
+            const newSelectedOptions = selectedOptions.filter(opt => opt.value !== valueToRemove);
+
+            // Update local state
+            setSelectedOptions(newSelectedOptions);
+
+            // Notify parent
+            onChange?.(newSelectedOptions.map(opt => opt.value));
+        } else {
+            // For single-select mode, just clear everything
+            setSelectedOption(null);
+            setSelectedOptions([]);
+            onChange?.("");
         }
     };
 
     // REMOVE ALL OPTIONS ==============================================================================================
-    const handleClearAll = (e: React.MouseEvent<HTMLElement>) => {
-        e.stopPropagation();
+    const handleClearAll = () => {
+        // Reset local state for both single and multi-select
+        setSelectedOption(null);
+        setSelectedOptions([]);
+
+        // Notify parent with empty data
         onChange?.(allowMultiSelect ? [] : "");
     };
+
 
     // ARROW KEYS ======================================================================================================
     const handleKeyDown = (event: KeyboardEvent) => {
