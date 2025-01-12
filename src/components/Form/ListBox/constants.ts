@@ -13,7 +13,7 @@ export interface OptionForListBoxProps {
 }
 
 export interface ListBoxCustomProps {
-    options              : OptionForListBoxProps[];
+    options            ? : OptionForListBoxProps[];
     label              ? : string;
     helpText           ? : string;
     errorText          ? : string;

@@ -21,7 +21,7 @@
 }
 
 .list-box-input-wrapper {
-    padding               : 12px 8px;
+    padding               : var(--input-padding) 8px;
     border-radius         : var(--input-border-radius-default);
     border                : var(--global-border-width) solid var(--input-border-default);
     background-color      : var(--list-box-bg-default);

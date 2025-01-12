@@ -1,7 +1,10 @@
 # CHANGELOG
 
+## 1.11.9
+- Allow empty `options` object for `ListBox`
+
 ## 1.11.8
-- All select all and clear all options for `OptionCardsGroup`
+- All select all and clear all methods for `OptionCardsGroup`
 - Fix label padding for `RadioTabGroup`
 
 ## 1.11.7
