@@ -300,7 +300,7 @@ const ListBoxWithOptions = (
                             <Div
                                 className="icon-wrapper clear-all"
                                 title="Clear all options"
-                                onClick={handleClearAll}
+                                onClick={() => handleClearAll()}
                             >
                                 <svg viewBox="0 0 24 24">
                                     <line x1="5" y1="5" x2="19" y2="19" />
