@@ -23,11 +23,12 @@ input[data-input-field] {
 
     ::placeholder {
         color   : var(--input-placeholder-default);
-        opacity : 1; /* For Firefox */
+        opacity : var(--input-placeholder-opacity);
     }
 
     ::-ms-input-placeholder {
-        color : var(--input-placeholder-default);
+        color   : var(--input-placeholder-default);
+        opacity : var(--input-placeholder-opacity);
     }
 
     &:active,
@@ -44,9 +45,9 @@ input[data-input-field] {
     /* VALIDATION /////////////////////////////////////////////////////////// */
     /* Red everything when invalid ========================================== */
     &:invalid:not(:focus):not(:placeholder-shown) {
-        color               : var(--input-text-invalid);
-        border              : var(--global-border-width) solid var(--input-border-invalid);
-        background-color    : var(--input-bg-invalid);
+        color            : var(--input-text-invalid);
+        border           : var(--global-border-width) solid var(--input-border-invalid);
+        background-color : var(--input-bg-invalid);
     }
 }
 
