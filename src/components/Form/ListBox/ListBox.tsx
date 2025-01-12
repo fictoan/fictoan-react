@@ -56,12 +56,6 @@ const ListBoxWithOptions = (
     const [activeIndex, setActiveIndex]         = useState(-1);
     const [selectedOption, setSelectedOption]   = useState<OptionForListBoxProps | null>(null);
     const [selectedOptions, setSelectedOptions] = useState<OptionForListBoxProps[]>([]);
-    const [internalOptions, setInternalOptions] = useState<OptionForListBoxProps[]>(options);
-
-    // Update internal options when external options change
-    useEffect(() => {
-        setInternalOptions(options);
-    }, [options]);
 
     // Set initial value ===============================================================================================
     useEffect(() => {
@@ -70,13 +64,18 @@ const ListBoxWithOptions = (
         }
     }, []);
 
+    // Create a memoized version of the combined options
+    const allOptions = React.useMemo(() => {
+        return [...options];
+    }, [options]);
+
     // REFS ============================================================================================================
     const dropdownRef    = useRef() as MutableRefObject<HTMLSelectElement>;
     const searchInputRef = useRef<HTMLInputElement>(null);
 
     // CONSTANTS =======================================================================================================
     const listboxId       = id || `listbox-${Math.random().toString(36).substring(2, 9)}`;
-    const filteredOptions = searchOptions(internalOptions, searchValue);
+    const filteredOptions = searchOptions(allOptions, searchValue);
 
     // SELECT AN OPTION ================================================================================================
     const handleSelectOption = (option: OptionForListBoxProps) => {
@@ -125,12 +124,10 @@ const ListBoxWithOptions = (
             label: customValue,
         };
 
-        // Add to internal options if it doesn't exist
-        if (!internalOptions.some(opt => opt.value === customValue)) {
-            setInternalOptions(prev => [...prev, customOption]);
+        // If this option doesn't exist yet
+        if (!allOptions.some(opt => opt.value === customValue)) {
+            handleSelectOption(customOption);
         }
-
-        handleSelectOption(customOption);
     };
 
     // REMOVE AN OPTION ================================================================================================
