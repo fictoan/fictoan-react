@@ -131,13 +131,11 @@ const ListBoxWithOptions = (
     };
 
     // REMOVE AN OPTION ================================================================================================
-    const handleDeleteOption = (e: React.MouseEvent<HTMLElement>, valueToRemove: string) => {
-        e.stopPropagation();
+    const handleDeleteOption = (valueToRemove: string) => {
         if (allowMultiSelect) {
-            const newValue = selectedOptions
+            onChange?.(selectedOptions
                 .filter(opt => opt.value !== valueToRemove)
-                .map(opt => opt.value);
-            onChange?.(newValue);
+                .map(opt => opt.value));
         }
     };
 
@@ -262,7 +260,7 @@ const ListBoxWithOptions = (
                                         <Badge
                                             key={option.value}
                                             withDelete={allowMultiSelect}
-                                            onDelete={(e) => handleDeleteOption(e, option.value)}
+                                            onDelete={() => handleDeleteOption(option.value)}
                                             size="small"
                                             shape="rounded"
                                             bgColour={badgeBgColour || badgeBgColor}

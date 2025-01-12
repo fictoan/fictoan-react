@@ -100,7 +100,9 @@
 
     [data-badge] {
         background-color : var(--list-box-badge-bg);
-        color            : var(--list-box-badge-text);
+        border           : var(--list-box-badge-border);
+
+        p { color : var(--list-box-badge-text); }
     }
 }
 
