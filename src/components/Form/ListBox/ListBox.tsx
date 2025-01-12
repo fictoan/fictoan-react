@@ -29,7 +29,7 @@ import { ListBoxProps, OptionForListBoxProps, ListBoxElementType, ListBoxCustomP
 
 const ListBoxWithOptions = (
     {
-        options,
+        options = [],
         label,
         placeholder = "Select an option",
         id,
@@ -48,14 +48,20 @@ const ListBoxWithOptions = (
         isFullWidth,
         className,
         ...props
-    }: ListBoxCustomProps & { className ? : string }) => {
+    }: ListBoxCustomProps & { className?: string }) => {
 
     // STATES ==========================================================================================================
-    const [ isOpen, setIsOpen ]                   = useState(false);
-    const [ searchValue, setSearchValue ]         = useState("");
-    const [ activeIndex, setActiveIndex ]         = useState(-1);
-    const [ selectedOption, setSelectedOption ]   = useState<OptionForListBoxProps | null>(null);
-    const [ selectedOptions, setSelectedOptions ] = useState<OptionForListBoxProps[]>([]);
+    const [isOpen, setIsOpen]                   = useState(false);
+    const [searchValue, setSearchValue]         = useState("");
+    const [activeIndex, setActiveIndex]         = useState(-1);
+    const [selectedOption, setSelectedOption]   = useState<OptionForListBoxProps | null>(null);
+    const [selectedOptions, setSelectedOptions] = useState<OptionForListBoxProps[]>([]);
+    const [internalOptions, setInternalOptions] = useState<OptionForListBoxProps[]>(options);
+
+    // Update internal options when external options change
+    useEffect(() => {
+        setInternalOptions(options);
+    }, [options]);
 
     // Set initial value ===============================================================================================
     useEffect(() => {
@@ -70,7 +76,7 @@ const ListBoxWithOptions = (
 
     // CONSTANTS =======================================================================================================
     const listboxId       = id || `listbox-${Math.random().toString(36).substring(2, 9)}`;
-    const filteredOptions = searchOptions(options, searchValue);
+    const filteredOptions = searchOptions(internalOptions, searchValue);
 
     // SELECT AN OPTION ================================================================================================
     const handleSelectOption = (option: OptionForListBoxProps) => {
@@ -118,6 +124,11 @@ const ListBoxWithOptions = (
             value: customValue,
             label: customValue,
         };
+
+        // Add to internal options if it doesn't exist
+        if (!internalOptions.some(opt => opt.value === customValue)) {
+            setInternalOptions(prev => [...prev, customOption]);
+        }
 
         handleSelectOption(customOption);
     };
@@ -181,7 +192,7 @@ const ListBoxWithOptions = (
                 setActiveIndex(-1);
                 break;
 
-                case " ": // Space key
+            case " ": // Space key
                 if (!isOpen) {
                     event.preventDefault();
                     setIsOpen(true);
@@ -189,19 +200,19 @@ const ListBoxWithOptions = (
                 }
                 break;
 
-                case "Home":
-                    if (isOpen) {
-                        event.preventDefault();
-                        setActiveIndex(0);
-                    }
-                    break;
+            case "Home":
+                if (isOpen) {
+                    event.preventDefault();
+                    setActiveIndex(0);
+                }
+                break;
 
-                case "End":
-                    if (isOpen) {
-                        event.preventDefault();
-                        setActiveIndex(filteredOptions.length - 1);
-                    }
-                    break;
+            case "End":
+                if (isOpen) {
+                    event.preventDefault();
+                    setActiveIndex(filteredOptions.length - 1);
+                }
+                break;
         }
     };
 
@@ -216,13 +227,13 @@ const ListBoxWithOptions = (
         if (isOpen && searchInputRef.current) {
             searchInputRef.current.focus();
         }
-    }, [ isOpen ]);
+    }, [isOpen]);
 
     // SCROLL ACTIVE OPTION INTO VIEW ==================================================================================
     useEffect(() => {
         if (activeIndex >= 0) {
             const activeOption = document.querySelector(`[data-index="${activeIndex}"]`);
-            activeOption?.scrollIntoView({ block: "nearest" });
+            activeOption?.scrollIntoView({block : "nearest"});
         }
     }, [activeIndex]);
 
@@ -310,7 +321,7 @@ const ListBoxWithOptions = (
                             type="text"
                             ref={searchInputRef}
                             className="list-box-search"
-                            placeholder="Search"
+                            placeholder={allowCustomEntries ? "Type to search or add new" : "Search"}
                             value={searchValue}
                             onChange={handleSearchChange}
                             onKeyDown={handleKeyDown}
@@ -360,7 +371,10 @@ const ListBoxWithOptions = (
                                 role="alert"
                                 aria-live="polite"
                             >
-                                No matches found
+                                {allowCustomEntries
+                                    ? "Type and press Enter to add new option"
+                                    : "No matches found"
+                                }
                             </li>
                         )}
                     </Element>
