@@ -46,13 +46,15 @@ export const Drawer = React.forwardRef(
             showOverlay = false,
             label,
             ...props
-        }: DrawerProps,
-        ref: React.Ref<DrawerElementType>
+        } : DrawerProps,
+        ref : React.Ref<DrawerElementType>,
     ) => {
         const [shouldRender, setShouldRender] = useState(openWhen);
 
         const drawerRef = useRef(null);
-        const effectiveRef = (ref || drawerRef) as RefObject<HTMLDivElement>;
+        const effectiveRef = (
+            ref || drawerRef
+        ) as RefObject<HTMLDivElement>;
 
         useEffect(() => {
             if (openWhen) {
@@ -84,10 +86,11 @@ export const Drawer = React.forwardRef(
 
         const closeDrawer = () => closeWhen?.();
 
-        useClickOutside(effectiveRef, closeOnClickOutside ? closeDrawer : () => {});
+        useClickOutside(effectiveRef, closeOnClickOutside ? closeDrawer : () => {
+        });
 
-        const handleKeyDown = (e: React.KeyboardEvent) => {
-            if (e.key === 'Escape' && isDismissible) {
+        const handleKeyDown = (e : React.KeyboardEvent) => {
+            if (e.key === "Escape" && isDismissible) {
                 closeDrawer();
             }
         };
@@ -105,7 +108,9 @@ export const Drawer = React.forwardRef(
                     aria-modal="true"
                     aria-label={label || "Drawer"}
                     tabIndex={-1}
-                    {...(closeOnClickOutside ? { onClick: closeDrawer } : {})}
+                    {...(
+                        closeOnClickOutside ? { onClick : closeDrawer } : {}
+                    )}
                     {...props}
                 >
                     {openWhen && showOverlay && (
@@ -125,7 +130,7 @@ export const Drawer = React.forwardRef(
                     >
                         {isDismissible && (
                             <button
-                                className="dismiss-button"
+                                className="drawer-dismiss-button"
                                 onClick={closeDrawer}
                                 aria-label="Close drawer"
                                 tabIndex={0}
@@ -136,5 +141,5 @@ export const Drawer = React.forwardRef(
                 </Element>
             </>
         ) : null;
-    }
+    },
 );

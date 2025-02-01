@@ -2,7 +2,6 @@
 import React from "react";
 
 // FICTOAN =============================================================================================================
-import { Element } from "../../Element/Element";
 import { Div } from "../../Element/Tags";
 import { BaseInputComponent } from "../BaseInputComponent/BaseInputComponent";
 import { InputLabel } from "../InputLabel/InputLabel";
@@ -27,13 +26,13 @@ export type RangeElementType = HTMLInputElement;
 export type RangeProps = Omit<CommonAndHTMLProps<RangeElementType>, "onChange"> & InputCommonProps & RangeCustomProps;
 
 // COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-export const Range = React.forwardRef(({ label, value, suffix, onChange, ...props }: RangeProps,
-     ref: React.Ref<RangeElementType>
+export const Range = React.forwardRef(({ label, value, suffix, onChange, ...props } : RangeProps,
+        ref : React.Ref<RangeElementType>,
     ) => {
-    const handleChange = (value: string) => {
-        // Convert the string to a number and call our number handler
-        onChange?.(parseFloat(value));
-    };
+        const handleChange = (value : string) => {
+            // Convert the string to a number and call our number handler
+            onChange?.(parseFloat(value));
+        };
 
         return (
             <BaseInputComponent<RangeElementType>
@@ -53,4 +52,5 @@ export const Range = React.forwardRef(({ label, value, suffix, onChange, ...prop
                 {...props}
             />
         );
-    });
+    },
+);

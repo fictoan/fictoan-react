@@ -26,13 +26,14 @@
     &[class*="border-"] { border-width : var(--badge-border-width); }
     &.border-none { border-width : 0 !important; }
 
-    & .dismiss-button {
+    & .badge-dismiss-button {
+        position    : relative;
         margin-left : 8px;
-        font-size   : 18px;
+        font-size   : 1.6rem;
         cursor      : pointer;
         line-height : 1;
         top         : -1px;
-        position    : relative;
+        font-weight : 400;
 
         &:hover {
             transform  : scale(1.1);

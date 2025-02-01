@@ -65,15 +65,16 @@ export const Badge = React.forwardRef(
                 aria-label={label || (typeof children === "string" ? children : undefined)}
                 {...props}
             >
-                <Text>{children}</Text>
+                {children}
+
                 {withDelete && (
                     <Text
-                        className="dismiss-button"
+                        className="badge-dismiss-button"
                         onClick={handleDelete}
                         onKeyDown={handleKeyPress}
                         role="button"
                         tabIndex={0}
-                        aria-label={`Remove ${label || children}`}
+                        aria-label={`Remove badge`}
                     >
                         &times;
                     </Text>
