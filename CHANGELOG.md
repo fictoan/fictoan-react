@@ -2,6 +2,8 @@
 
 ## 1.11.9
 - Allow empty `options` object for `ListBox`
+- Rename `dismiss-button` class in `Drawer` to be more specific to avoid clashes
+- `Badge` now accepts children other than just text
 
 ## 1.11.8
 - Add select all and clear all methods for  `OptionCardsGroup`

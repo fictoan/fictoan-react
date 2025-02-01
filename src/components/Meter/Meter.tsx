@@ -13,11 +13,11 @@ import { CommonAndHTMLProps } from "../Element/constants";
 
 // prettier-ignore
 export interface MeterLabelCustomProps {
-    suffix ? : string;
+    suffix? : string;
 }
 
 // prettier-ignore
-export interface MeterCustomProps extends Omit<CommonAndHTMLProps<HTMLMeterElement>, 'value'> {
+export interface MeterCustomProps extends Omit<CommonAndHTMLProps<HTMLMeterElement>, "value"> {
     min                 : number;
     max                 : number;
     low                 : number;
@@ -36,32 +36,44 @@ export interface MeterCustomProps extends Omit<CommonAndHTMLProps<HTMLMeterEleme
 export type MeterElementType = HTMLMeterElement;
 export type MeterProps = MeterCustomProps;
 export type MeterMetaProps = Omit<CommonAndHTMLProps<HTMLDivElement>, keyof MeterLabelCustomProps> &
-    MeterLabelCustomProps;
+                             MeterLabelCustomProps;
 
 // COMPONENT ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const Meter = React.forwardRef(
     ({
-         label,
-         value,
-         height,
-         suffix,
-         showOptimumMarker,
-         ariaLabel,
-         description,
-         min,
-         max,
-         low,
-         high,
-         optimum,
-         ...props
-     }: MeterProps, ref: React.Ref<MeterElementType>) => {
+        label,
+        value,
+        height,
+        suffix,
+        showOptimumMarker,
+        ariaLabel,
+        description,
+        min,
+        max,
+        low,
+        high,
+        optimum,
+        ...props
+    } : MeterProps, ref : React.Ref<MeterElementType>) => {
         // CALCULATE OPTIMUM MARKER POSITION ===========================================================================
-        const optimumPositionPercent = optimum ? ((optimum - min) / (max - min)) * 100 : 0;
+        const optimumPositionPercent = optimum ? (
+            (
+                optimum - min
+            ) / (
+                max - min
+            )
+        ) * 100 : 0;
 
         // GENERATE DESCRIPTIVE STATUS STRING ==========================================================================
         const getValueDescription = () => {
-            const percentage = ((value - min) / (max - min)) * 100;
-            let status: string;
+            const percentage = (
+                (
+                    value - min
+                ) / (
+                    max - min
+                )
+            ) * 100;
+            let status : string;
 
             if (value <= low) {
                 status = "Low";
@@ -71,7 +83,7 @@ export const Meter = React.forwardRef(
                 status = "Normal";
             }
 
-            return `Current value is ${value}${suffix || ''} (${percentage.toFixed(1)}%). Status: ${status}`;
+            return `Current value is ${value}${suffix || ""} (${percentage.toFixed(1)}%). Status: ${status}`;
         };
 
         return (
@@ -83,7 +95,7 @@ export const Meter = React.forwardRef(
                     <Element<HTMLDivElement>
                         as="div"
                         data-meter-meta
-                        id={`meter-label-${label.toLowerCase().replace(/\s+/g, '-')}`}
+                        id={`meter-label-${label.toLowerCase().replace(/\s+/g, "-")}`}
                     >
                         <Text>{label}</Text>
                         <Text>
@@ -114,13 +126,14 @@ export const Meter = React.forwardRef(
                         aria-valuemax={max}
                         aria-valuenow={value}
                         aria-valuetext={getValueDescription()}
-                        aria-describedby={description ? `meter-description-${label?.toLowerCase().replace(/\s+/g, '-')}` : undefined}
+                        aria-describedby={description ? `meter-description-${label?.toLowerCase()
+                            .replace(/\s+/g, "-")}` : undefined}
                     />
 
                     {showOptimumMarker && optimum && (
                         <div
                             className="optimum-marker"
-                            style={{ left: `calc(${optimumPositionPercent}% - var(--meter-border-width))` }}
+                            style={{ left : `calc(${optimumPositionPercent}% - var(--meter-border-width))` }}
                             title={`Optimum: ${optimum}`}
                             role="presentation"
                             aria-hidden="true"
@@ -130,7 +143,7 @@ export const Meter = React.forwardRef(
 
                 {description && (
                     <div
-                        id={`meter-description-${label?.toLowerCase().replace(/\s+/g, '-')}`}
+                        id={`meter-description-${label?.toLowerCase().replace(/\s+/g, "-")}`}
                         className="sr-only"
                     >
                         {description}
@@ -138,5 +151,5 @@ export const Meter = React.forwardRef(
                 )}
             </div>
         );
-    }
+    },
 );

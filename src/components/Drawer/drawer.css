@@ -117,7 +117,7 @@
     &.open.bottom .drawer-content-wrapper { transform : translateX(0); }
 
     /* DISMISS BUTTON ======================================================= */
-    & .dismiss-button {
+    & .drawer-dismiss-button {
         position         : absolute;
         display          : flex;
         width            : 32px;
@@ -149,22 +149,22 @@
         }
     }
 
-    &.top .dismiss-button {
+    &.top .drawer-dismiss-button {
         bottom : -36px;
         right  : 24px;
     }
 
-    &.bottom .dismiss-button {
+    &.bottom .drawer-dismiss-button {
         top   : -36px;
         right : 24px;
     }
 
-    &.left .dismiss-button {
+    &.left .drawer-dismiss-button {
         top   : 24px;
         right : -36px;
     }
 
-    &.right .dismiss-button {
+    &.right .drawer-dismiss-button {
         top  : 24px;
         left : -36px;
     }
