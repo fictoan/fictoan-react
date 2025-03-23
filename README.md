@@ -1,3 +1,12 @@
+| :warning: WARNING :warning: |
+|:----------------------------|
+| **This repo is now read-only, Docs has been moved to [fictoan/fictoan](https://github.com/fictoan/fictoan), to ease development. Nothing changes, just the repo setup is now different.** |
+| **But why?** With separate repos for the components and docs, it became difficult to test changes to the components, and involved a lot of manual processes to build, copy over files to another repo and see if the changes work. With the new monorepo setup, all that has been automated, and local development is far easier.  |
+
+---
+
+
+
 <p align="center" style="color: #343a40">
     <a href="https://fictoan.io"><img src="https://raw.githubusercontent.com/fictoan/fictoan-react/main/fictoan-icon.svg" alt="Fictoan Framework" height="150" width="150"></a>
 </p>
